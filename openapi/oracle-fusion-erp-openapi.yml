@@ -1,0 +1,1687 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud ERP REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud ERP, providing programmatic access to
+    financials, procurement, project management, and risk management
+    capabilities. The API supports viewing and managing financial data
+    including general ledger, accounts payable, accounts receivable, fixed
+    assets, cash management, expense reports, and ERP integrations.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud Financials REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Instance
+    variables:
+      instance:
+        default: servername
+        description: Your Oracle Cloud instance identifier
+tags:
+  - name: Invoices
+    description: Manage accounts payable invoices
+  - name: Payments
+    description: Manage payment processing
+  - name: General Ledger
+    description: General ledger journal and period operations
+  - name: Accounts Receivable
+    description: Manage receivables transactions and receipts
+  - name: Expense Reports
+    description: Create and manage employee expense reports
+  - name: Cash Management
+    description: Bank accounts, transfers, and cash pools
+  - name: Budgetary Control
+    description: Budget transactions and validation
+  - name: ERP Integrations
+    description: Bulk data import and export operations
+  - name: Currency Rates
+    description: Currency rate management
+security:
+  - bearerAuth: []
+paths:
+  /fscmRestApi/resources/11.13.18.05/invoices:
+    get:
+      operationId: listInvoices
+      summary: List invoices
+      description: >-
+        Retrieve a collection of accounts payable invoices. Supports filtering,
+        sorting, and pagination using standard Oracle REST query parameters.
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Successful retrieval of invoices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Invoice'
+                  count:
+                    type: integer
+                    description: Number of items returned
+                  hasMore:
+                    type: boolean
+                    description: Whether more items are available
+                  limit:
+                    type: integer
+                    description: Maximum number of items returned
+                  offset:
+                    type: integer
+                    description: Offset of first item returned
+                  totalResults:
+                    type: integer
+                    description: Total number of matching items
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createInvoice
+      summary: Create an invoice
+      description: >-
+        Create a new accounts payable invoice with header and optionally
+        include invoice lines and distributions.
+      tags:
+        - Invoices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceCreate'
+      responses:
+        '201':
+          description: Invoice created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}:
+    get:
+      operationId: getInvoice
+      summary: Get an invoice
+      description: Retrieve a specific accounts payable invoice by its unique identifier.
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/InvoiceId'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Invoice details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateInvoice
+      summary: Update an invoice
+      description: Update an existing accounts payable invoice.
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/InvoiceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceUpdate'
+      responses:
+        '200':
+          description: Invoice updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteInvoice
+      summary: Delete an invoice
+      description: Delete an accounts payable invoice.
+      tags:
+        - Invoices
+      parameters:
+        - $ref: '#/components/parameters/InvoiceId'
+      responses:
+        '204':
+          description: Invoice deleted successfully
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/payablesPayments:
+    get:
+      operationId: listPayments
+      summary: List payments
+      description: >-
+        Retrieve a collection of accounts payable payments including check,
+        electronic, and wire transfer payments.
+      tags:
+        - Payments
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Successful retrieval of payments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Payment'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/payablesPayments/{PaymentId}:
+    get:
+      operationId: getPayment
+      summary: Get a payment
+      description: Retrieve a specific payment by its unique identifier.
+      tags:
+        - Payments
+      parameters:
+        - name: PaymentId
+          in: path
+          required: true
+          description: Unique identifier for the payment
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Payment details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Payment'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/ledgerBalances:
+    get:
+      operationId: listLedgerBalances
+      summary: List ledger balances
+      description: >-
+        Retrieve general ledger account balances. Use query parameters to
+        filter by ledger, period, account segment values, and currency.
+      tags:
+        - General Ledger
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Ledger balances retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LedgerBalance'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/generalLedgerJournals:
+    get:
+      operationId: listJournals
+      summary: List general ledger journals
+      description: >-
+        Retrieve general ledger journal entries. The journals resource
+        provides access to journal headers and lines for financial reporting.
+      tags:
+        - General Ledger
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Journals retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Journal'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createJournal
+      summary: Create a general ledger journal
+      description: >-
+        Create a new general ledger journal entry with header and lines.
+      tags:
+        - General Ledger
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JournalCreate'
+      responses:
+        '201':
+          description: Journal created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Journal'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses:
+    get:
+      operationId: listPeriodStatuses
+      summary: List general ledger period statuses
+      description: >-
+        Retrieve the open, closed, or future status of general ledger
+        accounting periods for a specified ledger.
+      tags:
+        - General Ledger
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Period statuses retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PeriodStatus'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/receivablesInvoices:
+    get:
+      operationId: listReceivablesInvoices
+      summary: List receivables invoices
+      description: >-
+        Retrieve accounts receivable invoices including debit memos, credit
+        memos, and standard invoices.
+      tags:
+        - Accounts Receivable
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Receivables invoices retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReceivablesInvoice'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createReceivablesInvoice
+      summary: Create a receivables invoice
+      description: Create a new accounts receivable transaction.
+      tags:
+        - Accounts Receivable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReceivablesInvoiceCreate'
+      responses:
+        '201':
+          description: Receivables invoice created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceivablesInvoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/standardReceipts:
+    get:
+      operationId: listReceipts
+      summary: List standard receipts
+      description: >-
+        Retrieve standard receipt records for accounts receivable payments
+        received from customers.
+      tags:
+        - Accounts Receivable
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Receipts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StandardReceipt'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createReceipt
+      summary: Create a standard receipt
+      description: Create a new standard receipt for an accounts receivable payment.
+      tags:
+        - Accounts Receivable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StandardReceiptCreate'
+      responses:
+        '201':
+          description: Receipt created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardReceipt'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/expenseReports:
+    get:
+      operationId: listExpenseReports
+      summary: List expense reports
+      description: Retrieve a collection of employee expense reports.
+      tags:
+        - Expense Reports
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Expense reports retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ExpenseReport'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createExpenseReport
+      summary: Create an expense report
+      description: Create a new employee expense report with expense items.
+      tags:
+        - Expense Reports
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseReportCreate'
+      responses:
+        '201':
+          description: Expense report created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}:
+    get:
+      operationId: getExpenseReport
+      summary: Get an expense report
+      description: Retrieve a specific expense report by its identifier.
+      tags:
+        - Expense Reports
+      parameters:
+        - name: ExpenseReportId
+          in: path
+          required: true
+          description: Unique identifier for the expense report
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Expense report details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateExpenseReport
+      summary: Update an expense report
+      description: Update an existing expense report.
+      tags:
+        - Expense Reports
+      parameters:
+        - name: ExpenseReportId
+          in: path
+          required: true
+          description: Unique identifier for the expense report
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseReportCreate'
+      responses:
+        '200':
+          description: Expense report updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteExpenseReport
+      summary: Delete an expense report
+      description: Delete an expense report.
+      tags:
+        - Expense Reports
+      parameters:
+        - name: ExpenseReportId
+          in: path
+          required: true
+          description: Unique identifier for the expense report
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Expense report deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/cashBankAccounts:
+    get:
+      operationId: listBankAccounts
+      summary: List bank accounts
+      description: View, create, and modify bank accounts for cash management.
+      tags:
+        - Cash Management
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Bank accounts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BankAccount'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers:
+    get:
+      operationId: listBankAccountTransfers
+      summary: List bank account transfers
+      description: >-
+        Retrieve bank account transfer records for cash management.
+      tags:
+        - Cash Management
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Transfers retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BankAccountTransfer'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createBankAccountTransfer
+      summary: Create a bank account transfer
+      description: Create a new bank account transfer.
+      tags:
+        - Cash Management
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BankAccountTransferCreate'
+      responses:
+        '201':
+          description: Transfer created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankAccountTransfer'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions:
+    get:
+      operationId: listBudgetTransactions
+      summary: List budget transactions
+      description: >-
+        Retrieve budgetary control budget transactions and validation results.
+      tags:
+        - Budgetary Control
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Budget transactions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BudgetTransaction'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createBudgetTransaction
+      summary: Create a budget transaction
+      description: >-
+        Create budget entries and perform budgetary control validation.
+      tags:
+        - Budgetary Control
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BudgetTransactionCreate'
+      responses:
+        '201':
+          description: Budget transaction created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BudgetTransaction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/erpintegrations:
+    post:
+      operationId: submitErpIntegration
+      summary: Submit an ERP integration
+      description: >-
+        Automate bulk data import and export flows for ERP integrations
+        using file-based data import (FBDI) and business intelligence (BI)
+        report jobs.
+      tags:
+        - ERP Integrations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErpIntegrationRequest'
+      responses:
+        '201':
+          description: Integration job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErpIntegrationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/currencyRates:
+    get:
+      operationId: listCurrencyRates
+      summary: List currency rates
+      description: >-
+        Retrieve currency exchange rates and available rate dates for
+        cross-currency financial operations.
+      tags:
+        - Currency Rates
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Currency rates retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CurrencyRate'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: >-
+        OAuth 2.0 bearer token or basic authentication. Oracle Fusion Cloud
+        supports both OAuth 2.0 and HTTP Basic authentication for REST API
+        access.
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication with Oracle Fusion Cloud credentials
+  parameters:
+    InvoiceId:
+      name: InvoiceId
+      in: path
+      required: true
+      description: Unique identifier for the invoice
+      schema:
+        type: integer
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: >-
+        Comma-separated list of fields to include in the response. Use to
+        limit returned attributes for performance.
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: >-
+        Filter expression using Oracle REST query syntax. Example:
+        InvoiceNumber='INV-001' or InvoiceAmount>1000
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: >-
+        Comma-separated list of fields to sort by. Append :asc or :desc for
+        sort direction.
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: >-
+        Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: >-
+        Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    Invoice:
+      type: object
+      properties:
+        InvoiceId:
+          type: integer
+          description: Unique identifier for the invoice
+        InvoiceNumber:
+          type: string
+          description: Invoice number
+        InvoiceAmount:
+          type: number
+          format: double
+          description: Total invoice amount
+        InvoiceCurrencyCode:
+          type: string
+          description: Currency code for the invoice amount
+        InvoiceDate:
+          type: string
+          format: date
+          description: Date of the invoice
+        InvoiceType:
+          type: string
+          description: Type of invoice (Standard, Credit Memo, Prepayment, etc.)
+          enum:
+            - Standard
+            - Credit Memo
+            - Prepayment
+            - Mixed
+        VendorName:
+          type: string
+          description: Name of the supplier
+        VendorNumber:
+          type: string
+          description: Supplier number
+        VendorSiteCode:
+          type: string
+          description: Supplier site code
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Description:
+          type: string
+          description: Invoice description
+        PaymentTerms:
+          type: string
+          description: Payment terms for the invoice
+        DueDate:
+          type: string
+          format: date
+          description: Payment due date
+        ApprovalStatus:
+          type: string
+          description: Current approval status
+          enum:
+            - Initiated
+            - Required
+            - Not Required
+            - Approved
+            - Rejected
+            - Wfapproved
+            - Manually Approved
+        ValidationStatus:
+          type: string
+          description: Invoice validation status
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date for the invoice
+        PaidAmount:
+          type: number
+          format: double
+          description: Amount already paid
+        AmountDue:
+          type: number
+          format: double
+          description: Remaining amount due
+        CreatedBy:
+          type: string
+          description: User who created the invoice
+        CreationDate:
+          type: string
+          format: date-time
+          description: Date and time the invoice was created
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Date and time the invoice was last updated
+    InvoiceCreate:
+      type: object
+      required:
+        - InvoiceNumber
+        - InvoiceAmount
+        - InvoiceCurrencyCode
+        - VendorName
+        - BusinessUnit
+      properties:
+        InvoiceNumber:
+          type: string
+          description: Invoice number
+        InvoiceAmount:
+          type: number
+          format: double
+          description: Total invoice amount
+        InvoiceCurrencyCode:
+          type: string
+          description: Currency code
+        InvoiceDate:
+          type: string
+          format: date
+          description: Invoice date
+        InvoiceType:
+          type: string
+          enum:
+            - Standard
+            - Credit Memo
+            - Prepayment
+            - Mixed
+        VendorName:
+          type: string
+          description: Supplier name
+        VendorNumber:
+          type: string
+          description: Supplier number
+        VendorSiteCode:
+          type: string
+          description: Supplier site code
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Description:
+          type: string
+          description: Invoice description
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date
+    InvoiceUpdate:
+      type: object
+      properties:
+        InvoiceAmount:
+          type: number
+          format: double
+        Description:
+          type: string
+        PaymentTerms:
+          type: string
+        AccountingDate:
+          type: string
+          format: date
+        ApprovalStatus:
+          type: string
+    Payment:
+      type: object
+      properties:
+        PaymentId:
+          type: integer
+          description: Unique payment identifier
+        PaymentNumber:
+          type: string
+          description: Payment number
+        PaymentAmount:
+          type: number
+          format: double
+          description: Payment amount
+        PaymentCurrencyCode:
+          type: string
+          description: Payment currency
+        PaymentDate:
+          type: string
+          format: date
+          description: Date of payment
+        PaymentMethod:
+          type: string
+          description: Payment method (Check, Electronic, Wire)
+        VendorName:
+          type: string
+          description: Payee name
+        BusinessUnit:
+          type: string
+          description: Business unit
+        BankAccountName:
+          type: string
+          description: Disbursement bank account
+        Status:
+          type: string
+          description: Payment status
+          enum:
+            - Created
+            - Set Up
+            - Formatted
+            - Transmitted
+            - Confirmed
+            - Voided
+    LedgerBalance:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Name of the ledger
+        PeriodName:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Currency code
+        Segment1:
+          type: string
+          description: Chart of accounts segment 1 (Company)
+        Segment2:
+          type: string
+          description: Chart of accounts segment 2 (Department)
+        Segment3:
+          type: string
+          description: Chart of accounts segment 3 (Account)
+        Segment4:
+          type: string
+          description: Chart of accounts segment 4 (Sub-Account)
+        BeginningBalance:
+          type: number
+          format: double
+          description: Beginning balance for the period
+        PeriodActivity:
+          type: number
+          format: double
+          description: Net activity for the period
+        EndingBalance:
+          type: number
+          format: double
+          description: Ending balance for the period
+    Journal:
+      type: object
+      properties:
+        JournalHeaderId:
+          type: integer
+          description: Unique journal header identifier
+        JournalBatchName:
+          type: string
+          description: Journal batch name
+        JournalName:
+          type: string
+          description: Journal name
+        Description:
+          type: string
+          description: Journal description
+        LedgerName:
+          type: string
+          description: Ledger name
+        AccountingPeriod:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Journal currency
+        Status:
+          type: string
+          description: Journal status
+          enum:
+            - Unposted
+            - Posted
+            - Error
+        JournalCategory:
+          type: string
+          description: Journal category
+        JournalSource:
+          type: string
+          description: Journal source
+        TotalDebit:
+          type: number
+          format: double
+          description: Total debit amount
+        TotalCredit:
+          type: number
+          format: double
+          description: Total credit amount
+        CreationDate:
+          type: string
+          format: date-time
+          description: Journal creation date
+    JournalCreate:
+      type: object
+      required:
+        - JournalBatchName
+        - JournalName
+        - LedgerName
+        - AccountingPeriod
+        - CurrencyCode
+        - JournalCategory
+        - JournalSource
+      properties:
+        JournalBatchName:
+          type: string
+        JournalName:
+          type: string
+        Description:
+          type: string
+        LedgerName:
+          type: string
+        AccountingPeriod:
+          type: string
+        CurrencyCode:
+          type: string
+        JournalCategory:
+          type: string
+        JournalSource:
+          type: string
+    PeriodStatus:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period name
+        PeriodYear:
+          type: integer
+          description: Period year
+        PeriodNumber:
+          type: integer
+          description: Period number within the year
+        Status:
+          type: string
+          description: Period status
+          enum:
+            - Open
+            - Closed
+            - Future Entry
+            - Never Opened
+            - Permanently Closed
+    ReceivablesInvoice:
+      type: object
+      properties:
+        TransactionId:
+          type: integer
+          description: Transaction identifier
+        TransactionNumber:
+          type: string
+          description: Transaction number
+        TransactionType:
+          type: string
+          description: Transaction type (Invoice, Credit Memo, Debit Memo)
+        TransactionDate:
+          type: string
+          format: date
+          description: Transaction date
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date
+        BillToCustomerName:
+          type: string
+          description: Bill-to customer name
+        BillToCustomerNumber:
+          type: string
+          description: Bill-to customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        TransactionAmount:
+          type: number
+          format: double
+          description: Transaction amount
+        CurrencyCode:
+          type: string
+          description: Transaction currency
+        BalanceDue:
+          type: number
+          format: double
+          description: Remaining balance due
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        DueDate:
+          type: string
+          format: date
+          description: Payment due date
+        Status:
+          type: string
+          description: Transaction status
+    ReceivablesInvoiceCreate:
+      type: object
+      required:
+        - TransactionNumber
+        - TransactionType
+        - BillToCustomerName
+        - BusinessUnit
+      properties:
+        TransactionNumber:
+          type: string
+        TransactionType:
+          type: string
+        TransactionDate:
+          type: string
+          format: date
+        BillToCustomerName:
+          type: string
+        BillToCustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        TransactionAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        PaymentTerms:
+          type: string
+    StandardReceipt:
+      type: object
+      properties:
+        ReceiptId:
+          type: integer
+          description: Receipt identifier
+        ReceiptNumber:
+          type: string
+          description: Receipt number
+        ReceiptAmount:
+          type: number
+          format: double
+          description: Receipt amount
+        CurrencyCode:
+          type: string
+          description: Receipt currency
+        ReceiptDate:
+          type: string
+          format: date
+          description: Receipt date
+        CustomerName:
+          type: string
+          description: Customer name
+        CustomerNumber:
+          type: string
+          description: Customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        PaymentMethod:
+          type: string
+          description: Receipt payment method
+        Status:
+          type: string
+          description: Receipt status
+    StandardReceiptCreate:
+      type: object
+      required:
+        - ReceiptAmount
+        - CurrencyCode
+        - CustomerName
+        - BusinessUnit
+      properties:
+        ReceiptNumber:
+          type: string
+        ReceiptAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        ReceiptDate:
+          type: string
+          format: date
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        PaymentMethod:
+          type: string
+    ExpenseReport:
+      type: object
+      properties:
+        ExpenseReportId:
+          type: integer
+          description: Unique identifier for the expense report
+        ExpenseReportNumber:
+          type: string
+          description: Expense report number
+        Purpose:
+          type: string
+          description: Business purpose of the expense report
+        ExpenseReportDate:
+          type: string
+          format: date
+          description: Expense report date
+        PersonName:
+          type: string
+          description: Employee name
+        PersonNumber:
+          type: string
+          description: Employee person number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        TotalAmount:
+          type: number
+          format: double
+          description: Total expense report amount
+        CurrencyCode:
+          type: string
+          description: Expense report currency
+        ApprovalStatus:
+          type: string
+          description: Approval workflow status
+          enum:
+            - Saved
+            - Pending Approval
+            - Approved
+            - Rejected
+            - Paid
+            - Withdrawn
+        ReimbursementAmount:
+          type: number
+          format: double
+          description: Amount to be reimbursed
+        SubmittedDate:
+          type: string
+          format: date-time
+          description: Date expense report was submitted
+        CreationDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+    ExpenseReportCreate:
+      type: object
+      required:
+        - Purpose
+        - BusinessUnit
+      properties:
+        Purpose:
+          type: string
+        ExpenseReportDate:
+          type: string
+          format: date
+        BusinessUnit:
+          type: string
+        CurrencyCode:
+          type: string
+    BankAccount:
+      type: object
+      properties:
+        BankAccountId:
+          type: integer
+          description: Bank account identifier
+        BankAccountName:
+          type: string
+          description: Bank account name
+        BankAccountNumber:
+          type: string
+          description: Bank account number
+        BankName:
+          type: string
+          description: Bank name
+        BranchName:
+          type: string
+          description: Branch name
+        CurrencyCode:
+          type: string
+          description: Account currency
+        AccountType:
+          type: string
+          description: Bank account type
+        Country:
+          type: string
+          description: Country of the bank account
+        Status:
+          type: string
+          description: Account status
+          enum:
+            - Active
+            - Inactive
+    BankAccountTransfer:
+      type: object
+      properties:
+        TransferId:
+          type: integer
+          description: Transfer identifier
+        TransferAmount:
+          type: number
+          format: double
+          description: Transfer amount
+        TransferDate:
+          type: string
+          format: date
+          description: Transfer date
+        CurrencyCode:
+          type: string
+          description: Transfer currency
+        FromBankAccountName:
+          type: string
+          description: Source bank account name
+        ToBankAccountName:
+          type: string
+          description: Destination bank account name
+        Status:
+          type: string
+          description: Transfer status
+    BankAccountTransferCreate:
+      type: object
+      required:
+        - TransferAmount
+        - CurrencyCode
+        - FromBankAccountName
+        - ToBankAccountName
+      properties:
+        TransferAmount:
+          type: number
+          format: double
+        TransferDate:
+          type: string
+          format: date
+        CurrencyCode:
+          type: string
+        FromBankAccountName:
+          type: string
+        ToBankAccountName:
+          type: string
+    BudgetTransaction:
+      type: object
+      properties:
+        BudgetTransactionId:
+          type: integer
+          description: Budget transaction identifier
+        BudgetName:
+          type: string
+          description: Budget name
+        ControlBudgetName:
+          type: string
+          description: Control budget name
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period
+        BudgetAmount:
+          type: number
+          format: double
+          description: Budget amount
+        CurrencyCode:
+          type: string
+          description: Currency code
+        Status:
+          type: string
+          description: Transaction status
+    BudgetTransactionCreate:
+      type: object
+      required:
+        - BudgetName
+        - LedgerName
+        - PeriodName
+        - BudgetAmount
+        - CurrencyCode
+      properties:
+        BudgetName:
+          type: string
+        ControlBudgetName:
+          type: string
+        LedgerName:
+          type: string
+        PeriodName:
+          type: string
+        BudgetAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+    ErpIntegrationRequest:
+      type: object
+      required:
+        - OperationName
+        - DocumentContent
+      properties:
+        OperationName:
+          type: string
+          description: >-
+            Name of the integration operation. Common values include
+            importBulkData, exportBulkData, submitESSJobRequest.
+          enum:
+            - importBulkData
+            - exportBulkData
+            - submitESSJobRequest
+        DocumentContent:
+          type: string
+          format: byte
+          description: Base64-encoded content of the data file
+        ContentType:
+          type: string
+          description: Content type of the document
+        FileName:
+          type: string
+          description: Name of the file being uploaded
+        DocumentAccount:
+          type: string
+          description: UCM document account
+        JobName:
+          type: string
+          description: ESS job name for submitESSJobRequest operations
+    ErpIntegrationResponse:
+      type: object
+      properties:
+        OperationName:
+          type: string
+          description: Name of the operation
+        DocumentId:
+          type: string
+          description: Document identifier in UCM
+        RequestId:
+          type: integer
+          description: ESS request identifier for submitted jobs
+        Result:
+          type: string
+          description: Result status of the operation
+    CurrencyRate:
+      type: object
+      properties:
+        FromCurrency:
+          type: string
+          description: Source currency code
+        ToCurrency:
+          type: string
+          description: Target currency code
+        ConversionDate:
+          type: string
+          format: date
+          description: Date of the conversion rate
+        ConversionType:
+          type: string
+          description: Rate type (Corporate, Spot, User)
+        ConversionRate:
+          type: number
+          format: double
+          description: Exchange rate value
+        InverseConversionRate:
+          type: number
+          format: double
+          description: Inverse of the exchange rate

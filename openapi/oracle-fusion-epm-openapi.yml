@@ -1,0 +1,802 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion EPM REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud Enterprise Performance Management,
+    enabling integration with planning, budgeting, forecasting, financial
+    consolidation, account reconciliation, tax reporting, and narrative
+    reporting capabilities. The EPM REST APIs allow infrastructure
+    consultants to integrate environments with Oracle EPM Cloud services.
+  version: v1
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud EPM REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud EPM Instance
+    variables:
+      instance:
+        default: your-instance
+        description: Your Oracle Cloud EPM instance identifier
+tags:
+  - name: Planning
+    description: Planning application data and metadata operations
+  - name: Jobs
+    description: Manage EPM job execution and monitoring
+  - name: Data Management
+    description: Data import, export, and integration operations
+  - name: Migration
+    description: Application migration and lifecycle management
+  - name: Reports
+    description: Retrieve and manage EPM reports
+  - name: Applications
+    description: Manage EPM application metadata and dimensions
+security:
+  - basicAuth: []
+paths:
+  /HyperionPlanning/rest/v3/applications:
+    get:
+      operationId: listApplications
+      summary: List EPM applications
+      description: >-
+        Retrieve a list of EPM Planning applications available in
+        the service instance.
+      tags:
+        - Applications
+      responses:
+        '200':
+          description: Applications retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Application'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}:
+    get:
+      operationId: getApplication
+      summary: Get an EPM application
+      description: >-
+        Retrieve metadata and configuration details for a specific
+        EPM Planning application.
+      tags:
+        - Applications
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          description: Application name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Application details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions:
+    get:
+      operationId: listDimensions
+      summary: List dimensions
+      description: >-
+        Retrieve the list of dimensions defined in an EPM Planning
+        application.
+      tags:
+        - Applications
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Dimensions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Dimension'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions/{dimensionName}/members:
+    get:
+      operationId: listDimensionMembers
+      summary: List dimension members
+      description: >-
+        Retrieve members belonging to a specific dimension in an
+        EPM Planning application.
+      tags:
+        - Applications
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: dimensionName
+          in: path
+          required: true
+          description: Dimension name
+          schema:
+            type: string
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Dimension members retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DimensionMember'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/plantypes/{planType}/exportdataslice:
+    post:
+      operationId: exportDataSlice
+      summary: Export a data slice
+      description: >-
+        Export planning data for a specified slice defined by dimension
+        member selections, point-of-view, and filters.
+      tags:
+        - Planning
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: planType
+          in: path
+          required: true
+          description: Plan type name
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSliceRequest'
+      responses:
+        '200':
+          description: Data slice exported
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DataSliceResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/plantypes/{planType}/importdataslice:
+    post:
+      operationId: importDataSlice
+      summary: Import a data slice
+      description: >-
+        Import planning data into a specified plan type using dimension
+        member intersections and values.
+      tags:
+        - Planning
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: planType
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSliceImport'
+      responses:
+        '200':
+          description: Data slice imported
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  details:
+                    type: string
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/jobs:
+    get:
+      operationId: listJobs
+      summary: List jobs
+      description: >-
+        Retrieve a list of EPM jobs including business rules, data maps,
+        and scheduled maintenance tasks.
+      tags:
+        - Jobs
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Jobs retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Job'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: executeJob
+      summary: Execute a job
+      description: >-
+        Execute an EPM job such as a business rule, data map, refresh
+        database, or cube refresh.
+      tags:
+        - Jobs
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobExecute'
+      responses:
+        '200':
+          description: Job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/jobs/{jobId}:
+    get:
+      operationId: getJobStatus
+      summary: Get job status
+      description: >-
+        Retrieve execution status and details for a specific EPM job.
+      tags:
+        - Jobs
+      parameters:
+        - name: applicationName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: jobId
+          in: path
+          required: true
+          description: Job identifier
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Job status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /interop/rest/v3/files:
+    get:
+      operationId: listFiles
+      summary: List files
+      description: >-
+        Retrieve a list of files in the EPM inbox and outbox used for
+        data import, export, and snapshot operations.
+      tags:
+        - Data Management
+      responses:
+        '200':
+          description: Files retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/File'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /interop/rest/v3/files/{fileName}:
+    get:
+      operationId: downloadFile
+      summary: Download a file
+      description: >-
+        Download a file from the EPM inbox or outbox.
+      tags:
+        - Data Management
+      parameters:
+        - name: fileName
+          in: path
+          required: true
+          description: File name including path
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      operationId: uploadFile
+      summary: Upload a file
+      description: >-
+        Upload a file to the EPM inbox for data import operations.
+      tags:
+        - Data Management
+      parameters:
+        - name: fileName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: File uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  details:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    delete:
+      operationId: deleteFile
+      summary: Delete a file
+      description: >-
+        Delete a file from the EPM inbox or outbox.
+      tags:
+        - Data Management
+      parameters:
+        - name: fileName
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /interop/rest/v3/snapshots:
+    get:
+      operationId: listSnapshots
+      summary: List snapshots
+      description: >-
+        Retrieve a list of application snapshots available for migration
+        and backup operations.
+      tags:
+        - Migration
+      responses:
+        '200':
+          description: Snapshots retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Snapshot'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /interop/rest/v3/snapshots/{snapshotName}:
+    delete:
+      operationId: deleteSnapshot
+      summary: Delete a snapshot
+      description: Delete an application snapshot.
+      tags:
+        - Migration
+      parameters:
+        - name: snapshotName
+          in: path
+          required: true
+          description: Snapshot name
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Snapshot deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication with Oracle EPM Cloud credentials
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    Application:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Application name
+        type:
+          type: string
+          description: Application type
+        description:
+          type: string
+          description: Application description
+        planTypes:
+          type: array
+          items:
+            type: string
+          description: Available plan types
+        createdBy:
+          type: string
+          description: Created by user
+        createdDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+    Dimension:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Dimension name
+        type:
+          type: string
+          description: Dimension type
+          enum:
+            - Account
+            - Entity
+            - Period
+            - Year
+            - Scenario
+            - Version
+            - Currency
+            - Attribute
+            - User Defined
+        numberOfMembers:
+          type: integer
+          description: Number of members in the dimension
+    DimensionMember:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Member name
+        parentName:
+          type: string
+          description: Parent member name
+        dimensionName:
+          type: string
+          description: Dimension name
+        dataStorageType:
+          type: string
+          description: Data storage type
+          enum:
+            - Store Data
+            - Dynamic Calc
+            - Never Share
+            - Shared Member
+            - Label Only
+        memberFormula:
+          type: string
+          description: Member formula
+        alias:
+          type: string
+          description: Member alias
+    DataSliceRequest:
+      type: object
+      properties:
+        exportPlanningData:
+          type: boolean
+          description: Whether to export planning data
+          default: true
+        gridDefinition:
+          type: object
+          properties:
+            suppressMissingBlocks:
+              type: boolean
+            suppressMissingRows:
+              type: boolean
+            pov:
+              type: object
+              description: Point-of-view dimension selections
+            columns:
+              type: array
+              items:
+                type: object
+              description: Column dimension members
+            rows:
+              type: array
+              items:
+                type: object
+              description: Row dimension members
+    DataSliceResponse:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              headers:
+                type: array
+                items:
+                  type: string
+              data:
+                type: array
+                items:
+                  type: number
+          description: Data rows with headers and values
+        status:
+          type: integer
+    DataSliceImport:
+      type: object
+      properties:
+        aggregateEssbaseData:
+          type: boolean
+          description: Whether to aggregate data
+        cellNotesOption:
+          type: string
+          description: Cell notes handling option
+        dateFormat:
+          type: string
+          description: Date format for the import
+        dataGrid:
+          type: object
+          properties:
+            pov:
+              type: array
+              items:
+                type: string
+            columns:
+              type: array
+              items:
+                type: array
+                items:
+                  type: string
+            rows:
+              type: array
+              items:
+                type: object
+                properties:
+                  headers:
+                    type: array
+                    items:
+                      type: string
+                  data:
+                    type: array
+                    items:
+                      type: number
+    Job:
+      type: object
+      properties:
+        jobId:
+          type: integer
+          description: Job identifier
+        jobName:
+          type: string
+          description: Job name
+        jobType:
+          type: string
+          description: Job type
+          enum:
+            - Rules
+            - Data Map
+            - Cube Refresh
+            - Clear Cube
+            - Refresh Database
+            - Smart Push
+            - Import Data
+            - Export Data
+            - Copy Data
+        description:
+          type: string
+          description: Job description
+    JobExecute:
+      type: object
+      required:
+        - jobName
+        - jobType
+      properties:
+        jobName:
+          type: string
+          description: Name of the job to execute
+        jobType:
+          type: string
+          description: Type of job
+          enum:
+            - Rules
+            - Data Map
+            - Cube Refresh
+            - Clear Cube
+            - Refresh Database
+            - Smart Push
+            - Import Data
+            - Export Data
+            - Copy Data
+        parameters:
+          type: object
+          description: Job-specific parameters
+          additionalProperties:
+            type: string
+    JobStatus:
+      type: object
+      properties:
+        jobId:
+          type: integer
+          description: Job identifier
+        jobName:
+          type: string
+          description: Job name
+        jobType:
+          type: string
+          description: Job type
+        status:
+          type: integer
+          description: Status code (-1 processing, 0 success, >0 error)
+        descriptiveStatus:
+          type: string
+          description: Human-readable status
+          enum:
+            - Processing
+            - Completed
+            - Completed With Errors
+            - Failed
+        details:
+          type: string
+          description: Execution details
+        startTime:
+          type: string
+          format: date-time
+          description: Job start time
+        endTime:
+          type: string
+          format: date-time
+          description: Job end time
+    File:
+      type: object
+      properties:
+        name:
+          type: string
+          description: File name
+        path:
+          type: string
+          description: File path
+        size:
+          type: integer
+          description: File size in bytes
+        lastModifiedTime:
+          type: string
+          format: date-time
+          description: Last modified timestamp
+        isDirectory:
+          type: boolean
+          description: Whether the entry is a directory
+    Snapshot:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Snapshot name
+        type:
+          type: string
+          description: Snapshot type
+          enum:
+            - LCM
+            - External
+        size:
+          type: integer
+          description: Snapshot size in bytes
+        lastModifiedTime:
+          type: string
+          format: date-time
+          description: Last modified timestamp

@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oracle.com/schemas/oracle-fusion/account.json",
+  "title": "Oracle Fusion Cloud CX Account",
+  "description": "A customer account (organization party) in Oracle Fusion Cloud CX representing a company or organization that is a prospect, customer, or partner in the CRM system.",
+  "type": "object",
+  "required": ["OrganizationName"],
+  "properties": {
+    "PartyId": {
+      "type": "integer",
+      "description": "Unique system-generated party identifier"
+    },
+    "PartyNumber": {
+      "type": "string",
+      "description": "Unique party number for the account"
+    },
+    "OrganizationName": {
+      "type": "string",
+      "description": "Organization (account) name",
+      "minLength": 1,
+      "maxLength": 360
+    },
+    "Type": {
+      "type": "string",
+      "description": "Account type classification"
+    },
+    "OwnerName": {
+      "type": "string",
+      "description": "Account owner (sales representative) name"
+    },
+    "Industry": {
+      "type": "string",
+      "description": "Industry classification (e.g., Technology, Healthcare, Finance)"
+    },
+    "AnnualRevenue": {
+      "type": "number",
+      "description": "Estimated annual revenue of the organization",
+      "minimum": 0
+    },
+    "NumberOfEmployees": {
+      "type": "integer",
+      "description": "Approximate number of employees",
+      "minimum": 0
+    },
+    "PhoneNumber": {
+      "type": "string",
+      "description": "Primary phone number"
+    },
+    "EmailAddress": {
+      "type": "string",
+      "format": "email",
+      "description": "Primary email address"
+    },
+    "URL": {
+      "type": "string",
+      "format": "uri",
+      "description": "Company website URL"
+    },
+    "PrimaryAddress": {
+      "$ref": "#/$defs/Address"
+    },
+    "CustomerClassification": {
+      "type": "string",
+      "description": "Customer classification or segmentation"
+    },
+    "Status": {
+      "type": "string",
+      "enum": ["Active", "Inactive"],
+      "description": "Account status"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "LastUpdateDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification timestamp"
+    }
+  },
+  "$defs": {
+    "Address": {
+      "type": "object",
+      "description": "Physical address for the account",
+      "properties": {
+        "AddressLine1": {
+          "type": "string",
+          "description": "Primary address line"
+        },
+        "AddressLine2": {
+          "type": "string",
+          "description": "Secondary address line"
+        },
+        "City": {
+          "type": "string",
+          "description": "City name"
+        },
+        "State": {
+          "type": "string",
+          "description": "State or province"
+        },
+        "PostalCode": {
+          "type": "string",
+          "description": "Postal or ZIP code"
+        },
+        "Country": {
+          "type": "string",
+          "description": "Country name or ISO code"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oracle.com/schemas/oracle-fusion/worker.json",
+  "title": "Oracle Fusion Cloud Worker",
+  "description": "A worker record in Oracle Fusion Cloud HCM representing an employee or contingent worker, including person details, employment information, and work assignments.",
+  "type": "object",
+  "required": ["FirstName", "LastName"],
+  "properties": {
+    "PersonId": {
+      "type": "integer",
+      "description": "Unique system-generated person identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Unique person number assigned to the worker"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "Worker first name",
+      "minLength": 1,
+      "maxLength": 150
+    },
+    "LastName": {
+      "type": "string",
+      "description": "Worker last name",
+      "minLength": 1,
+      "maxLength": 150
+    },
+    "MiddleName": {
+      "type": "string",
+      "description": "Worker middle name",
+      "maxLength": 60
+    },
+    "DisplayName": {
+      "type": "string",
+      "description": "Full formatted display name"
+    },
+    "DateOfBirth": {
+      "type": "string",
+      "format": "date",
+      "description": "Worker date of birth"
+    },
+    "WorkEmail": {
+      "type": "string",
+      "format": "email",
+      "description": "Primary work email address"
+    },
+    "WorkPhoneNumber": {
+      "type": "string",
+      "description": "Primary work phone number"
+    },
+    "HireDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Original hire date"
+    },
+    "EffectiveStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective start date of the current record"
+    },
+    "WorkerType": {
+      "type": "string",
+      "enum": ["Employee", "Contingent Worker"],
+      "description": "Classification of the worker relationship"
+    },
+    "PersonType": {
+      "type": "string",
+      "description": "Detailed person type classification"
+    },
+    "Citizenship": {
+      "type": "string",
+      "description": "Worker citizenship status"
+    },
+    "Assignment": {
+      "$ref": "#/$defs/Assignment"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "LastUpdateDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification timestamp"
+    }
+  },
+  "$defs": {
+    "Assignment": {
+      "type": "object",
+      "description": "Work assignment details for the worker",
+      "properties": {
+        "AssignmentId": {
+          "type": "integer",
+          "description": "Assignment identifier"
+        },
+        "AssignmentNumber": {
+          "type": "string",
+          "description": "Assignment number"
+        },
+        "BusinessUnitName": {
+          "type": "string",
+          "description": "Business unit name"
+        },
+        "DepartmentName": {
+          "type": "string",
+          "description": "Department name"
+        },
+        "JobName": {
+          "type": "string",
+          "description": "Job title"
+        },
+        "PositionName": {
+          "type": "string",
+          "description": "Position name"
+        },
+        "GradeName": {
+          "type": "string",
+          "description": "Grade name"
+        },
+        "LocationName": {
+          "type": "string",
+          "description": "Work location"
+        },
+        "ManagerDisplayName": {
+          "type": "string",
+          "description": "Direct manager display name"
+        },
+        "AssignmentStatus": {
+          "type": "string",
+          "enum": ["Active", "Suspended", "Inactive"],
+          "description": "Current status of the assignment"
+        },
+        "EffectiveStartDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Assignment effective start date"
+        }
+      }
+    }
+  }
+}

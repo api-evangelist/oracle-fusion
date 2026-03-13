@@ -1,0 +1,1130 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Common Features REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud Applications Common features, providing
+    access to shared services such as attachments, flexfields, lookup types,
+    roles, users, security, scheduled processes, announcements, and approval
+    workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Instance
+    variables:
+      instance:
+        default: servername
+        description: Your Oracle Cloud instance identifier
+tags:
+  - name: Common Lookups
+    description: Manage lookup types and lookup codes
+  - name: Announcements
+    description: Manage application announcements
+  - name: Persons
+    description: Manage person records
+  - name: Roles
+    description: Manage security roles
+  - name: Scheduled Processes
+    description: Manage and monitor scheduled processes
+  - name: Manage Tasks
+    description: Manage BPM workflow tasks and approvals
+  - name: Features
+    description: Manage application features
+  - name: Audit
+    description: Audit trail and setup operations
+security:
+  - bearerAuth: []
+paths:
+  /fscmRestApi/resources/11.13.18.05/commonLookups:
+    get:
+      operationId: listCommonLookups
+      summary: List common lookups
+      description: >-
+        Retrieve common lookup type definitions and their associated
+        lookup codes used across Fusion Cloud applications.
+      tags:
+        - Common Lookups
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Common lookups retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CommonLookup'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createCommonLookup
+      summary: Create a common lookup
+      description: Create a new common lookup type.
+      tags:
+        - Common Lookups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonLookupCreate'
+      responses:
+        '201':
+          description: Common lookup created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonLookup'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}:
+    get:
+      operationId: getCommonLookup
+      summary: Get a common lookup
+      description: Retrieve a specific common lookup type and its codes.
+      tags:
+        - Common Lookups
+      parameters:
+        - name: LookupType
+          in: path
+          required: true
+          description: Lookup type identifier
+          schema:
+            type: string
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Common lookup details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonLookup'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateCommonLookup
+      summary: Update a common lookup
+      description: Update an existing common lookup type.
+      tags:
+        - Common Lookups
+      parameters:
+        - name: LookupType
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonLookupCreate'
+      responses:
+        '200':
+          description: Common lookup updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteCommonLookup
+      summary: Delete a common lookup
+      description: Delete a common lookup type.
+      tags:
+        - Common Lookups
+      parameters:
+        - name: LookupType
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Common lookup deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes:
+    get:
+      operationId: listLookupCodes
+      summary: List lookup codes for a lookup type
+      description: Retrieve lookup codes belonging to a specific lookup type.
+      tags:
+        - Common Lookups
+      parameters:
+        - name: LookupType
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Lookup codes retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LookupCode'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      operationId: createLookupCode
+      summary: Create a lookup code
+      description: Create a new lookup code within a lookup type.
+      tags:
+        - Common Lookups
+      parameters:
+        - name: LookupType
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LookupCodeCreate'
+      responses:
+        '201':
+          description: Lookup code created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/announcements:
+    get:
+      operationId: listAnnouncements
+      summary: List announcements
+      description: >-
+        Retrieve application announcements visible to users across
+        Fusion Cloud applications.
+      tags:
+        - Announcements
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Announcements retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Announcement'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAnnouncement
+      summary: Create an announcement
+      description: Create a new application announcement.
+      tags:
+        - Announcements
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementCreate'
+      responses:
+        '201':
+          description: Announcement created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}:
+    get:
+      operationId: getAnnouncement
+      summary: Get an announcement
+      description: Retrieve a specific announcement.
+      tags:
+        - Announcements
+      parameters:
+        - name: AnnouncementId
+          in: path
+          required: true
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Announcement details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAnnouncement
+      summary: Update an announcement
+      description: Update an existing application announcement.
+      tags:
+        - Announcements
+      parameters:
+        - name: AnnouncementId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementCreate'
+      responses:
+        '200':
+          description: Announcement updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAnnouncement
+      summary: Delete an announcement
+      description: Delete an existing application announcement.
+      tags:
+        - Announcements
+      parameters:
+        - name: AnnouncementId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Announcement deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/persons:
+    get:
+      operationId: listPersons
+      summary: List persons
+      description: Retrieve person records used across Fusion Cloud applications.
+      tags:
+        - Persons
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Persons retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Person'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createPerson
+      summary: Create a person
+      description: Create a new person record.
+      tags:
+        - Persons
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonCreate'
+      responses:
+        '201':
+          description: Person created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/persons/{Personid}:
+    get:
+      operationId: getPerson
+      summary: Get a person
+      description: Retrieve a specific person record by identifier.
+      tags:
+        - Persons
+      parameters:
+        - name: Personid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Person details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updatePerson
+      summary: Update a person
+      description: Update an existing person record.
+      tags:
+        - Persons
+      parameters:
+        - name: Personid
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PersonCreate'
+      responses:
+        '200':
+          description: Person updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deletePerson
+      summary: Delete a person
+      description: Delete an existing person record.
+      tags:
+        - Persons
+      parameters:
+        - name: Personid
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Person deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /hcmRestApi/scim/Roles:
+    get:
+      operationId: listRoles
+      summary: List roles
+      description: Retrieve security roles defined in the application.
+      tags:
+        - Roles
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: Roles retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Role'
+                  count:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/scim/Roles/{id}:
+    get:
+      operationId: getRole
+      summary: Get a role
+      description: Retrieve a specific security role.
+      tags:
+        - Roles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Role details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Role'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateRole
+      summary: Update a role
+      description: Update an existing security role definition.
+      tags:
+        - Roles
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RoleUpdate'
+      responses:
+        '200':
+          description: Role updated
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /ess/rest/scheduler/v1/requests:
+    get:
+      operationId: listScheduledRequests
+      summary: List scheduled process requests
+      description: >-
+        Query scheduled process (ESS) job requests and their execution status.
+      tags:
+        - Scheduled Processes
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: Scheduled requests retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ScheduledRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: submitScheduledRequest
+      summary: Submit a scheduled process request
+      description: Submit a new scheduled process job for execution.
+      tags:
+        - Scheduled Processes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledRequestSubmit'
+      responses:
+        '201':
+          description: Request submitted
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /ess/rest/scheduler/v1/requests/{requestId}:
+    get:
+      operationId: getScheduledRequest
+      summary: Get a scheduled process request
+      description: Retrieve status and details of a scheduled process request.
+      tags:
+        - Scheduled Processes
+      parameters:
+        - name: requestId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Request details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScheduledRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /bpm/api/4.0/tasks:
+    get:
+      operationId: listWorkflowTasks
+      summary: List workflow tasks
+      description: >-
+        Retrieve BPM workflow tasks including approval requests and
+        action items assigned to users.
+      tags:
+        - Manage Tasks
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: Workflow tasks retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WorkflowTask'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /bpm/api/4.0/tasks/{id}:
+    get:
+      operationId: getWorkflowTask
+      summary: Get a workflow task
+      description: Retrieve a specific workflow task.
+      tags:
+        - Manage Tasks
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowTask'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      operationId: performTaskAction
+      summary: Perform a task action
+      description: >-
+        Perform an action on a workflow task such as approve, reject,
+        reassign, or escalate.
+      tags:
+        - Manage Tasks
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskAction'
+      responses:
+        '200':
+          description: Action performed
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/features:
+    get:
+      operationId: listFeatures
+      summary: List features
+      description: >-
+        Retrieve application feature definitions and their enabled status.
+      tags:
+        - Features
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Features retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Feature'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/fndAuditRESTService/audittrail/getaudithistory:
+    get:
+      operationId: getAuditHistory
+      summary: Get audit history
+      description: >-
+        Retrieve audit trail history for tracked business objects.
+      tags:
+        - Audit
+      responses:
+        '200':
+          description: Audit history retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    CommonLookup:
+      type: object
+      properties:
+        LookupType:
+          type: string
+          description: Lookup type identifier
+        Meaning:
+          type: string
+          description: Display name for the lookup type
+        Description:
+          type: string
+          description: Lookup type description
+        ModuleType:
+          type: string
+          description: Module that owns the lookup
+        CreationDate:
+          type: string
+          format: date-time
+    CommonLookupCreate:
+      type: object
+      required:
+        - LookupType
+        - Meaning
+      properties:
+        LookupType:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+    LookupCode:
+      type: object
+      properties:
+        LookupCode:
+          type: string
+          description: Lookup code value
+        Meaning:
+          type: string
+          description: Display meaning
+        Description:
+          type: string
+          description: Code description
+        EnabledFlag:
+          type: boolean
+          description: Whether the code is enabled
+        StartDateActive:
+          type: string
+          format: date
+          description: Start date for active period
+        EndDateActive:
+          type: string
+          format: date
+          description: End date for active period
+        DisplaySequence:
+          type: integer
+          description: Display order sequence
+    LookupCodeCreate:
+      type: object
+      required:
+        - LookupCode
+        - Meaning
+      properties:
+        LookupCode:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+        EnabledFlag:
+          type: boolean
+        DisplaySequence:
+          type: integer
+    Announcement:
+      type: object
+      properties:
+        AnnouncementId:
+          type: integer
+          description: Announcement identifier
+        Subject:
+          type: string
+          description: Announcement subject
+        Description:
+          type: string
+          description: Announcement body text
+        StartDate:
+          type: string
+          format: date
+          description: Start date for visibility
+        EndDate:
+          type: string
+          format: date
+          description: End date for visibility
+        Severity:
+          type: string
+          description: Severity level
+          enum:
+            - Information
+            - Warning
+            - Critical
+        CreatedBy:
+          type: string
+          description: Creator username
+        CreationDate:
+          type: string
+          format: date-time
+    AnnouncementCreate:
+      type: object
+      required:
+        - Subject
+        - StartDate
+      properties:
+        Subject:
+          type: string
+        Description:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Severity:
+          type: string
+          enum:
+            - Information
+            - Warning
+            - Critical
+    Person:
+      type: object
+      properties:
+        Personid:
+          type: integer
+          description: Person identifier
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        DisplayName:
+          type: string
+          description: Display name
+        Email:
+          type: string
+          format: email
+          description: Email address
+        PhoneNumber:
+          type: string
+          description: Phone number
+        CreationDate:
+          type: string
+          format: date-time
+    PersonCreate:
+      type: object
+      required:
+        - FirstName
+        - LastName
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        Email:
+          type: string
+          format: email
+        PhoneNumber:
+          type: string
+    Role:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Role identifier
+        displayName:
+          type: string
+          description: Role display name
+        description:
+          type: string
+          description: Role description
+        roleCategory:
+          type: string
+          description: Role category
+    RoleUpdate:
+      type: object
+      properties:
+        displayName:
+          type: string
+        description:
+          type: string
+    ScheduledRequest:
+      type: object
+      properties:
+        requestId:
+          type: integer
+          description: Request identifier
+        jobDefinitionName:
+          type: string
+          description: Job definition name
+        submittedBy:
+          type: string
+          description: Submitted by username
+        submittedDate:
+          type: string
+          format: date-time
+          description: Submission timestamp
+        status:
+          type: string
+          description: Request status
+          enum:
+            - Wait
+            - Ready
+            - Running
+            - Completed
+            - Blocked
+            - Error
+            - Warning
+            - Cancelled
+            - Paused
+            - Hold
+        startDate:
+          type: string
+          format: date-time
+          description: Execution start time
+        endDate:
+          type: string
+          format: date-time
+          description: Execution end time
+    ScheduledRequestSubmit:
+      type: object
+      required:
+        - jobDefinitionName
+      properties:
+        jobDefinitionName:
+          type: string
+        jobPackageName:
+          type: string
+        submissionNotes:
+          type: string
+        parameterList:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+    WorkflowTask:
+      type: object
+      properties:
+        taskId:
+          type: string
+          description: Task identifier
+        title:
+          type: string
+          description: Task title
+        taskDefinitionName:
+          type: string
+          description: Task definition name
+        creator:
+          type: string
+          description: Task creator
+        assignees:
+          type: array
+          items:
+            type: string
+          description: Assigned users
+        state:
+          type: string
+          description: Task state
+          enum:
+            - Assigned
+            - Completed
+            - Suspended
+            - Withdrawn
+            - Expired
+            - Errored
+            - Alerted
+            - Information Requested
+        priority:
+          type: integer
+          description: Task priority (1 highest)
+        createdDate:
+          type: string
+          format: date-time
+        expirationDate:
+          type: string
+          format: date-time
+    TaskAction:
+      type: object
+      required:
+        - action
+      properties:
+        action:
+          type: string
+          description: Action to perform
+          enum:
+            - APPROVE
+            - REJECT
+            - REASSIGN
+            - ESCALATE
+            - SUSPEND
+            - WITHDRAW
+            - PUSHBACK
+            - REQUEST_INFORMATION
+        comment:
+          type: string
+          description: Comment for the action
+        assignee:
+          type: string
+          description: Assignee for reassign action
+    Feature:
+      type: object
+      properties:
+        FeatureCode:
+          type: string
+          description: Feature code identifier
+        FeatureName:
+          type: string
+          description: Feature display name
+        FeatureDescription:
+          type: string
+          description: Feature description
+        EnabledFlag:
+          type: boolean
+          description: Whether the feature is enabled

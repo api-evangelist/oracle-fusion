@@ -1,0 +1,1173 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud HCM REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud Human Capital Management, enabling
+    integration with core HR, talent management, workforce management, and
+    payroll systems. The API provides access to employee records, absence
+    management, benefits, compensation, recruiting, and learning resources.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud HCM REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/farws/
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Instance
+    variables:
+      instance:
+        default: servername
+        description: Your Oracle Cloud instance identifier
+tags:
+  - name: Workers
+    description: Manage worker (employee and contingent worker) records
+  - name: Assignments
+    description: Manage work assignments and employment details
+  - name: Absences
+    description: Absence management and leave tracking
+  - name: Compensation
+    description: Salary and compensation management
+  - name: Recruiting
+    description: Job requisitions and candidate management
+  - name: Talent Profiles
+    description: Talent profiles, skills, and competencies
+  - name: Learning
+    description: Learning records and course management
+  - name: Payroll
+    description: Payroll processing and results
+security:
+  - bearerAuth: []
+paths:
+  /hcmRestApi/resources/11.13.18.05/workers:
+    get:
+      operationId: listWorkers
+      summary: List workers
+      description: >-
+        Retrieve a collection of worker records including employees and
+        contingent workers. Each worker record includes person information,
+        names, and references to work assignments.
+      tags:
+        - Workers
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Workers retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Worker'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createWorker
+      summary: Create a worker
+      description: >-
+        Hire a new employee or create a contingent worker record with person
+        details, names, and an initial work assignment.
+      tags:
+        - Workers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkerCreate'
+      responses:
+        '201':
+          description: Worker created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/workers/{workersUniqID}:
+    get:
+      operationId: getWorker
+      summary: Get a worker
+      description: Retrieve a specific worker record by unique identifier.
+      tags:
+        - Workers
+      parameters:
+        - $ref: '#/components/parameters/workersUniqID'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Worker details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateWorker
+      summary: Update a worker
+      description: Update an existing worker record.
+      tags:
+        - Workers
+      parameters:
+        - $ref: '#/components/parameters/workersUniqID'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkerUpdate'
+      responses:
+        '200':
+          description: Worker updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /hcmRestApi/resources/11.13.18.05/emps:
+    get:
+      operationId: listEmployees
+      summary: List employees
+      description: >-
+        Retrieve a collection of employee records with employment and
+        assignment details.
+      tags:
+        - Workers
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Employees retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Employee'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/assignmentsInfo:
+    get:
+      operationId: listAssignments
+      summary: List assignments
+      description: >-
+        Retrieve work assignment records including position, job, department,
+        location, and manager information for workers.
+      tags:
+        - Assignments
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Assignments retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Assignment'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/absences:
+    get:
+      operationId: listAbsences
+      summary: List absences
+      description: >-
+        Retrieve absence records for workers including vacation, sick leave,
+        and other absence types.
+      tags:
+        - Absences
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Absences retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Absence'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAbsence
+      summary: Create an absence
+      description: Create a new absence record for a worker.
+      tags:
+        - Absences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AbsenceCreate'
+      responses:
+        '201':
+          description: Absence created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/absences/{AbsenceId}:
+    get:
+      operationId: getAbsence
+      summary: Get an absence
+      description: Retrieve a specific absence record.
+      tags:
+        - Absences
+      parameters:
+        - name: AbsenceId
+          in: path
+          required: true
+          description: Unique identifier for the absence
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Absence details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAbsence
+      summary: Update an absence
+      description: Update an existing absence record.
+      tags:
+        - Absences
+      parameters:
+        - name: AbsenceId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AbsenceCreate'
+      responses:
+        '200':
+          description: Absence updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAbsence
+      summary: Delete an absence
+      description: Delete an absence record.
+      tags:
+        - Absences
+      parameters:
+        - name: AbsenceId
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Absence deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /hcmRestApi/resources/11.13.18.05/compensationSalaries:
+    get:
+      operationId: listSalaries
+      summary: List compensation salaries
+      description: >-
+        Retrieve salary records for workers including base salary, components,
+        and salary history.
+      tags:
+        - Compensation
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Salaries retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Salary'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions:
+    get:
+      operationId: listJobRequisitions
+      summary: List job requisitions
+      description: >-
+        Retrieve open and filled job requisitions for recruiting operations.
+      tags:
+        - Recruiting
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Job requisitions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/JobRequisition'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/recruitingCandidates:
+    get:
+      operationId: listCandidates
+      summary: List recruiting candidates
+      description: >-
+        Retrieve candidate records for recruiting including application
+        status and candidate details.
+      tags:
+        - Recruiting
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Candidates retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Candidate'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/talentProfiles:
+    get:
+      operationId: listTalentProfiles
+      summary: List talent profiles
+      description: >-
+        Retrieve talent profiles for workers including skills, competencies,
+        qualifications, and career interests.
+      tags:
+        - Talent Profiles
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Talent profiles retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/TalentProfile'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/learningRecords:
+    get:
+      operationId: listLearningRecords
+      summary: List learning records
+      description: >-
+        Retrieve learning records for workers including course completions,
+        enrollments, and certifications.
+      tags:
+        - Learning
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Learning records retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LearningRecord'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/payrollResults:
+    get:
+      operationId: listPayrollResults
+      summary: List payroll results
+      description: >-
+        Retrieve payroll run results including earnings, deductions, and
+        net pay for workers.
+      tags:
+        - Payroll
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Payroll results retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PayrollResult'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 bearer token or basic authentication
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication with Oracle Fusion Cloud credentials
+  parameters:
+    workersUniqID:
+      name: workersUniqID
+      in: path
+      required: true
+      description: Unique identifier for the worker record
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    Worker:
+      type: object
+      properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        DateOfBirth:
+          type: string
+          format: date
+          description: Date of birth
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        MiddleName:
+          type: string
+          description: Middle name
+        DisplayName:
+          type: string
+          description: Full display name
+        WorkEmail:
+          type: string
+          format: email
+          description: Work email address
+        WorkPhoneNumber:
+          type: string
+          description: Work phone number
+        HireDate:
+          type: string
+          format: date
+          description: Original hire date
+        EffectiveStartDate:
+          type: string
+          format: date
+          description: Effective start date
+        WorkerType:
+          type: string
+          description: Type of worker
+          enum:
+            - Employee
+            - Contingent Worker
+        PersonType:
+          type: string
+          description: Person type classification
+        Citizenship:
+          type: string
+          description: Citizenship status
+        CreationDate:
+          type: string
+          format: date-time
+          description: Record creation timestamp
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Last update timestamp
+    WorkerCreate:
+      type: object
+      required:
+        - FirstName
+        - LastName
+        - HireDate
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        MiddleName:
+          type: string
+        DateOfBirth:
+          type: string
+          format: date
+        HireDate:
+          type: string
+          format: date
+        WorkerType:
+          type: string
+          enum:
+            - Employee
+            - Contingent Worker
+        WorkEmail:
+          type: string
+          format: email
+    WorkerUpdate:
+      type: object
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        MiddleName:
+          type: string
+        WorkEmail:
+          type: string
+          format: email
+        WorkPhoneNumber:
+          type: string
+    Employee:
+      type: object
+      properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        DisplayName:
+          type: string
+          description: Display name
+        HireDate:
+          type: string
+          format: date
+          description: Hire date
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Department:
+          type: string
+          description: Department name
+        JobName:
+          type: string
+          description: Job name
+        GradeName:
+          type: string
+          description: Grade name
+        LocationName:
+          type: string
+          description: Work location
+        ManagerName:
+          type: string
+          description: Manager display name
+        AssignmentStatus:
+          type: string
+          description: Assignment status
+    Assignment:
+      type: object
+      properties:
+        AssignmentId:
+          type: integer
+          description: Assignment identifier
+        AssignmentNumber:
+          type: string
+          description: Assignment number
+        AssignmentName:
+          type: string
+          description: Assignment name
+        PersonNumber:
+          type: string
+          description: Associated person number
+        BusinessUnitName:
+          type: string
+          description: Business unit
+        DepartmentName:
+          type: string
+          description: Department
+        JobName:
+          type: string
+          description: Job title
+        PositionName:
+          type: string
+          description: Position
+        GradeName:
+          type: string
+          description: Grade
+        LocationName:
+          type: string
+          description: Work location
+        ManagerPersonNumber:
+          type: string
+          description: Manager person number
+        ManagerDisplayName:
+          type: string
+          description: Manager name
+        AssignmentStatus:
+          type: string
+          description: Status of the assignment
+          enum:
+            - Active
+            - Suspended
+            - Inactive
+        EffectiveStartDate:
+          type: string
+          format: date
+          description: Effective start date
+        EffectiveEndDate:
+          type: string
+          format: date
+          description: Effective end date
+        WorkerType:
+          type: string
+          description: Worker type (Employee or Contingent Worker)
+    Absence:
+      type: object
+      properties:
+        AbsenceId:
+          type: integer
+          description: Absence record identifier
+        PersonNumber:
+          type: string
+          description: Person number of the worker
+        PersonName:
+          type: string
+          description: Worker display name
+        AbsenceType:
+          type: string
+          description: Type of absence
+        AbsenceReason:
+          type: string
+          description: Reason for absence
+        StartDate:
+          type: string
+          format: date
+          description: Absence start date
+        EndDate:
+          type: string
+          format: date
+          description: Absence end date
+        Duration:
+          type: number
+          format: double
+          description: Duration in days or hours
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure (Days or Hours)
+          enum:
+            - Days
+            - Hours
+        ApprovalStatus:
+          type: string
+          description: Approval status
+          enum:
+            - Submitted
+            - Approved
+            - Rejected
+            - Saved
+            - Withdrawn
+        Comments:
+          type: string
+          description: Comments
+    AbsenceCreate:
+      type: object
+      required:
+        - PersonNumber
+        - AbsenceType
+        - StartDate
+        - EndDate
+      properties:
+        PersonNumber:
+          type: string
+        AbsenceType:
+          type: string
+        AbsenceReason:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Duration:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+          enum:
+            - Days
+            - Hours
+        Comments:
+          type: string
+    Salary:
+      type: object
+      properties:
+        SalaryId:
+          type: integer
+          description: Salary record identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        AssignmentNumber:
+          type: string
+          description: Assignment number
+        SalaryAmount:
+          type: number
+          format: double
+          description: Annual salary amount
+        SalaryBasis:
+          type: string
+          description: Salary basis (Annual, Monthly, Hourly)
+        CurrencyCode:
+          type: string
+          description: Salary currency
+        EffectiveDate:
+          type: string
+          format: date
+          description: Effective date of the salary
+        SalaryRangeMinimum:
+          type: number
+          format: double
+          description: Minimum of salary range
+        SalaryRangeMidpoint:
+          type: number
+          format: double
+          description: Midpoint of salary range
+        SalaryRangeMaximum:
+          type: number
+          format: double
+          description: Maximum of salary range
+        CompaRatio:
+          type: number
+          format: double
+          description: Compa-ratio (salary divided by midpoint)
+    JobRequisition:
+      type: object
+      properties:
+        RequisitionId:
+          type: integer
+          description: Job requisition identifier
+        RequisitionNumber:
+          type: string
+          description: Requisition number
+        RequisitionTitle:
+          type: string
+          description: Job title
+        BusinessUnit:
+          type: string
+          description: Business unit
+        Department:
+          type: string
+          description: Department name
+        LocationName:
+          type: string
+          description: Job location
+        NumberOfOpenings:
+          type: integer
+          description: Number of open positions
+        Status:
+          type: string
+          description: Requisition status
+          enum:
+            - Draft
+            - Open
+            - On Hold
+            - Filled
+            - Closed
+            - Cancelled
+        PostingDate:
+          type: string
+          format: date
+          description: Date job was posted
+        TargetCloseDate:
+          type: string
+          format: date
+          description: Target close date
+        HiringManager:
+          type: string
+          description: Hiring manager name
+        Recruiter:
+          type: string
+          description: Assigned recruiter
+    Candidate:
+      type: object
+      properties:
+        CandidateId:
+          type: integer
+          description: Candidate identifier
+        CandidateNumber:
+          type: string
+          description: Candidate number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        Email:
+          type: string
+          format: email
+          description: Email address
+        PhoneNumber:
+          type: string
+          description: Phone number
+        CurrentEmployer:
+          type: string
+          description: Current employer
+        CurrentJobTitle:
+          type: string
+          description: Current job title
+        Source:
+          type: string
+          description: Candidate source
+        Status:
+          type: string
+          description: Candidate status
+          enum:
+            - New
+            - Under Review
+            - Interview
+            - Offer
+            - Hired
+            - Rejected
+            - Withdrawn
+    TalentProfile:
+      type: object
+      properties:
+        ProfileId:
+          type: integer
+          description: Profile identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        PersonName:
+          type: string
+          description: Person display name
+        ProfileType:
+          type: string
+          description: Profile type (Person, Model, Position)
+        ProfileStatus:
+          type: string
+          description: Profile status
+        Summary:
+          type: string
+          description: Profile summary or biography
+    LearningRecord:
+      type: object
+      properties:
+        LearningRecordId:
+          type: integer
+          description: Learning record identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        PersonName:
+          type: string
+          description: Person display name
+        CourseName:
+          type: string
+          description: Course or learning item name
+        CourseNumber:
+          type: string
+          description: Course number
+        CompletionDate:
+          type: string
+          format: date
+          description: Completion date
+        CompletionStatus:
+          type: string
+          description: Completion status
+          enum:
+            - Not Started
+            - In Progress
+            - Completed
+            - Waived
+        Score:
+          type: number
+          format: double
+          description: Score or grade achieved
+        CertificationName:
+          type: string
+          description: Associated certification name
+        ExpirationDate:
+          type: string
+          format: date
+          description: Certification expiration date
+    PayrollResult:
+      type: object
+      properties:
+        PayrollResultId:
+          type: integer
+          description: Payroll result identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        PersonName:
+          type: string
+          description: Person display name
+        PayrollName:
+          type: string
+          description: Payroll name
+        PeriodName:
+          type: string
+          description: Payroll period name
+        PeriodStartDate:
+          type: string
+          format: date
+          description: Period start date
+        PeriodEndDate:
+          type: string
+          format: date
+          description: Period end date
+        GrossEarnings:
+          type: number
+          format: double
+          description: Total gross earnings
+        TotalDeductions:
+          type: number
+          format: double
+          description: Total deductions
+        NetPay:
+          type: number
+          format: double
+          description: Net pay amount
+        CurrencyCode:
+          type: string
+          description: Payment currency
+        PaymentDate:
+          type: string
+          format: date
+          description: Payment date
+        PaymentMethod:
+          type: string
+          description: Payment method
+          enum:
+            - Direct Deposit
+            - Check
+            - Cash

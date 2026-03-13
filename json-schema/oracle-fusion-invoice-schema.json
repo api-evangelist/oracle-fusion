@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oracle.com/schemas/oracle-fusion/invoice.json",
+  "title": "Oracle Fusion Cloud Invoice",
+  "description": "An accounts payable invoice in Oracle Fusion Cloud ERP representing a financial obligation to a supplier for goods or services received, including header information, line items, and payment details.",
+  "type": "object",
+  "required": ["InvoiceNumber", "InvoiceAmount", "InvoiceCurrencyCode", "VendorName", "BusinessUnit"],
+  "properties": {
+    "InvoiceId": {
+      "type": "integer",
+      "description": "Unique system-generated identifier for the invoice"
+    },
+    "InvoiceNumber": {
+      "type": "string",
+      "description": "Supplier-assigned invoice number",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "InvoiceAmount": {
+      "type": "number",
+      "description": "Total invoice amount in the invoice currency"
+    },
+    "InvoiceCurrencyCode": {
+      "type": "string",
+      "description": "ISO 4217 currency code for the invoice amount",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "InvoiceDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the invoice as provided by the supplier"
+    },
+    "InvoiceType": {
+      "type": "string",
+      "enum": ["Standard", "Credit Memo", "Prepayment", "Mixed"],
+      "description": "Classification of the invoice type"
+    },
+    "VendorName": {
+      "type": "string",
+      "description": "Name of the supplier who issued the invoice"
+    },
+    "VendorNumber": {
+      "type": "string",
+      "description": "Unique supplier number in the system"
+    },
+    "VendorSiteCode": {
+      "type": "string",
+      "description": "Supplier site from which the invoice originates"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit responsible for the invoice"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Free-text description of the invoice",
+      "maxLength": 240
+    },
+    "PaymentTerms": {
+      "type": "string",
+      "description": "Payment terms (e.g., Net 30, 2/10 Net 30)"
+    },
+    "DueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date by which payment is due"
+    },
+    "AccountingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date used for accounting and period determination"
+    },
+    "ApprovalStatus": {
+      "type": "string",
+      "enum": ["Initiated", "Required", "Not Required", "Approved", "Rejected", "Wfapproved", "Manually Approved"],
+      "description": "Current status in the approval workflow"
+    },
+    "ValidationStatus": {
+      "type": "string",
+      "description": "Validation status indicating whether the invoice passed validation checks"
+    },
+    "PaidAmount": {
+      "type": "number",
+      "description": "Amount already paid against this invoice",
+      "minimum": 0
+    },
+    "AmountDue": {
+      "type": "number",
+      "description": "Remaining unpaid amount"
+    },
+    "CreatedBy": {
+      "type": "string",
+      "description": "Username of the person who created the invoice"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the invoice record was created"
+    },
+    "LastUpdateDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp when the invoice was last modified"
+    }
+  }
+}

@@ -1,0 +1,1111 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud SCM REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud Supply Chain Management, providing
+    access to inventory, order management, procurement, logistics, and
+    manufacturing capabilities. The API enables integration with supply
+    chain planning, product lifecycle management, service logistics, and
+    supply chain execution processes.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud SCM REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/fasrs/
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Instance
+    variables:
+      instance:
+        default: servername
+        description: Your Oracle Cloud instance identifier
+tags:
+  - name: Sales Orders
+    description: Manage sales orders and order lines
+  - name: Purchase Orders
+    description: Manage purchase orders and procurement
+  - name: Inventory
+    description: Inventory management and on-hand quantities
+  - name: Items
+    description: Product and item master management
+  - name: Shipments
+    description: Shipping and receiving operations
+  - name: Work Orders
+    description: Manufacturing work order management
+  - name: Suppliers
+    description: Supplier and vendor management
+security:
+  - bearerAuth: []
+paths:
+  /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub:
+    get:
+      operationId: listSalesOrders
+      summary: List sales orders
+      description: >-
+        Retrieve a collection of sales orders from Order Management
+        including order header details, order lines, and fulfillment
+        information.
+      tags:
+        - Sales Orders
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Sales orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SalesOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createSalesOrder
+      summary: Create a sales order
+      description: >-
+        Create a new sales order with header and order lines.
+      tags:
+        - Sales Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesOrderCreate'
+      responses:
+        '201':
+          description: Sales order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/{OrderId}:
+    get:
+      operationId: getSalesOrder
+      summary: Get a sales order
+      description: Retrieve a specific sales order by identifier.
+      tags:
+        - Sales Orders
+      parameters:
+        - name: OrderId
+          in: path
+          required: true
+          description: Unique order identifier
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Sales order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateSalesOrder
+      summary: Update a sales order
+      description: Update an existing sales order.
+      tags:
+        - Sales Orders
+      parameters:
+        - name: OrderId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesOrderUpdate'
+      responses:
+        '200':
+          description: Sales order updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/purchaseOrders:
+    get:
+      operationId: listPurchaseOrders
+      summary: List purchase orders
+      description: >-
+        Retrieve purchase order headers and lines for procurement operations.
+      tags:
+        - Purchase Orders
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Purchase orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PurchaseOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createPurchaseOrder
+      summary: Create a purchase order
+      description: Create a new purchase order with header and lines.
+      tags:
+        - Purchase Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseOrderCreate'
+      responses:
+        '201':
+          description: Purchase order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/purchaseOrders/{POHeaderId}:
+    get:
+      operationId: getPurchaseOrder
+      summary: Get a purchase order
+      description: Retrieve a specific purchase order.
+      tags:
+        - Purchase Orders
+      parameters:
+        - name: POHeaderId
+          in: path
+          required: true
+          description: Purchase order header identifier
+          schema:
+            type: integer
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Purchase order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updatePurchaseOrder
+      summary: Update a purchase order
+      description: Update an existing purchase order.
+      tags:
+        - Purchase Orders
+      parameters:
+        - name: POHeaderId
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseOrderUpdate'
+      responses:
+        '200':
+          description: Purchase order updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances:
+    get:
+      operationId: listOnhandBalances
+      summary: List inventory on-hand balances
+      description: >-
+        Retrieve on-hand inventory quantities by organization, item,
+        subinventory, and locator.
+      tags:
+        - Inventory
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: On-hand balances retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OnhandBalance'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/inventoryTransactions:
+    post:
+      operationId: createInventoryTransaction
+      summary: Create an inventory transaction
+      description: >-
+        Create inventory transactions such as receipts, issues, transfers,
+        and adjustments.
+      tags:
+        - Inventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryTransactionCreate'
+      responses:
+        '201':
+          description: Inventory transaction created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InventoryTransaction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/productItems:
+    get:
+      operationId: listItems
+      summary: List items
+      description: >-
+        Retrieve item master records including item attributes, categories,
+        and organization assignments.
+      tags:
+        - Items
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Items retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Item'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/shipments:
+    get:
+      operationId: listShipments
+      summary: List shipments
+      description: >-
+        Retrieve shipment records including delivery details, tracking,
+        and shipping status.
+      tags:
+        - Shipments
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Shipments retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Shipment'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/workOrders:
+    get:
+      operationId: listWorkOrders
+      summary: List work orders
+      description: >-
+        Retrieve manufacturing work orders including operations, materials,
+        and production status.
+      tags:
+        - Work Orders
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Work orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WorkOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createWorkOrder
+      summary: Create a work order
+      description: Create a new manufacturing work order.
+      tags:
+        - Work Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkOrderCreate'
+      responses:
+        '201':
+          description: Work order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/suppliers:
+    get:
+      operationId: listSuppliers
+      summary: List suppliers
+      description: >-
+        Retrieve supplier records including supplier sites, contacts,
+        and procurement details.
+      tags:
+        - Suppliers
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Suppliers retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Supplier'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createSupplier
+      summary: Create a supplier
+      description: Create a new supplier record.
+      tags:
+        - Suppliers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierCreate'
+      responses:
+        '201':
+          description: Supplier created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    SalesOrder:
+      type: object
+      properties:
+        OrderId:
+          type: integer
+          description: Order header identifier
+        OrderNumber:
+          type: string
+          description: Order number
+        OrderType:
+          type: string
+          description: Order type
+        CustomerName:
+          type: string
+          description: Customer name
+        CustomerNumber:
+          type: string
+          description: Customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        OrderDate:
+          type: string
+          format: date
+          description: Order date
+        RequestedShipDate:
+          type: string
+          format: date
+          description: Requested ship date
+        TotalAmount:
+          type: number
+          format: double
+          description: Total order amount
+        CurrencyCode:
+          type: string
+          description: Order currency
+        Status:
+          type: string
+          description: Order status
+          enum:
+            - Open
+            - Booked
+            - Closed
+            - Cancelled
+            - Awaiting Shipping
+            - Awaiting Billing
+        ShipToAddress:
+          type: string
+          description: Ship-to address
+        BillToAddress:
+          type: string
+          description: Bill-to address
+        CreationDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+    SalesOrderCreate:
+      type: object
+      required:
+        - OrderType
+        - CustomerName
+        - BusinessUnit
+      properties:
+        OrderType:
+          type: string
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        OrderDate:
+          type: string
+          format: date
+        RequestedShipDate:
+          type: string
+          format: date
+        CurrencyCode:
+          type: string
+    SalesOrderUpdate:
+      type: object
+      properties:
+        RequestedShipDate:
+          type: string
+          format: date
+        Status:
+          type: string
+    PurchaseOrder:
+      type: object
+      properties:
+        POHeaderId:
+          type: integer
+          description: Purchase order header identifier
+        OrderNumber:
+          type: string
+          description: PO number
+        ProcurementBusinessUnit:
+          type: string
+          description: Procurement business unit
+        SupplierName:
+          type: string
+          description: Supplier name
+        SupplierNumber:
+          type: string
+          description: Supplier number
+        SupplierSite:
+          type: string
+          description: Supplier site
+        BuyerName:
+          type: string
+          description: Buyer name
+        OrderDate:
+          type: string
+          format: date
+          description: PO date
+        TotalAmount:
+          type: number
+          format: double
+          description: Total PO amount
+        CurrencyCode:
+          type: string
+          description: PO currency
+        Status:
+          type: string
+          description: PO status
+          enum:
+            - Incomplete
+            - Open
+            - Closed
+            - Cancelled
+            - On Hold
+            - Pending Approval
+            - Approved
+            - Rejected
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        ShipToLocation:
+          type: string
+          description: Ship-to location
+        BillToLocation:
+          type: string
+          description: Bill-to location
+        CreationDate:
+          type: string
+          format: date-time
+    PurchaseOrderCreate:
+      type: object
+      required:
+        - ProcurementBusinessUnit
+        - SupplierName
+      properties:
+        ProcurementBusinessUnit:
+          type: string
+        SupplierName:
+          type: string
+        SupplierNumber:
+          type: string
+        SupplierSite:
+          type: string
+        BuyerName:
+          type: string
+        CurrencyCode:
+          type: string
+        PaymentTerms:
+          type: string
+    PurchaseOrderUpdate:
+      type: object
+      properties:
+        Status:
+          type: string
+        PaymentTerms:
+          type: string
+    OnhandBalance:
+      type: object
+      properties:
+        OrganizationId:
+          type: integer
+          description: Inventory organization identifier
+        OrganizationCode:
+          type: string
+          description: Organization code
+        OrganizationName:
+          type: string
+          description: Organization name
+        ItemNumber:
+          type: string
+          description: Item number
+        ItemDescription:
+          type: string
+          description: Item description
+        Subinventory:
+          type: string
+          description: Subinventory code
+        Locator:
+          type: string
+          description: Locator name
+        LotNumber:
+          type: string
+          description: Lot number
+        SerialNumber:
+          type: string
+          description: Serial number
+        OnhandQuantity:
+          type: number
+          format: double
+          description: On-hand quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        ReservedQuantity:
+          type: number
+          format: double
+          description: Reserved quantity
+        AvailableQuantity:
+          type: number
+          format: double
+          description: Available to transact quantity
+    InventoryTransaction:
+      type: object
+      properties:
+        TransactionId:
+          type: integer
+          description: Transaction identifier
+        TransactionType:
+          type: string
+          description: Transaction type
+        OrganizationCode:
+          type: string
+          description: Organization code
+        ItemNumber:
+          type: string
+          description: Item number
+        Subinventory:
+          type: string
+          description: Subinventory code
+        Quantity:
+          type: number
+          format: double
+          description: Transaction quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        TransactionDate:
+          type: string
+          format: date-time
+          description: Transaction date
+    InventoryTransactionCreate:
+      type: object
+      required:
+        - TransactionType
+        - OrganizationCode
+        - ItemNumber
+        - Subinventory
+        - Quantity
+        - UnitOfMeasure
+      properties:
+        TransactionType:
+          type: string
+        OrganizationCode:
+          type: string
+        ItemNumber:
+          type: string
+        Subinventory:
+          type: string
+        Locator:
+          type: string
+        Quantity:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+        LotNumber:
+          type: string
+        SerialNumber:
+          type: string
+    Item:
+      type: object
+      properties:
+        ItemId:
+          type: integer
+          description: Item identifier
+        ItemNumber:
+          type: string
+          description: Item number
+        ItemDescription:
+          type: string
+          description: Item description
+        ItemType:
+          type: string
+          description: Item type
+        OrganizationCode:
+          type: string
+          description: Organization code
+        UnitOfMeasure:
+          type: string
+          description: Primary unit of measure
+        ItemStatus:
+          type: string
+          description: Item status
+          enum:
+            - Active
+            - Inactive
+            - Pending
+        ListPrice:
+          type: number
+          format: double
+          description: List price
+        CurrencyCode:
+          type: string
+          description: Price currency
+        ItemCategory:
+          type: string
+          description: Item category
+        InventoryItemFlag:
+          type: boolean
+          description: Whether the item is inventoriable
+        PurchasableFlag:
+          type: boolean
+          description: Whether the item is purchasable
+        CustomerOrderableFlag:
+          type: boolean
+          description: Whether the item can be ordered by customers
+    Shipment:
+      type: object
+      properties:
+        ShipmentId:
+          type: integer
+          description: Shipment identifier
+        ShipmentNumber:
+          type: string
+          description: Shipment number
+        DeliveryName:
+          type: string
+          description: Delivery name
+        ShipFromOrganization:
+          type: string
+          description: Ship from organization
+        ShipToCustomer:
+          type: string
+          description: Ship to customer
+        ShipToAddress:
+          type: string
+          description: Ship to address
+        Carrier:
+          type: string
+          description: Carrier name
+        TrackingNumber:
+          type: string
+          description: Tracking number
+        ShipDate:
+          type: string
+          format: date
+          description: Ship date
+        DeliveryDate:
+          type: string
+          format: date
+          description: Expected delivery date
+        Status:
+          type: string
+          description: Shipment status
+          enum:
+            - Open
+            - Packed
+            - Shipped
+            - In Transit
+            - Delivered
+            - Closed
+        Weight:
+          type: number
+          format: double
+          description: Total weight
+        WeightUom:
+          type: string
+          description: Weight unit of measure
+    WorkOrder:
+      type: object
+      properties:
+        WorkOrderId:
+          type: integer
+          description: Work order identifier
+        WorkOrderNumber:
+          type: string
+          description: Work order number
+        WorkOrderType:
+          type: string
+          description: Work order type
+        OrganizationCode:
+          type: string
+          description: Manufacturing organization code
+        ItemNumber:
+          type: string
+          description: Item being manufactured
+        ItemDescription:
+          type: string
+          description: Item description
+        PlannedQuantity:
+          type: number
+          format: double
+          description: Planned production quantity
+        CompletedQuantity:
+          type: number
+          format: double
+          description: Completed quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        PlannedStartDate:
+          type: string
+          format: date
+          description: Planned start date
+        PlannedCompletionDate:
+          type: string
+          format: date
+          description: Planned completion date
+        ActualStartDate:
+          type: string
+          format: date
+          description: Actual start date
+        ActualCompletionDate:
+          type: string
+          format: date
+          description: Actual completion date
+        Status:
+          type: string
+          description: Work order status
+          enum:
+            - Unreleased
+            - Released
+            - On Hold
+            - Complete
+            - Closed
+            - Cancelled
+    WorkOrderCreate:
+      type: object
+      required:
+        - OrganizationCode
+        - ItemNumber
+        - PlannedQuantity
+        - UnitOfMeasure
+      properties:
+        WorkOrderType:
+          type: string
+        OrganizationCode:
+          type: string
+        ItemNumber:
+          type: string
+        PlannedQuantity:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+        PlannedStartDate:
+          type: string
+          format: date
+        PlannedCompletionDate:
+          type: string
+          format: date
+    Supplier:
+      type: object
+      properties:
+        SupplierId:
+          type: integer
+          description: Supplier identifier
+        SupplierNumber:
+          type: string
+          description: Supplier number
+        SupplierName:
+          type: string
+          description: Supplier name
+        SupplierType:
+          type: string
+          description: Supplier type
+        TaxpayerIdentificationNumber:
+          type: string
+          description: Tax ID number
+        TaxOrganizationType:
+          type: string
+          description: Tax organization type
+        Status:
+          type: string
+          description: Supplier status
+          enum:
+            - Active
+            - Inactive
+        BusinessRelationship:
+          type: string
+          description: Business relationship type
+          enum:
+            - Spend Authorized
+            - Prospective
+        Country:
+          type: string
+          description: Country
+        AddressLine1:
+          type: string
+          description: Primary address line
+        City:
+          type: string
+          description: City
+        State:
+          type: string
+          description: State or province
+        PostalCode:
+          type: string
+          description: Postal code
+        CreationDate:
+          type: string
+          format: date-time
+    SupplierCreate:
+      type: object
+      required:
+        - SupplierName
+      properties:
+        SupplierName:
+          type: string
+        SupplierType:
+          type: string
+        TaxpayerIdentificationNumber:
+          type: string
+        Country:
+          type: string
+        AddressLine1:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        PostalCode:
+          type: string

@@ -1,0 +1,245 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "orafusion": "https://docs.oracle.com/schemas/oracle-fusion/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "Invoice": {
+      "@id": "orafusion:Invoice",
+      "@context": {
+        "invoiceNumber": "orafusion:invoiceNumber",
+        "invoiceAmount": {
+          "@id": "schema:totalPrice",
+          "@type": "xsd:decimal"
+        },
+        "invoiceCurrencyCode": "schema:priceCurrency",
+        "invoiceDate": {
+          "@id": "schema:dateCreated",
+          "@type": "xsd:date"
+        },
+        "invoiceType": "orafusion:invoiceType",
+        "vendorName": "schema:name",
+        "businessUnit": "orafusion:businessUnit",
+        "description": "schema:description",
+        "paymentTerms": "orafusion:paymentTerms",
+        "dueDate": {
+          "@id": "schema:paymentDueDate",
+          "@type": "xsd:date"
+        },
+        "approvalStatus": "orafusion:approvalStatus",
+        "paidAmount": {
+          "@id": "orafusion:paidAmount",
+          "@type": "xsd:decimal"
+        }
+      }
+    },
+
+    "Payment": {
+      "@id": "orafusion:Payment",
+      "@context": {
+        "paymentNumber": "orafusion:paymentNumber",
+        "paymentAmount": {
+          "@id": "schema:totalPrice",
+          "@type": "xsd:decimal"
+        },
+        "paymentDate": {
+          "@id": "schema:paymentDueDate",
+          "@type": "xsd:date"
+        },
+        "paymentMethod": "schema:paymentMethod",
+        "vendorName": "schema:name",
+        "status": "orafusion:status"
+      }
+    },
+
+    "Worker": {
+      "@id": "orafusion:Worker",
+      "@context": {
+        "personNumber": "orafusion:personNumber",
+        "firstName": "schema:givenName",
+        "lastName": "schema:familyName",
+        "displayName": "schema:name",
+        "dateOfBirth": {
+          "@id": "schema:birthDate",
+          "@type": "xsd:date"
+        },
+        "workEmail": "schema:email",
+        "workPhoneNumber": "schema:telephone",
+        "hireDate": {
+          "@id": "orafusion:hireDate",
+          "@type": "xsd:date"
+        },
+        "workerType": "orafusion:workerType"
+      }
+    },
+
+    "Assignment": {
+      "@id": "orafusion:Assignment",
+      "@context": {
+        "assignmentNumber": "orafusion:assignmentNumber",
+        "businessUnitName": "orafusion:businessUnit",
+        "departmentName": "orafusion:department",
+        "jobName": "schema:jobTitle",
+        "positionName": "orafusion:position",
+        "locationName": "schema:workLocation",
+        "managerDisplayName": "orafusion:manager",
+        "assignmentStatus": "orafusion:status",
+        "effectiveStartDate": {
+          "@id": "schema:startDate",
+          "@type": "xsd:date"
+        }
+      }
+    },
+
+    "SalesOrder": {
+      "@id": "orafusion:SalesOrder",
+      "@context": {
+        "orderNumber": "schema:orderNumber",
+        "orderType": "orafusion:orderType",
+        "customerName": "schema:name",
+        "businessUnit": "orafusion:businessUnit",
+        "orderDate": {
+          "@id": "schema:orderDate",
+          "@type": "xsd:date"
+        },
+        "totalAmount": {
+          "@id": "schema:totalPrice",
+          "@type": "xsd:decimal"
+        },
+        "currencyCode": "schema:priceCurrency",
+        "status": "schema:orderStatus"
+      }
+    },
+
+    "PurchaseOrder": {
+      "@id": "orafusion:PurchaseOrder",
+      "@context": {
+        "orderNumber": "schema:orderNumber",
+        "supplierName": "schema:name",
+        "buyerName": "orafusion:buyer",
+        "orderDate": {
+          "@id": "schema:orderDate",
+          "@type": "xsd:date"
+        },
+        "totalAmount": {
+          "@id": "schema:totalPrice",
+          "@type": "xsd:decimal"
+        },
+        "currencyCode": "schema:priceCurrency",
+        "status": "schema:orderStatus"
+      }
+    },
+
+    "Account": {
+      "@id": "orafusion:Account",
+      "@context": {
+        "organizationName": "schema:name",
+        "industry": "schema:industry",
+        "annualRevenue": {
+          "@id": "orafusion:annualRevenue",
+          "@type": "xsd:decimal"
+        },
+        "numberOfEmployees": {
+          "@id": "schema:numberOfEmployees",
+          "@type": "xsd:integer"
+        },
+        "phoneNumber": "schema:telephone",
+        "emailAddress": "schema:email",
+        "url": "schema:url",
+        "status": "orafusion:status"
+      }
+    },
+
+    "Contact": {
+      "@id": "orafusion:Contact",
+      "@context": {
+        "firstName": "schema:givenName",
+        "lastName": "schema:familyName",
+        "fullName": "schema:name",
+        "jobTitle": "schema:jobTitle",
+        "emailAddress": "schema:email",
+        "workPhoneNumber": "schema:telephone",
+        "accountName": "orafusion:accountName"
+      }
+    },
+
+    "Opportunity": {
+      "@id": "orafusion:Opportunity",
+      "@context": {
+        "name": "schema:name",
+        "accountName": "orafusion:accountName",
+        "ownerName": "orafusion:owner",
+        "salesStage": "orafusion:salesStage",
+        "winProbability": {
+          "@id": "orafusion:winProbability",
+          "@type": "xsd:integer"
+        },
+        "revenue": {
+          "@id": "orafusion:revenue",
+          "@type": "xsd:decimal"
+        },
+        "closeDate": {
+          "@id": "orafusion:closeDate",
+          "@type": "xsd:date"
+        },
+        "status": "orafusion:status"
+      }
+    },
+
+    "ServiceRequest": {
+      "@id": "orafusion:ServiceRequest",
+      "@context": {
+        "title": "schema:name",
+        "problemDescription": "schema:description",
+        "accountName": "orafusion:accountName",
+        "severity": "orafusion:severity",
+        "status": "orafusion:status",
+        "assigneeName": "orafusion:assignee",
+        "creationDate": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "resolvedDate": {
+          "@id": "orafusion:resolvedDate",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "ExpenseReport": {
+      "@id": "orafusion:ExpenseReport",
+      "@context": {
+        "purpose": "schema:description",
+        "personName": "schema:name",
+        "businessUnit": "orafusion:businessUnit",
+        "totalAmount": {
+          "@id": "schema:totalPrice",
+          "@type": "xsd:decimal"
+        },
+        "currencyCode": "schema:priceCurrency",
+        "approvalStatus": "orafusion:approvalStatus",
+        "submittedDate": {
+          "@id": "dcterms:dateSubmitted",
+          "@type": "xsd:dateTime"
+        }
+      }
+    },
+
+    "Item": {
+      "@id": "orafusion:Item",
+      "@context": {
+        "itemNumber": "schema:sku",
+        "itemDescription": "schema:description",
+        "itemType": "orafusion:itemType",
+        "unitOfMeasure": "orafusion:unitOfMeasure",
+        "listPrice": {
+          "@id": "schema:price",
+          "@type": "xsd:decimal"
+        },
+        "itemStatus": "orafusion:status"
+      }
+    }
+  }
+}

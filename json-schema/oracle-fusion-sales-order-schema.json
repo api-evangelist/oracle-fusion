@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://docs.oracle.com/schemas/oracle-fusion/sales-order.json",
+  "title": "Oracle Fusion Cloud Sales Order",
+  "description": "A sales order in Oracle Fusion Cloud SCM representing a customer order for products or services, managed through the Order Management module including order lines, fulfillment, and shipping details.",
+  "type": "object",
+  "required": ["OrderType", "CustomerName", "BusinessUnit"],
+  "properties": {
+    "OrderId": {
+      "type": "integer",
+      "description": "Unique system-generated order identifier"
+    },
+    "OrderNumber": {
+      "type": "string",
+      "description": "Order number visible to users"
+    },
+    "OrderType": {
+      "type": "string",
+      "description": "Order type classification"
+    },
+    "CustomerName": {
+      "type": "string",
+      "description": "Customer name on the order"
+    },
+    "CustomerNumber": {
+      "type": "string",
+      "description": "Customer account number"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit processing the order"
+    },
+    "OrderDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date the order was placed"
+    },
+    "RequestedShipDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Customer-requested shipping date"
+    },
+    "TotalAmount": {
+      "type": "number",
+      "description": "Total order amount",
+      "minimum": 0
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "ISO 4217 currency code",
+      "pattern": "^[A-Z]{3}$"
+    },
+    "Status": {
+      "type": "string",
+      "enum": ["Open", "Booked", "Closed", "Cancelled", "Awaiting Shipping", "Awaiting Billing"],
+      "description": "Current order status"
+    },
+    "ShipToAddress": {
+      "type": "string",
+      "description": "Shipping destination address"
+    },
+    "BillToAddress": {
+      "type": "string",
+      "description": "Billing address"
+    },
+    "OrderLines": {
+      "type": "array",
+      "description": "Order line items",
+      "items": {
+        "$ref": "#/$defs/OrderLine"
+      }
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Record creation timestamp"
+    },
+    "LastUpdateDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification timestamp"
+    }
+  },
+  "$defs": {
+    "OrderLine": {
+      "type": "object",
+      "description": "Individual line item on a sales order",
+      "properties": {
+        "LineId": {
+          "type": "integer",
+          "description": "Order line identifier"
+        },
+        "LineNumber": {
+          "type": "integer",
+          "description": "Line number within the order"
+        },
+        "ItemNumber": {
+          "type": "string",
+          "description": "Product item number"
+        },
+        "ItemDescription": {
+          "type": "string",
+          "description": "Product description"
+        },
+        "OrderedQuantity": {
+          "type": "number",
+          "description": "Quantity ordered",
+          "minimum": 0
+        },
+        "UnitOfMeasure": {
+          "type": "string",
+          "description": "Unit of measure"
+        },
+        "UnitSellingPrice": {
+          "type": "number",
+          "description": "Selling price per unit"
+        },
+        "ExtendedAmount": {
+          "type": "number",
+          "description": "Total line amount (quantity times price)"
+        },
+        "RequestedShipDate": {
+          "type": "string",
+          "format": "date",
+          "description": "Line-level requested ship date"
+        },
+        "Status": {
+          "type": "string",
+          "description": "Line status"
+        }
+      }
+    }
+  }
+}

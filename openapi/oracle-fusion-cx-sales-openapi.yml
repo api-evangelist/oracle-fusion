@@ -1,0 +1,1275 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion CX Sales and Fusion Service REST API
+  description: >-
+    REST APIs for Oracle Fusion Cloud Customer Experience, enabling
+    integration with sales force automation, fusion service, customer data
+    management, and commerce applications. The API provides access to
+    accounts, contacts, opportunities, leads, service requests, activities,
+    and other CRM resources.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+externalDocs:
+  description: Oracle Fusion Cloud CX Sales REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+servers:
+  - url: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Instance
+    variables:
+      instance:
+        default: servername
+        description: Your Oracle Cloud instance identifier
+tags:
+  - name: Accounts
+    description: Manage customer and prospect accounts
+  - name: Contacts
+    description: Manage contact records associated with accounts
+  - name: Opportunities
+    description: Manage sales opportunities and pipeline
+  - name: Leads
+    description: Manage sales leads and qualification
+  - name: Service Requests
+    description: Manage customer service requests and cases
+  - name: Activities
+    description: Manage tasks, appointments, and call logs
+  - name: Access Groups
+    description: Manage data access groups and rules
+security:
+  - bearerAuth: []
+paths:
+  /crmRestApi/resources/11.13.18.05/accounts:
+    get:
+      operationId: listAccounts
+      summary: List accounts
+      description: >-
+        Retrieve a collection of customer and prospect account records
+        including organization details, addresses, contacts, and
+        sales team members.
+      tags:
+        - Accounts
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Accounts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Account'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAccount
+      summary: Create an account
+      description: >-
+        Create a new customer or prospect account record.
+      tags:
+        - Accounts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/accounts/{PartyNumber}:
+    get:
+      operationId: getAccount
+      summary: Get an account
+      description: Retrieve a specific account by party number.
+      tags:
+        - Accounts
+      parameters:
+        - name: PartyNumber
+          in: path
+          required: true
+          description: Party number identifying the account
+          schema:
+            type: string
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAccount
+      summary: Update an account
+      description: Update an existing account record.
+      tags:
+        - Accounts
+      parameters:
+        - name: PartyNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountUpdate'
+      responses:
+        '200':
+          description: Account updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAccount
+      summary: Delete an account
+      description: Delete an account record.
+      tags:
+        - Accounts
+      parameters:
+        - name: PartyNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Account deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /crmRestApi/resources/11.13.18.05/contacts:
+    get:
+      operationId: listContacts
+      summary: List contacts
+      description: >-
+        Retrieve contact records associated with customer accounts.
+      tags:
+        - Contacts
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Contacts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Contact'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createContact
+      summary: Create a contact
+      description: Create a new contact record.
+      tags:
+        - Contacts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+      responses:
+        '201':
+          description: Contact created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/contacts/{PartyNumber}:
+    get:
+      operationId: getContact
+      summary: Get a contact
+      description: Retrieve a specific contact record.
+      tags:
+        - Contacts
+      parameters:
+        - name: PartyNumber
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Contact details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contact'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateContact
+      summary: Update a contact
+      description: Update an existing contact record.
+      tags:
+        - Contacts
+      parameters:
+        - name: PartyNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ContactCreate'
+      responses:
+        '200':
+          description: Contact updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /crmRestApi/resources/11.13.18.05/opportunities:
+    get:
+      operationId: listOpportunities
+      summary: List opportunities
+      description: >-
+        Retrieve sales opportunity records including pipeline,
+        revenue, and sales stage information.
+      tags:
+        - Opportunities
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Opportunities retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Opportunity'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createOpportunity
+      summary: Create an opportunity
+      description: Create a new sales opportunity.
+      tags:
+        - Opportunities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityCreate'
+      responses:
+        '201':
+          description: Opportunity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/opportunities/{OptyNumber}:
+    get:
+      operationId: getOpportunity
+      summary: Get an opportunity
+      description: Retrieve a specific opportunity record.
+      tags:
+        - Opportunities
+      parameters:
+        - name: OptyNumber
+          in: path
+          required: true
+          description: Opportunity number
+          schema:
+            type: string
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Opportunity details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateOpportunity
+      summary: Update an opportunity
+      description: Update an existing opportunity.
+      tags:
+        - Opportunities
+      parameters:
+        - name: OptyNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityUpdate'
+      responses:
+        '200':
+          description: Opportunity updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /crmRestApi/resources/11.13.18.05/leads:
+    get:
+      operationId: listLeads
+      summary: List leads
+      description: >-
+        Retrieve sales lead records including lead source,
+        qualification status, and associated contacts.
+      tags:
+        - Leads
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Leads retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lead'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createLead
+      summary: Create a lead
+      description: Create a new sales lead record.
+      tags:
+        - Leads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeadCreate'
+      responses:
+        '201':
+          description: Lead created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lead'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/serviceRequests:
+    get:
+      operationId: listServiceRequests
+      summary: List service requests
+      description: >-
+        Retrieve customer service request records including severity,
+        status, assignment, and resolution details.
+      tags:
+        - Service Requests
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/orderBy'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Service requests retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ServiceRequest'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createServiceRequest
+      summary: Create a service request
+      description: Create a new customer service request.
+      tags:
+        - Service Requests
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestCreate'
+      responses:
+        '201':
+          description: Service request created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceRequest'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/serviceRequests/{SrNumber}:
+    get:
+      operationId: getServiceRequest
+      summary: Get a service request
+      description: Retrieve a specific service request.
+      tags:
+        - Service Requests
+      parameters:
+        - name: SrNumber
+          in: path
+          required: true
+          description: Service request number
+          schema:
+            type: string
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Service request details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateServiceRequest
+      summary: Update a service request
+      description: Update an existing service request.
+      tags:
+        - Service Requests
+      parameters:
+        - name: SrNumber
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestUpdate'
+      responses:
+        '200':
+          description: Service request updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /crmRestApi/resources/11.13.18.05/activities:
+    get:
+      operationId: listActivities
+      summary: List activities
+      description: >-
+        Retrieve activity records including tasks, appointments, and
+        call logs associated with sales and service processes.
+      tags:
+        - Activities
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Activities retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createActivity
+      summary: Create an activity
+      description: Create a new activity (task, appointment, or call log).
+      tags:
+        - Activities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityCreate'
+      responses:
+        '201':
+          description: Activity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/accessGroups:
+    get:
+      operationId: listAccessGroups
+      summary: List access groups
+      description: >-
+        Retrieve access group definitions used to control data visibility
+        in CX Sales and Service applications.
+      tags:
+        - Access Groups
+      parameters:
+        - $ref: '#/components/parameters/limit'
+        - $ref: '#/components/parameters/offset'
+        - $ref: '#/components/parameters/fields'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Access groups retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AccessGroup'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: OAuth 2.0 bearer token or basic authentication
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication with Oracle Fusion Cloud credentials
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    Account:
+      type: object
+      properties:
+        PartyId:
+          type: integer
+          description: Party identifier
+        PartyNumber:
+          type: string
+          description: Party number
+        OrganizationName:
+          type: string
+          description: Organization name
+        Type:
+          type: string
+          description: Account type
+          enum:
+            - Customer
+            - Prospect
+            - Partner
+        Industry:
+          type: string
+          description: Industry classification
+        AnnualRevenue:
+          type: number
+          format: double
+          description: Annual revenue
+        NumberOfEmployees:
+          type: integer
+          description: Number of employees
+        PhoneNumber:
+          type: string
+          description: Primary phone number
+        EmailAddress:
+          type: string
+          format: email
+          description: Primary email
+        URL:
+          type: string
+          format: uri
+          description: Website URL
+        OwnerName:
+          type: string
+          description: Account owner name
+        SalesProfileStatus:
+          type: string
+          description: Sales profile status
+        CreationDate:
+          type: string
+          format: date-time
+          description: Record creation timestamp
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Last update timestamp
+    AccountCreate:
+      type: object
+      required:
+        - OrganizationName
+      properties:
+        OrganizationName:
+          type: string
+        Type:
+          type: string
+          enum:
+            - Customer
+            - Prospect
+            - Partner
+        Industry:
+          type: string
+        AnnualRevenue:
+          type: number
+          format: double
+        PhoneNumber:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+        URL:
+          type: string
+          format: uri
+    AccountUpdate:
+      type: object
+      properties:
+        OrganizationName:
+          type: string
+        Industry:
+          type: string
+        AnnualRevenue:
+          type: number
+          format: double
+        PhoneNumber:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+    Contact:
+      type: object
+      properties:
+        PartyId:
+          type: integer
+          description: Party identifier
+        PartyNumber:
+          type: string
+          description: Party number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        FullName:
+          type: string
+          description: Full name
+        JobTitle:
+          type: string
+          description: Job title
+        EmailAddress:
+          type: string
+          format: email
+          description: Email address
+        WorkPhoneNumber:
+          type: string
+          description: Work phone number
+        MobilePhoneNumber:
+          type: string
+          description: Mobile phone number
+        AccountName:
+          type: string
+          description: Associated account name
+        AccountPartyNumber:
+          type: string
+          description: Associated account party number
+        OwnerName:
+          type: string
+          description: Contact owner name
+        CreationDate:
+          type: string
+          format: date-time
+    ContactCreate:
+      type: object
+      required:
+        - FirstName
+        - LastName
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        JobTitle:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+        WorkPhoneNumber:
+          type: string
+        MobilePhoneNumber:
+          type: string
+        AccountPartyNumber:
+          type: string
+    Opportunity:
+      type: object
+      properties:
+        OptyId:
+          type: integer
+          description: Opportunity identifier
+        OptyNumber:
+          type: string
+          description: Opportunity number
+        Name:
+          type: string
+          description: Opportunity name
+        AccountName:
+          type: string
+          description: Associated account name
+        AccountPartyNumber:
+          type: string
+          description: Account party number
+        OwnerName:
+          type: string
+          description: Opportunity owner name
+        SalesStage:
+          type: string
+          description: Current sales stage
+        WinProbability:
+          type: integer
+          description: Win probability percentage
+          minimum: 0
+          maximum: 100
+        Revenue:
+          type: number
+          format: double
+          description: Expected revenue
+        CurrencyCode:
+          type: string
+          description: Revenue currency
+        CloseDate:
+          type: string
+          format: date
+          description: Expected close date
+        Status:
+          type: string
+          description: Opportunity status
+          enum:
+            - Open
+            - Won
+            - Lost
+        CreationDate:
+          type: string
+          format: date-time
+    OpportunityCreate:
+      type: object
+      required:
+        - Name
+        - AccountPartyNumber
+      properties:
+        Name:
+          type: string
+        AccountPartyNumber:
+          type: string
+        SalesStage:
+          type: string
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        CloseDate:
+          type: string
+          format: date
+    OpportunityUpdate:
+      type: object
+      properties:
+        Name:
+          type: string
+        SalesStage:
+          type: string
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CloseDate:
+          type: string
+          format: date
+        Status:
+          type: string
+          enum:
+            - Open
+            - Won
+            - Lost
+    Lead:
+      type: object
+      properties:
+        LeadId:
+          type: integer
+          description: Lead identifier
+        LeadNumber:
+          type: string
+          description: Lead number
+        Name:
+          type: string
+          description: Lead name
+        CustomerName:
+          type: string
+          description: Customer or prospect name
+        ContactName:
+          type: string
+          description: Primary contact name
+        OwnerName:
+          type: string
+          description: Lead owner name
+        Score:
+          type: integer
+          description: Lead score
+        Rank:
+          type: string
+          description: Lead rank
+          enum:
+            - Hot
+            - Warm
+            - Cold
+        QualificationStatus:
+          type: string
+          description: Qualification status
+          enum:
+            - Unqualified
+            - Qualified
+            - Converted
+            - Retired
+        Source:
+          type: string
+          description: Lead source
+        CreationDate:
+          type: string
+          format: date-time
+    LeadCreate:
+      type: object
+      required:
+        - Name
+      properties:
+        Name:
+          type: string
+        CustomerName:
+          type: string
+        ContactName:
+          type: string
+        Rank:
+          type: string
+          enum:
+            - Hot
+            - Warm
+            - Cold
+        Source:
+          type: string
+    ServiceRequest:
+      type: object
+      properties:
+        SrId:
+          type: integer
+          description: Service request identifier
+        SrNumber:
+          type: string
+          description: Service request number
+        Title:
+          type: string
+          description: Service request title
+        ProblemDescription:
+          type: string
+          description: Detailed problem description
+        AccountName:
+          type: string
+          description: Customer account name
+        ContactName:
+          type: string
+          description: Primary contact name
+        Severity:
+          type: string
+          description: Severity level
+          enum:
+            - Critical
+            - High
+            - Medium
+            - Low
+        Status:
+          type: string
+          description: Service request status
+          enum:
+            - New
+            - In Progress
+            - Waiting
+            - Resolved
+            - Closed
+        Priority:
+          type: string
+          description: Priority level
+        CategoryName:
+          type: string
+          description: Category classification
+        AssigneeName:
+          type: string
+          description: Assigned agent name
+        QueueName:
+          type: string
+          description: Assigned queue
+        ChannelType:
+          type: string
+          description: Channel of origin
+          enum:
+            - Phone
+            - Email
+            - Web
+            - Chat
+            - Social
+        CreationDate:
+          type: string
+          format: date-time
+        ResolvedDate:
+          type: string
+          format: date-time
+          description: Resolution date
+    ServiceRequestCreate:
+      type: object
+      required:
+        - Title
+      properties:
+        Title:
+          type: string
+        ProblemDescription:
+          type: string
+        AccountName:
+          type: string
+        ContactName:
+          type: string
+        Severity:
+          type: string
+          enum:
+            - Critical
+            - High
+            - Medium
+            - Low
+        Priority:
+          type: string
+        CategoryName:
+          type: string
+        ChannelType:
+          type: string
+    ServiceRequestUpdate:
+      type: object
+      properties:
+        Title:
+          type: string
+        Status:
+          type: string
+        Severity:
+          type: string
+        AssigneeName:
+          type: string
+        QueueName:
+          type: string
+    Activity:
+      type: object
+      properties:
+        ActivityId:
+          type: integer
+          description: Activity identifier
+        ActivityNumber:
+          type: string
+          description: Activity number
+        Subject:
+          type: string
+          description: Activity subject
+        ActivityType:
+          type: string
+          description: Type of activity
+          enum:
+            - Task
+            - Appointment
+            - Call Log
+        Status:
+          type: string
+          description: Activity status
+          enum:
+            - Not Started
+            - In Progress
+            - Completed
+            - Cancelled
+        Priority:
+          type: string
+          description: Priority level
+          enum:
+            - High
+            - Normal
+            - Low
+        DueDate:
+          type: string
+          format: date
+          description: Due date
+        StartDate:
+          type: string
+          format: date-time
+          description: Start date and time
+        EndDate:
+          type: string
+          format: date-time
+          description: End date and time
+        OwnerName:
+          type: string
+          description: Activity owner
+        AccountName:
+          type: string
+          description: Associated account
+        ContactName:
+          type: string
+          description: Associated contact
+        Description:
+          type: string
+          description: Activity description
+    ActivityCreate:
+      type: object
+      required:
+        - Subject
+        - ActivityType
+      properties:
+        Subject:
+          type: string
+        ActivityType:
+          type: string
+          enum:
+            - Task
+            - Appointment
+            - Call Log
+        Priority:
+          type: string
+          enum:
+            - High
+            - Normal
+            - Low
+        DueDate:
+          type: string
+          format: date
+        StartDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        AccountName:
+          type: string
+        ContactName:
+          type: string
+        Description:
+          type: string
+    AccessGroup:
+      type: object
+      properties:
+        AccessGroupNumber:
+          type: string
+          description: Access group number
+        AccessGroupName:
+          type: string
+          description: Access group name
+        Description:
+          type: string
+          description: Access group description
+        Status:
+          type: string
+          description: Group status
