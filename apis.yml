@@ -1,3 +1,4 @@
+aid: oracle-fusion
 name: Oracle Fusion Cloud Applications
 description: >-
   Oracle Fusion Cloud Applications represent a comprehensive suite of
@@ -7,11 +8,15 @@ description: >-
   provides REST APIs across all application pillars, enabling programmatic
   access to business data and processes for integration, automation, and
   extension of cloud applications.
-image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 created: '2024-01-15'
-modified: '2026-03-04'
-specificationVersion: '0.18'
-url: https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
+modified: '2026-03-16'
+specificationVersion: '0.19'
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
 apis:
 - name: Oracle Fusion ERP REST API
   description: >-
@@ -264,9 +269,8 @@ common:
 - type: JSONSchema
   url: json-schema/oracle-fusion-account-schema.json
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-  url: https://apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com
 tags:
 - Enterprise
 - Cloud
