@@ -26,22 +26,22 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
-  - name: Workers
-    description: Manage worker (employee and contingent worker) records
-  - name: Assignments
-    description: Manage work assignments and employment details
   - name: Absences
     description: Absence management and leave tracking
+  - name: Assignments
+    description: Manage work assignments and employment details
   - name: Compensation
     description: Salary and compensation management
-  - name: Recruiting
-    description: Job requisitions and candidate management
-  - name: Talent Profiles
-    description: Talent profiles, skills, and competencies
   - name: Learning
     description: Learning records and course management
   - name: Payroll
     description: Payroll processing and results
+  - name: Recruiting
+    description: Job requisitions and candidate management
+  - name: Talent Profiles
+    description: Talent profiles, skills, and competencies
+  - name: Workers
+    description: Manage worker (employee and contingent worker) records
 security:
   - bearerAuth: []
 paths:

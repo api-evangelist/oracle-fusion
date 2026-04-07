@@ -27,20 +27,20 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
-  - name: Sales Orders
-    description: Manage sales orders and order lines
-  - name: Purchase Orders
-    description: Manage purchase orders and procurement
   - name: Inventory
     description: Inventory management and on-hand quantities
   - name: Items
     description: Product and item master management
+  - name: Purchase Orders
+    description: Manage purchase orders and procurement
+  - name: Sales Orders
+    description: Manage sales orders and order lines
   - name: Shipments
     description: Shipping and receiving operations
-  - name: Work Orders
-    description: Manufacturing work order management
   - name: Suppliers
     description: Supplier and vendor management
+  - name: Work Orders
+    description: Manufacturing work order management
 security:
   - bearerAuth: []
 paths:

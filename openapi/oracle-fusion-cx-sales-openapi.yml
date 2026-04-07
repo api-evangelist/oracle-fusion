@@ -27,20 +27,20 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
-  - name: Accounts
-    description: Manage customer and prospect accounts
-  - name: Contacts
-    description: Manage contact records associated with accounts
-  - name: Opportunities
-    description: Manage sales opportunities and pipeline
-  - name: Leads
-    description: Manage sales leads and qualification
-  - name: Service Requests
-    description: Manage customer service requests and cases
-  - name: Activities
-    description: Manage tasks, appointments, and call logs
   - name: Access Groups
     description: Manage data access groups and rules
+  - name: Accounts
+    description: Manage customer and prospect accounts
+  - name: Activities
+    description: Manage tasks, appointments, and call logs
+  - name: Contacts
+    description: Manage contact records associated with accounts
+  - name: Leads
+    description: Manage sales leads and qualification
+  - name: Opportunities
+    description: Manage sales opportunities and pipeline
+  - name: Service Requests
+    description: Manage customer service requests and cases
 security:
   - bearerAuth: []
 paths:

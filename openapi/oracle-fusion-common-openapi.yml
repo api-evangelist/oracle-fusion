@@ -26,22 +26,22 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
-  - name: Common Lookups
-    description: Manage lookup types and lookup codes
   - name: Announcements
     description: Manage application announcements
+  - name: Audit
+    description: Audit trail and setup operations
+  - name: Common Lookups
+    description: Manage lookup types and lookup codes
+  - name: Features
+    description: Manage application features
+  - name: Manage Tasks
+    description: Manage BPM workflow tasks and approvals
   - name: Persons
     description: Manage person records
   - name: Roles
     description: Manage security roles
   - name: Scheduled Processes
     description: Manage and monitor scheduled processes
-  - name: Manage Tasks
-    description: Manage BPM workflow tasks and approvals
-  - name: Features
-    description: Manage application features
-  - name: Audit
-    description: Audit trail and setup operations
 security:
   - bearerAuth: []
 paths:

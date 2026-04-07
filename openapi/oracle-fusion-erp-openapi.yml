@@ -27,24 +27,24 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
+  - name: Accounts Receivable
+    description: Manage receivables transactions and receipts
+  - name: Budgetary Control
+    description: Budget transactions and validation
+  - name: Cash Management
+    description: Bank accounts, transfers, and cash pools
+  - name: Currency Rates
+    description: Currency rate management
+  - name: ERP Integrations
+    description: Bulk data import and export operations
+  - name: Expense Reports
+    description: Create and manage employee expense reports
+  - name: General Ledger
+    description: General ledger journal and period operations
   - name: Invoices
     description: Manage accounts payable invoices
   - name: Payments
     description: Manage payment processing
-  - name: General Ledger
-    description: General ledger journal and period operations
-  - name: Accounts Receivable
-    description: Manage receivables transactions and receipts
-  - name: Expense Reports
-    description: Create and manage employee expense reports
-  - name: Cash Management
-    description: Bank accounts, transfers, and cash pools
-  - name: Budgetary Control
-    description: Budget transactions and validation
-  - name: ERP Integrations
-    description: Bulk data import and export operations
-  - name: Currency Rates
-    description: Currency rate management
 security:
   - bearerAuth: []
 paths:

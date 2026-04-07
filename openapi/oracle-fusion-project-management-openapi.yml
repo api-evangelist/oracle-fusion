@@ -27,22 +27,22 @@ servers:
         default: servername
         description: Your Oracle Cloud instance identifier
 tags:
-  - name: Projects
-    description: Manage project definitions and attributes
-  - name: Project Tasks
-    description: Manage project task hierarchies and assignments
-  - name: Awards
-    description: Manage grants and awards
   - name: Award Budgets
     description: Manage award budget versions and lines
+  - name: Awards
+    description: Manage grants and awards
   - name: Change Orders
     description: Manage project change orders
   - name: Deliverables
     description: Manage project deliverables
-  - name: Financial Project Plans
-    description: Manage financial plans, budgets, and forecasts
   - name: Expenditure Types
     description: Manage expenditure type definitions
+  - name: Financial Project Plans
+    description: Manage financial plans, budgets, and forecasts
+  - name: Project Tasks
+    description: Manage project task hierarchies and assignments
+  - name: Projects
+    description: Manage project definitions and attributes
 security:
   - bearerAuth: []
 paths:

@@ -27,18 +27,16 @@ servers:
         default: your-instance
         description: Your Oracle Cloud EPM instance identifier
 tags:
-  - name: Planning
-    description: Planning application data and metadata operations
-  - name: Jobs
-    description: Manage EPM job execution and monitoring
-  - name: Data Management
-    description: Data import, export, and integration operations
-  - name: Migration
-    description: Application migration and lifecycle management
-  - name: Reports
-    description: Retrieve and manage EPM reports
   - name: Applications
     description: Manage EPM application metadata and dimensions
+  - name: Data Management
+    description: Data import, export, and integration operations
+  - name: Jobs
+    description: Manage EPM job execution and monitoring
+  - name: Migration
+    description: Application migration and lifecycle management
+  - name: Planning
+    description: Planning application data and metadata operations
 security:
   - basicAuth: []
 paths:
