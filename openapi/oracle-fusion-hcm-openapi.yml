@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion Cloud HCM REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Human Capital Management, enabling
     integration with core HR, talent management, workforce management, and
@@ -48,7 +48,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/workers:
     get:
       operationId: listWorkers
-      summary: List workers
+      summary: Oracle Fusion Cloud Applications List workers
       description: >-
         Retrieve a collection of worker records including employees and
         contingent workers. Each worker record includes person information,
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createWorker
-      summary: Create a worker
+      summary: Oracle Fusion Cloud Applications Create a worker
       description: >-
         Hire a new employee or create a contingent worker record with person
         details, names, and an initial work assignment.
@@ -111,7 +111,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/workers/{workersUniqID}:
     get:
       operationId: getWorker
-      summary: Get a worker
+      summary: Oracle Fusion Cloud Applications Get a worker
       description: Retrieve a specific worker record by unique identifier.
       tags:
         - Workers
@@ -132,7 +132,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateWorker
-      summary: Update a worker
+      summary: Oracle Fusion Cloud Applications Update a worker
       description: Update an existing worker record.
       tags:
         - Workers
@@ -160,7 +160,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/emps:
     get:
       operationId: listEmployees
-      summary: List employees
+      summary: Oracle Fusion Cloud Applications List employees
       description: >-
         Retrieve a collection of employee records with employment and
         assignment details.
@@ -193,7 +193,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/assignmentsInfo:
     get:
       operationId: listAssignments
-      summary: List assignments
+      summary: Oracle Fusion Cloud Applications List assignments
       description: >-
         Retrieve work assignment records including position, job, department,
         location, and manager information for workers.
@@ -226,7 +226,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/absences:
     get:
       operationId: listAbsences
-      summary: List absences
+      summary: Oracle Fusion Cloud Applications List absences
       description: >-
         Retrieve absence records for workers including vacation, sick leave,
         and other absence types.
@@ -258,7 +258,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createAbsence
-      summary: Create an absence
+      summary: Oracle Fusion Cloud Applications Create an absence
       description: Create a new absence record for a worker.
       tags:
         - Absences
@@ -282,7 +282,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/absences/{AbsenceId}:
     get:
       operationId: getAbsence
-      summary: Get an absence
+      summary: Oracle Fusion Cloud Applications Get an absence
       description: Retrieve a specific absence record.
       tags:
         - Absences
@@ -307,7 +307,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAbsence
-      summary: Update an absence
+      summary: Oracle Fusion Cloud Applications Update an absence
       description: Update an existing absence record.
       tags:
         - Absences
@@ -338,7 +338,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteAbsence
-      summary: Delete an absence
+      summary: Oracle Fusion Cloud Applications Delete an absence
       description: Delete an absence record.
       tags:
         - Absences
@@ -358,7 +358,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/compensationSalaries:
     get:
       operationId: listSalaries
-      summary: List compensation salaries
+      summary: Oracle Fusion Cloud Applications List compensation salaries
       description: >-
         Retrieve salary records for workers including base salary, components,
         and salary history.
@@ -391,7 +391,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions:
     get:
       operationId: listJobRequisitions
-      summary: List job requisitions
+      summary: Oracle Fusion Cloud Applications List job requisitions
       description: >-
         Retrieve open and filled job requisitions for recruiting operations.
       tags:
@@ -423,7 +423,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/recruitingCandidates:
     get:
       operationId: listCandidates
-      summary: List recruiting candidates
+      summary: Oracle Fusion Cloud Applications List recruiting candidates
       description: >-
         Retrieve candidate records for recruiting including application
         status and candidate details.
@@ -456,7 +456,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/talentProfiles:
     get:
       operationId: listTalentProfiles
-      summary: List talent profiles
+      summary: Oracle Fusion Cloud Applications List talent profiles
       description: >-
         Retrieve talent profiles for workers including skills, competencies,
         qualifications, and career interests.
@@ -489,7 +489,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/learningRecords:
     get:
       operationId: listLearningRecords
-      summary: List learning records
+      summary: Oracle Fusion Cloud Applications List learning records
       description: >-
         Retrieve learning records for workers including course completions,
         enrollments, and certifications.
@@ -522,7 +522,7 @@ paths:
   /hcmRestApi/resources/11.13.18.05/payrollResults:
     get:
       operationId: listPayrollResults
-      summary: List payroll results
+      summary: Oracle Fusion Cloud Applications List payroll results
       description: >-
         Retrieve payroll run results including earnings, deductions, and
         net pay for workers.

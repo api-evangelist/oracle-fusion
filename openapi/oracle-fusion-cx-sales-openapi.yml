@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion CX Sales and Fusion Service REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Customer Experience, enabling
     integration with sales force automation, fusion service, customer data
@@ -47,7 +47,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/accounts:
     get:
       operationId: listAccounts
-      summary: List accounts
+      summary: Oracle Fusion Cloud Applications List accounts
       description: >-
         Retrieve a collection of customer and prospect account records
         including organization details, addresses, contacts, and
@@ -84,7 +84,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createAccount
-      summary: Create an account
+      summary: Oracle Fusion Cloud Applications Create an account
       description: >-
         Create a new customer or prospect account record.
       tags:
@@ -109,7 +109,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/accounts/{PartyNumber}:
     get:
       operationId: getAccount
-      summary: Get an account
+      summary: Oracle Fusion Cloud Applications Get an account
       description: Retrieve a specific account by party number.
       tags:
         - Accounts
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAccount
-      summary: Update an account
+      summary: Oracle Fusion Cloud Applications Update an account
       description: Update an existing account record.
       tags:
         - Accounts
@@ -166,7 +166,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteAccount
-      summary: Delete an account
+      summary: Oracle Fusion Cloud Applications Delete an account
       description: Delete an account record.
       tags:
         - Accounts
@@ -186,7 +186,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/contacts:
     get:
       operationId: listContacts
-      summary: List contacts
+      summary: Oracle Fusion Cloud Applications List contacts
       description: >-
         Retrieve contact records associated with customer accounts.
       tags:
@@ -218,7 +218,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createContact
-      summary: Create a contact
+      summary: Oracle Fusion Cloud Applications Create a contact
       description: Create a new contact record.
       tags:
         - Contacts
@@ -242,7 +242,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/contacts/{PartyNumber}:
     get:
       operationId: getContact
-      summary: Get a contact
+      summary: Oracle Fusion Cloud Applications Get a contact
       description: Retrieve a specific contact record.
       tags:
         - Contacts
@@ -266,7 +266,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateContact
-      summary: Update a contact
+      summary: Oracle Fusion Cloud Applications Update a contact
       description: Update an existing contact record.
       tags:
         - Contacts
@@ -294,7 +294,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/opportunities:
     get:
       operationId: listOpportunities
-      summary: List opportunities
+      summary: Oracle Fusion Cloud Applications List opportunities
       description: >-
         Retrieve sales opportunity records including pipeline,
         revenue, and sales stage information.
@@ -327,7 +327,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createOpportunity
-      summary: Create an opportunity
+      summary: Oracle Fusion Cloud Applications Create an opportunity
       description: Create a new sales opportunity.
       tags:
         - Opportunities
@@ -351,7 +351,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/opportunities/{OptyNumber}:
     get:
       operationId: getOpportunity
-      summary: Get an opportunity
+      summary: Oracle Fusion Cloud Applications Get an opportunity
       description: Retrieve a specific opportunity record.
       tags:
         - Opportunities
@@ -377,7 +377,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateOpportunity
-      summary: Update an opportunity
+      summary: Oracle Fusion Cloud Applications Update an opportunity
       description: Update an existing opportunity.
       tags:
         - Opportunities
@@ -405,7 +405,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/leads:
     get:
       operationId: listLeads
-      summary: List leads
+      summary: Oracle Fusion Cloud Applications List leads
       description: >-
         Retrieve sales lead records including lead source,
         qualification status, and associated contacts.
@@ -437,7 +437,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createLead
-      summary: Create a lead
+      summary: Oracle Fusion Cloud Applications Create a lead
       description: Create a new sales lead record.
       tags:
         - Leads
@@ -461,7 +461,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/serviceRequests:
     get:
       operationId: listServiceRequests
-      summary: List service requests
+      summary: Oracle Fusion Cloud Applications List service requests
       description: >-
         Retrieve customer service request records including severity,
         status, assignment, and resolution details.
@@ -494,7 +494,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createServiceRequest
-      summary: Create a service request
+      summary: Oracle Fusion Cloud Applications Create a service request
       description: Create a new customer service request.
       tags:
         - Service Requests
@@ -518,7 +518,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/serviceRequests/{SrNumber}:
     get:
       operationId: getServiceRequest
-      summary: Get a service request
+      summary: Oracle Fusion Cloud Applications Get a service request
       description: Retrieve a specific service request.
       tags:
         - Service Requests
@@ -544,7 +544,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateServiceRequest
-      summary: Update a service request
+      summary: Oracle Fusion Cloud Applications Update a service request
       description: Update an existing service request.
       tags:
         - Service Requests
@@ -572,7 +572,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/activities:
     get:
       operationId: listActivities
-      summary: List activities
+      summary: Oracle Fusion Cloud Applications List activities
       description: >-
         Retrieve activity records including tasks, appointments, and
         call logs associated with sales and service processes.
@@ -604,7 +604,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createActivity
-      summary: Create an activity
+      summary: Oracle Fusion Cloud Applications Create an activity
       description: Create a new activity (task, appointment, or call log).
       tags:
         - Activities
@@ -628,7 +628,7 @@ paths:
   /crmRestApi/resources/11.13.18.05/accessGroups:
     get:
       operationId: listAccessGroups
-      summary: List access groups
+      summary: Oracle Fusion Cloud Applications List access groups
       description: >-
         Retrieve access group definitions used to control data visibility
         in CX Sales and Service applications.

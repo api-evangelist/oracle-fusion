@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion Cloud SCM REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Supply Chain Management, providing
     access to inventory, order management, procurement, logistics, and
@@ -47,7 +47,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub:
     get:
       operationId: listSalesOrders
-      summary: List sales orders
+      summary: Oracle Fusion Cloud Applications List sales orders
       description: >-
         Retrieve a collection of sales orders from Order Management
         including order header details, order lines, and fulfillment
@@ -84,7 +84,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createSalesOrder
-      summary: Create a sales order
+      summary: Oracle Fusion Cloud Applications Create a sales order
       description: >-
         Create a new sales order with header and order lines.
       tags:
@@ -109,7 +109,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/{OrderId}:
     get:
       operationId: getSalesOrder
-      summary: Get a sales order
+      summary: Oracle Fusion Cloud Applications Get a sales order
       description: Retrieve a specific sales order by identifier.
       tags:
         - Sales Orders
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateSalesOrder
-      summary: Update a sales order
+      summary: Oracle Fusion Cloud Applications Update a sales order
       description: Update an existing sales order.
       tags:
         - Sales Orders
@@ -167,7 +167,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/purchaseOrders:
     get:
       operationId: listPurchaseOrders
-      summary: List purchase orders
+      summary: Oracle Fusion Cloud Applications List purchase orders
       description: >-
         Retrieve purchase order headers and lines for procurement operations.
       tags:
@@ -199,7 +199,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createPurchaseOrder
-      summary: Create a purchase order
+      summary: Oracle Fusion Cloud Applications Create a purchase order
       description: Create a new purchase order with header and lines.
       tags:
         - Purchase Orders
@@ -223,7 +223,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/purchaseOrders/{POHeaderId}:
     get:
       operationId: getPurchaseOrder
-      summary: Get a purchase order
+      summary: Oracle Fusion Cloud Applications Get a purchase order
       description: Retrieve a specific purchase order.
       tags:
         - Purchase Orders
@@ -249,7 +249,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updatePurchaseOrder
-      summary: Update a purchase order
+      summary: Oracle Fusion Cloud Applications Update a purchase order
       description: Update an existing purchase order.
       tags:
         - Purchase Orders
@@ -281,7 +281,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances:
     get:
       operationId: listOnhandBalances
-      summary: List inventory on-hand balances
+      summary: Oracle Fusion Cloud Applications List inventory on-hand balances
       description: >-
         Retrieve on-hand inventory quantities by organization, item,
         subinventory, and locator.
@@ -314,7 +314,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/inventoryTransactions:
     post:
       operationId: createInventoryTransaction
-      summary: Create an inventory transaction
+      summary: Oracle Fusion Cloud Applications Create an inventory transaction
       description: >-
         Create inventory transactions such as receipts, issues, transfers,
         and adjustments.
@@ -340,7 +340,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/productItems:
     get:
       operationId: listItems
-      summary: List items
+      summary: Oracle Fusion Cloud Applications List items
       description: >-
         Retrieve item master records including item attributes, categories,
         and organization assignments.
@@ -373,7 +373,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/shipments:
     get:
       operationId: listShipments
-      summary: List shipments
+      summary: Oracle Fusion Cloud Applications List shipments
       description: >-
         Retrieve shipment records including delivery details, tracking,
         and shipping status.
@@ -406,7 +406,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/workOrders:
     get:
       operationId: listWorkOrders
-      summary: List work orders
+      summary: Oracle Fusion Cloud Applications List work orders
       description: >-
         Retrieve manufacturing work orders including operations, materials,
         and production status.
@@ -438,7 +438,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createWorkOrder
-      summary: Create a work order
+      summary: Oracle Fusion Cloud Applications Create a work order
       description: Create a new manufacturing work order.
       tags:
         - Work Orders
@@ -462,7 +462,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/suppliers:
     get:
       operationId: listSuppliers
-      summary: List suppliers
+      summary: Oracle Fusion Cloud Applications List suppliers
       description: >-
         Retrieve supplier records including supplier sites, contacts,
         and procurement details.
@@ -495,7 +495,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createSupplier
-      summary: Create a supplier
+      summary: Oracle Fusion Cloud Applications Create a supplier
       description: Create a new supplier record.
       tags:
         - Suppliers

@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion Common Features REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Applications Common features, providing
     access to shared services such as attachments, flexfields, lookup types,
@@ -48,7 +48,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/commonLookups:
     get:
       operationId: listCommonLookups
-      summary: List common lookups
+      summary: Oracle Fusion Cloud Applications List common lookups
       description: >-
         Retrieve common lookup type definitions and their associated
         lookup codes used across Fusion Cloud applications.
@@ -80,7 +80,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createCommonLookup
-      summary: Create a common lookup
+      summary: Oracle Fusion Cloud Applications Create a common lookup
       description: Create a new common lookup type.
       tags:
         - Common Lookups
@@ -104,7 +104,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}:
     get:
       operationId: getCommonLookup
-      summary: Get a common lookup
+      summary: Oracle Fusion Cloud Applications Get a common lookup
       description: Retrieve a specific common lookup type and its codes.
       tags:
         - Common Lookups
@@ -130,7 +130,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateCommonLookup
-      summary: Update a common lookup
+      summary: Oracle Fusion Cloud Applications Update a common lookup
       description: Update an existing common lookup type.
       tags:
         - Common Lookups
@@ -157,7 +157,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteCommonLookup
-      summary: Delete a common lookup
+      summary: Oracle Fusion Cloud Applications Delete a common lookup
       description: Delete a common lookup type.
       tags:
         - Common Lookups
@@ -177,7 +177,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes:
     get:
       operationId: listLookupCodes
-      summary: List lookup codes for a lookup type
+      summary: Oracle Fusion Cloud Applications List lookup codes for a lookup type
       description: Retrieve lookup codes belonging to a specific lookup type.
       tags:
         - Common Lookups
@@ -212,7 +212,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     post:
       operationId: createLookupCode
-      summary: Create a lookup code
+      summary: Oracle Fusion Cloud Applications Create a lookup code
       description: Create a new lookup code within a lookup type.
       tags:
         - Common Lookups
@@ -238,7 +238,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/announcements:
     get:
       operationId: listAnnouncements
-      summary: List announcements
+      summary: Oracle Fusion Cloud Applications List announcements
       description: >-
         Retrieve application announcements visible to users across
         Fusion Cloud applications.
@@ -269,7 +269,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createAnnouncement
-      summary: Create an announcement
+      summary: Oracle Fusion Cloud Applications Create an announcement
       description: Create a new application announcement.
       tags:
         - Announcements
@@ -289,7 +289,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}:
     get:
       operationId: getAnnouncement
-      summary: Get an announcement
+      summary: Oracle Fusion Cloud Applications Get an announcement
       description: Retrieve a specific announcement.
       tags:
         - Announcements
@@ -313,7 +313,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAnnouncement
-      summary: Update an announcement
+      summary: Oracle Fusion Cloud Applications Update an announcement
       description: Update an existing application announcement.
       tags:
         - Announcements
@@ -340,7 +340,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteAnnouncement
-      summary: Delete an announcement
+      summary: Oracle Fusion Cloud Applications Delete an announcement
       description: Delete an existing application announcement.
       tags:
         - Announcements
@@ -360,7 +360,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/persons:
     get:
       operationId: listPersons
-      summary: List persons
+      summary: Oracle Fusion Cloud Applications List persons
       description: Retrieve person records used across Fusion Cloud applications.
       tags:
         - Persons
@@ -389,7 +389,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createPerson
-      summary: Create a person
+      summary: Oracle Fusion Cloud Applications Create a person
       description: Create a new person record.
       tags:
         - Persons
@@ -409,7 +409,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/persons/{Personid}:
     get:
       operationId: getPerson
-      summary: Get a person
+      summary: Oracle Fusion Cloud Applications Get a person
       description: Retrieve a specific person record by identifier.
       tags:
         - Persons
@@ -432,7 +432,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updatePerson
-      summary: Update a person
+      summary: Oracle Fusion Cloud Applications Update a person
       description: Update an existing person record.
       tags:
         - Persons
@@ -459,7 +459,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deletePerson
-      summary: Delete a person
+      summary: Oracle Fusion Cloud Applications Delete a person
       description: Delete an existing person record.
       tags:
         - Persons
@@ -479,7 +479,7 @@ paths:
   /hcmRestApi/scim/Roles:
     get:
       operationId: listRoles
-      summary: List roles
+      summary: Oracle Fusion Cloud Applications List roles
       description: Retrieve security roles defined in the application.
       tags:
         - Roles
@@ -505,7 +505,7 @@ paths:
   /hcmRestApi/scim/Roles/{id}:
     get:
       operationId: getRole
-      summary: Get a role
+      summary: Oracle Fusion Cloud Applications Get a role
       description: Retrieve a specific security role.
       tags:
         - Roles
@@ -528,7 +528,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateRole
-      summary: Update a role
+      summary: Oracle Fusion Cloud Applications Update a role
       description: Update an existing security role definition.
       tags:
         - Roles
@@ -554,7 +554,7 @@ paths:
   /ess/rest/scheduler/v1/requests:
     get:
       operationId: listScheduledRequests
-      summary: List scheduled process requests
+      summary: Oracle Fusion Cloud Applications List scheduled process requests
       description: >-
         Query scheduled process (ESS) job requests and their execution status.
       tags:
@@ -578,7 +578,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: submitScheduledRequest
-      summary: Submit a scheduled process request
+      summary: Oracle Fusion Cloud Applications Submit a scheduled process request
       description: Submit a new scheduled process job for execution.
       tags:
         - Scheduled Processes
@@ -598,7 +598,7 @@ paths:
   /ess/rest/scheduler/v1/requests/{requestId}:
     get:
       operationId: getScheduledRequest
-      summary: Get a scheduled process request
+      summary: Oracle Fusion Cloud Applications Get a scheduled process request
       description: Retrieve status and details of a scheduled process request.
       tags:
         - Scheduled Processes
@@ -622,7 +622,7 @@ paths:
   /bpm/api/4.0/tasks:
     get:
       operationId: listWorkflowTasks
-      summary: List workflow tasks
+      summary: Oracle Fusion Cloud Applications List workflow tasks
       description: >-
         Retrieve BPM workflow tasks including approval requests and
         action items assigned to users.
@@ -648,7 +648,7 @@ paths:
   /bpm/api/4.0/tasks/{id}:
     get:
       operationId: getWorkflowTask
-      summary: Get a workflow task
+      summary: Oracle Fusion Cloud Applications Get a workflow task
       description: Retrieve a specific workflow task.
       tags:
         - Manage Tasks
@@ -671,7 +671,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     put:
       operationId: performTaskAction
-      summary: Perform a task action
+      summary: Oracle Fusion Cloud Applications Perform a task action
       description: >-
         Perform an action on a workflow task such as approve, reject,
         reassign, or escalate.
@@ -701,7 +701,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/features:
     get:
       operationId: listFeatures
-      summary: List features
+      summary: Oracle Fusion Cloud Applications List features
       description: >-
         Retrieve application feature definitions and their enabled status.
       tags:
@@ -731,7 +731,7 @@ paths:
   /fscmRestApi/fndAuditRESTService/audittrail/getaudithistory:
     get:
       operationId: getAuditHistory
-      summary: Get audit history
+      summary: Oracle Fusion Cloud Applications Get audit history
       description: >-
         Retrieve audit trail history for tracked business objects.
       tags:

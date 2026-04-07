@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion Project Management REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Project Management, enabling
     integration with project planning, project costing, project billing,
@@ -49,7 +49,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/projects:
     get:
       operationId: listProjects
-      summary: List projects
+      summary: Oracle Fusion Cloud Applications List projects
       description: >-
         Retrieve project definitions including project attributes,
         organizational assignments, and status information.
@@ -85,7 +85,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createProject
-      summary: Create a project
+      summary: Oracle Fusion Cloud Applications Create a project
       description: Create a new project definition with attributes and assignments.
       tags:
         - Projects
@@ -109,7 +109,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/projects/{ProjectId}:
     get:
       operationId: getProject
-      summary: Get a project
+      summary: Oracle Fusion Cloud Applications Get a project
       description: Retrieve a specific project definition by identifier.
       tags:
         - Projects
@@ -135,7 +135,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateProject
-      summary: Update a project
+      summary: Oracle Fusion Cloud Applications Update a project
       description: Update an existing project definition.
       tags:
         - Projects
@@ -167,7 +167,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/projectTasks:
     get:
       operationId: listProjectTasks
-      summary: List project tasks
+      summary: Oracle Fusion Cloud Applications List project tasks
       description: >-
         Retrieve project task records including task hierarchy, dates,
         assignments, and progress information.
@@ -199,7 +199,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createProjectTask
-      summary: Create a project task
+      summary: Oracle Fusion Cloud Applications Create a project task
       description: Create a new task within a project.
       tags:
         - Project Tasks
@@ -223,7 +223,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/awards:
     get:
       operationId: listAwards
-      summary: List awards
+      summary: Oracle Fusion Cloud Applications List awards
       description: >-
         Retrieve grant and award records including funding sources,
         budget periods, and personnel assignments.
@@ -255,7 +255,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createAward
-      summary: Create an award
+      summary: Oracle Fusion Cloud Applications Create an award
       description: Create a new grant or award record.
       tags:
         - Awards
@@ -279,7 +279,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/awards/{AwardId}:
     get:
       operationId: getAward
-      summary: Get an award
+      summary: Oracle Fusion Cloud Applications Get an award
       description: Retrieve a specific award record.
       tags:
         - Awards
@@ -305,7 +305,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAward
-      summary: Update an award
+      summary: Oracle Fusion Cloud Applications Update an award
       description: Update an existing award record.
       tags:
         - Awards
@@ -333,7 +333,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/awardBudgets:
     get:
       operationId: listAwardBudgets
-      summary: List award budgets
+      summary: Oracle Fusion Cloud Applications List award budgets
       description: >-
         Retrieve award budget versions including planning options,
         resources, and budget lines.
@@ -365,7 +365,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createAwardBudget
-      summary: Create an award budget
+      summary: Oracle Fusion Cloud Applications Create an award budget
       description: Create a new award budget version.
       tags:
         - Award Budgets
@@ -389,7 +389,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/awardBudgets/{PlanVersionId}:
     get:
       operationId: getAwardBudget
-      summary: Get an award budget
+      summary: Oracle Fusion Cloud Applications Get an award budget
       description: Retrieve a specific award budget version.
       tags:
         - Award Budgets
@@ -413,7 +413,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateAwardBudget
-      summary: Update an award budget
+      summary: Oracle Fusion Cloud Applications Update an award budget
       description: Update an existing award budget version.
       tags:
         - Award Budgets
@@ -440,7 +440,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteAwardBudget
-      summary: Delete an award budget
+      summary: Oracle Fusion Cloud Applications Delete an award budget
       description: Delete an award budget version.
       tags:
         - Award Budgets
@@ -460,7 +460,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/changeOrders:
     get:
       operationId: listChangeOrders
-      summary: List change orders
+      summary: Oracle Fusion Cloud Applications List change orders
       description: >-
         Retrieve project change order records including change impacts,
         participants, and approval status.
@@ -492,7 +492,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createChangeOrder
-      summary: Create a change order
+      summary: Oracle Fusion Cloud Applications Create a change order
       description: Create a new project change order.
       tags:
         - Change Orders
@@ -516,7 +516,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/changeOrders/{ChangeDocumentId}:
     get:
       operationId: getChangeOrder
-      summary: Get a change order
+      summary: Oracle Fusion Cloud Applications Get a change order
       description: Retrieve a specific change order record.
       tags:
         - Change Orders
@@ -539,7 +539,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateChangeOrder
-      summary: Update a change order
+      summary: Oracle Fusion Cloud Applications Update a change order
       description: Update an existing change order.
       tags:
         - Change Orders
@@ -566,7 +566,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteChangeOrder
-      summary: Delete a change order
+      summary: Oracle Fusion Cloud Applications Delete a change order
       description: Delete an existing change order.
       tags:
         - Change Orders
@@ -586,7 +586,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/deliverables:
     get:
       operationId: listDeliverables
-      summary: List deliverables
+      summary: Oracle Fusion Cloud Applications List deliverables
       description: >-
         Retrieve project deliverable records including task associations
         and requirement linkages.
@@ -618,7 +618,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createDeliverable
-      summary: Create a deliverable
+      summary: Oracle Fusion Cloud Applications Create a deliverable
       description: Create a new project deliverable.
       tags:
         - Deliverables
@@ -642,7 +642,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/financialProjectPlans:
     get:
       operationId: listFinancialProjectPlans
-      summary: List financial project plans
+      summary: Oracle Fusion Cloud Applications List financial project plans
       description: >-
         Retrieve financial project plan versions including budgets,
         forecasts, resource assignments, and planning options.
@@ -674,7 +674,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createFinancialProjectPlan
-      summary: Create a financial project plan
+      summary: Oracle Fusion Cloud Applications Create a financial project plan
       description: Create a new financial project plan version.
       tags:
         - Financial Project Plans
@@ -698,7 +698,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/expenditureTypes:
     get:
       operationId: listExpenditureTypes
-      summary: List expenditure types
+      summary: Oracle Fusion Cloud Applications List expenditure types
       description: >-
         Retrieve expenditure type definitions used in project costing
         and billing.
@@ -730,7 +730,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/expenditureTypes/{ExpenditureTypeId}:
     get:
       operationId: getExpenditureType
-      summary: Get an expenditure type
+      summary: Oracle Fusion Cloud Applications Get an expenditure type
       description: Retrieve a specific expenditure type definition.
       tags:
         - Expenditure Types

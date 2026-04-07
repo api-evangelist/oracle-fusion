@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion Cloud ERP REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API
   description: >-
     REST APIs for Oracle Fusion Cloud ERP, providing programmatic access to
     financials, procurement, project management, and risk management
@@ -51,7 +51,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/invoices:
     get:
       operationId: listInvoices
-      summary: List invoices
+      summary: Oracle Fusion Cloud Applications List invoices
       description: >-
         Retrieve a collection of accounts payable invoices. Supports filtering,
         sorting, and pagination using standard Oracle REST query parameters.
@@ -96,7 +96,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createInvoice
-      summary: Create an invoice
+      summary: Oracle Fusion Cloud Applications Create an invoice
       description: >-
         Create a new accounts payable invoice with header and optionally
         include invoice lines and distributions.
@@ -122,7 +122,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}:
     get:
       operationId: getInvoice
-      summary: Get an invoice
+      summary: Oracle Fusion Cloud Applications Get an invoice
       description: Retrieve a specific accounts payable invoice by its unique identifier.
       tags:
         - Invoices
@@ -143,7 +143,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateInvoice
-      summary: Update an invoice
+      summary: Oracle Fusion Cloud Applications Update an invoice
       description: Update an existing accounts payable invoice.
       tags:
         - Invoices
@@ -170,7 +170,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteInvoice
-      summary: Delete an invoice
+      summary: Oracle Fusion Cloud Applications Delete an invoice
       description: Delete an accounts payable invoice.
       tags:
         - Invoices
@@ -186,7 +186,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/payablesPayments:
     get:
       operationId: listPayments
-      summary: List payments
+      summary: Oracle Fusion Cloud Applications List payments
       description: >-
         Retrieve a collection of accounts payable payments including check,
         electronic, and wire transfer payments.
@@ -222,7 +222,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/payablesPayments/{PaymentId}:
     get:
       operationId: getPayment
-      summary: Get a payment
+      summary: Oracle Fusion Cloud Applications Get a payment
       description: Retrieve a specific payment by its unique identifier.
       tags:
         - Payments
@@ -247,7 +247,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/ledgerBalances:
     get:
       operationId: listLedgerBalances
-      summary: List ledger balances
+      summary: Oracle Fusion Cloud Applications List ledger balances
       description: >-
         Retrieve general ledger account balances. Use query parameters to
         filter by ledger, period, account segment values, and currency.
@@ -280,7 +280,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/generalLedgerJournals:
     get:
       operationId: listJournals
-      summary: List general ledger journals
+      summary: Oracle Fusion Cloud Applications List general ledger journals
       description: >-
         Retrieve general ledger journal entries. The journals resource
         provides access to journal headers and lines for financial reporting.
@@ -313,7 +313,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createJournal
-      summary: Create a general ledger journal
+      summary: Oracle Fusion Cloud Applications Create a general ledger journal
       description: >-
         Create a new general ledger journal entry with header and lines.
       tags:
@@ -338,7 +338,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses:
     get:
       operationId: listPeriodStatuses
-      summary: List general ledger period statuses
+      summary: Oracle Fusion Cloud Applications List general ledger period statuses
       description: >-
         Retrieve the open, closed, or future status of general ledger
         accounting periods for a specified ledger.
@@ -370,7 +370,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/receivablesInvoices:
     get:
       operationId: listReceivablesInvoices
-      summary: List receivables invoices
+      summary: Oracle Fusion Cloud Applications List receivables invoices
       description: >-
         Retrieve accounts receivable invoices including debit memos, credit
         memos, and standard invoices.
@@ -403,7 +403,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createReceivablesInvoice
-      summary: Create a receivables invoice
+      summary: Oracle Fusion Cloud Applications Create a receivables invoice
       description: Create a new accounts receivable transaction.
       tags:
         - Accounts Receivable
@@ -427,7 +427,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/standardReceipts:
     get:
       operationId: listReceipts
-      summary: List standard receipts
+      summary: Oracle Fusion Cloud Applications List standard receipts
       description: >-
         Retrieve standard receipt records for accounts receivable payments
         received from customers.
@@ -459,7 +459,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createReceipt
-      summary: Create a standard receipt
+      summary: Oracle Fusion Cloud Applications Create a standard receipt
       description: Create a new standard receipt for an accounts receivable payment.
       tags:
         - Accounts Receivable
@@ -483,7 +483,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/expenseReports:
     get:
       operationId: listExpenseReports
-      summary: List expense reports
+      summary: Oracle Fusion Cloud Applications List expense reports
       description: Retrieve a collection of employee expense reports.
       tags:
         - Expense Reports
@@ -514,7 +514,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createExpenseReport
-      summary: Create an expense report
+      summary: Oracle Fusion Cloud Applications Create an expense report
       description: Create a new employee expense report with expense items.
       tags:
         - Expense Reports
@@ -538,7 +538,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}:
     get:
       operationId: getExpenseReport
-      summary: Get an expense report
+      summary: Oracle Fusion Cloud Applications Get an expense report
       description: Retrieve a specific expense report by its identifier.
       tags:
         - Expense Reports
@@ -564,7 +564,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     patch:
       operationId: updateExpenseReport
-      summary: Update an expense report
+      summary: Oracle Fusion Cloud Applications Update an expense report
       description: Update an existing expense report.
       tags:
         - Expense Reports
@@ -596,7 +596,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     delete:
       operationId: deleteExpenseReport
-      summary: Delete an expense report
+      summary: Oracle Fusion Cloud Applications Delete an expense report
       description: Delete an expense report.
       tags:
         - Expense Reports
@@ -617,7 +617,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/cashBankAccounts:
     get:
       operationId: listBankAccounts
-      summary: List bank accounts
+      summary: Oracle Fusion Cloud Applications List bank accounts
       description: View, create, and modify bank accounts for cash management.
       tags:
         - Cash Management
@@ -648,7 +648,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers:
     get:
       operationId: listBankAccountTransfers
-      summary: List bank account transfers
+      summary: Oracle Fusion Cloud Applications List bank account transfers
       description: >-
         Retrieve bank account transfer records for cash management.
       tags:
@@ -678,7 +678,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createBankAccountTransfer
-      summary: Create a bank account transfer
+      summary: Oracle Fusion Cloud Applications Create a bank account transfer
       description: Create a new bank account transfer.
       tags:
         - Cash Management
@@ -702,7 +702,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions:
     get:
       operationId: listBudgetTransactions
-      summary: List budget transactions
+      summary: Oracle Fusion Cloud Applications List budget transactions
       description: >-
         Retrieve budgetary control budget transactions and validation results.
       tags:
@@ -732,7 +732,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: createBudgetTransaction
-      summary: Create a budget transaction
+      summary: Oracle Fusion Cloud Applications Create a budget transaction
       description: >-
         Create budget entries and perform budgetary control validation.
       tags:
@@ -757,7 +757,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/erpintegrations:
     post:
       operationId: submitErpIntegration
-      summary: Submit an ERP integration
+      summary: Oracle Fusion Cloud Applications Submit an ERP integration
       description: >-
         Automate bulk data import and export flows for ERP integrations
         using file-based data import (FBDI) and business intelligence (BI)
@@ -784,7 +784,7 @@ paths:
   /fscmRestApi/resources/11.13.18.05/currencyRates:
     get:
       operationId: listCurrencyRates
-      summary: List currency rates
+      summary: Oracle Fusion Cloud Applications List currency rates
       description: >-
         Retrieve currency exchange rates and available rate dates for
         cross-currency financial operations.

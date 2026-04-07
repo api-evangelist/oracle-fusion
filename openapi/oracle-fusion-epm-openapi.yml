@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: Oracle Fusion EPM REST API
+  title: Oracle Fusion Cloud Applications Oracle Fusion EPM REST API
   description: >-
     REST APIs for Oracle Fusion Cloud Enterprise Performance Management,
     enabling integration with planning, budgeting, forecasting, financial
@@ -45,7 +45,7 @@ paths:
   /HyperionPlanning/rest/v3/applications:
     get:
       operationId: listApplications
-      summary: List EPM applications
+      summary: Oracle Fusion Cloud Applications List EPM applications
       description: >-
         Retrieve a list of EPM Planning applications available in
         the service instance.
@@ -70,7 +70,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}:
     get:
       operationId: getApplication
-      summary: Get an EPM application
+      summary: Oracle Fusion Cloud Applications Get an EPM application
       description: >-
         Retrieve metadata and configuration details for a specific
         EPM Planning application.
@@ -97,7 +97,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions:
     get:
       operationId: listDimensions
-      summary: List dimensions
+      summary: Oracle Fusion Cloud Applications List dimensions
       description: >-
         Retrieve the list of dimensions defined in an EPM Planning
         application.
@@ -130,7 +130,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions/{dimensionName}/members:
     get:
       operationId: listDimensionMembers
-      summary: List dimension members
+      summary: Oracle Fusion Cloud Applications List dimension members
       description: >-
         Retrieve members belonging to a specific dimension in an
         EPM Planning application.
@@ -170,7 +170,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/plantypes/{planType}/exportdataslice:
     post:
       operationId: exportDataSlice
-      summary: Export a data slice
+      summary: Oracle Fusion Cloud Applications Export a data slice
       description: >-
         Export planning data for a specified slice defined by dimension
         member selections, point-of-view, and filters.
@@ -208,7 +208,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/plantypes/{planType}/importdataslice:
     post:
       operationId: importDataSlice
-      summary: Import a data slice
+      summary: Oracle Fusion Cloud Applications Import a data slice
       description: >-
         Import planning data into a specified plan type using dimension
         member intersections and values.
@@ -250,7 +250,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/jobs:
     get:
       operationId: listJobs
-      summary: List jobs
+      summary: Oracle Fusion Cloud Applications List jobs
       description: >-
         Retrieve a list of EPM jobs including business rules, data maps,
         and scheduled maintenance tasks.
@@ -281,7 +281,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     post:
       operationId: executeJob
-      summary: Execute a job
+      summary: Oracle Fusion Cloud Applications Execute a job
       description: >-
         Execute an EPM job such as a business rule, data map, refresh
         database, or cube refresh.
@@ -313,7 +313,7 @@ paths:
   /HyperionPlanning/rest/v3/applications/{applicationName}/jobs/{jobId}:
     get:
       operationId: getJobStatus
-      summary: Get job status
+      summary: Oracle Fusion Cloud Applications Get job status
       description: >-
         Retrieve execution status and details for a specific EPM job.
       tags:
@@ -344,7 +344,7 @@ paths:
   /interop/rest/v3/files:
     get:
       operationId: listFiles
-      summary: List files
+      summary: Oracle Fusion Cloud Applications List files
       description: >-
         Retrieve a list of files in the EPM inbox and outbox used for
         data import, export, and snapshot operations.
@@ -369,7 +369,7 @@ paths:
   /interop/rest/v3/files/{fileName}:
     get:
       operationId: downloadFile
-      summary: Download a file
+      summary: Oracle Fusion Cloud Applications Download a file
       description: >-
         Download a file from the EPM inbox or outbox.
       tags:
@@ -395,7 +395,7 @@ paths:
           $ref: '#/components/responses/NotFound'
     post:
       operationId: uploadFile
-      summary: Upload a file
+      summary: Oracle Fusion Cloud Applications Upload a file
       description: >-
         Upload a file to the EPM inbox for data import operations.
       tags:
@@ -429,7 +429,7 @@ paths:
           $ref: '#/components/responses/Unauthorized'
     delete:
       operationId: deleteFile
-      summary: Delete a file
+      summary: Oracle Fusion Cloud Applications Delete a file
       description: >-
         Delete a file from the EPM inbox or outbox.
       tags:
@@ -450,7 +450,7 @@ paths:
   /interop/rest/v3/snapshots:
     get:
       operationId: listSnapshots
-      summary: List snapshots
+      summary: Oracle Fusion Cloud Applications List snapshots
       description: >-
         Retrieve a list of application snapshots available for migration
         and backup operations.
@@ -475,7 +475,7 @@ paths:
   /interop/rest/v3/snapshots/{snapshotName}:
     delete:
       operationId: deleteSnapshot
-      summary: Delete a snapshot
+      summary: Oracle Fusion Cloud Applications Delete a snapshot
       description: Delete an application snapshot.
       tags:
         - Migration
