@@ -4,121 +4,75 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Oracle Fusion Cloud Applications
 providerId: oracle-fusion
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Cloud
-  - CX
-  - Enterprise
-  - EPM
   - ERP
   - HCM
-  - Project Management
-  - REST API
-  - SaaS
-  - SCM
+  - Oracle Cloud
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Oracle Fusion Cloud Applications API surface.
-  Captures per-tier quotas, burst behavior, response signaling, and recovery semantics. Defaults are scaffold
-  values to be replaced with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
+  - SaaS
+description: >-
+  Oracle Fusion Cloud Applications REST APIs do not publish per-second or
+  per-minute rate-limit numbers in the public REST API guides. Throughput is
+  governed by the underlying Fusion Applications service pod capacity, by
+  per-resource page-size limits, and by Fusion Common's authentication and
+  session controls. Customers experiencing throttling are directed to Oracle
+  Support to raise capacity via a service request, often coupled with a
+  recommendation to switch to bulk-data patterns (FBDI, BI Publisher) for
+  high-volume integrations.
+sources:
+  - https://docs.oracle.com/en/cloud/saas/
+  - https://docs.oracle.com/en/cloud/saas/applications-common/
+notes: >-
+  Oracle does not publish per-tenancy RPS/RPM numbers for Fusion REST APIs.
+  Set reconciled to true after capturing tenancy-specific values from a Fusion
+  Applications service request response.
 responseCodes:
-  throttled: 429
-  quotaExceeded: 429
+  unauthorized: 401
+  forbidden: 403
+  notFound: 404
+  serverError: 500
   serviceUnavailable: 503
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Oracle Fusion ERP REST API
-      - Oracle Fusion HCM REST API
-      - Oracle Fusion SCM REST API
-      - Oracle Fusion CX Sales and Fusion Service REST API
-      - Oracle Fusion Common Features REST API
-      - Oracle Fusion Project Management REST API
-      - Oracle Fusion EPM REST API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Oracle Fusion ERP REST API
-      - Oracle Fusion HCM REST API
-      - Oracle Fusion SCM REST API
-      - Oracle Fusion CX Sales and Fusion Service REST API
-      - Oracle Fusion Common Features REST API
-      - Oracle Fusion Project Management REST API
-      - Oracle Fusion EPM REST API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Oracle Fusion ERP REST API
-      - Oracle Fusion HCM REST API
-      - Oracle Fusion SCM REST API
-      - Oracle Fusion CX Sales and Fusion Service REST API
-      - Oracle Fusion Common Features REST API
-      - Oracle Fusion Project Management REST API
-      - Oracle Fusion EPM REST API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Oracle Fusion ERP REST API
-      - Oracle Fusion HCM REST API
-      - Oracle Fusion SCM REST API
-      - Oracle Fusion CX Sales and Fusion Service REST API
-      - Oracle Fusion Common Features REST API
-      - Oracle Fusion Project Management REST API
-      - Oracle Fusion EPM REST API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Oracle Fusion ERP REST API
-      - Oracle Fusion HCM REST API
-      - Oracle Fusion SCM REST API
-      - Oracle Fusion CX Sales and Fusion Service REST API
-      - Oracle Fusion Common Features REST API
-      - Oracle Fusion Project Management REST API
-      - Oracle Fusion EPM REST API
+  - name: REST API Throughput
+    scope: tenancy
+    metric: varies
+    limit: bound by Fusion Applications service pod capacity
+    notes: >-
+      No public per-tenancy rate is published; throughput is governed by the
+      underlying Fusion Applications pod and may be raised via an Oracle
+      Support service request.
+  - name: Bulk REST Page Size
+    scope: request
+    metric: rows_per_request
+    limit: 500
+    notes: >-
+      Default Fusion REST API page size is 25 rows, configurable up to 500 via
+      the limit query parameter for List operations.
+  - name: REST Document Upload
+    scope: request
+    metric: payload_size_bytes
+    limit: see Fusion REST API guide
+    notes: Document attachment endpoints enforce per-file size limits documented per resource.
 policies:
   - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+    description: >-
+      Clients should implement exponential backoff with jitter on 5xx
+      responses; honor any Retry-After header when present.
+  - name: Pagination
+    description: >-
+      Use the limit and offset query parameters and follow self/next links
+      rather than issuing parallel large List operations.
+  - name: Capacity Adjustment
+    description: >-
+      Sustained high-volume integrations should be coordinated through Oracle
+      Support; tenancies on dedicated pods can request capacity increases.
+  - name: Bulk Data Patterns
+    description: >-
+      For high-volume integrations prefer the BI Publisher bulk extract or
+      File-Based Data Import (FBDI) over hitting transactional REST endpoints.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

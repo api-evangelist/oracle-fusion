@@ -4,131 +4,82 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Oracle Fusion Cloud Applications
 providerId: oracle-fusion
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Cloud
-  - CX
-  - Enterprise
-  - EPM
   - ERP
   - HCM
-  - Project Management
-  - REST API
   - SaaS
   - SCM
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+description: >-
+  Oracle Fusion Cloud Applications is the umbrella SaaS suite covering ERP,
+  HCM, SCM, CX, and EPM. Each pillar is sold separately on the Oracle Cloud
+  Applications price list, billed per Hosted Named User, Hosted Employee, or
+  Hosted Single-Sign-On Employee per month depending on the module. Some
+  modules (e.g. Procurement Contracts, Project Management) use additional
+  per-transaction or per-record metrics. There is no single combined "Fusion"
+  SKU and no public per-API tier; REST API access is included with any active
+  pillar subscription. Engage Oracle Sales for the per-pillar rate.
+sources:
+  - https://www.oracle.com/applications/cloud/
+  - https://docs.oracle.com/en/cloud/saas/
+  - https://www.oracle.com/applications/customer-experience/contact/
+notes: >-
+  Oracle blocks programmatic fetches of www.oracle.com pricing pages (HTTP 403).
+  Plan structure preserved as one subscription per pillar plus an enterprise
+  bundle; replace per-user list prices with the verified Oracle Applications
+  Global Price List values when available.
 plans:
-  - id: oracle-fusion-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Oracle Fusion Cloud Applications API surface. Intended for evaluation,
-      prototyping, and low-volume integrations. Real limits and pricing must be reconciled with the provider's
-      published plan documentation.
+  - id: oracle-fusion-pillar-subscription
+    name: Fusion Pillar Subscription (per pillar)
+    type: subscription
+    description: >-
+      Per-pillar SaaS subscription (ERP, HCM, SCM, CX, or EPM), billed monthly
+      against a Hosted Named User, Hosted Employee, or Hosted Single-Sign-On
+      Employee metric. REST API surface for the pillar is included.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
+      - label: Hosted Named User (per pillar)
+        name: hosted_named_user
+        type: subscription
+        metric: user
+        limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
         unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Oracle Fusion ERP REST API
-      - name: Oracle Fusion HCM REST API
-      - name: Oracle Fusion SCM REST API
-      - name: Oracle Fusion CX Sales and Fusion Service REST API
-      - name: Oracle Fusion Common Features REST API
-      - name: Oracle Fusion Project Management REST API
-      - name: Oracle Fusion EPM REST API
-  - id: oracle-fusion-pro
-    name: Professional
-    type: paid
-    description: Production tier for Oracle Fusion Cloud Applications. Provides higher quotas, priority
-      support, and access to the broader API portfolio. Pricing placeholder; align with the provider's
-      pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 100000
+        price: contact sales
+        userMultiplied: true
+      - label: Hosted Employee (per pillar)
+        name: hosted_employee
+        type: subscription
+        metric: employee
+        limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
         unit: 1
-        price: TBD
-        userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
+        price: contact sales
+        userMultiplied: true
+      - label: Hosted Single-Sign-On Employee
+        name: hosted_sso_employee
+        type: subscription
+        metric: employee
+        limit: -1
+        timeFrame: month
         geo: global
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
         unit: 1
-        price: '0.00'
-        userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
-        type: metered
+        price: contact sales
+        userMultiplied: true
+      - label: REST API Calls (included)
+        name: rest_api_calls
+        type: quota
         metric: requests
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: '0.00'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
       - name: Oracle Fusion ERP REST API
       - name: Oracle Fusion HCM REST API
       - name: Oracle Fusion SCM REST API
@@ -137,50 +88,24 @@ plans:
       - name: Oracle Fusion Project Management REST API
       - name: Oracle Fusion EPM REST API
   - id: oracle-fusion-enterprise
-    name: Enterprise
+    name: Enterprise Multi-Pillar Agreement
     type: enterprise
-    description: Custom-negotiated tier for Oracle Fusion Cloud Applications. Includes dedicated capacity,
-      contractual SLAs, security review, data residency options, and named technical account management.
+    description: >-
+      Negotiated multi-pillar enterprise agreement covering several Fusion
+      pillars under a single contract. Includes contractual SLAs, dedicated
+      pod options, security review, and named technical account management.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
-        type: quota
-        metric: requests
+      - label: Negotiated Multi-Pillar User Volume
+        name: negotiated_users
+        type: subscription
+        metric: user
         limit: -1
-        timeFrame: month
+        timeFrame: year
         geo: configurable
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
         unit: 1
         price: custom
-        userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
-        geo: configurable
-        domains:
-          - https://{instance}.oraclecloud.com/fscmRestApi/
-          - https://{instance}.oraclecloud.com/hcmRestApi/
-          - https://{instance}.oraclecloud.com/crmRestApi/
-          - https://{instance}.oraclecloud.com/HyperionPlanning/rest/
-        unit: 1
-        price: custom
-        userMultiplied: false
+        userMultiplied: true
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
       - name: Oracle Fusion ERP REST API
       - name: Oracle Fusion HCM REST API
       - name: Oracle Fusion SCM REST API
