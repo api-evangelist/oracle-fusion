@@ -1,0 +1,1092 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as
+    attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows
+    used across all Fusion Cloud application pillars.
+  tags:
+  - Oracle
+  - Fusion
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: oracle-fusion
+    baseUri: https://servername.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{ORACLE_FUSION_TOKEN}}'
+    resources:
+    - name: fscmrestapi-resources-11-13-18-05-commonlookups
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups
+      operations:
+      - name: listcommonlookups
+        method: GET
+        description: Oracle Fusion Cloud Applications List common lookups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcommonlookup
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a common lookup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-commonlookups-
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}
+      operations:
+      - name: getcommonlookup
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a common lookup
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+          description: Lookup type identifier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatecommonlookup
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a common lookup
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletecommonlookup
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete a common lookup
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-commonlookups-
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes
+      operations:
+      - name: listlookupcodes
+        method: GET
+        description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createlookupcode
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a lookup code
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-announcements
+      path: /fscmRestApi/resources/11.13.18.05/announcements
+      operations:
+      - name: listannouncements
+        method: GET
+        description: Oracle Fusion Cloud Applications List announcements
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createannouncement
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an announcement
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-announcements-
+      path: /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}
+      operations:
+      - name: getannouncement
+        method: GET
+        description: Oracle Fusion Cloud Applications Get an announcement
+        inputParameters:
+        - name: AnnouncementId
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateannouncement
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update an announcement
+        inputParameters:
+        - name: AnnouncementId
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteannouncement
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete an announcement
+        inputParameters:
+        - name: AnnouncementId
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-persons
+      path: /fscmRestApi/resources/11.13.18.05/persons
+      operations:
+      - name: listpersons
+        method: GET
+        description: Oracle Fusion Cloud Applications List persons
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createperson
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a person
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-persons-person
+      path: /fscmRestApi/resources/11.13.18.05/persons/{Personid}
+      operations:
+      - name: getperson
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a person
+        inputParameters:
+        - name: Personid
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateperson
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a person
+        inputParameters:
+        - name: Personid
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteperson
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete a person
+        inputParameters:
+        - name: Personid
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: hcmrestapi-scim-roles
+      path: /hcmRestApi/scim/Roles
+      operations:
+      - name: listroles
+        method: GET
+        description: Oracle Fusion Cloud Applications List roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: hcmrestapi-scim-roles-id
+      path: /hcmRestApi/scim/Roles/{id}
+      operations:
+      - name: getrole
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a role
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updaterole
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a role
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: ess-rest-scheduler-v1-requests
+      path: /ess/rest/scheduler/v1/requests
+      operations:
+      - name: listscheduledrequests
+        method: GET
+        description: Oracle Fusion Cloud Applications List scheduled process requests
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: submitscheduledrequest
+        method: POST
+        description: Oracle Fusion Cloud Applications Submit a scheduled process request
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: ess-rest-scheduler-v1-requests-requestid
+      path: /ess/rest/scheduler/v1/requests/{requestId}
+      operations:
+      - name: getscheduledrequest
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a scheduled process request
+        inputParameters:
+        - name: requestId
+          in: path
+          type: integer
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: bpm-api-4-0-tasks
+      path: /bpm/api/4.0/tasks
+      operations:
+      - name: listworkflowtasks
+        method: GET
+        description: Oracle Fusion Cloud Applications List workflow tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: bpm-api-4-0-tasks-id
+      path: /bpm/api/4.0/tasks/{id}
+      operations:
+      - name: getworkflowtask
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a workflow task
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: performtaskaction
+        method: PUT
+        description: Oracle Fusion Cloud Applications Perform a task action
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-resources-11-13-18-05-features
+      path: /fscmRestApi/resources/11.13.18.05/features
+      operations:
+      - name: listfeatures
+        method: GET
+        description: Oracle Fusion Cloud Applications List features
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmrestapi-fndauditrestservice-audittrail-getau
+      path: /fscmRestApi/fndAuditRESTService/audittrail/getaudithistory
+      operations:
+      - name: getaudithistory
+        method: GET
+        description: Oracle Fusion Cloud Applications Get audit history
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: oracle-fusion-rest
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API.
+    resources:
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups
+      name: listcommonlookups
+      operations:
+      - method: GET
+        name: listcommonlookups
+        description: Oracle Fusion Cloud Applications List common lookups
+        call: oracle-fusion.listcommonlookups
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups
+      name: createcommonlookup
+      operations:
+      - method: POST
+        name: createcommonlookup
+        description: Oracle Fusion Cloud Applications Create a common lookup
+        call: oracle-fusion.createcommonlookup
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}
+      name: getcommonlookup
+      operations:
+      - method: GET
+        name: getcommonlookup
+        description: Oracle Fusion Cloud Applications Get a common lookup
+        call: oracle-fusion.getcommonlookup
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}
+      name: updatecommonlookup
+      operations:
+      - method: PATCH
+        name: updatecommonlookup
+        description: Oracle Fusion Cloud Applications Update a common lookup
+        call: oracle-fusion.updatecommonlookup
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}
+      name: deletecommonlookup
+      operations:
+      - method: DELETE
+        name: deletecommonlookup
+        description: Oracle Fusion Cloud Applications Delete a common lookup
+        call: oracle-fusion.deletecommonlookup
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes
+      name: listlookupcodes
+      operations:
+      - method: GET
+        name: listlookupcodes
+        description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+        call: oracle-fusion.listlookupcodes
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes
+      name: createlookupcode
+      operations:
+      - method: POST
+        name: createlookupcode
+        description: Oracle Fusion Cloud Applications Create a lookup code
+        call: oracle-fusion.createlookupcode
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/announcements
+      name: listannouncements
+      operations:
+      - method: GET
+        name: listannouncements
+        description: Oracle Fusion Cloud Applications List announcements
+        call: oracle-fusion.listannouncements
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/announcements
+      name: createannouncement
+      operations:
+      - method: POST
+        name: createannouncement
+        description: Oracle Fusion Cloud Applications Create an announcement
+        call: oracle-fusion.createannouncement
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}
+      name: getannouncement
+      operations:
+      - method: GET
+        name: getannouncement
+        description: Oracle Fusion Cloud Applications Get an announcement
+        call: oracle-fusion.getannouncement
+        with:
+          AnnouncementId: rest.AnnouncementId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}
+      name: updateannouncement
+      operations:
+      - method: PATCH
+        name: updateannouncement
+        description: Oracle Fusion Cloud Applications Update an announcement
+        call: oracle-fusion.updateannouncement
+        with:
+          AnnouncementId: rest.AnnouncementId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}
+      name: deleteannouncement
+      operations:
+      - method: DELETE
+        name: deleteannouncement
+        description: Oracle Fusion Cloud Applications Delete an announcement
+        call: oracle-fusion.deleteannouncement
+        with:
+          AnnouncementId: rest.AnnouncementId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/persons
+      name: listpersons
+      operations:
+      - method: GET
+        name: listpersons
+        description: Oracle Fusion Cloud Applications List persons
+        call: oracle-fusion.listpersons
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/persons
+      name: createperson
+      operations:
+      - method: POST
+        name: createperson
+        description: Oracle Fusion Cloud Applications Create a person
+        call: oracle-fusion.createperson
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/persons/{Personid}
+      name: getperson
+      operations:
+      - method: GET
+        name: getperson
+        description: Oracle Fusion Cloud Applications Get a person
+        call: oracle-fusion.getperson
+        with:
+          Personid: rest.Personid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/persons/{Personid}
+      name: updateperson
+      operations:
+      - method: PATCH
+        name: updateperson
+        description: Oracle Fusion Cloud Applications Update a person
+        call: oracle-fusion.updateperson
+        with:
+          Personid: rest.Personid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/persons/{Personid}
+      name: deleteperson
+      operations:
+      - method: DELETE
+        name: deleteperson
+        description: Oracle Fusion Cloud Applications Delete a person
+        call: oracle-fusion.deleteperson
+        with:
+          Personid: rest.Personid
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /hcmRestApi/scim/Roles
+      name: listroles
+      operations:
+      - method: GET
+        name: listroles
+        description: Oracle Fusion Cloud Applications List roles
+        call: oracle-fusion.listroles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /hcmRestApi/scim/Roles/{id}
+      name: getrole
+      operations:
+      - method: GET
+        name: getrole
+        description: Oracle Fusion Cloud Applications Get a role
+        call: oracle-fusion.getrole
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /hcmRestApi/scim/Roles/{id}
+      name: updaterole
+      operations:
+      - method: PATCH
+        name: updaterole
+        description: Oracle Fusion Cloud Applications Update a role
+        call: oracle-fusion.updaterole
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /ess/rest/scheduler/v1/requests
+      name: listscheduledrequests
+      operations:
+      - method: GET
+        name: listscheduledrequests
+        description: Oracle Fusion Cloud Applications List scheduled process requests
+        call: oracle-fusion.listscheduledrequests
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /ess/rest/scheduler/v1/requests
+      name: submitscheduledrequest
+      operations:
+      - method: POST
+        name: submitscheduledrequest
+        description: Oracle Fusion Cloud Applications Submit a scheduled process request
+        call: oracle-fusion.submitscheduledrequest
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /ess/rest/scheduler/v1/requests/{requestId}
+      name: getscheduledrequest
+      operations:
+      - method: GET
+        name: getscheduledrequest
+        description: Oracle Fusion Cloud Applications Get a scheduled process request
+        call: oracle-fusion.getscheduledrequest
+        with:
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /bpm/api/4.0/tasks
+      name: listworkflowtasks
+      operations:
+      - method: GET
+        name: listworkflowtasks
+        description: Oracle Fusion Cloud Applications List workflow tasks
+        call: oracle-fusion.listworkflowtasks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /bpm/api/4.0/tasks/{id}
+      name: getworkflowtask
+      operations:
+      - method: GET
+        name: getworkflowtask
+        description: Oracle Fusion Cloud Applications Get a workflow task
+        call: oracle-fusion.getworkflowtask
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /bpm/api/4.0/tasks/{id}
+      name: performtaskaction
+      operations:
+      - method: PUT
+        name: performtaskaction
+        description: Oracle Fusion Cloud Applications Perform a task action
+        call: oracle-fusion.performtaskaction
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/resources/11.13.18.05/features
+      name: listfeatures
+      operations:
+      - method: GET
+        name: listfeatures
+        description: Oracle Fusion Cloud Applications List features
+        call: oracle-fusion.listfeatures
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /fscmRestApi/fndAuditRESTService/audittrail/getaudithistory
+      name: getaudithistory
+      operations:
+      - method: GET
+        name: getaudithistory
+        description: Oracle Fusion Cloud Applications Get audit history
+        call: oracle-fusion.getaudithistory
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: oracle-fusion-mcp
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API for AI agent use.
+    tools:
+    - name: listcommonlookups
+      description: Oracle Fusion Cloud Applications List common lookups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listcommonlookups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createcommonlookup
+      description: Oracle Fusion Cloud Applications Create a common lookup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.createcommonlookup
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getcommonlookup
+      description: Oracle Fusion Cloud Applications Get a common lookup
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getcommonlookup
+      with:
+        LookupType: tools.LookupType
+      inputParameters:
+      - name: LookupType
+        type: string
+        description: Lookup type identifier
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatecommonlookup
+      description: Oracle Fusion Cloud Applications Update a common lookup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.updatecommonlookup
+      with:
+        LookupType: tools.LookupType
+      inputParameters:
+      - name: LookupType
+        type: string
+        description: LookupType
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletecommonlookup
+      description: Oracle Fusion Cloud Applications Delete a common lookup
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: oracle-fusion.deletecommonlookup
+      with:
+        LookupType: tools.LookupType
+      inputParameters:
+      - name: LookupType
+        type: string
+        description: LookupType
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listlookupcodes
+      description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listlookupcodes
+      with:
+        LookupType: tools.LookupType
+      inputParameters:
+      - name: LookupType
+        type: string
+        description: LookupType
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createlookupcode
+      description: Oracle Fusion Cloud Applications Create a lookup code
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.createlookupcode
+      with:
+        LookupType: tools.LookupType
+      inputParameters:
+      - name: LookupType
+        type: string
+        description: LookupType
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listannouncements
+      description: Oracle Fusion Cloud Applications List announcements
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listannouncements
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createannouncement
+      description: Oracle Fusion Cloud Applications Create an announcement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.createannouncement
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getannouncement
+      description: Oracle Fusion Cloud Applications Get an announcement
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getannouncement
+      with:
+        AnnouncementId: tools.AnnouncementId
+      inputParameters:
+      - name: AnnouncementId
+        type: integer
+        description: AnnouncementId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateannouncement
+      description: Oracle Fusion Cloud Applications Update an announcement
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.updateannouncement
+      with:
+        AnnouncementId: tools.AnnouncementId
+      inputParameters:
+      - name: AnnouncementId
+        type: integer
+        description: AnnouncementId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteannouncement
+      description: Oracle Fusion Cloud Applications Delete an announcement
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: oracle-fusion.deleteannouncement
+      with:
+        AnnouncementId: tools.AnnouncementId
+      inputParameters:
+      - name: AnnouncementId
+        type: integer
+        description: AnnouncementId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listpersons
+      description: Oracle Fusion Cloud Applications List persons
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listpersons
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createperson
+      description: Oracle Fusion Cloud Applications Create a person
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.createperson
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getperson
+      description: Oracle Fusion Cloud Applications Get a person
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getperson
+      with:
+        Personid: tools.Personid
+      inputParameters:
+      - name: Personid
+        type: integer
+        description: Personid
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateperson
+      description: Oracle Fusion Cloud Applications Update a person
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.updateperson
+      with:
+        Personid: tools.Personid
+      inputParameters:
+      - name: Personid
+        type: integer
+        description: Personid
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteperson
+      description: Oracle Fusion Cloud Applications Delete a person
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: oracle-fusion.deleteperson
+      with:
+        Personid: tools.Personid
+      inputParameters:
+      - name: Personid
+        type: integer
+        description: Personid
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listroles
+      description: Oracle Fusion Cloud Applications List roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listroles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getrole
+      description: Oracle Fusion Cloud Applications Get a role
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getrole
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updaterole
+      description: Oracle Fusion Cloud Applications Update a role
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.updaterole
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listscheduledrequests
+      description: Oracle Fusion Cloud Applications List scheduled process requests
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listscheduledrequests
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: submitscheduledrequest
+      description: Oracle Fusion Cloud Applications Submit a scheduled process request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: oracle-fusion.submitscheduledrequest
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getscheduledrequest
+      description: Oracle Fusion Cloud Applications Get a scheduled process request
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getscheduledrequest
+      with:
+        requestId: tools.requestId
+      inputParameters:
+      - name: requestId
+        type: integer
+        description: requestId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listworkflowtasks
+      description: Oracle Fusion Cloud Applications List workflow tasks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listworkflowtasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getworkflowtask
+      description: Oracle Fusion Cloud Applications Get a workflow task
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getworkflowtask
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: performtaskaction
+      description: Oracle Fusion Cloud Applications Perform a task action
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.performtaskaction
+      with:
+        id: tools.id
+      inputParameters:
+      - name: id
+        type: string
+        description: id
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listfeatures
+      description: Oracle Fusion Cloud Applications List features
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.listfeatures
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaudithistory
+      description: Oracle Fusion Cloud Applications Get audit history
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: oracle-fusion.getaudithistory
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_TOKEN: ORACLE_FUSION_TOKEN
