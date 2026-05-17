@@ -43,7 +43,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
       - type: GettingStarted
         url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
       - type: OpenAPI
         url: openapi/oracle-fusion-erp-openapi.yml
@@ -75,7 +75,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
       - type: GettingStarted
         url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
       - type: OpenAPI
         url: openapi/oracle-fusion-hcm-openapi.yml
@@ -109,7 +109,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
       - type: GettingStarted
         url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
       - type: OpenAPI
         url: openapi/oracle-fusion-scm-openapi.yml
@@ -142,7 +142,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
       - type: GettingStarted
         url: https://docs.oracle.com/en/cloud/saas/sales/index.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
       - type: OpenAPI
         url: openapi/oracle-fusion-cx-sales-openapi.yml
@@ -197,7 +197,7 @@ apis:
         url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
       - type: GettingStarted
         url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
-      - type: Change Log
+      - type: ChangeLog
         url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
       - type: OpenAPI
         url: openapi/oracle-fusion-project-management-openapi.yml
@@ -241,13 +241,13 @@ common:
     url: https://support.oracle.com
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/applications-common/
-  - type: Status
+  - type: StatusPage
     url: https://ocistatus.oraclecloud.com/
   - type: TermsOfService
     url: https://www.oracle.com/corporate/contracts/cloud-services/
   - type: PrivacyPolicy
     url: https://www.oracle.com/legal/privacy/
-  - type: Change Log
+  - type: ChangeLog
     url: https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/
   - type: Website
     url: https://www.oracle.com/applications/
@@ -257,7 +257,7 @@ common:
     url: https://cloud.oracle.com/
   - type: GitHubOrganization
     url: https://github.com/oracle
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/oracle-fusion-context.jsonld
   - type: JSONSchema
     url: json-schema/oracle-fusion-invoice-schema.json
