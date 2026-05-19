@@ -1,0 +1,107 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Activities
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Activities. 2 operations.
+    Lead operation: Oracle Fusion Cloud Applications List activities. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Activities
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cx-sales-activities
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Activities business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: crmRestApi-resources-11.13.18.05-activities
+      path: /crmRestApi/resources/11.13.18.05/activities
+      operations:
+      - name: listactivities
+        method: GET
+        description: Oracle Fusion Cloud Applications List activities
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createactivity
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an activity
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cx-sales-activities-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Activities.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/crmrestapi/resources/11-13-18-05/activities
+      name: crmrestapi-resources-11-13-18-05-activities
+      description: REST surface for crmRestApi-resources-11.13.18.05-activities.
+      operations:
+      - method: GET
+        name: listactivities
+        description: Oracle Fusion Cloud Applications List activities
+        call: cx-sales-activities.listactivities
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createactivity
+        description: Oracle Fusion Cloud Applications Create an activity
+        call: cx-sales-activities.createactivity
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cx-sales-activities-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Activities.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List activities
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cx-sales-activities.listactivities
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create an activity
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cx-sales-activities.createactivity
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

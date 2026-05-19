@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Payroll
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Payroll. 1 operations. Lead operation:
+    Oracle Fusion Cloud Applications List payroll results. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Payroll
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hcm-payroll
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Payroll business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: hcmRestApi-resources-11.13.18.05-payrollResults
+      path: /hcmRestApi/resources/11.13.18.05/payrollResults
+      operations:
+      - name: listpayrollresults
+        method: GET
+        description: Oracle Fusion Cloud Applications List payroll results
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: hcm-payroll-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Payroll. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/hcmrestapi/resources/11-13-18-05/payrollresults
+      name: hcmrestapi-resources-11-13-18-05-payrollresults
+      description: REST surface for hcmRestApi-resources-11.13.18.05-payrollResults.
+      operations:
+      - method: GET
+        name: listpayrollresults
+        description: Oracle Fusion Cloud Applications List payroll results
+        call: hcm-payroll.listpayrollresults
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hcm-payroll-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Payroll. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List payroll results
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-payroll.listpayrollresults
+      outputParameters:
+      - type: object
+        mapping: $.

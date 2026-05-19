@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Shipments
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Shipments. 1 operations. Lead operation:
+    Oracle Fusion Cloud Applications List shipments. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Shipments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: scm-shipments
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Shipments business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-shipments
+      path: /fscmRestApi/resources/11.13.18.05/shipments
+      operations:
+      - name: listshipments
+        method: GET
+        description: Oracle Fusion Cloud Applications List shipments
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: scm-shipments-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Shipments. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/shipments
+      name: fscmrestapi-resources-11-13-18-05-shipments
+      description: REST surface for fscmRestApi-resources-11.13.18.05-shipments.
+      operations:
+      - method: GET
+        name: listshipments
+        description: Oracle Fusion Cloud Applications List shipments
+        call: scm-shipments.listshipments
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: scm-shipments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Shipments. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List shipments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: scm-shipments.listshipments
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,139 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Cash Management
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Cash Management. 3 operations. Lead operation:
+    Oracle Fusion Cloud Applications List bank account transfers. Self-contained Naftiko capability covering one Oracle Fusion
+    business surface.'
+  tags:
+  - Oracle Fusion
+  - Cash Management
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: erp-cash-management
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Cash Management business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-cashBankAccountTransfers
+      path: /fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers
+      operations:
+      - name: listbankaccounttransfers
+        method: GET
+        description: Oracle Fusion Cloud Applications List bank account transfers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createbankaccounttransfer
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a bank account transfer
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-cashBankAccounts
+      path: /fscmRestApi/resources/11.13.18.05/cashBankAccounts
+      operations:
+      - name: listbankaccounts
+        method: GET
+        description: Oracle Fusion Cloud Applications List bank accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: erp-cash-management-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Cash Management. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/cashbankaccounttransfers
+      name: fscmrestapi-resources-11-13-18-05-cashbankaccounttransfers
+      description: REST surface for fscmRestApi-resources-11.13.18.05-cashBankAccountTransfers.
+      operations:
+      - method: GET
+        name: listbankaccounttransfers
+        description: Oracle Fusion Cloud Applications List bank account transfers
+        call: erp-cash-management.listbankaccounttransfers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createbankaccounttransfer
+        description: Oracle Fusion Cloud Applications Create a bank account transfer
+        call: erp-cash-management.createbankaccounttransfer
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/cashbankaccounts
+      name: fscmrestapi-resources-11-13-18-05-cashbankaccounts
+      description: REST surface for fscmRestApi-resources-11.13.18.05-cashBankAccounts.
+      operations:
+      - method: GET
+        name: listbankaccounts
+        description: Oracle Fusion Cloud Applications List bank accounts
+        call: erp-cash-management.listbankaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: erp-cash-management-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Cash Management. One
+      tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List bank account transfers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-cash-management.listbankaccounttransfers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a bank account transfer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: erp-cash-management.createbankaccounttransfer
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-2
+      description: Oracle Fusion Cloud Applications List bank accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-cash-management.listbankaccounts
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,188 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion EPM REST API — Data Management
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion EPM REST API — Data Management. 4 operations. Lead operation:
+    Oracle Fusion Cloud Applications List files. Self-contained Naftiko capability covering one Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Data Management
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: epm-data-management
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion EPM REST API — Data Management business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: interop-rest-v3-files
+      path: /interop/rest/v3/files
+      operations:
+      - name: listfiles
+        method: GET
+        description: Oracle Fusion Cloud Applications List files
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: interop-rest-v3-files-fileName
+      path: /interop/rest/v3/files/{fileName}
+      operations:
+      - name: downloadfile
+        method: GET
+        description: Oracle Fusion Cloud Applications Download a file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: fileName
+          in: path
+          type: string
+          description: File name including path
+          required: true
+      - name: uploadfile
+        method: POST
+        description: Oracle Fusion Cloud Applications Upload a file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: fileName
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletefile
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete a file
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: fileName
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: epm-data-management-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion EPM REST API — Data Management. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/interop/rest/v3/files
+      name: interop-rest-v3-files
+      description: REST surface for interop-rest-v3-files.
+      operations:
+      - method: GET
+        name: listfiles
+        description: Oracle Fusion Cloud Applications List files
+        call: epm-data-management.listfiles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/interop/rest/v3/files/{filename}
+      name: interop-rest-v3-files-filename
+      description: REST surface for interop-rest-v3-files-fileName.
+      operations:
+      - method: GET
+        name: downloadfile
+        description: Oracle Fusion Cloud Applications Download a file
+        call: epm-data-management.downloadfile
+        with:
+          fileName: rest.fileName
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: uploadfile
+        description: Oracle Fusion Cloud Applications Upload a file
+        call: epm-data-management.uploadfile
+        with:
+          fileName: rest.fileName
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletefile
+        description: Oracle Fusion Cloud Applications Delete a file
+        call: epm-data-management.deletefile
+        with:
+          fileName: rest.fileName
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: epm-data-management-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion EPM REST API — Data Management. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List files
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: epm-data-management.listfiles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-download
+      description: Oracle Fusion Cloud Applications Download a file
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: epm-data-management.downloadfile
+      with:
+        fileName: tools.fileName
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-upload
+      description: Oracle Fusion Cloud Applications Upload a file
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: epm-data-management.uploadfile
+      with:
+        fileName: tools.fileName
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete a file
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: epm-data-management.deletefile
+      with:
+        fileName: tools.fileName
+      outputParameters:
+      - type: object
+        mapping: $.

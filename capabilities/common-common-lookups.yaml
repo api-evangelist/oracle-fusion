@@ -1,0 +1,306 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Common Lookups
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Common Lookups. 7 operations. Lead
+    operation: Oracle Fusion Cloud Applications List common lookups. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Common Lookups
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: common-common-lookups
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Common Lookups business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-commonLookups
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups
+      operations:
+      - name: listcommonlookups
+        method: GET
+        description: Oracle Fusion Cloud Applications List common lookups
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createcommonlookup
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a common lookup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-commonLookups-LookupType
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}
+      operations:
+      - name: getcommonlookup
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a common lookup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          description: Lookup type identifier
+          required: true
+      - name: updatecommonlookup
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a common lookup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletecommonlookup
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete a common lookup
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-commonLookups-LookupType-child-lookupCodes
+      path: /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes
+      operations:
+      - name: listlookupcodes
+        method: GET
+        description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+      - name: createlookupcode
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a lookup code
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: LookupType
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: common-common-lookups-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Common Lookups.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/commonlookups
+      name: fscmrestapi-resources-11-13-18-05-commonlookups
+      description: REST surface for fscmRestApi-resources-11.13.18.05-commonLookups.
+      operations:
+      - method: GET
+        name: listcommonlookups
+        description: Oracle Fusion Cloud Applications List common lookups
+        call: common-common-lookups.listcommonlookups
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createcommonlookup
+        description: Oracle Fusion Cloud Applications Create a common lookup
+        call: common-common-lookups.createcommonlookup
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/commonlookups/{lookuptype}
+      name: fscmrestapi-resources-11-13-18-05-commonlookups-lookuptype
+      description: REST surface for fscmRestApi-resources-11.13.18.05-commonLookups-LookupType.
+      operations:
+      - method: GET
+        name: getcommonlookup
+        description: Oracle Fusion Cloud Applications Get a common lookup
+        call: common-common-lookups.getcommonlookup
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatecommonlookup
+        description: Oracle Fusion Cloud Applications Update a common lookup
+        call: common-common-lookups.updatecommonlookup
+        with:
+          LookupType: rest.LookupType
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletecommonlookup
+        description: Oracle Fusion Cloud Applications Delete a common lookup
+        call: common-common-lookups.deletecommonlookup
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/commonlookups/{lookuptype}/child/lookupcodes
+      name: fscmrestapi-resources-11-13-18-05-commonlookups-lookuptype-child-lookupcodes
+      description: REST surface for fscmRestApi-resources-11.13.18.05-commonLookups-LookupType-child-lookupCodes.
+      operations:
+      - method: GET
+        name: listlookupcodes
+        description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+        call: common-common-lookups.listlookupcodes
+        with:
+          LookupType: rest.LookupType
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createlookupcode
+        description: Oracle Fusion Cloud Applications Create a lookup code
+        call: common-common-lookups.createlookupcode
+        with:
+          LookupType: rest.LookupType
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: common-common-lookups-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Common Lookups.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List common lookups
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-common-lookups.listcommonlookups
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a common lookup
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: common-common-lookups.createcommonlookup
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a common lookup
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-common-lookups.getcommonlookup
+      with:
+        LookupType: tools.LookupType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update a common lookup
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: common-common-lookups.updatecommonlookup
+      with:
+        LookupType: tools.LookupType
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete a common lookup
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: common-common-lookups.deletecommonlookup
+      with:
+        LookupType: tools.LookupType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-2
+      description: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-common-lookups.listlookupcodes
+      with:
+        LookupType: tools.LookupType
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create-2
+      description: Oracle Fusion Cloud Applications Create a lookup code
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: common-common-lookups.createlookupcode
+      with:
+        LookupType: tools.LookupType
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

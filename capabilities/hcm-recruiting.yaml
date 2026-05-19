@@ -1,0 +1,104 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Recruiting
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Recruiting. 2 operations. Lead operation:
+    Oracle Fusion Cloud Applications List recruiting candidates. Self-contained Naftiko capability covering one Oracle Fusion
+    business surface.'
+  tags:
+  - Oracle Fusion
+  - Recruiting
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hcm-recruiting
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Recruiting business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: hcmRestApi-resources-11.13.18.05-recruitingCandidates
+      path: /hcmRestApi/resources/11.13.18.05/recruitingCandidates
+      operations:
+      - name: listcandidates
+        method: GET
+        description: Oracle Fusion Cloud Applications List recruiting candidates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: hcmRestApi-resources-11.13.18.05-recruitingJobRequisitions
+      path: /hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions
+      operations:
+      - name: listjobrequisitions
+        method: GET
+        description: Oracle Fusion Cloud Applications List job requisitions
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: hcm-recruiting-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Recruiting. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/hcmrestapi/resources/11-13-18-05/recruitingcandidates
+      name: hcmrestapi-resources-11-13-18-05-recruitingcandidates
+      description: REST surface for hcmRestApi-resources-11.13.18.05-recruitingCandidates.
+      operations:
+      - method: GET
+        name: listcandidates
+        description: Oracle Fusion Cloud Applications List recruiting candidates
+        call: hcm-recruiting.listcandidates
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/hcmrestapi/resources/11-13-18-05/recruitingjobrequisitions
+      name: hcmrestapi-resources-11-13-18-05-recruitingjobrequisitions
+      description: REST surface for hcmRestApi-resources-11.13.18.05-recruitingJobRequisitions.
+      operations:
+      - method: GET
+        name: listjobrequisitions
+        description: Oracle Fusion Cloud Applications List job requisitions
+        call: hcm-recruiting.listjobrequisitions
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hcm-recruiting-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Recruiting. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List recruiting candidates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-recruiting.listcandidates
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-2
+      description: Oracle Fusion Cloud Applications List job requisitions
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-recruiting.listjobrequisitions
+      outputParameters:
+      - type: object
+        mapping: $.

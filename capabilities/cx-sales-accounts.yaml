@@ -1,0 +1,224 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Accounts
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Accounts. 5 operations.
+    Lead operation: Oracle Fusion Cloud Applications List accounts. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Accounts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: cx-sales-accounts
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Accounts business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: crmRestApi-resources-11.13.18.05-accounts
+      path: /crmRestApi/resources/11.13.18.05/accounts
+      operations:
+      - name: listaccounts
+        method: GET
+        description: Oracle Fusion Cloud Applications List accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createaccount
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: crmRestApi-resources-11.13.18.05-accounts-PartyNumber
+      path: /crmRestApi/resources/11.13.18.05/accounts/{PartyNumber}
+      operations:
+      - name: getaccount
+        method: GET
+        description: Oracle Fusion Cloud Applications Get an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PartyNumber
+          in: path
+          type: string
+          description: Party number identifying the account
+          required: true
+      - name: updateaccount
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PartyNumber
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteaccount
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete an account
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PartyNumber
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: cx-sales-accounts-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Accounts.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/crmrestapi/resources/11-13-18-05/accounts
+      name: crmrestapi-resources-11-13-18-05-accounts
+      description: REST surface for crmRestApi-resources-11.13.18.05-accounts.
+      operations:
+      - method: GET
+        name: listaccounts
+        description: Oracle Fusion Cloud Applications List accounts
+        call: cx-sales-accounts.listaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createaccount
+        description: Oracle Fusion Cloud Applications Create an account
+        call: cx-sales-accounts.createaccount
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/crmrestapi/resources/11-13-18-05/accounts/{partynumber}
+      name: crmrestapi-resources-11-13-18-05-accounts-partynumber
+      description: REST surface for crmRestApi-resources-11.13.18.05-accounts-PartyNumber.
+      operations:
+      - method: GET
+        name: getaccount
+        description: Oracle Fusion Cloud Applications Get an account
+        call: cx-sales-accounts.getaccount
+        with:
+          PartyNumber: rest.PartyNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateaccount
+        description: Oracle Fusion Cloud Applications Update an account
+        call: cx-sales-accounts.updateaccount
+        with:
+          PartyNumber: rest.PartyNumber
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteaccount
+        description: Oracle Fusion Cloud Applications Delete an account
+        call: cx-sales-accounts.deleteaccount
+        with:
+          PartyNumber: rest.PartyNumber
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: cx-sales-accounts-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API — Accounts.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cx-sales-accounts.listaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: cx-sales-accounts.createaccount
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get an account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: cx-sales-accounts.getaccount
+      with:
+        PartyNumber: tools.PartyNumber
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update an account
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: cx-sales-accounts.updateaccount
+      with:
+        PartyNumber: tools.PartyNumber
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete an account
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: cx-sales-accounts.deleteaccount
+      with:
+        PartyNumber: tools.PartyNumber
+      outputParameters:
+      - type: object
+        mapping: $.

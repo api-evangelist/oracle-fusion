@@ -1,0 +1,226 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Expense Reports
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Expense Reports. 5 operations. Lead operation:
+    Oracle Fusion Cloud Applications List expense reports. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Expense Reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: erp-expense-reports
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Expense Reports business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-expenseReports
+      path: /fscmRestApi/resources/11.13.18.05/expenseReports
+      operations:
+      - name: listexpensereports
+        method: GET
+        description: Oracle Fusion Cloud Applications List expense reports
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createexpensereport
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an expense report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-expenseReports-ExpenseReportId
+      path: /fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}
+      operations:
+      - name: getexpensereport
+        method: GET
+        description: Oracle Fusion Cloud Applications Get an expense report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ExpenseReportId
+          in: path
+          type: integer
+          description: Unique identifier for the expense report
+          required: true
+      - name: updateexpensereport
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update an expense report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ExpenseReportId
+          in: path
+          type: integer
+          description: Unique identifier for the expense report
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteexpensereport
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete an expense report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ExpenseReportId
+          in: path
+          type: integer
+          description: Unique identifier for the expense report
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: erp-expense-reports-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Expense Reports. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/expensereports
+      name: fscmrestapi-resources-11-13-18-05-expensereports
+      description: REST surface for fscmRestApi-resources-11.13.18.05-expenseReports.
+      operations:
+      - method: GET
+        name: listexpensereports
+        description: Oracle Fusion Cloud Applications List expense reports
+        call: erp-expense-reports.listexpensereports
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createexpensereport
+        description: Oracle Fusion Cloud Applications Create an expense report
+        call: erp-expense-reports.createexpensereport
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/expensereports/{expensereportid}
+      name: fscmrestapi-resources-11-13-18-05-expensereports-expensereportid
+      description: REST surface for fscmRestApi-resources-11.13.18.05-expenseReports-ExpenseReportId.
+      operations:
+      - method: GET
+        name: getexpensereport
+        description: Oracle Fusion Cloud Applications Get an expense report
+        call: erp-expense-reports.getexpensereport
+        with:
+          ExpenseReportId: rest.ExpenseReportId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateexpensereport
+        description: Oracle Fusion Cloud Applications Update an expense report
+        call: erp-expense-reports.updateexpensereport
+        with:
+          ExpenseReportId: rest.ExpenseReportId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteexpensereport
+        description: Oracle Fusion Cloud Applications Delete an expense report
+        call: erp-expense-reports.deleteexpensereport
+        with:
+          ExpenseReportId: rest.ExpenseReportId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: erp-expense-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Expense Reports. One
+      tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List expense reports
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-expense-reports.listexpensereports
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create an expense report
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: erp-expense-reports.createexpensereport
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get an expense report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-expense-reports.getexpensereport
+      with:
+        ExpenseReportId: tools.ExpenseReportId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update an expense report
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: erp-expense-reports.updateexpensereport
+      with:
+        ExpenseReportId: tools.ExpenseReportId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete an expense report
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: erp-expense-reports.deleteexpensereport
+      with:
+        ExpenseReportId: tools.ExpenseReportId
+      outputParameters:
+      - type: object
+        mapping: $.

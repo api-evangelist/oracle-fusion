@@ -1,0 +1,224 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Absences
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Absences. 5 operations. Lead operation:
+    Oracle Fusion Cloud Applications List absences. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Absences
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hcm-absences
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Absences business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: hcmRestApi-resources-11.13.18.05-absences
+      path: /hcmRestApi/resources/11.13.18.05/absences
+      operations:
+      - name: listabsences
+        method: GET
+        description: Oracle Fusion Cloud Applications List absences
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createabsence
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an absence
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: hcmRestApi-resources-11.13.18.05-absences-AbsenceId
+      path: /hcmRestApi/resources/11.13.18.05/absences/{AbsenceId}
+      operations:
+      - name: getabsence
+        method: GET
+        description: Oracle Fusion Cloud Applications Get an absence
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: AbsenceId
+          in: path
+          type: integer
+          description: Unique identifier for the absence
+          required: true
+      - name: updateabsence
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update an absence
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: AbsenceId
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteabsence
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete an absence
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: AbsenceId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: hcm-absences-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Absences. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/hcmrestapi/resources/11-13-18-05/absences
+      name: hcmrestapi-resources-11-13-18-05-absences
+      description: REST surface for hcmRestApi-resources-11.13.18.05-absences.
+      operations:
+      - method: GET
+        name: listabsences
+        description: Oracle Fusion Cloud Applications List absences
+        call: hcm-absences.listabsences
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createabsence
+        description: Oracle Fusion Cloud Applications Create an absence
+        call: hcm-absences.createabsence
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/hcmrestapi/resources/11-13-18-05/absences/{absenceid}
+      name: hcmrestapi-resources-11-13-18-05-absences-absenceid
+      description: REST surface for hcmRestApi-resources-11.13.18.05-absences-AbsenceId.
+      operations:
+      - method: GET
+        name: getabsence
+        description: Oracle Fusion Cloud Applications Get an absence
+        call: hcm-absences.getabsence
+        with:
+          AbsenceId: rest.AbsenceId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateabsence
+        description: Oracle Fusion Cloud Applications Update an absence
+        call: hcm-absences.updateabsence
+        with:
+          AbsenceId: rest.AbsenceId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteabsence
+        description: Oracle Fusion Cloud Applications Delete an absence
+        call: hcm-absences.deleteabsence
+        with:
+          AbsenceId: rest.AbsenceId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hcm-absences-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Absences. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List absences
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-absences.listabsences
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create an absence
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: hcm-absences.createabsence
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get an absence
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-absences.getabsence
+      with:
+        AbsenceId: tools.AbsenceId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update an absence
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: hcm-absences.updateabsence
+      with:
+        AbsenceId: tools.AbsenceId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete an absence
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: hcm-absences.deleteabsence
+      with:
+        AbsenceId: tools.AbsenceId
+      outputParameters:
+      - type: object
+        mapping: $.

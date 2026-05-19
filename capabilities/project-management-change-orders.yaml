@@ -1,0 +1,223 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Change Orders
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Change Orders. 5 operations.
+    Lead operation: Oracle Fusion Cloud Applications List change orders. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Change Orders
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: project-management-change-orders
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Change Orders business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-changeOrders
+      path: /fscmRestApi/resources/11.13.18.05/changeOrders
+      operations:
+      - name: listchangeorders
+        method: GET
+        description: Oracle Fusion Cloud Applications List change orders
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createchangeorder
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a change order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-changeOrders-ChangeDocumentId
+      path: /fscmRestApi/resources/11.13.18.05/changeOrders/{ChangeDocumentId}
+      operations:
+      - name: getchangeorder
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a change order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChangeDocumentId
+          in: path
+          type: integer
+          required: true
+      - name: updatechangeorder
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a change order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChangeDocumentId
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deletechangeorder
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete a change order
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ChangeDocumentId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: project-management-change-orders-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Change Orders.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/changeorders
+      name: fscmrestapi-resources-11-13-18-05-changeorders
+      description: REST surface for fscmRestApi-resources-11.13.18.05-changeOrders.
+      operations:
+      - method: GET
+        name: listchangeorders
+        description: Oracle Fusion Cloud Applications List change orders
+        call: project-management-change-orders.listchangeorders
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createchangeorder
+        description: Oracle Fusion Cloud Applications Create a change order
+        call: project-management-change-orders.createchangeorder
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/changeorders/{changedocumentid}
+      name: fscmrestapi-resources-11-13-18-05-changeorders-changedocumentid
+      description: REST surface for fscmRestApi-resources-11.13.18.05-changeOrders-ChangeDocumentId.
+      operations:
+      - method: GET
+        name: getchangeorder
+        description: Oracle Fusion Cloud Applications Get a change order
+        call: project-management-change-orders.getchangeorder
+        with:
+          ChangeDocumentId: rest.ChangeDocumentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updatechangeorder
+        description: Oracle Fusion Cloud Applications Update a change order
+        call: project-management-change-orders.updatechangeorder
+        with:
+          ChangeDocumentId: rest.ChangeDocumentId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deletechangeorder
+        description: Oracle Fusion Cloud Applications Delete a change order
+        call: project-management-change-orders.deletechangeorder
+        with:
+          ChangeDocumentId: rest.ChangeDocumentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: project-management-change-orders-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Change Orders.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List change orders
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-change-orders.listchangeorders
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a change order
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: project-management-change-orders.createchangeorder
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a change order
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-change-orders.getchangeorder
+      with:
+        ChangeDocumentId: tools.ChangeDocumentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update a change order
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: project-management-change-orders.updatechangeorder
+      with:
+        ChangeDocumentId: tools.ChangeDocumentId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete a change order
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: project-management-change-orders.deletechangeorder
+      with:
+        ChangeDocumentId: tools.ChangeDocumentId
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,148 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Scheduled Processes
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Scheduled Processes. 3 operations.
+    Lead operation: Oracle Fusion Cloud Applications List scheduled process requests. Self-contained Naftiko capability covering
+    one Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Scheduled Processes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: common-scheduled-processes
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Scheduled Processes business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: ess-rest-scheduler-v1-requests
+      path: /ess/rest/scheduler/v1/requests
+      operations:
+      - name: listscheduledrequests
+        method: GET
+        description: Oracle Fusion Cloud Applications List scheduled process requests
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: submitscheduledrequest
+        method: POST
+        description: Oracle Fusion Cloud Applications Submit a scheduled process request
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: ess-rest-scheduler-v1-requests-requestId
+      path: /ess/rest/scheduler/v1/requests/{requestId}
+      operations:
+      - name: getscheduledrequest
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a scheduled process request
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: requestId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: common-scheduled-processes-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Scheduled Processes.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/ess/rest/scheduler/v1/requests
+      name: ess-rest-scheduler-v1-requests
+      description: REST surface for ess-rest-scheduler-v1-requests.
+      operations:
+      - method: GET
+        name: listscheduledrequests
+        description: Oracle Fusion Cloud Applications List scheduled process requests
+        call: common-scheduled-processes.listscheduledrequests
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: submitscheduledrequest
+        description: Oracle Fusion Cloud Applications Submit a scheduled process request
+        call: common-scheduled-processes.submitscheduledrequest
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/ess/rest/scheduler/v1/requests/{requestid}
+      name: ess-rest-scheduler-v1-requests-requestid
+      description: REST surface for ess-rest-scheduler-v1-requests-requestId.
+      operations:
+      - method: GET
+        name: getscheduledrequest
+        description: Oracle Fusion Cloud Applications Get a scheduled process request
+        call: common-scheduled-processes.getscheduledrequest
+        with:
+          requestId: rest.requestId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: common-scheduled-processes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Scheduled Processes.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List scheduled process requests
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-scheduled-processes.listscheduledrequests
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-submit
+      description: Oracle Fusion Cloud Applications Submit a scheduled process request
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: common-scheduled-processes.submitscheduledrequest
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a scheduled process request
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-scheduled-processes.getscheduledrequest
+      with:
+        requestId: tools.requestId
+      outputParameters:
+      - type: object
+        mapping: $.

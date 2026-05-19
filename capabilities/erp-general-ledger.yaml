@@ -1,0 +1,171 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — General Ledger
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — General Ledger. 4 operations. Lead operation:
+    Oracle Fusion Cloud Applications List general ledger journals. Self-contained Naftiko capability covering one Oracle Fusion
+    business surface.'
+  tags:
+  - Oracle Fusion
+  - General Ledger
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: erp-general-ledger
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — General Ledger business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-generalLedgerJournals
+      path: /fscmRestApi/resources/11.13.18.05/generalLedgerJournals
+      operations:
+      - name: listjournals
+        method: GET
+        description: Oracle Fusion Cloud Applications List general ledger journals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createjournal
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a general ledger journal
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-generalLedgerPeriodStatuses
+      path: /fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses
+      operations:
+      - name: listperiodstatuses
+        method: GET
+        description: Oracle Fusion Cloud Applications List general ledger period statuses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: fscmRestApi-resources-11.13.18.05-ledgerBalances
+      path: /fscmRestApi/resources/11.13.18.05/ledgerBalances
+      operations:
+      - name: listledgerbalances
+        method: GET
+        description: Oracle Fusion Cloud Applications List ledger balances
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: erp-general-ledger-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — General Ledger. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/generalledgerjournals
+      name: fscmrestapi-resources-11-13-18-05-generalledgerjournals
+      description: REST surface for fscmRestApi-resources-11.13.18.05-generalLedgerJournals.
+      operations:
+      - method: GET
+        name: listjournals
+        description: Oracle Fusion Cloud Applications List general ledger journals
+        call: erp-general-ledger.listjournals
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createjournal
+        description: Oracle Fusion Cloud Applications Create a general ledger journal
+        call: erp-general-ledger.createjournal
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/generalledgerperiodstatuses
+      name: fscmrestapi-resources-11-13-18-05-generalledgerperiodstatuses
+      description: REST surface for fscmRestApi-resources-11.13.18.05-generalLedgerPeriodStatuses.
+      operations:
+      - method: GET
+        name: listperiodstatuses
+        description: Oracle Fusion Cloud Applications List general ledger period statuses
+        call: erp-general-ledger.listperiodstatuses
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/ledgerbalances
+      name: fscmrestapi-resources-11-13-18-05-ledgerbalances
+      description: REST surface for fscmRestApi-resources-11.13.18.05-ledgerBalances.
+      operations:
+      - method: GET
+        name: listledgerbalances
+        description: Oracle Fusion Cloud Applications List ledger balances
+        call: erp-general-ledger.listledgerbalances
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: erp-general-ledger-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — General Ledger. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List general ledger journals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-general-ledger.listjournals
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a general ledger journal
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: erp-general-ledger.createjournal
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-2
+      description: Oracle Fusion Cloud Applications List general ledger period statuses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-general-ledger.listperiodstatuses
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-3
+      description: Oracle Fusion Cloud Applications List ledger balances
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-general-ledger.listledgerbalances
+      outputParameters:
+      - type: object
+        mapping: $.

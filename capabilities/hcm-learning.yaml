@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Learning
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Learning. 1 operations. Lead operation:
+    Oracle Fusion Cloud Applications List learning records. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Learning
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: hcm-learning
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Learning business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: hcmRestApi-resources-11.13.18.05-learningRecords
+      path: /hcmRestApi/resources/11.13.18.05/learningRecords
+      operations:
+      - name: listlearningrecords
+        method: GET
+        description: Oracle Fusion Cloud Applications List learning records
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: hcm-learning-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Learning. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/hcmrestapi/resources/11-13-18-05/learningrecords
+      name: hcmrestapi-resources-11-13-18-05-learningrecords
+      description: REST surface for hcmRestApi-resources-11.13.18.05-learningRecords.
+      operations:
+      - method: GET
+        name: listlearningrecords
+        description: Oracle Fusion Cloud Applications List learning records
+        call: hcm-learning.listlearningrecords
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: hcm-learning-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud HCM REST API — Learning. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List learning records
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: hcm-learning.listlearningrecords
+      outputParameters:
+      - type: object
+        mapping: $.

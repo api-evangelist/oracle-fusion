@@ -1,0 +1,190 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Projects
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Projects. 4 operations. Lead
+    operation: Oracle Fusion Cloud Applications List projects. Self-contained Naftiko capability covering one Oracle Fusion
+    business surface.'
+  tags:
+  - Oracle Fusion
+  - Projects
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: project-management-projects
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Projects business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-projects
+      path: /fscmRestApi/resources/11.13.18.05/projects
+      operations:
+      - name: listprojects
+        method: GET
+        description: Oracle Fusion Cloud Applications List projects
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createproject
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-projects-ProjectId
+      path: /fscmRestApi/resources/11.13.18.05/projects/{ProjectId}
+      operations:
+      - name: getproject
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ProjectId
+          in: path
+          type: integer
+          description: Unique project identifier
+          required: true
+      - name: updateproject
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a project
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: ProjectId
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: project-management-projects-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Projects. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/projects
+      name: fscmrestapi-resources-11-13-18-05-projects
+      description: REST surface for fscmRestApi-resources-11.13.18.05-projects.
+      operations:
+      - method: GET
+        name: listprojects
+        description: Oracle Fusion Cloud Applications List projects
+        call: project-management-projects.listprojects
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createproject
+        description: Oracle Fusion Cloud Applications Create a project
+        call: project-management-projects.createproject
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/projects/{projectid}
+      name: fscmrestapi-resources-11-13-18-05-projects-projectid
+      description: REST surface for fscmRestApi-resources-11.13.18.05-projects-ProjectId.
+      operations:
+      - method: GET
+        name: getproject
+        description: Oracle Fusion Cloud Applications Get a project
+        call: project-management-projects.getproject
+        with:
+          ProjectId: rest.ProjectId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateproject
+        description: Oracle Fusion Cloud Applications Update a project
+        call: project-management-projects.updateproject
+        with:
+          ProjectId: rest.ProjectId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: project-management-projects-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Projects. One
+      tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List projects
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-projects.listprojects
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: project-management-projects.createproject
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a project
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-projects.getproject
+      with:
+        ProjectId: tools.ProjectId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update a project
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: project-management-projects.updateproject
+      with:
+        ProjectId: tools.ProjectId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

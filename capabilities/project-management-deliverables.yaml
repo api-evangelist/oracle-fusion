@@ -1,0 +1,107 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Deliverables
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Deliverables. 2 operations. Lead
+    operation: Oracle Fusion Cloud Applications List deliverables. Self-contained Naftiko capability covering one Oracle Fusion
+    business surface.'
+  tags:
+  - Oracle Fusion
+  - Deliverables
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: project-management-deliverables
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Deliverables business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-deliverables
+      path: /fscmRestApi/resources/11.13.18.05/deliverables
+      operations:
+      - name: listdeliverables
+        method: GET
+        description: Oracle Fusion Cloud Applications List deliverables
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdeliverable
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a deliverable
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: project-management-deliverables-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Deliverables.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/deliverables
+      name: fscmrestapi-resources-11-13-18-05-deliverables
+      description: REST surface for fscmRestApi-resources-11.13.18.05-deliverables.
+      operations:
+      - method: GET
+        name: listdeliverables
+        description: Oracle Fusion Cloud Applications List deliverables
+        call: project-management-deliverables.listdeliverables
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createdeliverable
+        description: Oracle Fusion Cloud Applications Create a deliverable
+        call: project-management-deliverables.createdeliverable
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: project-management-deliverables-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Deliverables.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List deliverables
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-deliverables.listdeliverables
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a deliverable
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: project-management-deliverables.createdeliverable
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,174 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Accounts Receivable
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Accounts Receivable. 4 operations. Lead
+    operation: Oracle Fusion Cloud Applications List receivables invoices. Self-contained Naftiko capability covering one
+    Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Accounts Receivable
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: erp-accounts-receivable
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Accounts Receivable business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-receivablesInvoices
+      path: /fscmRestApi/resources/11.13.18.05/receivablesInvoices
+      operations:
+      - name: listreceivablesinvoices
+        method: GET
+        description: Oracle Fusion Cloud Applications List receivables invoices
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createreceivablesinvoice
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a receivables invoice
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-standardReceipts
+      path: /fscmRestApi/resources/11.13.18.05/standardReceipts
+      operations:
+      - name: listreceipts
+        method: GET
+        description: Oracle Fusion Cloud Applications List standard receipts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createreceipt
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a standard receipt
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: erp-accounts-receivable-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Accounts Receivable.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/receivablesinvoices
+      name: fscmrestapi-resources-11-13-18-05-receivablesinvoices
+      description: REST surface for fscmRestApi-resources-11.13.18.05-receivablesInvoices.
+      operations:
+      - method: GET
+        name: listreceivablesinvoices
+        description: Oracle Fusion Cloud Applications List receivables invoices
+        call: erp-accounts-receivable.listreceivablesinvoices
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createreceivablesinvoice
+        description: Oracle Fusion Cloud Applications Create a receivables invoice
+        call: erp-accounts-receivable.createreceivablesinvoice
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/standardreceipts
+      name: fscmrestapi-resources-11-13-18-05-standardreceipts
+      description: REST surface for fscmRestApi-resources-11.13.18.05-standardReceipts.
+      operations:
+      - method: GET
+        name: listreceipts
+        description: Oracle Fusion Cloud Applications List standard receipts
+        call: erp-accounts-receivable.listreceipts
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createreceipt
+        description: Oracle Fusion Cloud Applications Create a standard receipt
+        call: erp-accounts-receivable.createreceipt
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: erp-accounts-receivable-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Accounts Receivable.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List receivables invoices
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-accounts-receivable.listreceivablesinvoices
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a receivables invoice
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: erp-accounts-receivable.createreceivablesinvoice
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-list-2
+      description: Oracle Fusion Cloud Applications List standard receipts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-accounts-receivable.listreceipts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create-2
+      description: Oracle Fusion Cloud Applications Create a standard receipt
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: erp-accounts-receivable.createreceipt
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

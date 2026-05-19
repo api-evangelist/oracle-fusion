@@ -1,0 +1,153 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Roles
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Roles. 3 operations. Lead operation:
+    Oracle Fusion Cloud Applications List roles. Self-contained Naftiko capability covering one Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Roles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: common-roles
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Roles business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: hcmRestApi-scim-Roles
+      path: /hcmRestApi/scim/Roles
+      operations:
+      - name: listroles
+        method: GET
+        description: Oracle Fusion Cloud Applications List roles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: hcmRestApi-scim-Roles-id
+      path: /hcmRestApi/scim/Roles/{id}
+      operations:
+      - name: getrole
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+      - name: updaterole
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update a role
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: common-roles-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Roles. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/hcmrestapi/scim/roles
+      name: hcmrestapi-scim-roles
+      description: REST surface for hcmRestApi-scim-Roles.
+      operations:
+      - method: GET
+        name: listroles
+        description: Oracle Fusion Cloud Applications List roles
+        call: common-roles.listroles
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/hcmrestapi/scim/roles/{id}
+      name: hcmrestapi-scim-roles-id
+      description: REST surface for hcmRestApi-scim-Roles-id.
+      operations:
+      - method: GET
+        name: getrole
+        description: Oracle Fusion Cloud Applications Get a role
+        call: common-roles.getrole
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updaterole
+        description: Oracle Fusion Cloud Applications Update a role
+        call: common-roles.updaterole
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: common-roles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Roles. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List roles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-roles.listroles
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a role
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-roles.getrole
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update a role
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: common-roles.updaterole
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

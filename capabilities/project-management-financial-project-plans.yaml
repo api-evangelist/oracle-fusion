@@ -1,0 +1,107 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Financial Project Plans
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Financial Project Plans. 2 operations.
+    Lead operation: Oracle Fusion Cloud Applications List financial project plans. Self-contained Naftiko capability covering
+    one Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Financial Project Plans
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: project-management-financial-project-plans
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Financial Project Plans business
+      capability. Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-financialProjectPlans
+      path: /fscmRestApi/resources/11.13.18.05/financialProjectPlans
+      operations:
+      - name: listfinancialprojectplans
+        method: GET
+        description: Oracle Fusion Cloud Applications List financial project plans
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createfinancialprojectplan
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a financial project plan
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: project-management-financial-project-plans-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Financial Project
+      Plans. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/financialprojectplans
+      name: fscmrestapi-resources-11-13-18-05-financialprojectplans
+      description: REST surface for fscmRestApi-resources-11.13.18.05-financialProjectPlans.
+      operations:
+      - method: GET
+        name: listfinancialprojectplans
+        description: Oracle Fusion Cloud Applications List financial project plans
+        call: project-management-financial-project-plans.listfinancialprojectplans
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createfinancialprojectplan
+        description: Oracle Fusion Cloud Applications Create a financial project plan
+        call: project-management-financial-project-plans.createfinancialprojectplan
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: project-management-financial-project-plans-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Financial Project
+      Plans. One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List financial project plans
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-financial-project-plans.listfinancialprojectplans
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a financial project plan
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: project-management-financial-project-plans.createfinancialprojectplan
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

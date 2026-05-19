@@ -1,0 +1,71 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Items
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Items. 1 operations. Lead operation: Oracle
+    Fusion Cloud Applications List items. Self-contained Naftiko capability covering one Oracle Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Items
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: scm-items
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Items business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-productItems
+      path: /fscmRestApi/resources/11.13.18.05/productItems
+      operations:
+      - name: listitems
+        method: GET
+        description: Oracle Fusion Cloud Applications List items
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: scm-items-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Items. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/productitems
+      name: fscmrestapi-resources-11-13-18-05-productitems
+      description: REST surface for fscmRestApi-resources-11.13.18.05-productItems.
+      operations:
+      - method: GET
+        name: listitems
+        description: Oracle Fusion Cloud Applications List items
+        call: scm-items.listitems
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: scm-items-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Items. One tool per consumed
+      operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List items
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: scm-items.listitems
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,107 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Suppliers
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Suppliers. 2 operations. Lead operation:
+    Oracle Fusion Cloud Applications List suppliers. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Suppliers
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: scm-suppliers
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Suppliers business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-suppliers
+      path: /fscmRestApi/resources/11.13.18.05/suppliers
+      operations:
+      - name: listsuppliers
+        method: GET
+        description: Oracle Fusion Cloud Applications List suppliers
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createsupplier
+        method: POST
+        description: Oracle Fusion Cloud Applications Create a supplier
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: scm-suppliers-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Suppliers. One Spectral-compliant
+      resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/suppliers
+      name: fscmrestapi-resources-11-13-18-05-suppliers
+      description: REST surface for fscmRestApi-resources-11.13.18.05-suppliers.
+      operations:
+      - method: GET
+        name: listsuppliers
+        description: Oracle Fusion Cloud Applications List suppliers
+        call: scm-suppliers.listsuppliers
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createsupplier
+        description: Oracle Fusion Cloud Applications Create a supplier
+        call: scm-suppliers.createsupplier
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: scm-suppliers-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM REST API — Suppliers. One tool per
+      consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List suppliers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: scm-suppliers.listsuppliers
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create a supplier
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: scm-suppliers.createsupplier
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

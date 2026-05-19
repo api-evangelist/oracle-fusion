@@ -1,0 +1,154 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Manage Tasks
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Manage Tasks. 3 operations. Lead
+    operation: Oracle Fusion Cloud Applications List workflow tasks. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Manage Tasks
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: common-manage-tasks
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Manage Tasks business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: bpm-api-4.0-tasks
+      path: /bpm/api/4.0/tasks
+      operations:
+      - name: listworkflowtasks
+        method: GET
+        description: Oracle Fusion Cloud Applications List workflow tasks
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: bpm-api-4.0-tasks-id
+      path: /bpm/api/4.0/tasks/{id}
+      operations:
+      - name: getworkflowtask
+        method: GET
+        description: Oracle Fusion Cloud Applications Get a workflow task
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+      - name: performtaskaction
+        method: PUT
+        description: Oracle Fusion Cloud Applications Perform a task action
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: common-manage-tasks-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Manage Tasks.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/bpm/api/4-0/tasks
+      name: bpm-api-4-0-tasks
+      description: REST surface for bpm-api-4.0-tasks.
+      operations:
+      - method: GET
+        name: listworkflowtasks
+        description: Oracle Fusion Cloud Applications List workflow tasks
+        call: common-manage-tasks.listworkflowtasks
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/bpm/api/4-0/tasks/{id}
+      name: bpm-api-4-0-tasks-id
+      description: REST surface for bpm-api-4.0-tasks-id.
+      operations:
+      - method: GET
+        name: getworkflowtask
+        description: Oracle Fusion Cloud Applications Get a workflow task
+        call: common-manage-tasks.getworkflowtask
+        with:
+          id: rest.id
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PUT
+        name: performtaskaction
+        description: Oracle Fusion Cloud Applications Perform a task action
+        call: common-manage-tasks.performtaskaction
+        with:
+          id: rest.id
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: common-manage-tasks-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API — Manage Tasks. One
+      tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List workflow tasks
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-manage-tasks.listworkflowtasks
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get a workflow task
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: common-manage-tasks.getworkflowtask
+      with:
+        id: tools.id
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-perform
+      description: Oracle Fusion Cloud Applications Perform a task action
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: common-manage-tasks.performtaskaction
+      with:
+        id: tools.id
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.

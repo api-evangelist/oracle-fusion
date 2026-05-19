@@ -1,0 +1,224 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Award Budgets
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Award Budgets. 5 operations.
+    Lead operation: Oracle Fusion Cloud Applications List award budgets. Self-contained Naftiko capability covering one Oracle
+    Fusion business surface.'
+  tags:
+  - Oracle Fusion
+  - Award Budgets
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: project-management-award-budgets
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Award Budgets business capability.
+      Self-contained, no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-awardBudgets
+      path: /fscmRestApi/resources/11.13.18.05/awardBudgets
+      operations:
+      - name: listawardbudgets
+        method: GET
+        description: Oracle Fusion Cloud Applications List award budgets
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createawardbudget
+        method: POST
+        description: Oracle Fusion Cloud Applications Create an award budget
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: fscmRestApi-resources-11.13.18.05-awardBudgets-PlanVersionId
+      path: /fscmRestApi/resources/11.13.18.05/awardBudgets/{PlanVersionId}
+      operations:
+      - name: getawardbudget
+        method: GET
+        description: Oracle Fusion Cloud Applications Get an award budget
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PlanVersionId
+          in: path
+          type: integer
+          description: Plan version identifier
+          required: true
+      - name: updateawardbudget
+        method: PATCH
+        description: Oracle Fusion Cloud Applications Update an award budget
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PlanVersionId
+          in: path
+          type: integer
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+      - name: deleteawardbudget
+        method: DELETE
+        description: Oracle Fusion Cloud Applications Delete an award budget
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: PlanVersionId
+          in: path
+          type: integer
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: project-management-award-budgets-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Award Budgets.
+      One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/awardbudgets
+      name: fscmrestapi-resources-11-13-18-05-awardbudgets
+      description: REST surface for fscmRestApi-resources-11.13.18.05-awardBudgets.
+      operations:
+      - method: GET
+        name: listawardbudgets
+        description: Oracle Fusion Cloud Applications List award budgets
+        call: project-management-award-budgets.listawardbudgets
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: POST
+        name: createawardbudget
+        description: Oracle Fusion Cloud Applications Create an award budget
+        call: project-management-award-budgets.createawardbudget
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/fscmrestapi/resources/11-13-18-05/awardbudgets/{planversionid}
+      name: fscmrestapi-resources-11-13-18-05-awardbudgets-planversionid
+      description: REST surface for fscmRestApi-resources-11.13.18.05-awardBudgets-PlanVersionId.
+      operations:
+      - method: GET
+        name: getawardbudget
+        description: Oracle Fusion Cloud Applications Get an award budget
+        call: project-management-award-budgets.getawardbudget
+        with:
+          PlanVersionId: rest.PlanVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: PATCH
+        name: updateawardbudget
+        description: Oracle Fusion Cloud Applications Update an award budget
+        call: project-management-award-budgets.updateawardbudget
+        with:
+          PlanVersionId: rest.PlanVersionId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: deleteawardbudget
+        description: Oracle Fusion Cloud Applications Delete an award budget
+        call: project-management-award-budgets.deleteawardbudget
+        with:
+          PlanVersionId: rest.PlanVersionId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: project-management-award-budgets-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Project Management REST API — Award Budgets.
+      One tool per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List award budgets
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-award-budgets.listawardbudgets
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-create
+      description: Oracle Fusion Cloud Applications Create an award budget
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: project-management-award-budgets.createawardbudget
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-get
+      description: Oracle Fusion Cloud Applications Get an award budget
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: project-management-award-budgets.getawardbudget
+      with:
+        PlanVersionId: tools.PlanVersionId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-update
+      description: Oracle Fusion Cloud Applications Update an award budget
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: project-management-award-budgets.updateawardbudget
+      with:
+        PlanVersionId: tools.PlanVersionId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: oracle-fusion-cloud-applications-delete
+      description: Oracle Fusion Cloud Applications Delete an award budget
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: project-management-award-budgets.deleteawardbudget
+      with:
+        PlanVersionId: tools.PlanVersionId
+      outputParameters:
+      - type: object
+        mapping: $.

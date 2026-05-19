@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Currency Rates
+  description: 'Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Currency Rates. 1 operations. Lead operation:
+    Oracle Fusion Cloud Applications List currency rates. Self-contained Naftiko capability covering one Oracle Fusion business
+    surface.'
+  tags:
+  - Oracle Fusion
+  - Currency Rates
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    ORACLE_FUSION_API_KEY: ORACLE_FUSION_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: erp-currency-rates
+    baseUri: https://{instance}.oraclecloud.com
+    description: Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Currency Rates business capability. Self-contained,
+      no shared references.
+    resources:
+    - name: fscmRestApi-resources-11.13.18.05-currencyRates
+      path: /fscmRestApi/resources/11.13.18.05/currencyRates
+      operations:
+      - name: listcurrencyrates
+        method: GET
+        description: Oracle Fusion Cloud Applications List currency rates
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.ORACLE_FUSION_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: erp-currency-rates-rest
+    port: 8080
+    description: REST adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Currency Rates. One
+      Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/fscmrestapi/resources/11-13-18-05/currencyrates
+      name: fscmrestapi-resources-11-13-18-05-currencyrates
+      description: REST surface for fscmRestApi-resources-11.13.18.05-currencyRates.
+      operations:
+      - method: GET
+        name: listcurrencyrates
+        description: Oracle Fusion Cloud Applications List currency rates
+        call: erp-currency-rates.listcurrencyrates
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: erp-currency-rates-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API — Currency Rates. One tool
+      per consumed operation, routed inline through this capability's consumes block.
+    tools:
+    - name: oracle-fusion-cloud-applications-list
+      description: Oracle Fusion Cloud Applications List currency rates
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: erp-currency-rates.listcurrencyrates
+      outputParameters:
+      - type: object
+        mapping: $.
