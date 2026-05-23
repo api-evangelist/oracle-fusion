@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountUpdate",
+  "title": "AccountUpdate",
+  "type": "object",
+  "properties": {
+    "OrganizationName": {
+      "type": "string"
+    },
+    "Industry": {
+      "type": "string"
+    },
+    "AnnualRevenue": {
+      "type": "number",
+      "format": "double"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    },
+    "EmailAddress": {
+      "type": "string",
+      "format": "email"
+    }
+  }
+}

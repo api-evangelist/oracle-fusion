@@ -1,0 +1,434 @@
+{
+  "provider": "Oracle Fusion Cloud Applications",
+  "providerId": "oracle-fusion",
+  "kind": "json-structure",
+  "description": "Structural overview of the Oracle Fusion Cloud Applications API surface; extracted from openapi/.",
+  "schemaCount": 23,
+  "operationCount": 27,
+  "schemas": [
+    {
+      "name": "ErrorResponse",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Invoice",
+      "type": "object",
+      "propertyCount": 21,
+      "required": []
+    },
+    {
+      "name": "InvoiceCreate",
+      "type": "object",
+      "propertyCount": 12,
+      "required": [
+        "InvoiceNumber",
+        "InvoiceAmount",
+        "InvoiceCurrencyCode",
+        "VendorName",
+        "BusinessUnit"
+      ]
+    },
+    {
+      "name": "InvoiceUpdate",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "Payment",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "LedgerBalance",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "Journal",
+      "type": "object",
+      "propertyCount": 13,
+      "required": []
+    },
+    {
+      "name": "JournalCreate",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "JournalBatchName",
+        "JournalName",
+        "LedgerName",
+        "AccountingPeriod",
+        "CurrencyCode",
+        "JournalCategory",
+        "JournalSource"
+      ]
+    },
+    {
+      "name": "PeriodStatus",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "ReceivablesInvoice",
+      "type": "object",
+      "propertyCount": 14,
+      "required": []
+    },
+    {
+      "name": "ReceivablesInvoiceCreate",
+      "type": "object",
+      "propertyCount": 9,
+      "required": [
+        "TransactionNumber",
+        "TransactionType",
+        "BillToCustomerName",
+        "BusinessUnit"
+      ]
+    },
+    {
+      "name": "StandardReceipt",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "StandardReceiptCreate",
+      "type": "object",
+      "propertyCount": 8,
+      "required": [
+        "ReceiptAmount",
+        "CurrencyCode",
+        "CustomerName",
+        "BusinessUnit"
+      ]
+    },
+    {
+      "name": "ExpenseReport",
+      "type": "object",
+      "propertyCount": 13,
+      "required": []
+    },
+    {
+      "name": "ExpenseReportCreate",
+      "type": "object",
+      "propertyCount": 4,
+      "required": [
+        "Purpose",
+        "BusinessUnit"
+      ]
+    },
+    {
+      "name": "BankAccount",
+      "type": "object",
+      "propertyCount": 9,
+      "required": []
+    },
+    {
+      "name": "BankAccountTransfer",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "BankAccountTransferCreate",
+      "type": "object",
+      "propertyCount": 5,
+      "required": [
+        "TransferAmount",
+        "CurrencyCode",
+        "FromBankAccountName",
+        "ToBankAccountName"
+      ]
+    },
+    {
+      "name": "BudgetTransaction",
+      "type": "object",
+      "propertyCount": 8,
+      "required": []
+    },
+    {
+      "name": "BudgetTransactionCreate",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "BudgetName",
+        "LedgerName",
+        "PeriodName",
+        "BudgetAmount",
+        "CurrencyCode"
+      ]
+    },
+    {
+      "name": "ErpIntegrationRequest",
+      "type": "object",
+      "propertyCount": 6,
+      "required": [
+        "OperationName",
+        "DocumentContent"
+      ]
+    },
+    {
+      "name": "ErpIntegrationResponse",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "CurrencyRate",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/invoices",
+      "operationId": "listInvoices",
+      "summary": "Oracle Fusion Cloud Applications List invoices",
+      "tags": [
+        "Invoices"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/invoices",
+      "operationId": "createInvoice",
+      "summary": "Oracle Fusion Cloud Applications Create an invoice",
+      "tags": [
+        "Invoices"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}",
+      "operationId": "getInvoice",
+      "summary": "Oracle Fusion Cloud Applications Get an invoice",
+      "tags": [
+        "Invoices"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}",
+      "operationId": "deleteInvoice",
+      "summary": "Oracle Fusion Cloud Applications Delete an invoice",
+      "tags": [
+        "Invoices"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}",
+      "operationId": "updateInvoice",
+      "summary": "Oracle Fusion Cloud Applications Update an invoice",
+      "tags": [
+        "Invoices"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/payablesPayments",
+      "operationId": "listPayments",
+      "summary": "Oracle Fusion Cloud Applications List payments",
+      "tags": [
+        "Payments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/payablesPayments/{PaymentId}",
+      "operationId": "getPayment",
+      "summary": "Oracle Fusion Cloud Applications Get a payment",
+      "tags": [
+        "Payments"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/ledgerBalances",
+      "operationId": "listLedgerBalances",
+      "summary": "Oracle Fusion Cloud Applications List ledger balances",
+      "tags": [
+        "General Ledger"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+      "operationId": "listJournals",
+      "summary": "Oracle Fusion Cloud Applications List general ledger journals",
+      "tags": [
+        "General Ledger"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+      "operationId": "createJournal",
+      "summary": "Oracle Fusion Cloud Applications Create a general ledger journal",
+      "tags": [
+        "General Ledger"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses",
+      "operationId": "listPeriodStatuses",
+      "summary": "Oracle Fusion Cloud Applications List general ledger period statuses",
+      "tags": [
+        "General Ledger"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+      "operationId": "listReceivablesInvoices",
+      "summary": "Oracle Fusion Cloud Applications List receivables invoices",
+      "tags": [
+        "Accounts Receivable"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+      "operationId": "createReceivablesInvoice",
+      "summary": "Oracle Fusion Cloud Applications Create a receivables invoice",
+      "tags": [
+        "Accounts Receivable"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/standardReceipts",
+      "operationId": "listReceipts",
+      "summary": "Oracle Fusion Cloud Applications List standard receipts",
+      "tags": [
+        "Accounts Receivable"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/standardReceipts",
+      "operationId": "createReceipt",
+      "summary": "Oracle Fusion Cloud Applications Create a standard receipt",
+      "tags": [
+        "Accounts Receivable"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/expenseReports",
+      "operationId": "listExpenseReports",
+      "summary": "Oracle Fusion Cloud Applications List expense reports",
+      "tags": [
+        "Expense Reports"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/expenseReports",
+      "operationId": "createExpenseReport",
+      "summary": "Oracle Fusion Cloud Applications Create an expense report",
+      "tags": [
+        "Expense Reports"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}",
+      "operationId": "getExpenseReport",
+      "summary": "Oracle Fusion Cloud Applications Get an expense report",
+      "tags": [
+        "Expense Reports"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}",
+      "operationId": "deleteExpenseReport",
+      "summary": "Oracle Fusion Cloud Applications Delete an expense report",
+      "tags": [
+        "Expense Reports"
+      ]
+    },
+    {
+      "method": "PATCH",
+      "path": "/fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}",
+      "operationId": "updateExpenseReport",
+      "summary": "Oracle Fusion Cloud Applications Update an expense report",
+      "tags": [
+        "Expense Reports"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/cashBankAccounts",
+      "operationId": "listBankAccounts",
+      "summary": "Oracle Fusion Cloud Applications List bank accounts",
+      "tags": [
+        "Cash Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers",
+      "operationId": "listBankAccountTransfers",
+      "summary": "Oracle Fusion Cloud Applications List bank account transfers",
+      "tags": [
+        "Cash Management"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers",
+      "operationId": "createBankAccountTransfer",
+      "summary": "Oracle Fusion Cloud Applications Create a bank account transfer",
+      "tags": [
+        "Cash Management"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+      "operationId": "listBudgetTransactions",
+      "summary": "Oracle Fusion Cloud Applications List budget transactions",
+      "tags": [
+        "Budgetary Control"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+      "operationId": "createBudgetTransaction",
+      "summary": "Oracle Fusion Cloud Applications Create a budget transaction",
+      "tags": [
+        "Budgetary Control"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/fscmRestApi/resources/11.13.18.05/erpintegrations",
+      "operationId": "submitErpIntegration",
+      "summary": "Oracle Fusion Cloud Applications Submit an ERP integration",
+      "tags": [
+        "ERP Integrations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/fscmRestApi/resources/11.13.18.05/currencyRates",
+      "operationId": "listCurrencyRates",
+      "summary": "Oracle Fusion Cloud Applications List currency rates",
+      "tags": [
+        "Currency Rates"
+      ]
+    }
+  ]
+}

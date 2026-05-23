@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/StandardReceipt",
+  "title": "StandardReceipt",
+  "type": "object",
+  "properties": {
+    "ReceiptId": {
+      "type": "integer",
+      "description": "Receipt identifier"
+    },
+    "ReceiptNumber": {
+      "type": "string",
+      "description": "Receipt number"
+    },
+    "ReceiptAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Receipt amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Receipt currency"
+    },
+    "ReceiptDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Receipt date"
+    },
+    "CustomerName": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "CustomerNumber": {
+      "type": "string",
+      "description": "Customer number"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "PaymentMethod": {
+      "type": "string",
+      "description": "Receipt payment method"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Receipt status"
+    }
+  }
+}

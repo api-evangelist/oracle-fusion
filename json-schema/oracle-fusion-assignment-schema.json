@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Assignment",
+  "title": "Assignment",
+  "type": "object",
+  "properties": {
+    "AssignmentId": {
+      "type": "integer",
+      "description": "Assignment identifier"
+    },
+    "AssignmentNumber": {
+      "type": "string",
+      "description": "Assignment number"
+    },
+    "AssignmentName": {
+      "type": "string",
+      "description": "Assignment name"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Associated person number"
+    },
+    "BusinessUnitName": {
+      "type": "string",
+      "description": "Business unit"
+    },
+    "DepartmentName": {
+      "type": "string",
+      "description": "Department"
+    },
+    "JobName": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "PositionName": {
+      "type": "string",
+      "description": "Position"
+    },
+    "GradeName": {
+      "type": "string",
+      "description": "Grade"
+    },
+    "LocationName": {
+      "type": "string",
+      "description": "Work location"
+    },
+    "ManagerPersonNumber": {
+      "type": "string",
+      "description": "Manager person number"
+    },
+    "ManagerDisplayName": {
+      "type": "string",
+      "description": "Manager name"
+    },
+    "AssignmentStatus": {
+      "type": "string",
+      "description": "Status of the assignment",
+      "enum": [
+        "Active",
+        "Suspended",
+        "Inactive"
+      ]
+    },
+    "EffectiveStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective start date"
+    },
+    "EffectiveEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective end date"
+    },
+    "WorkerType": {
+      "type": "string",
+      "description": "Worker type (Employee or Contingent Worker)"
+    }
+  }
+}

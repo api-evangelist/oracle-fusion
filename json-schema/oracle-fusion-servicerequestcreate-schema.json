@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceRequestCreate",
+  "title": "ServiceRequestCreate",
+  "type": "object",
+  "required": [
+    "Title"
+  ],
+  "properties": {
+    "Title": {
+      "type": "string"
+    },
+    "ProblemDescription": {
+      "type": "string"
+    },
+    "AccountName": {
+      "type": "string"
+    },
+    "ContactName": {
+      "type": "string"
+    },
+    "Severity": {
+      "type": "string",
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "Priority": {
+      "type": "string"
+    },
+    "CategoryName": {
+      "type": "string"
+    },
+    "ChannelType": {
+      "type": "string"
+    }
+  }
+}

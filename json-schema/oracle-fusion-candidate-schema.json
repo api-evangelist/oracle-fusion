@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Candidate",
+  "title": "Candidate",
+  "type": "object",
+  "properties": {
+    "CandidateId": {
+      "type": "integer",
+      "description": "Candidate identifier"
+    },
+    "CandidateNumber": {
+      "type": "string",
+      "description": "Candidate number"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name"
+    },
+    "LastName": {
+      "type": "string",
+      "description": "Last name"
+    },
+    "Email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "PhoneNumber": {
+      "type": "string",
+      "description": "Phone number"
+    },
+    "CurrentEmployer": {
+      "type": "string",
+      "description": "Current employer"
+    },
+    "CurrentJobTitle": {
+      "type": "string",
+      "description": "Current job title"
+    },
+    "Source": {
+      "type": "string",
+      "description": "Candidate source"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Candidate status",
+      "enum": [
+        "New",
+        "Under Review",
+        "Interview",
+        "Offer",
+        "Hired",
+        "Rejected",
+        "Withdrawn"
+      ]
+    }
+  }
+}

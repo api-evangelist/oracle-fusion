@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProjectTask",
+  "title": "ProjectTask",
+  "type": "object",
+  "properties": {
+    "TaskId": {
+      "type": "integer",
+      "description": "Task identifier"
+    },
+    "TaskNumber": {
+      "type": "string",
+      "description": "Task number"
+    },
+    "TaskName": {
+      "type": "string",
+      "description": "Task name"
+    },
+    "ProjectId": {
+      "type": "integer",
+      "description": "Parent project identifier"
+    },
+    "ProjectNumber": {
+      "type": "string",
+      "description": "Parent project number"
+    },
+    "ParentTaskId": {
+      "type": "integer",
+      "description": "Parent task identifier for hierarchy"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Task start date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Task end date"
+    },
+    "TaskLevel": {
+      "type": "integer",
+      "description": "Task level in hierarchy"
+    },
+    "PlannedEfffort": {
+      "type": "number",
+      "format": "double",
+      "description": "Planned effort"
+    },
+    "ActualEffort": {
+      "type": "number",
+      "format": "double",
+      "description": "Actual effort"
+    },
+    "PercentComplete": {
+      "type": "number",
+      "format": "double",
+      "description": "Completion percentage"
+    },
+    "TaskStatus": {
+      "type": "string",
+      "description": "Task status"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DimensionMember",
+  "title": "DimensionMember",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Member name"
+    },
+    "parentName": {
+      "type": "string",
+      "description": "Parent member name"
+    },
+    "dimensionName": {
+      "type": "string",
+      "description": "Dimension name"
+    },
+    "dataStorageType": {
+      "type": "string",
+      "description": "Data storage type",
+      "enum": [
+        "Store Data",
+        "Dynamic Calc",
+        "Never Share",
+        "Shared Member",
+        "Label Only"
+      ]
+    },
+    "memberFormula": {
+      "type": "string",
+      "description": "Member formula"
+    },
+    "alias": {
+      "type": "string",
+      "description": "Member alias"
+    }
+  }
+}

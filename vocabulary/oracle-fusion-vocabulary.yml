@@ -1,0 +1,23 @@
+name: Oracle Fusion Cloud Applications Domain Vocabulary
+provider: Oracle Fusion Cloud Applications
+providerId: oracle-fusion
+description: Tag-derived vocabulary for the Oracle Fusion Cloud Applications API surface; sourced from openapi/ tags.
+terms:
+- term: Accounts Receivable
+  description: Manage receivables transactions and receipts
+- term: Budgetary Control
+  description: Budget transactions and validation
+- term: Cash Management
+  description: Bank accounts, transfers, and cash pools
+- term: Currency Rates
+  description: Currency rate management
+- term: ERP Integrations
+  description: Bulk data import and export operations
+- term: Expense Reports
+  description: Create and manage employee expense reports
+- term: General Ledger
+  description: General ledger journal and period operations
+- term: Invoices
+  description: Manage accounts payable invoices
+- term: Payments
+  description: Manage payment processing

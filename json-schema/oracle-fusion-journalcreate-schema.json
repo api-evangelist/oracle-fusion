@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JournalCreate",
+  "title": "JournalCreate",
+  "type": "object",
+  "required": [
+    "JournalBatchName",
+    "JournalName",
+    "LedgerName",
+    "AccountingPeriod",
+    "CurrencyCode",
+    "JournalCategory",
+    "JournalSource"
+  ],
+  "properties": {
+    "JournalBatchName": {
+      "type": "string"
+    },
+    "JournalName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "LedgerName": {
+      "type": "string"
+    },
+    "AccountingPeriod": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "JournalCategory": {
+      "type": "string"
+    },
+    "JournalSource": {
+      "type": "string"
+    }
+  }
+}

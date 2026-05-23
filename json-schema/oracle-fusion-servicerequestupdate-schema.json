@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceRequestUpdate",
+  "title": "ServiceRequestUpdate",
+  "type": "object",
+  "properties": {
+    "Title": {
+      "type": "string"
+    },
+    "Status": {
+      "type": "string"
+    },
+    "Severity": {
+      "type": "string"
+    },
+    "AssigneeName": {
+      "type": "string"
+    },
+    "QueueName": {
+      "type": "string"
+    }
+  }
+}

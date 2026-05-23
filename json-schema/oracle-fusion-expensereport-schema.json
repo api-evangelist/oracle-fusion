@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExpenseReport",
+  "title": "ExpenseReport",
+  "type": "object",
+  "properties": {
+    "ExpenseReportId": {
+      "type": "integer",
+      "description": "Unique identifier for the expense report"
+    },
+    "ExpenseReportNumber": {
+      "type": "string",
+      "description": "Expense report number"
+    },
+    "Purpose": {
+      "type": "string",
+      "description": "Business purpose of the expense report"
+    },
+    "ExpenseReportDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expense report date"
+    },
+    "PersonName": {
+      "type": "string",
+      "description": "Employee name"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Employee person number"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "TotalAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total expense report amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Expense report currency"
+    },
+    "ApprovalStatus": {
+      "type": "string",
+      "description": "Approval workflow status",
+      "enum": [
+        "Saved",
+        "Pending Approval",
+        "Approved",
+        "Rejected",
+        "Paid",
+        "Withdrawn"
+      ]
+    },
+    "ReimbursementAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Amount to be reimbursed"
+    },
+    "SubmittedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Date expense report was submitted"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp"
+    }
+  }
+}

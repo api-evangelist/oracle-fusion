@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProjectCreate",
+  "title": "ProjectCreate",
+  "type": "object",
+  "required": [
+    "ProjectName",
+    "ProjectOrganization",
+    "StartDate"
+  ],
+  "properties": {
+    "ProjectName": {
+      "type": "string"
+    },
+    "ProjectDescription": {
+      "type": "string"
+    },
+    "ProjectType": {
+      "type": "string"
+    },
+    "ProjectOrganization": {
+      "type": "string"
+    },
+    "ProjectManager": {
+      "type": "string"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "LegalEntity": {
+      "type": "string"
+    },
+    "BusinessUnit": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    }
+  }
+}

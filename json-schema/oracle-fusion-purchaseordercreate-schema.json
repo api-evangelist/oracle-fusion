@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PurchaseOrderCreate",
+  "title": "PurchaseOrderCreate",
+  "type": "object",
+  "required": [
+    "ProcurementBusinessUnit",
+    "SupplierName"
+  ],
+  "properties": {
+    "ProcurementBusinessUnit": {
+      "type": "string"
+    },
+    "SupplierName": {
+      "type": "string"
+    },
+    "SupplierNumber": {
+      "type": "string"
+    },
+    "SupplierSite": {
+      "type": "string"
+    },
+    "BuyerName": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "PaymentTerms": {
+      "type": "string"
+    }
+  }
+}

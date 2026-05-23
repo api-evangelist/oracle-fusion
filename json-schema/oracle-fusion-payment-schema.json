@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Payment",
+  "title": "Payment",
+  "type": "object",
+  "properties": {
+    "PaymentId": {
+      "type": "integer",
+      "description": "Unique payment identifier"
+    },
+    "PaymentNumber": {
+      "type": "string",
+      "description": "Payment number"
+    },
+    "PaymentAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Payment amount"
+    },
+    "PaymentCurrencyCode": {
+      "type": "string",
+      "description": "Payment currency"
+    },
+    "PaymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of payment"
+    },
+    "PaymentMethod": {
+      "type": "string",
+      "description": "Payment method (Check, Electronic, Wire)"
+    },
+    "VendorName": {
+      "type": "string",
+      "description": "Payee name"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit"
+    },
+    "BankAccountName": {
+      "type": "string",
+      "description": "Disbursement bank account"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Payment status",
+      "enum": [
+        "Created",
+        "Set Up",
+        "Formatted",
+        "Transmitted",
+        "Confirmed",
+        "Voided"
+      ]
+    }
+  }
+}

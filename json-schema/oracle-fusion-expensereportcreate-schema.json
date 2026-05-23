@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExpenseReportCreate",
+  "title": "ExpenseReportCreate",
+  "type": "object",
+  "required": [
+    "Purpose",
+    "BusinessUnit"
+  ],
+  "properties": {
+    "Purpose": {
+      "type": "string"
+    },
+    "ExpenseReportDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "BusinessUnit": {
+      "type": "string"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    }
+  }
+}

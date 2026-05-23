@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ErpIntegrationRequest",
+  "title": "ErpIntegrationRequest",
+  "type": "object",
+  "required": [
+    "OperationName",
+    "DocumentContent"
+  ],
+  "properties": {
+    "OperationName": {
+      "type": "string",
+      "description": "Name of the integration operation. Common values include importBulkData, exportBulkData, submitESSJobRequest.",
+      "enum": [
+        "importBulkData",
+        "exportBulkData",
+        "submitESSJobRequest"
+      ]
+    },
+    "DocumentContent": {
+      "type": "string",
+      "format": "byte",
+      "description": "Base64-encoded content of the data file"
+    },
+    "ContentType": {
+      "type": "string",
+      "description": "Content type of the document"
+    },
+    "FileName": {
+      "type": "string",
+      "description": "Name of the file being uploaded"
+    },
+    "DocumentAccount": {
+      "type": "string",
+      "description": "UCM document account"
+    },
+    "JobName": {
+      "type": "string",
+      "description": "ESS job name for submitESSJobRequest operations"
+    }
+  }
+}

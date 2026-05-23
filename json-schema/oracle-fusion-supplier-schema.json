@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Supplier",
+  "title": "Supplier",
+  "type": "object",
+  "properties": {
+    "SupplierId": {
+      "type": "integer",
+      "description": "Supplier identifier"
+    },
+    "SupplierNumber": {
+      "type": "string",
+      "description": "Supplier number"
+    },
+    "SupplierName": {
+      "type": "string",
+      "description": "Supplier name"
+    },
+    "SupplierType": {
+      "type": "string",
+      "description": "Supplier type"
+    },
+    "TaxpayerIdentificationNumber": {
+      "type": "string",
+      "description": "Tax ID number"
+    },
+    "TaxOrganizationType": {
+      "type": "string",
+      "description": "Tax organization type"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Supplier status",
+      "enum": [
+        "Active",
+        "Inactive"
+      ]
+    },
+    "BusinessRelationship": {
+      "type": "string",
+      "description": "Business relationship type",
+      "enum": [
+        "Spend Authorized",
+        "Prospective"
+      ]
+    },
+    "Country": {
+      "type": "string",
+      "description": "Country"
+    },
+    "AddressLine1": {
+      "type": "string",
+      "description": "Primary address line"
+    },
+    "City": {
+      "type": "string",
+      "description": "City"
+    },
+    "State": {
+      "type": "string",
+      "description": "State or province"
+    },
+    "PostalCode": {
+      "type": "string",
+      "description": "Postal code"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

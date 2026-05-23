@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccountCreate",
+  "title": "AccountCreate",
+  "type": "object",
+  "required": [
+    "OrganizationName"
+  ],
+  "properties": {
+    "OrganizationName": {
+      "type": "string"
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "Customer",
+        "Prospect",
+        "Partner"
+      ]
+    },
+    "Industry": {
+      "type": "string"
+    },
+    "AnnualRevenue": {
+      "type": "number",
+      "format": "double"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    },
+    "EmailAddress": {
+      "type": "string",
+      "format": "email"
+    },
+    "URL": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

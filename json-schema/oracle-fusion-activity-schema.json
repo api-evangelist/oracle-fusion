@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Activity",
+  "title": "Activity",
+  "type": "object",
+  "properties": {
+    "ActivityId": {
+      "type": "integer",
+      "description": "Activity identifier"
+    },
+    "ActivityNumber": {
+      "type": "string",
+      "description": "Activity number"
+    },
+    "Subject": {
+      "type": "string",
+      "description": "Activity subject"
+    },
+    "ActivityType": {
+      "type": "string",
+      "description": "Type of activity",
+      "enum": [
+        "Task",
+        "Appointment",
+        "Call Log"
+      ]
+    },
+    "Status": {
+      "type": "string",
+      "description": "Activity status",
+      "enum": [
+        "Not Started",
+        "In Progress",
+        "Completed",
+        "Cancelled"
+      ]
+    },
+    "Priority": {
+      "type": "string",
+      "description": "Priority level",
+      "enum": [
+        "High",
+        "Normal",
+        "Low"
+      ]
+    },
+    "DueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Due date"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Start date and time"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "End date and time"
+    },
+    "OwnerName": {
+      "type": "string",
+      "description": "Activity owner"
+    },
+    "AccountName": {
+      "type": "string",
+      "description": "Associated account"
+    },
+    "ContactName": {
+      "type": "string",
+      "description": "Associated contact"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Activity description"
+    }
+  }
+}

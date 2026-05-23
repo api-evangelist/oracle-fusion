@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/File",
+  "title": "File",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "File name"
+    },
+    "path": {
+      "type": "string",
+      "description": "File path"
+    },
+    "size": {
+      "type": "integer",
+      "description": "File size in bytes"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modified timestamp"
+    },
+    "isDirectory": {
+      "type": "boolean",
+      "description": "Whether the entry is a directory"
+    }
+  }
+}

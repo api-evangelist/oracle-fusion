@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LedgerBalance",
+  "title": "LedgerBalance",
+  "type": "object",
+  "properties": {
+    "LedgerId": {
+      "type": "integer",
+      "description": "Ledger identifier"
+    },
+    "LedgerName": {
+      "type": "string",
+      "description": "Name of the ledger"
+    },
+    "PeriodName": {
+      "type": "string",
+      "description": "Accounting period name"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Currency code"
+    },
+    "Segment1": {
+      "type": "string",
+      "description": "Chart of accounts segment 1 (Company)"
+    },
+    "Segment2": {
+      "type": "string",
+      "description": "Chart of accounts segment 2 (Department)"
+    },
+    "Segment3": {
+      "type": "string",
+      "description": "Chart of accounts segment 3 (Account)"
+    },
+    "Segment4": {
+      "type": "string",
+      "description": "Chart of accounts segment 4 (Sub-Account)"
+    },
+    "BeginningBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Beginning balance for the period"
+    },
+    "PeriodActivity": {
+      "type": "number",
+      "format": "double",
+      "description": "Net activity for the period"
+    },
+    "EndingBalance": {
+      "type": "number",
+      "format": "double",
+      "description": "Ending balance for the period"
+    }
+  }
+}

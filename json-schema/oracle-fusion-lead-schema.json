@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Lead",
+  "title": "Lead",
+  "type": "object",
+  "properties": {
+    "LeadId": {
+      "type": "integer",
+      "description": "Lead identifier"
+    },
+    "LeadNumber": {
+      "type": "string",
+      "description": "Lead number"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Lead name"
+    },
+    "CustomerName": {
+      "type": "string",
+      "description": "Customer or prospect name"
+    },
+    "ContactName": {
+      "type": "string",
+      "description": "Primary contact name"
+    },
+    "OwnerName": {
+      "type": "string",
+      "description": "Lead owner name"
+    },
+    "Score": {
+      "type": "integer",
+      "description": "Lead score"
+    },
+    "Rank": {
+      "type": "string",
+      "description": "Lead rank",
+      "enum": [
+        "Hot",
+        "Warm",
+        "Cold"
+      ]
+    },
+    "QualificationStatus": {
+      "type": "string",
+      "description": "Qualification status",
+      "enum": [
+        "Unqualified",
+        "Qualified",
+        "Converted",
+        "Retired"
+      ]
+    },
+    "Source": {
+      "type": "string",
+      "description": "Lead source"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

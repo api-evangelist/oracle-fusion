@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ServiceRequest",
+  "title": "ServiceRequest",
+  "type": "object",
+  "properties": {
+    "SrId": {
+      "type": "integer",
+      "description": "Service request identifier"
+    },
+    "SrNumber": {
+      "type": "string",
+      "description": "Service request number"
+    },
+    "Title": {
+      "type": "string",
+      "description": "Service request title"
+    },
+    "ProblemDescription": {
+      "type": "string",
+      "description": "Detailed problem description"
+    },
+    "AccountName": {
+      "type": "string",
+      "description": "Customer account name"
+    },
+    "ContactName": {
+      "type": "string",
+      "description": "Primary contact name"
+    },
+    "Severity": {
+      "type": "string",
+      "description": "Severity level",
+      "enum": [
+        "Critical",
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "Status": {
+      "type": "string",
+      "description": "Service request status",
+      "enum": [
+        "New",
+        "In Progress",
+        "Waiting",
+        "Resolved",
+        "Closed"
+      ]
+    },
+    "Priority": {
+      "type": "string",
+      "description": "Priority level"
+    },
+    "CategoryName": {
+      "type": "string",
+      "description": "Category classification"
+    },
+    "AssigneeName": {
+      "type": "string",
+      "description": "Assigned agent name"
+    },
+    "QueueName": {
+      "type": "string",
+      "description": "Assigned queue"
+    },
+    "ChannelType": {
+      "type": "string",
+      "description": "Channel of origin",
+      "enum": [
+        "Phone",
+        "Email",
+        "Web",
+        "Chat",
+        "Social"
+      ]
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ResolvedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Resolution date"
+    }
+  }
+}

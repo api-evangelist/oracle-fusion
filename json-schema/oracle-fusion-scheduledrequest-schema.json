@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ScheduledRequest",
+  "title": "ScheduledRequest",
+  "type": "object",
+  "properties": {
+    "requestId": {
+      "type": "integer",
+      "description": "Request identifier"
+    },
+    "jobDefinitionName": {
+      "type": "string",
+      "description": "Job definition name"
+    },
+    "submittedBy": {
+      "type": "string",
+      "description": "Submitted by username"
+    },
+    "submittedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Submission timestamp"
+    },
+    "status": {
+      "type": "string",
+      "description": "Request status",
+      "enum": [
+        "Wait",
+        "Ready",
+        "Running",
+        "Completed",
+        "Blocked",
+        "Error",
+        "Warning",
+        "Cancelled",
+        "Paused",
+        "Hold"
+      ]
+    },
+    "startDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Execution start time"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Execution end time"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SupplierCreate",
+  "title": "SupplierCreate",
+  "type": "object",
+  "required": [
+    "SupplierName"
+  ],
+  "properties": {
+    "SupplierName": {
+      "type": "string"
+    },
+    "SupplierType": {
+      "type": "string"
+    },
+    "TaxpayerIdentificationNumber": {
+      "type": "string"
+    },
+    "Country": {
+      "type": "string"
+    },
+    "AddressLine1": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },
+    "State": {
+      "type": "string"
+    },
+    "PostalCode": {
+      "type": "string"
+    }
+  }
+}

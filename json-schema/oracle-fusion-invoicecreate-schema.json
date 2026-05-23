@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InvoiceCreate",
+  "title": "InvoiceCreate",
+  "type": "object",
+  "required": [
+    "InvoiceNumber",
+    "InvoiceAmount",
+    "InvoiceCurrencyCode",
+    "VendorName",
+    "BusinessUnit"
+  ],
+  "properties": {
+    "InvoiceNumber": {
+      "type": "string",
+      "description": "Invoice number"
+    },
+    "InvoiceAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total invoice amount"
+    },
+    "InvoiceCurrencyCode": {
+      "type": "string",
+      "description": "Currency code"
+    },
+    "InvoiceDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Invoice date"
+    },
+    "InvoiceType": {
+      "type": "string",
+      "enum": [
+        "Standard",
+        "Credit Memo",
+        "Prepayment",
+        "Mixed"
+      ]
+    },
+    "VendorName": {
+      "type": "string",
+      "description": "Supplier name"
+    },
+    "VendorNumber": {
+      "type": "string",
+      "description": "Supplier number"
+    },
+    "VendorSiteCode": {
+      "type": "string",
+      "description": "Supplier site code"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Invoice description"
+    },
+    "PaymentTerms": {
+      "type": "string",
+      "description": "Payment terms"
+    },
+    "AccountingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Accounting date"
+    }
+  }
+}

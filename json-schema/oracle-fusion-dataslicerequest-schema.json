@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataSliceRequest",
+  "title": "DataSliceRequest",
+  "type": "object",
+  "properties": {
+    "exportPlanningData": {
+      "type": "boolean",
+      "description": "Whether to export planning data",
+      "default": true
+    },
+    "gridDefinition": {
+      "type": "object",
+      "properties": {
+        "suppressMissingBlocks": {
+          "type": "boolean"
+        },
+        "suppressMissingRows": {
+          "type": "boolean"
+        },
+        "pov": {
+          "type": "object",
+          "description": "Point-of-view dimension selections"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Column dimension members"
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          },
+          "description": "Row dimension members"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CurrencyRate",
+  "title": "CurrencyRate",
+  "type": "object",
+  "properties": {
+    "FromCurrency": {
+      "type": "string",
+      "description": "Source currency code"
+    },
+    "ToCurrency": {
+      "type": "string",
+      "description": "Target currency code"
+    },
+    "ConversionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the conversion rate"
+    },
+    "ConversionType": {
+      "type": "string",
+      "description": "Rate type (Corporate, Spot, User)"
+    },
+    "ConversionRate": {
+      "type": "number",
+      "format": "double",
+      "description": "Exchange rate value"
+    },
+    "InverseConversionRate": {
+      "type": "number",
+      "format": "double",
+      "description": "Inverse of the exchange rate"
+    }
+  }
+}

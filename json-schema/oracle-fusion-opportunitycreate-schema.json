@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OpportunityCreate",
+  "title": "OpportunityCreate",
+  "type": "object",
+  "required": [
+    "Name",
+    "AccountPartyNumber"
+  ],
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "AccountPartyNumber": {
+      "type": "string"
+    },
+    "SalesStage": {
+      "type": "string"
+    },
+    "WinProbability": {
+      "type": "integer"
+    },
+    "Revenue": {
+      "type": "number",
+      "format": "double"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "CloseDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

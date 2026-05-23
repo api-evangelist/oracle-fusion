@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Dimension",
+  "title": "Dimension",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Dimension name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Dimension type",
+      "enum": [
+        "Account",
+        "Entity",
+        "Period",
+        "Year",
+        "Scenario",
+        "Version",
+        "Currency",
+        "Attribute",
+        "User Defined"
+      ]
+    },
+    "numberOfMembers": {
+      "type": "integer",
+      "description": "Number of members in the dimension"
+    }
+  }
+}

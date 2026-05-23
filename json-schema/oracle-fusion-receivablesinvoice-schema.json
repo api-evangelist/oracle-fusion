@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReceivablesInvoice",
+  "title": "ReceivablesInvoice",
+  "type": "object",
+  "properties": {
+    "TransactionId": {
+      "type": "integer",
+      "description": "Transaction identifier"
+    },
+    "TransactionNumber": {
+      "type": "string",
+      "description": "Transaction number"
+    },
+    "TransactionType": {
+      "type": "string",
+      "description": "Transaction type (Invoice, Credit Memo, Debit Memo)"
+    },
+    "TransactionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Transaction date"
+    },
+    "AccountingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Accounting date"
+    },
+    "BillToCustomerName": {
+      "type": "string",
+      "description": "Bill-to customer name"
+    },
+    "BillToCustomerNumber": {
+      "type": "string",
+      "description": "Bill-to customer number"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "TransactionAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Transaction amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Transaction currency"
+    },
+    "BalanceDue": {
+      "type": "number",
+      "format": "double",
+      "description": "Remaining balance due"
+    },
+    "PaymentTerms": {
+      "type": "string",
+      "description": "Payment terms"
+    },
+    "DueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment due date"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Transaction status"
+    }
+  }
+}

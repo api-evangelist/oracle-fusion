@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LeadCreate",
+  "title": "LeadCreate",
+  "type": "object",
+  "required": [
+    "Name"
+  ],
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "CustomerName": {
+      "type": "string"
+    },
+    "ContactName": {
+      "type": "string"
+    },
+    "Rank": {
+      "type": "string",
+      "enum": [
+        "Hot",
+        "Warm",
+        "Cold"
+      ]
+    },
+    "Source": {
+      "type": "string"
+    }
+  }
+}

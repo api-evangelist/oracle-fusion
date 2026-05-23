@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BankAccountTransferCreate",
+  "title": "BankAccountTransferCreate",
+  "type": "object",
+  "required": [
+    "TransferAmount",
+    "CurrencyCode",
+    "FromBankAccountName",
+    "ToBankAccountName"
+  ],
+  "properties": {
+    "TransferAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "TransferDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "FromBankAccountName": {
+      "type": "string"
+    },
+    "ToBankAccountName": {
+      "type": "string"
+    }
+  }
+}

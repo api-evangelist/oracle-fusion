@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ReceivablesInvoiceCreate",
+  "title": "ReceivablesInvoiceCreate",
+  "type": "object",
+  "required": [
+    "TransactionNumber",
+    "TransactionType",
+    "BillToCustomerName",
+    "BusinessUnit"
+  ],
+  "properties": {
+    "TransactionNumber": {
+      "type": "string"
+    },
+    "TransactionType": {
+      "type": "string"
+    },
+    "TransactionDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "BillToCustomerName": {
+      "type": "string"
+    },
+    "BillToCustomerNumber": {
+      "type": "string"
+    },
+    "BusinessUnit": {
+      "type": "string"
+    },
+    "TransactionAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "PaymentTerms": {
+      "type": "string"
+    }
+  }
+}

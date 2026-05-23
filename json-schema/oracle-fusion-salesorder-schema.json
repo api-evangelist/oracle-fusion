@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SalesOrder",
+  "title": "SalesOrder",
+  "type": "object",
+  "properties": {
+    "OrderId": {
+      "type": "integer",
+      "description": "Order header identifier"
+    },
+    "OrderNumber": {
+      "type": "string",
+      "description": "Order number"
+    },
+    "OrderType": {
+      "type": "string",
+      "description": "Order type"
+    },
+    "CustomerName": {
+      "type": "string",
+      "description": "Customer name"
+    },
+    "CustomerNumber": {
+      "type": "string",
+      "description": "Customer number"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "OrderDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Order date"
+    },
+    "RequestedShipDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Requested ship date"
+    },
+    "TotalAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total order amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Order currency"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Order status",
+      "enum": [
+        "Open",
+        "Booked",
+        "Closed",
+        "Cancelled",
+        "Awaiting Shipping",
+        "Awaiting Billing"
+      ]
+    },
+    "ShipToAddress": {
+      "type": "string",
+      "description": "Ship-to address"
+    },
+    "BillToAddress": {
+      "type": "string",
+      "description": "Bill-to address"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp"
+    }
+  }
+}

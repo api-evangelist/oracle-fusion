@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JobExecute",
+  "title": "JobExecute",
+  "type": "object",
+  "required": [
+    "jobName",
+    "jobType"
+  ],
+  "properties": {
+    "jobName": {
+      "type": "string",
+      "description": "Name of the job to execute"
+    },
+    "jobType": {
+      "type": "string",
+      "description": "Type of job",
+      "enum": [
+        "Rules",
+        "Data Map",
+        "Cube Refresh",
+        "Clear Cube",
+        "Refresh Database",
+        "Smart Push",
+        "Import Data",
+        "Export Data",
+        "Copy Data"
+      ]
+    },
+    "parameters": {
+      "type": "object",
+      "description": "Job-specific parameters",
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  }
+}

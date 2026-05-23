@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LookupCodeCreate",
+  "title": "LookupCodeCreate",
+  "type": "object",
+  "required": [
+    "LookupCode",
+    "Meaning"
+  ],
+  "properties": {
+    "LookupCode": {
+      "type": "string"
+    },
+    "Meaning": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "EnabledFlag": {
+      "type": "boolean"
+    },
+    "DisplaySequence": {
+      "type": "integer"
+    }
+  }
+}

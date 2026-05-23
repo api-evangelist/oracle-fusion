@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AccessGroup",
+  "title": "AccessGroup",
+  "type": "object",
+  "properties": {
+    "AccessGroupNumber": {
+      "type": "string",
+      "description": "Access group number"
+    },
+    "AccessGroupName": {
+      "type": "string",
+      "description": "Access group name"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Access group description"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Group status"
+    }
+  }
+}

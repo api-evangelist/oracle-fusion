@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ProjectUpdate",
+  "title": "ProjectUpdate",
+  "type": "object",
+  "properties": {
+    "ProjectName": {
+      "type": "string"
+    },
+    "ProjectDescription": {
+      "type": "string"
+    },
+    "ProjectStatus": {
+      "type": "string"
+    },
+    "ProjectManager": {
+      "type": "string"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OnhandBalance",
+  "title": "OnhandBalance",
+  "type": "object",
+  "properties": {
+    "OrganizationId": {
+      "type": "integer",
+      "description": "Inventory organization identifier"
+    },
+    "OrganizationCode": {
+      "type": "string",
+      "description": "Organization code"
+    },
+    "OrganizationName": {
+      "type": "string",
+      "description": "Organization name"
+    },
+    "ItemNumber": {
+      "type": "string",
+      "description": "Item number"
+    },
+    "ItemDescription": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "Subinventory": {
+      "type": "string",
+      "description": "Subinventory code"
+    },
+    "Locator": {
+      "type": "string",
+      "description": "Locator name"
+    },
+    "LotNumber": {
+      "type": "string",
+      "description": "Lot number"
+    },
+    "SerialNumber": {
+      "type": "string",
+      "description": "Serial number"
+    },
+    "OnhandQuantity": {
+      "type": "number",
+      "format": "double",
+      "description": "On-hand quantity"
+    },
+    "UnitOfMeasure": {
+      "type": "string",
+      "description": "Unit of measure"
+    },
+    "ReservedQuantity": {
+      "type": "number",
+      "format": "double",
+      "description": "Reserved quantity"
+    },
+    "AvailableQuantity": {
+      "type": "number",
+      "format": "double",
+      "description": "Available to transact quantity"
+    }
+  }
+}

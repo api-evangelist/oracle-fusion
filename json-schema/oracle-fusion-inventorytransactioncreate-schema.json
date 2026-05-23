@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InventoryTransactionCreate",
+  "title": "InventoryTransactionCreate",
+  "type": "object",
+  "required": [
+    "TransactionType",
+    "OrganizationCode",
+    "ItemNumber",
+    "Subinventory",
+    "Quantity",
+    "UnitOfMeasure"
+  ],
+  "properties": {
+    "TransactionType": {
+      "type": "string"
+    },
+    "OrganizationCode": {
+      "type": "string"
+    },
+    "ItemNumber": {
+      "type": "string"
+    },
+    "Subinventory": {
+      "type": "string"
+    },
+    "Locator": {
+      "type": "string"
+    },
+    "Quantity": {
+      "type": "number",
+      "format": "double"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "LotNumber": {
+      "type": "string"
+    },
+    "SerialNumber": {
+      "type": "string"
+    }
+  }
+}

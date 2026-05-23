@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TalentProfile",
+  "title": "TalentProfile",
+  "type": "object",
+  "properties": {
+    "ProfileId": {
+      "type": "integer",
+      "description": "Profile identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Person number"
+    },
+    "PersonName": {
+      "type": "string",
+      "description": "Person display name"
+    },
+    "ProfileType": {
+      "type": "string",
+      "description": "Profile type (Person, Model, Position)"
+    },
+    "ProfileStatus": {
+      "type": "string",
+      "description": "Profile status"
+    },
+    "Summary": {
+      "type": "string",
+      "description": "Profile summary or biography"
+    }
+  }
+}

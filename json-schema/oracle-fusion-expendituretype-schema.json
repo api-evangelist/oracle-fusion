@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ExpenditureType",
+  "title": "ExpenditureType",
+  "type": "object",
+  "properties": {
+    "ExpenditureTypeId": {
+      "type": "integer",
+      "description": "Expenditure type identifier"
+    },
+    "ExpenditureTypeName": {
+      "type": "string",
+      "description": "Expenditure type name"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Description"
+    },
+    "ExpenditureCategory": {
+      "type": "string",
+      "description": "Expenditure category"
+    },
+    "RevenueCategory": {
+      "type": "string",
+      "description": "Revenue category"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date"
+    }
+  }
+}

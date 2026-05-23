@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Job",
+  "title": "Job",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "integer",
+      "description": "Job identifier"
+    },
+    "jobName": {
+      "type": "string",
+      "description": "Job name"
+    },
+    "jobType": {
+      "type": "string",
+      "description": "Job type",
+      "enum": [
+        "Rules",
+        "Data Map",
+        "Cube Refresh",
+        "Clear Cube",
+        "Refresh Database",
+        "Smart Push",
+        "Import Data",
+        "Export Data",
+        "Copy Data"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Job description"
+    }
+  }
+}

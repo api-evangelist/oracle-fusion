@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Deliverable",
+  "title": "Deliverable",
+  "type": "object",
+  "properties": {
+    "DeliverableId": {
+      "type": "integer",
+      "description": "Deliverable identifier"
+    },
+    "DeliverableName": {
+      "type": "string",
+      "description": "Deliverable name"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Deliverable description"
+    },
+    "DueDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Due date"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Deliverable status",
+      "enum": [
+        "Not Started",
+        "In Progress",
+        "Completed",
+        "Overdue"
+      ]
+    },
+    "CompletionDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Actual completion date"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

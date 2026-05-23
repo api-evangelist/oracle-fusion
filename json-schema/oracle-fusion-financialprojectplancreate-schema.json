@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FinancialProjectPlanCreate",
+  "title": "FinancialProjectPlanCreate",
+  "type": "object",
+  "required": [
+    "ProjectId",
+    "PlanName",
+    "PlanType"
+  ],
+  "properties": {
+    "ProjectId": {
+      "type": "integer"
+    },
+    "PlanName": {
+      "type": "string"
+    },
+    "PlanType": {
+      "type": "string",
+      "enum": [
+        "Budget",
+        "Forecast"
+      ]
+    },
+    "CurrencyCode": {
+      "type": "string"
+    }
+  }
+}

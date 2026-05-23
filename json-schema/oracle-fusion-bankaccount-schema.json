@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BankAccount",
+  "title": "BankAccount",
+  "type": "object",
+  "properties": {
+    "BankAccountId": {
+      "type": "integer",
+      "description": "Bank account identifier"
+    },
+    "BankAccountName": {
+      "type": "string",
+      "description": "Bank account name"
+    },
+    "BankAccountNumber": {
+      "type": "string",
+      "description": "Bank account number"
+    },
+    "BankName": {
+      "type": "string",
+      "description": "Bank name"
+    },
+    "BranchName": {
+      "type": "string",
+      "description": "Branch name"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Account currency"
+    },
+    "AccountType": {
+      "type": "string",
+      "description": "Bank account type"
+    },
+    "Country": {
+      "type": "string",
+      "description": "Country of the bank account"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Account status",
+      "enum": [
+        "Active",
+        "Inactive"
+      ]
+    }
+  }
+}

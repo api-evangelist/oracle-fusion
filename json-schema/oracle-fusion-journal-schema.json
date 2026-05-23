@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Journal",
+  "title": "Journal",
+  "type": "object",
+  "properties": {
+    "JournalHeaderId": {
+      "type": "integer",
+      "description": "Unique journal header identifier"
+    },
+    "JournalBatchName": {
+      "type": "string",
+      "description": "Journal batch name"
+    },
+    "JournalName": {
+      "type": "string",
+      "description": "Journal name"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Journal description"
+    },
+    "LedgerName": {
+      "type": "string",
+      "description": "Ledger name"
+    },
+    "AccountingPeriod": {
+      "type": "string",
+      "description": "Accounting period name"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Journal currency"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Journal status",
+      "enum": [
+        "Unposted",
+        "Posted",
+        "Error"
+      ]
+    },
+    "JournalCategory": {
+      "type": "string",
+      "description": "Journal category"
+    },
+    "JournalSource": {
+      "type": "string",
+      "description": "Journal source"
+    },
+    "TotalDebit": {
+      "type": "number",
+      "format": "double",
+      "description": "Total debit amount"
+    },
+    "TotalCredit": {
+      "type": "number",
+      "format": "double",
+      "description": "Total credit amount"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Journal creation date"
+    }
+  }
+}

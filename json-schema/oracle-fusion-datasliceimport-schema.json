@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/DataSliceImport",
+  "title": "DataSliceImport",
+  "type": "object",
+  "properties": {
+    "aggregateEssbaseData": {
+      "type": "boolean",
+      "description": "Whether to aggregate data"
+    },
+    "cellNotesOption": {
+      "type": "string",
+      "description": "Cell notes handling option"
+    },
+    "dateFormat": {
+      "type": "string",
+      "description": "Date format for the import"
+    },
+    "dataGrid": {
+      "type": "object",
+      "properties": {
+        "pov": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "headers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

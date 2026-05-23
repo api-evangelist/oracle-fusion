@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Project",
+  "title": "Project",
+  "type": "object",
+  "properties": {
+    "ProjectId": {
+      "type": "integer",
+      "description": "Project identifier"
+    },
+    "ProjectNumber": {
+      "type": "string",
+      "description": "Project number"
+    },
+    "ProjectName": {
+      "type": "string",
+      "description": "Project name"
+    },
+    "ProjectDescription": {
+      "type": "string",
+      "description": "Project description"
+    },
+    "ProjectType": {
+      "type": "string",
+      "description": "Project type classification"
+    },
+    "ProjectStatus": {
+      "type": "string",
+      "description": "Current project status",
+      "enum": [
+        "Submitted",
+        "Active",
+        "On Hold",
+        "Closed",
+        "Pending Close"
+      ]
+    },
+    "ProjectOrganization": {
+      "type": "string",
+      "description": "Owning organization"
+    },
+    "ProjectManager": {
+      "type": "string",
+      "description": "Project manager name"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Project start date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Project end date"
+    },
+    "LegalEntity": {
+      "type": "string",
+      "description": "Legal entity name"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Project currency"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

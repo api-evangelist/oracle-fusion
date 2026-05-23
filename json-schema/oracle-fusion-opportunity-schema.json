@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Opportunity",
+  "title": "Opportunity",
+  "type": "object",
+  "properties": {
+    "OptyId": {
+      "type": "integer",
+      "description": "Opportunity identifier"
+    },
+    "OptyNumber": {
+      "type": "string",
+      "description": "Opportunity number"
+    },
+    "Name": {
+      "type": "string",
+      "description": "Opportunity name"
+    },
+    "AccountName": {
+      "type": "string",
+      "description": "Associated account name"
+    },
+    "AccountPartyNumber": {
+      "type": "string",
+      "description": "Account party number"
+    },
+    "OwnerName": {
+      "type": "string",
+      "description": "Opportunity owner name"
+    },
+    "SalesStage": {
+      "type": "string",
+      "description": "Current sales stage"
+    },
+    "WinProbability": {
+      "type": "integer",
+      "description": "Win probability percentage",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "Revenue": {
+      "type": "number",
+      "format": "double",
+      "description": "Expected revenue"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Revenue currency"
+    },
+    "CloseDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected close date"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Opportunity status",
+      "enum": [
+        "Open",
+        "Won",
+        "Lost"
+      ]
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

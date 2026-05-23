@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/InventoryTransaction",
+  "title": "InventoryTransaction",
+  "type": "object",
+  "properties": {
+    "TransactionId": {
+      "type": "integer",
+      "description": "Transaction identifier"
+    },
+    "TransactionType": {
+      "type": "string",
+      "description": "Transaction type"
+    },
+    "OrganizationCode": {
+      "type": "string",
+      "description": "Organization code"
+    },
+    "ItemNumber": {
+      "type": "string",
+      "description": "Item number"
+    },
+    "Subinventory": {
+      "type": "string",
+      "description": "Subinventory code"
+    },
+    "Quantity": {
+      "type": "number",
+      "format": "double",
+      "description": "Transaction quantity"
+    },
+    "UnitOfMeasure": {
+      "type": "string",
+      "description": "Unit of measure"
+    },
+    "TransactionDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Transaction date"
+    }
+  }
+}

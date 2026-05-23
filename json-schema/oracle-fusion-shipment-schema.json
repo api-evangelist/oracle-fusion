@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Shipment",
+  "title": "Shipment",
+  "type": "object",
+  "properties": {
+    "ShipmentId": {
+      "type": "integer",
+      "description": "Shipment identifier"
+    },
+    "ShipmentNumber": {
+      "type": "string",
+      "description": "Shipment number"
+    },
+    "DeliveryName": {
+      "type": "string",
+      "description": "Delivery name"
+    },
+    "ShipFromOrganization": {
+      "type": "string",
+      "description": "Ship from organization"
+    },
+    "ShipToCustomer": {
+      "type": "string",
+      "description": "Ship to customer"
+    },
+    "ShipToAddress": {
+      "type": "string",
+      "description": "Ship to address"
+    },
+    "Carrier": {
+      "type": "string",
+      "description": "Carrier name"
+    },
+    "TrackingNumber": {
+      "type": "string",
+      "description": "Tracking number"
+    },
+    "ShipDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Ship date"
+    },
+    "DeliveryDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Expected delivery date"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Shipment status",
+      "enum": [
+        "Open",
+        "Packed",
+        "Shipped",
+        "In Transit",
+        "Delivered",
+        "Closed"
+      ]
+    },
+    "Weight": {
+      "type": "number",
+      "format": "double",
+      "description": "Total weight"
+    },
+    "WeightUom": {
+      "type": "string",
+      "description": "Weight unit of measure"
+    }
+  }
+}

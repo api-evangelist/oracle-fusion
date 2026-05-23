@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Item",
+  "title": "Item",
+  "type": "object",
+  "properties": {
+    "ItemId": {
+      "type": "integer",
+      "description": "Item identifier"
+    },
+    "ItemNumber": {
+      "type": "string",
+      "description": "Item number"
+    },
+    "ItemDescription": {
+      "type": "string",
+      "description": "Item description"
+    },
+    "ItemType": {
+      "type": "string",
+      "description": "Item type"
+    },
+    "OrganizationCode": {
+      "type": "string",
+      "description": "Organization code"
+    },
+    "UnitOfMeasure": {
+      "type": "string",
+      "description": "Primary unit of measure"
+    },
+    "ItemStatus": {
+      "type": "string",
+      "description": "Item status",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Pending"
+      ]
+    },
+    "ListPrice": {
+      "type": "number",
+      "format": "double",
+      "description": "List price"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Price currency"
+    },
+    "ItemCategory": {
+      "type": "string",
+      "description": "Item category"
+    },
+    "InventoryItemFlag": {
+      "type": "boolean",
+      "description": "Whether the item is inventoriable"
+    },
+    "PurchasableFlag": {
+      "type": "boolean",
+      "description": "Whether the item is purchasable"
+    },
+    "CustomerOrderableFlag": {
+      "type": "boolean",
+      "description": "Whether the item can be ordered by customers"
+    }
+  }
+}

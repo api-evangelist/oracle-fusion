@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkerCreate",
+  "title": "WorkerCreate",
+  "type": "object",
+  "required": [
+    "FirstName",
+    "LastName",
+    "HireDate"
+  ],
+  "properties": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "MiddleName": {
+      "type": "string"
+    },
+    "DateOfBirth": {
+      "type": "string",
+      "format": "date"
+    },
+    "HireDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "WorkerType": {
+      "type": "string",
+      "enum": [
+        "Employee",
+        "Contingent Worker"
+      ]
+    },
+    "WorkEmail": {
+      "type": "string",
+      "format": "email"
+    }
+  }
+}

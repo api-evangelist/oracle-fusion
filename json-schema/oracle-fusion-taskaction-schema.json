@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/TaskAction",
+  "title": "TaskAction",
+  "type": "object",
+  "required": [
+    "action"
+  ],
+  "properties": {
+    "action": {
+      "type": "string",
+      "description": "Action to perform",
+      "enum": [
+        "APPROVE",
+        "REJECT",
+        "REASSIGN",
+        "ESCALATE",
+        "SUSPEND",
+        "WITHDRAW",
+        "PUSHBACK",
+        "REQUEST_INFORMATION"
+      ]
+    },
+    "comment": {
+      "type": "string",
+      "description": "Comment for the action"
+    },
+    "assignee": {
+      "type": "string",
+      "description": "Assignee for reassign action"
+    }
+  }
+}

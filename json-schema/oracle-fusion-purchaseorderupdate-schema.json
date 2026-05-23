@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PurchaseOrderUpdate",
+  "title": "PurchaseOrderUpdate",
+  "type": "object",
+  "properties": {
+    "Status": {
+      "type": "string"
+    },
+    "PaymentTerms": {
+      "type": "string"
+    }
+  }
+}

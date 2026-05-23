@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkOrderCreate",
+  "title": "WorkOrderCreate",
+  "type": "object",
+  "required": [
+    "OrganizationCode",
+    "ItemNumber",
+    "PlannedQuantity",
+    "UnitOfMeasure"
+  ],
+  "properties": {
+    "WorkOrderType": {
+      "type": "string"
+    },
+    "OrganizationCode": {
+      "type": "string"
+    },
+    "ItemNumber": {
+      "type": "string"
+    },
+    "PlannedQuantity": {
+      "type": "number",
+      "format": "double"
+    },
+    "UnitOfMeasure": {
+      "type": "string"
+    },
+    "PlannedStartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "PlannedCompletionDate": {
+      "type": "string",
+      "format": "date"
+    }
+  }
+}

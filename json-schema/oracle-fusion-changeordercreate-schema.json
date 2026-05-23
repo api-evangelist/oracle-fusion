@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChangeOrderCreate",
+  "title": "ChangeOrderCreate",
+  "type": "object",
+  "required": [
+    "ChangeDocumentName",
+    "ProjectId"
+  ],
+  "properties": {
+    "ChangeDocumentName": {
+      "type": "string"
+    },
+    "ProjectId": {
+      "type": "integer"
+    },
+    "Description": {
+      "type": "string"
+    },
+    "ImpactType": {
+      "type": "string"
+    }
+  }
+}

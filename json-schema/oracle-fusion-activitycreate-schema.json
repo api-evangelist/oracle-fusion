@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ActivityCreate",
+  "title": "ActivityCreate",
+  "type": "object",
+  "required": [
+    "Subject",
+    "ActivityType"
+  ],
+  "properties": {
+    "Subject": {
+      "type": "string"
+    },
+    "ActivityType": {
+      "type": "string",
+      "enum": [
+        "Task",
+        "Appointment",
+        "Call Log"
+      ]
+    },
+    "Priority": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Normal",
+        "Low"
+      ]
+    },
+    "DueDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "AccountName": {
+      "type": "string"
+    },
+    "ContactName": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

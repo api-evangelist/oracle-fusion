@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AwardBudgetCreate",
+  "title": "AwardBudgetCreate",
+  "type": "object",
+  "required": [
+    "AwardId",
+    "BudgetName"
+  ],
+  "properties": {
+    "AwardId": {
+      "type": "integer"
+    },
+    "BudgetName": {
+      "type": "string"
+    },
+    "TotalBudgetAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    }
+  }
+}

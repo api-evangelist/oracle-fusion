@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CommonLookupCreate",
+  "title": "CommonLookupCreate",
+  "type": "object",
+  "required": [
+    "LookupType",
+    "Meaning"
+  ],
+  "properties": {
+    "LookupType": {
+      "type": "string"
+    },
+    "Meaning": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "string"
+    }
+  }
+}

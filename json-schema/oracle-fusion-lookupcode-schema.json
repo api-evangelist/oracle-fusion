@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/LookupCode",
+  "title": "LookupCode",
+  "type": "object",
+  "properties": {
+    "LookupCode": {
+      "type": "string",
+      "description": "Lookup code value"
+    },
+    "Meaning": {
+      "type": "string",
+      "description": "Display meaning"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Code description"
+    },
+    "EnabledFlag": {
+      "type": "boolean",
+      "description": "Whether the code is enabled"
+    },
+    "StartDateActive": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date for active period"
+    },
+    "EndDateActive": {
+      "type": "string",
+      "format": "date",
+      "description": "End date for active period"
+    },
+    "DisplaySequence": {
+      "type": "integer",
+      "description": "Display order sequence"
+    }
+  }
+}

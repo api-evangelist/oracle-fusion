@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/WorkflowTask",
+  "title": "WorkflowTask",
+  "type": "object",
+  "properties": {
+    "taskId": {
+      "type": "string",
+      "description": "Task identifier"
+    },
+    "title": {
+      "type": "string",
+      "description": "Task title"
+    },
+    "taskDefinitionName": {
+      "type": "string",
+      "description": "Task definition name"
+    },
+    "creator": {
+      "type": "string",
+      "description": "Task creator"
+    },
+    "assignees": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Assigned users"
+    },
+    "state": {
+      "type": "string",
+      "description": "Task state",
+      "enum": [
+        "Assigned",
+        "Completed",
+        "Suspended",
+        "Withdrawn",
+        "Expired",
+        "Errored",
+        "Alerted",
+        "Information Requested"
+      ]
+    },
+    "priority": {
+      "type": "integer",
+      "description": "Task priority (1 highest)"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expirationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

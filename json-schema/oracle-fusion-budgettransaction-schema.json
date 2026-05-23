@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BudgetTransaction",
+  "title": "BudgetTransaction",
+  "type": "object",
+  "properties": {
+    "BudgetTransactionId": {
+      "type": "integer",
+      "description": "Budget transaction identifier"
+    },
+    "BudgetName": {
+      "type": "string",
+      "description": "Budget name"
+    },
+    "ControlBudgetName": {
+      "type": "string",
+      "description": "Control budget name"
+    },
+    "LedgerName": {
+      "type": "string",
+      "description": "Ledger name"
+    },
+    "PeriodName": {
+      "type": "string",
+      "description": "Accounting period"
+    },
+    "BudgetAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Budget amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Currency code"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Transaction status"
+    }
+  }
+}

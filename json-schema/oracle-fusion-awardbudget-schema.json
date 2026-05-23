@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AwardBudget",
+  "title": "AwardBudget",
+  "type": "object",
+  "properties": {
+    "PlanVersionId": {
+      "type": "integer",
+      "description": "Plan version identifier"
+    },
+    "AwardId": {
+      "type": "integer",
+      "description": "Associated award identifier"
+    },
+    "BudgetName": {
+      "type": "string",
+      "description": "Budget version name"
+    },
+    "BudgetStatus": {
+      "type": "string",
+      "description": "Budget status",
+      "enum": [
+        "Working",
+        "Submitted",
+        "Baselined",
+        "Rejected"
+      ]
+    },
+    "TotalBudgetAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total budget amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Budget currency"
+    },
+    "VersionNumber": {
+      "type": "integer",
+      "description": "Budget version number"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

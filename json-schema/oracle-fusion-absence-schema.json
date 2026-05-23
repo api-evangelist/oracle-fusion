@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Absence",
+  "title": "Absence",
+  "type": "object",
+  "properties": {
+    "AbsenceId": {
+      "type": "integer",
+      "description": "Absence record identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Person number of the worker"
+    },
+    "PersonName": {
+      "type": "string",
+      "description": "Worker display name"
+    },
+    "AbsenceType": {
+      "type": "string",
+      "description": "Type of absence"
+    },
+    "AbsenceReason": {
+      "type": "string",
+      "description": "Reason for absence"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Absence start date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Absence end date"
+    },
+    "Duration": {
+      "type": "number",
+      "format": "double",
+      "description": "Duration in days or hours"
+    },
+    "UnitOfMeasure": {
+      "type": "string",
+      "description": "Unit of measure (Days or Hours)",
+      "enum": [
+        "Days",
+        "Hours"
+      ]
+    },
+    "ApprovalStatus": {
+      "type": "string",
+      "description": "Approval status",
+      "enum": [
+        "Submitted",
+        "Approved",
+        "Rejected",
+        "Saved",
+        "Withdrawn"
+      ]
+    },
+    "Comments": {
+      "type": "string",
+      "description": "Comments"
+    }
+  }
+}

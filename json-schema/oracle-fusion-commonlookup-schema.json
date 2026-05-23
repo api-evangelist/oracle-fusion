@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/CommonLookup",
+  "title": "CommonLookup",
+  "type": "object",
+  "properties": {
+    "LookupType": {
+      "type": "string",
+      "description": "Lookup type identifier"
+    },
+    "Meaning": {
+      "type": "string",
+      "description": "Display name for the lookup type"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Lookup type description"
+    },
+    "ModuleType": {
+      "type": "string",
+      "description": "Module that owns the lookup"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

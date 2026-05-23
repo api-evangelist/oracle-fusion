@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/SalesOrderCreate",
+  "title": "SalesOrderCreate",
+  "type": "object",
+  "required": [
+    "OrderType",
+    "CustomerName",
+    "BusinessUnit"
+  ],
+  "properties": {
+    "OrderType": {
+      "type": "string"
+    },
+    "CustomerName": {
+      "type": "string"
+    },
+    "CustomerNumber": {
+      "type": "string"
+    },
+    "BusinessUnit": {
+      "type": "string"
+    },
+    "OrderDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "RequestedShipDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    }
+  }
+}

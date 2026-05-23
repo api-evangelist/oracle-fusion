@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PersonCreate",
+  "title": "PersonCreate",
+  "type": "object",
+  "required": [
+    "FirstName",
+    "LastName"
+  ],
+  "properties": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string",
+      "format": "email"
+    },
+    "PhoneNumber": {
+      "type": "string"
+    }
+  }
+}

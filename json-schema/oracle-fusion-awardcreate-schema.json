@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AwardCreate",
+  "title": "AwardCreate",
+  "type": "object",
+  "required": [
+    "AwardName",
+    "SponsorName",
+    "StartDate"
+  ],
+  "properties": {
+    "AwardName": {
+      "type": "string"
+    },
+    "AwardType": {
+      "type": "string"
+    },
+    "SponsorName": {
+      "type": "string"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "TotalFunding": {
+      "type": "number",
+      "format": "double"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "PrincipalInvestigator": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Contact",
+  "title": "Contact",
+  "type": "object",
+  "properties": {
+    "PartyId": {
+      "type": "integer",
+      "description": "Party identifier"
+    },
+    "PartyNumber": {
+      "type": "string",
+      "description": "Party number"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name"
+    },
+    "LastName": {
+      "type": "string",
+      "description": "Last name"
+    },
+    "FullName": {
+      "type": "string",
+      "description": "Full name"
+    },
+    "JobTitle": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "EmailAddress": {
+      "type": "string",
+      "format": "email",
+      "description": "Email address"
+    },
+    "WorkPhoneNumber": {
+      "type": "string",
+      "description": "Work phone number"
+    },
+    "MobilePhoneNumber": {
+      "type": "string",
+      "description": "Mobile phone number"
+    },
+    "AccountName": {
+      "type": "string",
+      "description": "Associated account name"
+    },
+    "AccountPartyNumber": {
+      "type": "string",
+      "description": "Associated account party number"
+    },
+    "OwnerName": {
+      "type": "string",
+      "description": "Contact owner name"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

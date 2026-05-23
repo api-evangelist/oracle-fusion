@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Snapshot",
+  "title": "Snapshot",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Snapshot name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Snapshot type",
+      "enum": [
+        "LCM",
+        "External"
+      ]
+    },
+    "size": {
+      "type": "integer",
+      "description": "Snapshot size in bytes"
+    },
+    "lastModifiedTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modified timestamp"
+    }
+  }
+}

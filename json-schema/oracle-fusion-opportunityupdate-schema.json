@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/OpportunityUpdate",
+  "title": "OpportunityUpdate",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string"
+    },
+    "SalesStage": {
+      "type": "string"
+    },
+    "WinProbability": {
+      "type": "integer"
+    },
+    "Revenue": {
+      "type": "number",
+      "format": "double"
+    },
+    "CloseDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "Won",
+        "Lost"
+      ]
+    }
+  }
+}

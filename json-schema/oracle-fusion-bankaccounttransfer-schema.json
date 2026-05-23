@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/BankAccountTransfer",
+  "title": "BankAccountTransfer",
+  "type": "object",
+  "properties": {
+    "TransferId": {
+      "type": "integer",
+      "description": "Transfer identifier"
+    },
+    "TransferAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Transfer amount"
+    },
+    "TransferDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Transfer date"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Transfer currency"
+    },
+    "FromBankAccountName": {
+      "type": "string",
+      "description": "Source bank account name"
+    },
+    "ToBankAccountName": {
+      "type": "string",
+      "description": "Destination bank account name"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Transfer status"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Application",
+  "title": "Application",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Application name"
+    },
+    "type": {
+      "type": "string",
+      "description": "Application type"
+    },
+    "description": {
+      "type": "string",
+      "description": "Application description"
+    },
+    "planTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Available plan types"
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "Created by user"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Creation timestamp"
+    }
+  }
+}

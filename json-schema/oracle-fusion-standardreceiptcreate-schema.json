@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/StandardReceiptCreate",
+  "title": "StandardReceiptCreate",
+  "type": "object",
+  "required": [
+    "ReceiptAmount",
+    "CurrencyCode",
+    "CustomerName",
+    "BusinessUnit"
+  ],
+  "properties": {
+    "ReceiptNumber": {
+      "type": "string"
+    },
+    "ReceiptAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "CurrencyCode": {
+      "type": "string"
+    },
+    "ReceiptDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "CustomerName": {
+      "type": "string"
+    },
+    "CustomerNumber": {
+      "type": "string"
+    },
+    "BusinessUnit": {
+      "type": "string"
+    },
+    "PaymentMethod": {
+      "type": "string"
+    }
+  }
+}

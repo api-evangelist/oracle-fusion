@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Employee",
+  "title": "Employee",
+  "type": "object",
+  "properties": {
+    "PersonId": {
+      "type": "integer",
+      "description": "Person identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Person number"
+    },
+    "FirstName": {
+      "type": "string",
+      "description": "First name"
+    },
+    "LastName": {
+      "type": "string",
+      "description": "Last name"
+    },
+    "DisplayName": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "HireDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Hire date"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit name"
+    },
+    "Department": {
+      "type": "string",
+      "description": "Department name"
+    },
+    "JobName": {
+      "type": "string",
+      "description": "Job name"
+    },
+    "GradeName": {
+      "type": "string",
+      "description": "Grade name"
+    },
+    "LocationName": {
+      "type": "string",
+      "description": "Work location"
+    },
+    "ManagerName": {
+      "type": "string",
+      "description": "Manager display name"
+    },
+    "AssignmentStatus": {
+      "type": "string",
+      "description": "Assignment status"
+    }
+  }
+}

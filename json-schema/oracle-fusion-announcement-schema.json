@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Announcement",
+  "title": "Announcement",
+  "type": "object",
+  "properties": {
+    "AnnouncementId": {
+      "type": "integer",
+      "description": "Announcement identifier"
+    },
+    "Subject": {
+      "type": "string",
+      "description": "Announcement subject"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Announcement body text"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Start date for visibility"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "End date for visibility"
+    },
+    "Severity": {
+      "type": "string",
+      "description": "Severity level",
+      "enum": [
+        "Information",
+        "Warning",
+        "Critical"
+      ]
+    },
+    "CreatedBy": {
+      "type": "string",
+      "description": "Creator username"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

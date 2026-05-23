@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ErpIntegrationResponse",
+  "title": "ErpIntegrationResponse",
+  "type": "object",
+  "properties": {
+    "OperationName": {
+      "type": "string",
+      "description": "Name of the operation"
+    },
+    "DocumentId": {
+      "type": "string",
+      "description": "Document identifier in UCM"
+    },
+    "RequestId": {
+      "type": "integer",
+      "description": "ESS request identifier for submitted jobs"
+    },
+    "Result": {
+      "type": "string",
+      "description": "Result status of the operation"
+    }
+  }
+}

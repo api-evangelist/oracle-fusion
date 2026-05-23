@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ChangeOrder",
+  "title": "ChangeOrder",
+  "type": "object",
+  "properties": {
+    "ChangeDocumentId": {
+      "type": "integer",
+      "description": "Change document identifier"
+    },
+    "ChangeDocumentNumber": {
+      "type": "string",
+      "description": "Change document number"
+    },
+    "ChangeDocumentName": {
+      "type": "string",
+      "description": "Change document name"
+    },
+    "ProjectId": {
+      "type": "integer",
+      "description": "Associated project identifier"
+    },
+    "ProjectNumber": {
+      "type": "string",
+      "description": "Associated project number"
+    },
+    "Description": {
+      "type": "string",
+      "description": "Change order description"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Change order status",
+      "enum": [
+        "Draft",
+        "Submitted",
+        "Approved",
+        "Rejected",
+        "Applied"
+      ]
+    },
+    "ImpactType": {
+      "type": "string",
+      "description": "Type of impact (Cost, Schedule, Scope)"
+    },
+    "RequestedBy": {
+      "type": "string",
+      "description": "Requester name"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

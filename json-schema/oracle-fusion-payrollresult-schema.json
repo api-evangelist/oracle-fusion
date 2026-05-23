@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PayrollResult",
+  "title": "PayrollResult",
+  "type": "object",
+  "properties": {
+    "PayrollResultId": {
+      "type": "integer",
+      "description": "Payroll result identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Person number"
+    },
+    "PersonName": {
+      "type": "string",
+      "description": "Person display name"
+    },
+    "PayrollName": {
+      "type": "string",
+      "description": "Payroll name"
+    },
+    "PeriodName": {
+      "type": "string",
+      "description": "Payroll period name"
+    },
+    "PeriodStartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Period start date"
+    },
+    "PeriodEndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Period end date"
+    },
+    "GrossEarnings": {
+      "type": "number",
+      "format": "double",
+      "description": "Total gross earnings"
+    },
+    "TotalDeductions": {
+      "type": "number",
+      "format": "double",
+      "description": "Total deductions"
+    },
+    "NetPay": {
+      "type": "number",
+      "format": "double",
+      "description": "Net pay amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Payment currency"
+    },
+    "PaymentDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Payment date"
+    },
+    "PaymentMethod": {
+      "type": "string",
+      "description": "Payment method",
+      "enum": [
+        "Direct Deposit",
+        "Check",
+        "Cash"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Salary",
+  "title": "Salary",
+  "type": "object",
+  "properties": {
+    "SalaryId": {
+      "type": "integer",
+      "description": "Salary record identifier"
+    },
+    "PersonNumber": {
+      "type": "string",
+      "description": "Person number"
+    },
+    "AssignmentNumber": {
+      "type": "string",
+      "description": "Assignment number"
+    },
+    "SalaryAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Annual salary amount"
+    },
+    "SalaryBasis": {
+      "type": "string",
+      "description": "Salary basis (Annual, Monthly, Hourly)"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Salary currency"
+    },
+    "EffectiveDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Effective date of the salary"
+    },
+    "SalaryRangeMinimum": {
+      "type": "number",
+      "format": "double",
+      "description": "Minimum of salary range"
+    },
+    "SalaryRangeMidpoint": {
+      "type": "number",
+      "format": "double",
+      "description": "Midpoint of salary range"
+    },
+    "SalaryRangeMaximum": {
+      "type": "number",
+      "format": "double",
+      "description": "Maximum of salary range"
+    },
+    "CompaRatio": {
+      "type": "number",
+      "format": "double",
+      "description": "Compa-ratio (salary divided by midpoint)"
+    }
+  }
+}

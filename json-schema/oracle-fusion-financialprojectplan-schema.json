@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/FinancialProjectPlan",
+  "title": "FinancialProjectPlan",
+  "type": "object",
+  "properties": {
+    "PlanVersionId": {
+      "type": "integer",
+      "description": "Plan version identifier"
+    },
+    "ProjectId": {
+      "type": "integer",
+      "description": "Associated project identifier"
+    },
+    "PlanName": {
+      "type": "string",
+      "description": "Financial plan name"
+    },
+    "PlanType": {
+      "type": "string",
+      "description": "Plan type",
+      "enum": [
+        "Budget",
+        "Forecast"
+      ]
+    },
+    "VersionNumber": {
+      "type": "integer",
+      "description": "Version number"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Plan status",
+      "enum": [
+        "Working",
+        "Submitted",
+        "Baselined",
+        "Rejected"
+      ]
+    },
+    "TotalPlannedCost": {
+      "type": "number",
+      "format": "double",
+      "description": "Total planned cost"
+    },
+    "TotalPlannedRevenue": {
+      "type": "number",
+      "format": "double",
+      "description": "Total planned revenue"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Plan currency"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

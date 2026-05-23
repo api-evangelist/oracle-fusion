@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Award",
+  "title": "Award",
+  "type": "object",
+  "properties": {
+    "AwardId": {
+      "type": "integer",
+      "description": "Award identifier"
+    },
+    "AwardNumber": {
+      "type": "string",
+      "description": "Award number"
+    },
+    "AwardName": {
+      "type": "string",
+      "description": "Award name"
+    },
+    "AwardType": {
+      "type": "string",
+      "description": "Type of award"
+    },
+    "SponsorName": {
+      "type": "string",
+      "description": "Sponsor or funding agency name"
+    },
+    "AwardStatus": {
+      "type": "string",
+      "description": "Award status",
+      "enum": [
+        "Active",
+        "On Hold",
+        "Closed",
+        "At Risk"
+      ]
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Award start date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Award end date"
+    },
+    "TotalFunding": {
+      "type": "number",
+      "format": "double",
+      "description": "Total funding amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "Funding currency"
+    },
+    "PrincipalInvestigator": {
+      "type": "string",
+      "description": "Principal investigator name"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JobRequisition",
+  "title": "JobRequisition",
+  "type": "object",
+  "properties": {
+    "RequisitionId": {
+      "type": "integer",
+      "description": "Job requisition identifier"
+    },
+    "RequisitionNumber": {
+      "type": "string",
+      "description": "Requisition number"
+    },
+    "RequisitionTitle": {
+      "type": "string",
+      "description": "Job title"
+    },
+    "BusinessUnit": {
+      "type": "string",
+      "description": "Business unit"
+    },
+    "Department": {
+      "type": "string",
+      "description": "Department name"
+    },
+    "LocationName": {
+      "type": "string",
+      "description": "Job location"
+    },
+    "NumberOfOpenings": {
+      "type": "integer",
+      "description": "Number of open positions"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Requisition status",
+      "enum": [
+        "Draft",
+        "Open",
+        "On Hold",
+        "Filled",
+        "Closed",
+        "Cancelled"
+      ]
+    },
+    "PostingDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date job was posted"
+    },
+    "TargetCloseDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Target close date"
+    },
+    "HiringManager": {
+      "type": "string",
+      "description": "Hiring manager name"
+    },
+    "Recruiter": {
+      "type": "string",
+      "description": "Assigned recruiter"
+    }
+  }
+}

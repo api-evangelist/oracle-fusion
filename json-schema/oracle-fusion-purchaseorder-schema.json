@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PurchaseOrder",
+  "title": "PurchaseOrder",
+  "type": "object",
+  "properties": {
+    "POHeaderId": {
+      "type": "integer",
+      "description": "Purchase order header identifier"
+    },
+    "OrderNumber": {
+      "type": "string",
+      "description": "PO number"
+    },
+    "ProcurementBusinessUnit": {
+      "type": "string",
+      "description": "Procurement business unit"
+    },
+    "SupplierName": {
+      "type": "string",
+      "description": "Supplier name"
+    },
+    "SupplierNumber": {
+      "type": "string",
+      "description": "Supplier number"
+    },
+    "SupplierSite": {
+      "type": "string",
+      "description": "Supplier site"
+    },
+    "BuyerName": {
+      "type": "string",
+      "description": "Buyer name"
+    },
+    "OrderDate": {
+      "type": "string",
+      "format": "date",
+      "description": "PO date"
+    },
+    "TotalAmount": {
+      "type": "number",
+      "format": "double",
+      "description": "Total PO amount"
+    },
+    "CurrencyCode": {
+      "type": "string",
+      "description": "PO currency"
+    },
+    "Status": {
+      "type": "string",
+      "description": "PO status",
+      "enum": [
+        "Incomplete",
+        "Open",
+        "Closed",
+        "Cancelled",
+        "On Hold",
+        "Pending Approval",
+        "Approved",
+        "Rejected"
+      ]
+    },
+    "PaymentTerms": {
+      "type": "string",
+      "description": "Payment terms"
+    },
+    "ShipToLocation": {
+      "type": "string",
+      "description": "Ship-to location"
+    },
+    "BillToLocation": {
+      "type": "string",
+      "description": "Bill-to location"
+    },
+    "CreationDate": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

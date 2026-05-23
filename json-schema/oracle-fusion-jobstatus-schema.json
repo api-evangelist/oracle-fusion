@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/JobStatus",
+  "title": "JobStatus",
+  "type": "object",
+  "properties": {
+    "jobId": {
+      "type": "integer",
+      "description": "Job identifier"
+    },
+    "jobName": {
+      "type": "string",
+      "description": "Job name"
+    },
+    "jobType": {
+      "type": "string",
+      "description": "Job type"
+    },
+    "status": {
+      "type": "integer",
+      "description": "Status code (-1 processing, 0 success, >0 error)"
+    },
+    "descriptiveStatus": {
+      "type": "string",
+      "description": "Human-readable status",
+      "enum": [
+        "Processing",
+        "Completed",
+        "Completed With Errors",
+        "Failed"
+      ]
+    },
+    "details": {
+      "type": "string",
+      "description": "Execution details"
+    },
+    "startTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Job start time"
+    },
+    "endTime": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Job end time"
+    }
+  }
+}

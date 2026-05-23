@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/AbsenceCreate",
+  "title": "AbsenceCreate",
+  "type": "object",
+  "required": [
+    "PersonNumber",
+    "AbsenceType",
+    "StartDate",
+    "EndDate"
+  ],
+  "properties": {
+    "PersonNumber": {
+      "type": "string"
+    },
+    "AbsenceType": {
+      "type": "string"
+    },
+    "AbsenceReason": {
+      "type": "string"
+    },
+    "StartDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "EndDate": {
+      "type": "string",
+      "format": "date"
+    },
+    "Duration": {
+      "type": "number",
+      "format": "double"
+    },
+    "UnitOfMeasure": {
+      "type": "string",
+      "enum": [
+        "Days",
+        "Hours"
+      ]
+    },
+    "Comments": {
+      "type": "string"
+    }
+  }
+}

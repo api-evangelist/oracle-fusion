@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/PeriodStatus",
+  "title": "PeriodStatus",
+  "type": "object",
+  "properties": {
+    "LedgerId": {
+      "type": "integer",
+      "description": "Ledger identifier"
+    },
+    "LedgerName": {
+      "type": "string",
+      "description": "Ledger name"
+    },
+    "PeriodName": {
+      "type": "string",
+      "description": "Accounting period name"
+    },
+    "PeriodYear": {
+      "type": "integer",
+      "description": "Period year"
+    },
+    "PeriodNumber": {
+      "type": "integer",
+      "description": "Period number within the year"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Period status",
+      "enum": [
+        "Open",
+        "Closed",
+        "Future Entry",
+        "Never Opened",
+        "Permanently Closed"
+      ]
+    }
+  }
+}
