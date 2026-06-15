@@ -1,0 +1,907 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Invoices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/invoices",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of child resources to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieve a collection of accounts payable invoices. Supports filtering, sorting, and pagination using standard Oracle REST query parameters."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/invoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new accounts payable invoice with header and optionally include invoice lines and distributions."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+            "params": [
+              {
+                "name": "InvoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the invoice"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of child resources to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific accounts payable invoice by its unique identifier."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+            "params": [
+              {
+                "name": "InvoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the invoice"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing accounts payable invoice."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete an invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+            "params": [
+              {
+                "name": "InvoiceId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the invoice"
+              }
+            ]
+          },
+          "docs": "Delete an accounts payable invoice."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/payablesPayments",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve a collection of accounts payable payments including check, electronic, and wire transfer payments."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get a payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/payablesPayments/:PaymentId",
+            "params": [
+              {
+                "name": "PaymentId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the payment"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific payment by its unique identifier."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "General Ledger",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List ledger balances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve general ledger account balances. Use query parameters to filter by ledger, period, account segment values, and currency."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List general ledger journals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve general ledger journal entries. The journals resource provides access to journal headers and lines for financial reporting."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a general ledger journal",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new general ledger journal entry with header and lines."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List general ledger period statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve the open, closed, or future status of general ledger accounting periods for a specified ledger."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Accounts Receivable",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List receivables invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve accounts receivable invoices including debit memos, credit memos, and standard invoices."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a receivables invoice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new accounts receivable transaction."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List standard receipts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/standardReceipts",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve standard receipt records for accounts receivable payments received from customers."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a standard receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/standardReceipts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new standard receipt for an accounts receivable payment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Expense Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List expense reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve a collection of employee expense reports."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new employee expense report with expense items."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of child resources to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific expense report by its identifier."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing expense report."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              }
+            ]
+          },
+          "docs": "Delete an expense report."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cash Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List bank accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/cashBankAccounts",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "View, create, and modify bank accounts for cash management."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List bank account transfers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              }
+            ]
+          },
+          "docs": "Retrieve bank account transfer records for cash management."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a bank account transfer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/cashBankAccountTransfers",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new bank account transfer."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Budgetary Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List budget transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve budgetary control budget transactions and validation results."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a budget transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create budget entries and perform budgetary control validation."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "ERP Integrations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Submit an ERP integration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/erpintegrations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Automate bulk data import and export flows for ERP integrations using file-based data import (FBDI) and business intelligence (BI) report jobs."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Currency Rates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List currency rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/currencyRates",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve currency exchange rates and available rate dates for cross-currency financial operations."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

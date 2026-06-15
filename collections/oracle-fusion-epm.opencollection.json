@@ -1,0 +1,356 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion EPM REST API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List EPM applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications"
+          },
+          "docs": "Retrieve a list of EPM Planning applications available in the service instance."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an EPM application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path",
+                "description": "Application name"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata and configuration details for a specific EPM Planning application."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List dimensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of dimensions defined in an EPM Planning application."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List dimension members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dimensionName",
+                "value": "",
+                "type": "path",
+                "description": "Dimension name"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression"
+              }
+            ]
+          },
+          "docs": "Retrieve members belonging to a specific dimension in an EPM Planning application."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Planning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Export a data slice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "planType",
+                "value": "",
+                "type": "path",
+                "description": "Plan type name"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Export planning data for a specified slice defined by dimension member selections, point-of-view, and filters."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Import a data slice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "planType",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import planning data into a specified plan type using dimension member intersections and values."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of EPM jobs including business rules, data maps, and scheduled maintenance tasks."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Execute a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute an EPM job such as a business rule, data map, refresh database, or cube refresh."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve execution status and details for a specific EPM job."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Data Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files"
+          },
+          "docs": "Retrieve a list of files in the EPM inbox and outbox used for data import, export, and snapshot operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Download a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path",
+                "description": "File name including path"
+              }
+            ]
+          },
+          "docs": "Download a file from the EPM inbox or outbox."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Upload a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Upload a file to the EPM inbox for data import operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a file from the EPM inbox or outbox."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Migration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List snapshots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/snapshots"
+          },
+          "docs": "Retrieve a list of application snapshots available for migration and backup operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a snapshot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/snapshots/:snapshotName",
+            "params": [
+              {
+                "name": "snapshotName",
+                "value": "",
+                "type": "path",
+                "description": "Snapshot name"
+              }
+            ]
+          },
+          "docs": "Delete an application snapshot."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

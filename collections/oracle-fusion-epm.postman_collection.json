@@ -1,0 +1,3472 @@
+{
+  "item": [
+    {
+      "id": "02bb7643-c086-4212-9f70-62d2c4e82a94",
+      "name": "Applications",
+      "description": {
+        "content": "Manage EPM application metadata and dimensions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "29a0a664-162d-4bd3-b713-a8e0d041854b",
+          "name": "Oracle Fusion Cloud Applications List EPM applications",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List EPM applications",
+            "description": {
+              "content": "Retrieve a list of EPM Planning applications available in the service instance.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1b1b73ad-e067-46e8-88bc-cf02a6bd95eb",
+              "name": "Applications retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"description\": \"string\",\n      \"planTypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1955-10-31T16:01:41.646Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"string\",\n      \"description\": \"string\",\n      \"planTypes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1958-11-05T05:45:33.846Z\"\n    }\n  ],\n  \"status\": 9594\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb5771e7-86a3-49da-8b9b-b9b9038e279a",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7401afff-07b5-409a-b597-c63c01ed45cb",
+          "name": "Oracle Fusion Cloud Applications Get an EPM application",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get an EPM application",
+            "description": {
+              "content": "Retrieve metadata and configuration details for a specific EPM Planning application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) Application name"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a9a98903-6663-4df3-b2d1-6166eebb01f4",
+              "name": "Application details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) Application name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"type\": \"string\",\n  \"description\": \"string\",\n  \"planTypes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdBy\": \"string\",\n  \"createdDate\": \"2009-12-06T09:52:41.980Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f941cb0d-9851-4a18-8ca7-c4492b26f547",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) Application name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "91203d9f-f77a-4ef5-acc7-61062f6c8259",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) Application name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "987d00af-1cd6-461c-a114-d48598d49b66",
+          "name": "Oracle Fusion Cloud Applications List dimensions",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List dimensions",
+            "description": {
+              "content": "Retrieve the list of dimensions defined in an EPM Planning application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "dimensions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36c08eaa-4c9a-4703-981c-cc4c6303c823",
+              "name": "Dimensions retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"Year\",\n      \"numberOfMembers\": 9599\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"Account\",\n      \"numberOfMembers\": 8925\n    }\n  ],\n  \"status\": 6437\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4722df5-69f1-4eed-a22c-7b73370bdcec",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "3659fbf2-0f0b-48ea-8998-cff17905f3ba",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87729cf5-9244-4df1-af4f-ccaead9b6427",
+          "name": "Oracle Fusion Cloud Applications List dimension members",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List dimension members",
+            "description": {
+              "content": "Retrieve members belonging to a specific dimension in an EPM Planning application.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "dimensions",
+                ":dimensionName",
+                "members"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "dimensionName",
+                  "description": "(Required) Dimension name"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6c41e39-0871-49c1-9e6d-b07c1fcd3959",
+              "name": "Dimension members retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions",
+                    ":dimensionName",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dimensionName",
+                      "description": "(Required) Dimension name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"parentName\": \"string\",\n      \"dimensionName\": \"string\",\n      \"dataStorageType\": \"Dynamic Calc\",\n      \"memberFormula\": \"string\",\n      \"alias\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"parentName\": \"string\",\n      \"dimensionName\": \"string\",\n      \"dataStorageType\": \"Shared Member\",\n      \"memberFormula\": \"string\",\n      \"alias\": \"string\"\n    }\n  ],\n  \"status\": 9689\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "68e15b04-742f-461e-adb3-a963dd1c5223",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions",
+                    ":dimensionName",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dimensionName",
+                      "description": "(Required) Dimension name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ed99ddfa-94b1-4224-9672-964be0c1eda1",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "dimensions",
+                    ":dimensionName",
+                    "members"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "dimensionName",
+                      "description": "(Required) Dimension name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "eec6f464-0bcf-4ce5-9e35-7f75abf3feb3",
+      "name": "Data Management",
+      "description": {
+        "content": "Data import, export, and integration operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "916373b8-acce-42e3-8f76-714fcd7c6c7b",
+          "name": "Oracle Fusion Cloud Applications List files",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List files",
+            "description": {
+              "content": "Retrieve a list of files in the EPM inbox and outbox used for data import, export, and snapshot operations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "files"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e693eca5-ca64-4651-8410-50f8d7d582e0",
+              "name": "Files retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"path\": \"string\",\n      \"size\": 3509,\n      \"lastModifiedTime\": \"1999-11-06T02:21:35.471Z\",\n      \"isDirectory\": true\n    },\n    {\n      \"name\": \"string\",\n      \"path\": \"string\",\n      \"size\": 3573,\n      \"lastModifiedTime\": \"1971-01-10T22:23:57.773Z\",\n      \"isDirectory\": true\n    }\n  ],\n  \"status\": 3344\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "368bba6e-91a2-4bb4-b1e5-a2219bbf477f",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "85ae446b-3c63-455f-9b02-035bc770d7b7",
+          "name": "Oracle Fusion Cloud Applications Download a file",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Download a file",
+            "description": {
+              "content": "Download a file from the EPM inbox or outbox.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "files",
+                ":fileName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileName",
+                  "description": "(Required) File name including path"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/octet-stream"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3d34f504-ae94-4695-8c31-0a800c4668b9",
+              "name": "File content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) File name including path"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/octet-stream"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/octet-stream"
+                }
+              ],
+              "body": "string",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "878cb7c6-9619-48c0-8350-262e3e861117",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) File name including path"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "332a2e45-7297-4f18-9842-675e234b0e6e",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) File name including path"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ada45e69-066a-4685-8056-88032ebd851b",
+          "name": "Oracle Fusion Cloud Applications Upload a file",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Upload a file",
+            "description": {
+              "content": "Upload a file to the EPM inbox for data import operations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "files",
+                ":fileName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/octet-stream"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<binary>"
+            }
+          },
+          "response": [
+            {
+              "id": "72af95b5-5632-496b-8155-e7b9c2bf02d6",
+              "name": "File uploaded",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 4612,\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6dd43a8a-0152-446f-93d9-b7de247538d8",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<binary>"
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d6d2dc7-0162-493b-8d45-c7df9aa82c71",
+          "name": "Oracle Fusion Cloud Applications Delete a file",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Delete a file",
+            "description": {
+              "content": "Delete a file from the EPM inbox or outbox.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "files",
+                ":fileName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fileName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b20e5050-9755-4414-b90b-3ff9123065da",
+              "name": "File deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2a16ff99-b1f6-4e32-9e34-492afcf46dba",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "4252c820-0157-457e-a6c4-ae169e6a1306",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "files",
+                    ":fileName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fileName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2d8f8379-38fb-4f8b-9495-bc5b7838aadf",
+      "name": "Jobs",
+      "description": {
+        "content": "Manage EPM job execution and monitoring",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ae20ae14-0ce2-4cf7-86dd-3512ee4de834",
+          "name": "Oracle Fusion Cloud Applications List jobs",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List jobs",
+            "description": {
+              "content": "Retrieve a list of EPM jobs including business rules, data maps, and scheduled maintenance tasks.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "211531c4-5dc6-4f5e-ad40-13747d577994",
+              "name": "Jobs retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"jobId\": 6607,\n      \"jobName\": \"string\",\n      \"jobType\": \"Export Data\",\n      \"description\": \"string\"\n    },\n    {\n      \"jobId\": 8188,\n      \"jobName\": \"string\",\n      \"jobType\": \"Rules\",\n      \"description\": \"string\"\n    }\n  ],\n  \"status\": 916\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc704d86-1725-45e7-9766-000083613d2a",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "349a51be-5835-4ea4-a5d6-c8d216a11632",
+          "name": "Oracle Fusion Cloud Applications Execute a job",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Execute a job",
+            "description": {
+              "content": "Execute an EPM job such as a business rule, data map, refresh database, or cube refresh.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "jobs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"parameters\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "512de638-7ea2-4963-9dc7-818ea4824dac",
+              "name": "Job submitted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"parameters\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": 5620,\n  \"jobName\": \"string\",\n  \"jobType\": \"string\",\n  \"status\": 9104,\n  \"descriptiveStatus\": \"Processing\",\n  \"details\": \"string\",\n  \"startTime\": \"1970-02-24T07:46:44.164Z\",\n  \"endTime\": \"1966-04-18T03:50:25.291Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3eaace90-d9df-4962-addf-630ecada6e85",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"parameters\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "399743f5-bdee-485e-946b-7f4d79013dd5",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"parameters\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf6d3a06-3741-42f5-a547-7311c25fbf4a",
+          "name": "Oracle Fusion Cloud Applications Get job status",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get job status",
+            "description": {
+              "content": "Retrieve execution status and details for a specific EPM job.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "jobs",
+                ":jobId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "jobId",
+                  "description": "(Required) Job identifier"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9bf5636b-a1fc-412e-8687-64b7aee1a0e7",
+              "name": "Job status",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"jobId\": 5620,\n  \"jobName\": \"string\",\n  \"jobType\": \"string\",\n  \"status\": 9104,\n  \"descriptiveStatus\": \"Processing\",\n  \"details\": \"string\",\n  \"startTime\": \"1970-02-24T07:46:44.164Z\",\n  \"endTime\": \"1966-04-18T03:50:25.291Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5c7c8938-c8c8-4cca-9b57-7d8d41e33e4b",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "567debcf-c6db-4c39-9305-67054b849934",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "jobs",
+                    ":jobId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "jobId",
+                      "description": "(Required) Job identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a46aa6c4-be3a-411c-9740-bf79bb2993c0",
+      "name": "Migration",
+      "description": {
+        "content": "Application migration and lifecycle management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "8e031304-6cec-4ab2-b5fc-37fafd26f62d",
+          "name": "Oracle Fusion Cloud Applications List snapshots",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List snapshots",
+            "description": {
+              "content": "Retrieve a list of application snapshots available for migration and backup operations.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "snapshots"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1fbd9f97-0456-43bc-898c-3439a5b76557",
+              "name": "Snapshots retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "snapshots"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"name\": \"string\",\n      \"type\": \"External\",\n      \"size\": 3066,\n      \"lastModifiedTime\": \"1984-03-01T10:21:32.896Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"type\": \"LCM\",\n      \"size\": 2867,\n      \"lastModifiedTime\": \"1992-06-22T15:08:43.354Z\"\n    }\n  ],\n  \"status\": 3467\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "933151a8-1582-40d2-97cf-36f36918d7f8",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "snapshots"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3aacf601-2ea1-4add-87bd-9f12e4183390",
+          "name": "Oracle Fusion Cloud Applications Delete a snapshot",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Delete a snapshot",
+            "description": {
+              "content": "Delete an application snapshot.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "interop",
+                "rest",
+                "v3",
+                "snapshots",
+                ":snapshotName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "snapshotName",
+                  "description": "(Required) Snapshot name"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8306f238-0722-4ea4-b669-170fc5c2c1eb",
+              "name": "Snapshot deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "snapshots",
+                    ":snapshotName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "snapshotName",
+                      "description": "(Required) Snapshot name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "000ac425-dc5f-4b11-b226-be58aa1d3955",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "snapshots",
+                    ":snapshotName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "snapshotName",
+                      "description": "(Required) Snapshot name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "fecd282d-8195-4a8d-991d-9af4180ff836",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "interop",
+                    "rest",
+                    "v3",
+                    "snapshots",
+                    ":snapshotName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "snapshotName",
+                      "description": "(Required) Snapshot name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "12184b92-88fa-4941-9c0b-f44a55cf0377",
+      "name": "Planning",
+      "description": {
+        "content": "Planning application data and metadata operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d27ef1d8-a41e-42f0-b3ad-cf3ec851467f",
+          "name": "Oracle Fusion Cloud Applications Export a data slice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Export a data slice",
+            "description": {
+              "content": "Export planning data for a specified slice defined by dimension member selections, point-of-view, and filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "plantypes",
+                ":planType",
+                "exportdataslice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "planType",
+                  "description": "(Required) Plan type name"
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3f7d4aa8-bb7a-4e7d-825e-a635f25c8d29",
+              "name": "Data slice exported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rows\": [\n    {\n      \"headers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"data\": [\n        7153.528779518613,\n        7843.470796381041\n      ]\n    },\n    {\n      \"headers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"data\": [\n        4977.576522909018,\n        8282.859760199945\n      ]\n    }\n  ],\n  \"status\": 5037\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b03b1989-5477-452a-aad6-5d5e3ac6f519",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "453ade06-7b47-48a1-9602-abbb31124f51",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49b7e786-eff5-4f00-97eb-02d66e710f64",
+          "name": "Oracle Fusion Cloud Applications Import a data slice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Import a data slice",
+            "description": {
+              "content": "Import planning data into a specified plan type using dimension member intersections and values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "plantypes",
+                ":planType",
+                "importdataslice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "planType",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud EPM instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b2573619-54ee-464c-ae04-e460340910bc",
+              "name": "Data slice imported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 4612,\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "585f8f7a-2555-4887-80b5-2bc2d46ed975",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "0dd4cbd7-2090-4fab-a96d-4dbfce1e6057",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud EPM instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud EPM instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "your-instance",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "513924e4-f5ee-4f3c-a0ec-1b16e7f4ad9c",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion EPM REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Enterprise Performance Management, enabling integration with planning, budgeting, forecasting, financial consolidation, account reconciliation, tax reporting, and narrative reporting capabilities. The EPM REST APIs allow infrastructure consultants to integrate environments with Oracle EPM Cloud services.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}
