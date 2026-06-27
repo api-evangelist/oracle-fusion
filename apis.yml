@@ -236,7 +236,7 @@ common:
     url: https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/
   - type: Website
     url: https://www.oracle.com/applications/
-  - type: SignUp
+  - type: Signup
     url: https://www.oracle.com/cloud/free/
   - type: Login
     url: https://cloud.oracle.com/
