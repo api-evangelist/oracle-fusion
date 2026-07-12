@@ -218,6 +218,10 @@ apis:
         email: support@oracle.com
         url: https://support.oracle.com
 common:
+  - type: DomainSecurity
+    url: security/oracle-fusion-domain-security.yml
+  - type: Authentication
+    url: authentication/oracle-fusion-authentication.yml
   - type: Portal
     url: https://docs.oracle.com/en/cloud/saas/
   - type: Authentication

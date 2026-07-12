@@ -1,0 +1,32 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/oracle-fusion-common-openapi.yml, openapi/oracle-fusion-cx-sales-openapi.yml,
+  openapi/oracle-fusion-epm-openapi.yml, openapi/oracle-fusion-erp-openapi.yml, openapi/oracle-fusion-hcm-openapi.yml,
+  openapi/oracle-fusion-project-management-openapi.yml, openapi/oracle-fusion-scm-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: JWT
+  sources:
+  - openapi/oracle-fusion-common-openapi.yml
+  - openapi/oracle-fusion-cx-sales-openapi.yml
+  - openapi/oracle-fusion-epm-openapi.yml
+  - openapi/oracle-fusion-erp-openapi.yml
+  - openapi/oracle-fusion-hcm-openapi.yml
+  - openapi/oracle-fusion-project-management-openapi.yml
+  - openapi/oracle-fusion-scm-openapi.yml
+- name: basicAuth
+  type: http
+  scheme: basic
+  sources:
+  - openapi/oracle-fusion-common-openapi.yml
+  - openapi/oracle-fusion-cx-sales-openapi.yml
+  - openapi/oracle-fusion-epm-openapi.yml
+  - openapi/oracle-fusion-erp-openapi.yml
+  - openapi/oracle-fusion-hcm-openapi.yml
+  - openapi/oracle-fusion-project-management-openapi.yml
+  - openapi/oracle-fusion-scm-openapi.yml
