@@ -1,0 +1,304 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Projects API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Projects
+  description: Manage project definitions and attributes
+paths:
+  /fscmRestApi/resources/11.13.18.05/projects:
+    get:
+      operationId: listProjects
+      summary: Oracle Fusion Cloud Applications List projects
+      description: Retrieve project definitions including project attributes, organizational assignments, and status information.
+      tags:
+      - Projects
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Projects retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Project'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createProject
+      summary: Oracle Fusion Cloud Applications Create a project
+      description: Create a new project definition with attributes and assignments.
+      tags:
+      - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectCreate'
+      responses:
+        '201':
+          description: Project created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/projects/{ProjectId}:
+    get:
+      operationId: getProject
+      summary: Oracle Fusion Cloud Applications Get a project
+      description: Retrieve a specific project definition by identifier.
+      tags:
+      - Projects
+      parameters:
+      - name: ProjectId
+        in: path
+        required: true
+        description: Unique project identifier
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Project details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateProject
+      summary: Oracle Fusion Cloud Applications Update a project
+      description: Update an existing project definition.
+      tags:
+      - Projects
+      parameters:
+      - name: ProjectId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectUpdate'
+      responses:
+        '200':
+          description: Project updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  schemas:
+    ProjectUpdate:
+      type: object
+      properties:
+        ProjectName:
+          type: string
+        ProjectDescription:
+          type: string
+        ProjectStatus:
+          type: string
+        ProjectManager:
+          type: string
+        EndDate:
+          type: string
+          format: date
+    Project:
+      type: object
+      properties:
+        ProjectId:
+          type: integer
+          description: Project identifier
+        ProjectNumber:
+          type: string
+          description: Project number
+        ProjectName:
+          type: string
+          description: Project name
+        ProjectDescription:
+          type: string
+          description: Project description
+        ProjectType:
+          type: string
+          description: Project type classification
+        ProjectStatus:
+          type: string
+          description: Current project status
+          enum:
+          - Submitted
+          - Active
+          - On Hold
+          - Closed
+          - Pending Close
+        ProjectOrganization:
+          type: string
+          description: Owning organization
+        ProjectManager:
+          type: string
+          description: Project manager name
+        StartDate:
+          type: string
+          format: date
+          description: Project start date
+        EndDate:
+          type: string
+          format: date
+          description: Project end date
+        LegalEntity:
+          type: string
+          description: Legal entity name
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        CurrencyCode:
+          type: string
+          description: Project currency
+        CreationDate:
+          type: string
+          format: date-time
+    ProjectCreate:
+      type: object
+      required:
+      - ProjectName
+      - ProjectOrganization
+      - StartDate
+      properties:
+        ProjectName:
+          type: string
+        ProjectDescription:
+          type: string
+        ProjectType:
+          type: string
+        ProjectOrganization:
+          type: string
+        ProjectManager:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        LegalEntity:
+          type: string
+        BusinessUnit:
+          type: string
+        CurrencyCode:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

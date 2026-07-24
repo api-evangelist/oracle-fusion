@@ -1,0 +1,152 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Expenditure Types API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Expenditure Types
+  description: Manage expenditure type definitions
+paths:
+  /fscmRestApi/resources/11.13.18.05/expenditureTypes:
+    get:
+      operationId: listExpenditureTypes
+      summary: Oracle Fusion Cloud Applications List expenditure types
+      description: Retrieve expenditure type definitions used in project costing and billing.
+      tags:
+      - Expenditure Types
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Expenditure types retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ExpenditureType'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/expenditureTypes/{ExpenditureTypeId}:
+    get:
+      operationId: getExpenditureType
+      summary: Oracle Fusion Cloud Applications Get an expenditure type
+      description: Retrieve a specific expenditure type definition.
+      tags:
+      - Expenditure Types
+      parameters:
+      - name: ExpenditureTypeId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Expenditure type details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenditureType'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+  schemas:
+    ExpenditureType:
+      type: object
+      properties:
+        ExpenditureTypeId:
+          type: integer
+          description: Expenditure type identifier
+        ExpenditureTypeName:
+          type: string
+          description: Expenditure type name
+        Description:
+          type: string
+          description: Description
+        ExpenditureCategory:
+          type: string
+          description: Expenditure category
+        RevenueCategory:
+          type: string
+          description: Revenue category
+        StartDate:
+          type: string
+          format: date
+          description: Start date
+        EndDate:
+          type: string
+          format: date
+          description: End date
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Manage Tasks API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Manage Tasks
+  description: Manage BPM workflow tasks and approvals
+paths:
+  /bpm/api/4.0/tasks:
+    get:
+      operationId: listWorkflowTasks
+      summary: Oracle Fusion Cloud Applications List workflow tasks
+      description: Retrieve BPM workflow tasks including approval requests and action items assigned to users.
+      tags:
+      - Manage Tasks
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: Workflow tasks retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/WorkflowTask'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /bpm/api/4.0/tasks/{id}:
+    get:
+      operationId: getWorkflowTask
+      summary: Oracle Fusion Cloud Applications Get a workflow task
+      description: Retrieve a specific workflow task.
+      tags:
+      - Manage Tasks
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Task details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/WorkflowTask'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    put:
+      operationId: performTaskAction
+      summary: Oracle Fusion Cloud Applications Perform a task action
+      description: Perform an action on a workflow task such as approve, reject, reassign, or escalate.
+      tags:
+      - Manage Tasks
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskAction'
+      responses:
+        '200':
+          description: Action performed
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    TaskAction:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          type: string
+          description: Action to perform
+          enum:
+          - APPROVE
+          - REJECT
+          - REASSIGN
+          - ESCALATE
+          - SUSPEND
+          - WITHDRAW
+          - PUSHBACK
+          - REQUEST_INFORMATION
+        comment:
+          type: string
+          description: Comment for the action
+        assignee:
+          type: string
+          description: Assignee for reassign action
+    WorkflowTask:
+      type: object
+      properties:
+        taskId:
+          type: string
+          description: Task identifier
+        title:
+          type: string
+          description: Task title
+        taskDefinitionName:
+          type: string
+          description: Task definition name
+        creator:
+          type: string
+          description: Task creator
+        assignees:
+          type: array
+          items:
+            type: string
+          description: Assigned users
+        state:
+          type: string
+          description: Task state
+          enum:
+          - Assigned
+          - Completed
+          - Suspended
+          - Withdrawn
+          - Expired
+          - Errored
+          - Alerted
+          - Information Requested
+        priority:
+          type: integer
+          description: Task priority (1 highest)
+        createdDate:
+          type: string
+          format: date-time
+        expirationDate:
+          type: string
+          format: date-time
+  parameters:
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

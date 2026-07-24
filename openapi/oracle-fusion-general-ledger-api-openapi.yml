@@ -1,0 +1,380 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences General Ledger API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: General Ledger
+  description: General ledger journal and period operations
+paths:
+  /fscmRestApi/resources/11.13.18.05/ledgerBalances:
+    get:
+      operationId: listLedgerBalances
+      summary: Oracle Fusion Cloud Applications List ledger balances
+      description: Retrieve general ledger account balances. Use query parameters to filter by ledger, period, account segment values, and currency.
+      tags:
+      - General Ledger
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Ledger balances retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LedgerBalance'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/generalLedgerJournals:
+    get:
+      operationId: listJournals
+      summary: Oracle Fusion Cloud Applications List general ledger journals
+      description: Retrieve general ledger journal entries. The journals resource provides access to journal headers and lines for financial reporting.
+      tags:
+      - General Ledger
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Journals retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Journal'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createJournal
+      summary: Oracle Fusion Cloud Applications Create a general ledger journal
+      description: Create a new general ledger journal entry with header and lines.
+      tags:
+      - General Ledger
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JournalCreate'
+      responses:
+        '201':
+          description: Journal created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Journal'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses:
+    get:
+      operationId: listPeriodStatuses
+      summary: Oracle Fusion Cloud Applications List general ledger period statuses
+      description: Retrieve the open, closed, or future status of general ledger accounting periods for a specified ledger.
+      tags:
+      - General Ledger
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Period statuses retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PeriodStatus'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    JournalCreate:
+      type: object
+      required:
+      - JournalBatchName
+      - JournalName
+      - LedgerName
+      - AccountingPeriod
+      - CurrencyCode
+      - JournalCategory
+      - JournalSource
+      properties:
+        JournalBatchName:
+          type: string
+        JournalName:
+          type: string
+        Description:
+          type: string
+        LedgerName:
+          type: string
+        AccountingPeriod:
+          type: string
+        CurrencyCode:
+          type: string
+        JournalCategory:
+          type: string
+        JournalSource:
+          type: string
+    PeriodStatus:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period name
+        PeriodYear:
+          type: integer
+          description: Period year
+        PeriodNumber:
+          type: integer
+          description: Period number within the year
+        Status:
+          type: string
+          description: Period status
+          enum:
+          - Open
+          - Closed
+          - Future Entry
+          - Never Opened
+          - Permanently Closed
+    Journal:
+      type: object
+      properties:
+        JournalHeaderId:
+          type: integer
+          description: Unique journal header identifier
+        JournalBatchName:
+          type: string
+          description: Journal batch name
+        JournalName:
+          type: string
+          description: Journal name
+        Description:
+          type: string
+          description: Journal description
+        LedgerName:
+          type: string
+          description: Ledger name
+        AccountingPeriod:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Journal currency
+        Status:
+          type: string
+          description: Journal status
+          enum:
+          - Unposted
+          - Posted
+          - Error
+        JournalCategory:
+          type: string
+          description: Journal category
+        JournalSource:
+          type: string
+          description: Journal source
+        TotalDebit:
+          type: number
+          format: double
+          description: Total debit amount
+        TotalCredit:
+          type: number
+          format: double
+          description: Total credit amount
+        CreationDate:
+          type: string
+          format: date-time
+          description: Journal creation date
+    LedgerBalance:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Name of the ledger
+        PeriodName:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Currency code
+        Segment1:
+          type: string
+          description: Chart of accounts segment 1 (Company)
+        Segment2:
+          type: string
+          description: Chart of accounts segment 2 (Department)
+        Segment3:
+          type: string
+          description: Chart of accounts segment 3 (Account)
+        Segment4:
+          type: string
+          description: Chart of accounts segment 4 (Sub-Account)
+        BeginningBalance:
+          type: number
+          format: double
+          description: Beginning balance for the period
+        PeriodActivity:
+          type: number
+          format: double
+          description: Net activity for the period
+        EndingBalance:
+          type: number
+          format: double
+          description: Ending balance for the period
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

@@ -1,0 +1,193 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Financial Project Plans API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Financial Project Plans
+  description: Manage financial plans, budgets, and forecasts
+paths:
+  /fscmRestApi/resources/11.13.18.05/financialProjectPlans:
+    get:
+      operationId: listFinancialProjectPlans
+      summary: Oracle Fusion Cloud Applications List financial project plans
+      description: Retrieve financial project plan versions including budgets, forecasts, resource assignments, and planning options.
+      tags:
+      - Financial Project Plans
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Financial project plans retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/FinancialProjectPlan'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createFinancialProjectPlan
+      summary: Oracle Fusion Cloud Applications Create a financial project plan
+      description: Create a new financial project plan version.
+      tags:
+      - Financial Project Plans
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FinancialProjectPlanCreate'
+      responses:
+        '201':
+          description: Financial project plan created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FinancialProjectPlan'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    FinancialProjectPlan:
+      type: object
+      properties:
+        PlanVersionId:
+          type: integer
+          description: Plan version identifier
+        ProjectId:
+          type: integer
+          description: Associated project identifier
+        PlanName:
+          type: string
+          description: Financial plan name
+        PlanType:
+          type: string
+          description: Plan type
+          enum:
+          - Budget
+          - Forecast
+        VersionNumber:
+          type: integer
+          description: Version number
+        Status:
+          type: string
+          description: Plan status
+          enum:
+          - Working
+          - Submitted
+          - Baselined
+          - Rejected
+        TotalPlannedCost:
+          type: number
+          format: double
+          description: Total planned cost
+        TotalPlannedRevenue:
+          type: number
+          format: double
+          description: Total planned revenue
+        CurrencyCode:
+          type: string
+          description: Plan currency
+        CreationDate:
+          type: string
+          format: date-time
+    FinancialProjectPlanCreate:
+      type: object
+      required:
+      - ProjectId
+      - PlanName
+      - PlanType
+      properties:
+        ProjectId:
+          type: integer
+        PlanName:
+          type: string
+        PlanType:
+          type: string
+          enum:
+          - Budget
+          - Forecast
+        CurrencyCode:
+          type: string
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

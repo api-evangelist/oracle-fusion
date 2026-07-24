@@ -1,0 +1,236 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Inventory API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Inventory
+  description: Inventory management and on-hand quantities
+paths:
+  /fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances:
+    get:
+      operationId: listOnhandBalances
+      summary: Oracle Fusion Cloud Applications List inventory on-hand balances
+      description: Retrieve on-hand inventory quantities by organization, item, subinventory, and locator.
+      tags:
+      - Inventory
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: On-hand balances retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/OnhandBalance'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/inventoryTransactions:
+    post:
+      operationId: createInventoryTransaction
+      summary: Oracle Fusion Cloud Applications Create an inventory transaction
+      description: Create inventory transactions such as receipts, issues, transfers, and adjustments.
+      tags:
+      - Inventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InventoryTransactionCreate'
+      responses:
+        '201':
+          description: Inventory transaction created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InventoryTransaction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    OnhandBalance:
+      type: object
+      properties:
+        OrganizationId:
+          type: integer
+          description: Inventory organization identifier
+        OrganizationCode:
+          type: string
+          description: Organization code
+        OrganizationName:
+          type: string
+          description: Organization name
+        ItemNumber:
+          type: string
+          description: Item number
+        ItemDescription:
+          type: string
+          description: Item description
+        Subinventory:
+          type: string
+          description: Subinventory code
+        Locator:
+          type: string
+          description: Locator name
+        LotNumber:
+          type: string
+          description: Lot number
+        SerialNumber:
+          type: string
+          description: Serial number
+        OnhandQuantity:
+          type: number
+          format: double
+          description: On-hand quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        ReservedQuantity:
+          type: number
+          format: double
+          description: Reserved quantity
+        AvailableQuantity:
+          type: number
+          format: double
+          description: Available to transact quantity
+    InventoryTransaction:
+      type: object
+      properties:
+        TransactionId:
+          type: integer
+          description: Transaction identifier
+        TransactionType:
+          type: string
+          description: Transaction type
+        OrganizationCode:
+          type: string
+          description: Organization code
+        ItemNumber:
+          type: string
+          description: Item number
+        Subinventory:
+          type: string
+          description: Subinventory code
+        Quantity:
+          type: number
+          format: double
+          description: Transaction quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        TransactionDate:
+          type: string
+          format: date-time
+          description: Transaction date
+    InventoryTransactionCreate:
+      type: object
+      required:
+      - TransactionType
+      - OrganizationCode
+      - ItemNumber
+      - Subinventory
+      - Quantity
+      - UnitOfMeasure
+      properties:
+        TransactionType:
+          type: string
+        OrganizationCode:
+          type: string
+        ItemNumber:
+          type: string
+        Subinventory:
+          type: string
+        Locator:
+          type: string
+        Quantity:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+        LotNumber:
+          type: string
+        SerialNumber:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

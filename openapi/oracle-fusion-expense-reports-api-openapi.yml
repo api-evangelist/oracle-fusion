@@ -1,0 +1,338 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Expense Reports API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Expense Reports
+  description: Create and manage employee expense reports
+paths:
+  /fscmRestApi/resources/11.13.18.05/expenseReports:
+    get:
+      operationId: listExpenseReports
+      summary: Oracle Fusion Cloud Applications List expense reports
+      description: Retrieve a collection of employee expense reports.
+      tags:
+      - Expense Reports
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Expense reports retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ExpenseReport'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createExpenseReport
+      summary: Oracle Fusion Cloud Applications Create an expense report
+      description: Create a new employee expense report with expense items.
+      tags:
+      - Expense Reports
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseReportCreate'
+      responses:
+        '201':
+          description: Expense report created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/expenseReports/{ExpenseReportId}:
+    get:
+      operationId: getExpenseReport
+      summary: Oracle Fusion Cloud Applications Get an expense report
+      description: Retrieve a specific expense report by its identifier.
+      tags:
+      - Expense Reports
+      parameters:
+      - name: ExpenseReportId
+        in: path
+        required: true
+        description: Unique identifier for the expense report
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Expense report details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateExpenseReport
+      summary: Oracle Fusion Cloud Applications Update an expense report
+      description: Update an existing expense report.
+      tags:
+      - Expense Reports
+      parameters:
+      - name: ExpenseReportId
+        in: path
+        required: true
+        description: Unique identifier for the expense report
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExpenseReportCreate'
+      responses:
+        '200':
+          description: Expense report updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseReport'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteExpenseReport
+      summary: Oracle Fusion Cloud Applications Delete an expense report
+      description: Delete an expense report.
+      tags:
+      - Expense Reports
+      parameters:
+      - name: ExpenseReportId
+        in: path
+        required: true
+        description: Unique identifier for the expense report
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Expense report deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    ExpenseReportCreate:
+      type: object
+      required:
+      - Purpose
+      - BusinessUnit
+      properties:
+        Purpose:
+          type: string
+        ExpenseReportDate:
+          type: string
+          format: date
+        BusinessUnit:
+          type: string
+        CurrencyCode:
+          type: string
+    ExpenseReport:
+      type: object
+      properties:
+        ExpenseReportId:
+          type: integer
+          description: Unique identifier for the expense report
+        ExpenseReportNumber:
+          type: string
+          description: Expense report number
+        Purpose:
+          type: string
+          description: Business purpose of the expense report
+        ExpenseReportDate:
+          type: string
+          format: date
+          description: Expense report date
+        PersonName:
+          type: string
+          description: Employee name
+        PersonNumber:
+          type: string
+          description: Employee person number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        TotalAmount:
+          type: number
+          format: double
+          description: Total expense report amount
+        CurrencyCode:
+          type: string
+          description: Expense report currency
+        ApprovalStatus:
+          type: string
+          description: Approval workflow status
+          enum:
+          - Saved
+          - Pending Approval
+          - Approved
+          - Rejected
+          - Paid
+          - Withdrawn
+        ReimbursementAmount:
+          type: number
+          format: double
+          description: Amount to be reimbursed
+        SubmittedDate:
+          type: string
+          format: date-time
+          description: Date expense report was submitted
+        CreationDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+  responses:
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

@@ -1,0 +1,211 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Budgetary Control API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Budgetary Control
+  description: Budget transactions and validation
+paths:
+  /fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions:
+    get:
+      operationId: listBudgetTransactions
+      summary: Oracle Fusion Cloud Applications List budget transactions
+      description: Retrieve budgetary control budget transactions and validation results.
+      tags:
+      - Budgetary Control
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Budget transactions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BudgetTransaction'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createBudgetTransaction
+      summary: Oracle Fusion Cloud Applications Create a budget transaction
+      description: Create budget entries and perform budgetary control validation.
+      tags:
+      - Budgetary Control
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BudgetTransactionCreate'
+      responses:
+        '201':
+          description: Budget transaction created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BudgetTransaction'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    BudgetTransaction:
+      type: object
+      properties:
+        BudgetTransactionId:
+          type: integer
+          description: Budget transaction identifier
+        BudgetName:
+          type: string
+          description: Budget name
+        ControlBudgetName:
+          type: string
+          description: Control budget name
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period
+        BudgetAmount:
+          type: number
+          format: double
+          description: Budget amount
+        CurrencyCode:
+          type: string
+          description: Currency code
+        Status:
+          type: string
+          description: Transaction status
+    BudgetTransactionCreate:
+      type: object
+      required:
+      - BudgetName
+      - LedgerName
+      - PeriodName
+      - BudgetAmount
+      - CurrencyCode
+      properties:
+        BudgetName:
+          type: string
+        ControlBudgetName:
+          type: string
+        LedgerName:
+          type: string
+        PeriodName:
+          type: string
+        BudgetAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

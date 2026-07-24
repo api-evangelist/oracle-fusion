@@ -1,0 +1,164 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Data Management API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Data Management
+  description: Data import, export, and integration operations
+paths:
+  /interop/rest/v3/files:
+    get:
+      operationId: listFiles
+      summary: Oracle Fusion Cloud Applications List files
+      description: Retrieve a list of files in the EPM inbox and outbox used for data import, export, and snapshot operations.
+      tags:
+      - Data Management
+      responses:
+        '200':
+          description: Files retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/File'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /interop/rest/v3/files/{fileName}:
+    get:
+      operationId: downloadFile
+      summary: Oracle Fusion Cloud Applications Download a file
+      description: Download a file from the EPM inbox or outbox.
+      tags:
+      - Data Management
+      parameters:
+      - name: fileName
+        in: path
+        required: true
+        description: File name including path
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File content
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      operationId: uploadFile
+      summary: Oracle Fusion Cloud Applications Upload a file
+      description: Upload a file to the EPM inbox for data import operations.
+      tags:
+      - Data Management
+      parameters:
+      - name: fileName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+      responses:
+        '200':
+          description: File uploaded
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: integer
+                  details:
+                    type: string
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    delete:
+      operationId: deleteFile
+      summary: Oracle Fusion Cloud Applications Delete a file
+      description: Delete a file from the EPM inbox or outbox.
+      tags:
+      - Data Management
+      parameters:
+      - name: fileName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: File deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    File:
+      type: object
+      properties:
+        name:
+          type: string
+          description: File name
+        path:
+          type: string
+          description: File path
+        size:
+          type: integer
+          description: File size in bytes
+        lastModifiedTime:
+          type: string
+          format: date-time
+          description: Last modified timestamp
+        isDirectory:
+          type: boolean
+          description: Whether the entry is a directory
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

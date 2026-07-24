@@ -1,0 +1,291 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Purchase Orders API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Purchase Orders
+  description: Manage purchase orders and procurement
+paths:
+  /fscmRestApi/resources/11.13.18.05/purchaseOrders:
+    get:
+      operationId: listPurchaseOrders
+      summary: Oracle Fusion Cloud Applications List purchase orders
+      description: Retrieve purchase order headers and lines for procurement operations.
+      tags:
+      - Purchase Orders
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Purchase orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PurchaseOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createPurchaseOrder
+      summary: Oracle Fusion Cloud Applications Create a purchase order
+      description: Create a new purchase order with header and lines.
+      tags:
+      - Purchase Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseOrderCreate'
+      responses:
+        '201':
+          description: Purchase order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/purchaseOrders/{POHeaderId}:
+    get:
+      operationId: getPurchaseOrder
+      summary: Oracle Fusion Cloud Applications Get a purchase order
+      description: Retrieve a specific purchase order.
+      tags:
+      - Purchase Orders
+      parameters:
+      - name: POHeaderId
+        in: path
+        required: true
+        description: Purchase order header identifier
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Purchase order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updatePurchaseOrder
+      summary: Oracle Fusion Cloud Applications Update a purchase order
+      description: Update an existing purchase order.
+      tags:
+      - Purchase Orders
+      parameters:
+      - name: POHeaderId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PurchaseOrderUpdate'
+      responses:
+        '200':
+          description: Purchase order updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    PurchaseOrderCreate:
+      type: object
+      required:
+      - ProcurementBusinessUnit
+      - SupplierName
+      properties:
+        ProcurementBusinessUnit:
+          type: string
+        SupplierName:
+          type: string
+        SupplierNumber:
+          type: string
+        SupplierSite:
+          type: string
+        BuyerName:
+          type: string
+        CurrencyCode:
+          type: string
+        PaymentTerms:
+          type: string
+    PurchaseOrder:
+      type: object
+      properties:
+        POHeaderId:
+          type: integer
+          description: Purchase order header identifier
+        OrderNumber:
+          type: string
+          description: PO number
+        ProcurementBusinessUnit:
+          type: string
+          description: Procurement business unit
+        SupplierName:
+          type: string
+          description: Supplier name
+        SupplierNumber:
+          type: string
+          description: Supplier number
+        SupplierSite:
+          type: string
+          description: Supplier site
+        BuyerName:
+          type: string
+          description: Buyer name
+        OrderDate:
+          type: string
+          format: date
+          description: PO date
+        TotalAmount:
+          type: number
+          format: double
+          description: Total PO amount
+        CurrencyCode:
+          type: string
+          description: PO currency
+        Status:
+          type: string
+          description: PO status
+          enum:
+          - Incomplete
+          - Open
+          - Closed
+          - Cancelled
+          - On Hold
+          - Pending Approval
+          - Approved
+          - Rejected
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        ShipToLocation:
+          type: string
+          description: Ship-to location
+        BillToLocation:
+          type: string
+          description: Bill-to location
+        CreationDate:
+          type: string
+          format: date-time
+    PurchaseOrderUpdate:
+      type: object
+      properties:
+        Status:
+          type: string
+        PaymentTerms:
+          type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

@@ -1,0 +1,216 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Leads API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Leads
+  description: Manage sales leads and qualification
+paths:
+  /crmRestApi/resources/11.13.18.05/leads:
+    get:
+      operationId: listLeads
+      summary: Oracle Fusion Cloud Applications List leads
+      description: Retrieve sales lead records including lead source, qualification status, and associated contacts.
+      tags:
+      - Leads
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Leads retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Lead'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createLead
+      summary: Oracle Fusion Cloud Applications Create a lead
+      description: Create a new sales lead record.
+      tags:
+      - Leads
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LeadCreate'
+      responses:
+        '201':
+          description: Lead created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Lead'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    LeadCreate:
+      type: object
+      required:
+      - Name
+      properties:
+        Name:
+          type: string
+        CustomerName:
+          type: string
+        ContactName:
+          type: string
+        Rank:
+          type: string
+          enum:
+          - Hot
+          - Warm
+          - Cold
+        Source:
+          type: string
+    Lead:
+      type: object
+      properties:
+        LeadId:
+          type: integer
+          description: Lead identifier
+        LeadNumber:
+          type: string
+          description: Lead number
+        Name:
+          type: string
+          description: Lead name
+        CustomerName:
+          type: string
+          description: Customer or prospect name
+        ContactName:
+          type: string
+          description: Primary contact name
+        OwnerName:
+          type: string
+          description: Lead owner name
+        Score:
+          type: integer
+          description: Lead score
+        Rank:
+          type: string
+          description: Lead rank
+          enum:
+          - Hot
+          - Warm
+          - Cold
+        QualificationStatus:
+          type: string
+          description: Qualification status
+          enum:
+          - Unqualified
+          - Qualified
+          - Converted
+          - Retired
+        Source:
+          type: string
+          description: Lead source
+        CreationDate:
+          type: string
+          format: date-time
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

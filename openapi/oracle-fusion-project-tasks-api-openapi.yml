@@ -1,0 +1,201 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Project Tasks API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Project Tasks
+  description: Manage project task hierarchies and assignments
+paths:
+  /fscmRestApi/resources/11.13.18.05/projectTasks:
+    get:
+      operationId: listProjectTasks
+      summary: Oracle Fusion Cloud Applications List project tasks
+      description: Retrieve project task records including task hierarchy, dates, assignments, and progress information.
+      tags:
+      - Project Tasks
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Project tasks retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProjectTask'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createProjectTask
+      summary: Oracle Fusion Cloud Applications Create a project task
+      description: Create a new task within a project.
+      tags:
+      - Project Tasks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProjectTaskCreate'
+      responses:
+        '201':
+          description: Project task created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectTask'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ProjectTask:
+      type: object
+      properties:
+        TaskId:
+          type: integer
+          description: Task identifier
+        TaskNumber:
+          type: string
+          description: Task number
+        TaskName:
+          type: string
+          description: Task name
+        ProjectId:
+          type: integer
+          description: Parent project identifier
+        ProjectNumber:
+          type: string
+          description: Parent project number
+        ParentTaskId:
+          type: integer
+          description: Parent task identifier for hierarchy
+        StartDate:
+          type: string
+          format: date
+          description: Task start date
+        EndDate:
+          type: string
+          format: date
+          description: Task end date
+        TaskLevel:
+          type: integer
+          description: Task level in hierarchy
+        PlannedEfffort:
+          type: number
+          format: double
+          description: Planned effort
+        ActualEffort:
+          type: number
+          format: double
+          description: Actual effort
+        PercentComplete:
+          type: number
+          format: double
+          description: Completion percentage
+        TaskStatus:
+          type: string
+          description: Task status
+    ProjectTaskCreate:
+      type: object
+      required:
+      - TaskName
+      - ProjectId
+      - StartDate
+      properties:
+        TaskName:
+          type: string
+        ProjectId:
+          type: integer
+        ParentTaskId:
+          type: integer
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        PlannedEffort:
+          type: number
+          format: double
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

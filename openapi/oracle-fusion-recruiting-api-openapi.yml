@@ -1,0 +1,233 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Recruiting API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Recruiting
+  description: Job requisitions and candidate management
+paths:
+  /hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions:
+    get:
+      operationId: listJobRequisitions
+      summary: Oracle Fusion Cloud Applications List job requisitions
+      description: Retrieve open and filled job requisitions for recruiting operations.
+      tags:
+      - Recruiting
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Job requisitions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/JobRequisition'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/recruitingCandidates:
+    get:
+      operationId: listCandidates
+      summary: Oracle Fusion Cloud Applications List recruiting candidates
+      description: Retrieve candidate records for recruiting including application status and candidate details.
+      tags:
+      - Recruiting
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Candidates retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Candidate'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    Candidate:
+      type: object
+      properties:
+        CandidateId:
+          type: integer
+          description: Candidate identifier
+        CandidateNumber:
+          type: string
+          description: Candidate number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        Email:
+          type: string
+          format: email
+          description: Email address
+        PhoneNumber:
+          type: string
+          description: Phone number
+        CurrentEmployer:
+          type: string
+          description: Current employer
+        CurrentJobTitle:
+          type: string
+          description: Current job title
+        Source:
+          type: string
+          description: Candidate source
+        Status:
+          type: string
+          description: Candidate status
+          enum:
+          - New
+          - Under Review
+          - Interview
+          - Offer
+          - Hired
+          - Rejected
+          - Withdrawn
+    JobRequisition:
+      type: object
+      properties:
+        RequisitionId:
+          type: integer
+          description: Job requisition identifier
+        RequisitionNumber:
+          type: string
+          description: Requisition number
+        RequisitionTitle:
+          type: string
+          description: Job title
+        BusinessUnit:
+          type: string
+          description: Business unit
+        Department:
+          type: string
+          description: Department name
+        LocationName:
+          type: string
+          description: Job location
+        NumberOfOpenings:
+          type: integer
+          description: Number of open positions
+        Status:
+          type: string
+          description: Requisition status
+          enum:
+          - Draft
+          - Open
+          - On Hold
+          - Filled
+          - Closed
+          - Cancelled
+        PostingDate:
+          type: string
+          format: date
+          description: Date job was posted
+        TargetCloseDate:
+          type: string
+          format: date
+          description: Target close date
+        HiringManager:
+          type: string
+          description: Hiring manager name
+        Recruiter:
+          type: string
+          description: Assigned recruiter
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

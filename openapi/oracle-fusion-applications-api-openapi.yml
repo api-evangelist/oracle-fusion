@@ -1,0 +1,242 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Oracle Fusion Common Features REST Absences Applications API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Applications
+  description: Manage EPM application metadata and dimensions
+paths:
+  /HyperionPlanning/rest/v3/applications:
+    get:
+      operationId: listApplications
+      summary: Oracle Fusion Cloud Applications List EPM applications
+      description: Retrieve a list of EPM Planning applications available in the service instance.
+      tags:
+      - Applications
+      responses:
+        '200':
+          description: Applications retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Application'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}:
+    get:
+      operationId: getApplication
+      summary: Oracle Fusion Cloud Applications Get an EPM application
+      description: Retrieve metadata and configuration details for a specific EPM Planning application.
+      tags:
+      - Applications
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        description: Application name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Application details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Application'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions:
+    get:
+      operationId: listDimensions
+      summary: Oracle Fusion Cloud Applications List dimensions
+      description: Retrieve the list of dimensions defined in an EPM Planning application.
+      tags:
+      - Applications
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Dimensions retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Dimension'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/dimensions/{dimensionName}/members:
+    get:
+      operationId: listDimensionMembers
+      summary: Oracle Fusion Cloud Applications List dimension members
+      description: Retrieve members belonging to a specific dimension in an EPM Planning application.
+      tags:
+      - Applications
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: dimensionName
+        in: path
+        required: true
+        description: Dimension name
+        schema:
+          type: string
+      - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Dimension members retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/DimensionMember'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    DimensionMember:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Member name
+        parentName:
+          type: string
+          description: Parent member name
+        dimensionName:
+          type: string
+          description: Dimension name
+        dataStorageType:
+          type: string
+          description: Data storage type
+          enum:
+          - Store Data
+          - Dynamic Calc
+          - Never Share
+          - Shared Member
+          - Label Only
+        memberFormula:
+          type: string
+          description: Member formula
+        alias:
+          type: string
+          description: Member alias
+    Dimension:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Dimension name
+        type:
+          type: string
+          description: Dimension type
+          enum:
+          - Account
+          - Entity
+          - Period
+          - Year
+          - Scenario
+          - Version
+          - Currency
+          - Attribute
+          - User Defined
+        numberOfMembers:
+          type: integer
+          description: Number of members in the dimension
+    Application:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Application name
+        type:
+          type: string
+          description: Application type
+        description:
+          type: string
+          description: Application description
+        planTypes:
+          type: array
+          items:
+            type: string
+          description: Available plan types
+        createdBy:
+          type: string
+          description: Created by user
+        createdDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

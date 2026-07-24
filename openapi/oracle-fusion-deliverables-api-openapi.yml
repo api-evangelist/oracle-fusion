@@ -1,0 +1,176 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Deliverables API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Deliverables
+  description: Manage project deliverables
+paths:
+  /fscmRestApi/resources/11.13.18.05/deliverables:
+    get:
+      operationId: listDeliverables
+      summary: Oracle Fusion Cloud Applications List deliverables
+      description: Retrieve project deliverable records including task associations and requirement linkages.
+      tags:
+      - Deliverables
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Deliverables retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Deliverable'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createDeliverable
+      summary: Oracle Fusion Cloud Applications Create a deliverable
+      description: Create a new project deliverable.
+      tags:
+      - Deliverables
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliverableCreate'
+      responses:
+        '201':
+          description: Deliverable created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deliverable'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    DeliverableCreate:
+      type: object
+      required:
+      - DeliverableName
+      - DueDate
+      properties:
+        DeliverableName:
+          type: string
+        Description:
+          type: string
+        DueDate:
+          type: string
+          format: date
+    Deliverable:
+      type: object
+      properties:
+        DeliverableId:
+          type: integer
+          description: Deliverable identifier
+        DeliverableName:
+          type: string
+          description: Deliverable name
+        Description:
+          type: string
+          description: Deliverable description
+        DueDate:
+          type: string
+          format: date
+          description: Due date
+        Status:
+          type: string
+          description: Deliverable status
+          enum:
+          - Not Started
+          - In Progress
+          - Completed
+          - Overdue
+        CompletionDate:
+          type: string
+          format: date
+          description: Actual completion date
+        CreationDate:
+          type: string
+          format: date-time
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

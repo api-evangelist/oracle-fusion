@@ -1,0 +1,245 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Activities API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Activities
+  description: Manage tasks, appointments, and call logs
+paths:
+  /crmRestApi/resources/11.13.18.05/activities:
+    get:
+      operationId: listActivities
+      summary: Oracle Fusion Cloud Applications List activities
+      description: Retrieve activity records including tasks, appointments, and call logs associated with sales and service processes.
+      tags:
+      - Activities
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Activities retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Activity'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createActivity
+      summary: Oracle Fusion Cloud Applications Create an activity
+      description: Create a new activity (task, appointment, or call log).
+      tags:
+      - Activities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ActivityCreate'
+      responses:
+        '201':
+          description: Activity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Activity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    Activity:
+      type: object
+      properties:
+        ActivityId:
+          type: integer
+          description: Activity identifier
+        ActivityNumber:
+          type: string
+          description: Activity number
+        Subject:
+          type: string
+          description: Activity subject
+        ActivityType:
+          type: string
+          description: Type of activity
+          enum:
+          - Task
+          - Appointment
+          - Call Log
+        Status:
+          type: string
+          description: Activity status
+          enum:
+          - Not Started
+          - In Progress
+          - Completed
+          - Cancelled
+        Priority:
+          type: string
+          description: Priority level
+          enum:
+          - High
+          - Normal
+          - Low
+        DueDate:
+          type: string
+          format: date
+          description: Due date
+        StartDate:
+          type: string
+          format: date-time
+          description: Start date and time
+        EndDate:
+          type: string
+          format: date-time
+          description: End date and time
+        OwnerName:
+          type: string
+          description: Activity owner
+        AccountName:
+          type: string
+          description: Associated account
+        ContactName:
+          type: string
+          description: Associated contact
+        Description:
+          type: string
+          description: Activity description
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    ActivityCreate:
+      type: object
+      required:
+      - Subject
+      - ActivityType
+      properties:
+        Subject:
+          type: string
+        ActivityType:
+          type: string
+          enum:
+          - Task
+          - Appointment
+          - Call Log
+        Priority:
+          type: string
+          enum:
+          - High
+          - Normal
+          - Low
+        DueDate:
+          type: string
+          format: date
+        StartDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        AccountName:
+          type: string
+        ContactName:
+          type: string
+        Description:
+          type: string
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

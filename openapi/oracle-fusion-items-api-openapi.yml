@@ -1,0 +1,154 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Items API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Items
+  description: Product and item master management
+paths:
+  /fscmRestApi/resources/11.13.18.05/productItems:
+    get:
+      operationId: listItems
+      summary: Oracle Fusion Cloud Applications List items
+      description: Retrieve item master records including item attributes, categories, and organization assignments.
+      tags:
+      - Items
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Items retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Item'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    Item:
+      type: object
+      properties:
+        ItemId:
+          type: integer
+          description: Item identifier
+        ItemNumber:
+          type: string
+          description: Item number
+        ItemDescription:
+          type: string
+          description: Item description
+        ItemType:
+          type: string
+          description: Item type
+        OrganizationCode:
+          type: string
+          description: Organization code
+        UnitOfMeasure:
+          type: string
+          description: Primary unit of measure
+        ItemStatus:
+          type: string
+          description: Item status
+          enum:
+          - Active
+          - Inactive
+          - Pending
+        ListPrice:
+          type: number
+          format: double
+          description: List price
+        CurrencyCode:
+          type: string
+          description: Price currency
+        ItemCategory:
+          type: string
+          description: Item category
+        InventoryItemFlag:
+          type: boolean
+          description: Whether the item is inventoriable
+        PurchasableFlag:
+          type: boolean
+          description: Whether the item is purchasable
+        CustomerOrderableFlag:
+          type: boolean
+          description: Whether the item can be ordered by customers
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

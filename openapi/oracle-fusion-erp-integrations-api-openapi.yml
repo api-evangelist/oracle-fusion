@@ -1,0 +1,144 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences ERP Integrations API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: ERP Integrations
+  description: Bulk data import and export operations
+paths:
+  /fscmRestApi/resources/11.13.18.05/erpintegrations:
+    post:
+      operationId: submitErpIntegration
+      summary: Oracle Fusion Cloud Applications Submit an ERP integration
+      description: Automate bulk data import and export flows for ERP integrations using file-based data import (FBDI) and business intelligence (BI) report jobs.
+      tags:
+      - ERP Integrations
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ErpIntegrationRequest'
+      responses:
+        '201':
+          description: Integration job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErpIntegrationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ErpIntegrationResponse:
+      type: object
+      properties:
+        OperationName:
+          type: string
+          description: Name of the operation
+        DocumentId:
+          type: string
+          description: Document identifier in UCM
+        RequestId:
+          type: integer
+          description: ESS request identifier for submitted jobs
+        Result:
+          type: string
+          description: Result status of the operation
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    ErpIntegrationRequest:
+      type: object
+      required:
+      - OperationName
+      - DocumentContent
+      properties:
+        OperationName:
+          type: string
+          description: Name of the integration operation. Common values include importBulkData, exportBulkData, submitESSJobRequest.
+          enum:
+          - importBulkData
+          - exportBulkData
+          - submitESSJobRequest
+        DocumentContent:
+          type: string
+          format: byte
+          description: Base64-encoded content of the data file
+        ContentType:
+          type: string
+          description: Content type of the document
+        FileName:
+          type: string
+          description: Name of the file being uploaded
+        DocumentAccount:
+          type: string
+          description: UCM document account
+        JobName:
+          type: string
+          description: ESS job name for submitESSJobRequest operations
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

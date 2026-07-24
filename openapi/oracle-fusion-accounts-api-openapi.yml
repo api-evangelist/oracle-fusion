@@ -1,0 +1,344 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Accounts
+  description: Manage customer and prospect accounts
+paths:
+  /crmRestApi/resources/11.13.18.05/accounts:
+    get:
+      operationId: listAccounts
+      summary: Oracle Fusion Cloud Applications List accounts
+      description: Retrieve a collection of customer and prospect account records including organization details, addresses, contacts, and sales team members.
+      tags:
+      - Accounts
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Accounts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Account'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAccount
+      summary: Oracle Fusion Cloud Applications Create an account
+      description: Create a new customer or prospect account record.
+      tags:
+      - Accounts
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountCreate'
+      responses:
+        '201':
+          description: Account created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/accounts/{PartyNumber}:
+    get:
+      operationId: getAccount
+      summary: Oracle Fusion Cloud Applications Get an account
+      description: Retrieve a specific account by party number.
+      tags:
+      - Accounts
+      parameters:
+      - name: PartyNumber
+        in: path
+        required: true
+        description: Party number identifying the account
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Account details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAccount
+      summary: Oracle Fusion Cloud Applications Update an account
+      description: Update an existing account record.
+      tags:
+      - Accounts
+      parameters:
+      - name: PartyNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AccountUpdate'
+      responses:
+        '200':
+          description: Account updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAccount
+      summary: Oracle Fusion Cloud Applications Delete an account
+      description: Delete an account record.
+      tags:
+      - Accounts
+      parameters:
+      - name: PartyNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Account deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    Account:
+      type: object
+      properties:
+        PartyId:
+          type: integer
+          description: Party identifier
+        PartyNumber:
+          type: string
+          description: Party number
+        OrganizationName:
+          type: string
+          description: Organization name
+        Type:
+          type: string
+          description: Account type
+          enum:
+          - Customer
+          - Prospect
+          - Partner
+        Industry:
+          type: string
+          description: Industry classification
+        AnnualRevenue:
+          type: number
+          format: double
+          description: Annual revenue
+        NumberOfEmployees:
+          type: integer
+          description: Number of employees
+        PhoneNumber:
+          type: string
+          description: Primary phone number
+        EmailAddress:
+          type: string
+          format: email
+          description: Primary email
+        URL:
+          type: string
+          format: uri
+          description: Website URL
+        OwnerName:
+          type: string
+          description: Account owner name
+        SalesProfileStatus:
+          type: string
+          description: Sales profile status
+        CreationDate:
+          type: string
+          format: date-time
+          description: Record creation timestamp
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Last update timestamp
+    AccountCreate:
+      type: object
+      required:
+      - OrganizationName
+      properties:
+        OrganizationName:
+          type: string
+        Type:
+          type: string
+          enum:
+          - Customer
+          - Prospect
+          - Partner
+        Industry:
+          type: string
+        AnnualRevenue:
+          type: number
+          format: double
+        PhoneNumber:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+        URL:
+          type: string
+          format: uri
+    AccountUpdate:
+      type: object
+      properties:
+        OrganizationName:
+          type: string
+        Industry:
+          type: string
+        AnnualRevenue:
+          type: number
+          format: double
+        PhoneNumber:
+          type: string
+        EmailAddress:
+          type: string
+          format: email
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

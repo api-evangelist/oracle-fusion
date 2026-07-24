@@ -1,0 +1,316 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Opportunities API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Opportunities
+  description: Manage sales opportunities and pipeline
+paths:
+  /crmRestApi/resources/11.13.18.05/opportunities:
+    get:
+      operationId: listOpportunities
+      summary: Oracle Fusion Cloud Applications List opportunities
+      description: Retrieve sales opportunity records including pipeline, revenue, and sales stage information.
+      tags:
+      - Opportunities
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Opportunities retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Opportunity'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createOpportunity
+      summary: Oracle Fusion Cloud Applications Create an opportunity
+      description: Create a new sales opportunity.
+      tags:
+      - Opportunities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityCreate'
+      responses:
+        '201':
+          description: Opportunity created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/opportunities/{OptyNumber}:
+    get:
+      operationId: getOpportunity
+      summary: Oracle Fusion Cloud Applications Get an opportunity
+      description: Retrieve a specific opportunity record.
+      tags:
+      - Opportunities
+      parameters:
+      - name: OptyNumber
+        in: path
+        required: true
+        description: Opportunity number
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Opportunity details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Opportunity'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateOpportunity
+      summary: Oracle Fusion Cloud Applications Update an opportunity
+      description: Update an existing opportunity.
+      tags:
+      - Opportunities
+      parameters:
+      - name: OptyNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/OpportunityUpdate'
+      responses:
+        '200':
+          description: Opportunity updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    OpportunityUpdate:
+      type: object
+      properties:
+        Name:
+          type: string
+        SalesStage:
+          type: string
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CloseDate:
+          type: string
+          format: date
+        Status:
+          type: string
+          enum:
+          - Open
+          - Won
+          - Lost
+    OpportunityCreate:
+      type: object
+      required:
+      - Name
+      - AccountPartyNumber
+      properties:
+        Name:
+          type: string
+        AccountPartyNumber:
+          type: string
+        SalesStage:
+          type: string
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        CloseDate:
+          type: string
+          format: date
+    Opportunity:
+      type: object
+      properties:
+        OptyId:
+          type: integer
+          description: Opportunity identifier
+        OptyNumber:
+          type: string
+          description: Opportunity number
+        Name:
+          type: string
+          description: Opportunity name
+        AccountName:
+          type: string
+          description: Associated account name
+        AccountPartyNumber:
+          type: string
+          description: Account party number
+        OwnerName:
+          type: string
+          description: Opportunity owner name
+        SalesStage:
+          type: string
+          description: Current sales stage
+        WinProbability:
+          type: integer
+          description: Win probability percentage
+          minimum: 0
+          maximum: 100
+        Revenue:
+          type: number
+          format: double
+          description: Expected revenue
+        CurrencyCode:
+          type: string
+          description: Revenue currency
+        CloseDate:
+          type: string
+          format: date
+          description: Expected close date
+        Status:
+          type: string
+          description: Opportunity status
+          enum:
+          - Open
+          - Won
+          - Lost
+        CreationDate:
+          type: string
+          format: date-time
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

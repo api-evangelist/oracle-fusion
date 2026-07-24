@@ -1,0 +1,403 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Workers API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Workers
+  description: Manage worker (employee and contingent worker) records
+paths:
+  /hcmRestApi/resources/11.13.18.05/workers:
+    get:
+      operationId: listWorkers
+      summary: Oracle Fusion Cloud Applications List workers
+      description: Retrieve a collection of worker records including employees and contingent workers. Each worker record includes person information, names, and references to work assignments.
+      tags:
+      - Workers
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Workers retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Worker'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createWorker
+      summary: Oracle Fusion Cloud Applications Create a worker
+      description: Hire a new employee or create a contingent worker record with person details, names, and an initial work assignment.
+      tags:
+      - Workers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkerCreate'
+      responses:
+        '201':
+          description: Worker created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/workers/{workersUniqID}:
+    get:
+      operationId: getWorker
+      summary: Oracle Fusion Cloud Applications Get a worker
+      description: Retrieve a specific worker record by unique identifier.
+      tags:
+      - Workers
+      parameters:
+      - $ref: '#/components/parameters/workersUniqID'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Worker details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateWorker
+      summary: Oracle Fusion Cloud Applications Update a worker
+      description: Update an existing worker record.
+      tags:
+      - Workers
+      parameters:
+      - $ref: '#/components/parameters/workersUniqID'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WorkerUpdate'
+      responses:
+        '200':
+          description: Worker updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Worker'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /hcmRestApi/resources/11.13.18.05/emps:
+    get:
+      operationId: listEmployees
+      summary: Oracle Fusion Cloud Applications List employees
+      description: Retrieve a collection of employee records with employment and assignment details.
+      tags:
+      - Workers
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Employees retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Employee'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    WorkerUpdate:
+      type: object
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        MiddleName:
+          type: string
+        WorkEmail:
+          type: string
+          format: email
+        WorkPhoneNumber:
+          type: string
+    WorkerCreate:
+      type: object
+      required:
+      - FirstName
+      - LastName
+      - HireDate
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        MiddleName:
+          type: string
+        DateOfBirth:
+          type: string
+          format: date
+        HireDate:
+          type: string
+          format: date
+        WorkerType:
+          type: string
+          enum:
+          - Employee
+          - Contingent Worker
+        WorkEmail:
+          type: string
+          format: email
+    Worker:
+      type: object
+      properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        DateOfBirth:
+          type: string
+          format: date
+          description: Date of birth
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        MiddleName:
+          type: string
+          description: Middle name
+        DisplayName:
+          type: string
+          description: Full display name
+        WorkEmail:
+          type: string
+          format: email
+          description: Work email address
+        WorkPhoneNumber:
+          type: string
+          description: Work phone number
+        HireDate:
+          type: string
+          format: date
+          description: Original hire date
+        EffectiveStartDate:
+          type: string
+          format: date
+          description: Effective start date
+        WorkerType:
+          type: string
+          description: Type of worker
+          enum:
+          - Employee
+          - Contingent Worker
+        PersonType:
+          type: string
+          description: Person type classification
+        Citizenship:
+          type: string
+          description: Citizenship status
+        CreationDate:
+          type: string
+          format: date-time
+          description: Record creation timestamp
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Last update timestamp
+    Employee:
+      type: object
+      properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        DisplayName:
+          type: string
+          description: Display name
+        HireDate:
+          type: string
+          format: date
+          description: Hire date
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Department:
+          type: string
+          description: Department name
+        JobName:
+          type: string
+          description: Job name
+        GradeName:
+          type: string
+          description: Grade name
+        LocationName:
+          type: string
+          description: Work location
+        ManagerName:
+          type: string
+          description: Manager display name
+        AssignmentStatus:
+          type: string
+          description: Assignment status
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    workersUniqID:
+      name: workersUniqID
+      in: path
+      required: true
+      description: Unique identifier for the worker record
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

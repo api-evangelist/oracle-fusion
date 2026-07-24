@@ -1,0 +1,308 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Absences
+  description: Absence management and leave tracking
+paths:
+  /hcmRestApi/resources/11.13.18.05/absences:
+    get:
+      operationId: listAbsences
+      summary: Oracle Fusion Cloud Applications List absences
+      description: Retrieve absence records for workers including vacation, sick leave, and other absence types.
+      tags:
+      - Absences
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Absences retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Absence'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAbsence
+      summary: Oracle Fusion Cloud Applications Create an absence
+      description: Create a new absence record for a worker.
+      tags:
+      - Absences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AbsenceCreate'
+      responses:
+        '201':
+          description: Absence created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /hcmRestApi/resources/11.13.18.05/absences/{AbsenceId}:
+    get:
+      operationId: getAbsence
+      summary: Oracle Fusion Cloud Applications Get an absence
+      description: Retrieve a specific absence record.
+      tags:
+      - Absences
+      parameters:
+      - name: AbsenceId
+        in: path
+        required: true
+        description: Unique identifier for the absence
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Absence details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAbsence
+      summary: Oracle Fusion Cloud Applications Update an absence
+      description: Update an existing absence record.
+      tags:
+      - Absences
+      parameters:
+      - name: AbsenceId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AbsenceCreate'
+      responses:
+        '200':
+          description: Absence updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Absence'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAbsence
+      summary: Oracle Fusion Cloud Applications Delete an absence
+      description: Delete an absence record.
+      tags:
+      - Absences
+      parameters:
+      - name: AbsenceId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Absence deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    Absence:
+      type: object
+      properties:
+        AbsenceId:
+          type: integer
+          description: Absence record identifier
+        PersonNumber:
+          type: string
+          description: Person number of the worker
+        PersonName:
+          type: string
+          description: Worker display name
+        AbsenceType:
+          type: string
+          description: Type of absence
+        AbsenceReason:
+          type: string
+          description: Reason for absence
+        StartDate:
+          type: string
+          format: date
+          description: Absence start date
+        EndDate:
+          type: string
+          format: date
+          description: Absence end date
+        Duration:
+          type: number
+          format: double
+          description: Duration in days or hours
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure (Days or Hours)
+          enum:
+          - Days
+          - Hours
+        ApprovalStatus:
+          type: string
+          description: Approval status
+          enum:
+          - Submitted
+          - Approved
+          - Rejected
+          - Saved
+          - Withdrawn
+        Comments:
+          type: string
+          description: Comments
+    AbsenceCreate:
+      type: object
+      required:
+      - PersonNumber
+      - AbsenceType
+      - StartDate
+      - EndDate
+      properties:
+        PersonNumber:
+          type: string
+        AbsenceType:
+          type: string
+        AbsenceReason:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Duration:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+          enum:
+          - Days
+          - Hours
+        Comments:
+          type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

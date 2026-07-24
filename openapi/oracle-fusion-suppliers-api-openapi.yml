@@ -1,0 +1,211 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Suppliers API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Suppliers
+  description: Supplier and vendor management
+paths:
+  /fscmRestApi/resources/11.13.18.05/suppliers:
+    get:
+      operationId: listSuppliers
+      summary: Oracle Fusion Cloud Applications List suppliers
+      description: Retrieve supplier records including supplier sites, contacts, and procurement details.
+      tags:
+      - Suppliers
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Suppliers retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Supplier'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createSupplier
+      summary: Oracle Fusion Cloud Applications Create a supplier
+      description: Create a new supplier record.
+      tags:
+      - Suppliers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SupplierCreate'
+      responses:
+        '201':
+          description: Supplier created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Supplier'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    SupplierCreate:
+      type: object
+      required:
+      - SupplierName
+      properties:
+        SupplierName:
+          type: string
+        SupplierType:
+          type: string
+        TaxpayerIdentificationNumber:
+          type: string
+        Country:
+          type: string
+        AddressLine1:
+          type: string
+        City:
+          type: string
+        State:
+          type: string
+        PostalCode:
+          type: string
+    Supplier:
+      type: object
+      properties:
+        SupplierId:
+          type: integer
+          description: Supplier identifier
+        SupplierNumber:
+          type: string
+          description: Supplier number
+        SupplierName:
+          type: string
+          description: Supplier name
+        SupplierType:
+          type: string
+          description: Supplier type
+        TaxpayerIdentificationNumber:
+          type: string
+          description: Tax ID number
+        TaxOrganizationType:
+          type: string
+          description: Tax organization type
+        Status:
+          type: string
+          description: Supplier status
+          enum:
+          - Active
+          - Inactive
+        BusinessRelationship:
+          type: string
+          description: Business relationship type
+          enum:
+          - Spend Authorized
+          - Prospective
+        Country:
+          type: string
+          description: Country
+        AddressLine1:
+          type: string
+          description: Primary address line
+        City:
+          type: string
+          description: City
+        State:
+          type: string
+          description: State or province
+        PostalCode:
+          type: string
+          description: Postal code
+        CreationDate:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

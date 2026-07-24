@@ -1,0 +1,107 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Migration API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Migration
+  description: Application migration and lifecycle management
+paths:
+  /interop/rest/v3/snapshots:
+    get:
+      operationId: listSnapshots
+      summary: Oracle Fusion Cloud Applications List snapshots
+      description: Retrieve a list of application snapshots available for migration and backup operations.
+      tags:
+      - Migration
+      responses:
+        '200':
+          description: Snapshots retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Snapshot'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /interop/rest/v3/snapshots/{snapshotName}:
+    delete:
+      operationId: deleteSnapshot
+      summary: Oracle Fusion Cloud Applications Delete a snapshot
+      description: Delete an application snapshot.
+      tags:
+      - Migration
+      parameters:
+      - name: snapshotName
+        in: path
+        required: true
+        description: Snapshot name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Snapshot deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  schemas:
+    Snapshot:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Snapshot name
+        type:
+          type: string
+          description: Snapshot type
+          enum:
+          - LCM
+          - External
+        size:
+          type: integer
+          description: Snapshot size in bytes
+        lastModifiedTime:
+          type: string
+          format: date-time
+          description: Last modified timestamp
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

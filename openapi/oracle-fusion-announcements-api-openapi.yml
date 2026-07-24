@@ -1,0 +1,249 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Announcements API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Announcements
+  description: Manage application announcements
+paths:
+  /fscmRestApi/resources/11.13.18.05/announcements:
+    get:
+      operationId: listAnnouncements
+      summary: Oracle Fusion Cloud Applications List announcements
+      description: Retrieve application announcements visible to users across Fusion Cloud applications.
+      tags:
+      - Announcements
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Announcements retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Announcement'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAnnouncement
+      summary: Oracle Fusion Cloud Applications Create an announcement
+      description: Create a new application announcement.
+      tags:
+      - Announcements
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementCreate'
+      responses:
+        '201':
+          description: Announcement created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/announcements/{AnnouncementId}:
+    get:
+      operationId: getAnnouncement
+      summary: Oracle Fusion Cloud Applications Get an announcement
+      description: Retrieve a specific announcement.
+      tags:
+      - Announcements
+      parameters:
+      - name: AnnouncementId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Announcement details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Announcement'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAnnouncement
+      summary: Oracle Fusion Cloud Applications Update an announcement
+      description: Update an existing application announcement.
+      tags:
+      - Announcements
+      parameters:
+      - name: AnnouncementId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AnnouncementCreate'
+      responses:
+        '200':
+          description: Announcement updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAnnouncement
+      summary: Oracle Fusion Cloud Applications Delete an announcement
+      description: Delete an existing application announcement.
+      tags:
+      - Announcements
+      parameters:
+      - name: AnnouncementId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Announcement deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    Announcement:
+      type: object
+      properties:
+        AnnouncementId:
+          type: integer
+          description: Announcement identifier
+        Subject:
+          type: string
+          description: Announcement subject
+        Description:
+          type: string
+          description: Announcement body text
+        StartDate:
+          type: string
+          format: date
+          description: Start date for visibility
+        EndDate:
+          type: string
+          format: date
+          description: End date for visibility
+        Severity:
+          type: string
+          description: Severity level
+          enum:
+          - Information
+          - Warning
+          - Critical
+        CreatedBy:
+          type: string
+          description: Creator username
+        CreationDate:
+          type: string
+          format: date-time
+    AnnouncementCreate:
+      type: object
+      required:
+      - Subject
+      - StartDate
+      properties:
+        Subject:
+          type: string
+        Description:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Severity:
+          type: string
+          enum:
+          - Information
+          - Warning
+          - Critical
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

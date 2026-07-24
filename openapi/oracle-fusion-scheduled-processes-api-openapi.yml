@@ -1,0 +1,187 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Scheduled Processes API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Scheduled Processes
+  description: Manage and monitor scheduled processes
+paths:
+  /ess/rest/scheduler/v1/requests:
+    get:
+      operationId: listScheduledRequests
+      summary: Oracle Fusion Cloud Applications List scheduled process requests
+      description: Query scheduled process (ESS) job requests and their execution status.
+      tags:
+      - Scheduled Processes
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      responses:
+        '200':
+          description: Scheduled requests retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ScheduledRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: submitScheduledRequest
+      summary: Oracle Fusion Cloud Applications Submit a scheduled process request
+      description: Submit a new scheduled process job for execution.
+      tags:
+      - Scheduled Processes
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScheduledRequestSubmit'
+      responses:
+        '201':
+          description: Request submitted
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /ess/rest/scheduler/v1/requests/{requestId}:
+    get:
+      operationId: getScheduledRequest
+      summary: Oracle Fusion Cloud Applications Get a scheduled process request
+      description: Retrieve status and details of a scheduled process request.
+      tags:
+      - Scheduled Processes
+      parameters:
+      - name: requestId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Request details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScheduledRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    ScheduledRequestSubmit:
+      type: object
+      required:
+      - jobDefinitionName
+      properties:
+        jobDefinitionName:
+          type: string
+        jobPackageName:
+          type: string
+        submissionNotes:
+          type: string
+        parameterList:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+    ScheduledRequest:
+      type: object
+      properties:
+        requestId:
+          type: integer
+          description: Request identifier
+        jobDefinitionName:
+          type: string
+          description: Job definition name
+        submittedBy:
+          type: string
+          description: Submitted by username
+        submittedDate:
+          type: string
+          format: date-time
+          description: Submission timestamp
+        status:
+          type: string
+          description: Request status
+          enum:
+          - Wait
+          - Ready
+          - Running
+          - Completed
+          - Blocked
+          - Error
+          - Warning
+          - Cancelled
+          - Paused
+          - Hold
+        startDate:
+          type: string
+          format: date-time
+          description: Execution start time
+        endDate:
+          type: string
+          format: date-time
+          description: Execution end time
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

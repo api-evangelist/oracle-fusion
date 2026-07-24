@@ -1,0 +1,427 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Invoices API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Invoices
+  description: Manage accounts payable invoices
+paths:
+  /fscmRestApi/resources/11.13.18.05/invoices:
+    get:
+      operationId: listInvoices
+      summary: Oracle Fusion Cloud Applications List invoices
+      description: Retrieve a collection of accounts payable invoices. Supports filtering, sorting, and pagination using standard Oracle REST query parameters.
+      tags:
+      - Invoices
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Successful retrieval of invoices
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Invoice'
+                  count:
+                    type: integer
+                    description: Number of items returned
+                  hasMore:
+                    type: boolean
+                    description: Whether more items are available
+                  limit:
+                    type: integer
+                    description: Maximum number of items returned
+                  offset:
+                    type: integer
+                    description: Offset of first item returned
+                  totalResults:
+                    type: integer
+                    description: Total number of matching items
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createInvoice
+      summary: Oracle Fusion Cloud Applications Create an invoice
+      description: Create a new accounts payable invoice with header and optionally include invoice lines and distributions.
+      tags:
+      - Invoices
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceCreate'
+      responses:
+        '201':
+          description: Invoice created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/invoices/{InvoiceId}:
+    get:
+      operationId: getInvoice
+      summary: Oracle Fusion Cloud Applications Get an invoice
+      description: Retrieve a specific accounts payable invoice by its unique identifier.
+      tags:
+      - Invoices
+      parameters:
+      - $ref: '#/components/parameters/InvoiceId'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Invoice details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateInvoice
+      summary: Oracle Fusion Cloud Applications Update an invoice
+      description: Update an existing accounts payable invoice.
+      tags:
+      - Invoices
+      parameters:
+      - $ref: '#/components/parameters/InvoiceId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InvoiceUpdate'
+      responses:
+        '200':
+          description: Invoice updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Invoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteInvoice
+      summary: Oracle Fusion Cloud Applications Delete an invoice
+      description: Delete an accounts payable invoice.
+      tags:
+      - Invoices
+      parameters:
+      - $ref: '#/components/parameters/InvoiceId'
+      responses:
+        '204':
+          description: Invoice deleted successfully
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  parameters:
+    InvoiceId:
+      name: InvoiceId
+      in: path
+      required: true
+      description: Unique identifier for the invoice
+      schema:
+        type: integer
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
+  schemas:
+    InvoiceCreate:
+      type: object
+      required:
+      - InvoiceNumber
+      - InvoiceAmount
+      - InvoiceCurrencyCode
+      - VendorName
+      - BusinessUnit
+      properties:
+        InvoiceNumber:
+          type: string
+          description: Invoice number
+        InvoiceAmount:
+          type: number
+          format: double
+          description: Total invoice amount
+        InvoiceCurrencyCode:
+          type: string
+          description: Currency code
+        InvoiceDate:
+          type: string
+          format: date
+          description: Invoice date
+        InvoiceType:
+          type: string
+          enum:
+          - Standard
+          - Credit Memo
+          - Prepayment
+          - Mixed
+        VendorName:
+          type: string
+          description: Supplier name
+        VendorNumber:
+          type: string
+          description: Supplier number
+        VendorSiteCode:
+          type: string
+          description: Supplier site code
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Description:
+          type: string
+          description: Invoice description
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    InvoiceUpdate:
+      type: object
+      properties:
+        InvoiceAmount:
+          type: number
+          format: double
+        Description:
+          type: string
+        PaymentTerms:
+          type: string
+        AccountingDate:
+          type: string
+          format: date
+        ApprovalStatus:
+          type: string
+    Invoice:
+      type: object
+      properties:
+        InvoiceId:
+          type: integer
+          description: Unique identifier for the invoice
+        InvoiceNumber:
+          type: string
+          description: Invoice number
+        InvoiceAmount:
+          type: number
+          format: double
+          description: Total invoice amount
+        InvoiceCurrencyCode:
+          type: string
+          description: Currency code for the invoice amount
+        InvoiceDate:
+          type: string
+          format: date
+          description: Date of the invoice
+        InvoiceType:
+          type: string
+          description: Type of invoice (Standard, Credit Memo, Prepayment, etc.)
+          enum:
+          - Standard
+          - Credit Memo
+          - Prepayment
+          - Mixed
+        VendorName:
+          type: string
+          description: Name of the supplier
+        VendorNumber:
+          type: string
+          description: Supplier number
+        VendorSiteCode:
+          type: string
+          description: Supplier site code
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Description:
+          type: string
+          description: Invoice description
+        PaymentTerms:
+          type: string
+          description: Payment terms for the invoice
+        DueDate:
+          type: string
+          format: date
+          description: Payment due date
+        ApprovalStatus:
+          type: string
+          description: Current approval status
+          enum:
+          - Initiated
+          - Required
+          - Not Required
+          - Approved
+          - Rejected
+          - Wfapproved
+          - Manually Approved
+        ValidationStatus:
+          type: string
+          description: Invoice validation status
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date for the invoice
+        PaidAmount:
+          type: number
+          format: double
+          description: Amount already paid
+        AmountDue:
+          type: number
+          format: double
+          description: Remaining amount due
+        CreatedBy:
+          type: string
+          description: User who created the invoice
+        CreationDate:
+          type: string
+          format: date-time
+          description: Date and time the invoice was created
+        LastUpdateDate:
+          type: string
+          format: date-time
+          description: Date and time the invoice was last updated
+  responses:
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

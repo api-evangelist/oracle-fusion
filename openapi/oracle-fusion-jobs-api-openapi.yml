@@ -1,0 +1,229 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Jobs API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Jobs
+  description: Manage EPM job execution and monitoring
+paths:
+  /HyperionPlanning/rest/v3/applications/{applicationName}/jobs:
+    get:
+      operationId: listJobs
+      summary: Oracle Fusion Cloud Applications List jobs
+      description: Retrieve a list of EPM jobs including business rules, data maps, and scheduled maintenance tasks.
+      tags:
+      - Jobs
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Jobs retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Job'
+                  status:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: executeJob
+      summary: Oracle Fusion Cloud Applications Execute a job
+      description: Execute an EPM job such as a business rule, data map, refresh database, or cube refresh.
+      tags:
+      - Jobs
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/JobExecute'
+      responses:
+        '200':
+          description: Job submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /HyperionPlanning/rest/v3/applications/{applicationName}/jobs/{jobId}:
+    get:
+      operationId: getJobStatus
+      summary: Oracle Fusion Cloud Applications Get job status
+      description: Retrieve execution status and details for a specific EPM job.
+      tags:
+      - Jobs
+      parameters:
+      - name: applicationName
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: jobId
+        in: path
+        required: true
+        description: Job identifier
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Job status
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JobStatus'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression
+      schema:
+        type: string
+  schemas:
+    Job:
+      type: object
+      properties:
+        jobId:
+          type: integer
+          description: Job identifier
+        jobName:
+          type: string
+          description: Job name
+        jobType:
+          type: string
+          description: Job type
+          enum:
+          - Rules
+          - Data Map
+          - Cube Refresh
+          - Clear Cube
+          - Refresh Database
+          - Smart Push
+          - Import Data
+          - Export Data
+          - Copy Data
+        description:
+          type: string
+          description: Job description
+    JobExecute:
+      type: object
+      required:
+      - jobName
+      - jobType
+      properties:
+        jobName:
+          type: string
+          description: Name of the job to execute
+        jobType:
+          type: string
+          description: Type of job
+          enum:
+          - Rules
+          - Data Map
+          - Cube Refresh
+          - Clear Cube
+          - Refresh Database
+          - Smart Push
+          - Import Data
+          - Export Data
+          - Copy Data
+        parameters:
+          type: object
+          description: Job-specific parameters
+          additionalProperties:
+            type: string
+    JobStatus:
+      type: object
+      properties:
+        jobId:
+          type: integer
+          description: Job identifier
+        jobName:
+          type: string
+          description: Job name
+        jobType:
+          type: string
+          description: Job type
+        status:
+          type: integer
+          description: Status code (-1 processing, 0 success, >0 error)
+        descriptiveStatus:
+          type: string
+          description: Human-readable status
+          enum:
+          - Processing
+          - Completed
+          - Completed With Errors
+          - Failed
+        details:
+          type: string
+          description: Execution details
+        startTime:
+          type: string
+          format: date-time
+          description: Job start time
+        endTime:
+          type: string
+          format: date-time
+          description: Job end time
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

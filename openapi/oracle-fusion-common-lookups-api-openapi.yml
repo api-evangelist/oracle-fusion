@@ -1,0 +1,346 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Common Lookups API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Common Lookups
+  description: Manage lookup types and lookup codes
+paths:
+  /fscmRestApi/resources/11.13.18.05/commonLookups:
+    get:
+      operationId: listCommonLookups
+      summary: Oracle Fusion Cloud Applications List common lookups
+      description: Retrieve common lookup type definitions and their associated lookup codes used across Fusion Cloud applications.
+      tags:
+      - Common Lookups
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Common lookups retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/CommonLookup'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createCommonLookup
+      summary: Oracle Fusion Cloud Applications Create a common lookup
+      description: Create a new common lookup type.
+      tags:
+      - Common Lookups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonLookupCreate'
+      responses:
+        '201':
+          description: Common lookup created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonLookup'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}:
+    get:
+      operationId: getCommonLookup
+      summary: Oracle Fusion Cloud Applications Get a common lookup
+      description: Retrieve a specific common lookup type and its codes.
+      tags:
+      - Common Lookups
+      parameters:
+      - name: LookupType
+        in: path
+        required: true
+        description: Lookup type identifier
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Common lookup details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommonLookup'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateCommonLookup
+      summary: Oracle Fusion Cloud Applications Update a common lookup
+      description: Update an existing common lookup type.
+      tags:
+      - Common Lookups
+      parameters:
+      - name: LookupType
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommonLookupCreate'
+      responses:
+        '200':
+          description: Common lookup updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteCommonLookup
+      summary: Oracle Fusion Cloud Applications Delete a common lookup
+      description: Delete a common lookup type.
+      tags:
+      - Common Lookups
+      parameters:
+      - name: LookupType
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: Common lookup deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+  /fscmRestApi/resources/11.13.18.05/commonLookups/{LookupType}/child/lookupCodes:
+    get:
+      operationId: listLookupCodes
+      summary: Oracle Fusion Cloud Applications List lookup codes for a lookup type
+      description: Retrieve lookup codes belonging to a specific lookup type.
+      tags:
+      - Common Lookups
+      parameters:
+      - name: LookupType
+        in: path
+        required: true
+        schema:
+          type: string
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      responses:
+        '200':
+          description: Lookup codes retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/LookupCode'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    post:
+      operationId: createLookupCode
+      summary: Oracle Fusion Cloud Applications Create a lookup code
+      description: Create a new lookup code within a lookup type.
+      tags:
+      - Common Lookups
+      parameters:
+      - name: LookupType
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LookupCodeCreate'
+      responses:
+        '201':
+          description: Lookup code created
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  schemas:
+    LookupCodeCreate:
+      type: object
+      required:
+      - LookupCode
+      - Meaning
+      properties:
+        LookupCode:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+        EnabledFlag:
+          type: boolean
+        DisplaySequence:
+          type: integer
+    CommonLookupCreate:
+      type: object
+      required:
+      - LookupType
+      - Meaning
+      properties:
+        LookupType:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+    CommonLookup:
+      type: object
+      properties:
+        LookupType:
+          type: string
+          description: Lookup type identifier
+        Meaning:
+          type: string
+          description: Display name for the lookup type
+        Description:
+          type: string
+          description: Lookup type description
+        ModuleType:
+          type: string
+          description: Module that owns the lookup
+        CreationDate:
+          type: string
+          format: date-time
+    LookupCode:
+      type: object
+      properties:
+        LookupCode:
+          type: string
+          description: Lookup code value
+        Meaning:
+          type: string
+          description: Display meaning
+        Description:
+          type: string
+          description: Code description
+        EnabledFlag:
+          type: boolean
+          description: Whether the code is enabled
+        StartDateActive:
+          type: string
+          format: date
+          description: Start date for active period
+        EndDateActive:
+          type: string
+          format: date
+          description: End date for active period
+        DisplaySequence:
+          type: integer
+          description: Display order sequence
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

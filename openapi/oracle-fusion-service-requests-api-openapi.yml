@@ -1,0 +1,328 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Service Requests API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Service Requests
+  description: Manage customer service requests and cases
+paths:
+  /crmRestApi/resources/11.13.18.05/serviceRequests:
+    get:
+      operationId: listServiceRequests
+      summary: Oracle Fusion Cloud Applications List service requests
+      description: Retrieve customer service request records including severity, status, assignment, and resolution details.
+      tags:
+      - Service Requests
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Service requests retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ServiceRequest'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createServiceRequest
+      summary: Oracle Fusion Cloud Applications Create a service request
+      description: Create a new customer service request.
+      tags:
+      - Service Requests
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestCreate'
+      responses:
+        '201':
+          description: Service request created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceRequest'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /crmRestApi/resources/11.13.18.05/serviceRequests/{SrNumber}:
+    get:
+      operationId: getServiceRequest
+      summary: Oracle Fusion Cloud Applications Get a service request
+      description: Retrieve a specific service request.
+      tags:
+      - Service Requests
+      parameters:
+      - name: SrNumber
+        in: path
+        required: true
+        description: Service request number
+        schema:
+          type: string
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Service request details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateServiceRequest
+      summary: Oracle Fusion Cloud Applications Update a service request
+      description: Update an existing service request.
+      tags:
+      - Service Requests
+      parameters:
+      - name: SrNumber
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ServiceRequestUpdate'
+      responses:
+        '200':
+          description: Service request updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    ServiceRequestCreate:
+      type: object
+      required:
+      - Title
+      properties:
+        Title:
+          type: string
+        ProblemDescription:
+          type: string
+        AccountName:
+          type: string
+        ContactName:
+          type: string
+        Severity:
+          type: string
+          enum:
+          - Critical
+          - High
+          - Medium
+          - Low
+        Priority:
+          type: string
+        CategoryName:
+          type: string
+        ChannelType:
+          type: string
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    ServiceRequestUpdate:
+      type: object
+      properties:
+        Title:
+          type: string
+        Status:
+          type: string
+        Severity:
+          type: string
+        AssigneeName:
+          type: string
+        QueueName:
+          type: string
+    ServiceRequest:
+      type: object
+      properties:
+        SrId:
+          type: integer
+          description: Service request identifier
+        SrNumber:
+          type: string
+          description: Service request number
+        Title:
+          type: string
+          description: Service request title
+        ProblemDescription:
+          type: string
+          description: Detailed problem description
+        AccountName:
+          type: string
+          description: Customer account name
+        ContactName:
+          type: string
+          description: Primary contact name
+        Severity:
+          type: string
+          description: Severity level
+          enum:
+          - Critical
+          - High
+          - Medium
+          - Low
+        Status:
+          type: string
+          description: Service request status
+          enum:
+          - New
+          - In Progress
+          - Waiting
+          - Resolved
+          - Closed
+        Priority:
+          type: string
+          description: Priority level
+        CategoryName:
+          type: string
+          description: Category classification
+        AssigneeName:
+          type: string
+          description: Assigned agent name
+        QueueName:
+          type: string
+          description: Assigned queue
+        ChannelType:
+          type: string
+          description: Channel of origin
+          enum:
+          - Phone
+          - Email
+          - Web
+          - Chat
+          - Social
+        CreationDate:
+          type: string
+          format: date-time
+        ResolvedDate:
+          type: string
+          format: date-time
+          description: Resolution date
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

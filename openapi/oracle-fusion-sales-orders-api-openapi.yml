@@ -1,0 +1,295 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Sales Orders API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Sales Orders
+  description: Manage sales orders and order lines
+paths:
+  /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub:
+    get:
+      operationId: listSalesOrders
+      summary: Oracle Fusion Cloud Applications List sales orders
+      description: Retrieve a collection of sales orders from Order Management including order header details, order lines, and fulfillment information.
+      tags:
+      - Sales Orders
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Sales orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/SalesOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+                  totalResults:
+                    type: integer
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createSalesOrder
+      summary: Oracle Fusion Cloud Applications Create a sales order
+      description: Create a new sales order with header and order lines.
+      tags:
+      - Sales Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesOrderCreate'
+      responses:
+        '201':
+          description: Sales order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/{OrderId}:
+    get:
+      operationId: getSalesOrder
+      summary: Oracle Fusion Cloud Applications Get a sales order
+      description: Retrieve a specific sales order by identifier.
+      tags:
+      - Sales Orders
+      parameters:
+      - name: OrderId
+        in: path
+        required: true
+        description: Unique order identifier
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Sales order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateSalesOrder
+      summary: Oracle Fusion Cloud Applications Update a sales order
+      description: Update an existing sales order.
+      tags:
+      - Sales Orders
+      parameters:
+      - name: OrderId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SalesOrderUpdate'
+      responses:
+        '200':
+          description: Sales order updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    SalesOrderUpdate:
+      type: object
+      properties:
+        RequestedShipDate:
+          type: string
+          format: date
+        Status:
+          type: string
+    SalesOrder:
+      type: object
+      properties:
+        OrderId:
+          type: integer
+          description: Order header identifier
+        OrderNumber:
+          type: string
+          description: Order number
+        OrderType:
+          type: string
+          description: Order type
+        CustomerName:
+          type: string
+          description: Customer name
+        CustomerNumber:
+          type: string
+          description: Customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        OrderDate:
+          type: string
+          format: date
+          description: Order date
+        RequestedShipDate:
+          type: string
+          format: date
+          description: Requested ship date
+        TotalAmount:
+          type: number
+          format: double
+          description: Total order amount
+        CurrencyCode:
+          type: string
+          description: Order currency
+        Status:
+          type: string
+          description: Order status
+          enum:
+          - Open
+          - Booked
+          - Closed
+          - Cancelled
+          - Awaiting Shipping
+          - Awaiting Billing
+        ShipToAddress:
+          type: string
+          description: Ship-to address
+        BillToAddress:
+          type: string
+          description: Bill-to address
+        CreationDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
+    SalesOrderCreate:
+      type: object
+      required:
+      - OrderType
+      - CustomerName
+      - BusinessUnit
+      properties:
+        OrderType:
+          type: string
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        OrderDate:
+          type: string
+          format: date
+        RequestedShipDate:
+          type: string
+          format: date
+        CurrencyCode:
+          type: string
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

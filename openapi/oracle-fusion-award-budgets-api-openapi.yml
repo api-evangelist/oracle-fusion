@@ -1,0 +1,253 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Award Budgets API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Award Budgets
+  description: Manage award budget versions and lines
+paths:
+  /fscmRestApi/resources/11.13.18.05/awardBudgets:
+    get:
+      operationId: listAwardBudgets
+      summary: Oracle Fusion Cloud Applications List award budgets
+      description: Retrieve award budget versions including planning options, resources, and budget lines.
+      tags:
+      - Award Budgets
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Award budgets retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AwardBudget'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAwardBudget
+      summary: Oracle Fusion Cloud Applications Create an award budget
+      description: Create a new award budget version.
+      tags:
+      - Award Budgets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwardBudgetCreate'
+      responses:
+        '201':
+          description: Award budget created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwardBudget'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/awardBudgets/{PlanVersionId}:
+    get:
+      operationId: getAwardBudget
+      summary: Oracle Fusion Cloud Applications Get an award budget
+      description: Retrieve a specific award budget version.
+      tags:
+      - Award Budgets
+      parameters:
+      - name: PlanVersionId
+        in: path
+        required: true
+        description: Plan version identifier
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Award budget details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AwardBudget'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAwardBudget
+      summary: Oracle Fusion Cloud Applications Update an award budget
+      description: Update an existing award budget version.
+      tags:
+      - Award Budgets
+      parameters:
+      - name: PlanVersionId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwardBudgetCreate'
+      responses:
+        '200':
+          description: Award budget updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteAwardBudget
+      summary: Oracle Fusion Cloud Applications Delete an award budget
+      description: Delete an award budget version.
+      tags:
+      - Award Budgets
+      parameters:
+      - name: PlanVersionId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Award budget deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    AwardBudgetCreate:
+      type: object
+      required:
+      - AwardId
+      - BudgetName
+      properties:
+        AwardId:
+          type: integer
+        BudgetName:
+          type: string
+        TotalBudgetAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+    AwardBudget:
+      type: object
+      properties:
+        PlanVersionId:
+          type: integer
+          description: Plan version identifier
+        AwardId:
+          type: integer
+          description: Associated award identifier
+        BudgetName:
+          type: string
+          description: Budget version name
+        BudgetStatus:
+          type: string
+          description: Budget status
+          enum:
+          - Working
+          - Submitted
+          - Baselined
+          - Rejected
+        TotalBudgetAmount:
+          type: number
+          format: double
+          description: Total budget amount
+        CurrencyCode:
+          type: string
+          description: Budget currency
+        VersionNumber:
+          type: integer
+          description: Budget version number
+        CreationDate:
+          type: string
+          format: date-time
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

@@ -1,0 +1,267 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Awards API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Awards
+  description: Manage grants and awards
+paths:
+  /fscmRestApi/resources/11.13.18.05/awards:
+    get:
+      operationId: listAwards
+      summary: Oracle Fusion Cloud Applications List awards
+      description: Retrieve grant and award records including funding sources, budget periods, and personnel assignments.
+      tags:
+      - Awards
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Awards retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Award'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createAward
+      summary: Oracle Fusion Cloud Applications Create an award
+      description: Create a new grant or award record.
+      tags:
+      - Awards
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwardCreate'
+      responses:
+        '201':
+          description: Award created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Award'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/awards/{AwardId}:
+    get:
+      operationId: getAward
+      summary: Oracle Fusion Cloud Applications Get an award
+      description: Retrieve a specific award record.
+      tags:
+      - Awards
+      parameters:
+      - name: AwardId
+        in: path
+        required: true
+        description: Award unique identifier
+        schema:
+          type: integer
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/expand'
+      responses:
+        '200':
+          description: Award details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Award'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateAward
+      summary: Oracle Fusion Cloud Applications Update an award
+      description: Update an existing award record.
+      tags:
+      - Awards
+      parameters:
+      - name: AwardId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AwardCreate'
+      responses:
+        '200':
+          description: Award updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  schemas:
+    AwardCreate:
+      type: object
+      required:
+      - AwardName
+      - SponsorName
+      - StartDate
+      properties:
+        AwardName:
+          type: string
+        AwardType:
+          type: string
+        SponsorName:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        TotalFunding:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        PrincipalInvestigator:
+          type: string
+    Award:
+      type: object
+      properties:
+        AwardId:
+          type: integer
+          description: Award identifier
+        AwardNumber:
+          type: string
+          description: Award number
+        AwardName:
+          type: string
+          description: Award name
+        AwardType:
+          type: string
+          description: Type of award
+        SponsorName:
+          type: string
+          description: Sponsor or funding agency name
+        AwardStatus:
+          type: string
+          description: Award status
+          enum:
+          - Active
+          - On Hold
+          - Closed
+          - At Risk
+        StartDate:
+          type: string
+          format: date
+          description: Award start date
+        EndDate:
+          type: string
+          format: date
+          description: Award end date
+        TotalFunding:
+          type: number
+          format: double
+          description: Total funding amount
+        CurrencyCode:
+          type: string
+          description: Funding currency
+        PrincipalInvestigator:
+          type: string
+          description: Principal investigator name
+        CreationDate:
+          type: string
+          format: date-time
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

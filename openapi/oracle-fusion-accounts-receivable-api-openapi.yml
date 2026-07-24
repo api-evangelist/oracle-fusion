@@ -1,0 +1,370 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts Receivable API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Accounts Receivable
+  description: Manage receivables transactions and receipts
+paths:
+  /fscmRestApi/resources/11.13.18.05/receivablesInvoices:
+    get:
+      operationId: listReceivablesInvoices
+      summary: Oracle Fusion Cloud Applications List receivables invoices
+      description: Retrieve accounts receivable invoices including debit memos, credit memos, and standard invoices.
+      tags:
+      - Accounts Receivable
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/orderBy'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Receivables invoices retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ReceivablesInvoice'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createReceivablesInvoice
+      summary: Oracle Fusion Cloud Applications Create a receivables invoice
+      description: Create a new accounts receivable transaction.
+      tags:
+      - Accounts Receivable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReceivablesInvoiceCreate'
+      responses:
+        '201':
+          description: Receivables invoice created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReceivablesInvoice'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/standardReceipts:
+    get:
+      operationId: listReceipts
+      summary: Oracle Fusion Cloud Applications List standard receipts
+      description: Retrieve standard receipt records for accounts receivable payments received from customers.
+      tags:
+      - Accounts Receivable
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Receipts retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/StandardReceipt'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createReceipt
+      summary: Oracle Fusion Cloud Applications Create a standard receipt
+      description: Create a new standard receipt for an accounts receivable payment.
+      tags:
+      - Accounts Receivable
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StandardReceiptCreate'
+      responses:
+        '201':
+          description: Receipt created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StandardReceipt'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    StandardReceiptCreate:
+      type: object
+      required:
+      - ReceiptAmount
+      - CurrencyCode
+      - CustomerName
+      - BusinessUnit
+      properties:
+        ReceiptNumber:
+          type: string
+        ReceiptAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        ReceiptDate:
+          type: string
+          format: date
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        PaymentMethod:
+          type: string
+    StandardReceipt:
+      type: object
+      properties:
+        ReceiptId:
+          type: integer
+          description: Receipt identifier
+        ReceiptNumber:
+          type: string
+          description: Receipt number
+        ReceiptAmount:
+          type: number
+          format: double
+          description: Receipt amount
+        CurrencyCode:
+          type: string
+          description: Receipt currency
+        ReceiptDate:
+          type: string
+          format: date
+          description: Receipt date
+        CustomerName:
+          type: string
+          description: Customer name
+        CustomerNumber:
+          type: string
+          description: Customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        PaymentMethod:
+          type: string
+          description: Receipt payment method
+        Status:
+          type: string
+          description: Receipt status
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    ReceivablesInvoiceCreate:
+      type: object
+      required:
+      - TransactionNumber
+      - TransactionType
+      - BillToCustomerName
+      - BusinessUnit
+      properties:
+        TransactionNumber:
+          type: string
+        TransactionType:
+          type: string
+        TransactionDate:
+          type: string
+          format: date
+        BillToCustomerName:
+          type: string
+        BillToCustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        TransactionAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        PaymentTerms:
+          type: string
+    ReceivablesInvoice:
+      type: object
+      properties:
+        TransactionId:
+          type: integer
+          description: Transaction identifier
+        TransactionNumber:
+          type: string
+          description: Transaction number
+        TransactionType:
+          type: string
+          description: Transaction type (Invoice, Credit Memo, Debit Memo)
+        TransactionDate:
+          type: string
+          format: date
+          description: Transaction date
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date
+        BillToCustomerName:
+          type: string
+          description: Bill-to customer name
+        BillToCustomerNumber:
+          type: string
+          description: Bill-to customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        TransactionAmount:
+          type: number
+          format: double
+          description: Transaction amount
+        CurrencyCode:
+          type: string
+          description: Transaction currency
+        BalanceDue:
+          type: number
+          format: double
+          description: Remaining balance due
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        DueDate:
+          type: string
+          format: date
+          description: Payment due date
+        Status:
+          type: string
+          description: Transaction status
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html

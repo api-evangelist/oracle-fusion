@@ -1,0 +1,257 @@
+openapi: 3.1.0
+info:
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Change Orders API
+  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  version: 11.13.18.05
+  contact:
+    name: Oracle Support
+    url: https://support.oracle.com
+    email: support@oracle.com
+  license:
+    name: Oracle Cloud Services Agreement
+    url: https://www.oracle.com/corporate/contracts/cloud-services/
+  termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
+servers:
+- url: https://{instance}.oraclecloud.com
+  description: Oracle Fusion Cloud Instance
+  variables:
+    instance:
+      default: servername
+      description: Your Oracle Cloud instance identifier
+security:
+- bearerAuth: []
+tags:
+- name: Change Orders
+  description: Manage project change orders
+paths:
+  /fscmRestApi/resources/11.13.18.05/changeOrders:
+    get:
+      operationId: listChangeOrders
+      summary: Oracle Fusion Cloud Applications List change orders
+      description: Retrieve project change order records including change impacts, participants, and approval status.
+      tags:
+      - Change Orders
+      parameters:
+      - $ref: '#/components/parameters/limit'
+      - $ref: '#/components/parameters/offset'
+      - $ref: '#/components/parameters/fields'
+      - $ref: '#/components/parameters/q'
+      - $ref: '#/components/parameters/finder'
+      responses:
+        '200':
+          description: Change orders retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  items:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ChangeOrder'
+                  count:
+                    type: integer
+                  hasMore:
+                    type: boolean
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+    post:
+      operationId: createChangeOrder
+      summary: Oracle Fusion Cloud Applications Create a change order
+      description: Create a new project change order.
+      tags:
+      - Change Orders
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeOrderCreate'
+      responses:
+        '201':
+          description: Change order created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangeOrder'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+  /fscmRestApi/resources/11.13.18.05/changeOrders/{ChangeDocumentId}:
+    get:
+      operationId: getChangeOrder
+      summary: Oracle Fusion Cloud Applications Get a change order
+      description: Retrieve a specific change order record.
+      tags:
+      - Change Orders
+      parameters:
+      - name: ChangeDocumentId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Change order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChangeOrder'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    patch:
+      operationId: updateChangeOrder
+      summary: Oracle Fusion Cloud Applications Update a change order
+      description: Update an existing change order.
+      tags:
+      - Change Orders
+      parameters:
+      - name: ChangeDocumentId
+        in: path
+        required: true
+        schema:
+          type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangeOrderCreate'
+      responses:
+        '200':
+          description: Change order updated
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+    delete:
+      operationId: deleteChangeOrder
+      summary: Oracle Fusion Cloud Applications Delete a change order
+      description: Delete an existing change order.
+      tags:
+      - Change Orders
+      parameters:
+      - name: ChangeDocumentId
+        in: path
+        required: true
+        schema:
+          type: integer
+      responses:
+        '204':
+          description: Change order deleted
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '404':
+          $ref: '#/components/responses/NotFound'
+components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  schemas:
+    ChangeOrder:
+      type: object
+      properties:
+        ChangeDocumentId:
+          type: integer
+          description: Change document identifier
+        ChangeDocumentNumber:
+          type: string
+          description: Change document number
+        ChangeDocumentName:
+          type: string
+          description: Change document name
+        ProjectId:
+          type: integer
+          description: Associated project identifier
+        ProjectNumber:
+          type: string
+          description: Associated project number
+        Description:
+          type: string
+          description: Change order description
+        Status:
+          type: string
+          description: Change order status
+          enum:
+          - Draft
+          - Submitted
+          - Approved
+          - Rejected
+          - Applied
+        ImpactType:
+          type: string
+          description: Type of impact (Cost, Schedule, Scope)
+        RequestedBy:
+          type: string
+          description: Requester name
+        CreationDate:
+          type: string
+          format: date-time
+    ChangeOrderCreate:
+      type: object
+      required:
+      - ChangeDocumentName
+      - ProjectId
+      properties:
+        ChangeDocumentName:
+          type: string
+        ProjectId:
+          type: integer
+        Description:
+          type: string
+        ImpactType:
+          type: string
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    basicAuth:
+      type: http
+      scheme: basic
+externalDocs:
+  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
