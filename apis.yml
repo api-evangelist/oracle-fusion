@@ -6,218 +6,2942 @@ description: >-
   management (EPM) solutions. Oracle Fusion Cloud provides REST APIs across all application pillars, enabling
   programmatic access to business data and processes for integration, automation, and extension of cloud applications.
 type: Index
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oracle-fusion.png
 created: '2024-01-15'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 url: https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
 apis:
-  - name: Oracle Fusion ERP REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud ERP, providing programmatic access to financials, procurement, project
-      management, and risk management capabilities. The API supports viewing and managing financial data including
-      general ledger, accounts payable, accounts receivable, fixed assets, and cash management.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/financials/
-    baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
-    tags:
-      - ERP
-      - Financials
-      - Procurement
-      - Projects
-      - Risk Management
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
-      - type: OpenAPI
-        url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/api-rest-api.html
-      - type: Authentication
-        url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
-      - type: ChangeLog
-        url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-erp-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion HCM REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Human Capital Management, enabling integration with core HR, talent management,
-      workforce management, and payroll systems. The API provides access to employee records, absence management,
-      benefits, compensation, recruiting, and learning resources.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/human-resources/
-    baseURL: https://{instance}.oraclecloud.com/hcmRestApi/
-    tags:
-      - HCM
-      - Human Resources
-      - Payroll
-      - Talent Management
-      - Workforce
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
-      - type: OpenAPI
-        url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/api-rest-api.html
-      - type: Authentication
-        url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
-      - type: ChangeLog
-        url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-hcm-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion SCM REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Supply Chain Management, providing access to inventory, order management,
-      procurement, logistics, and manufacturing capabilities. The API enables integration with supply chain planning,
-      product lifecycle management, service logistics, and supply chain execution processes.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/supply-chain-management/
-    baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
-    tags:
-      - Inventory
-      - Logistics
-      - Manufacturing
-      - Order Management
-      - SCM
-      - Supply Chain
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
-      - type: OpenAPI
-        url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/api-rest-api.html
-      - type: Authentication
-        url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
-      - type: ChangeLog
-        url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-scm-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion CX Sales and Fusion Service REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Customer Experience, enabling integration with sales force automation, fusion
-      service, customer data management, and commerce applications. The API provides access to accounts, contacts,
-      opportunities, leads, service requests, activities, and other CRM resources.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/sales/
-    baseURL: https://{instance}.oraclecloud.com/crmRestApi/
-    tags:
-      - Commerce
-      - Customer Experience
-      - CX
-      - Marketing
-      - Sales
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
-      - type: OpenAPI
-        url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-api.html
-      - type: Authentication
-        url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/sales/index.html
-      - type: ChangeLog
-        url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-cx-sales-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion Common Features REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as
-      attachments, flexfields, lookup types, roles, users, security, and approval workflows used across all Fusion Cloud
-      application pillars. This is the foundational API that supports cross-pillar integration capabilities.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/applications-common/
-    baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
-    tags:
-      - Attachments
-      - Common
-      - Flexfields
-      - Roles
-      - Security
-      - Users
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-common-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion Project Management REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Project Management, enabling integration with project planning, project costing,
-      project billing, grants management, and project execution capabilities. The API supports managing project
-      resources, tasks, budgets, and deliverables.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/project-management/
-    baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
-    tags:
-      - Grants
-      - Project Billing
-      - Project Costing
-      - Project Management
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
-      - type: ChangeLog
-        url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-project-management-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
-  - name: Oracle Fusion EPM REST API
-    description: >-
-      REST APIs for Oracle Fusion Cloud Enterprise Performance Management, enabling integration with planning,
-      budgeting, forecasting, financial consolidation, account reconciliation, tax reporting, and narrative reporting
-      capabilities. The EPM REST APIs allow infrastructure consultants to integrate environments with Oracle EPM Cloud
-      services.
-    image: https://www.oracle.com/a/ocom/img/oracle-logo.svg
-    humanURL: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/
-    baseURL: https://{instance}.oraclecloud.com/HyperionPlanning/rest/
-    tags:
-      - Budgeting
-      - Consolidation
-      - EPM
-      - Financial Close
-      - Planning
-    properties:
-      - type: Documentation
-        url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
-      - type: GettingStarted
-        url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
-      - type: OpenAPI
-        url: openapi/oracle-fusion-epm-openapi.yml
-    contact:
-      - FN: Oracle Support
-        email: support@oracle.com
-        url: https://support.oracle.com
+- aid: oracle-fusion:oracle-fusion-absences-api
+  name: Oracle Fusion Cloud Applications Absences API
+  description: Absence management and leave tracking
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Absences
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-absences-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-access-groups-api
+  name: Oracle Fusion Cloud Applications Access Groups API
+  description: Manage data access groups and rules
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Access Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-access-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-accounts-api
+  name: Oracle Fusion Cloud Applications Accounts API
+  description: Manage customer and prospect accounts
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-accounts-receivable-api
+  name: Oracle Fusion Cloud Applications Accounts Receivable API
+  description: Manage receivables transactions and receipts
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Accounts Receivable
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-accounts-receivable-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-activities-api
+  name: Oracle Fusion Cloud Applications Activities API
+  description: Manage tasks, appointments, and call logs
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Activities
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-activities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-announcements-api
+  name: Oracle Fusion Cloud Applications Announcements API
+  description: Manage application announcements
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Announcements
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-announcements-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-applications-api
+  name: Oracle Fusion Cloud Applications Applications API
+  description: Manage EPM application metadata and dimensions
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-applications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-assignments-api
+  name: Oracle Fusion Cloud Applications Assignments API
+  description: Manage work assignments and employment details
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Assignments
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-assignments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-audit-api
+  name: Oracle Fusion Cloud Applications Audit API
+  description: Audit trail and setup operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Audit
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-audit-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-award-budgets-api
+  name: Oracle Fusion Cloud Applications Award Budgets API
+  description: Manage award budget versions and lines
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Award Budgets
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-award-budgets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-awards-api
+  name: Oracle Fusion Cloud Applications Awards API
+  description: Manage grants and awards
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Awards
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-awards-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-budgetary-control-api
+  name: Oracle Fusion Cloud Applications Budgetary Control API
+  description: Budget transactions and validation
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Budgetary Control
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-budgetary-control-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-cash-management-api
+  name: Oracle Fusion Cloud Applications Cash Management API
+  description: Bank accounts, transfers, and cash pools
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Cash Management
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-cash-management-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-change-orders-api
+  name: Oracle Fusion Cloud Applications Change Orders API
+  description: Manage project change orders
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Change Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-change-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-common-lookups-api
+  name: Oracle Fusion Cloud Applications Common Lookups API
+  description: Manage lookup types and lookup codes
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Common Lookups
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-common-lookups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-compensation-api
+  name: Oracle Fusion Cloud Applications Compensation API
+  description: Salary and compensation management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Compensation
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-compensation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-contacts-api
+  name: Oracle Fusion Cloud Applications Contacts API
+  description: Manage contact records associated with accounts
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-currency-rates-api
+  name: Oracle Fusion Cloud Applications Currency Rates API
+  description: Currency rate management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Currency Rates
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-currency-rates-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-data-management-api
+  name: Oracle Fusion Cloud Applications Data Management API
+  description: Data import, export, and integration operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Data Management
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-data-management-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-deliverables-api
+  name: Oracle Fusion Cloud Applications Deliverables API
+  description: Manage project deliverables
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Deliverables
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-deliverables-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-erp-integrations-api
+  name: Oracle Fusion Cloud Applications ERP Integrations API
+  description: Bulk data import and export operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - ERP Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-erp-integrations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-expenditure-types-api
+  name: Oracle Fusion Cloud Applications Expenditure Types API
+  description: Manage expenditure type definitions
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Expenditure Types
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-expenditure-types-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-expense-reports-api
+  name: Oracle Fusion Cloud Applications Expense Reports API
+  description: Create and manage employee expense reports
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Expense Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-expense-reports-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-features-api
+  name: Oracle Fusion Cloud Applications Features API
+  description: Manage application features
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Features
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-features-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-financial-project-plans-api
+  name: Oracle Fusion Cloud Applications Financial Project Plans API
+  description: Manage financial plans, budgets, and forecasts
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Financial Project Plans
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-financial-project-plans-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-general-ledger-api
+  name: Oracle Fusion Cloud Applications General Ledger API
+  description: General ledger journal and period operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - General Ledger
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-general-ledger-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-inventory-api
+  name: Oracle Fusion Cloud Applications Inventory API
+  description: Inventory management and on-hand quantities
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Inventory
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-inventory-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-invoices-api
+  name: Oracle Fusion Cloud Applications Invoices API
+  description: Manage accounts payable invoices
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-items-api
+  name: Oracle Fusion Cloud Applications Items API
+  description: Product and item master management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Items
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-items-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-jobs-api
+  name: Oracle Fusion Cloud Applications Jobs API
+  description: Manage EPM job execution and monitoring
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Jobs
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-jobs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-leads-api
+  name: Oracle Fusion Cloud Applications Leads API
+  description: Manage sales leads and qualification
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Leads
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-leads-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-learning-api
+  name: Oracle Fusion Cloud Applications Learning API
+  description: Learning records and course management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Learning
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-learning-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-manage-tasks-api
+  name: Oracle Fusion Cloud Applications Manage Tasks API
+  description: Manage BPM workflow tasks and approvals
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Manage Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-manage-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-migration-api
+  name: Oracle Fusion Cloud Applications Migration API
+  description: Application migration and lifecycle management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Migration
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-migration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-opportunities-api
+  name: Oracle Fusion Cloud Applications Opportunities API
+  description: Manage sales opportunities and pipeline
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Opportunities
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-opportunities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-payments-api
+  name: Oracle Fusion Cloud Applications Payments API
+  description: Manage payment processing
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-payroll-api
+  name: Oracle Fusion Cloud Applications Payroll API
+  description: Payroll processing and results
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Payroll
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-payroll-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-persons-api
+  name: Oracle Fusion Cloud Applications Persons API
+  description: Manage person records
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Persons
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-persons-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-planning-api
+  name: Oracle Fusion Cloud Applications Planning API
+  description: Planning application data and metadata operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Planning
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-planning-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-project-tasks-api
+  name: Oracle Fusion Cloud Applications Project Tasks API
+  description: Manage project task hierarchies and assignments
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Project Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-project-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-projects-api
+  name: Oracle Fusion Cloud Applications Projects API
+  description: Manage project definitions and attributes
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Projects
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-projects-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-purchase-orders-api
+  name: Oracle Fusion Cloud Applications Purchase Orders API
+  description: Manage purchase orders and procurement
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Purchase Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-purchase-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-recruiting-api
+  name: Oracle Fusion Cloud Applications Recruiting API
+  description: Job requisitions and candidate management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Recruiting
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-recruiting-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-roles-api
+  name: Oracle Fusion Cloud Applications Roles API
+  description: Manage security roles
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-roles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-sales-orders-api
+  name: Oracle Fusion Cloud Applications Sales Orders API
+  description: Manage sales orders and order lines
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Sales Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-sales-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-scheduled-processes-api
+  name: Oracle Fusion Cloud Applications Scheduled Processes API
+  description: Manage and monitor scheduled processes
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Scheduled Processes
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-scheduled-processes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-service-requests-api
+  name: Oracle Fusion Cloud Applications Service Requests API
+  description: Manage customer service requests and cases
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Service Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-service-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-shipments-api
+  name: Oracle Fusion Cloud Applications Shipments API
+  description: Shipping and receiving operations
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Shipments
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-shipments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-suppliers-api
+  name: Oracle Fusion Cloud Applications Suppliers API
+  description: Supplier and vendor management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Suppliers
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-suppliers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-talent-profiles-api
+  name: Oracle Fusion Cloud Applications Talent Profiles API
+  description: Talent profiles, skills, and competencies
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Talent Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-talent-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-work-orders-api
+  name: Oracle Fusion Cloud Applications Work Orders API
+  description: Manufacturing work order management
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Work Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-work-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
+- aid: oracle-fusion:oracle-fusion-workers-api
+  name: Oracle Fusion Cloud Applications Workers API
+  description: Manage worker (employee and contingent worker) records
+  humanURL: https://docs.oracle.com/en/cloud/saas/financials/
+  baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
+  tags:
+  - Workers
+  properties:
+  - type: OpenAPI
+    url: openapi/oracle-fusion-workers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/financials/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
+  - type: Authentication
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html
+  - type: Authentication
+    url: https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/sales/index.html
+  - type: ChangeLog
+    url: https://docs.oracle.com/en/cloud/saas/readiness/sales.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html
+  - type: Documentation
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
+  - type: Documentation
+    url: >-
+      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+  - type: GettingStarted
+    url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/oracle-fusion-cloud-applications/overview
   - type: AgenticAccess
     url: agentic-access/oracle-fusion-agentic-access.yml
   - type: DomainSecurity
