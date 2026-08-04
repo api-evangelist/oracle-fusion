@@ -1,0 +1,1002 @@
+{
+  "info": {
+    "_postman_id": "e1a6ed15-515e-4ce5-8c9b-b311ab45883f",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Contacts API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:44.000Z",
+    "updatedAt": "2026-07-28T02:28:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e1a6ed15-515e-4ce5-8c9b-b311ab45883f"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "contacts",
+                  "item": [
+                    {
+                      "name": "{PartyNumber}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a contact",
+                          "id": "31413b4c-6fcb-456b-b00b-162e9593819b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber?fields=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts",
+                                ":PartyNumber"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1b2f272d-b00b-457f-873d-aee0be6d60cc",
+                                  "key": "PartyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific contact record."
+                          },
+                          "response": [
+                            {
+                              "id": "d945877e-562b-4d2a-81f5-727eecea2d5b",
+                              "name": "Contact details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"PartyId\": \"<integer>\",\n  \"PartyNumber\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"FullName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"OwnerName\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-d945877e-562b-4d2a-81f5-727eecea2d5b"
+                            },
+                            {
+                              "id": "b9c311d8-2ba8-4fbb-8072-e829b4c39f0a",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-b9c311d8-2ba8-4fbb-8072-e829b4c39f0a"
+                            },
+                            {
+                              "id": "a3de4ec4-40f9-4024-bd22-0f5e6b12086b",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-a3de4ec4-40f9-4024-bd22-0f5e6b12086b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-31413b4c-6fcb-456b-b00b-162e9593819b"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a contact",
+                          "id": "56976553-a3b9-4fd7-a351-1de3d15ed729",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts",
+                                ":PartyNumber"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "a7bdfbe3-e48b-4616-8d45-6e5a93a13177",
+                                  "key": "PartyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing contact record."
+                          },
+                          "response": [
+                            {
+                              "id": "503be013-d29b-47e7-baa6-da9dcfb57b8b",
+                              "name": "Contact updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-503be013-d29b-47e7-baa6-da9dcfb57b8b"
+                            },
+                            {
+                              "id": "4e667e62-ea35-43a1-b8d2-da823b68115f",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-4e667e62-ea35-43a1-b8d2-da823b68115f"
+                            },
+                            {
+                              "id": "2ad57f7d-96da-44ac-a9ee-3e44e563ad36",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-2ad57f7d-96da-44ac-a9ee-3e44e563ad36"
+                            },
+                            {
+                              "id": "b29ec637-0a57-4764-bb21-17c14b7e4494",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "contacts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:44.000Z",
+                              "updatedAt": "2026-07-28T02:28:44.000Z",
+                              "uid": "35240-b29ec637-0a57-4764-bb21-17c14b7e4494"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-56976553-a3b9-4fd7-a351-1de3d15ed729"
+                        }
+                      ],
+                      "id": "e0291ef0-0ad9-4b65-99d1-4d41d81fb8ad",
+                      "createdAt": "2026-07-28T02:28:44.000Z",
+                      "updatedAt": "2026-07-28T02:28:44.000Z",
+                      "uid": "35240-e0291ef0-0ad9-4b65-99d1-4d41d81fb8ad"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List contacts",
+                      "id": "13ea3717-3cc9-4ab3-bf14-31d260026631",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "contacts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Fields to sort by with optional :asc or :desc direction",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve contact records associated with customer accounts."
+                      },
+                      "response": [
+                        {
+                          "id": "1258bf9b-fe16-4b24-9f6a-4e92613b3eb5",
+                          "name": "Contacts retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PartyId\": \"<integer>\",\n      \"PartyNumber\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"FullName\": \"<string>\",\n      \"JobTitle\": \"<string>\",\n      \"EmailAddress\": \"<email>\",\n      \"WorkPhoneNumber\": \"<string>\",\n      \"MobilePhoneNumber\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"AccountPartyNumber\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"PartyId\": \"<integer>\",\n      \"PartyNumber\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"FullName\": \"<string>\",\n      \"JobTitle\": \"<string>\",\n      \"EmailAddress\": \"<email>\",\n      \"WorkPhoneNumber\": \"<string>\",\n      \"MobilePhoneNumber\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"AccountPartyNumber\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-1258bf9b-fe16-4b24-9f6a-4e92613b3eb5"
+                        },
+                        {
+                          "id": "a1845ce3-7827-453e-bf63-53b1203efede",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-a1845ce3-7827-453e-bf63-53b1203efede"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:44.000Z",
+                      "updatedAt": "2026-07-28T02:28:44.000Z",
+                      "uid": "35240-13ea3717-3cc9-4ab3-bf14-31d260026631"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a contact",
+                      "id": "4544e357-b45c-4432-a7a7-c6bf7c596ec9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "contacts"
+                          ]
+                        },
+                        "description": "Create a new contact record."
+                      },
+                      "response": [
+                        {
+                          "id": "0f0fe6f5-bbf3-4edf-b38b-70d7c7da4c53",
+                          "name": "Contact created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"PartyId\": \"<integer>\",\n  \"PartyNumber\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"FullName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"OwnerName\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-0f0fe6f5-bbf3-4edf-b38b-70d7c7da4c53"
+                        },
+                        {
+                          "id": "caabf107-4566-4526-ac76-f45ed529c91b",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-caabf107-4566-4526-ac76-f45ed529c91b"
+                        },
+                        {
+                          "id": "5a385a8a-1ca4-47b7-a801-6fa094c65aa8",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"JobTitle\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"WorkPhoneNumber\": \"<string>\",\n  \"MobilePhoneNumber\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/contacts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "contacts"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:44.000Z",
+                          "updatedAt": "2026-07-28T02:28:44.000Z",
+                          "uid": "35240-5a385a8a-1ca4-47b7-a801-6fa094c65aa8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:44.000Z",
+                      "updatedAt": "2026-07-28T02:28:44.000Z",
+                      "uid": "35240-4544e357-b45c-4432-a7a7-c6bf7c596ec9"
+                    }
+                  ],
+                  "id": "03b5c711-47a9-4fcb-8082-c869568c2f05",
+                  "createdAt": "2026-07-28T02:28:44.000Z",
+                  "updatedAt": "2026-07-28T02:28:44.000Z",
+                  "uid": "35240-03b5c711-47a9-4fcb-8082-c869568c2f05"
+                }
+              ],
+              "id": "ca5c8735-9422-414d-9040-e090415b5140",
+              "createdAt": "2026-07-28T02:28:44.000Z",
+              "updatedAt": "2026-07-28T02:28:44.000Z",
+              "uid": "35240-ca5c8735-9422-414d-9040-e090415b5140"
+            }
+          ],
+          "id": "56f286d9-510e-4a47-822f-97bba51621bf",
+          "createdAt": "2026-07-28T02:28:44.000Z",
+          "updatedAt": "2026-07-28T02:28:44.000Z",
+          "uid": "35240-56f286d9-510e-4a47-822f-97bba51621bf"
+        }
+      ],
+      "id": "a0e1ce83-172c-4e48-8cf4-fa03a6c5f394",
+      "createdAt": "2026-07-28T02:28:44.000Z",
+      "updatedAt": "2026-07-28T02:28:44.000Z",
+      "uid": "35240-a0e1ce83-172c-4e48-8cf4-fa03a6c5f394"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

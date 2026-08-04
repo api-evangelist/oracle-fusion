@@ -1,0 +1,485 @@
+{
+  "info": {
+    "_postman_id": "09f4bde1-43b9-4134-9390-7fe50ebac7cb",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Budgetary Control API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:38.000Z",
+    "updatedAt": "2026-07-28T02:28:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-09f4bde1-43b9-4134-9390-7fe50ebac7cb"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "budgetaryControlBudgetTransactions",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List budget transactions",
+                      "id": "73daa7be-e636-4ed7-896c-85f186c3aeb0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions?limit=25&offset=0&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "budgetaryControlBudgetTransactions"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve budgetary control budget transactions and validation results."
+                      },
+                      "response": [
+                        {
+                          "id": "859c3e0d-d05d-43c6-a9a9-008dbaeeb489",
+                          "name": "Budget transactions retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions?limit=25&offset=0&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "budgetaryControlBudgetTransactions"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"BudgetTransactionId\": \"<integer>\",\n      \"BudgetName\": \"<string>\",\n      \"ControlBudgetName\": \"<string>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"BudgetAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"<string>\"\n    },\n    {\n      \"BudgetTransactionId\": \"<integer>\",\n      \"BudgetName\": \"<string>\",\n      \"ControlBudgetName\": \"<string>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"BudgetAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:39.000Z",
+                          "updatedAt": "2026-07-28T02:28:39.000Z",
+                          "uid": "35240-859c3e0d-d05d-43c6-a9a9-008dbaeeb489"
+                        },
+                        {
+                          "id": "dc5569c4-e04f-4846-bc5a-f783f388fe90",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions?limit=25&offset=0&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "budgetaryControlBudgetTransactions"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:39.000Z",
+                          "updatedAt": "2026-07-28T02:28:39.000Z",
+                          "uid": "35240-dc5569c4-e04f-4846-bc5a-f783f388fe90"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:39.000Z",
+                      "updatedAt": "2026-07-28T02:28:39.000Z",
+                      "uid": "35240-73daa7be-e636-4ed7-896c-85f186c3aeb0"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a budget transaction",
+                      "id": "45ea2bb5-97b4-454e-a6b8-fc5247c4c83c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"BudgetName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"PeriodName\": \"<string>\",\n  \"BudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ControlBudgetName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "budgetaryControlBudgetTransactions"
+                          ]
+                        },
+                        "description": "Create budget entries and perform budgetary control validation."
+                      },
+                      "response": [
+                        {
+                          "id": "bd85fba3-7d5b-4b98-8e3f-f08374c02308",
+                          "name": "Budget transaction created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"BudgetName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"PeriodName\": \"<string>\",\n  \"BudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ControlBudgetName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "budgetaryControlBudgetTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"BudgetTransactionId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"ControlBudgetName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"PeriodName\": \"<string>\",\n  \"BudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:39.000Z",
+                          "updatedAt": "2026-07-28T02:28:39.000Z",
+                          "uid": "35240-bd85fba3-7d5b-4b98-8e3f-f08374c02308"
+                        },
+                        {
+                          "id": "6e74ffa5-e1c5-4186-9bbd-64a951900564",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"BudgetName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"PeriodName\": \"<string>\",\n  \"BudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ControlBudgetName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "budgetaryControlBudgetTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:39.000Z",
+                          "updatedAt": "2026-07-28T02:28:39.000Z",
+                          "uid": "35240-6e74ffa5-e1c5-4186-9bbd-64a951900564"
+                        },
+                        {
+                          "id": "fe0bd402-6f8b-443a-8732-35003ad73c3d",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"BudgetName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"PeriodName\": \"<string>\",\n  \"BudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ControlBudgetName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "budgetaryControlBudgetTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:39.000Z",
+                          "updatedAt": "2026-07-28T02:28:39.000Z",
+                          "uid": "35240-fe0bd402-6f8b-443a-8732-35003ad73c3d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:39.000Z",
+                      "updatedAt": "2026-07-28T02:28:39.000Z",
+                      "uid": "35240-45ea2bb5-97b4-454e-a6b8-fc5247c4c83c"
+                    }
+                  ],
+                  "id": "3036744b-1de9-4af6-8425-6d47f6a482a0",
+                  "createdAt": "2026-07-28T02:28:39.000Z",
+                  "updatedAt": "2026-07-28T02:28:39.000Z",
+                  "uid": "35240-3036744b-1de9-4af6-8425-6d47f6a482a0"
+                }
+              ],
+              "id": "cee1253e-cf63-4ba3-95e8-a69d9a5c638c",
+              "createdAt": "2026-07-28T02:28:39.000Z",
+              "updatedAt": "2026-07-28T02:28:39.000Z",
+              "uid": "35240-cee1253e-cf63-4ba3-95e8-a69d9a5c638c"
+            }
+          ],
+          "id": "59b2d8be-d286-4a14-ace6-9a4b0f3008e6",
+          "createdAt": "2026-07-28T02:28:39.000Z",
+          "updatedAt": "2026-07-28T02:28:39.000Z",
+          "uid": "35240-59b2d8be-d286-4a14-ace6-9a4b0f3008e6"
+        }
+      ],
+      "id": "9c62e690-14f9-4ae5-996a-92b49f0f6027",
+      "createdAt": "2026-07-28T02:28:39.000Z",
+      "updatedAt": "2026-07-28T02:28:39.000Z",
+      "uid": "35240-9c62e690-14f9-4ae5-996a-92b49f0f6027"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

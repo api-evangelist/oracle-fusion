@@ -1,0 +1,954 @@
+{
+  "info": {
+    "_postman_id": "61982322-aecb-401a-ad81-2a50ed8379d3",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts Receivable API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:09.000Z",
+    "updatedAt": "2026-07-28T02:28:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-61982322-aecb-401a-ad81-2a50ed8379d3"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "receivablesInvoices",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List receivables invoices",
+                      "id": "4cf3b427-3696-4fc2-867d-bf3f692b79f0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "receivablesInvoices"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve accounts receivable invoices including debit memos, credit memos, and standard invoices."
+                      },
+                      "response": [
+                        {
+                          "id": "12a6b5f8-652b-4c61-9e4e-85b5996abe9d",
+                          "name": "Receivables invoices retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "receivablesInvoices"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"TransactionId\": \"<integer>\",\n      \"TransactionNumber\": \"<string>\",\n      \"TransactionType\": \"<string>\",\n      \"TransactionDate\": \"<date>\",\n      \"AccountingDate\": \"<date>\",\n      \"BillToCustomerName\": \"<string>\",\n      \"BillToCustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"TransactionAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"BalanceDue\": \"<double>\",\n      \"PaymentTerms\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"Status\": \"<string>\"\n    },\n    {\n      \"TransactionId\": \"<integer>\",\n      \"TransactionNumber\": \"<string>\",\n      \"TransactionType\": \"<string>\",\n      \"TransactionDate\": \"<date>\",\n      \"AccountingDate\": \"<date>\",\n      \"BillToCustomerName\": \"<string>\",\n      \"BillToCustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"TransactionAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"BalanceDue\": \"<double>\",\n      \"PaymentTerms\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"Status\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-12a6b5f8-652b-4c61-9e4e-85b5996abe9d"
+                        },
+                        {
+                          "id": "75e0e2e9-02ad-416b-a444-b04a2ee79a94",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "receivablesInvoices"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-75e0e2e9-02ad-416b-a444-b04a2ee79a94"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:10.000Z",
+                      "updatedAt": "2026-07-28T02:28:10.000Z",
+                      "uid": "35240-4cf3b427-3696-4fc2-867d-bf3f692b79f0"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a receivables invoice",
+                      "id": "8b815257-5fe5-4bb6-9aad-aa15ffaafc96",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"TransactionNumber\": \"<string>\",\n  \"TransactionType\": \"<string>\",\n  \"BillToCustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TransactionDate\": \"<date>\",\n  \"BillToCustomerNumber\": \"<string>\",\n  \"TransactionAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "receivablesInvoices"
+                          ]
+                        },
+                        "description": "Create a new accounts receivable transaction."
+                      },
+                      "response": [
+                        {
+                          "id": "58cca4d7-81a6-4bb0-90b9-7e426bbf02f8",
+                          "name": "Receivables invoice created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionNumber\": \"<string>\",\n  \"TransactionType\": \"<string>\",\n  \"BillToCustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TransactionDate\": \"<date>\",\n  \"BillToCustomerNumber\": \"<string>\",\n  \"TransactionAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "receivablesInvoices"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"TransactionId\": \"<integer>\",\n  \"TransactionNumber\": \"<string>\",\n  \"TransactionType\": \"<string>\",\n  \"TransactionDate\": \"<date>\",\n  \"AccountingDate\": \"<date>\",\n  \"BillToCustomerName\": \"<string>\",\n  \"BillToCustomerNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TransactionAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"BalanceDue\": \"<double>\",\n  \"PaymentTerms\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-58cca4d7-81a6-4bb0-90b9-7e426bbf02f8"
+                        },
+                        {
+                          "id": "a7506589-1dc3-40a7-9f0d-69a4b66f619a",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionNumber\": \"<string>\",\n  \"TransactionType\": \"<string>\",\n  \"BillToCustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TransactionDate\": \"<date>\",\n  \"BillToCustomerNumber\": \"<string>\",\n  \"TransactionAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "receivablesInvoices"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-a7506589-1dc3-40a7-9f0d-69a4b66f619a"
+                        },
+                        {
+                          "id": "9208cff7-cb0e-47a8-9e5c-078b57acb1c9",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionNumber\": \"<string>\",\n  \"TransactionType\": \"<string>\",\n  \"BillToCustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TransactionDate\": \"<date>\",\n  \"BillToCustomerNumber\": \"<string>\",\n  \"TransactionAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/receivablesInvoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "receivablesInvoices"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-9208cff7-cb0e-47a8-9e5c-078b57acb1c9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:10.000Z",
+                      "updatedAt": "2026-07-28T02:28:10.000Z",
+                      "uid": "35240-8b815257-5fe5-4bb6-9aad-aa15ffaafc96"
+                    }
+                  ],
+                  "id": "6a6bb254-0a0c-4cc7-94ae-5399956e0862",
+                  "createdAt": "2026-07-28T02:28:10.000Z",
+                  "updatedAt": "2026-07-28T02:28:10.000Z",
+                  "uid": "35240-6a6bb254-0a0c-4cc7-94ae-5399956e0862"
+                },
+                {
+                  "name": "standardReceipts",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List standard receipts",
+                      "id": "f1634808-0b36-476c-a547-b222969b315a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "standardReceipts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve standard receipt records for accounts receivable payments received from customers."
+                      },
+                      "response": [
+                        {
+                          "id": "79375440-b0f3-48d5-8ef4-cc230f772d04",
+                          "name": "Receipts retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "standardReceipts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ReceiptId\": \"<integer>\",\n      \"ReceiptNumber\": \"<string>\",\n      \"ReceiptAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"ReceiptDate\": \"<date>\",\n      \"CustomerName\": \"<string>\",\n      \"CustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"PaymentMethod\": \"<string>\",\n      \"Status\": \"<string>\"\n    },\n    {\n      \"ReceiptId\": \"<integer>\",\n      \"ReceiptNumber\": \"<string>\",\n      \"ReceiptAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"ReceiptDate\": \"<date>\",\n      \"CustomerName\": \"<string>\",\n      \"CustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"PaymentMethod\": \"<string>\",\n      \"Status\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-79375440-b0f3-48d5-8ef4-cc230f772d04"
+                        },
+                        {
+                          "id": "97c99f3a-bbd2-424f-9ee2-7d9070b0b339",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "standardReceipts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-97c99f3a-bbd2-424f-9ee2-7d9070b0b339"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:10.000Z",
+                      "updatedAt": "2026-07-28T02:28:10.000Z",
+                      "uid": "35240-f1634808-0b36-476c-a547-b222969b315a"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a standard receipt",
+                      "id": "d159da8b-969f-413d-acf2-cd76a27dba24",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ReceiptAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ReceiptNumber\": \"<string>\",\n  \"ReceiptDate\": \"<date>\",\n  \"CustomerNumber\": \"<string>\",\n  \"PaymentMethod\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "standardReceipts"
+                          ]
+                        },
+                        "description": "Create a new standard receipt for an accounts receivable payment."
+                      },
+                      "response": [
+                        {
+                          "id": "40c01a49-e7da-471b-8a39-47032cb6b463",
+                          "name": "Receipt created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ReceiptAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ReceiptNumber\": \"<string>\",\n  \"ReceiptDate\": \"<date>\",\n  \"CustomerNumber\": \"<string>\",\n  \"PaymentMethod\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "standardReceipts"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"ReceiptId\": \"<integer>\",\n  \"ReceiptNumber\": \"<string>\",\n  \"ReceiptAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ReceiptDate\": \"<date>\",\n  \"CustomerName\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"PaymentMethod\": \"<string>\",\n  \"Status\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-40c01a49-e7da-471b-8a39-47032cb6b463"
+                        },
+                        {
+                          "id": "e7606bd2-78cd-404c-92eb-a08b3763d103",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ReceiptAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ReceiptNumber\": \"<string>\",\n  \"ReceiptDate\": \"<date>\",\n  \"CustomerNumber\": \"<string>\",\n  \"PaymentMethod\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "standardReceipts"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-e7606bd2-78cd-404c-92eb-a08b3763d103"
+                        },
+                        {
+                          "id": "51a8c0f6-6c77-42c2-a8ee-c95050d85990",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ReceiptAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ReceiptNumber\": \"<string>\",\n  \"ReceiptDate\": \"<date>\",\n  \"CustomerNumber\": \"<string>\",\n  \"PaymentMethod\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/standardReceipts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "standardReceipts"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:10.000Z",
+                          "updatedAt": "2026-07-28T02:28:10.000Z",
+                          "uid": "35240-51a8c0f6-6c77-42c2-a8ee-c95050d85990"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:10.000Z",
+                      "updatedAt": "2026-07-28T02:28:10.000Z",
+                      "uid": "35240-d159da8b-969f-413d-acf2-cd76a27dba24"
+                    }
+                  ],
+                  "id": "a716bcfc-6d5e-4782-a6e0-b7a527a4f2a8",
+                  "createdAt": "2026-07-28T02:28:10.000Z",
+                  "updatedAt": "2026-07-28T02:28:10.000Z",
+                  "uid": "35240-a716bcfc-6d5e-4782-a6e0-b7a527a4f2a8"
+                }
+              ],
+              "id": "b82a1350-fffc-40ab-9ff2-e25f7512d7c5",
+              "createdAt": "2026-07-28T02:28:10.000Z",
+              "updatedAt": "2026-07-28T02:28:10.000Z",
+              "uid": "35240-b82a1350-fffc-40ab-9ff2-e25f7512d7c5"
+            }
+          ],
+          "id": "a97892b4-0c38-4b14-b9eb-c0ab11abe7ac",
+          "createdAt": "2026-07-28T02:28:10.000Z",
+          "updatedAt": "2026-07-28T02:28:10.000Z",
+          "uid": "35240-a97892b4-0c38-4b14-b9eb-c0ab11abe7ac"
+        }
+      ],
+      "id": "7360af3b-e876-45b5-b1e1-551cc49b488a",
+      "createdAt": "2026-07-28T02:28:10.000Z",
+      "updatedAt": "2026-07-28T02:28:10.000Z",
+      "uid": "35240-7360af3b-e876-45b5-b1e1-551cc49b488a"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

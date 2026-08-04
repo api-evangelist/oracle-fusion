@@ -1,0 +1,470 @@
+{
+  "info": {
+    "_postman_id": "22686daa-dff8-498d-88f8-23cd7d37c228",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Suppliers API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:40.000Z",
+    "updatedAt": "2026-07-28T02:29:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-22686daa-dff8-498d-88f8-23cd7d37c228"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "suppliers",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List suppliers",
+                      "id": "8b3ccfb4-b45d-4297-81f4-c3de5d0e9cf8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "suppliers"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve supplier records including supplier sites, contacts, and procurement details."
+                      },
+                      "response": [
+                        {
+                          "id": "123d3565-12b6-4ab3-866e-89941d6d1771",
+                          "name": "Suppliers retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "suppliers"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"SupplierId\": \"<integer>\",\n      \"SupplierNumber\": \"<string>\",\n      \"SupplierName\": \"<string>\",\n      \"SupplierType\": \"<string>\",\n      \"TaxpayerIdentificationNumber\": \"<string>\",\n      \"TaxOrganizationType\": \"<string>\",\n      \"Status\": \"Active\",\n      \"BusinessRelationship\": \"Prospective\",\n      \"Country\": \"<string>\",\n      \"AddressLine1\": \"<string>\",\n      \"City\": \"<string>\",\n      \"State\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"SupplierId\": \"<integer>\",\n      \"SupplierNumber\": \"<string>\",\n      \"SupplierName\": \"<string>\",\n      \"SupplierType\": \"<string>\",\n      \"TaxpayerIdentificationNumber\": \"<string>\",\n      \"TaxOrganizationType\": \"<string>\",\n      \"Status\": \"Inactive\",\n      \"BusinessRelationship\": \"Prospective\",\n      \"Country\": \"<string>\",\n      \"AddressLine1\": \"<string>\",\n      \"City\": \"<string>\",\n      \"State\": \"<string>\",\n      \"PostalCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-123d3565-12b6-4ab3-866e-89941d6d1771"
+                        },
+                        {
+                          "id": "180decca-6640-49f9-82db-787e85bea400",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "suppliers"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-180decca-6640-49f9-82db-787e85bea400"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:40.000Z",
+                      "updatedAt": "2026-07-28T02:29:40.000Z",
+                      "uid": "35240-8b3ccfb4-b45d-4297-81f4-c3de5d0e9cf8"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a supplier",
+                      "id": "301fe11e-400d-4c9e-8cf5-bc634f182693",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "suppliers"
+                          ]
+                        },
+                        "description": "Create a new supplier record."
+                      },
+                      "response": [
+                        {
+                          "id": "28826737-0530-4c50-9d24-3d74541db5e5",
+                          "name": "Supplier created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "suppliers"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"SupplierId\": \"<integer>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"TaxOrganizationType\": \"<string>\",\n  \"Status\": \"Active\",\n  \"BusinessRelationship\": \"Prospective\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-28826737-0530-4c50-9d24-3d74541db5e5"
+                        },
+                        {
+                          "id": "6e23e385-f746-47ca-a025-acaee9c3ea61",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "suppliers"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-6e23e385-f746-47ca-a025-acaee9c3ea61"
+                        },
+                        {
+                          "id": "596ed90a-88d4-4b7f-8408-66d701437152",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/suppliers",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "suppliers"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-596ed90a-88d4-4b7f-8408-66d701437152"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:40.000Z",
+                      "updatedAt": "2026-07-28T02:29:40.000Z",
+                      "uid": "35240-301fe11e-400d-4c9e-8cf5-bc634f182693"
+                    }
+                  ],
+                  "id": "d8c3dd01-49dc-4c9d-b8ea-3dd6cc4990d3",
+                  "createdAt": "2026-07-28T02:29:40.000Z",
+                  "updatedAt": "2026-07-28T02:29:40.000Z",
+                  "uid": "35240-d8c3dd01-49dc-4c9d-b8ea-3dd6cc4990d3"
+                }
+              ],
+              "id": "99f767d2-a0fb-4744-821a-bdc0df75c85c",
+              "createdAt": "2026-07-28T02:29:40.000Z",
+              "updatedAt": "2026-07-28T02:29:40.000Z",
+              "uid": "35240-99f767d2-a0fb-4744-821a-bdc0df75c85c"
+            }
+          ],
+          "id": "052ea61c-a447-4107-a11f-56968dc3dcd9",
+          "createdAt": "2026-07-28T02:29:40.000Z",
+          "updatedAt": "2026-07-28T02:29:40.000Z",
+          "uid": "35240-052ea61c-a447-4107-a11f-56968dc3dcd9"
+        }
+      ],
+      "id": "0e3ea159-b7a3-4941-9b2f-3aa6f3da5db1",
+      "createdAt": "2026-07-28T02:29:40.000Z",
+      "updatedAt": "2026-07-28T02:29:40.000Z",
+      "uid": "35240-0e3ea159-b7a3-4941-9b2f-3aa6f3da5db1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

@@ -1,0 +1,1022 @@
+{
+  "info": {
+    "_postman_id": "6476c551-31f9-4dac-b59b-5c73a9aa2007",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Service Requests API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:38.000Z",
+    "updatedAt": "2026-07-28T02:29:38.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6476c551-31f9-4dac-b59b-5c73a9aa2007"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "serviceRequests",
+                  "item": [
+                    {
+                      "name": "{SrNumber}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a service request",
+                          "id": "5dd6be20-6301-4547-a1e8-44b5662c679e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests",
+                                ":SrNumber"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to expand",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cbaa6892-f54f-4e19-9bd2-a89686d4d242",
+                                  "key": "SrNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) Service request number"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific service request."
+                          },
+                          "response": [
+                            {
+                              "id": "1862b017-f839-4dd9-a810-5fe5d7831e27",
+                              "name": "Service request details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"SrId\": \"<integer>\",\n  \"SrNumber\": \"<string>\",\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"Medium\",\n  \"Status\": \"Resolved\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\",\n  \"ChannelType\": \"Social\",\n  \"CreationDate\": \"<dateTime>\",\n  \"ResolvedDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-1862b017-f839-4dd9-a810-5fe5d7831e27"
+                            },
+                            {
+                              "id": "372c40c7-6b43-4f4c-b255-d6bb7f4e3e0c",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-372c40c7-6b43-4f4c-b255-d6bb7f4e3e0c"
+                            },
+                            {
+                              "id": "4c26c606-2f60-4e08-b959-f9f91ad00cbd",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-4c26c606-2f60-4e08-b959-f9f91ad00cbd"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-5dd6be20-6301-4547-a1e8-44b5662c679e"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a service request",
+                          "id": "6df9d022-6332-402d-9866-0dfa656198a0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Title\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"Severity\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests",
+                                ":SrNumber"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "da3fa086-d92d-414c-bc81-c1e30abe54b5",
+                                  "key": "SrNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing service request."
+                          },
+                          "response": [
+                            {
+                              "id": "c2bf041c-f7a9-4b8f-ba40-596287040333",
+                              "name": "Service request updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Title\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"Severity\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-c2bf041c-f7a9-4b8f-ba40-596287040333"
+                            },
+                            {
+                              "id": "29450774-fb1b-4f57-9f0d-c6be39cfe5d7",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Title\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"Severity\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-29450774-fb1b-4f57-9f0d-c6be39cfe5d7"
+                            },
+                            {
+                              "id": "73e8c737-41e0-4f10-9a53-9a5dda594635",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Title\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"Severity\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-73e8c737-41e0-4f10-9a53-9a5dda594635"
+                            },
+                            {
+                              "id": "10e4db5f-3ee2-4a2a-85f3-bd3466a67004",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Title\": \"<string>\",\n  \"Status\": \"<string>\",\n  \"Severity\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "serviceRequests",
+                                    ":SrNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "SrNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:39.000Z",
+                              "updatedAt": "2026-07-28T02:29:39.000Z",
+                              "uid": "35240-10e4db5f-3ee2-4a2a-85f3-bd3466a67004"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-6df9d022-6332-402d-9866-0dfa656198a0"
+                        }
+                      ],
+                      "id": "379600d1-b149-4ec2-9c0b-00605eddc608",
+                      "createdAt": "2026-07-28T02:29:39.000Z",
+                      "updatedAt": "2026-07-28T02:29:39.000Z",
+                      "uid": "35240-379600d1-b149-4ec2-9c0b-00605eddc608"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List service requests",
+                      "id": "8a4e65c1-b414-4cb4-a344-2bba7b7bb604",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "serviceRequests"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Fields to sort by with optional :asc or :desc direction",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve customer service request records including severity, status, assignment, and resolution details."
+                      },
+                      "response": [
+                        {
+                          "id": "ed72a6cc-4aed-4589-aed8-707619ef4600",
+                          "name": "Service requests retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"SrId\": \"<integer>\",\n      \"SrNumber\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"ProblemDescription\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"Severity\": \"Critical\",\n      \"Status\": \"In Progress\",\n      \"Priority\": \"<string>\",\n      \"CategoryName\": \"<string>\",\n      \"AssigneeName\": \"<string>\",\n      \"QueueName\": \"<string>\",\n      \"ChannelType\": \"Email\",\n      \"CreationDate\": \"<dateTime>\",\n      \"ResolvedDate\": \"<dateTime>\"\n    },\n    {\n      \"SrId\": \"<integer>\",\n      \"SrNumber\": \"<string>\",\n      \"Title\": \"<string>\",\n      \"ProblemDescription\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"Severity\": \"Low\",\n      \"Status\": \"New\",\n      \"Priority\": \"<string>\",\n      \"CategoryName\": \"<string>\",\n      \"AssigneeName\": \"<string>\",\n      \"QueueName\": \"<string>\",\n      \"ChannelType\": \"Web\",\n      \"CreationDate\": \"<dateTime>\",\n      \"ResolvedDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-ed72a6cc-4aed-4589-aed8-707619ef4600"
+                        },
+                        {
+                          "id": "339244d2-896f-4deb-a52f-d2772b65a49a",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-339244d2-896f-4deb-a52f-d2772b65a49a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:39.000Z",
+                      "updatedAt": "2026-07-28T02:29:39.000Z",
+                      "uid": "35240-8a4e65c1-b414-4cb4-a344-2bba7b7bb604"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a service request",
+                      "id": "8f108508-af1b-48ef-a56b-14e8aa672276",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"High\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"ChannelType\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "serviceRequests"
+                          ]
+                        },
+                        "description": "Create a new customer service request."
+                      },
+                      "response": [
+                        {
+                          "id": "eb1816c7-9080-4068-b2b8-3e883ba91349",
+                          "name": "Service request created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"High\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"ChannelType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"SrId\": \"<integer>\",\n  \"SrNumber\": \"<string>\",\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"Medium\",\n  \"Status\": \"Resolved\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"AssigneeName\": \"<string>\",\n  \"QueueName\": \"<string>\",\n  \"ChannelType\": \"Social\",\n  \"CreationDate\": \"<dateTime>\",\n  \"ResolvedDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-eb1816c7-9080-4068-b2b8-3e883ba91349"
+                        },
+                        {
+                          "id": "e3e65dda-611c-476c-b329-341d2dc8b894",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"High\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"ChannelType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-e3e65dda-611c-476c-b329-341d2dc8b894"
+                        },
+                        {
+                          "id": "44b3a076-77cd-43e3-af40-a2049e344f04",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Title\": \"<string>\",\n  \"ProblemDescription\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Severity\": \"High\",\n  \"Priority\": \"<string>\",\n  \"CategoryName\": \"<string>\",\n  \"ChannelType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/serviceRequests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "serviceRequests"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:39.000Z",
+                          "updatedAt": "2026-07-28T02:29:39.000Z",
+                          "uid": "35240-44b3a076-77cd-43e3-af40-a2049e344f04"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:39.000Z",
+                      "updatedAt": "2026-07-28T02:29:39.000Z",
+                      "uid": "35240-8f108508-af1b-48ef-a56b-14e8aa672276"
+                    }
+                  ],
+                  "id": "47a4d182-0b09-4e8c-b95e-c67dc3c6aa20",
+                  "createdAt": "2026-07-28T02:29:39.000Z",
+                  "updatedAt": "2026-07-28T02:29:39.000Z",
+                  "uid": "35240-47a4d182-0b09-4e8c-b95e-c67dc3c6aa20"
+                }
+              ],
+              "id": "1d3b5f92-eeff-4ade-a6c8-82b4711154ac",
+              "createdAt": "2026-07-28T02:29:39.000Z",
+              "updatedAt": "2026-07-28T02:29:39.000Z",
+              "uid": "35240-1d3b5f92-eeff-4ade-a6c8-82b4711154ac"
+            }
+          ],
+          "id": "94ef6dcc-66e0-4a59-8cc3-2d810824253b",
+          "createdAt": "2026-07-28T02:29:39.000Z",
+          "updatedAt": "2026-07-28T02:29:39.000Z",
+          "uid": "35240-94ef6dcc-66e0-4a59-8cc3-2d810824253b"
+        }
+      ],
+      "id": "49b64634-7af3-4444-8460-367d6b070c2f",
+      "createdAt": "2026-07-28T02:29:39.000Z",
+      "updatedAt": "2026-07-28T02:29:39.000Z",
+      "uid": "35240-49b64634-7af3-4444-8460-367d6b070c2f"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

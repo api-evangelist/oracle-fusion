@@ -1,0 +1,1272 @@
+{
+  "info": {
+    "_postman_id": "14f66f8c-03c7-4842-a0a5-ac3407d3ad70",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Expense Reports API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:58.000Z",
+    "updatedAt": "2026-07-28T02:28:58.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-14f66f8c-03c7-4842-a0a5-ac3407d3ad70"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "expenseReports",
+                  "item": [
+                    {
+                      "name": "{ExpenseReportId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an expense report",
+                          "id": "57da9033-59db-4d92-9272-6806563350aa",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports",
+                                ":ExpenseReportId"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to include in the response.",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b7edf32d-575f-402d-ac7a-213664188698",
+                                  "key": "ExpenseReportId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the expense report"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific expense report by its identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "1711f888-14c0-4762-a9f3-fd6cdd0cfcdb",
+                              "name": "Expense report details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ExpenseReportId\": \"<integer>\",\n  \"ExpenseReportNumber\": \"<string>\",\n  \"Purpose\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"PersonName\": \"<string>\",\n  \"PersonNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ApprovalStatus\": \"Paid\",\n  \"ReimbursementAmount\": \"<double>\",\n  \"SubmittedDate\": \"<dateTime>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-1711f888-14c0-4762-a9f3-fd6cdd0cfcdb"
+                            },
+                            {
+                              "id": "568b6bdd-b76b-4e1b-9bdb-60849de40e6f",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-568b6bdd-b76b-4e1b-9bdb-60849de40e6f"
+                            },
+                            {
+                              "id": "bf0e5a57-6c3c-4511-85f5-ac85ef447202",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-bf0e5a57-6c3c-4511-85f5-ac85ef447202"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-57da9033-59db-4d92-9272-6806563350aa"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an expense report",
+                          "id": "3607101d-ece0-40de-a8d1-bb41c293ab45",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports",
+                                ":ExpenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "548fb205-569b-4557-b538-96ae04c709e1",
+                                  "key": "ExpenseReportId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the expense report"
+                                }
+                              ]
+                            },
+                            "description": "Update an existing expense report."
+                          },
+                          "response": [
+                            {
+                              "id": "d4b7d570-5b6a-4b55-ae87-ee3115ffd73f",
+                              "name": "Expense report updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ExpenseReportId\": \"<integer>\",\n  \"ExpenseReportNumber\": \"<string>\",\n  \"Purpose\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"PersonName\": \"<string>\",\n  \"PersonNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ApprovalStatus\": \"Paid\",\n  \"ReimbursementAmount\": \"<double>\",\n  \"SubmittedDate\": \"<dateTime>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-d4b7d570-5b6a-4b55-ae87-ee3115ffd73f"
+                            },
+                            {
+                              "id": "df28672e-7e71-4915-b96b-d5dbf961c3ea",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-df28672e-7e71-4915-b96b-d5dbf961c3ea"
+                            },
+                            {
+                              "id": "5b62286f-2c72-4014-8f1a-05117fbb279b",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-5b62286f-2c72-4014-8f1a-05117fbb279b"
+                            },
+                            {
+                              "id": "03fa8634-542d-4797-b5e6-40f001c27174",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-03fa8634-542d-4797-b5e6-40f001c27174"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-3607101d-ece0-40de-a8d1-bb41c293ab45"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an expense report",
+                          "id": "8ee556ba-2423-4c64-a7f7-6e23d6ff8a4a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports",
+                                ":ExpenseReportId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5542dc1a-f803-4ec4-bb12-16e89aed5a11",
+                                  "key": "ExpenseReportId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the expense report"
+                                }
+                              ]
+                            },
+                            "description": "Delete an expense report."
+                          },
+                          "response": [
+                            {
+                              "id": "b9600e48-4738-49d0-8e54-b353ffcd6aa1",
+                              "name": "Expense report deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-b9600e48-4738-49d0-8e54-b353ffcd6aa1"
+                            },
+                            {
+                              "id": "6b8f0cca-285b-48a3-b887-33d4f0f8be7e",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-6b8f0cca-285b-48a3-b887-33d4f0f8be7e"
+                            },
+                            {
+                              "id": "d80c2f14-758f-44fb-9434-9da14cd6f2b7",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenseReports",
+                                    ":ExpenseReportId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenseReportId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:28:58.000Z",
+                              "updatedAt": "2026-07-28T02:28:58.000Z",
+                              "uid": "35240-d80c2f14-758f-44fb-9434-9da14cd6f2b7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-8ee556ba-2423-4c64-a7f7-6e23d6ff8a4a"
+                        }
+                      ],
+                      "id": "604e4a49-cc56-4254-a199-e1080f74f3ac",
+                      "createdAt": "2026-07-28T02:28:58.000Z",
+                      "updatedAt": "2026-07-28T02:28:58.000Z",
+                      "uid": "35240-604e4a49-cc56-4254-a199-e1080f74f3ac"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List expense reports",
+                      "id": "7df0d642-eee8-4366-8ef8-23e1acd93dd0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "expenseReports"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a collection of employee expense reports."
+                      },
+                      "response": [
+                        {
+                          "id": "7c7ec183-149c-4a30-91a3-289584675673",
+                          "name": "Expense reports retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ExpenseReportId\": \"<integer>\",\n      \"ExpenseReportNumber\": \"<string>\",\n      \"Purpose\": \"<string>\",\n      \"ExpenseReportDate\": \"<date>\",\n      \"PersonName\": \"<string>\",\n      \"PersonNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"ApprovalStatus\": \"Rejected\",\n      \"ReimbursementAmount\": \"<double>\",\n      \"SubmittedDate\": \"<dateTime>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"ExpenseReportId\": \"<integer>\",\n      \"ExpenseReportNumber\": \"<string>\",\n      \"Purpose\": \"<string>\",\n      \"ExpenseReportDate\": \"<date>\",\n      \"PersonName\": \"<string>\",\n      \"PersonNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"ApprovalStatus\": \"Approved\",\n      \"ReimbursementAmount\": \"<double>\",\n      \"SubmittedDate\": \"<dateTime>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-7c7ec183-149c-4a30-91a3-289584675673"
+                        },
+                        {
+                          "id": "10eb4c7f-8439-4423-a069-36ddfb0ec95b",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-10eb4c7f-8439-4423-a069-36ddfb0ec95b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:58.000Z",
+                      "updatedAt": "2026-07-28T02:28:58.000Z",
+                      "uid": "35240-7df0d642-eee8-4366-8ef8-23e1acd93dd0"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an expense report",
+                      "id": "1ac38881-6fc2-4d62-a78c-f4cd08579422",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "expenseReports"
+                          ]
+                        },
+                        "description": "Create a new employee expense report with expense items."
+                      },
+                      "response": [
+                        {
+                          "id": "0b539df4-f319-4054-b91f-a17781b5b986",
+                          "name": "Expense report created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"ExpenseReportId\": \"<integer>\",\n  \"ExpenseReportNumber\": \"<string>\",\n  \"Purpose\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"PersonName\": \"<string>\",\n  \"PersonNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"ApprovalStatus\": \"Paid\",\n  \"ReimbursementAmount\": \"<double>\",\n  \"SubmittedDate\": \"<dateTime>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-0b539df4-f319-4054-b91f-a17781b5b986"
+                        },
+                        {
+                          "id": "2c1b7c4c-d3b5-48dd-8853-81eb0642b73e",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-2c1b7c4c-d3b5-48dd-8853-81eb0642b73e"
+                        },
+                        {
+                          "id": "a226816d-defe-4f3a-b5cf-418fad41ca14",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Purpose\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"ExpenseReportDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenseReports",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenseReports"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:58.000Z",
+                          "updatedAt": "2026-07-28T02:28:58.000Z",
+                          "uid": "35240-a226816d-defe-4f3a-b5cf-418fad41ca14"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:58.000Z",
+                      "updatedAt": "2026-07-28T02:28:58.000Z",
+                      "uid": "35240-1ac38881-6fc2-4d62-a78c-f4cd08579422"
+                    }
+                  ],
+                  "id": "a6c53230-86b4-4f5e-9151-5c6c27f280d4",
+                  "createdAt": "2026-07-28T02:28:58.000Z",
+                  "updatedAt": "2026-07-28T02:28:58.000Z",
+                  "uid": "35240-a6c53230-86b4-4f5e-9151-5c6c27f280d4"
+                }
+              ],
+              "id": "15929b8d-d583-4233-bd23-3d86b415ae51",
+              "createdAt": "2026-07-28T02:28:58.000Z",
+              "updatedAt": "2026-07-28T02:28:58.000Z",
+              "uid": "35240-15929b8d-d583-4233-bd23-3d86b415ae51"
+            }
+          ],
+          "id": "31b851e6-efbf-4259-bd50-41b2bf2a8b43",
+          "createdAt": "2026-07-28T02:28:58.000Z",
+          "updatedAt": "2026-07-28T02:28:58.000Z",
+          "uid": "35240-31b851e6-efbf-4259-bd50-41b2bf2a8b43"
+        }
+      ],
+      "id": "6f7ab60c-d4cf-44ec-b3a0-21c7b704c628",
+      "createdAt": "2026-07-28T02:28:58.000Z",
+      "updatedAt": "2026-07-28T02:28:58.000Z",
+      "uid": "35240-6f7ab60c-d4cf-44ec-b3a0-21c7b704c628"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

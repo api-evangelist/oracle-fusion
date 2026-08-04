@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "631acd48-0c81-4813-a2a8-9fde45ee8c35",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Shipments API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:39.000Z",
+    "updatedAt": "2026-07-28T02:29:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-631acd48-0c81-4813-a2a8-9fde45ee8c35"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "shipments",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List shipments",
+                      "id": "939d6f80-1425-483e-8010-047a7fb1ddfe",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/shipments?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "shipments"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve shipment records including delivery details, tracking, and shipping status."
+                      },
+                      "response": [
+                        {
+                          "id": "e5dd33ce-b609-4ee9-8549-8d000edf7993",
+                          "name": "Shipments retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/shipments?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "shipments"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ShipmentId\": \"<integer>\",\n      \"ShipmentNumber\": \"<string>\",\n      \"DeliveryName\": \"<string>\",\n      \"ShipFromOrganization\": \"<string>\",\n      \"ShipToCustomer\": \"<string>\",\n      \"ShipToAddress\": \"<string>\",\n      \"Carrier\": \"<string>\",\n      \"TrackingNumber\": \"<string>\",\n      \"ShipDate\": \"<date>\",\n      \"DeliveryDate\": \"<date>\",\n      \"Status\": \"Delivered\",\n      \"Weight\": \"<double>\",\n      \"WeightUom\": \"<string>\"\n    },\n    {\n      \"ShipmentId\": \"<integer>\",\n      \"ShipmentNumber\": \"<string>\",\n      \"DeliveryName\": \"<string>\",\n      \"ShipFromOrganization\": \"<string>\",\n      \"ShipToCustomer\": \"<string>\",\n      \"ShipToAddress\": \"<string>\",\n      \"Carrier\": \"<string>\",\n      \"TrackingNumber\": \"<string>\",\n      \"ShipDate\": \"<date>\",\n      \"DeliveryDate\": \"<date>\",\n      \"Status\": \"Packed\",\n      \"Weight\": \"<double>\",\n      \"WeightUom\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-e5dd33ce-b609-4ee9-8549-8d000edf7993"
+                        },
+                        {
+                          "id": "2642a1e8-9401-4551-8a32-2f4674674158",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/shipments?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "shipments"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:40.000Z",
+                          "updatedAt": "2026-07-28T02:29:40.000Z",
+                          "uid": "35240-2642a1e8-9401-4551-8a32-2f4674674158"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:40.000Z",
+                      "updatedAt": "2026-07-28T02:29:40.000Z",
+                      "uid": "35240-939d6f80-1425-483e-8010-047a7fb1ddfe"
+                    }
+                  ],
+                  "id": "1ea9090b-c2c5-4849-bcad-d135ffdb9694",
+                  "createdAt": "2026-07-28T02:29:40.000Z",
+                  "updatedAt": "2026-07-28T02:29:40.000Z",
+                  "uid": "35240-1ea9090b-c2c5-4849-bcad-d135ffdb9694"
+                }
+              ],
+              "id": "845a4cee-f0ae-4048-bfa9-892dc1ee1c5e",
+              "createdAt": "2026-07-28T02:29:40.000Z",
+              "updatedAt": "2026-07-28T02:29:40.000Z",
+              "uid": "35240-845a4cee-f0ae-4048-bfa9-892dc1ee1c5e"
+            }
+          ],
+          "id": "6b13a3d5-efae-4182-b4ab-4165055fa3d8",
+          "createdAt": "2026-07-28T02:29:40.000Z",
+          "updatedAt": "2026-07-28T02:29:40.000Z",
+          "uid": "35240-6b13a3d5-efae-4182-b4ab-4165055fa3d8"
+        }
+      ],
+      "id": "c354f16b-39b6-4270-a91c-76f1f74f74e7",
+      "createdAt": "2026-07-28T02:29:40.000Z",
+      "updatedAt": "2026-07-28T02:29:40.000Z",
+      "uid": "35240-c354f16b-39b6-4270-a91c-76f1f74f74e7"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

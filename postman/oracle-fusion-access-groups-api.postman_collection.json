@@ -1,0 +1,251 @@
+{
+  "info": {
+    "_postman_id": "643bc29e-caff-4f6a-bb01-e9081df42192",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Access Groups API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:06.000Z",
+    "updatedAt": "2026-07-28T02:28:07.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-643bc29e-caff-4f6a-bb01-e9081df42192"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "accessGroups",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List access groups",
+                      "id": "5802e709-65d7-45ae-823a-60ce4e6c6ed0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accessGroups?limit=25&offset=0&fields=<string>&q=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "accessGroups"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve access group definitions used to control data visibility in CX Sales and Service applications."
+                      },
+                      "response": [
+                        {
+                          "id": "d854ec82-6290-486f-b8c1-4a74a5efca2e",
+                          "name": "Access groups retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accessGroups?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accessGroups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"AccessGroupNumber\": \"<string>\",\n      \"AccessGroupName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"<string>\"\n    },\n    {\n      \"AccessGroupNumber\": \"<string>\",\n      \"AccessGroupName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:07.000Z",
+                          "updatedAt": "2026-07-28T02:28:07.000Z",
+                          "uid": "35240-d854ec82-6290-486f-b8c1-4a74a5efca2e"
+                        },
+                        {
+                          "id": "61df2235-311d-498d-a668-426c2f739ad3",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accessGroups?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accessGroups"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:07.000Z",
+                          "updatedAt": "2026-07-28T02:28:07.000Z",
+                          "uid": "35240-61df2235-311d-498d-a668-426c2f739ad3"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:07.000Z",
+                      "updatedAt": "2026-07-28T02:28:07.000Z",
+                      "uid": "35240-5802e709-65d7-45ae-823a-60ce4e6c6ed0"
+                    }
+                  ],
+                  "id": "44971e40-ee30-4858-a640-9ff6790a1107",
+                  "createdAt": "2026-07-28T02:28:07.000Z",
+                  "updatedAt": "2026-07-28T02:28:07.000Z",
+                  "uid": "35240-44971e40-ee30-4858-a640-9ff6790a1107"
+                }
+              ],
+              "id": "829d03c6-8ec3-4ede-a66e-cf19b998fe0a",
+              "createdAt": "2026-07-28T02:28:07.000Z",
+              "updatedAt": "2026-07-28T02:28:07.000Z",
+              "uid": "35240-829d03c6-8ec3-4ede-a66e-cf19b998fe0a"
+            }
+          ],
+          "id": "951d7766-2459-4211-929b-2c537f12c667",
+          "createdAt": "2026-07-28T02:28:07.000Z",
+          "updatedAt": "2026-07-28T02:28:07.000Z",
+          "uid": "35240-951d7766-2459-4211-929b-2c537f12c667"
+        }
+      ],
+      "id": "0aaf3d73-2db7-4435-b32f-184a186b5c4e",
+      "createdAt": "2026-07-28T02:28:07.000Z",
+      "updatedAt": "2026-07-28T02:28:07.000Z",
+      "uid": "35240-0aaf3d73-2db7-4435-b32f-184a186b5c4e"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

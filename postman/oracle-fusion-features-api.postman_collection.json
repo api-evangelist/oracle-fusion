@@ -1,0 +1,227 @@
+{
+  "info": {
+    "_postman_id": "d62ac1e7-a2fb-4828-8c54-1d3d95d78abc",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common REST Absences Features API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:04.000Z",
+    "updatedAt": "2026-07-28T02:29:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d62ac1e7-a2fb-4828-8c54-1d3d95d78abc"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "features",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List features",
+                      "id": "823be92a-626d-4169-b326-4f1fcadd71a7",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/features?limit=25&offset=0&q=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "features"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve application feature definitions and their enabled status."
+                      },
+                      "response": [
+                        {
+                          "id": "7fbbdd78-fef9-453c-a85b-453023369cf8",
+                          "name": "Features retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/features?limit=25&offset=0&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "features"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"FeatureCode\": \"<string>\",\n      \"FeatureName\": \"<string>\",\n      \"FeatureDescription\": \"<string>\",\n      \"EnabledFlag\": \"<boolean>\"\n    },\n    {\n      \"FeatureCode\": \"<string>\",\n      \"FeatureName\": \"<string>\",\n      \"FeatureDescription\": \"<string>\",\n      \"EnabledFlag\": \"<boolean>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:04.000Z",
+                          "updatedAt": "2026-07-28T02:29:04.000Z",
+                          "uid": "35240-7fbbdd78-fef9-453c-a85b-453023369cf8"
+                        },
+                        {
+                          "id": "7b7ec2e0-c9fe-4563-a191-de088fda9945",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/features?limit=25&offset=0&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "features"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:04.000Z",
+                          "updatedAt": "2026-07-28T02:29:04.000Z",
+                          "uid": "35240-7b7ec2e0-c9fe-4563-a191-de088fda9945"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:04.000Z",
+                      "updatedAt": "2026-07-28T02:29:04.000Z",
+                      "uid": "35240-823be92a-626d-4169-b326-4f1fcadd71a7"
+                    }
+                  ],
+                  "id": "5ceccc20-537c-421d-8800-ccc754594744",
+                  "createdAt": "2026-07-28T02:29:04.000Z",
+                  "updatedAt": "2026-07-28T02:29:04.000Z",
+                  "uid": "35240-5ceccc20-537c-421d-8800-ccc754594744"
+                }
+              ],
+              "id": "c959da8f-2998-47c4-a790-57cb6d023c7c",
+              "createdAt": "2026-07-28T02:29:04.000Z",
+              "updatedAt": "2026-07-28T02:29:04.000Z",
+              "uid": "35240-c959da8f-2998-47c4-a790-57cb6d023c7c"
+            }
+          ],
+          "id": "e2636708-bfb0-4d65-b5d9-1b95cec53e61",
+          "createdAt": "2026-07-28T02:29:04.000Z",
+          "updatedAt": "2026-07-28T02:29:04.000Z",
+          "uid": "35240-e2636708-bfb0-4d65-b5d9-1b95cec53e61"
+        }
+      ],
+      "id": "db593ca8-8804-4144-a3ec-069b3f356eec",
+      "createdAt": "2026-07-28T02:29:04.000Z",
+      "updatedAt": "2026-07-28T02:29:04.000Z",
+      "uid": "35240-db593ca8-8804-4144-a3ec-069b3f356eec"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

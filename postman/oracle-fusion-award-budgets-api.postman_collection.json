@@ -1,0 +1,1086 @@
+{
+  "info": {
+    "_postman_id": "c1c176a3-0132-41c7-888e-799b607992e9",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Award Budgets API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:34.000Z",
+    "updatedAt": "2026-07-28T02:28:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c1c176a3-0132-41c7-888e-799b607992e9"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "awardBudgets",
+                  "item": [
+                    {
+                      "name": "{PlanVersionId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an award budget",
+                          "id": "044e66e8-cb8b-45a3-9258-7658ab45ac6d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets",
+                                ":PlanVersionId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "b8632d75-ca3c-4020-a9eb-ff1085c57f51",
+                                  "key": "PlanVersionId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Plan version identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific award budget version."
+                          },
+                          "response": [
+                            {
+                              "id": "780d862b-3198-42d8-9135-2c01e04a1304",
+                              "name": "Award budget details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"PlanVersionId\": \"<integer>\",\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"BudgetStatus\": \"Submitted\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"VersionNumber\": \"<integer>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-780d862b-3198-42d8-9135-2c01e04a1304"
+                            },
+                            {
+                              "id": "ed1a0216-2759-4215-8983-4a9b0463cc07",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-ed1a0216-2759-4215-8983-4a9b0463cc07"
+                            },
+                            {
+                              "id": "d06986fc-8f6f-44b0-8990-66aae837f35d",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-d06986fc-8f6f-44b0-8990-66aae837f35d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-044e66e8-cb8b-45a3-9258-7658ab45ac6d"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an award budget",
+                          "id": "d4be93ff-4fb0-4cb9-ac2a-4dd3cd5b183d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets",
+                                ":PlanVersionId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "31544178-e1b7-4247-b735-5aff3963cea7",
+                                  "key": "PlanVersionId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing award budget version."
+                          },
+                          "response": [
+                            {
+                              "id": "8cf4623f-a041-4a7c-b0e4-3a38721cb637",
+                              "name": "Award budget updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-8cf4623f-a041-4a7c-b0e4-3a38721cb637"
+                            },
+                            {
+                              "id": "a7a74008-6ec1-44d1-b291-83b7e4a7e652",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-a7a74008-6ec1-44d1-b291-83b7e4a7e652"
+                            },
+                            {
+                              "id": "0861b683-de37-4cf9-91c0-aad7d10cf5ca",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-0861b683-de37-4cf9-91c0-aad7d10cf5ca"
+                            },
+                            {
+                              "id": "1aaaeb44-f09f-4233-81ac-f5ceea219e3a",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-1aaaeb44-f09f-4233-81ac-f5ceea219e3a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-d4be93ff-4fb0-4cb9-ac2a-4dd3cd5b183d"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an award budget",
+                          "id": "c15881db-ff99-4d6a-b1f8-fd74e617ada4",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets",
+                                ":PlanVersionId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c4c38750-05e6-4b13-9620-4778c1cad25a",
+                                  "key": "PlanVersionId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an award budget version."
+                          },
+                          "response": [
+                            {
+                              "id": "79f599ae-3b8a-47e8-9096-c39be1bc9e21",
+                              "name": "Award budget deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-79f599ae-3b8a-47e8-9096-c39be1bc9e21"
+                            },
+                            {
+                              "id": "733a808c-526a-4c6c-92fb-213a3adec7cd",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-733a808c-526a-4c6c-92fb-213a3adec7cd"
+                            },
+                            {
+                              "id": "c3593b55-cf71-4fb9-9417-ecd77fdafcc7",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets/:PlanVersionId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awardBudgets",
+                                    ":PlanVersionId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PlanVersionId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:35.000Z",
+                              "updatedAt": "2026-07-28T02:28:35.000Z",
+                              "uid": "35240-c3593b55-cf71-4fb9-9417-ecd77fdafcc7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-c15881db-ff99-4d6a-b1f8-fd74e617ada4"
+                        }
+                      ],
+                      "id": "463c3edf-d27b-427c-b95f-8006250fef05",
+                      "createdAt": "2026-07-28T02:28:35.000Z",
+                      "updatedAt": "2026-07-28T02:28:35.000Z",
+                      "uid": "35240-463c3edf-d27b-427c-b95f-8006250fef05"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List award budgets",
+                      "id": "e0d90717-d9fa-4726-955a-562b3d48685e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "awardBudgets"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve award budget versions including planning options, resources, and budget lines."
+                      },
+                      "response": [
+                        {
+                          "id": "d8dbe7a5-a848-47b6-b466-7085b29e7e50",
+                          "name": "Award budgets retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PlanVersionId\": \"<integer>\",\n      \"AwardId\": \"<integer>\",\n      \"BudgetName\": \"<string>\",\n      \"BudgetStatus\": \"Submitted\",\n      \"TotalBudgetAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"VersionNumber\": \"<integer>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"PlanVersionId\": \"<integer>\",\n      \"AwardId\": \"<integer>\",\n      \"BudgetName\": \"<string>\",\n      \"BudgetStatus\": \"Rejected\",\n      \"TotalBudgetAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"VersionNumber\": \"<integer>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-d8dbe7a5-a848-47b6-b466-7085b29e7e50"
+                        },
+                        {
+                          "id": "7e273133-b458-439d-995f-4d736f2c3f4d",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-7e273133-b458-439d-995f-4d736f2c3f4d"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:35.000Z",
+                      "updatedAt": "2026-07-28T02:28:35.000Z",
+                      "uid": "35240-e0d90717-d9fa-4726-955a-562b3d48685e"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an award budget",
+                      "id": "bd88a8b9-4622-4206-a807-5d3dc06b53d0",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "awardBudgets"
+                          ]
+                        },
+                        "description": "Create a new award budget version."
+                      },
+                      "response": [
+                        {
+                          "id": "a60f2801-fd74-4d3e-adf5-182fcc20fdd0",
+                          "name": "Award budget created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"PlanVersionId\": \"<integer>\",\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"BudgetStatus\": \"Submitted\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"VersionNumber\": \"<integer>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-a60f2801-fd74-4d3e-adf5-182fcc20fdd0"
+                        },
+                        {
+                          "id": "44251054-f865-4c29-bf2f-6e405e948a55",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-44251054-f865-4c29-bf2f-6e405e948a55"
+                        },
+                        {
+                          "id": "9f2e1d35-a0f5-40ad-af0e-40f8dbc0d541",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardId\": \"<integer>\",\n  \"BudgetName\": \"<string>\",\n  \"TotalBudgetAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awardBudgets",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awardBudgets"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:35.000Z",
+                          "updatedAt": "2026-07-28T02:28:35.000Z",
+                          "uid": "35240-9f2e1d35-a0f5-40ad-af0e-40f8dbc0d541"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:35.000Z",
+                      "updatedAt": "2026-07-28T02:28:35.000Z",
+                      "uid": "35240-bd88a8b9-4622-4206-a807-5d3dc06b53d0"
+                    }
+                  ],
+                  "id": "bdd7abb9-ec3c-48b4-889a-6f940a87599c",
+                  "createdAt": "2026-07-28T02:28:35.000Z",
+                  "updatedAt": "2026-07-28T02:28:35.000Z",
+                  "uid": "35240-bdd7abb9-ec3c-48b4-889a-6f940a87599c"
+                }
+              ],
+              "id": "cb8e66a0-a022-4a1e-a00f-f4c607e5269b",
+              "createdAt": "2026-07-28T02:28:35.000Z",
+              "updatedAt": "2026-07-28T02:28:35.000Z",
+              "uid": "35240-cb8e66a0-a022-4a1e-a00f-f4c607e5269b"
+            }
+          ],
+          "id": "755579d9-cfca-441c-a436-811fab293fca",
+          "createdAt": "2026-07-28T02:28:35.000Z",
+          "updatedAt": "2026-07-28T02:28:35.000Z",
+          "uid": "35240-755579d9-cfca-441c-a436-811fab293fca"
+        }
+      ],
+      "id": "990c0442-9350-4d0b-b155-bd56577e75f3",
+      "createdAt": "2026-07-28T02:28:35.000Z",
+      "updatedAt": "2026-07-28T02:28:35.000Z",
+      "uid": "35240-990c0442-9350-4d0b-b155-bd56577e75f3"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

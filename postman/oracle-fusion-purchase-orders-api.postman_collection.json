@@ -1,0 +1,987 @@
+{
+  "info": {
+    "_postman_id": "2fe6edff-e5c8-4fb4-a3fb-53444c29fac8",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Purchase Orders API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:31.000Z",
+    "updatedAt": "2026-07-28T02:29:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2fe6edff-e5c8-4fb4-a3fb-53444c29fac8"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "purchaseOrders",
+                  "item": [
+                    {
+                      "name": "{POHeaderId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a purchase order",
+                          "id": "8e99e1b8-75e3-4e6a-b91e-b917d7c29690",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders",
+                                ":POHeaderId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "598c04bd-81c8-423b-b383-216e0021f766",
+                                  "key": "POHeaderId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Purchase order header identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific purchase order."
+                          },
+                          "response": [
+                            {
+                              "id": "cc9b0b78-d158-4de2-8b7d-b394b216c80e",
+                              "name": "Purchase order details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"POHeaderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Rejected\",\n  \"PaymentTerms\": \"<string>\",\n  \"ShipToLocation\": \"<string>\",\n  \"BillToLocation\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-cc9b0b78-d158-4de2-8b7d-b394b216c80e"
+                            },
+                            {
+                              "id": "e8ba0c27-f086-4557-967b-677bc79eb285",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-e8ba0c27-f086-4557-967b-677bc79eb285"
+                            },
+                            {
+                              "id": "d048f342-1787-4454-a659-3771e2edf62b",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-d048f342-1787-4454-a659-3771e2edf62b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-8e99e1b8-75e3-4e6a-b91e-b917d7c29690"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a purchase order",
+                          "id": "5ca5fc6f-efec-49da-8649-73073baa7cfa",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Status\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders",
+                                ":POHeaderId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ade62fa2-dd0e-49f6-89d6-eb4bbcffba57",
+                                  "key": "POHeaderId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing purchase order."
+                          },
+                          "response": [
+                            {
+                              "id": "148a491f-b23f-477a-8a4d-ad6c7f757738",
+                              "name": "Purchase order updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Status\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"POHeaderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Rejected\",\n  \"PaymentTerms\": \"<string>\",\n  \"ShipToLocation\": \"<string>\",\n  \"BillToLocation\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-148a491f-b23f-477a-8a4d-ad6c7f757738"
+                            },
+                            {
+                              "id": "14a49b0e-cf76-4a43-9103-bd9befd5a714",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Status\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-14a49b0e-cf76-4a43-9103-bd9befd5a714"
+                            },
+                            {
+                              "id": "5f7fa71b-14c0-4082-a4f2-74fdf7132fcb",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Status\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-5f7fa71b-14c0-4082-a4f2-74fdf7132fcb"
+                            },
+                            {
+                              "id": "a989c966-fe04-42ad-84ed-8b5fd8160857",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Status\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "purchaseOrders",
+                                    ":POHeaderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "POHeaderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:32.000Z",
+                              "updatedAt": "2026-07-28T02:29:32.000Z",
+                              "uid": "35240-a989c966-fe04-42ad-84ed-8b5fd8160857"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-5ca5fc6f-efec-49da-8649-73073baa7cfa"
+                        }
+                      ],
+                      "id": "e1f2ebb5-6f26-4bdc-a5fd-810cacde9807",
+                      "createdAt": "2026-07-28T02:29:32.000Z",
+                      "updatedAt": "2026-07-28T02:29:32.000Z",
+                      "uid": "35240-e1f2ebb5-6f26-4bdc-a5fd-810cacde9807"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List purchase orders",
+                      "id": "a1930e2f-10f3-4ed8-b1a3-6d8cbfeb4c23",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "purchaseOrders"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve purchase order headers and lines for procurement operations."
+                      },
+                      "response": [
+                        {
+                          "id": "41c9f702-a01d-4fde-9e0f-7606a4ed48b1",
+                          "name": "Purchase orders retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"POHeaderId\": \"<integer>\",\n      \"OrderNumber\": \"<string>\",\n      \"ProcurementBusinessUnit\": \"<string>\",\n      \"SupplierName\": \"<string>\",\n      \"SupplierNumber\": \"<string>\",\n      \"SupplierSite\": \"<string>\",\n      \"BuyerName\": \"<string>\",\n      \"OrderDate\": \"<date>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Pending Approval\",\n      \"PaymentTerms\": \"<string>\",\n      \"ShipToLocation\": \"<string>\",\n      \"BillToLocation\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"POHeaderId\": \"<integer>\",\n      \"OrderNumber\": \"<string>\",\n      \"ProcurementBusinessUnit\": \"<string>\",\n      \"SupplierName\": \"<string>\",\n      \"SupplierNumber\": \"<string>\",\n      \"SupplierSite\": \"<string>\",\n      \"BuyerName\": \"<string>\",\n      \"OrderDate\": \"<date>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Incomplete\",\n      \"PaymentTerms\": \"<string>\",\n      \"ShipToLocation\": \"<string>\",\n      \"BillToLocation\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-41c9f702-a01d-4fde-9e0f-7606a4ed48b1"
+                        },
+                        {
+                          "id": "8fe32c7b-9fb7-4c61-adfb-25d984b6e96b",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-8fe32c7b-9fb7-4c61-adfb-25d984b6e96b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:32.000Z",
+                      "updatedAt": "2026-07-28T02:29:32.000Z",
+                      "uid": "35240-a1930e2f-10f3-4ed8-b1a3-6d8cbfeb4c23"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a purchase order",
+                      "id": "a5400ef0-d5e4-4651-a9a7-f023ca8acbe6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "purchaseOrders"
+                          ]
+                        },
+                        "description": "Create a new purchase order with header and lines."
+                      },
+                      "response": [
+                        {
+                          "id": "5ed28186-2419-4eee-9b2e-226135e46fd4",
+                          "name": "Purchase order created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"POHeaderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Rejected\",\n  \"PaymentTerms\": \"<string>\",\n  \"ShipToLocation\": \"<string>\",\n  \"BillToLocation\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-5ed28186-2419-4eee-9b2e-226135e46fd4"
+                        },
+                        {
+                          "id": "84576471-5df5-4370-a7ae-2fc21da78363",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-84576471-5df5-4370-a7ae-2fc21da78363"
+                        },
+                        {
+                          "id": "e2754662-1307-414a-b4f8-2f8a84a6b105",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProcurementBusinessUnit\": \"<string>\",\n  \"SupplierName\": \"<string>\",\n  \"SupplierNumber\": \"<string>\",\n  \"SupplierSite\": \"<string>\",\n  \"BuyerName\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PaymentTerms\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "purchaseOrders"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:32.000Z",
+                          "updatedAt": "2026-07-28T02:29:32.000Z",
+                          "uid": "35240-e2754662-1307-414a-b4f8-2f8a84a6b105"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:32.000Z",
+                      "updatedAt": "2026-07-28T02:29:32.000Z",
+                      "uid": "35240-a5400ef0-d5e4-4651-a9a7-f023ca8acbe6"
+                    }
+                  ],
+                  "id": "a49e0bd8-84fe-4017-9c7d-7aa6a985df3c",
+                  "createdAt": "2026-07-28T02:29:32.000Z",
+                  "updatedAt": "2026-07-28T02:29:32.000Z",
+                  "uid": "35240-a49e0bd8-84fe-4017-9c7d-7aa6a985df3c"
+                }
+              ],
+              "id": "144de339-d9eb-4769-b584-a8a3014d6044",
+              "createdAt": "2026-07-28T02:29:32.000Z",
+              "updatedAt": "2026-07-28T02:29:32.000Z",
+              "uid": "35240-144de339-d9eb-4769-b584-a8a3014d6044"
+            }
+          ],
+          "id": "fd9fe6b2-e551-44a0-9479-f587976b6b40",
+          "createdAt": "2026-07-28T02:29:32.000Z",
+          "updatedAt": "2026-07-28T02:29:32.000Z",
+          "uid": "35240-fd9fe6b2-e551-44a0-9479-f587976b6b40"
+        }
+      ],
+      "id": "97972539-9260-47b0-9dbf-b88817040c47",
+      "createdAt": "2026-07-28T02:29:32.000Z",
+      "updatedAt": "2026-07-28T02:29:32.000Z",
+      "uid": "35240-97972539-9260-47b0-9dbf-b88817040c47"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

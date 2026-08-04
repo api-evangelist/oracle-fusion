@@ -1,0 +1,679 @@
+{
+  "info": {
+    "_postman_id": "c97e6461-e459-4e4d-99a2-7a6fab79bc91",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Manage Tasks API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:18.000Z",
+    "updatedAt": "2026-07-28T02:29:18.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-c97e6461-e459-4e4d-99a2-7a6fab79bc91"
+  },
+  "item": [
+    {
+      "name": "bpm",
+      "item": [
+        {
+          "name": "api",
+          "item": [
+            {
+              "name": "4.0",
+              "item": [
+                {
+                  "name": "tasks",
+                  "item": [
+                    {
+                      "name": "{id}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a workflow task",
+                          "id": "541e1290-6ffa-4457-8855-0ce874a9958e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "bpm",
+                                "api",
+                                "4.0",
+                                "tasks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cf66be2b-570a-4770-9676-8147327e323f",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific workflow task."
+                          },
+                          "response": [
+                            {
+                              "id": "1465e55b-0dc0-4518-90bb-54660ec0fdf1",
+                              "name": "Task details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"taskId\": \"<string>\",\n  \"title\": \"<string>\",\n  \"taskDefinitionName\": \"<string>\",\n  \"creator\": \"<string>\",\n  \"assignees\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"state\": \"Information Requested\",\n  \"priority\": \"<integer>\",\n  \"createdDate\": \"<dateTime>\",\n  \"expirationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-1465e55b-0dc0-4518-90bb-54660ec0fdf1"
+                            },
+                            {
+                              "id": "6e081f72-5ff8-40a5-a2ef-9034556771e3",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-6e081f72-5ff8-40a5-a2ef-9034556771e3"
+                            },
+                            {
+                              "id": "ae5f95cf-7144-49c7-83bb-4ac08e300439",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-ae5f95cf-7144-49c7-83bb-4ac08e300439"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:18.000Z",
+                          "updatedAt": "2026-07-28T02:29:18.000Z",
+                          "uid": "35240-541e1290-6ffa-4457-8855-0ce874a9958e"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Perform a task action",
+                          "id": "02fc06bc-6aec-42c1-aea2-2a9555a7b34c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PUT",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"action\": \"WITHDRAW\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "bpm",
+                                "api",
+                                "4.0",
+                                "tasks",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "cc85bb9e-5ae2-4c6c-bb57-41d8090b734b",
+                                  "key": "id",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Perform an action on a workflow task such as approve, reject, reassign, or escalate."
+                          },
+                          "response": [
+                            {
+                              "id": "aee45b17-3727-4977-864e-375165ca9fd5",
+                              "name": "Action performed",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"action\": \"WITHDRAW\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-aee45b17-3727-4977-864e-375165ca9fd5"
+                            },
+                            {
+                              "id": "c5cbc2b2-68e7-4f5a-99e8-2a10c992c712",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"action\": \"WITHDRAW\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-c5cbc2b2-68e7-4f5a-99e8-2a10c992c712"
+                            },
+                            {
+                              "id": "8fb61cfc-d603-4cc9-80ff-00bdc15f1826",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"action\": \"WITHDRAW\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-8fb61cfc-d603-4cc9-80ff-00bdc15f1826"
+                            },
+                            {
+                              "id": "7cd672da-76ea-4eaa-ac5e-83599585f0f5",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PUT",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"action\": \"WITHDRAW\",\n  \"comment\": \"<string>\",\n  \"assignee\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/bpm/api/4.0/tasks/:id",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "bpm",
+                                    "api",
+                                    "4.0",
+                                    "tasks",
+                                    ":id"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "id"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:18.000Z",
+                              "updatedAt": "2026-07-28T02:29:18.000Z",
+                              "uid": "35240-7cd672da-76ea-4eaa-ac5e-83599585f0f5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:18.000Z",
+                          "updatedAt": "2026-07-28T02:29:18.000Z",
+                          "uid": "35240-02fc06bc-6aec-42c1-aea2-2a9555a7b34c"
+                        }
+                      ],
+                      "id": "74646dd1-6429-418d-afb6-cbce17398747",
+                      "createdAt": "2026-07-28T02:29:18.000Z",
+                      "updatedAt": "2026-07-28T02:29:18.000Z",
+                      "uid": "35240-74646dd1-6429-418d-afb6-cbce17398747"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List workflow tasks",
+                      "id": "0f67c5ec-1df4-494e-8043-e1604e76f536",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/bpm/api/4.0/tasks?limit=25&offset=0",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "bpm",
+                            "api",
+                            "4.0",
+                            "tasks"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve BPM workflow tasks including approval requests and action items assigned to users."
+                      },
+                      "response": [
+                        {
+                          "id": "4e0837fe-46e2-4685-9d43-62dc56027a47",
+                          "name": "Workflow tasks retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/bpm/api/4.0/tasks?limit=25&offset=0",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "bpm",
+                                "api",
+                                "4.0",
+                                "tasks"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"taskId\": \"<string>\",\n      \"title\": \"<string>\",\n      \"taskDefinitionName\": \"<string>\",\n      \"creator\": \"<string>\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"state\": \"Errored\",\n      \"priority\": \"<integer>\",\n      \"createdDate\": \"<dateTime>\",\n      \"expirationDate\": \"<dateTime>\"\n    },\n    {\n      \"taskId\": \"<string>\",\n      \"title\": \"<string>\",\n      \"taskDefinitionName\": \"<string>\",\n      \"creator\": \"<string>\",\n      \"assignees\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"state\": \"Alerted\",\n      \"priority\": \"<integer>\",\n      \"createdDate\": \"<dateTime>\",\n      \"expirationDate\": \"<dateTime>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:18.000Z",
+                          "updatedAt": "2026-07-28T02:29:18.000Z",
+                          "uid": "35240-4e0837fe-46e2-4685-9d43-62dc56027a47"
+                        },
+                        {
+                          "id": "780af8fd-6daa-40d8-8c43-5b8735d663cb",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/bpm/api/4.0/tasks?limit=25&offset=0",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "bpm",
+                                "api",
+                                "4.0",
+                                "tasks"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:18.000Z",
+                          "updatedAt": "2026-07-28T02:29:18.000Z",
+                          "uid": "35240-780af8fd-6daa-40d8-8c43-5b8735d663cb"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:18.000Z",
+                      "updatedAt": "2026-07-28T02:29:18.000Z",
+                      "uid": "35240-0f67c5ec-1df4-494e-8043-e1604e76f536"
+                    }
+                  ],
+                  "id": "bd81da8e-95f7-4b01-93a5-adea59072694",
+                  "createdAt": "2026-07-28T02:29:18.000Z",
+                  "updatedAt": "2026-07-28T02:29:18.000Z",
+                  "uid": "35240-bd81da8e-95f7-4b01-93a5-adea59072694"
+                }
+              ],
+              "id": "f21b55cc-32f5-4e38-9078-c0e48d8262f5",
+              "createdAt": "2026-07-28T02:29:18.000Z",
+              "updatedAt": "2026-07-28T02:29:18.000Z",
+              "uid": "35240-f21b55cc-32f5-4e38-9078-c0e48d8262f5"
+            }
+          ],
+          "id": "a6142941-9359-4ae0-aab2-d18f6e063d85",
+          "createdAt": "2026-07-28T02:29:18.000Z",
+          "updatedAt": "2026-07-28T02:29:18.000Z",
+          "uid": "35240-a6142941-9359-4ae0-aab2-d18f6e063d85"
+        }
+      ],
+      "id": "07e59060-03ea-41d7-ba19-3648a3483f74",
+      "createdAt": "2026-07-28T02:29:18.000Z",
+      "updatedAt": "2026-07-28T02:29:18.000Z",
+      "uid": "35240-07e59060-03ea-41d7-ba19-3648a3483f74"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

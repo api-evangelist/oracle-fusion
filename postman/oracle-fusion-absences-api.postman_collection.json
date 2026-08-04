@@ -1,0 +1,1160 @@
+{
+  "info": {
+    "_postman_id": "5c73b0d0-0305-46df-9eb4-79fd793293d2",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:05.000Z",
+    "updatedAt": "2026-07-28T02:28:06.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5c73b0d0-0305-46df-9eb4-79fd793293d2"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "absences",
+                  "item": [
+                    {
+                      "name": "{AbsenceId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an absence",
+                          "id": "813a1d27-e768-4c77-bc44-d35c41c85e92",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId?fields=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences",
+                                ":AbsenceId"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "22c0193a-442b-453a-bc31-f2447ffb5387",
+                                  "key": "AbsenceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the absence"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific absence record."
+                          },
+                          "response": [
+                            {
+                              "id": "cee0ae2d-5070-4a60-aa29-b1a3364ecf7c",
+                              "name": "Absence details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"AbsenceId\": \"<integer>\",\n  \"PersonNumber\": \"<string>\",\n  \"PersonName\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"AbsenceReason\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Hours\",\n  \"ApprovalStatus\": \"Approved\",\n  \"Comments\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-cee0ae2d-5070-4a60-aa29-b1a3364ecf7c"
+                            },
+                            {
+                              "id": "9e39099f-f0f5-40bb-a389-4a150fa5eaa4",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-9e39099f-f0f5-40bb-a389-4a150fa5eaa4"
+                            },
+                            {
+                              "id": "6f71c313-f44e-40eb-bf72-de931645c6d0",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-6f71c313-f44e-40eb-bf72-de931645c6d0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-813a1d27-e768-4c77-bc44-d35c41c85e92"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an absence",
+                          "id": "b3e2edd1-c555-4eee-b2d8-9a3abbe93d75",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences",
+                                ":AbsenceId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "86a2c8da-d622-4a24-8a3b-930ebc2d1e1d",
+                                  "key": "AbsenceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing absence record."
+                          },
+                          "response": [
+                            {
+                              "id": "7f3d7c9a-c62e-405f-9177-a5a313d12955",
+                              "name": "Absence updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"AbsenceId\": \"<integer>\",\n  \"PersonNumber\": \"<string>\",\n  \"PersonName\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"AbsenceReason\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Hours\",\n  \"ApprovalStatus\": \"Approved\",\n  \"Comments\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-7f3d7c9a-c62e-405f-9177-a5a313d12955"
+                            },
+                            {
+                              "id": "cdec80b6-7d89-4aa2-bea3-02f61ea23226",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-cdec80b6-7d89-4aa2-bea3-02f61ea23226"
+                            },
+                            {
+                              "id": "ad298a0b-8135-4497-9fba-c07380639e6b",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-ad298a0b-8135-4497-9fba-c07380639e6b"
+                            },
+                            {
+                              "id": "c4738809-2277-49a2-827f-c7d8a05c1c3d",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-c4738809-2277-49a2-827f-c7d8a05c1c3d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-b3e2edd1-c555-4eee-b2d8-9a3abbe93d75"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an absence",
+                          "id": "67d90c3c-5d29-48b8-86c7-ee6e6be64eb4",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences",
+                                ":AbsenceId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c2f3d4a3-8c06-4b09-a449-eef9e7cc39fb",
+                                  "key": "AbsenceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an absence record."
+                          },
+                          "response": [
+                            {
+                              "id": "78b34290-4719-4cc7-9ec3-31b722db2686",
+                              "name": "Absence deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-78b34290-4719-4cc7-9ec3-31b722db2686"
+                            },
+                            {
+                              "id": "95d99530-7318-4e93-93d2-e856b4693b6c",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-95d99530-7318-4e93-93d2-e856b4693b6c"
+                            },
+                            {
+                              "id": "455d2e1f-fea3-44ed-ab56-c784c7f46783",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "hcmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "absences",
+                                    ":AbsenceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AbsenceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:06.000Z",
+                              "updatedAt": "2026-07-28T02:28:06.000Z",
+                              "uid": "35240-455d2e1f-fea3-44ed-ab56-c784c7f46783"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-67d90c3c-5d29-48b8-86c7-ee6e6be64eb4"
+                        }
+                      ],
+                      "id": "e5d3111d-d089-441f-b125-afc9c18e8b3d",
+                      "createdAt": "2026-07-28T02:28:06.000Z",
+                      "updatedAt": "2026-07-28T02:28:06.000Z",
+                      "uid": "35240-e5d3111d-d089-441f-b125-afc9c18e8b3d"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List absences",
+                      "id": "0d744482-47a5-498b-a48f-10193d38821a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "absences"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve absence records for workers including vacation, sick leave, and other absence types."
+                      },
+                      "response": [
+                        {
+                          "id": "4c19cba1-475c-4a6b-8020-0aee7c0cd0a7",
+                          "name": "Absences retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"AbsenceId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"AbsenceType\": \"<string>\",\n      \"AbsenceReason\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"Duration\": \"<double>\",\n      \"UnitOfMeasure\": \"Days\",\n      \"ApprovalStatus\": \"Approved\",\n      \"Comments\": \"<string>\"\n    },\n    {\n      \"AbsenceId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"AbsenceType\": \"<string>\",\n      \"AbsenceReason\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"Duration\": \"<double>\",\n      \"UnitOfMeasure\": \"Hours\",\n      \"ApprovalStatus\": \"Saved\",\n      \"Comments\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-4c19cba1-475c-4a6b-8020-0aee7c0cd0a7"
+                        },
+                        {
+                          "id": "d14901bb-69f1-4e56-b522-4d1801818d71",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-d14901bb-69f1-4e56-b522-4d1801818d71"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:06.000Z",
+                      "updatedAt": "2026-07-28T02:28:06.000Z",
+                      "uid": "35240-0d744482-47a5-498b-a48f-10193d38821a"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an absence",
+                      "id": "0ef3f7b4-8a7b-4b17-bbe9-ee3409440a10",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "absences"
+                          ]
+                        },
+                        "description": "Create a new absence record for a worker."
+                      },
+                      "response": [
+                        {
+                          "id": "d4bb9e76-7a04-4f51-898a-ed6a8fa3e46e",
+                          "name": "Absence created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"AbsenceId\": \"<integer>\",\n  \"PersonNumber\": \"<string>\",\n  \"PersonName\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"AbsenceReason\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Hours\",\n  \"ApprovalStatus\": \"Approved\",\n  \"Comments\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-d4bb9e76-7a04-4f51-898a-ed6a8fa3e46e"
+                        },
+                        {
+                          "id": "8c4a29d7-8097-4bbe-a45b-ef69d2cf701f",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-8c4a29d7-8097-4bbe-a45b-ef69d2cf701f"
+                        },
+                        {
+                          "id": "d3ad7139-62da-441a-a294-eb86a160fcad",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"Days\",\n  \"Comments\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/absences",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "absences"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:06.000Z",
+                          "updatedAt": "2026-07-28T02:28:06.000Z",
+                          "uid": "35240-d3ad7139-62da-441a-a294-eb86a160fcad"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:06.000Z",
+                      "updatedAt": "2026-07-28T02:28:06.000Z",
+                      "uid": "35240-0ef3f7b4-8a7b-4b17-bbe9-ee3409440a10"
+                    }
+                  ],
+                  "id": "61e976b5-fb01-4a35-bebb-e76284157f94",
+                  "createdAt": "2026-07-28T02:28:06.000Z",
+                  "updatedAt": "2026-07-28T02:28:06.000Z",
+                  "uid": "35240-61e976b5-fb01-4a35-bebb-e76284157f94"
+                }
+              ],
+              "id": "4955d224-45bb-49e2-aefb-8e215aa8b9f5",
+              "createdAt": "2026-07-28T02:28:06.000Z",
+              "updatedAt": "2026-07-28T02:28:06.000Z",
+              "uid": "35240-4955d224-45bb-49e2-aefb-8e215aa8b9f5"
+            }
+          ],
+          "id": "fd47bb02-dbf6-4584-a22d-ebf7e24bf1d0",
+          "createdAt": "2026-07-28T02:28:06.000Z",
+          "updatedAt": "2026-07-28T02:28:06.000Z",
+          "uid": "35240-fd47bb02-dbf6-4584-a22d-ebf7e24bf1d0"
+        }
+      ],
+      "id": "faa0ccce-64d2-4270-ba65-8c390de75f25",
+      "createdAt": "2026-07-28T02:28:06.000Z",
+      "updatedAt": "2026-07-28T02:28:06.000Z",
+      "uid": "35240-faa0ccce-64d2-4270-ba65-8c390de75f25"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

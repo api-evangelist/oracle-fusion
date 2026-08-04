@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "5665c927-6e42-456a-9dd5-147b29edf5fc",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Assignments API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:32.000Z",
+    "updatedAt": "2026-07-28T02:28:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5665c927-6e42-456a-9dd5-147b29edf5fc"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "assignmentsInfo",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List assignments",
+                      "id": "92ccc8f7-7d67-4b52-9079-15af972382c3",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/assignmentsInfo?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "assignmentsInfo"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve work assignment records including position, job, department, location, and manager information for workers."
+                      },
+                      "response": [
+                        {
+                          "id": "99560f51-b2a9-49fa-bf65-1d5b8684bb98",
+                          "name": "Assignments retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/assignmentsInfo?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "assignmentsInfo"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"AssignmentId\": \"<integer>\",\n      \"AssignmentNumber\": \"<string>\",\n      \"AssignmentName\": \"<string>\",\n      \"PersonNumber\": \"<string>\",\n      \"BusinessUnitName\": \"<string>\",\n      \"DepartmentName\": \"<string>\",\n      \"JobName\": \"<string>\",\n      \"PositionName\": \"<string>\",\n      \"GradeName\": \"<string>\",\n      \"LocationName\": \"<string>\",\n      \"ManagerPersonNumber\": \"<string>\",\n      \"ManagerDisplayName\": \"<string>\",\n      \"AssignmentStatus\": \"Active\",\n      \"EffectiveStartDate\": \"<date>\",\n      \"EffectiveEndDate\": \"<date>\",\n      \"WorkerType\": \"<string>\"\n    },\n    {\n      \"AssignmentId\": \"<integer>\",\n      \"AssignmentNumber\": \"<string>\",\n      \"AssignmentName\": \"<string>\",\n      \"PersonNumber\": \"<string>\",\n      \"BusinessUnitName\": \"<string>\",\n      \"DepartmentName\": \"<string>\",\n      \"JobName\": \"<string>\",\n      \"PositionName\": \"<string>\",\n      \"GradeName\": \"<string>\",\n      \"LocationName\": \"<string>\",\n      \"ManagerPersonNumber\": \"<string>\",\n      \"ManagerDisplayName\": \"<string>\",\n      \"AssignmentStatus\": \"Suspended\",\n      \"EffectiveStartDate\": \"<date>\",\n      \"EffectiveEndDate\": \"<date>\",\n      \"WorkerType\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:33.000Z",
+                          "updatedAt": "2026-07-28T02:28:33.000Z",
+                          "uid": "35240-99560f51-b2a9-49fa-bf65-1d5b8684bb98"
+                        },
+                        {
+                          "id": "3a98bfac-6b54-479f-ae61-a49bfb2d404e",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/assignmentsInfo?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "assignmentsInfo"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:33.000Z",
+                          "updatedAt": "2026-07-28T02:28:33.000Z",
+                          "uid": "35240-3a98bfac-6b54-479f-ae61-a49bfb2d404e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:33.000Z",
+                      "updatedAt": "2026-07-28T02:28:33.000Z",
+                      "uid": "35240-92ccc8f7-7d67-4b52-9079-15af972382c3"
+                    }
+                  ],
+                  "id": "649c9c06-0780-43e3-813a-d6f2f6b034f8",
+                  "createdAt": "2026-07-28T02:28:33.000Z",
+                  "updatedAt": "2026-07-28T02:28:33.000Z",
+                  "uid": "35240-649c9c06-0780-43e3-813a-d6f2f6b034f8"
+                }
+              ],
+              "id": "4ccb5232-2e94-4c78-8f0c-2310ab07bc44",
+              "createdAt": "2026-07-28T02:28:33.000Z",
+              "updatedAt": "2026-07-28T02:28:33.000Z",
+              "uid": "35240-4ccb5232-2e94-4c78-8f0c-2310ab07bc44"
+            }
+          ],
+          "id": "5d77137c-fbd9-4cf6-b82d-e21a3227311c",
+          "createdAt": "2026-07-28T02:28:33.000Z",
+          "updatedAt": "2026-07-28T02:28:33.000Z",
+          "uid": "35240-5d77137c-fbd9-4cf6-b82d-e21a3227311c"
+        }
+      ],
+      "id": "429516a1-ac20-4b5e-979a-4d67e71f0add",
+      "createdAt": "2026-07-28T02:28:33.000Z",
+      "updatedAt": "2026-07-28T02:28:33.000Z",
+      "uid": "35240-429516a1-ac20-4b5e-979a-4d67e71f0add"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

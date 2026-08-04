@@ -1,0 +1,696 @@
+{
+  "info": {
+    "_postman_id": "e6f53d35-a86a-4461-b00f-991e17684458",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Data Management API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:45.000Z",
+    "updatedAt": "2026-07-28T02:28:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e6f53d35-a86a-4461-b00f-991e17684458"
+  },
+  "item": [
+    {
+      "name": "interop",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "v3",
+              "item": [
+                {
+                  "name": "files",
+                  "item": [
+                    {
+                      "name": "{fileName}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Download a file",
+                          "id": "b8b4583a-cfd1-45dc-9c54-9cb99694712d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/octet-stream"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "files",
+                                ":fileName"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "67f25036-b6fb-4608-8578-4b170b1583b4",
+                                  "key": "fileName",
+                                  "value": "<string>",
+                                  "description": "(Required) File name including path"
+                                }
+                              ]
+                            },
+                            "description": "Download a file from the EPM inbox or outbox."
+                          },
+                          "response": [
+                            {
+                              "id": "4ef92c50-d685-4bb7-bc69-d26a9d6fd201",
+                              "name": "File content",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/octet-stream"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/octet-stream"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "<binary>",
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-4ef92c50-d685-4bb7-bc69-d26a9d6fd201"
+                            },
+                            {
+                              "id": "62c9c6c8-d744-48c3-858b-c4fffaa6710c",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-62c9c6c8-d744-48c3-858b-c4fffaa6710c"
+                            },
+                            {
+                              "id": "60c78609-379c-4c81-9fa4-b1a85b4f4143",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-60c78609-379c-4c81-9fa4-b1a85b4f4143"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:46.000Z",
+                          "updatedAt": "2026-07-28T02:28:46.000Z",
+                          "uid": "35240-b8b4583a-cfd1-45dc-9c54-9cb99694712d"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Upload a file",
+                          "id": "720fc2a8-7072-4b23-9e82-ac8c01997844",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/octet-stream"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "<binary>"
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "files",
+                                ":fileName"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3036327c-17a1-46f2-9fce-fddc9a36c184",
+                                  "key": "fileName",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Upload a file to the EPM inbox for data import operations."
+                          },
+                          "response": [
+                            {
+                              "id": "fef63086-81f0-42ab-84bc-87e60b74c184",
+                              "name": "File uploaded",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/octet-stream"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "<binary>"
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"status\": \"<integer>\",\n  \"details\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-fef63086-81f0-42ab-84bc-87e60b74c184"
+                            },
+                            {
+                              "id": "c1a5eb37-6b9f-4b89-a1f9-2bc50f5d1774",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/octet-stream"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "<binary>"
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-c1a5eb37-6b9f-4b89-a1f9-2bc50f5d1774"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:46.000Z",
+                          "updatedAt": "2026-07-28T02:28:46.000Z",
+                          "uid": "35240-720fc2a8-7072-4b23-9e82-ac8c01997844"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete a file",
+                          "id": "db2c52b4-2010-4b0c-8b74-f73d0261d64f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "files",
+                                ":fileName"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9cf88952-4f97-4a85-9103-1abb46fe189e",
+                                  "key": "fileName",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete a file from the EPM inbox or outbox."
+                          },
+                          "response": [
+                            {
+                              "id": "a535d3ff-6e93-4eca-8a04-1dcdf76bb75d",
+                              "name": "File deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-a535d3ff-6e93-4eca-8a04-1dcdf76bb75d"
+                            },
+                            {
+                              "id": "fe45107a-2750-4532-816c-64610269ad57",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-fe45107a-2750-4532-816c-64610269ad57"
+                            },
+                            {
+                              "id": "cf0fb30e-2843-4e3e-8c55-c78718e4f00d",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/files/:fileName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "files",
+                                    ":fileName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "fileName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:46.000Z",
+                              "updatedAt": "2026-07-28T02:28:46.000Z",
+                              "uid": "35240-cf0fb30e-2843-4e3e-8c55-c78718e4f00d"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:46.000Z",
+                          "updatedAt": "2026-07-28T02:28:46.000Z",
+                          "uid": "35240-db2c52b4-2010-4b0c-8b74-f73d0261d64f"
+                        }
+                      ],
+                      "id": "726e0ae2-3f74-42e9-aa4c-d5edf91b7849",
+                      "createdAt": "2026-07-28T02:28:46.000Z",
+                      "updatedAt": "2026-07-28T02:28:46.000Z",
+                      "uid": "35240-726e0ae2-3f74-42e9-aa4c-d5edf91b7849"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List files",
+                      "id": "c28fa068-7501-499c-ab84-2f2dd1305793",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/interop/rest/v3/files",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "interop",
+                            "rest",
+                            "v3",
+                            "files"
+                          ]
+                        },
+                        "description": "Retrieve a list of files in the EPM inbox and outbox used for data import, export, and snapshot operations."
+                      },
+                      "response": [
+                        {
+                          "id": "5c30858c-78f2-4297-aaa0-3565eb0bda10",
+                          "name": "Files retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/files",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "files"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"path\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"lastModifiedTime\": \"<dateTime>\",\n      \"isDirectory\": \"<boolean>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"path\": \"<string>\",\n      \"size\": \"<integer>\",\n      \"lastModifiedTime\": \"<dateTime>\",\n      \"isDirectory\": \"<boolean>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:28:46.000Z",
+                          "updatedAt": "2026-07-28T02:28:46.000Z",
+                          "uid": "35240-5c30858c-78f2-4297-aaa0-3565eb0bda10"
+                        },
+                        {
+                          "id": "e05ea4c8-dd5d-4117-96b9-28bb4a5257b4",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/files",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "files"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:46.000Z",
+                          "updatedAt": "2026-07-28T02:28:46.000Z",
+                          "uid": "35240-e05ea4c8-dd5d-4117-96b9-28bb4a5257b4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:46.000Z",
+                      "updatedAt": "2026-07-28T02:28:46.000Z",
+                      "uid": "35240-c28fa068-7501-499c-ab84-2f2dd1305793"
+                    }
+                  ],
+                  "id": "cd2f1929-a720-4b68-854d-98f99e1c3dc7",
+                  "createdAt": "2026-07-28T02:28:46.000Z",
+                  "updatedAt": "2026-07-28T02:28:46.000Z",
+                  "uid": "35240-cd2f1929-a720-4b68-854d-98f99e1c3dc7"
+                }
+              ],
+              "id": "b77fa650-0f85-4989-bf41-1b968b90c966",
+              "createdAt": "2026-07-28T02:28:46.000Z",
+              "updatedAt": "2026-07-28T02:28:46.000Z",
+              "uid": "35240-b77fa650-0f85-4989-bf41-1b968b90c966"
+            }
+          ],
+          "id": "1b567c95-0ffb-49fe-b69d-05b9794e8539",
+          "createdAt": "2026-07-28T02:28:46.000Z",
+          "updatedAt": "2026-07-28T02:28:46.000Z",
+          "uid": "35240-1b567c95-0ffb-49fe-b69d-05b9794e8539"
+        }
+      ],
+      "id": "3f768f24-f6dd-4ab1-9c6b-579251cfc4b8",
+      "createdAt": "2026-07-28T02:28:46.000Z",
+      "updatedAt": "2026-07-28T02:28:46.000Z",
+      "uid": "35240-3f768f24-f6dd-4ab1-9c6b-579251cfc4b8"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

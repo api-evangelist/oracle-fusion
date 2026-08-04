@@ -1,0 +1,358 @@
+{
+  "info": {
+    "_postman_id": "abb01228-6325-4753-9e82-601ab7b27daa",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Migration API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:19.000Z",
+    "updatedAt": "2026-07-28T02:29:20.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-abb01228-6325-4753-9e82-601ab7b27daa"
+  },
+  "item": [
+    {
+      "name": "interop",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "v3",
+              "item": [
+                {
+                  "name": "snapshots",
+                  "item": [
+                    {
+                      "name": "{snapshotName}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete a snapshot",
+                          "id": "95ec9ba6-f0ad-4bf3-a7d0-6068e4da6c44",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/snapshots/:snapshotName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "snapshots",
+                                ":snapshotName"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "9298d9c3-983a-4962-bb51-601382fc9fd8",
+                                  "key": "snapshotName",
+                                  "value": "<string>",
+                                  "description": "(Required) Snapshot name"
+                                }
+                              ]
+                            },
+                            "description": "Delete an application snapshot."
+                          },
+                          "response": [
+                            {
+                              "id": "b9e340cc-8c53-446a-9520-2d25c4b45d7d",
+                              "name": "Snapshot deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/snapshots/:snapshotName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "snapshots",
+                                    ":snapshotName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "snapshotName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:20.000Z",
+                              "updatedAt": "2026-07-28T02:29:20.000Z",
+                              "uid": "35240-b9e340cc-8c53-446a-9520-2d25c4b45d7d"
+                            },
+                            {
+                              "id": "30db34c0-7d34-494d-b590-37079fd74866",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/snapshots/:snapshotName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "snapshots",
+                                    ":snapshotName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "snapshotName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:20.000Z",
+                              "updatedAt": "2026-07-28T02:29:20.000Z",
+                              "uid": "35240-30db34c0-7d34-494d-b590-37079fd74866"
+                            },
+                            {
+                              "id": "3a626581-3a69-4b10-86ea-1b19a796568e",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/interop/rest/v3/snapshots/:snapshotName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "interop",
+                                    "rest",
+                                    "v3",
+                                    "snapshots",
+                                    ":snapshotName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "snapshotName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:20.000Z",
+                              "updatedAt": "2026-07-28T02:29:20.000Z",
+                              "uid": "35240-3a626581-3a69-4b10-86ea-1b19a796568e"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:20.000Z",
+                          "updatedAt": "2026-07-28T02:29:20.000Z",
+                          "uid": "35240-95ec9ba6-f0ad-4bf3-a7d0-6068e4da6c44"
+                        }
+                      ],
+                      "id": "2f51b5e6-3934-459e-a10d-239959f463e3",
+                      "createdAt": "2026-07-28T02:29:20.000Z",
+                      "updatedAt": "2026-07-28T02:29:20.000Z",
+                      "uid": "35240-2f51b5e6-3934-459e-a10d-239959f463e3"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List snapshots",
+                      "id": "03cebf64-1c96-438f-9a20-65a1a15d9501",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/interop/rest/v3/snapshots",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "interop",
+                            "rest",
+                            "v3",
+                            "snapshots"
+                          ]
+                        },
+                        "description": "Retrieve a list of application snapshots available for migration and backup operations."
+                      },
+                      "response": [
+                        {
+                          "id": "f93ecf44-e616-4c38-8693-b3618210fe34",
+                          "name": "Snapshots retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/snapshots",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "snapshots"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"External\",\n      \"size\": \"<integer>\",\n      \"lastModifiedTime\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"External\",\n      \"size\": \"<integer>\",\n      \"lastModifiedTime\": \"<dateTime>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:29:20.000Z",
+                          "updatedAt": "2026-07-28T02:29:20.000Z",
+                          "uid": "35240-f93ecf44-e616-4c38-8693-b3618210fe34"
+                        },
+                        {
+                          "id": "5933e27c-806d-45b5-9e40-dae338d6a071",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/interop/rest/v3/snapshots",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "interop",
+                                "rest",
+                                "v3",
+                                "snapshots"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:20.000Z",
+                          "updatedAt": "2026-07-28T02:29:20.000Z",
+                          "uid": "35240-5933e27c-806d-45b5-9e40-dae338d6a071"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:20.000Z",
+                      "updatedAt": "2026-07-28T02:29:20.000Z",
+                      "uid": "35240-03cebf64-1c96-438f-9a20-65a1a15d9501"
+                    }
+                  ],
+                  "id": "7e235425-eeef-4e2c-9bda-de7c9b7635bd",
+                  "createdAt": "2026-07-28T02:29:20.000Z",
+                  "updatedAt": "2026-07-28T02:29:20.000Z",
+                  "uid": "35240-7e235425-eeef-4e2c-9bda-de7c9b7635bd"
+                }
+              ],
+              "id": "d0d09be0-875b-4823-9a82-5db625efc50b",
+              "createdAt": "2026-07-28T02:29:20.000Z",
+              "updatedAt": "2026-07-28T02:29:20.000Z",
+              "uid": "35240-d0d09be0-875b-4823-9a82-5db625efc50b"
+            }
+          ],
+          "id": "c87271aa-476c-440b-9ffd-340d3ef153ae",
+          "createdAt": "2026-07-28T02:29:20.000Z",
+          "updatedAt": "2026-07-28T02:29:20.000Z",
+          "uid": "35240-c87271aa-476c-440b-9ffd-340d3ef153ae"
+        }
+      ],
+      "id": "7a7bdcbe-e76a-4a84-be89-59b3c7909218",
+      "createdAt": "2026-07-28T02:29:20.000Z",
+      "updatedAt": "2026-07-28T02:29:20.000Z",
+      "uid": "35240-7a7bdcbe-e76a-4a84-be89-59b3c7909218"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

@@ -1,0 +1,458 @@
+{
+  "info": {
+    "_postman_id": "d7f79634-0a0a-4684-bde6-b9c51f859156",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Project Tasks API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:29.000Z",
+    "updatedAt": "2026-07-28T02:29:29.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d7f79634-0a0a-4684-bde6-b9c51f859156"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "projectTasks",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List project tasks",
+                      "id": "98c69391-a8a5-44b7-8c6a-07aa6a9a110b",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "projectTasks"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve project task records including task hierarchy, dates, assignments, and progress information."
+                      },
+                      "response": [
+                        {
+                          "id": "2124942a-8bf9-435e-8eae-ce26abcc288d",
+                          "name": "Project tasks retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projectTasks"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"TaskId\": \"<integer>\",\n      \"TaskNumber\": \"<string>\",\n      \"TaskName\": \"<string>\",\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"ParentTaskId\": \"<integer>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"TaskLevel\": \"<integer>\",\n      \"PlannedEfffort\": \"<double>\",\n      \"ActualEffort\": \"<double>\",\n      \"PercentComplete\": \"<double>\",\n      \"TaskStatus\": \"<string>\"\n    },\n    {\n      \"TaskId\": \"<integer>\",\n      \"TaskNumber\": \"<string>\",\n      \"TaskName\": \"<string>\",\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"ParentTaskId\": \"<integer>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"TaskLevel\": \"<integer>\",\n      \"PlannedEfffort\": \"<double>\",\n      \"ActualEffort\": \"<double>\",\n      \"PercentComplete\": \"<double>\",\n      \"TaskStatus\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:30.000Z",
+                          "updatedAt": "2026-07-28T02:29:30.000Z",
+                          "uid": "35240-2124942a-8bf9-435e-8eae-ce26abcc288d"
+                        },
+                        {
+                          "id": "072a9ea2-3240-4161-9954-c4df15a6910e",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projectTasks"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:30.000Z",
+                          "updatedAt": "2026-07-28T02:29:30.000Z",
+                          "uid": "35240-072a9ea2-3240-4161-9954-c4df15a6910e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:30.000Z",
+                      "updatedAt": "2026-07-28T02:29:30.000Z",
+                      "uid": "35240-98c69391-a8a5-44b7-8c6a-07aa6a9a110b"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a project task",
+                      "id": "a069e526-4467-4ca7-abef-707c059ebb4c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"TaskName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"StartDate\": \"<date>\",\n  \"ParentTaskId\": \"<integer>\",\n  \"EndDate\": \"<date>\",\n  \"PlannedEffort\": \"<double>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "projectTasks"
+                          ]
+                        },
+                        "description": "Create a new task within a project."
+                      },
+                      "response": [
+                        {
+                          "id": "101974ba-3374-4104-a0d7-b96b6b6f883a",
+                          "name": "Project task created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TaskName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"StartDate\": \"<date>\",\n  \"ParentTaskId\": \"<integer>\",\n  \"EndDate\": \"<date>\",\n  \"PlannedEffort\": \"<double>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projectTasks"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"TaskId\": \"<integer>\",\n  \"TaskNumber\": \"<string>\",\n  \"TaskName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"ParentTaskId\": \"<integer>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"TaskLevel\": \"<integer>\",\n  \"PlannedEfffort\": \"<double>\",\n  \"ActualEffort\": \"<double>\",\n  \"PercentComplete\": \"<double>\",\n  \"TaskStatus\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:29:30.000Z",
+                          "updatedAt": "2026-07-28T02:29:30.000Z",
+                          "uid": "35240-101974ba-3374-4104-a0d7-b96b6b6f883a"
+                        },
+                        {
+                          "id": "aa817f5d-d687-474e-a757-b47f25417604",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TaskName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"StartDate\": \"<date>\",\n  \"ParentTaskId\": \"<integer>\",\n  \"EndDate\": \"<date>\",\n  \"PlannedEffort\": \"<double>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projectTasks"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:30.000Z",
+                          "updatedAt": "2026-07-28T02:29:30.000Z",
+                          "uid": "35240-aa817f5d-d687-474e-a757-b47f25417604"
+                        },
+                        {
+                          "id": "e5f10adc-6b2d-468b-bead-29039c71e042",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TaskName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"StartDate\": \"<date>\",\n  \"ParentTaskId\": \"<integer>\",\n  \"EndDate\": \"<date>\",\n  \"PlannedEffort\": \"<double>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projectTasks",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projectTasks"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:30.000Z",
+                          "updatedAt": "2026-07-28T02:29:30.000Z",
+                          "uid": "35240-e5f10adc-6b2d-468b-bead-29039c71e042"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:30.000Z",
+                      "updatedAt": "2026-07-28T02:29:30.000Z",
+                      "uid": "35240-a069e526-4467-4ca7-abef-707c059ebb4c"
+                    }
+                  ],
+                  "id": "e545d270-b9a8-4b94-b568-3a21eacd6f26",
+                  "createdAt": "2026-07-28T02:29:30.000Z",
+                  "updatedAt": "2026-07-28T02:29:30.000Z",
+                  "uid": "35240-e545d270-b9a8-4b94-b568-3a21eacd6f26"
+                }
+              ],
+              "id": "8748a31c-5a9c-43c2-bd4c-013e95a13742",
+              "createdAt": "2026-07-28T02:29:30.000Z",
+              "updatedAt": "2026-07-28T02:29:30.000Z",
+              "uid": "35240-8748a31c-5a9c-43c2-bd4c-013e95a13742"
+            }
+          ],
+          "id": "1a13a0bc-8acc-4248-8054-e165b5a6af8c",
+          "createdAt": "2026-07-28T02:29:30.000Z",
+          "updatedAt": "2026-07-28T02:29:30.000Z",
+          "uid": "35240-1a13a0bc-8acc-4248-8054-e165b5a6af8c"
+        }
+      ],
+      "id": "aca8227f-b5e6-4f76-b71d-c5f353022a7a",
+      "createdAt": "2026-07-28T02:29:30.000Z",
+      "updatedAt": "2026-07-28T02:29:30.000Z",
+      "uid": "35240-aca8227f-b5e6-4f76-b71d-c5f353022a7a"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

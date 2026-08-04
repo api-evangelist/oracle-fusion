@@ -1,0 +1,814 @@
+{
+  "info": {
+    "_postman_id": "6928598b-fddb-4763-93bc-21a5dfef6337",
+    "name": "Oracle Fusion Cloud Oracle Fusion Common Features REST Absences Applications API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:31.000Z",
+    "updatedAt": "2026-07-28T02:28:32.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-6928598b-fddb-4763-93bc-21a5dfef6337"
+  },
+  "item": [
+    {
+      "name": "HyperionPlanning",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "v3",
+              "item": [
+                {
+                  "name": "applications",
+                  "item": [
+                    {
+                      "name": "{applicationName}",
+                      "item": [
+                        {
+                          "name": "dimensions",
+                          "item": [
+                            {
+                              "name": "{dimensionName}",
+                              "item": [
+                                {
+                                  "name": "members",
+                                  "item": [
+                                    {
+                                      "name": "Oracle Fusion Cloud Applications List dimension members",
+                                      "id": "6cd0f299-5f43-4daa-84e5-39e45dbead40",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members?q=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "dimensions",
+                                            ":dimensionName",
+                                            "members"
+                                          ],
+                                          "query": [
+                                            {
+                                              "description": "Filter expression",
+                                              "key": "q",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "1d802836-4585-429f-bb15-01416e91bd17",
+                                              "key": "applicationName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "7d28ff27-487c-494c-a635-5911256d7111",
+                                              "key": "dimensionName",
+                                              "value": "<string>",
+                                              "description": "(Required) Dimension name"
+                                            }
+                                          ]
+                                        },
+                                        "description": "Retrieve members belonging to a specific dimension in an EPM Planning application."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "1f1bc889-fd16-4cf3-b3a7-dcd39fdfb29e",
+                                          "name": "Dimension members retrieved",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members?q=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "dimensions",
+                                                ":dimensionName",
+                                                "members"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "Filter expression",
+                                                  "key": "q",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "dimensionName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"parentName\": \"<string>\",\n      \"dimensionName\": \"<string>\",\n      \"dataStorageType\": \"Never Share\",\n      \"memberFormula\": \"<string>\",\n      \"alias\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"parentName\": \"<string>\",\n      \"dimensionName\": \"<string>\",\n      \"dataStorageType\": \"Dynamic Calc\",\n      \"memberFormula\": \"<string>\",\n      \"alias\": \"<string>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                                          "createdAt": "2026-07-28T02:28:32.000Z",
+                                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                                          "uid": "35240-1f1bc889-fd16-4cf3-b3a7-dcd39fdfb29e"
+                                        },
+                                        {
+                                          "id": "277e100f-5f75-432f-8fbe-147ab65d5b0c",
+                                          "name": "Authentication credentials are missing or invalid",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members?q=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "dimensions",
+                                                ":dimensionName",
+                                                "members"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "Filter expression",
+                                                  "key": "q",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "dimensionName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Unauthorized",
+                                          "code": 401,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:28:32.000Z",
+                                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                                          "uid": "35240-277e100f-5f75-432f-8fbe-147ab65d5b0c"
+                                        },
+                                        {
+                                          "id": "fee1dc0e-27dc-45bb-ad03-b0eee275a0d9",
+                                          "name": "The requested resource was not found",
+                                          "originalRequest": {
+                                            "method": "GET",
+                                            "header": [
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members?q=<string>",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "dimensions",
+                                                ":dimensionName",
+                                                "members"
+                                              ],
+                                              "query": [
+                                                {
+                                                  "description": "Filter expression",
+                                                  "key": "q",
+                                                  "value": "<string>"
+                                                }
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "dimensionName"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Not Found",
+                                          "code": 404,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:28:32.000Z",
+                                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                                          "uid": "35240-fee1dc0e-27dc-45bb-ad03-b0eee275a0d9"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T02:28:32.000Z",
+                                      "updatedAt": "2026-07-28T02:28:32.000Z",
+                                      "uid": "35240-6cd0f299-5f43-4daa-84e5-39e45dbead40"
+                                    }
+                                  ],
+                                  "id": "d4f9dd21-360a-4fb8-8ddc-f3f9369e6f5b",
+                                  "createdAt": "2026-07-28T02:28:32.000Z",
+                                  "updatedAt": "2026-07-28T02:28:32.000Z",
+                                  "uid": "35240-d4f9dd21-360a-4fb8-8ddc-f3f9369e6f5b"
+                                }
+                              ],
+                              "id": "e0deca84-beba-41d0-b522-8a77c8d2e0fb",
+                              "createdAt": "2026-07-28T02:28:32.000Z",
+                              "updatedAt": "2026-07-28T02:28:32.000Z",
+                              "uid": "35240-e0deca84-beba-41d0-b522-8a77c8d2e0fb"
+                            },
+                            {
+                              "name": "Oracle Fusion Cloud Applications List dimensions",
+                              "id": "48fd4831-18f1-4d6f-907b-84f11ba6da73",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName",
+                                    "dimensions"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "995771f5-d29e-4656-8eda-244e313ee70c",
+                                      "key": "applicationName",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Retrieve the list of dimensions defined in an EPM Planning application."
+                              },
+                              "response": [
+                                {
+                                  "id": "dc5d7bed-9782-4487-a744-107eb1ab3247",
+                                  "name": "Dimensions retrieved",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "dimensions"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"Version\",\n      \"numberOfMembers\": \"<integer>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"User Defined\",\n      \"numberOfMembers\": \"<integer>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                                  "createdAt": "2026-07-28T02:28:32.000Z",
+                                  "updatedAt": "2026-07-28T02:28:32.000Z",
+                                  "uid": "35240-dc5d7bed-9782-4487-a744-107eb1ab3247"
+                                },
+                                {
+                                  "id": "04fd76df-6e6f-42e6-92eb-a1c6d61bc062",
+                                  "name": "Authentication credentials are missing or invalid",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "dimensions"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unauthorized",
+                                  "code": 401,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:28:32.000Z",
+                                  "updatedAt": "2026-07-28T02:28:32.000Z",
+                                  "uid": "35240-04fd76df-6e6f-42e6-92eb-a1c6d61bc062"
+                                },
+                                {
+                                  "id": "e602aa3e-8e21-4b2a-908b-c3aa2aa2e298",
+                                  "name": "The requested resource was not found",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "dimensions"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:28:32.000Z",
+                                  "updatedAt": "2026-07-28T02:28:32.000Z",
+                                  "uid": "35240-e602aa3e-8e21-4b2a-908b-c3aa2aa2e298"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:28:32.000Z",
+                              "updatedAt": "2026-07-28T02:28:32.000Z",
+                              "uid": "35240-48fd4831-18f1-4d6f-907b-84f11ba6da73"
+                            }
+                          ],
+                          "id": "dfe93b22-6240-40b6-90f5-950b4ca6e8f2",
+                          "createdAt": "2026-07-28T02:28:32.000Z",
+                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                          "uid": "35240-dfe93b22-6240-40b6-90f5-950b4ca6e8f2"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an EPM application",
+                          "id": "21fe49a3-0758-4304-868c-8f5a1ab360cd",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "HyperionPlanning",
+                                "rest",
+                                "v3",
+                                "applications",
+                                ":applicationName"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "13e59825-21cb-4743-aa9a-9f728e99c42f",
+                                  "key": "applicationName",
+                                  "value": "<string>",
+                                  "description": "(Required) Application name"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve metadata and configuration details for a specific EPM Planning application."
+                          },
+                          "response": [
+                            {
+                              "id": "05c262ec-68d8-40e7-992a-f79911f51cdd",
+                              "name": "Application details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "applicationName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"name\": \"<string>\",\n  \"type\": \"<string>\",\n  \"description\": \"<string>\",\n  \"planTypes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdBy\": \"<string>\",\n  \"createdDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:32.000Z",
+                              "updatedAt": "2026-07-28T02:28:32.000Z",
+                              "uid": "35240-05c262ec-68d8-40e7-992a-f79911f51cdd"
+                            },
+                            {
+                              "id": "4f79f8ca-7f53-44a5-b5fe-fa6324b5fad7",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "applicationName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:32.000Z",
+                              "updatedAt": "2026-07-28T02:28:32.000Z",
+                              "uid": "35240-4f79f8ca-7f53-44a5-b5fe-fa6324b5fad7"
+                            },
+                            {
+                              "id": "bdaccdb1-5876-4684-bac3-50bb8c09f986",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "applicationName"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:32.000Z",
+                              "updatedAt": "2026-07-28T02:28:32.000Z",
+                              "uid": "35240-bdaccdb1-5876-4684-bac3-50bb8c09f986"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:32.000Z",
+                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                          "uid": "35240-21fe49a3-0758-4304-868c-8f5a1ab360cd"
+                        }
+                      ],
+                      "id": "bfef5237-ae48-4b8c-9e94-a91234358632",
+                      "createdAt": "2026-07-28T02:28:32.000Z",
+                      "updatedAt": "2026-07-28T02:28:32.000Z",
+                      "uid": "35240-bfef5237-ae48-4b8c-9e94-a91234358632"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List EPM applications",
+                      "id": "1647ed0a-840c-4469-a283-39d5238d32c2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "HyperionPlanning",
+                            "rest",
+                            "v3",
+                            "applications"
+                          ]
+                        },
+                        "description": "Retrieve a list of EPM Planning applications available in the service instance."
+                      },
+                      "response": [
+                        {
+                          "id": "e5cedc54-fbbf-4d55-b94c-44c77d4be8c4",
+                          "name": "Applications retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "HyperionPlanning",
+                                "rest",
+                                "v3",
+                                "applications"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"planTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"createdBy\": \"<string>\",\n      \"createdDate\": \"<dateTime>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"description\": \"<string>\",\n      \"planTypes\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"createdBy\": \"<string>\",\n      \"createdDate\": \"<dateTime>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:28:32.000Z",
+                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                          "uid": "35240-e5cedc54-fbbf-4d55-b94c-44c77d4be8c4"
+                        },
+                        {
+                          "id": "cba80e38-93b2-43e4-9a53-89ed1eb9a03f",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "HyperionPlanning",
+                                "rest",
+                                "v3",
+                                "applications"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:32.000Z",
+                          "updatedAt": "2026-07-28T02:28:32.000Z",
+                          "uid": "35240-cba80e38-93b2-43e4-9a53-89ed1eb9a03f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:32.000Z",
+                      "updatedAt": "2026-07-28T02:28:32.000Z",
+                      "uid": "35240-1647ed0a-840c-4469-a283-39d5238d32c2"
+                    }
+                  ],
+                  "id": "3cd89676-3dff-4253-bc28-634e485c35d3",
+                  "createdAt": "2026-07-28T02:28:32.000Z",
+                  "updatedAt": "2026-07-28T02:28:32.000Z",
+                  "uid": "35240-3cd89676-3dff-4253-bc28-634e485c35d3"
+                }
+              ],
+              "id": "c8e63a79-7214-48a3-9f34-ed7ecdd38cee",
+              "createdAt": "2026-07-28T02:28:32.000Z",
+              "updatedAt": "2026-07-28T02:28:32.000Z",
+              "uid": "35240-c8e63a79-7214-48a3-9f34-ed7ecdd38cee"
+            }
+          ],
+          "id": "8cd90e21-3093-4f0e-856a-30c6efe1bbd8",
+          "createdAt": "2026-07-28T02:28:32.000Z",
+          "updatedAt": "2026-07-28T02:28:32.000Z",
+          "uid": "35240-8cd90e21-3093-4f0e-856a-30c6efe1bbd8"
+        }
+      ],
+      "id": "d792ea32-be59-4898-80c1-565ea4e8d054",
+      "createdAt": "2026-07-28T02:28:32.000Z",
+      "updatedAt": "2026-07-28T02:28:32.000Z",
+      "uid": "35240-d792ea32-be59-4898-80c1-565ea4e8d054"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

@@ -1,0 +1,637 @@
+{
+  "info": {
+    "_postman_id": "26a4b519-6501-4b9b-ba98-5c4944fae25f",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Planning API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:24.000Z",
+    "updatedAt": "2026-07-28T02:29:25.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-26a4b519-6501-4b9b-ba98-5c4944fae25f"
+  },
+  "item": [
+    {
+      "name": "HyperionPlanning",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "v3",
+              "item": [
+                {
+                  "name": "applications",
+                  "item": [
+                    {
+                      "name": "{applicationName}",
+                      "item": [
+                        {
+                          "name": "plantypes",
+                          "item": [
+                            {
+                              "name": "{planType}",
+                              "item": [
+                                {
+                                  "name": "exportdataslice",
+                                  "item": [
+                                    {
+                                      "name": "Oracle Fusion Cloud Applications Export a data slice",
+                                      "id": "34a10f97-fd79-4f95-9f8a-2647f219b425",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": {}\n  }\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "plantypes",
+                                            ":planType",
+                                            "exportdataslice"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "7e27c0a6-d7a9-4d77-a821-1f738a716be7",
+                                              "key": "applicationName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "c20adce3-2a99-4688-b932-d6a22ddb5139",
+                                              "key": "planType",
+                                              "value": "<string>",
+                                              "description": "(Required) Plan type name"
+                                            }
+                                          ]
+                                        },
+                                        "description": "Export planning data for a specified slice defined by dimension member selections, point-of-view, and filters."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "de1d9142-b52f-43ef-bfe9-ba71d7914ba8",
+                                          "name": "Data slice exported",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": {}\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "exportdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"rows\": [\n    {\n      \"headers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"data\": [\n        \"<number>\",\n        \"<number>\"\n      ]\n    },\n    {\n      \"headers\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"data\": [\n        \"<number>\",\n        \"<number>\"\n      ]\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-de1d9142-b52f-43ef-bfe9-ba71d7914ba8"
+                                        },
+                                        {
+                                          "id": "96834360-c3cd-4d3e-bbc8-423d940cc7fd",
+                                          "name": "Invalid request parameters or payload",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": {}\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "exportdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Bad Request",
+                                          "code": 400,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-96834360-c3cd-4d3e-bbc8-423d940cc7fd"
+                                        },
+                                        {
+                                          "id": "f39c3a3a-72c6-4131-9425-67f6b8be3ddd",
+                                          "name": "Authentication credentials are missing or invalid",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": {}\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "exportdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Unauthorized",
+                                          "code": 401,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-f39c3a3a-72c6-4131-9425-67f6b8be3ddd"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T02:29:25.000Z",
+                                      "updatedAt": "2026-07-28T02:29:25.000Z",
+                                      "uid": "35240-34a10f97-fd79-4f95-9f8a-2647f219b425"
+                                    }
+                                  ],
+                                  "id": "75726532-a82c-4b12-ad1a-6f38599bca57",
+                                  "createdAt": "2026-07-28T02:29:25.000Z",
+                                  "updatedAt": "2026-07-28T02:29:25.000Z",
+                                  "uid": "35240-75726532-a82c-4b12-ad1a-6f38599bca57"
+                                },
+                                {
+                                  "name": "importdataslice",
+                                  "item": [
+                                    {
+                                      "name": "Oracle Fusion Cloud Applications Import a data slice",
+                                      "id": "339a3c63-fb95-4a8d-99ab-1b57e2a12823",
+                                      "protocolProfileBehavior": {
+                                        "disableBodyPruning": true
+                                      },
+                                      "request": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "plantypes",
+                                            ":planType",
+                                            "importdataslice"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "id": "9a4798c9-25f7-4422-82d6-70cba910dd56",
+                                              "key": "applicationName",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            },
+                                            {
+                                              "id": "9386d0ea-decc-440c-81b7-0bc9d6fda086",
+                                              "key": "planType",
+                                              "value": "<string>",
+                                              "description": "(Required) "
+                                            }
+                                          ]
+                                        },
+                                        "description": "Import planning data into a specified plan type using dimension member intersections and values."
+                                      },
+                                      "response": [
+                                        {
+                                          "id": "ad707282-c5d0-425a-9077-890cce91c7f5",
+                                          "name": "Data slice imported",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "key": "Accept",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "importdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "OK",
+                                          "code": 200,
+                                          "_postman_previewlanguage": "json",
+                                          "header": [
+                                            {
+                                              "key": "Content-Type",
+                                              "value": "application/json"
+                                            }
+                                          ],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": "{\n  \"status\": \"<integer>\",\n  \"details\": \"<string>\"\n}",
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-ad707282-c5d0-425a-9077-890cce91c7f5"
+                                        },
+                                        {
+                                          "id": "e3952d5c-f083-44d1-ae66-bb5550fc281a",
+                                          "name": "Invalid request parameters or payload",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "importdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Bad Request",
+                                          "code": 400,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-e3952d5c-f083-44d1-ae66-bb5550fc281a"
+                                        },
+                                        {
+                                          "id": "9eac2b9e-7944-488f-85fd-0b007cc34578",
+                                          "name": "Authentication credentials are missing or invalid",
+                                          "originalRequest": {
+                                            "method": "POST",
+                                            "header": [
+                                              {
+                                                "key": "Content-Type",
+                                                "value": "application/json"
+                                              },
+                                              {
+                                                "description": "Added as a part of security scheme: bearer",
+                                                "key": "Authorization",
+                                                "value": "Bearer <token>"
+                                              }
+                                            ],
+                                            "body": {
+                                              "mode": "raw",
+                                              "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                                              "options": {
+                                                "raw": {
+                                                  "headerFamily": "json",
+                                                  "language": "json"
+                                                }
+                                              }
+                                            },
+                                            "url": {
+                                              "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+                                              "host": [
+                                                "{{baseUrl}}"
+                                              ],
+                                              "path": [
+                                                "HyperionPlanning",
+                                                "rest",
+                                                "v3",
+                                                "applications",
+                                                ":applicationName",
+                                                "plantypes",
+                                                ":planType",
+                                                "importdataslice"
+                                              ],
+                                              "variable": [
+                                                {
+                                                  "key": "applicationName"
+                                                },
+                                                {
+                                                  "key": "planType"
+                                                }
+                                              ]
+                                            }
+                                          },
+                                          "status": "Unauthorized",
+                                          "code": 401,
+                                          "_postman_previewlanguage": "text",
+                                          "header": [],
+                                          "cookie": [],
+                                          "responseTime": null,
+                                          "body": null,
+                                          "createdAt": "2026-07-28T02:29:25.000Z",
+                                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                                          "uid": "35240-9eac2b9e-7944-488f-85fd-0b007cc34578"
+                                        }
+                                      ],
+                                      "createdAt": "2026-07-28T02:29:25.000Z",
+                                      "updatedAt": "2026-07-28T02:29:25.000Z",
+                                      "uid": "35240-339a3c63-fb95-4a8d-99ab-1b57e2a12823"
+                                    }
+                                  ],
+                                  "id": "a76ae1a7-ffba-43c7-a9d4-3086dc96d33a",
+                                  "createdAt": "2026-07-28T02:29:25.000Z",
+                                  "updatedAt": "2026-07-28T02:29:25.000Z",
+                                  "uid": "35240-a76ae1a7-ffba-43c7-a9d4-3086dc96d33a"
+                                }
+                              ],
+                              "id": "d3a44d13-5d6a-4845-a1b3-197c6039ad48",
+                              "createdAt": "2026-07-28T02:29:25.000Z",
+                              "updatedAt": "2026-07-28T02:29:25.000Z",
+                              "uid": "35240-d3a44d13-5d6a-4845-a1b3-197c6039ad48"
+                            }
+                          ],
+                          "id": "4149794b-ea3c-408b-a796-9df3c6e37ca0",
+                          "createdAt": "2026-07-28T02:29:25.000Z",
+                          "updatedAt": "2026-07-28T02:29:25.000Z",
+                          "uid": "35240-4149794b-ea3c-408b-a796-9df3c6e37ca0"
+                        }
+                      ],
+                      "id": "b8171c17-7904-47f0-8aad-f173c48a7c96",
+                      "createdAt": "2026-07-28T02:29:25.000Z",
+                      "updatedAt": "2026-07-28T02:29:25.000Z",
+                      "uid": "35240-b8171c17-7904-47f0-8aad-f173c48a7c96"
+                    }
+                  ],
+                  "id": "cd97d30f-4903-48b4-9a5c-935b03471c18",
+                  "createdAt": "2026-07-28T02:29:25.000Z",
+                  "updatedAt": "2026-07-28T02:29:25.000Z",
+                  "uid": "35240-cd97d30f-4903-48b4-9a5c-935b03471c18"
+                }
+              ],
+              "id": "552338b8-423e-4fb4-a317-1360b907f9d6",
+              "createdAt": "2026-07-28T02:29:25.000Z",
+              "updatedAt": "2026-07-28T02:29:25.000Z",
+              "uid": "35240-552338b8-423e-4fb4-a317-1360b907f9d6"
+            }
+          ],
+          "id": "89ddd31c-67d5-4fe2-9443-7b0da4714495",
+          "createdAt": "2026-07-28T02:29:25.000Z",
+          "updatedAt": "2026-07-28T02:29:25.000Z",
+          "uid": "35240-89ddd31c-67d5-4fe2-9443-7b0da4714495"
+        }
+      ],
+      "id": "6ce319bf-80bc-4b02-9acb-5be103e7f9f4",
+      "createdAt": "2026-07-28T02:29:25.000Z",
+      "updatedAt": "2026-07-28T02:29:25.000Z",
+      "uid": "35240-6ce319bf-80bc-4b02-9acb-5be103e7f9f4"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

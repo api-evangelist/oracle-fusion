@@ -1,0 +1,495 @@
+{
+  "info": {
+    "_postman_id": "b2cb3b1e-15b6-4c43-9247-f6baf6f1d43c",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Payments API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:21.000Z",
+    "updatedAt": "2026-07-28T02:29:22.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-b2cb3b1e-15b6-4c43-9247-f6baf6f1d43c"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "payablesPayments",
+                  "item": [
+                    {
+                      "name": "{PaymentId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a payment",
+                          "id": "b7d85046-8dce-4adb-b460-0e6e7ddb5921",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments/:PaymentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "payablesPayments",
+                                ":PaymentId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "bb6b973b-2437-44b3-b2d1-2ba062f89464",
+                                  "key": "PaymentId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the payment"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific payment by its unique identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "4d42d949-6d10-4189-a280-b9e60ea3eab7",
+                              "name": "Payment details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments/:PaymentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "payablesPayments",
+                                    ":PaymentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PaymentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"PaymentId\": \"<integer>\",\n  \"PaymentNumber\": \"<string>\",\n  \"PaymentAmount\": \"<double>\",\n  \"PaymentCurrencyCode\": \"<string>\",\n  \"PaymentDate\": \"<date>\",\n  \"PaymentMethod\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"BankAccountName\": \"<string>\",\n  \"Status\": \"Voided\"\n}",
+                              "createdAt": "2026-07-28T02:29:22.000Z",
+                              "updatedAt": "2026-07-28T02:29:22.000Z",
+                              "uid": "35240-4d42d949-6d10-4189-a280-b9e60ea3eab7"
+                            },
+                            {
+                              "id": "9797d6aa-31ae-4155-92a1-b4fd8e413ced",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments/:PaymentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "payablesPayments",
+                                    ":PaymentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PaymentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:22.000Z",
+                              "updatedAt": "2026-07-28T02:29:22.000Z",
+                              "uid": "35240-9797d6aa-31ae-4155-92a1-b4fd8e413ced"
+                            },
+                            {
+                              "id": "17ff4625-eff9-4b84-937f-d6dae91f6e45",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments/:PaymentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "payablesPayments",
+                                    ":PaymentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PaymentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:22.000Z",
+                              "updatedAt": "2026-07-28T02:29:22.000Z",
+                              "uid": "35240-17ff4625-eff9-4b84-937f-d6dae91f6e45"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:22.000Z",
+                          "updatedAt": "2026-07-28T02:29:22.000Z",
+                          "uid": "35240-b7d85046-8dce-4adb-b460-0e6e7ddb5921"
+                        }
+                      ],
+                      "id": "7811ad12-996c-4d30-8981-d3fc130b01b6",
+                      "createdAt": "2026-07-28T02:29:22.000Z",
+                      "updatedAt": "2026-07-28T02:29:22.000Z",
+                      "uid": "35240-7811ad12-996c-4d30-8981-d3fc130b01b6"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List payments",
+                      "id": "e5f79013-61f6-49e1-914d-349ce8aa1700",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "payablesPayments"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a collection of accounts payable payments including check, electronic, and wire transfer payments."
+                      },
+                      "response": [
+                        {
+                          "id": "8e52d0f8-b6cf-447a-8e44-4dcd943b9119",
+                          "name": "Successful retrieval of payments",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "payablesPayments"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PaymentId\": \"<integer>\",\n      \"PaymentNumber\": \"<string>\",\n      \"PaymentAmount\": \"<double>\",\n      \"PaymentCurrencyCode\": \"<string>\",\n      \"PaymentDate\": \"<date>\",\n      \"PaymentMethod\": \"<string>\",\n      \"VendorName\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"BankAccountName\": \"<string>\",\n      \"Status\": \"Transmitted\"\n    },\n    {\n      \"PaymentId\": \"<integer>\",\n      \"PaymentNumber\": \"<string>\",\n      \"PaymentAmount\": \"<double>\",\n      \"PaymentCurrencyCode\": \"<string>\",\n      \"PaymentDate\": \"<date>\",\n      \"PaymentMethod\": \"<string>\",\n      \"VendorName\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"BankAccountName\": \"<string>\",\n      \"Status\": \"Formatted\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"totalResults\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:29:22.000Z",
+                          "updatedAt": "2026-07-28T02:29:22.000Z",
+                          "uid": "35240-8e52d0f8-b6cf-447a-8e44-4dcd943b9119"
+                        },
+                        {
+                          "id": "a407ec6b-9584-449d-876f-1333bdd8de55",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/payablesPayments?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "payablesPayments"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:22.000Z",
+                          "updatedAt": "2026-07-28T02:29:22.000Z",
+                          "uid": "35240-a407ec6b-9584-449d-876f-1333bdd8de55"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:22.000Z",
+                      "updatedAt": "2026-07-28T02:29:22.000Z",
+                      "uid": "35240-e5f79013-61f6-49e1-914d-349ce8aa1700"
+                    }
+                  ],
+                  "id": "844c98f8-d7b1-4754-b43e-c9d39c5e6894",
+                  "createdAt": "2026-07-28T02:29:22.000Z",
+                  "updatedAt": "2026-07-28T02:29:22.000Z",
+                  "uid": "35240-844c98f8-d7b1-4754-b43e-c9d39c5e6894"
+                }
+              ],
+              "id": "453515f8-32b4-4faf-be00-7b6a70ca97e2",
+              "createdAt": "2026-07-28T02:29:22.000Z",
+              "updatedAt": "2026-07-28T02:29:22.000Z",
+              "uid": "35240-453515f8-32b4-4faf-be00-7b6a70ca97e2"
+            }
+          ],
+          "id": "f4d8e9d7-7c9d-4ed4-9d84-da63266403d7",
+          "createdAt": "2026-07-28T02:29:22.000Z",
+          "updatedAt": "2026-07-28T02:29:22.000Z",
+          "uid": "35240-f4d8e9d7-7c9d-4ed4-9d84-da63266403d7"
+        }
+      ],
+      "id": "cfe85941-b537-4589-8ffd-75a8b9a41e7e",
+      "createdAt": "2026-07-28T02:29:22.000Z",
+      "updatedAt": "2026-07-28T02:29:22.000Z",
+      "uid": "35240-cfe85941-b537-4589-8ffd-75a8b9a41e7e"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

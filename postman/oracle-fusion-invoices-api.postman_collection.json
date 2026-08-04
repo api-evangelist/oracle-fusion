@@ -1,0 +1,1287 @@
+{
+  "info": {
+    "_postman_id": "5e7e7b87-5b51-4704-be5b-abd67b99318d",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Invoices API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:11.000Z",
+    "updatedAt": "2026-07-28T02:29:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-5e7e7b87-5b51-4704-be5b-abd67b99318d"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "invoices",
+                  "item": [
+                    {
+                      "name": "{InvoiceId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an invoice",
+                          "id": "46d17a85-a8af-49f7-85ea-fe270538beea",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices",
+                                ":InvoiceId"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to include in the response.",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d2dbc71a-353d-4d4e-967e-7639df26be86",
+                                  "key": "InvoiceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the invoice"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific accounts payable invoice by its unique identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "744dca0d-2ad3-4b67-aa5d-027227e2c4c3",
+                              "name": "Invoice details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"InvoiceId\": \"<integer>\",\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorName\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"ApprovalStatus\": \"Not Required\",\n  \"ValidationStatus\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"PaidAmount\": \"<double>\",\n  \"AmountDue\": \"<double>\",\n  \"CreatedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-744dca0d-2ad3-4b67-aa5d-027227e2c4c3"
+                            },
+                            {
+                              "id": "902ed8ab-bdaf-4fcc-b4d1-b736e1d92714",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-902ed8ab-bdaf-4fcc-b4d1-b736e1d92714"
+                            },
+                            {
+                              "id": "ae20a629-b9aa-49fa-8bf9-6d85d52f8325",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to include in the response.",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-ae20a629-b9aa-49fa-8bf9-6d85d52f8325"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-46d17a85-a8af-49f7-85ea-fe270538beea"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an invoice",
+                          "id": "cdff5a2f-3ae7-41ad-a5c4-da3b3bb54114",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices",
+                                ":InvoiceId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4bb89cbf-2664-44e7-889e-39b8e4a73a75",
+                                  "key": "InvoiceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the invoice"
+                                }
+                              ]
+                            },
+                            "description": "Update an existing accounts payable invoice."
+                          },
+                          "response": [
+                            {
+                              "id": "4dc368bb-35db-4039-94ec-79373274b802",
+                              "name": "Invoice updated successfully",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"InvoiceId\": \"<integer>\",\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorName\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"ApprovalStatus\": \"Not Required\",\n  \"ValidationStatus\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"PaidAmount\": \"<double>\",\n  \"AmountDue\": \"<double>\",\n  \"CreatedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-4dc368bb-35db-4039-94ec-79373274b802"
+                            },
+                            {
+                              "id": "fdec5789-1f9f-48fa-a88a-ff0302168aac",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-fdec5789-1f9f-48fa-a88a-ff0302168aac"
+                            },
+                            {
+                              "id": "0db4429b-2f05-439c-85af-617c3dfcee1d",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-0db4429b-2f05-439c-85af-617c3dfcee1d"
+                            },
+                            {
+                              "id": "3a77e635-5bab-43c5-af41-ece291f5ed96",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-3a77e635-5bab-43c5-af41-ece291f5ed96"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-cdff5a2f-3ae7-41ad-a5c4-da3b3bb54114"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an invoice",
+                          "id": "436e9bf0-430f-437c-ba11-26b03c6dcc25",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices",
+                                ":InvoiceId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c056838f-b78c-43e8-8478-995591f7e982",
+                                  "key": "InvoiceId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique identifier for the invoice"
+                                }
+                              ]
+                            },
+                            "description": "Delete an accounts payable invoice."
+                          },
+                          "response": [
+                            {
+                              "id": "75ca0641-9eca-4a75-a5da-8f9b8630d23d",
+                              "name": "Invoice deleted successfully",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-75ca0641-9eca-4a75-a5da-8f9b8630d23d"
+                            },
+                            {
+                              "id": "c25465b8-36cd-481e-b221-a63bb595bb39",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-c25465b8-36cd-481e-b221-a63bb595bb39"
+                            },
+                            {
+                              "id": "7398a3d9-d945-4d7b-9665-c4e22f886f1a",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices/:InvoiceId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "invoices",
+                                    ":InvoiceId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "InvoiceId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:11.000Z",
+                              "updatedAt": "2026-07-28T02:29:11.000Z",
+                              "uid": "35240-7398a3d9-d945-4d7b-9665-c4e22f886f1a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-436e9bf0-430f-437c-ba11-26b03c6dcc25"
+                        }
+                      ],
+                      "id": "d0fabd16-2be3-4cde-99d7-aa63d8fa5bf8",
+                      "createdAt": "2026-07-28T02:29:11.000Z",
+                      "updatedAt": "2026-07-28T02:29:11.000Z",
+                      "uid": "35240-d0fabd16-2be3-4cde-99d7-aa63d8fa5bf8"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List invoices",
+                      "id": "043a6061-729f-4d16-8d0a-770628f177dd",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "invoices"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of child resources to include in the response.",
+                              "key": "expand",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a collection of accounts payable invoices. Supports filtering, sorting, and pagination using standard Oracle REST query parameters."
+                      },
+                      "response": [
+                        {
+                          "id": "0963f791-e7ca-4827-ada2-643f7eac5848",
+                          "name": "Successful retrieval of invoices",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to include in the response.",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"InvoiceId\": \"<integer>\",\n      \"InvoiceNumber\": \"<string>\",\n      \"InvoiceAmount\": \"<double>\",\n      \"InvoiceCurrencyCode\": \"<string>\",\n      \"InvoiceDate\": \"<date>\",\n      \"InvoiceType\": \"Prepayment\",\n      \"VendorName\": \"<string>\",\n      \"VendorNumber\": \"<string>\",\n      \"VendorSiteCode\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"PaymentTerms\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"ApprovalStatus\": \"Wfapproved\",\n      \"ValidationStatus\": \"<string>\",\n      \"AccountingDate\": \"<date>\",\n      \"PaidAmount\": \"<double>\",\n      \"AmountDue\": \"<double>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastUpdateDate\": \"<dateTime>\"\n    },\n    {\n      \"InvoiceId\": \"<integer>\",\n      \"InvoiceNumber\": \"<string>\",\n      \"InvoiceAmount\": \"<double>\",\n      \"InvoiceCurrencyCode\": \"<string>\",\n      \"InvoiceDate\": \"<date>\",\n      \"InvoiceType\": \"Standard\",\n      \"VendorName\": \"<string>\",\n      \"VendorNumber\": \"<string>\",\n      \"VendorSiteCode\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"PaymentTerms\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"ApprovalStatus\": \"Wfapproved\",\n      \"ValidationStatus\": \"<string>\",\n      \"AccountingDate\": \"<date>\",\n      \"PaidAmount\": \"<double>\",\n      \"AmountDue\": \"<double>\",\n      \"CreatedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastUpdateDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"totalResults\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-0963f791-e7ca-4827-ada2-643f7eac5848"
+                        },
+                        {
+                          "id": "7759684d-67f7-4a39-967a-7d86b30e4caf",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to include in the response.",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-7759684d-67f7-4a39-967a-7d86b30e4caf"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:11.000Z",
+                      "updatedAt": "2026-07-28T02:29:11.000Z",
+                      "uid": "35240-043a6061-729f-4d16-8d0a-770628f177dd"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an invoice",
+                      "id": "747afb5e-8fcb-426e-b996-79c67b68369e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "invoices"
+                          ]
+                        },
+                        "description": "Create a new accounts payable invoice with header and optionally include invoice lines and distributions."
+                      },
+                      "response": [
+                        {
+                          "id": "731ea688-561b-4474-a5cd-ccb751e78cd4",
+                          "name": "Invoice created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"InvoiceId\": \"<integer>\",\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorName\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"ApprovalStatus\": \"Not Required\",\n  \"ValidationStatus\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"PaidAmount\": \"<double>\",\n  \"AmountDue\": \"<double>\",\n  \"CreatedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-731ea688-561b-4474-a5cd-ccb751e78cd4"
+                        },
+                        {
+                          "id": "573511d7-1af6-44b4-bbdc-05e55cf81ecb",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-573511d7-1af6-44b4-bbdc-05e55cf81ecb"
+                        },
+                        {
+                          "id": "16163c1c-0a20-451a-be74-f205273fc1a1",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"Standard\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/invoices",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "invoices"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:11.000Z",
+                          "updatedAt": "2026-07-28T02:29:11.000Z",
+                          "uid": "35240-16163c1c-0a20-451a-be74-f205273fc1a1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:11.000Z",
+                      "updatedAt": "2026-07-28T02:29:11.000Z",
+                      "uid": "35240-747afb5e-8fcb-426e-b996-79c67b68369e"
+                    }
+                  ],
+                  "id": "53fcad1c-792f-4c5b-9943-317fddd61556",
+                  "createdAt": "2026-07-28T02:29:11.000Z",
+                  "updatedAt": "2026-07-28T02:29:11.000Z",
+                  "uid": "35240-53fcad1c-792f-4c5b-9943-317fddd61556"
+                }
+              ],
+              "id": "aa73c8df-a481-4bbe-bd92-d349d516c2c8",
+              "createdAt": "2026-07-28T02:29:11.000Z",
+              "updatedAt": "2026-07-28T02:29:11.000Z",
+              "uid": "35240-aa73c8df-a481-4bbe-bd92-d349d516c2c8"
+            }
+          ],
+          "id": "a18c4e6d-cf3d-43e7-bdf3-13f635204c7b",
+          "createdAt": "2026-07-28T02:29:11.000Z",
+          "updatedAt": "2026-07-28T02:29:11.000Z",
+          "uid": "35240-a18c4e6d-cf3d-43e7-bdf3-13f635204c7b"
+        }
+      ],
+      "id": "f7eb1a37-1b5c-486a-93ec-7e0a0153bd1d",
+      "createdAt": "2026-07-28T02:29:11.000Z",
+      "updatedAt": "2026-07-28T02:29:11.000Z",
+      "uid": "35240-f7eb1a37-1b5c-486a-93ec-7e0a0153bd1d"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

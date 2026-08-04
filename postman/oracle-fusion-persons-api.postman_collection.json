@@ -1,0 +1,1061 @@
+{
+  "info": {
+    "_postman_id": "a16cbe88-5c23-4b96-becb-ba7afa3f0172",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Persons API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:23.000Z",
+    "updatedAt": "2026-07-28T02:29:24.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a16cbe88-5c23-4b96-becb-ba7afa3f0172"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "persons",
+                  "item": [
+                    {
+                      "name": "{Personid}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a person",
+                          "id": "8fd135c4-7b3f-4a05-ae50-9033fef36ea7",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons",
+                                ":Personid"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "6de00552-92f0-47b8-b445-40ba08400d64",
+                                  "key": "Personid",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific person record by identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "121f7233-b7a1-45f2-b8b5-72772ec7fb88",
+                              "name": "Person details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"Personid\": \"<integer>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"DisplayName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-121f7233-b7a1-45f2-b8b5-72772ec7fb88"
+                            },
+                            {
+                              "id": "738c9f27-161e-4035-96f5-4ea2308b38e9",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-738c9f27-161e-4035-96f5-4ea2308b38e9"
+                            },
+                            {
+                              "id": "db89180b-fb56-42c1-b7be-6d8da08fe1b0",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-db89180b-fb56-42c1-b7be-6d8da08fe1b0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-8fd135c4-7b3f-4a05-ae50-9033fef36ea7"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a person",
+                          "id": "d218e7d5-7808-486f-95ae-5850943a8bf2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons",
+                                ":Personid"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "4a2a118b-aaa5-49cc-a13e-426c4e157530",
+                                  "key": "Personid",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing person record."
+                          },
+                          "response": [
+                            {
+                              "id": "61f5d921-56e8-447a-bd58-ec2a00e7aa02",
+                              "name": "Person updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-61f5d921-56e8-447a-bd58-ec2a00e7aa02"
+                            },
+                            {
+                              "id": "d7ddc5db-0aa0-4c16-9c59-228d234b4c79",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-d7ddc5db-0aa0-4c16-9c59-228d234b4c79"
+                            },
+                            {
+                              "id": "b0868d8b-bad4-468f-8c41-6ca16f5f02ce",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-b0868d8b-bad4-468f-8c41-6ca16f5f02ce"
+                            },
+                            {
+                              "id": "f6a42bac-8523-45c5-ac79-031281504205",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-f6a42bac-8523-45c5-ac79-031281504205"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-d218e7d5-7808-486f-95ae-5850943a8bf2"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete a person",
+                          "id": "54b00616-b40f-455e-8d9e-1d4f37c4689f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons",
+                                ":Personid"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "3103475a-366f-4e0a-8e05-86e64444d271",
+                                  "key": "Personid",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an existing person record."
+                          },
+                          "response": [
+                            {
+                              "id": "e6946a1a-e439-41e2-8a27-01f49320e968",
+                              "name": "Person deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-e6946a1a-e439-41e2-8a27-01f49320e968"
+                            },
+                            {
+                              "id": "d05ad41b-d9b9-45f1-86e9-9668f7c0ad68",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-d05ad41b-d9b9-45f1-86e9-9668f7c0ad68"
+                            },
+                            {
+                              "id": "7f15f889-6f6d-470b-935d-c38896152bdf",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "persons",
+                                    ":Personid"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "Personid"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:24.000Z",
+                              "updatedAt": "2026-07-28T02:29:24.000Z",
+                              "uid": "35240-7f15f889-6f6d-470b-935d-c38896152bdf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-54b00616-b40f-455e-8d9e-1d4f37c4689f"
+                        }
+                      ],
+                      "id": "ded841cb-0d4a-463c-9d14-c8d0dbcc58aa",
+                      "createdAt": "2026-07-28T02:29:24.000Z",
+                      "updatedAt": "2026-07-28T02:29:24.000Z",
+                      "uid": "35240-ded841cb-0d4a-463c-9d14-c8d0dbcc58aa"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List persons",
+                      "id": "8cbce288-7c47-40f2-8b00-b1c751a55455",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons?limit=25&offset=0&fields=<string>&q=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "persons"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve person records used across Fusion Cloud applications."
+                      },
+                      "response": [
+                        {
+                          "id": "ab0e204b-e402-4d0e-8796-57dbb8f6ceff",
+                          "name": "Persons retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"Personid\": \"<integer>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"DisplayName\": \"<string>\",\n      \"Email\": \"<email>\",\n      \"PhoneNumber\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"Personid\": \"<integer>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"DisplayName\": \"<string>\",\n      \"Email\": \"<email>\",\n      \"PhoneNumber\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-ab0e204b-e402-4d0e-8796-57dbb8f6ceff"
+                        },
+                        {
+                          "id": "b2251b58-a9df-47e2-8623-47a345c4cc5c",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-b2251b58-a9df-47e2-8623-47a345c4cc5c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:24.000Z",
+                      "updatedAt": "2026-07-28T02:29:24.000Z",
+                      "uid": "35240-8cbce288-7c47-40f2-8b00-b1c751a55455"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a person",
+                      "id": "96ba3a74-2420-443b-95b8-cfc8f451e5ca",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "persons"
+                          ]
+                        },
+                        "description": "Create a new person record."
+                      },
+                      "response": [
+                        {
+                          "id": "b0918afb-9326-455a-bc56-5f30014b1265",
+                          "name": "Person created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-b0918afb-9326-455a-bc56-5f30014b1265"
+                        },
+                        {
+                          "id": "71ff186e-5002-4050-8155-1eb377fc8701",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-71ff186e-5002-4050-8155-1eb377fc8701"
+                        },
+                        {
+                          "id": "acf42ae9-6c13-40f2-a421-2437cfbcc162",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\",\n  \"Email\": \"<email>\",\n  \"PhoneNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/persons",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "persons"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:24.000Z",
+                          "updatedAt": "2026-07-28T02:29:24.000Z",
+                          "uid": "35240-acf42ae9-6c13-40f2-a421-2437cfbcc162"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:24.000Z",
+                      "updatedAt": "2026-07-28T02:29:24.000Z",
+                      "uid": "35240-96ba3a74-2420-443b-95b8-cfc8f451e5ca"
+                    }
+                  ],
+                  "id": "d1608a63-c1a9-46fc-a627-3edad43cb372",
+                  "createdAt": "2026-07-28T02:29:24.000Z",
+                  "updatedAt": "2026-07-28T02:29:24.000Z",
+                  "uid": "35240-d1608a63-c1a9-46fc-a627-3edad43cb372"
+                }
+              ],
+              "id": "9925d794-5619-4050-a98e-50d26b76ed06",
+              "createdAt": "2026-07-28T02:29:24.000Z",
+              "updatedAt": "2026-07-28T02:29:24.000Z",
+              "uid": "35240-9925d794-5619-4050-a98e-50d26b76ed06"
+            }
+          ],
+          "id": "ca5c7ea9-a0fc-4e4d-9275-413274fd5d86",
+          "createdAt": "2026-07-28T02:29:24.000Z",
+          "updatedAt": "2026-07-28T02:29:24.000Z",
+          "uid": "35240-ca5c7ea9-a0fc-4e4d-9275-413274fd5d86"
+        }
+      ],
+      "id": "3fcecd75-4b59-4164-8d3a-434347602fe5",
+      "createdAt": "2026-07-28T02:29:24.000Z",
+      "updatedAt": "2026-07-28T02:29:24.000Z",
+      "uid": "35240-3fcecd75-4b59-4164-8d3a-434347602fe5"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

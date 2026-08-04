@@ -1,0 +1,1086 @@
+{
+  "info": {
+    "_postman_id": "7a6cb24d-bdb0-460b-b18e-5800d8a9c238",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Change Orders API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:40.000Z",
+    "updatedAt": "2026-07-28T02:28:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7a6cb24d-bdb0-460b-b18e-5800d8a9c238"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "changeOrders",
+                  "item": [
+                    {
+                      "name": "{ChangeDocumentId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a change order",
+                          "id": "2f93bc6d-e0c7-436f-ab9d-99816864be55",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders",
+                                ":ChangeDocumentId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "ab1548c3-d944-41e5-9560-7828a5d04721",
+                                  "key": "ChangeDocumentId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific change order record."
+                          },
+                          "response": [
+                            {
+                              "id": "0c9bb5b5-800b-4cae-b891-ec8e33fb9169",
+                              "name": "Change order details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ChangeDocumentId\": \"<integer>\",\n  \"ChangeDocumentNumber\": \"<string>\",\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Status\": \"Rejected\",\n  \"ImpactType\": \"<string>\",\n  \"RequestedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-0c9bb5b5-800b-4cae-b891-ec8e33fb9169"
+                            },
+                            {
+                              "id": "2d824d3b-1d8d-44c8-a68b-9d698cce9864",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-2d824d3b-1d8d-44c8-a68b-9d698cce9864"
+                            },
+                            {
+                              "id": "4aca736e-b995-491a-9375-e4712a1dbc37",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-4aca736e-b995-491a-9375-e4712a1dbc37"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-2f93bc6d-e0c7-436f-ab9d-99816864be55"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a change order",
+                          "id": "0a1c82dc-9813-48b7-8148-419997f4a8a1",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders",
+                                ":ChangeDocumentId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "6c65be26-95d3-4b55-8a8f-80274ba4763a",
+                                  "key": "ChangeDocumentId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing change order."
+                          },
+                          "response": [
+                            {
+                              "id": "cb2a85b9-8a0f-4963-b3a6-7d3b26c40f89",
+                              "name": "Change order updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-cb2a85b9-8a0f-4963-b3a6-7d3b26c40f89"
+                            },
+                            {
+                              "id": "89ebed5c-af98-47b7-a9db-fdb5dd51ceb9",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-89ebed5c-af98-47b7-a9db-fdb5dd51ceb9"
+                            },
+                            {
+                              "id": "a231d342-e7d3-46a0-9d59-9164b3abd950",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-a231d342-e7d3-46a0-9d59-9164b3abd950"
+                            },
+                            {
+                              "id": "ab4b3901-75e3-40b2-8667-96c486c811bf",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-ab4b3901-75e3-40b2-8667-96c486c811bf"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-0a1c82dc-9813-48b7-8148-419997f4a8a1"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete a change order",
+                          "id": "48d622a4-0a65-4e4b-847a-2dc29faa047d",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders",
+                                ":ChangeDocumentId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "6440ff70-92f5-4a40-8d7f-a7535b47b213",
+                                  "key": "ChangeDocumentId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an existing change order."
+                          },
+                          "response": [
+                            {
+                              "id": "85779562-5be0-4448-9431-0ff0e6d03b0a",
+                              "name": "Change order deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-85779562-5be0-4448-9431-0ff0e6d03b0a"
+                            },
+                            {
+                              "id": "2c0af788-d366-4a3e-87bd-fec86c778a47",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-2c0af788-d366-4a3e-87bd-fec86c778a47"
+                            },
+                            {
+                              "id": "0482379e-da1d-490a-9ffb-64091cbc2562",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders/:ChangeDocumentId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "changeOrders",
+                                    ":ChangeDocumentId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ChangeDocumentId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:41.000Z",
+                              "updatedAt": "2026-07-28T02:28:41.000Z",
+                              "uid": "35240-0482379e-da1d-490a-9ffb-64091cbc2562"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-48d622a4-0a65-4e4b-847a-2dc29faa047d"
+                        }
+                      ],
+                      "id": "9a164813-41e4-4387-b2f7-dfb0c5b064e2",
+                      "createdAt": "2026-07-28T02:28:41.000Z",
+                      "updatedAt": "2026-07-28T02:28:41.000Z",
+                      "uid": "35240-9a164813-41e4-4387-b2f7-dfb0c5b064e2"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List change orders",
+                      "id": "7901575e-6519-456c-a701-82a83c588a23",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "changeOrders"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve project change order records including change impacts, participants, and approval status."
+                      },
+                      "response": [
+                        {
+                          "id": "1e789601-b972-4071-9640-23b15257958e",
+                          "name": "Change orders retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ChangeDocumentId\": \"<integer>\",\n      \"ChangeDocumentNumber\": \"<string>\",\n      \"ChangeDocumentName\": \"<string>\",\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"Rejected\",\n      \"ImpactType\": \"<string>\",\n      \"RequestedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"ChangeDocumentId\": \"<integer>\",\n      \"ChangeDocumentNumber\": \"<string>\",\n      \"ChangeDocumentName\": \"<string>\",\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"Status\": \"Submitted\",\n      \"ImpactType\": \"<string>\",\n      \"RequestedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-1e789601-b972-4071-9640-23b15257958e"
+                        },
+                        {
+                          "id": "33ae7989-ea84-41fe-8cc4-cbcb42311a01",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-33ae7989-ea84-41fe-8cc4-cbcb42311a01"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:41.000Z",
+                      "updatedAt": "2026-07-28T02:28:41.000Z",
+                      "uid": "35240-7901575e-6519-456c-a701-82a83c588a23"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a change order",
+                      "id": "8f9a1ad2-d4e5-4442-8f74-05a7b75a52b6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "changeOrders"
+                          ]
+                        },
+                        "description": "Create a new project change order."
+                      },
+                      "response": [
+                        {
+                          "id": "b1fe1f54-f60c-410b-ae12-88e960537ead",
+                          "name": "Change order created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"ChangeDocumentId\": \"<integer>\",\n  \"ChangeDocumentNumber\": \"<string>\",\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"Status\": \"Rejected\",\n  \"ImpactType\": \"<string>\",\n  \"RequestedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-b1fe1f54-f60c-410b-ae12-88e960537ead"
+                        },
+                        {
+                          "id": "62891469-30bb-411f-a302-e810e574adb6",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-62891469-30bb-411f-a302-e810e574adb6"
+                        },
+                        {
+                          "id": "9f8fd3db-676d-429a-8a9e-592fc47a593a",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ChangeDocumentName\": \"<string>\",\n  \"ProjectId\": \"<integer>\",\n  \"Description\": \"<string>\",\n  \"ImpactType\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/changeOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "changeOrders"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:41.000Z",
+                          "updatedAt": "2026-07-28T02:28:41.000Z",
+                          "uid": "35240-9f8fd3db-676d-429a-8a9e-592fc47a593a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:41.000Z",
+                      "updatedAt": "2026-07-28T02:28:41.000Z",
+                      "uid": "35240-8f9a1ad2-d4e5-4442-8f74-05a7b75a52b6"
+                    }
+                  ],
+                  "id": "87a88078-6848-4db4-80b7-8c820f3f1e4c",
+                  "createdAt": "2026-07-28T02:28:41.000Z",
+                  "updatedAt": "2026-07-28T02:28:41.000Z",
+                  "uid": "35240-87a88078-6848-4db4-80b7-8c820f3f1e4c"
+                }
+              ],
+              "id": "2081afd5-0eb2-4b72-9f72-a9a76a83b6d5",
+              "createdAt": "2026-07-28T02:28:41.000Z",
+              "updatedAt": "2026-07-28T02:28:41.000Z",
+              "uid": "35240-2081afd5-0eb2-4b72-9f72-a9a76a83b6d5"
+            }
+          ],
+          "id": "c3fc58af-f600-4cd8-905c-12fda3790cd6",
+          "createdAt": "2026-07-28T02:28:41.000Z",
+          "updatedAt": "2026-07-28T02:28:41.000Z",
+          "uid": "35240-c3fc58af-f600-4cd8-905c-12fda3790cd6"
+        }
+      ],
+      "id": "969b024f-4d8f-4481-8d6f-2e374bf8f4fc",
+      "createdAt": "2026-07-28T02:28:41.000Z",
+      "updatedAt": "2026-07-28T02:28:41.000Z",
+      "uid": "35240-969b024f-4d8f-4481-8d6f-2e374bf8f4fc"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

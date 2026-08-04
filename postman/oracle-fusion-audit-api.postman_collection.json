@@ -1,0 +1,185 @@
+{
+  "info": {
+    "_postman_id": "083413b6-04eb-4fa4-8b7b-d1ee52e2a27b",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Audit API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:33.000Z",
+    "updatedAt": "2026-07-28T02:28:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-083413b6-04eb-4fa4-8b7b-d1ee52e2a27b"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "fndAuditRESTService",
+          "item": [
+            {
+              "name": "audittrail",
+              "item": [
+                {
+                  "name": "getaudithistory",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications Get audit history",
+                      "id": "36a437a8-56f8-4a15-9524-e6bbcccdd5f9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/fndAuditRESTService/audittrail/getaudithistory",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "fndAuditRESTService",
+                            "audittrail",
+                            "getaudithistory"
+                          ]
+                        },
+                        "description": "Retrieve audit trail history for tracked business objects."
+                      },
+                      "response": [
+                        {
+                          "id": "210a3cbd-c5dc-4c07-8d38-63024e0b3666",
+                          "name": "Audit history retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/fndAuditRESTService/audittrail/getaudithistory",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "fndAuditRESTService",
+                                "audittrail",
+                                "getaudithistory"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T02:28:34.000Z",
+                          "updatedAt": "2026-07-28T02:28:34.000Z",
+                          "uid": "35240-210a3cbd-c5dc-4c07-8d38-63024e0b3666"
+                        },
+                        {
+                          "id": "505c0e78-483e-473b-bb33-46494b09f1bc",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/fndAuditRESTService/audittrail/getaudithistory",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "fndAuditRESTService",
+                                "audittrail",
+                                "getaudithistory"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:34.000Z",
+                          "updatedAt": "2026-07-28T02:28:34.000Z",
+                          "uid": "35240-505c0e78-483e-473b-bb33-46494b09f1bc"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:34.000Z",
+                      "updatedAt": "2026-07-28T02:28:34.000Z",
+                      "uid": "35240-36a437a8-56f8-4a15-9524-e6bbcccdd5f9"
+                    }
+                  ],
+                  "id": "0a59d560-8459-4b66-88bf-001e07f76e6b",
+                  "createdAt": "2026-07-28T02:28:34.000Z",
+                  "updatedAt": "2026-07-28T02:28:34.000Z",
+                  "uid": "35240-0a59d560-8459-4b66-88bf-001e07f76e6b"
+                }
+              ],
+              "id": "c750c18e-6020-4863-bb21-1609fe93efcf",
+              "createdAt": "2026-07-28T02:28:34.000Z",
+              "updatedAt": "2026-07-28T02:28:34.000Z",
+              "uid": "35240-c750c18e-6020-4863-bb21-1609fe93efcf"
+            }
+          ],
+          "id": "ea5fa122-ede6-4f23-b28c-b6e921d88f0b",
+          "createdAt": "2026-07-28T02:28:34.000Z",
+          "updatedAt": "2026-07-28T02:28:34.000Z",
+          "uid": "35240-ea5fa122-ede6-4f23-b28c-b6e921d88f0b"
+        }
+      ],
+      "id": "d64e252a-f8fd-4ac2-aad1-5c264bfb6908",
+      "createdAt": "2026-07-28T02:28:34.000Z",
+      "updatedAt": "2026-07-28T02:28:34.000Z",
+      "uid": "35240-d64e252a-f8fd-4ac2-aad1-5c264bfb6908"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

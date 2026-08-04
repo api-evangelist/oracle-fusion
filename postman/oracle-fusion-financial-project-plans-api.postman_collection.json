@@ -1,0 +1,458 @@
+{
+  "info": {
+    "_postman_id": "325bee6e-6eb0-4ccc-b4dc-225d5f9f0213",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Financial Project Plans API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:05.000Z",
+    "updatedAt": "2026-07-28T02:29:05.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-325bee6e-6eb0-4ccc-b4dc-225d5f9f0213"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "financialProjectPlans",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List financial project plans",
+                      "id": "f39a2ecd-831b-4072-b48b-6cd935a449da",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "financialProjectPlans"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve financial project plan versions including budgets, forecasts, resource assignments, and planning options."
+                      },
+                      "response": [
+                        {
+                          "id": "3dd8cc59-f60d-4f52-9fac-c104844cb9c6",
+                          "name": "Financial project plans retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "financialProjectPlans"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PlanVersionId\": \"<integer>\",\n      \"ProjectId\": \"<integer>\",\n      \"PlanName\": \"<string>\",\n      \"PlanType\": \"Budget\",\n      \"VersionNumber\": \"<integer>\",\n      \"Status\": \"Working\",\n      \"TotalPlannedCost\": \"<double>\",\n      \"TotalPlannedRevenue\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"PlanVersionId\": \"<integer>\",\n      \"ProjectId\": \"<integer>\",\n      \"PlanName\": \"<string>\",\n      \"PlanType\": \"Budget\",\n      \"VersionNumber\": \"<integer>\",\n      \"Status\": \"Submitted\",\n      \"TotalPlannedCost\": \"<double>\",\n      \"TotalPlannedRevenue\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:06.000Z",
+                          "updatedAt": "2026-07-28T02:29:06.000Z",
+                          "uid": "35240-3dd8cc59-f60d-4f52-9fac-c104844cb9c6"
+                        },
+                        {
+                          "id": "ae109a9b-516b-4c87-9f5e-7d5a58732b5b",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "financialProjectPlans"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:06.000Z",
+                          "updatedAt": "2026-07-28T02:29:06.000Z",
+                          "uid": "35240-ae109a9b-516b-4c87-9f5e-7d5a58732b5b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:05.000Z",
+                      "updatedAt": "2026-07-28T02:29:05.000Z",
+                      "uid": "35240-f39a2ecd-831b-4072-b48b-6cd935a449da"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a financial project plan",
+                      "id": "f1ae4899-609b-4168-a849-2202bf2a8279",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"Budget\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "financialProjectPlans"
+                          ]
+                        },
+                        "description": "Create a new financial project plan version."
+                      },
+                      "response": [
+                        {
+                          "id": "b34501f8-121c-48a2-b025-b74d72b73afc",
+                          "name": "Financial project plan created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"Budget\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "financialProjectPlans"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"PlanVersionId\": \"<integer>\",\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"Budget\",\n  \"VersionNumber\": \"<integer>\",\n  \"Status\": \"Submitted\",\n  \"TotalPlannedCost\": \"<double>\",\n  \"TotalPlannedRevenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:06.000Z",
+                          "updatedAt": "2026-07-28T02:29:06.000Z",
+                          "uid": "35240-b34501f8-121c-48a2-b025-b74d72b73afc"
+                        },
+                        {
+                          "id": "c6034938-c5f5-4c62-b19a-9b524eaec362",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"Budget\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "financialProjectPlans"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:06.000Z",
+                          "updatedAt": "2026-07-28T02:29:06.000Z",
+                          "uid": "35240-c6034938-c5f5-4c62-b19a-9b524eaec362"
+                        },
+                        {
+                          "id": "84881ee4-d4c3-4a38-8cd3-2bb762bc5193",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"Budget\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/financialProjectPlans",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "financialProjectPlans"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:06.000Z",
+                          "updatedAt": "2026-07-28T02:29:06.000Z",
+                          "uid": "35240-84881ee4-d4c3-4a38-8cd3-2bb762bc5193"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:05.000Z",
+                      "updatedAt": "2026-07-28T02:29:05.000Z",
+                      "uid": "35240-f1ae4899-609b-4168-a849-2202bf2a8279"
+                    }
+                  ],
+                  "id": "de528b2d-0784-4843-a1bd-9214ec2a1710",
+                  "createdAt": "2026-07-28T02:29:05.000Z",
+                  "updatedAt": "2026-07-28T02:29:05.000Z",
+                  "uid": "35240-de528b2d-0784-4843-a1bd-9214ec2a1710"
+                }
+              ],
+              "id": "803f16fb-4ef2-41d9-bf48-859068c9a40b",
+              "createdAt": "2026-07-28T02:29:05.000Z",
+              "updatedAt": "2026-07-28T02:29:05.000Z",
+              "uid": "35240-803f16fb-4ef2-41d9-bf48-859068c9a40b"
+            }
+          ],
+          "id": "2d8b07b3-b95b-4398-94da-3226c637a974",
+          "createdAt": "2026-07-28T02:29:05.000Z",
+          "updatedAt": "2026-07-28T02:29:05.000Z",
+          "uid": "35240-2d8b07b3-b95b-4398-94da-3226c637a974"
+        }
+      ],
+      "id": "53d00b30-2a07-4e44-8832-22deb38fcacb",
+      "createdAt": "2026-07-28T02:29:05.000Z",
+      "updatedAt": "2026-07-28T02:29:05.000Z",
+      "uid": "35240-53d00b30-2a07-4e44-8832-22deb38fcacb"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

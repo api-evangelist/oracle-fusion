@@ -1,0 +1,426 @@
+{
+  "info": {
+    "_postman_id": "3886225c-fee8-4207-95ac-a84c0f6113b5",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Expenditure Types API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:57.000Z",
+    "updatedAt": "2026-07-28T02:28:57.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3886225c-fee8-4207-95ac-a84c0f6113b5"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "expenditureTypes",
+                  "item": [
+                    {
+                      "name": "{ExpenditureTypeId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an expenditure type",
+                          "id": "55070f21-3766-4955-bedc-c7f7d2e56e36",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes/:ExpenditureTypeId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenditureTypes",
+                                ":ExpenditureTypeId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8d2b43eb-a99b-4453-86f2-4a4c879b9b5a",
+                                  "key": "ExpenditureTypeId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific expenditure type definition."
+                          },
+                          "response": [
+                            {
+                              "id": "843bc604-59a6-445e-8ab6-1f41051fa43f",
+                              "name": "Expenditure type details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes/:ExpenditureTypeId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenditureTypes",
+                                    ":ExpenditureTypeId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenditureTypeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ExpenditureTypeId\": \"<integer>\",\n  \"ExpenditureTypeName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ExpenditureCategory\": \"<string>\",\n  \"RevenueCategory\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\"\n}",
+                              "createdAt": "2026-07-28T02:28:57.000Z",
+                              "updatedAt": "2026-07-28T02:28:57.000Z",
+                              "uid": "35240-843bc604-59a6-445e-8ab6-1f41051fa43f"
+                            },
+                            {
+                              "id": "56774fa4-de9b-49f0-83e7-d4e9ff88a43e",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes/:ExpenditureTypeId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenditureTypes",
+                                    ":ExpenditureTypeId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenditureTypeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:57.000Z",
+                              "updatedAt": "2026-07-28T02:28:57.000Z",
+                              "uid": "35240-56774fa4-de9b-49f0-83e7-d4e9ff88a43e"
+                            },
+                            {
+                              "id": "3e4a6d9d-a572-416c-b2d9-95e9b39cfce7",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes/:ExpenditureTypeId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "expenditureTypes",
+                                    ":ExpenditureTypeId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ExpenditureTypeId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:57.000Z",
+                              "updatedAt": "2026-07-28T02:28:57.000Z",
+                              "uid": "35240-3e4a6d9d-a572-416c-b2d9-95e9b39cfce7"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:57.000Z",
+                          "updatedAt": "2026-07-28T02:28:57.000Z",
+                          "uid": "35240-55070f21-3766-4955-bedc-c7f7d2e56e36"
+                        }
+                      ],
+                      "id": "027b0c6b-6c28-4b1b-965a-77dedc2bb5ce",
+                      "createdAt": "2026-07-28T02:28:57.000Z",
+                      "updatedAt": "2026-07-28T02:28:57.000Z",
+                      "uid": "35240-027b0c6b-6c28-4b1b-965a-77dedc2bb5ce"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List expenditure types",
+                      "id": "32dfd2b3-15c5-42c5-998c-1b1916e2b938",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes?limit=25&offset=0&fields=<string>&q=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "expenditureTypes"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve expenditure type definitions used in project costing and billing."
+                      },
+                      "response": [
+                        {
+                          "id": "78089582-b917-4f49-a5ff-28209b920ef7",
+                          "name": "Expenditure types retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenditureTypes"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ExpenditureTypeId\": \"<integer>\",\n      \"ExpenditureTypeName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ExpenditureCategory\": \"<string>\",\n      \"RevenueCategory\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\"\n    },\n    {\n      \"ExpenditureTypeId\": \"<integer>\",\n      \"ExpenditureTypeName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ExpenditureCategory\": \"<string>\",\n      \"RevenueCategory\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:57.000Z",
+                          "updatedAt": "2026-07-28T02:28:57.000Z",
+                          "uid": "35240-78089582-b917-4f49-a5ff-28209b920ef7"
+                        },
+                        {
+                          "id": "9d7dca12-1b87-45da-9acd-344b7f1f47e9",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/expenditureTypes?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "expenditureTypes"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:57.000Z",
+                          "updatedAt": "2026-07-28T02:28:57.000Z",
+                          "uid": "35240-9d7dca12-1b87-45da-9acd-344b7f1f47e9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:57.000Z",
+                      "updatedAt": "2026-07-28T02:28:57.000Z",
+                      "uid": "35240-32dfd2b3-15c5-42c5-998c-1b1916e2b938"
+                    }
+                  ],
+                  "id": "041466b8-0d36-4aef-b343-b22b566ff97e",
+                  "createdAt": "2026-07-28T02:28:57.000Z",
+                  "updatedAt": "2026-07-28T02:28:57.000Z",
+                  "uid": "35240-041466b8-0d36-4aef-b343-b22b566ff97e"
+                }
+              ],
+              "id": "266f24a7-81d6-4cef-bfa1-b6b5290f6fcb",
+              "createdAt": "2026-07-28T02:28:57.000Z",
+              "updatedAt": "2026-07-28T02:28:57.000Z",
+              "uid": "35240-266f24a7-81d6-4cef-bfa1-b6b5290f6fcb"
+            }
+          ],
+          "id": "6d9c79c9-fc36-4824-9c44-197d712e48d4",
+          "createdAt": "2026-07-28T02:28:57.000Z",
+          "updatedAt": "2026-07-28T02:28:57.000Z",
+          "uid": "35240-6d9c79c9-fc36-4824-9c44-197d712e48d4"
+        }
+      ],
+      "id": "ec7a9f57-232d-4cac-a25a-9987e12185e9",
+      "createdAt": "2026-07-28T02:28:57.000Z",
+      "updatedAt": "2026-07-28T02:28:57.000Z",
+      "uid": "35240-ec7a9f57-232d-4cac-a25a-9987e12185e9"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

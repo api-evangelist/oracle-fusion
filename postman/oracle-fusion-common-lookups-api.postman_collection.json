@@ -1,0 +1,1615 @@
+{
+  "info": {
+    "_postman_id": "3e7c68ba-448c-41cf-88aa-678f81734768",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Common Lookups API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:41.000Z",
+    "updatedAt": "2026-07-28T02:28:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3e7c68ba-448c-41cf-88aa-678f81734768"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "commonLookups",
+                  "item": [
+                    {
+                      "name": "{LookupType}",
+                      "item": [
+                        {
+                          "name": "child",
+                          "item": [
+                            {
+                              "name": "lookupCodes",
+                              "item": [
+                                {
+                                  "name": "Oracle Fusion Cloud Applications List lookup codes for a lookup type",
+                                  "id": "51c46c3a-6112-46de-aca0-7f047839bbb6",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes?limit=25&offset=0&fields=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "fscmRestApi",
+                                        "resources",
+                                        "11.13.18.05",
+                                        "commonLookups",
+                                        ":LookupType",
+                                        "child",
+                                        "lookupCodes"
+                                      ],
+                                      "query": [
+                                        {
+                                          "key": "limit",
+                                          "value": "25"
+                                        },
+                                        {
+                                          "key": "offset",
+                                          "value": "0"
+                                        },
+                                        {
+                                          "key": "fields",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "084e577a-eaeb-4553-8756-3757b31e53a0",
+                                          "key": "LookupType",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Retrieve lookup codes belonging to a specific lookup type."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "19c27036-3105-4546-bf80-084e8e613d07",
+                                      "name": "Lookup codes retrieved",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes?limit=25&offset=0&fields=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "limit",
+                                              "value": "25"
+                                            },
+                                            {
+                                              "key": "offset",
+                                              "value": "0"
+                                            },
+                                            {
+                                              "key": "fields",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"items\": [\n    {\n      \"LookupCode\": \"<string>\",\n      \"Meaning\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"EnabledFlag\": \"<boolean>\",\n      \"StartDateActive\": \"<date>\",\n      \"EndDateActive\": \"<date>\",\n      \"DisplaySequence\": \"<integer>\"\n    },\n    {\n      \"LookupCode\": \"<string>\",\n      \"Meaning\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"EnabledFlag\": \"<boolean>\",\n      \"StartDateActive\": \"<date>\",\n      \"EndDateActive\": \"<date>\",\n      \"DisplaySequence\": \"<integer>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-19c27036-3105-4546-bf80-084e8e613d07"
+                                    },
+                                    {
+                                      "id": "43471a9d-aebf-4155-9225-15f4a878f33b",
+                                      "name": "Authentication credentials are missing or invalid",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes?limit=25&offset=0&fields=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "limit",
+                                              "value": "25"
+                                            },
+                                            {
+                                              "key": "offset",
+                                              "value": "0"
+                                            },
+                                            {
+                                              "key": "fields",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Unauthorized",
+                                      "code": 401,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-43471a9d-aebf-4155-9225-15f4a878f33b"
+                                    },
+                                    {
+                                      "id": "64fe8915-693a-4506-a96c-b3271fd149d9",
+                                      "name": "The requested resource was not found",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes?limit=25&offset=0&fields=<string>",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "query": [
+                                            {
+                                              "key": "limit",
+                                              "value": "25"
+                                            },
+                                            {
+                                              "key": "offset",
+                                              "value": "0"
+                                            },
+                                            {
+                                              "key": "fields",
+                                              "value": "<string>"
+                                            }
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-64fe8915-693a-4506-a96c-b3271fd149d9"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:28:42.000Z",
+                                  "updatedAt": "2026-07-28T02:28:42.000Z",
+                                  "uid": "35240-51c46c3a-6112-46de-aca0-7f047839bbb6"
+                                },
+                                {
+                                  "name": "Oracle Fusion Cloud Applications Create a lookup code",
+                                  "id": "d08af8c0-e6a4-4c7d-84b5-adab95f4ba31",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"LookupCode\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"EnabledFlag\": \"<boolean>\",\n  \"DisplaySequence\": \"<integer>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "fscmRestApi",
+                                        "resources",
+                                        "11.13.18.05",
+                                        "commonLookups",
+                                        ":LookupType",
+                                        "child",
+                                        "lookupCodes"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "d46f4974-9dd2-4c74-8ec2-aa5c6daa53b7",
+                                          "key": "LookupType",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Create a new lookup code within a lookup type."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "4e0b08bc-33b1-4254-b9e7-90e6e03ab352",
+                                      "name": "Lookup code created",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"LookupCode\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"EnabledFlag\": \"<boolean>\",\n  \"DisplaySequence\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Created",
+                                      "code": 201,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-4e0b08bc-33b1-4254-b9e7-90e6e03ab352"
+                                    },
+                                    {
+                                      "id": "32e1d5a2-6488-420f-b56c-265abf5b41ec",
+                                      "name": "Invalid request parameters or payload",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"LookupCode\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"EnabledFlag\": \"<boolean>\",\n  \"DisplaySequence\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Bad Request",
+                                      "code": 400,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-32e1d5a2-6488-420f-b56c-265abf5b41ec"
+                                    },
+                                    {
+                                      "id": "f6f7d958-c510-457d-894b-1ce39d6c64d3",
+                                      "name": "Authentication credentials are missing or invalid",
+                                      "originalRequest": {
+                                        "method": "POST",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"LookupCode\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"EnabledFlag\": \"<boolean>\",\n  \"DisplaySequence\": \"<integer>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "fscmRestApi",
+                                            "resources",
+                                            "11.13.18.05",
+                                            "commonLookups",
+                                            ":LookupType",
+                                            "child",
+                                            "lookupCodes"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "LookupType"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Unauthorized",
+                                      "code": 401,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:28:42.000Z",
+                                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                                      "uid": "35240-f6f7d958-c510-457d-894b-1ce39d6c64d3"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:28:42.000Z",
+                                  "updatedAt": "2026-07-28T02:28:42.000Z",
+                                  "uid": "35240-d08af8c0-e6a4-4c7d-84b5-adab95f4ba31"
+                                }
+                              ],
+                              "id": "00c1ed9e-2dce-4818-aee0-765b73a04788",
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-00c1ed9e-2dce-4818-aee0-765b73a04788"
+                            }
+                          ],
+                          "id": "62915623-bf4f-4a12-8b11-3dbeec3b836a",
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-62915623-bf4f-4a12-8b11-3dbeec3b836a"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a common lookup",
+                          "id": "4e2e9e75-dbf4-4d29-bd97-1698ebcc423e",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups",
+                                ":LookupType"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "029475a2-f76e-4ad2-91d3-7f12b369e4d5",
+                                  "key": "LookupType",
+                                  "value": "<string>",
+                                  "description": "(Required) Lookup type identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific common lookup type and its codes."
+                          },
+                          "response": [
+                            {
+                              "id": "0289117b-0463-4a3f-af4b-726c6cb38b30",
+                              "name": "Common lookup details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ModuleType\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-0289117b-0463-4a3f-af4b-726c6cb38b30"
+                            },
+                            {
+                              "id": "2e87e9c1-25c0-472c-8700-1c47ebea4f53",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-2e87e9c1-25c0-472c-8700-1c47ebea4f53"
+                            },
+                            {
+                              "id": "9a41a740-cb2f-4905-bd9f-3c883e456c6b",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-9a41a740-cb2f-4905-bd9f-3c883e456c6b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-4e2e9e75-dbf4-4d29-bd97-1698ebcc423e"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a common lookup",
+                          "id": "a5c6f986-ba05-4151-b5bf-4bf8bf0ba366",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups",
+                                ":LookupType"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "7f939213-b90f-49a6-803a-baea2bb70d00",
+                                  "key": "LookupType",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing common lookup type."
+                          },
+                          "response": [
+                            {
+                              "id": "d8c1cffc-2cb0-4671-a05c-50ad0c06d4ea",
+                              "name": "Common lookup updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-d8c1cffc-2cb0-4671-a05c-50ad0c06d4ea"
+                            },
+                            {
+                              "id": "c540fb75-a9ed-4887-a43d-2fb18bedd78d",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-c540fb75-a9ed-4887-a43d-2fb18bedd78d"
+                            },
+                            {
+                              "id": "2972ecff-3026-49e0-9798-400927996f62",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-2972ecff-3026-49e0-9798-400927996f62"
+                            },
+                            {
+                              "id": "03fed0ca-c615-49f6-aec5-7c9bbca8481a",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-03fed0ca-c615-49f6-aec5-7c9bbca8481a"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-a5c6f986-ba05-4151-b5bf-4bf8bf0ba366"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete a common lookup",
+                          "id": "5170900d-86d7-4220-9204-bee76fd83f4c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups",
+                                ":LookupType"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "c940ac95-2610-443e-9346-494f6baa2b90",
+                                  "key": "LookupType",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete a common lookup type."
+                          },
+                          "response": [
+                            {
+                              "id": "bfdd9d05-b595-4441-9d83-18fb9be1d837",
+                              "name": "Common lookup deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-bfdd9d05-b595-4441-9d83-18fb9be1d837"
+                            },
+                            {
+                              "id": "6f64c562-a736-4b38-92c7-0d530c9e2598",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-6f64c562-a736-4b38-92c7-0d530c9e2598"
+                            },
+                            {
+                              "id": "8a8cd947-0701-40f7-bd80-54d94bdc3eb0",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "commonLookups",
+                                    ":LookupType"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "LookupType"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:42.000Z",
+                              "updatedAt": "2026-07-28T02:28:42.000Z",
+                              "uid": "35240-8a8cd947-0701-40f7-bd80-54d94bdc3eb0"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-5170900d-86d7-4220-9204-bee76fd83f4c"
+                        }
+                      ],
+                      "id": "1baf27ab-da82-4edd-b662-5cb36ef24bee",
+                      "createdAt": "2026-07-28T02:28:42.000Z",
+                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                      "uid": "35240-1baf27ab-da82-4edd-b662-5cb36ef24bee"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List common lookups",
+                      "id": "801d1ea6-23d0-4112-bdb9-68c3ce45f66f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "commonLookups"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve common lookup type definitions and their associated lookup codes used across Fusion Cloud applications."
+                      },
+                      "response": [
+                        {
+                          "id": "55a49a1f-7f61-4b67-827c-909558e96c5d",
+                          "name": "Common lookups retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"LookupType\": \"<string>\",\n      \"Meaning\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ModuleType\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"LookupType\": \"<string>\",\n      \"Meaning\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ModuleType\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-55a49a1f-7f61-4b67-827c-909558e96c5d"
+                        },
+                        {
+                          "id": "4df3861f-1224-4da8-ad8a-8bd2fe681e47",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-4df3861f-1224-4da8-ad8a-8bd2fe681e47"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:42.000Z",
+                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                      "uid": "35240-801d1ea6-23d0-4112-bdb9-68c3ce45f66f"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a common lookup",
+                      "id": "59d0a8ff-4feb-4e3f-9e6e-691153de55e8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "commonLookups"
+                          ]
+                        },
+                        "description": "Create a new common lookup type."
+                      },
+                      "response": [
+                        {
+                          "id": "697f6ed5-5b6a-49ab-8d10-167fcaf460eb",
+                          "name": "Common lookup created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ModuleType\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-697f6ed5-5b6a-49ab-8d10-167fcaf460eb"
+                        },
+                        {
+                          "id": "7acc0ab7-fb7d-4316-96f3-4d5717c23218",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-7acc0ab7-fb7d-4316-96f3-4d5717c23218"
+                        },
+                        {
+                          "id": "3936eac1-906d-4c9c-98b3-1aa7ae2bb0f7",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"LookupType\": \"<string>\",\n  \"Meaning\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/commonLookups",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "commonLookups"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:42.000Z",
+                          "updatedAt": "2026-07-28T02:28:42.000Z",
+                          "uid": "35240-3936eac1-906d-4c9c-98b3-1aa7ae2bb0f7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:42.000Z",
+                      "updatedAt": "2026-07-28T02:28:42.000Z",
+                      "uid": "35240-59d0a8ff-4feb-4e3f-9e6e-691153de55e8"
+                    }
+                  ],
+                  "id": "ada72e89-cde3-490a-aa91-249a6ccf905f",
+                  "createdAt": "2026-07-28T02:28:42.000Z",
+                  "updatedAt": "2026-07-28T02:28:42.000Z",
+                  "uid": "35240-ada72e89-cde3-490a-aa91-249a6ccf905f"
+                }
+              ],
+              "id": "44c267bf-45f8-4aef-b06a-e2d8bba1db65",
+              "createdAt": "2026-07-28T02:28:42.000Z",
+              "updatedAt": "2026-07-28T02:28:42.000Z",
+              "uid": "35240-44c267bf-45f8-4aef-b06a-e2d8bba1db65"
+            }
+          ],
+          "id": "65e1281a-3ec9-4db2-8009-fd9607f4f92d",
+          "createdAt": "2026-07-28T02:28:42.000Z",
+          "updatedAt": "2026-07-28T02:28:42.000Z",
+          "uid": "35240-65e1281a-3ec9-4db2-8009-fd9607f4f92d"
+        }
+      ],
+      "id": "39e23770-9312-47c5-ab24-703f920ee4f9",
+      "createdAt": "2026-07-28T02:28:42.000Z",
+      "updatedAt": "2026-07-28T02:28:42.000Z",
+      "uid": "35240-39e23770-9312-47c5-ab24-703f920ee4f9"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

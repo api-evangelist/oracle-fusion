@@ -1,0 +1,1210 @@
+{
+  "info": {
+    "_postman_id": "9e5b2d64-6729-4175-9007-ee50a71be8de",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:08.000Z",
+    "updatedAt": "2026-07-28T02:28:08.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9e5b2d64-6729-4175-9007-ee50a71be8de"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "accounts",
+                  "item": [
+                    {
+                      "name": "{PartyNumber}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an account",
+                          "id": "de70129f-6e06-4686-8c4c-655bad90fd0b",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts",
+                                ":PartyNumber"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to expand",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "48187816-7650-4ede-b5a5-76cbc204b600",
+                                  "key": "PartyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) Party number identifying the account"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific account by party number."
+                          },
+                          "response": [
+                            {
+                              "id": "c9cd1268-07dd-4e61-8893-1e0737e30842",
+                              "name": "Account details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"PartyId\": \"<integer>\",\n  \"PartyNumber\": \"<string>\",\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"NumberOfEmployees\": \"<integer>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\",\n  \"OwnerName\": \"<string>\",\n  \"SalesProfileStatus\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-c9cd1268-07dd-4e61-8893-1e0737e30842"
+                            },
+                            {
+                              "id": "78378caf-b9d9-4f52-b327-0aa311db11f6",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-78378caf-b9d9-4f52-b327-0aa311db11f6"
+                            },
+                            {
+                              "id": "4a40248c-e938-4fab-91c4-3809a612768c",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-4a40248c-e938-4fab-91c4-3809a612768c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-de70129f-6e06-4686-8c4c-655bad90fd0b"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an account",
+                          "id": "18a5d509-560d-4b2e-9ad4-836de3af1889",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts",
+                                ":PartyNumber"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1b54f00e-146d-4695-96c8-8fe2f14b0959",
+                                  "key": "PartyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing account record."
+                          },
+                          "response": [
+                            {
+                              "id": "bd8dfec4-8ddd-4403-897e-36d59316acef",
+                              "name": "Account updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"PartyId\": \"<integer>\",\n  \"PartyNumber\": \"<string>\",\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"NumberOfEmployees\": \"<integer>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\",\n  \"OwnerName\": \"<string>\",\n  \"SalesProfileStatus\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-bd8dfec4-8ddd-4403-897e-36d59316acef"
+                            },
+                            {
+                              "id": "49294804-3e21-4739-852c-c33f001df6c1",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-49294804-3e21-4739-852c-c33f001df6c1"
+                            },
+                            {
+                              "id": "0022a1a8-9595-46c5-a8c1-6fc752fde69d",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-0022a1a8-9595-46c5-a8c1-6fc752fde69d"
+                            },
+                            {
+                              "id": "2e5c1048-9184-4ab9-97ae-0dfa406de18c",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-2e5c1048-9184-4ab9-97ae-0dfa406de18c"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-18a5d509-560d-4b2e-9ad4-836de3af1889"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an account",
+                          "id": "80e1c76e-5cb1-4e5a-b404-d67d8b2f14b2",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts",
+                                ":PartyNumber"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "91974267-6bb3-4ec8-b70d-58f3d5b7e723",
+                                  "key": "PartyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an account record."
+                          },
+                          "response": [
+                            {
+                              "id": "dfef7469-aa7d-4e1f-ab32-f08101e45f19",
+                              "name": "Account deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-dfef7469-aa7d-4e1f-ab32-f08101e45f19"
+                            },
+                            {
+                              "id": "f00aaa20-4344-49a5-9884-7b761ec85fa7",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-f00aaa20-4344-49a5-9884-7b761ec85fa7"
+                            },
+                            {
+                              "id": "3b971af9-ff3e-434c-86d7-6128e475fcbd",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts/:PartyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "accounts",
+                                    ":PartyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "PartyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:09.000Z",
+                              "updatedAt": "2026-07-28T02:28:09.000Z",
+                              "uid": "35240-3b971af9-ff3e-434c-86d7-6128e475fcbd"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-80e1c76e-5cb1-4e5a-b404-d67d8b2f14b2"
+                        }
+                      ],
+                      "id": "99aa6356-3cf4-4e25-b6a1-2a00c7531b0c",
+                      "createdAt": "2026-07-28T02:28:09.000Z",
+                      "updatedAt": "2026-07-28T02:28:09.000Z",
+                      "uid": "35240-99aa6356-3cf4-4e25-b6a1-2a00c7531b0c"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List accounts",
+                      "id": "8ece1ba1-00c9-4c54-a52f-3c0983165827",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "accounts"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Fields to sort by with optional :asc or :desc direction",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of child resources to expand",
+                              "key": "expand",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a collection of customer and prospect account records including organization details, addresses, contacts, and sales team members."
+                      },
+                      "response": [
+                        {
+                          "id": "df25a401-0e5b-4e49-86cb-9e6c6a4ceb57",
+                          "name": "Accounts retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to expand",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PartyId\": \"<integer>\",\n      \"PartyNumber\": \"<string>\",\n      \"OrganizationName\": \"<string>\",\n      \"Type\": \"Customer\",\n      \"Industry\": \"<string>\",\n      \"AnnualRevenue\": \"<double>\",\n      \"NumberOfEmployees\": \"<integer>\",\n      \"PhoneNumber\": \"<string>\",\n      \"EmailAddress\": \"<email>\",\n      \"URL\": \"<uri>\",\n      \"OwnerName\": \"<string>\",\n      \"SalesProfileStatus\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastUpdateDate\": \"<dateTime>\"\n    },\n    {\n      \"PartyId\": \"<integer>\",\n      \"PartyNumber\": \"<string>\",\n      \"OrganizationName\": \"<string>\",\n      \"Type\": \"Customer\",\n      \"Industry\": \"<string>\",\n      \"AnnualRevenue\": \"<double>\",\n      \"NumberOfEmployees\": \"<integer>\",\n      \"PhoneNumber\": \"<string>\",\n      \"EmailAddress\": \"<email>\",\n      \"URL\": \"<uri>\",\n      \"OwnerName\": \"<string>\",\n      \"SalesProfileStatus\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\",\n      \"LastUpdateDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"totalResults\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-df25a401-0e5b-4e49-86cb-9e6c6a4ceb57"
+                        },
+                        {
+                          "id": "18b8ec73-121f-48f8-b0e4-c5297cb5d0fe",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to expand",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-18b8ec73-121f-48f8-b0e4-c5297cb5d0fe"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:09.000Z",
+                      "updatedAt": "2026-07-28T02:28:09.000Z",
+                      "uid": "35240-8ece1ba1-00c9-4c54-a52f-3c0983165827"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an account",
+                      "id": "da91c054-a889-4f83-9d22-8719fa3a8316",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "accounts"
+                          ]
+                        },
+                        "description": "Create a new customer or prospect account record."
+                      },
+                      "response": [
+                        {
+                          "id": "2d87aa69-c9ac-4f5d-8373-1aa1da5a75cf",
+                          "name": "Account created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"PartyId\": \"<integer>\",\n  \"PartyNumber\": \"<string>\",\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"NumberOfEmployees\": \"<integer>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\",\n  \"OwnerName\": \"<string>\",\n  \"SalesProfileStatus\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\",\n  \"LastUpdateDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-2d87aa69-c9ac-4f5d-8373-1aa1da5a75cf"
+                        },
+                        {
+                          "id": "07a342e8-4050-4490-acaa-f6d2e44b5936",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-07a342e8-4050-4490-acaa-f6d2e44b5936"
+                        },
+                        {
+                          "id": "ff447c2f-8795-4a69-99be-c00c4b7f8490",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"Customer\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/accounts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "accounts"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:09.000Z",
+                          "updatedAt": "2026-07-28T02:28:09.000Z",
+                          "uid": "35240-ff447c2f-8795-4a69-99be-c00c4b7f8490"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:09.000Z",
+                      "updatedAt": "2026-07-28T02:28:09.000Z",
+                      "uid": "35240-da91c054-a889-4f83-9d22-8719fa3a8316"
+                    }
+                  ],
+                  "id": "d8bbe8c8-f183-40c7-bddd-ddcfa0132b81",
+                  "createdAt": "2026-07-28T02:28:09.000Z",
+                  "updatedAt": "2026-07-28T02:28:09.000Z",
+                  "uid": "35240-d8bbe8c8-f183-40c7-bddd-ddcfa0132b81"
+                }
+              ],
+              "id": "6555ab14-7fec-4d18-a444-60a48242d424",
+              "createdAt": "2026-07-28T02:28:09.000Z",
+              "updatedAt": "2026-07-28T02:28:09.000Z",
+              "uid": "35240-6555ab14-7fec-4d18-a444-60a48242d424"
+            }
+          ],
+          "id": "8fe4babd-9be5-490a-97ea-035e8b347dd3",
+          "createdAt": "2026-07-28T02:28:09.000Z",
+          "updatedAt": "2026-07-28T02:28:09.000Z",
+          "uid": "35240-8fe4babd-9be5-490a-97ea-035e8b347dd3"
+        }
+      ],
+      "id": "1f5fc048-2906-4366-9cd2-498d667a6f11",
+      "createdAt": "2026-07-28T02:28:09.000Z",
+      "updatedAt": "2026-07-28T02:28:09.000Z",
+      "uid": "35240-1f5fc048-2906-4366-9cd2-498d667a6f11"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

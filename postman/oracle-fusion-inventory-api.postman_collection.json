@@ -1,0 +1,467 @@
+{
+  "info": {
+    "_postman_id": "53ff1381-cc2e-4bb7-b15a-64d42264b46c",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Inventory API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:10.000Z",
+    "updatedAt": "2026-07-28T02:29:10.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-53ff1381-cc2e-4bb7-b15a-64d42264b46c"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "inventoryOnhandBalances",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List inventory on-hand balances",
+                      "id": "82b7973a-db6c-42e8-afb5-dd40e36d8cda",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "inventoryOnhandBalances"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve on-hand inventory quantities by organization, item, subinventory, and locator."
+                      },
+                      "response": [
+                        {
+                          "id": "077f9152-bcf1-452b-bf53-ab1465b9ab1b",
+                          "name": "On-hand balances retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "inventoryOnhandBalances"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"OrganizationId\": \"<integer>\",\n      \"OrganizationCode\": \"<string>\",\n      \"OrganizationName\": \"<string>\",\n      \"ItemNumber\": \"<string>\",\n      \"ItemDescription\": \"<string>\",\n      \"Subinventory\": \"<string>\",\n      \"Locator\": \"<string>\",\n      \"LotNumber\": \"<string>\",\n      \"SerialNumber\": \"<string>\",\n      \"OnhandQuantity\": \"<double>\",\n      \"UnitOfMeasure\": \"<string>\",\n      \"ReservedQuantity\": \"<double>\",\n      \"AvailableQuantity\": \"<double>\"\n    },\n    {\n      \"OrganizationId\": \"<integer>\",\n      \"OrganizationCode\": \"<string>\",\n      \"OrganizationName\": \"<string>\",\n      \"ItemNumber\": \"<string>\",\n      \"ItemDescription\": \"<string>\",\n      \"Subinventory\": \"<string>\",\n      \"Locator\": \"<string>\",\n      \"LotNumber\": \"<string>\",\n      \"SerialNumber\": \"<string>\",\n      \"OnhandQuantity\": \"<double>\",\n      \"UnitOfMeasure\": \"<string>\",\n      \"ReservedQuantity\": \"<double>\",\n      \"AvailableQuantity\": \"<double>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:10.000Z",
+                          "updatedAt": "2026-07-28T02:29:10.000Z",
+                          "uid": "35240-077f9152-bcf1-452b-bf53-ab1465b9ab1b"
+                        },
+                        {
+                          "id": "4908155b-46e0-4614-b0de-58f021da91d5",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "inventoryOnhandBalances"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:10.000Z",
+                          "updatedAt": "2026-07-28T02:29:10.000Z",
+                          "uid": "35240-4908155b-46e0-4614-b0de-58f021da91d5"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:10.000Z",
+                      "updatedAt": "2026-07-28T02:29:10.000Z",
+                      "uid": "35240-82b7973a-db6c-42e8-afb5-dd40e36d8cda"
+                    }
+                  ],
+                  "id": "26660960-8db3-4cb5-9018-97c3b9f7d2e7",
+                  "createdAt": "2026-07-28T02:29:10.000Z",
+                  "updatedAt": "2026-07-28T02:29:10.000Z",
+                  "uid": "35240-26660960-8db3-4cb5-9018-97c3b9f7d2e7"
+                },
+                {
+                  "name": "inventoryTransactions",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an inventory transaction",
+                      "id": "f63f9b97-436e-466d-a409-8b512a007e3c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"TransactionType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"Subinventory\": \"<string>\",\n  \"Quantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Locator\": \"<string>\",\n  \"LotNumber\": \"<string>\",\n  \"SerialNumber\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryTransactions",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "inventoryTransactions"
+                          ]
+                        },
+                        "description": "Create inventory transactions such as receipts, issues, transfers, and adjustments."
+                      },
+                      "response": [
+                        {
+                          "id": "e4c728eb-7d1e-4981-9ef7-ce3a8e0749e8",
+                          "name": "Inventory transaction created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"Subinventory\": \"<string>\",\n  \"Quantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Locator\": \"<string>\",\n  \"LotNumber\": \"<string>\",\n  \"SerialNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "inventoryTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"TransactionId\": \"<integer>\",\n  \"TransactionType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"Subinventory\": \"<string>\",\n  \"Quantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"TransactionDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:10.000Z",
+                          "updatedAt": "2026-07-28T02:29:10.000Z",
+                          "uid": "35240-e4c728eb-7d1e-4981-9ef7-ce3a8e0749e8"
+                        },
+                        {
+                          "id": "9a6e31d3-8007-4c2e-a912-10eec25fb988",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"Subinventory\": \"<string>\",\n  \"Quantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Locator\": \"<string>\",\n  \"LotNumber\": \"<string>\",\n  \"SerialNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "inventoryTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:10.000Z",
+                          "updatedAt": "2026-07-28T02:29:10.000Z",
+                          "uid": "35240-9a6e31d3-8007-4c2e-a912-10eec25fb988"
+                        },
+                        {
+                          "id": "38bc8ed2-6c03-4b46-99f3-85ccd62b2b17",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"TransactionType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"Subinventory\": \"<string>\",\n  \"Quantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Locator\": \"<string>\",\n  \"LotNumber\": \"<string>\",\n  \"SerialNumber\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/inventoryTransactions",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "inventoryTransactions"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:10.000Z",
+                          "updatedAt": "2026-07-28T02:29:10.000Z",
+                          "uid": "35240-38bc8ed2-6c03-4b46-99f3-85ccd62b2b17"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:10.000Z",
+                      "updatedAt": "2026-07-28T02:29:10.000Z",
+                      "uid": "35240-f63f9b97-436e-466d-a409-8b512a007e3c"
+                    }
+                  ],
+                  "id": "9f07d998-3b24-4c0d-a273-83950e30c266",
+                  "createdAt": "2026-07-28T02:29:10.000Z",
+                  "updatedAt": "2026-07-28T02:29:10.000Z",
+                  "uid": "35240-9f07d998-3b24-4c0d-a273-83950e30c266"
+                }
+              ],
+              "id": "9c8bceac-4a6e-4ff5-9679-e01e2549bd0b",
+              "createdAt": "2026-07-28T02:29:10.000Z",
+              "updatedAt": "2026-07-28T02:29:10.000Z",
+              "uid": "35240-9c8bceac-4a6e-4ff5-9679-e01e2549bd0b"
+            }
+          ],
+          "id": "d882305e-007c-4de2-b2b8-823e84730224",
+          "createdAt": "2026-07-28T02:29:10.000Z",
+          "updatedAt": "2026-07-28T02:29:10.000Z",
+          "uid": "35240-d882305e-007c-4de2-b2b8-823e84730224"
+        }
+      ],
+      "id": "56892508-d870-422b-b86a-72296281c7d7",
+      "createdAt": "2026-07-28T02:29:10.000Z",
+      "updatedAt": "2026-07-28T02:29:10.000Z",
+      "uid": "35240-56892508-d870-422b-b86a-72296281c7d7"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

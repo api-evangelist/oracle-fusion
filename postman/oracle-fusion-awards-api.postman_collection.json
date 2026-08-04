@@ -1,0 +1,962 @@
+{
+  "info": {
+    "_postman_id": "3bc5160f-7be8-4dd4-86d4-01697e2a38f7",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Awards API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:35.000Z",
+    "updatedAt": "2026-07-28T02:28:35.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3bc5160f-7be8-4dd4-86d4-01697e2a38f7"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "awards",
+                  "item": [
+                    {
+                      "name": "{AwardId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an award",
+                          "id": "594893c8-b308-4fa6-80a0-a4bc0d5a5290",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards",
+                                ":AwardId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "8d868ed7-6e08-4c24-b53e-5cba76e4bb90",
+                                  "key": "AwardId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Award unique identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific award record."
+                          },
+                          "response": [
+                            {
+                              "id": "f30a9386-1d86-4bbc-ab48-a83ad42e4cda",
+                              "name": "Award details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"AwardId\": \"<integer>\",\n  \"AwardNumber\": \"<string>\",\n  \"AwardName\": \"<string>\",\n  \"AwardType\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"AwardStatus\": \"On Hold\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-f30a9386-1d86-4bbc-ab48-a83ad42e4cda"
+                            },
+                            {
+                              "id": "e50160cd-6783-4eda-ab3e-a9dd3adad641",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-e50160cd-6783-4eda-ab3e-a9dd3adad641"
+                            },
+                            {
+                              "id": "7592ff21-df86-4d0d-8191-6657c69113d1",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-7592ff21-df86-4d0d-8191-6657c69113d1"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-594893c8-b308-4fa6-80a0-a4bc0d5a5290"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an award",
+                          "id": "3d6f0354-dd05-42be-877c-4b2279256a89",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards",
+                                ":AwardId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "e5acfca1-a266-4d0c-91f3-f1e9a15269f0",
+                                  "key": "AwardId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing award record."
+                          },
+                          "response": [
+                            {
+                              "id": "df94e673-70b8-4b1e-829f-f7f53fc064bb",
+                              "name": "Award updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-df94e673-70b8-4b1e-829f-f7f53fc064bb"
+                            },
+                            {
+                              "id": "77415d65-a249-4858-8d03-695870a8ac42",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-77415d65-a249-4858-8d03-695870a8ac42"
+                            },
+                            {
+                              "id": "3be515bf-8239-460c-96ec-b0be2d1de1ab",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-3be515bf-8239-460c-96ec-b0be2d1de1ab"
+                            },
+                            {
+                              "id": "043ae7ea-bfd4-47cb-a2b4-808933efe490",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards/:AwardId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "awards",
+                                    ":AwardId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AwardId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:36.000Z",
+                              "updatedAt": "2026-07-28T02:28:36.000Z",
+                              "uid": "35240-043ae7ea-bfd4-47cb-a2b4-808933efe490"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-3d6f0354-dd05-42be-877c-4b2279256a89"
+                        }
+                      ],
+                      "id": "aac9ae65-05e0-4b18-8e8c-29b5718f0d55",
+                      "createdAt": "2026-07-28T02:28:36.000Z",
+                      "updatedAt": "2026-07-28T02:28:36.000Z",
+                      "uid": "35240-aac9ae65-05e0-4b18-8e8c-29b5718f0d55"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List awards",
+                      "id": "aa58d86b-e643-4c0f-b30e-85317769ebeb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "awards"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve grant and award records including funding sources, budget periods, and personnel assignments."
+                      },
+                      "response": [
+                        {
+                          "id": "de36376f-45fa-43e0-b36b-f4ff2e072c2a",
+                          "name": "Awards retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"AwardId\": \"<integer>\",\n      \"AwardNumber\": \"<string>\",\n      \"AwardName\": \"<string>\",\n      \"AwardType\": \"<string>\",\n      \"SponsorName\": \"<string>\",\n      \"AwardStatus\": \"At Risk\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"TotalFunding\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"PrincipalInvestigator\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"AwardId\": \"<integer>\",\n      \"AwardNumber\": \"<string>\",\n      \"AwardName\": \"<string>\",\n      \"AwardType\": \"<string>\",\n      \"SponsorName\": \"<string>\",\n      \"AwardStatus\": \"At Risk\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"TotalFunding\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"PrincipalInvestigator\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-de36376f-45fa-43e0-b36b-f4ff2e072c2a"
+                        },
+                        {
+                          "id": "b95607f0-e22c-4f76-9e81-395d0324c0c7",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-b95607f0-e22c-4f76-9e81-395d0324c0c7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:36.000Z",
+                      "updatedAt": "2026-07-28T02:28:36.000Z",
+                      "uid": "35240-aa58d86b-e643-4c0f-b30e-85317769ebeb"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an award",
+                      "id": "3f38d0e1-c208-4fcc-bc71-89b4533a982d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "awards"
+                          ]
+                        },
+                        "description": "Create a new grant or award record."
+                      },
+                      "response": [
+                        {
+                          "id": "b63b091d-785e-4ea3-bcad-226f3a49562e",
+                          "name": "Award created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"AwardId\": \"<integer>\",\n  \"AwardNumber\": \"<string>\",\n  \"AwardName\": \"<string>\",\n  \"AwardType\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"AwardStatus\": \"On Hold\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-b63b091d-785e-4ea3-bcad-226f3a49562e"
+                        },
+                        {
+                          "id": "4bcc4dd2-63a9-4754-ada1-123eb9e90c39",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-4bcc4dd2-63a9-4754-ada1-123eb9e90c39"
+                        },
+                        {
+                          "id": "691288e5-2008-41b0-a3dd-46ffdcb9e213",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/awards",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "awards"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:36.000Z",
+                          "updatedAt": "2026-07-28T02:28:36.000Z",
+                          "uid": "35240-691288e5-2008-41b0-a3dd-46ffdcb9e213"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:36.000Z",
+                      "updatedAt": "2026-07-28T02:28:36.000Z",
+                      "uid": "35240-3f38d0e1-c208-4fcc-bc71-89b4533a982d"
+                    }
+                  ],
+                  "id": "852fabe0-1579-450f-a949-db4c22f8104e",
+                  "createdAt": "2026-07-28T02:28:36.000Z",
+                  "updatedAt": "2026-07-28T02:28:36.000Z",
+                  "uid": "35240-852fabe0-1579-450f-a949-db4c22f8104e"
+                }
+              ],
+              "id": "8ca5154e-dfbb-4b5f-b9f4-92374fa9f0b5",
+              "createdAt": "2026-07-28T02:28:36.000Z",
+              "updatedAt": "2026-07-28T02:28:36.000Z",
+              "uid": "35240-8ca5154e-dfbb-4b5f-b9f4-92374fa9f0b5"
+            }
+          ],
+          "id": "9513107d-d6b1-4aa7-85af-a75fc990875b",
+          "createdAt": "2026-07-28T02:28:36.000Z",
+          "updatedAt": "2026-07-28T02:28:36.000Z",
+          "uid": "35240-9513107d-d6b1-4aa7-85af-a75fc990875b"
+        }
+      ],
+      "id": "7cfe8b68-2a5e-46e7-af51-5ebf4a348b83",
+      "createdAt": "2026-07-28T02:28:36.000Z",
+      "updatedAt": "2026-07-28T02:28:36.000Z",
+      "uid": "35240-7cfe8b68-2a5e-46e7-af51-5ebf4a348b83"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

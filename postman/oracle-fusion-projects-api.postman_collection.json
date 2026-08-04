@@ -1,0 +1,999 @@
+{
+  "info": {
+    "_postman_id": "8927cbbc-466d-4391-a072-b951790977c5",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Projects API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:30.000Z",
+    "updatedAt": "2026-07-28T02:29:30.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8927cbbc-466d-4391-a072-b951790977c5"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "projects",
+                  "item": [
+                    {
+                      "name": "{ProjectId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a project",
+                          "id": "efd46af4-873a-4ed7-b602-a8f5a0ef1c33",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects",
+                                ":ProjectId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "e967ca4a-2a03-4d6a-a053-1b7474cc6b69",
+                                  "key": "ProjectId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique project identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific project definition by identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "335f97ba-51aa-409f-ad2b-127b34610066",
+                              "name": "Project details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectStatus\": \"Submitted\",\n  \"ProjectOrganization\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-335f97ba-51aa-409f-ad2b-127b34610066"
+                            },
+                            {
+                              "id": "2e1af366-5413-4970-84d3-1604a817afdf",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-2e1af366-5413-4970-84d3-1604a817afdf"
+                            },
+                            {
+                              "id": "6f62ce74-ad1d-4bbf-a7bf-fad182231265",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-6f62ce74-ad1d-4bbf-a7bf-fad182231265"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-efd46af4-873a-4ed7-b602-a8f5a0ef1c33"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a project",
+                          "id": "cf8b0624-b002-4858-9524-6c0f1ad95c91",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectStatus\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects",
+                                ":ProjectId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "270dcb7d-dfa8-4fa7-ab25-60274cc7f719",
+                                  "key": "ProjectId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing project definition."
+                          },
+                          "response": [
+                            {
+                              "id": "ecdb2d67-8a2d-4ef7-972c-7b76d26a6ed2",
+                              "name": "Project updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectStatus\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectStatus\": \"Submitted\",\n  \"ProjectOrganization\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-ecdb2d67-8a2d-4ef7-972c-7b76d26a6ed2"
+                            },
+                            {
+                              "id": "f51cf174-3dbe-4a8d-89d9-f36d2b438b95",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectStatus\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-f51cf174-3dbe-4a8d-89d9-f36d2b438b95"
+                            },
+                            {
+                              "id": "eefd562f-d497-4891-b397-3c2ff4062251",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectStatus\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-eefd562f-d497-4891-b397-3c2ff4062251"
+                            },
+                            {
+                              "id": "acad3f87-1040-40a3-8010-b7f5ee73f2a4",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectStatus\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects/:ProjectId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "projects",
+                                    ":ProjectId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "ProjectId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:31.000Z",
+                              "updatedAt": "2026-07-28T02:29:31.000Z",
+                              "uid": "35240-acad3f87-1040-40a3-8010-b7f5ee73f2a4"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-cf8b0624-b002-4858-9524-6c0f1ad95c91"
+                        }
+                      ],
+                      "id": "66813ca0-176f-4f5d-a20e-aabfdff2d75a",
+                      "createdAt": "2026-07-28T02:29:31.000Z",
+                      "updatedAt": "2026-07-28T02:29:31.000Z",
+                      "uid": "35240-66813ca0-176f-4f5d-a20e-aabfdff2d75a"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List projects",
+                      "id": "cb3c6d3b-655d-431f-b6f3-8dfa95f854a2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "projects"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "expand",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve project definitions including project attributes, organizational assignments, and status information."
+                      },
+                      "response": [
+                        {
+                          "id": "1dfae475-447a-4e44-b133-79d47a682598",
+                          "name": "Projects retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"ProjectName\": \"<string>\",\n      \"ProjectDescription\": \"<string>\",\n      \"ProjectType\": \"<string>\",\n      \"ProjectStatus\": \"Submitted\",\n      \"ProjectOrganization\": \"<string>\",\n      \"ProjectManager\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"LegalEntity\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"ProjectId\": \"<integer>\",\n      \"ProjectNumber\": \"<string>\",\n      \"ProjectName\": \"<string>\",\n      \"ProjectDescription\": \"<string>\",\n      \"ProjectType\": \"<string>\",\n      \"ProjectStatus\": \"On Hold\",\n      \"ProjectOrganization\": \"<string>\",\n      \"ProjectManager\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"LegalEntity\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"totalResults\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-1dfae475-447a-4e44-b133-79d47a682598"
+                        },
+                        {
+                          "id": "bf100750-8440-4906-b8ab-3a0a5fb01513",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-bf100750-8440-4906-b8ab-3a0a5fb01513"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:31.000Z",
+                      "updatedAt": "2026-07-28T02:29:31.000Z",
+                      "uid": "35240-cb3c6d3b-655d-431f-b6f3-8dfa95f854a2"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a project",
+                      "id": "0a0f3267-369b-46c5-833c-272164f2a286",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectOrganization\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "projects"
+                          ]
+                        },
+                        "description": "Create a new project definition with attributes and assignments."
+                      },
+                      "response": [
+                        {
+                          "id": "3ab7391a-c401-4e9b-913c-d4c1c15e34fe",
+                          "name": "Project created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectOrganization\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"ProjectId\": \"<integer>\",\n  \"ProjectNumber\": \"<string>\",\n  \"ProjectName\": \"<string>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectStatus\": \"Submitted\",\n  \"ProjectOrganization\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-3ab7391a-c401-4e9b-913c-d4c1c15e34fe"
+                        },
+                        {
+                          "id": "cbb21790-f00f-453b-8157-ea907014023a",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectOrganization\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-cbb21790-f00f-453b-8157-ea907014023a"
+                        },
+                        {
+                          "id": "2e6f9149-6ba3-424b-b1d6-f8191161d808",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"ProjectName\": \"<string>\",\n  \"ProjectOrganization\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"ProjectDescription\": \"<string>\",\n  \"ProjectType\": \"<string>\",\n  \"ProjectManager\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"LegalEntity\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/projects",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "projects"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:31.000Z",
+                          "updatedAt": "2026-07-28T02:29:31.000Z",
+                          "uid": "35240-2e6f9149-6ba3-424b-b1d6-f8191161d808"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:31.000Z",
+                      "updatedAt": "2026-07-28T02:29:31.000Z",
+                      "uid": "35240-0a0f3267-369b-46c5-833c-272164f2a286"
+                    }
+                  ],
+                  "id": "3bf3c0d6-25a5-4b73-9712-dfe688a76ea8",
+                  "createdAt": "2026-07-28T02:29:31.000Z",
+                  "updatedAt": "2026-07-28T02:29:31.000Z",
+                  "uid": "35240-3bf3c0d6-25a5-4b73-9712-dfe688a76ea8"
+                }
+              ],
+              "id": "9eb63e5c-1fcf-4442-bbb2-dd2ab2694735",
+              "createdAt": "2026-07-28T02:29:31.000Z",
+              "updatedAt": "2026-07-28T02:29:31.000Z",
+              "uid": "35240-9eb63e5c-1fcf-4442-bbb2-dd2ab2694735"
+            }
+          ],
+          "id": "26425cce-db7e-4a5e-b92c-83c335f34e13",
+          "createdAt": "2026-07-28T02:29:31.000Z",
+          "updatedAt": "2026-07-28T02:29:31.000Z",
+          "uid": "35240-26425cce-db7e-4a5e-b92c-83c335f34e13"
+        }
+      ],
+      "id": "01d7306e-7df1-4c46-9d1d-bcab147a0f40",
+      "createdAt": "2026-07-28T02:29:31.000Z",
+      "updatedAt": "2026-07-28T02:29:31.000Z",
+      "uid": "35240-01d7306e-7df1-4c46-9d1d-bcab147a0f40"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

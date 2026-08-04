@@ -1,0 +1,471 @@
+{
+  "info": {
+    "_postman_id": "e65f5340-e618-4536-880a-fb600bd8912a",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Recruiting API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:32.000Z",
+    "updatedAt": "2026-07-28T02:29:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e65f5340-e618-4536-880a-fb600bd8912a"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "recruitingJobRequisitions",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List job requisitions",
+                      "id": "98945191-3535-4c90-ba0f-7b6bc9afceb2",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "recruitingJobRequisitions"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve open and filled job requisitions for recruiting operations."
+                      },
+                      "response": [
+                        {
+                          "id": "fbf2306f-c3bf-4d34-aebc-34c6baf1b424",
+                          "name": "Job requisitions retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "recruitingJobRequisitions"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"RequisitionId\": \"<integer>\",\n      \"RequisitionNumber\": \"<string>\",\n      \"RequisitionTitle\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"Department\": \"<string>\",\n      \"LocationName\": \"<string>\",\n      \"NumberOfOpenings\": \"<integer>\",\n      \"Status\": \"On Hold\",\n      \"PostingDate\": \"<date>\",\n      \"TargetCloseDate\": \"<date>\",\n      \"HiringManager\": \"<string>\",\n      \"Recruiter\": \"<string>\"\n    },\n    {\n      \"RequisitionId\": \"<integer>\",\n      \"RequisitionNumber\": \"<string>\",\n      \"RequisitionTitle\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"Department\": \"<string>\",\n      \"LocationName\": \"<string>\",\n      \"NumberOfOpenings\": \"<integer>\",\n      \"Status\": \"On Hold\",\n      \"PostingDate\": \"<date>\",\n      \"TargetCloseDate\": \"<date>\",\n      \"HiringManager\": \"<string>\",\n      \"Recruiter\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:33.000Z",
+                          "updatedAt": "2026-07-28T02:29:33.000Z",
+                          "uid": "35240-fbf2306f-c3bf-4d34-aebc-34c6baf1b424"
+                        },
+                        {
+                          "id": "a35e4402-0eeb-4f72-b27f-d9d40a5ca605",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingJobRequisitions?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "recruitingJobRequisitions"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:33.000Z",
+                          "updatedAt": "2026-07-28T02:29:33.000Z",
+                          "uid": "35240-a35e4402-0eeb-4f72-b27f-d9d40a5ca605"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:33.000Z",
+                      "updatedAt": "2026-07-28T02:29:33.000Z",
+                      "uid": "35240-98945191-3535-4c90-ba0f-7b6bc9afceb2"
+                    }
+                  ],
+                  "id": "819a4bf2-e1bc-4152-82b1-2afc58098e6c",
+                  "createdAt": "2026-07-28T02:29:33.000Z",
+                  "updatedAt": "2026-07-28T02:29:33.000Z",
+                  "uid": "35240-819a4bf2-e1bc-4152-82b1-2afc58098e6c"
+                },
+                {
+                  "name": "recruitingCandidates",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List recruiting candidates",
+                      "id": "1890e0ff-4a85-4784-890d-c3a02a3710b1",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingCandidates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "recruitingCandidates"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve candidate records for recruiting including application status and candidate details."
+                      },
+                      "response": [
+                        {
+                          "id": "e112bf7b-6cb5-45c8-82b3-d2273f35071c",
+                          "name": "Candidates retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingCandidates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "recruitingCandidates"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"CandidateId\": \"<integer>\",\n      \"CandidateNumber\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Email\": \"<email>\",\n      \"PhoneNumber\": \"<string>\",\n      \"CurrentEmployer\": \"<string>\",\n      \"CurrentJobTitle\": \"<string>\",\n      \"Source\": \"<string>\",\n      \"Status\": \"Offer\"\n    },\n    {\n      \"CandidateId\": \"<integer>\",\n      \"CandidateNumber\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"Email\": \"<email>\",\n      \"PhoneNumber\": \"<string>\",\n      \"CurrentEmployer\": \"<string>\",\n      \"CurrentJobTitle\": \"<string>\",\n      \"Source\": \"<string>\",\n      \"Status\": \"Under Review\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:33.000Z",
+                          "updatedAt": "2026-07-28T02:29:33.000Z",
+                          "uid": "35240-e112bf7b-6cb5-45c8-82b3-d2273f35071c"
+                        },
+                        {
+                          "id": "6e9eb044-2eda-49cb-b5f5-bd7ce65d3ae4",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/recruitingCandidates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "recruitingCandidates"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:33.000Z",
+                          "updatedAt": "2026-07-28T02:29:33.000Z",
+                          "uid": "35240-6e9eb044-2eda-49cb-b5f5-bd7ce65d3ae4"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:33.000Z",
+                      "updatedAt": "2026-07-28T02:29:33.000Z",
+                      "uid": "35240-1890e0ff-4a85-4784-890d-c3a02a3710b1"
+                    }
+                  ],
+                  "id": "030647f3-a5f0-4ef9-b29e-c7be0ae1eac8",
+                  "createdAt": "2026-07-28T02:29:33.000Z",
+                  "updatedAt": "2026-07-28T02:29:33.000Z",
+                  "uid": "35240-030647f3-a5f0-4ef9-b29e-c7be0ae1eac8"
+                }
+              ],
+              "id": "a1ffc7fb-0e7b-4ebe-a6dc-10ab2c931d10",
+              "createdAt": "2026-07-28T02:29:33.000Z",
+              "updatedAt": "2026-07-28T02:29:33.000Z",
+              "uid": "35240-a1ffc7fb-0e7b-4ebe-a6dc-10ab2c931d10"
+            }
+          ],
+          "id": "92887e32-b5b7-485a-af43-3403d8ce2c77",
+          "createdAt": "2026-07-28T02:29:33.000Z",
+          "updatedAt": "2026-07-28T02:29:33.000Z",
+          "uid": "35240-92887e32-b5b7-485a-af43-3403d8ce2c77"
+        }
+      ],
+      "id": "c195a4fe-6710-482a-a37c-e83bb4a90577",
+      "createdAt": "2026-07-28T02:29:33.000Z",
+      "updatedAt": "2026-07-28T02:29:33.000Z",
+      "uid": "35240-c195a4fe-6710-482a-a37c-e83bb4a90577"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

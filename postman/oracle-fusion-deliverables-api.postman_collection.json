@@ -1,0 +1,458 @@
+{
+  "info": {
+    "_postman_id": "da44fa8e-fec0-40d8-8156-b91733b7a268",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Deliverables API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:55.000Z",
+    "updatedAt": "2026-07-28T02:28:55.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-da44fa8e-fec0-40d8-8156-b91733b7a268"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "deliverables",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List deliverables",
+                      "id": "c0d652c0-58d0-4ae0-b5f9-5d48791d0853",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "deliverables"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve project deliverable records including task associations and requirement linkages."
+                      },
+                      "response": [
+                        {
+                          "id": "6952e277-2d8a-44df-bb54-8ef9cae99c03",
+                          "name": "Deliverables retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "deliverables"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"DeliverableId\": \"<integer>\",\n      \"DeliverableName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"Status\": \"Not Started\",\n      \"CompletionDate\": \"<date>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"DeliverableId\": \"<integer>\",\n      \"DeliverableName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"DueDate\": \"<date>\",\n      \"Status\": \"Overdue\",\n      \"CompletionDate\": \"<date>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:55.000Z",
+                          "updatedAt": "2026-07-28T02:28:55.000Z",
+                          "uid": "35240-6952e277-2d8a-44df-bb54-8ef9cae99c03"
+                        },
+                        {
+                          "id": "278ec8f2-3959-4628-acba-8bdf42ebfaaf",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "deliverables"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:55.000Z",
+                          "updatedAt": "2026-07-28T02:28:55.000Z",
+                          "uid": "35240-278ec8f2-3959-4628-acba-8bdf42ebfaaf"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:55.000Z",
+                      "updatedAt": "2026-07-28T02:28:55.000Z",
+                      "uid": "35240-c0d652c0-58d0-4ae0-b5f9-5d48791d0853"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a deliverable",
+                      "id": "8f244473-74b4-4994-8f98-ae41d5037511",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"DeliverableName\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "deliverables"
+                          ]
+                        },
+                        "description": "Create a new project deliverable."
+                      },
+                      "response": [
+                        {
+                          "id": "1850f3bd-d392-4d58-923b-05276b8a3513",
+                          "name": "Deliverable created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"DeliverableName\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "deliverables"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"DeliverableId\": \"<integer>\",\n  \"DeliverableName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Status\": \"Completed\",\n  \"CompletionDate\": \"<date>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:28:55.000Z",
+                          "updatedAt": "2026-07-28T02:28:55.000Z",
+                          "uid": "35240-1850f3bd-d392-4d58-923b-05276b8a3513"
+                        },
+                        {
+                          "id": "9c8a0d5b-b803-4dcb-b729-c41d35227309",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"DeliverableName\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "deliverables"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:55.000Z",
+                          "updatedAt": "2026-07-28T02:28:55.000Z",
+                          "uid": "35240-9c8a0d5b-b803-4dcb-b729-c41d35227309"
+                        },
+                        {
+                          "id": "85e8824c-3a8b-4396-8e9b-5d1226120aee",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"DeliverableName\": \"<string>\",\n  \"DueDate\": \"<date>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/deliverables",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "deliverables"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:55.000Z",
+                          "updatedAt": "2026-07-28T02:28:55.000Z",
+                          "uid": "35240-85e8824c-3a8b-4396-8e9b-5d1226120aee"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:55.000Z",
+                      "updatedAt": "2026-07-28T02:28:55.000Z",
+                      "uid": "35240-8f244473-74b4-4994-8f98-ae41d5037511"
+                    }
+                  ],
+                  "id": "8d00eecd-bb87-4ad6-be66-d0fa38ef58dd",
+                  "createdAt": "2026-07-28T02:28:55.000Z",
+                  "updatedAt": "2026-07-28T02:28:55.000Z",
+                  "uid": "35240-8d00eecd-bb87-4ad6-be66-d0fa38ef58dd"
+                }
+              ],
+              "id": "0d5fbe2f-232e-4a37-8b97-bef14e6edc76",
+              "createdAt": "2026-07-28T02:28:55.000Z",
+              "updatedAt": "2026-07-28T02:28:55.000Z",
+              "uid": "35240-0d5fbe2f-232e-4a37-8b97-bef14e6edc76"
+            }
+          ],
+          "id": "4a39b309-483c-468e-8189-0f4db865da0d",
+          "createdAt": "2026-07-28T02:28:55.000Z",
+          "updatedAt": "2026-07-28T02:28:55.000Z",
+          "uid": "35240-4a39b309-483c-468e-8189-0f4db865da0d"
+        }
+      ],
+      "id": "1a2a4ce9-799f-4f7f-a52e-9ea4fe591fb8",
+      "createdAt": "2026-07-28T02:28:55.000Z",
+      "updatedAt": "2026-07-28T02:28:55.000Z",
+      "uid": "35240-1a2a4ce9-799f-4f7f-a52e-9ea4fe591fb8"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

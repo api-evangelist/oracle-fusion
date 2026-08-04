@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "019e3c68-10a1-47c0-a1af-bbca6ac0e76b",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Payroll API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:22.000Z",
+    "updatedAt": "2026-07-28T02:29:23.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-019e3c68-10a1-47c0-a1af-bbca6ac0e76b"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "payrollResults",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List payroll results",
+                      "id": "9ab3654f-d4f7-4dbd-b9ca-709d8ddfa9e6",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/payrollResults?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "payrollResults"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve payroll run results including earnings, deductions, and net pay for workers."
+                      },
+                      "response": [
+                        {
+                          "id": "c7106732-c1c9-436e-99b4-092902e70417",
+                          "name": "Payroll results retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/payrollResults?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "payrollResults"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"PayrollResultId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"PayrollName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"PeriodStartDate\": \"<date>\",\n      \"PeriodEndDate\": \"<date>\",\n      \"GrossEarnings\": \"<double>\",\n      \"TotalDeductions\": \"<double>\",\n      \"NetPay\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"PaymentDate\": \"<date>\",\n      \"PaymentMethod\": \"Check\"\n    },\n    {\n      \"PayrollResultId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"PayrollName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"PeriodStartDate\": \"<date>\",\n      \"PeriodEndDate\": \"<date>\",\n      \"GrossEarnings\": \"<double>\",\n      \"TotalDeductions\": \"<double>\",\n      \"NetPay\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"PaymentDate\": \"<date>\",\n      \"PaymentMethod\": \"Check\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:23.000Z",
+                          "updatedAt": "2026-07-28T02:29:23.000Z",
+                          "uid": "35240-c7106732-c1c9-436e-99b4-092902e70417"
+                        },
+                        {
+                          "id": "70b9711e-022a-41b0-96aa-0ebea7706909",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/payrollResults?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "payrollResults"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:23.000Z",
+                          "updatedAt": "2026-07-28T02:29:23.000Z",
+                          "uid": "35240-70b9711e-022a-41b0-96aa-0ebea7706909"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:23.000Z",
+                      "updatedAt": "2026-07-28T02:29:23.000Z",
+                      "uid": "35240-9ab3654f-d4f7-4dbd-b9ca-709d8ddfa9e6"
+                    }
+                  ],
+                  "id": "8fdba965-b3c7-4e0f-a175-a6eb254e96ef",
+                  "createdAt": "2026-07-28T02:29:23.000Z",
+                  "updatedAt": "2026-07-28T02:29:23.000Z",
+                  "uid": "35240-8fdba965-b3c7-4e0f-a175-a6eb254e96ef"
+                }
+              ],
+              "id": "9415e2ea-ef7f-48d0-8920-28877e232d5e",
+              "createdAt": "2026-07-28T02:29:23.000Z",
+              "updatedAt": "2026-07-28T02:29:23.000Z",
+              "uid": "35240-9415e2ea-ef7f-48d0-8920-28877e232d5e"
+            }
+          ],
+          "id": "87791ed4-450a-4e25-82f2-f84942f10dfe",
+          "createdAt": "2026-07-28T02:29:23.000Z",
+          "updatedAt": "2026-07-28T02:29:23.000Z",
+          "uid": "35240-87791ed4-450a-4e25-82f2-f84942f10dfe"
+        }
+      ],
+      "id": "66f1f81b-fb25-4864-81cb-9eed63d68972",
+      "createdAt": "2026-07-28T02:29:23.000Z",
+      "updatedAt": "2026-07-28T02:29:23.000Z",
+      "uid": "35240-66f1f81b-fb25-4864-81cb-9eed63d68972"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

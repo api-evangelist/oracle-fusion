@@ -1,0 +1,482 @@
+{
+  "info": {
+    "_postman_id": "ca860862-640d-4a11-94c5-e1282cfd3c48",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Leads API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:16.000Z",
+    "updatedAt": "2026-07-28T02:29:16.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ca860862-640d-4a11-94c5-e1282cfd3c48"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "leads",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List leads",
+                      "id": "8a961852-6a0b-4389-b8d4-b8942cc79887",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "leads"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve sales lead records including lead source, qualification status, and associated contacts."
+                      },
+                      "response": [
+                        {
+                          "id": "451b2bbc-806f-482a-805b-0e89f038dd31",
+                          "name": "Leads retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "leads"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"LeadId\": \"<integer>\",\n      \"LeadNumber\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"CustomerName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"Score\": \"<integer>\",\n      \"Rank\": \"Cold\",\n      \"QualificationStatus\": \"Retired\",\n      \"Source\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"LeadId\": \"<integer>\",\n      \"LeadNumber\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"CustomerName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"Score\": \"<integer>\",\n      \"Rank\": \"Hot\",\n      \"QualificationStatus\": \"Retired\",\n      \"Source\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:16.000Z",
+                          "updatedAt": "2026-07-28T02:29:16.000Z",
+                          "uid": "35240-451b2bbc-806f-482a-805b-0e89f038dd31"
+                        },
+                        {
+                          "id": "75756a71-8719-4009-a081-18b33690809f",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "leads"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:16.000Z",
+                          "updatedAt": "2026-07-28T02:29:16.000Z",
+                          "uid": "35240-75756a71-8719-4009-a081-18b33690809f"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:16.000Z",
+                      "updatedAt": "2026-07-28T02:29:16.000Z",
+                      "uid": "35240-8a961852-6a0b-4389-b8d4-b8942cc79887"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a lead",
+                      "id": "102e2110-ccbd-4844-be78-2ebb522b4a3c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Name\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Rank\": \"Warm\",\n  \"Source\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "leads"
+                          ]
+                        },
+                        "description": "Create a new sales lead record."
+                      },
+                      "response": [
+                        {
+                          "id": "ee765e95-1ce7-451b-83fa-74a2b1233548",
+                          "name": "Lead created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Rank\": \"Warm\",\n  \"Source\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "leads"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"LeadId\": \"<integer>\",\n  \"LeadNumber\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"OwnerName\": \"<string>\",\n  \"Score\": \"<integer>\",\n  \"Rank\": \"Cold\",\n  \"QualificationStatus\": \"Retired\",\n  \"Source\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:16.000Z",
+                          "updatedAt": "2026-07-28T02:29:16.000Z",
+                          "uid": "35240-ee765e95-1ce7-451b-83fa-74a2b1233548"
+                        },
+                        {
+                          "id": "b805f543-864c-4784-99bb-9eb4efd010d4",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Rank\": \"Warm\",\n  \"Source\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "leads"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:29:16.000Z",
+                          "updatedAt": "2026-07-28T02:29:16.000Z",
+                          "uid": "35240-b805f543-864c-4784-99bb-9eb4efd010d4"
+                        },
+                        {
+                          "id": "ad123734-12c1-4114-9b4b-57ebfbe7939b",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Rank\": \"Warm\",\n  \"Source\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/leads",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "leads"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:16.000Z",
+                          "updatedAt": "2026-07-28T02:29:16.000Z",
+                          "uid": "35240-ad123734-12c1-4114-9b4b-57ebfbe7939b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:16.000Z",
+                      "updatedAt": "2026-07-28T02:29:16.000Z",
+                      "uid": "35240-102e2110-ccbd-4844-be78-2ebb522b4a3c"
+                    }
+                  ],
+                  "id": "ddb7c2ff-595e-4712-b3ec-4e58b4932afd",
+                  "createdAt": "2026-07-28T02:29:16.000Z",
+                  "updatedAt": "2026-07-28T02:29:16.000Z",
+                  "uid": "35240-ddb7c2ff-595e-4712-b3ec-4e58b4932afd"
+                }
+              ],
+              "id": "414585cf-5e85-447d-8360-dbf8d89e636c",
+              "createdAt": "2026-07-28T02:29:16.000Z",
+              "updatedAt": "2026-07-28T02:29:16.000Z",
+              "uid": "35240-414585cf-5e85-447d-8360-dbf8d89e636c"
+            }
+          ],
+          "id": "cfd8ac7d-09bc-4c05-a81d-192a3a5a54f0",
+          "createdAt": "2026-07-28T02:29:16.000Z",
+          "updatedAt": "2026-07-28T02:29:16.000Z",
+          "uid": "35240-cfd8ac7d-09bc-4c05-a81d-192a3a5a54f0"
+        }
+      ],
+      "id": "08836c55-603a-42b3-99ae-f77ef36d4edd",
+      "createdAt": "2026-07-28T02:29:16.000Z",
+      "updatedAt": "2026-07-28T02:29:16.000Z",
+      "uid": "35240-08836c55-603a-42b3-99ae-f77ef36d4edd"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

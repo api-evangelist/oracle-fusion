@@ -1,0 +1,999 @@
+{
+  "info": {
+    "_postman_id": "34fc45b5-a4ac-4682-9b64-aadc07184fc1",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Sales Orders API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:36.000Z",
+    "updatedAt": "2026-07-28T02:29:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-34fc45b5-a4ac-4682-9b64-aadc07184fc1"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "salesOrdersForOrderHub",
+                  "item": [
+                    {
+                      "name": "{OrderId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get a sales order",
+                          "id": "d7caaff8-88bb-420a-96b6-71905dff4a81",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub",
+                                ":OrderId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "1cbdfd70-3b5c-436c-9bb2-c23466c02780",
+                                  "key": "OrderId",
+                                  "value": "<integer>",
+                                  "description": "(Required) Unique order identifier"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific sales order by identifier."
+                          },
+                          "response": [
+                            {
+                              "id": "05e5c61b-08a8-4c2b-b863-ce782254fb2b",
+                              "name": "Sales order details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"OrderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Open\",\n  \"ShipToAddress\": \"<string>\",\n  \"BillToAddress\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-05e5c61b-08a8-4c2b-b863-ce782254fb2b"
+                            },
+                            {
+                              "id": "730c501e-428a-4a75-908b-5fd0d036ff6a",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-730c501e-428a-4a75-908b-5fd0d036ff6a"
+                            },
+                            {
+                              "id": "2e927b24-8bc4-4306-b8ad-5c384578b724",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-2e927b24-8bc4-4306-b8ad-5c384578b724"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-d7caaff8-88bb-420a-96b6-71905dff4a81"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update a sales order",
+                          "id": "eeb1b4f5-c14c-4970-a288-76d118b97b1a",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"RequestedShipDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub",
+                                ":OrderId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2147ddfc-1ca3-4724-8555-b59f42879429",
+                                  "key": "OrderId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing sales order."
+                          },
+                          "response": [
+                            {
+                              "id": "391f2f7d-4574-433f-aa90-e3c5fc35d779",
+                              "name": "Sales order updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"RequestedShipDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"OrderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Open\",\n  \"ShipToAddress\": \"<string>\",\n  \"BillToAddress\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-391f2f7d-4574-433f-aa90-e3c5fc35d779"
+                            },
+                            {
+                              "id": "19661496-f7b1-4a8f-b82f-94510b8e4d25",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"RequestedShipDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-19661496-f7b1-4a8f-b82f-94510b8e4d25"
+                            },
+                            {
+                              "id": "cb0468ab-7373-4173-a136-554d8b885d7e",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"RequestedShipDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-cb0468ab-7373-4173-a136-554d8b885d7e"
+                            },
+                            {
+                              "id": "176608ac-2686-45e8-bf2d-0693103704cc",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"RequestedShipDate\": \"<date>\",\n  \"Status\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub/:OrderId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "salesOrdersForOrderHub",
+                                    ":OrderId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OrderId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:37.000Z",
+                              "updatedAt": "2026-07-28T02:29:37.000Z",
+                              "uid": "35240-176608ac-2686-45e8-bf2d-0693103704cc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-eeb1b4f5-c14c-4970-a288-76d118b97b1a"
+                        }
+                      ],
+                      "id": "833f79e7-6209-4654-b642-a72c7744c77b",
+                      "createdAt": "2026-07-28T02:29:37.000Z",
+                      "updatedAt": "2026-07-28T02:29:37.000Z",
+                      "uid": "35240-833f79e7-6209-4654-b642-a72c7744c77b"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List sales orders",
+                      "id": "96b550ee-6cd7-4af4-a35a-36afa2f79d35",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "salesOrdersForOrderHub"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "expand",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a collection of sales orders from Order Management including order header details, order lines, and fulfillment information."
+                      },
+                      "response": [
+                        {
+                          "id": "cbca2f90-ff65-450c-b47f-4674e1f060ed",
+                          "name": "Sales orders retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"OrderId\": \"<integer>\",\n      \"OrderNumber\": \"<string>\",\n      \"OrderType\": \"<string>\",\n      \"CustomerName\": \"<string>\",\n      \"CustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"OrderDate\": \"<date>\",\n      \"RequestedShipDate\": \"<date>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Awaiting Billing\",\n      \"ShipToAddress\": \"<string>\",\n      \"BillToAddress\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"OrderId\": \"<integer>\",\n      \"OrderNumber\": \"<string>\",\n      \"OrderType\": \"<string>\",\n      \"CustomerName\": \"<string>\",\n      \"CustomerNumber\": \"<string>\",\n      \"BusinessUnit\": \"<string>\",\n      \"OrderDate\": \"<date>\",\n      \"RequestedShipDate\": \"<date>\",\n      \"TotalAmount\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Awaiting Billing\",\n      \"ShipToAddress\": \"<string>\",\n      \"BillToAddress\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\",\n  \"totalResults\": \"<integer>\"\n}",
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-cbca2f90-ff65-450c-b47f-4674e1f060ed"
+                        },
+                        {
+                          "id": "c8728ada-3cba-4a60-8ba7-445c09a1debd",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-c8728ada-3cba-4a60-8ba7-445c09a1debd"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:37.000Z",
+                      "updatedAt": "2026-07-28T02:29:37.000Z",
+                      "uid": "35240-96b550ee-6cd7-4af4-a35a-36afa2f79d35"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a sales order",
+                      "id": "040b3171-165e-4d63-8e82-67ea3e7dd55d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "salesOrdersForOrderHub"
+                          ]
+                        },
+                        "description": "Create a new sales order with header and order lines."
+                      },
+                      "response": [
+                        {
+                          "id": "1cf56be4-225d-410f-9f66-af8ead0cac12",
+                          "name": "Sales order created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"OrderId\": \"<integer>\",\n  \"OrderNumber\": \"<string>\",\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"TotalAmount\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Open\",\n  \"ShipToAddress\": \"<string>\",\n  \"BillToAddress\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-1cf56be4-225d-410f-9f66-af8ead0cac12"
+                        },
+                        {
+                          "id": "b76154d7-bc15-46a6-8848-4a863d8d20d9",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-b76154d7-bc15-46a6-8848-4a863d8d20d9"
+                        },
+                        {
+                          "id": "925fa22a-9fd3-46dc-bf61-74d70551fa71",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrderType\": \"<string>\",\n  \"CustomerName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"CustomerNumber\": \"<string>\",\n  \"OrderDate\": \"<date>\",\n  \"RequestedShipDate\": \"<date>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/salesOrdersForOrderHub",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "salesOrdersForOrderHub"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:37.000Z",
+                          "updatedAt": "2026-07-28T02:29:37.000Z",
+                          "uid": "35240-925fa22a-9fd3-46dc-bf61-74d70551fa71"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:37.000Z",
+                      "updatedAt": "2026-07-28T02:29:37.000Z",
+                      "uid": "35240-040b3171-165e-4d63-8e82-67ea3e7dd55d"
+                    }
+                  ],
+                  "id": "7a0a3296-2166-4d7c-88ad-bc5296e16cc1",
+                  "createdAt": "2026-07-28T02:29:37.000Z",
+                  "updatedAt": "2026-07-28T02:29:37.000Z",
+                  "uid": "35240-7a0a3296-2166-4d7c-88ad-bc5296e16cc1"
+                }
+              ],
+              "id": "3cfbf568-1e77-4448-a9c6-e7b9c48acce0",
+              "createdAt": "2026-07-28T02:29:37.000Z",
+              "updatedAt": "2026-07-28T02:29:37.000Z",
+              "uid": "35240-3cfbf568-1e77-4448-a9c6-e7b9c48acce0"
+            }
+          ],
+          "id": "1f033c85-06b0-42d6-a772-7316c53783c8",
+          "createdAt": "2026-07-28T02:29:37.000Z",
+          "updatedAt": "2026-07-28T02:29:37.000Z",
+          "uid": "35240-1f033c85-06b0-42d6-a772-7316c53783c8"
+        }
+      ],
+      "id": "b24f40e8-4ac8-456c-ae21-4b8a4e4bda8a",
+      "createdAt": "2026-07-28T02:29:37.000Z",
+      "updatedAt": "2026-07-28T02:29:37.000Z",
+      "uid": "35240-b24f40e8-4ac8-456c-ae21-4b8a4e4bda8a"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

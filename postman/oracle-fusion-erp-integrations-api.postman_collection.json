@@ -1,0 +1,295 @@
+{
+  "info": {
+    "_postman_id": "cc6336ea-86e6-4c84-902e-3682fb904701",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences ERP Integrations API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:56.000Z",
+    "updatedAt": "2026-07-28T02:28:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cc6336ea-86e6-4c84-902e-3682fb904701"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "erpintegrations",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications Submit an ERP integration",
+                      "id": "297cba2d-d984-46a3-b89c-cd183e140f80",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"OperationName\": \"exportBulkData\",\n  \"DocumentContent\": \"<string>\",\n  \"ContentType\": \"<string>\",\n  \"FileName\": \"<string>\",\n  \"DocumentAccount\": \"<string>\",\n  \"JobName\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/erpintegrations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "erpintegrations"
+                          ]
+                        },
+                        "description": "Automate bulk data import and export flows for ERP integrations using file-based data import (FBDI) and business intelligence (BI) report jobs."
+                      },
+                      "response": [
+                        {
+                          "id": "82961712-ad9d-4460-bace-b4394b781223",
+                          "name": "Integration job submitted",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OperationName\": \"exportBulkData\",\n  \"DocumentContent\": \"<string>\",\n  \"ContentType\": \"<string>\",\n  \"FileName\": \"<string>\",\n  \"DocumentAccount\": \"<string>\",\n  \"JobName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/erpintegrations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "erpintegrations"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"OperationName\": \"<string>\",\n  \"DocumentId\": \"<string>\",\n  \"RequestId\": \"<integer>\",\n  \"Result\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:56.000Z",
+                          "updatedAt": "2026-07-28T02:28:56.000Z",
+                          "uid": "35240-82961712-ad9d-4460-bace-b4394b781223"
+                        },
+                        {
+                          "id": "5584b5cf-6067-44af-a5c5-47c7cc607b7b",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OperationName\": \"exportBulkData\",\n  \"DocumentContent\": \"<string>\",\n  \"ContentType\": \"<string>\",\n  \"FileName\": \"<string>\",\n  \"DocumentAccount\": \"<string>\",\n  \"JobName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/erpintegrations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "erpintegrations"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:56.000Z",
+                          "updatedAt": "2026-07-28T02:28:56.000Z",
+                          "uid": "35240-5584b5cf-6067-44af-a5c5-47c7cc607b7b"
+                        },
+                        {
+                          "id": "7ba13b78-4481-46e2-a889-983f1ac1fc69",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OperationName\": \"exportBulkData\",\n  \"DocumentContent\": \"<string>\",\n  \"ContentType\": \"<string>\",\n  \"FileName\": \"<string>\",\n  \"DocumentAccount\": \"<string>\",\n  \"JobName\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/erpintegrations",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "erpintegrations"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:56.000Z",
+                          "updatedAt": "2026-07-28T02:28:56.000Z",
+                          "uid": "35240-7ba13b78-4481-46e2-a889-983f1ac1fc69"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:56.000Z",
+                      "updatedAt": "2026-07-28T02:28:56.000Z",
+                      "uid": "35240-297cba2d-d984-46a3-b89c-cd183e140f80"
+                    }
+                  ],
+                  "id": "f6418040-edd1-4fa1-8a21-971348634ef4",
+                  "createdAt": "2026-07-28T02:28:56.000Z",
+                  "updatedAt": "2026-07-28T02:28:56.000Z",
+                  "uid": "35240-f6418040-edd1-4fa1-8a21-971348634ef4"
+                }
+              ],
+              "id": "2f53aa27-1997-4477-bc2a-8ce47cd31679",
+              "createdAt": "2026-07-28T02:28:56.000Z",
+              "updatedAt": "2026-07-28T02:28:56.000Z",
+              "uid": "35240-2f53aa27-1997-4477-bc2a-8ce47cd31679"
+            }
+          ],
+          "id": "84948434-3d90-4f41-9edd-57d53fb759a9",
+          "createdAt": "2026-07-28T02:28:56.000Z",
+          "updatedAt": "2026-07-28T02:28:56.000Z",
+          "uid": "35240-84948434-3d90-4f41-9edd-57d53fb759a9"
+        }
+      ],
+      "id": "d752f198-acf7-49a1-a22a-770fb4de3ffe",
+      "createdAt": "2026-07-28T02:28:56.000Z",
+      "updatedAt": "2026-07-28T02:28:56.000Z",
+      "uid": "35240-d752f198-acf7-49a1-a22a-770fb4de3ffe"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

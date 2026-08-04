@@ -1,0 +1,275 @@
+{
+  "info": {
+    "_postman_id": "9aa0c789-78fb-41d0-b7d8-db5ece54daf3",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Currency Rates API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:45.000Z",
+    "updatedAt": "2026-07-28T02:28:45.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9aa0c789-78fb-41d0-b7d8-db5ece54daf3"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "currencyRates",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List currency rates",
+                      "id": "4b8f8140-3be6-4dc9-b502-06b36be85f12",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/currencyRates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "currencyRates"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve currency exchange rates and available rate dates for cross-currency financial operations."
+                      },
+                      "response": [
+                        {
+                          "id": "09e6f8e1-669f-4e85-aad4-f3671ba6e3b4",
+                          "name": "Currency rates retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/currencyRates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "currencyRates"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"FromCurrency\": \"<string>\",\n      \"ToCurrency\": \"<string>\",\n      \"ConversionDate\": \"<date>\",\n      \"ConversionType\": \"<string>\",\n      \"ConversionRate\": \"<double>\",\n      \"InverseConversionRate\": \"<double>\"\n    },\n    {\n      \"FromCurrency\": \"<string>\",\n      \"ToCurrency\": \"<string>\",\n      \"ConversionDate\": \"<date>\",\n      \"ConversionType\": \"<string>\",\n      \"ConversionRate\": \"<double>\",\n      \"InverseConversionRate\": \"<double>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:45.000Z",
+                          "updatedAt": "2026-07-28T02:28:45.000Z",
+                          "uid": "35240-09e6f8e1-669f-4e85-aad4-f3671ba6e3b4"
+                        },
+                        {
+                          "id": "c92fd724-e6fb-4c09-9b33-45f631e9cfc7",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/currencyRates?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "currencyRates"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:28:45.000Z",
+                          "updatedAt": "2026-07-28T02:28:45.000Z",
+                          "uid": "35240-c92fd724-e6fb-4c09-9b33-45f631e9cfc7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:45.000Z",
+                      "updatedAt": "2026-07-28T02:28:45.000Z",
+                      "uid": "35240-4b8f8140-3be6-4dc9-b502-06b36be85f12"
+                    }
+                  ],
+                  "id": "b8fda1fe-9513-4d0e-a261-692ee5e51c44",
+                  "createdAt": "2026-07-28T02:28:45.000Z",
+                  "updatedAt": "2026-07-28T02:28:45.000Z",
+                  "uid": "35240-b8fda1fe-9513-4d0e-a261-692ee5e51c44"
+                }
+              ],
+              "id": "b018d1fe-c8fd-43c8-86cf-d2e85cb3ae3e",
+              "createdAt": "2026-07-28T02:28:45.000Z",
+              "updatedAt": "2026-07-28T02:28:45.000Z",
+              "uid": "35240-b018d1fe-c8fd-43c8-86cf-d2e85cb3ae3e"
+            }
+          ],
+          "id": "e74933b3-767f-496b-8d95-8c6dfe31abfb",
+          "createdAt": "2026-07-28T02:28:45.000Z",
+          "updatedAt": "2026-07-28T02:28:45.000Z",
+          "uid": "35240-e74933b3-767f-496b-8d95-8c6dfe31abfb"
+        }
+      ],
+      "id": "4dde8801-b443-4c91-bf4e-ee5e6827214b",
+      "createdAt": "2026-07-28T02:28:45.000Z",
+      "updatedAt": "2026-07-28T02:28:45.000Z",
+      "uid": "35240-4dde8801-b443-4c91-bf4e-ee5e6827214b"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

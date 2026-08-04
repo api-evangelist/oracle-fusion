@@ -1,0 +1,1022 @@
+{
+  "info": {
+    "_postman_id": "d612ffd6-0094-4812-a1ad-57507567fa23",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Opportunities API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:20.000Z",
+    "updatedAt": "2026-07-28T02:29:21.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d612ffd6-0094-4812-a1ad-57507567fa23"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "opportunities",
+                  "item": [
+                    {
+                      "name": "{OptyNumber}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an opportunity",
+                          "id": "b199a61d-38ca-40ad-a64c-c430c44a299c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber?fields=<string>&expand=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities",
+                                ":OptyNumber"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of child resources to expand",
+                                  "key": "expand",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "65314202-12fa-4989-ba8b-b1c6e142a744",
+                                  "key": "OptyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) Opportunity number"
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific opportunity record."
+                          },
+                          "response": [
+                            {
+                              "id": "ba6af38e-5c38-4035-be3f-ecb4a2c8f898",
+                              "name": "Opportunity details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"OptyId\": \"<integer>\",\n  \"OptyNumber\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"OwnerName\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-ba6af38e-5c38-4035-be3f-ecb4a2c8f898"
+                            },
+                            {
+                              "id": "e918dd12-bb3f-42bd-9ff2-df6a3be25add",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-e918dd12-bb3f-42bd-9ff2-df6a3be25add"
+                            },
+                            {
+                              "id": "3742974c-c5ee-4a40-9698-d2261e7dc3ac",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber?fields=<string>&expand=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Comma-separated list of fields to return",
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    },
+                                    {
+                                      "description": "Comma-separated list of child resources to expand",
+                                      "key": "expand",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-3742974c-c5ee-4a40-9698-d2261e7dc3ac"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-b199a61d-38ca-40ad-a64c-c430c44a299c"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an opportunity",
+                          "id": "142581a2-001e-4c9e-9fc6-ab041038e3f1",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities",
+                                ":OptyNumber"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2950712b-ce92-4c47-812a-5b32d4b9c688",
+                                  "key": "OptyNumber",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing opportunity."
+                          },
+                          "response": [
+                            {
+                              "id": "bd04503e-9d33-461c-99d0-a3e724cc3c53",
+                              "name": "Opportunity updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Name\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-bd04503e-9d33-461c-99d0-a3e724cc3c53"
+                            },
+                            {
+                              "id": "768026f0-b164-4b43-8d10-f98c6e622439",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Name\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-768026f0-b164-4b43-8d10-f98c6e622439"
+                            },
+                            {
+                              "id": "2179078d-9a75-4c74-9c34-672a70e002b3",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Name\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-2179078d-9a75-4c74-9c34-672a70e002b3"
+                            },
+                            {
+                              "id": "bb1c9d27-dcc5-4cb2-87ce-7582e71ce2ba",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Name\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities/:OptyNumber",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "crmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "opportunities",
+                                    ":OptyNumber"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "OptyNumber"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:21.000Z",
+                              "updatedAt": "2026-07-28T02:29:21.000Z",
+                              "uid": "35240-bb1c9d27-dcc5-4cb2-87ce-7582e71ce2ba"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-142581a2-001e-4c9e-9fc6-ab041038e3f1"
+                        }
+                      ],
+                      "id": "7e05fead-920a-40bd-a2eb-1d4d9a6f2873",
+                      "createdAt": "2026-07-28T02:29:21.000Z",
+                      "updatedAt": "2026-07-28T02:29:21.000Z",
+                      "uid": "35240-7e05fead-920a-40bd-a2eb-1d4d9a6f2873"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List opportunities",
+                      "id": "9f703ffa-ff56-493e-b0b8-332840cc0763",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "opportunities"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Fields to sort by with optional :asc or :desc direction",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve sales opportunity records including pipeline, revenue, and sales stage information."
+                      },
+                      "response": [
+                        {
+                          "id": "e464a789-8f13-4861-acb1-fc8bd4061720",
+                          "name": "Opportunities retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"OptyId\": \"<integer>\",\n      \"OptyNumber\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"AccountPartyNumber\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"SalesStage\": \"<string>\",\n      \"WinProbability\": \"<integer>\",\n      \"Revenue\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CloseDate\": \"<date>\",\n      \"Status\": \"Lost\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"OptyId\": \"<integer>\",\n      \"OptyNumber\": \"<string>\",\n      \"Name\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"AccountPartyNumber\": \"<string>\",\n      \"OwnerName\": \"<string>\",\n      \"SalesStage\": \"<string>\",\n      \"WinProbability\": \"<integer>\",\n      \"Revenue\": \"<double>\",\n      \"CurrencyCode\": \"<string>\",\n      \"CloseDate\": \"<date>\",\n      \"Status\": \"Open\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-e464a789-8f13-4861-acb1-fc8bd4061720"
+                        },
+                        {
+                          "id": "9639d449-a2f3-405c-ac72-b2311ab184b0",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Fields to sort by with optional :asc or :desc direction",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-9639d449-a2f3-405c-ac72-b2311ab184b0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:21.000Z",
+                      "updatedAt": "2026-07-28T02:29:21.000Z",
+                      "uid": "35240-9f703ffa-ff56-493e-b0b8-332840cc0763"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an opportunity",
+                      "id": "a8d91418-55a3-453a-872c-f5104c4d974a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Name\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "opportunities"
+                          ]
+                        },
+                        "description": "Create a new sales opportunity."
+                      },
+                      "response": [
+                        {
+                          "id": "7ba2af62-49bc-484c-b0d4-b9bec8cdcfbc",
+                          "name": "Opportunity created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"OptyId\": \"<integer>\",\n  \"OptyNumber\": \"<string>\",\n  \"Name\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"OwnerName\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\",\n  \"Status\": \"Won\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-7ba2af62-49bc-484c-b0d4-b9bec8cdcfbc"
+                        },
+                        {
+                          "id": "4083f27f-0c87-412c-acd8-b41c8f509cff",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-4083f27f-0c87-412c-acd8-b41c8f509cff"
+                        },
+                        {
+                          "id": "9145ca77-84e6-417a-b2af-779e214c0149",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Name\": \"<string>\",\n  \"AccountPartyNumber\": \"<string>\",\n  \"SalesStage\": \"<string>\",\n  \"WinProbability\": \"<integer>\",\n  \"Revenue\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"CloseDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/opportunities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "opportunities"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:21.000Z",
+                          "updatedAt": "2026-07-28T02:29:21.000Z",
+                          "uid": "35240-9145ca77-84e6-417a-b2af-779e214c0149"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:21.000Z",
+                      "updatedAt": "2026-07-28T02:29:21.000Z",
+                      "uid": "35240-a8d91418-55a3-453a-872c-f5104c4d974a"
+                    }
+                  ],
+                  "id": "27700b96-1979-410f-b147-44ecb5f3f0b6",
+                  "createdAt": "2026-07-28T02:29:21.000Z",
+                  "updatedAt": "2026-07-28T02:29:21.000Z",
+                  "uid": "35240-27700b96-1979-410f-b147-44ecb5f3f0b6"
+                }
+              ],
+              "id": "ef3128c7-2931-46a0-9347-82aaf7a0fbdf",
+              "createdAt": "2026-07-28T02:29:21.000Z",
+              "updatedAt": "2026-07-28T02:29:21.000Z",
+              "uid": "35240-ef3128c7-2931-46a0-9347-82aaf7a0fbdf"
+            }
+          ],
+          "id": "9bce55ae-118b-4017-bc01-d1961a5b2f00",
+          "createdAt": "2026-07-28T02:29:21.000Z",
+          "updatedAt": "2026-07-28T02:29:21.000Z",
+          "uid": "35240-9bce55ae-118b-4017-bc01-d1961a5b2f00"
+        }
+      ],
+      "id": "63e0fc33-8899-4869-aa19-55e38020e65f",
+      "createdAt": "2026-07-28T02:29:21.000Z",
+      "updatedAt": "2026-07-28T02:29:21.000Z",
+      "uid": "35240-63e0fc33-8899-4869-aa19-55e38020e65f"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

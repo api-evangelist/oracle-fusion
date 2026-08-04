@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "adaab738-30d7-451c-a961-85833098a805",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Learning API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:16.000Z",
+    "updatedAt": "2026-07-28T02:29:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-adaab738-30d7-451c-a961-85833098a805"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "learningRecords",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List learning records",
+                      "id": "a390b65a-503f-4c00-b161-a91aa7c84e44",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/learningRecords?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "learningRecords"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve learning records for workers including course completions, enrollments, and certifications."
+                      },
+                      "response": [
+                        {
+                          "id": "ca93a3b7-d1bf-4f40-aec2-87aa6dcdb007",
+                          "name": "Learning records retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/learningRecords?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "learningRecords"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"LearningRecordId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"CourseName\": \"<string>\",\n      \"CourseNumber\": \"<string>\",\n      \"CompletionDate\": \"<date>\",\n      \"CompletionStatus\": \"In Progress\",\n      \"Score\": \"<double>\",\n      \"CertificationName\": \"<string>\",\n      \"ExpirationDate\": \"<date>\"\n    },\n    {\n      \"LearningRecordId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"CourseName\": \"<string>\",\n      \"CourseNumber\": \"<string>\",\n      \"CompletionDate\": \"<date>\",\n      \"CompletionStatus\": \"In Progress\",\n      \"Score\": \"<double>\",\n      \"CertificationName\": \"<string>\",\n      \"ExpirationDate\": \"<date>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:17.000Z",
+                          "updatedAt": "2026-07-28T02:29:17.000Z",
+                          "uid": "35240-ca93a3b7-d1bf-4f40-aec2-87aa6dcdb007"
+                        },
+                        {
+                          "id": "37261832-6f7f-4628-903f-da9d260735d2",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/learningRecords?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "learningRecords"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:17.000Z",
+                          "updatedAt": "2026-07-28T02:29:17.000Z",
+                          "uid": "35240-37261832-6f7f-4628-903f-da9d260735d2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:17.000Z",
+                      "updatedAt": "2026-07-28T02:29:17.000Z",
+                      "uid": "35240-a390b65a-503f-4c00-b161-a91aa7c84e44"
+                    }
+                  ],
+                  "id": "1b05ac4a-488d-4b68-a044-e2e95fdf5550",
+                  "createdAt": "2026-07-28T02:29:17.000Z",
+                  "updatedAt": "2026-07-28T02:29:17.000Z",
+                  "uid": "35240-1b05ac4a-488d-4b68-a044-e2e95fdf5550"
+                }
+              ],
+              "id": "fa060eff-cfbd-4718-8326-7c6d0ff1029d",
+              "createdAt": "2026-07-28T02:29:17.000Z",
+              "updatedAt": "2026-07-28T02:29:17.000Z",
+              "uid": "35240-fa060eff-cfbd-4718-8326-7c6d0ff1029d"
+            }
+          ],
+          "id": "517322d6-06c3-456f-ab68-a5d53fd0896e",
+          "createdAt": "2026-07-28T02:29:17.000Z",
+          "updatedAt": "2026-07-28T02:29:17.000Z",
+          "uid": "35240-517322d6-06c3-456f-ab68-a5d53fd0896e"
+        }
+      ],
+      "id": "e92a3623-05ac-4f31-a9bd-5f84db0be89c",
+      "createdAt": "2026-07-28T02:29:17.000Z",
+      "updatedAt": "2026-07-28T02:29:17.000Z",
+      "uid": "35240-e92a3623-05ac-4f31-a9bd-5f84db0be89c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

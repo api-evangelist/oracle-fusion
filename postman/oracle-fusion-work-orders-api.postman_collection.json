@@ -1,0 +1,458 @@
+{
+  "info": {
+    "_postman_id": "95c3280b-82cb-46f1-bece-e35cef1f0bfe",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Work Orders API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:43.000Z",
+    "updatedAt": "2026-07-28T02:29:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-95c3280b-82cb-46f1-bece-e35cef1f0bfe"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "workOrders",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List work orders",
+                      "id": "8f5f5807-8e94-45cd-88d6-60dcdbfa0d7f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "workOrders"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve manufacturing work orders including operations, materials, and production status."
+                      },
+                      "response": [
+                        {
+                          "id": "4f4316cc-fa2c-4fd2-ac0e-e5573b3d724a",
+                          "name": "Work orders retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "workOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"WorkOrderId\": \"<integer>\",\n      \"WorkOrderNumber\": \"<string>\",\n      \"WorkOrderType\": \"<string>\",\n      \"OrganizationCode\": \"<string>\",\n      \"ItemNumber\": \"<string>\",\n      \"ItemDescription\": \"<string>\",\n      \"PlannedQuantity\": \"<double>\",\n      \"CompletedQuantity\": \"<double>\",\n      \"UnitOfMeasure\": \"<string>\",\n      \"PlannedStartDate\": \"<date>\",\n      \"PlannedCompletionDate\": \"<date>\",\n      \"ActualStartDate\": \"<date>\",\n      \"ActualCompletionDate\": \"<date>\",\n      \"Status\": \"Unreleased\"\n    },\n    {\n      \"WorkOrderId\": \"<integer>\",\n      \"WorkOrderNumber\": \"<string>\",\n      \"WorkOrderType\": \"<string>\",\n      \"OrganizationCode\": \"<string>\",\n      \"ItemNumber\": \"<string>\",\n      \"ItemDescription\": \"<string>\",\n      \"PlannedQuantity\": \"<double>\",\n      \"CompletedQuantity\": \"<double>\",\n      \"UnitOfMeasure\": \"<string>\",\n      \"PlannedStartDate\": \"<date>\",\n      \"PlannedCompletionDate\": \"<date>\",\n      \"ActualStartDate\": \"<date>\",\n      \"ActualCompletionDate\": \"<date>\",\n      \"Status\": \"Released\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:44.000Z",
+                          "updatedAt": "2026-07-28T02:29:44.000Z",
+                          "uid": "35240-4f4316cc-fa2c-4fd2-ac0e-e5573b3d724a"
+                        },
+                        {
+                          "id": "80e5216b-b5c9-48d3-b76d-8b1385cca48a",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "workOrders"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:44.000Z",
+                          "updatedAt": "2026-07-28T02:29:44.000Z",
+                          "uid": "35240-80e5216b-b5c9-48d3-b76d-8b1385cca48a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:44.000Z",
+                      "updatedAt": "2026-07-28T02:29:44.000Z",
+                      "uid": "35240-8f5f5807-8e94-45cd-88d6-60dcdbfa0d7f"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a work order",
+                      "id": "0fd7c329-c367-4c67-aee7-bef0c2ace2b8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "workOrders"
+                          ]
+                        },
+                        "description": "Create a new manufacturing work order."
+                      },
+                      "response": [
+                        {
+                          "id": "a9704c97-f943-4ffa-b4dc-cf33b1d0069c",
+                          "name": "Work order created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "workOrders"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"WorkOrderId\": \"<integer>\",\n  \"WorkOrderNumber\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"ItemDescription\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"CompletedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\",\n  \"ActualStartDate\": \"<date>\",\n  \"ActualCompletionDate\": \"<date>\",\n  \"Status\": \"Released\"\n}",
+                          "createdAt": "2026-07-28T02:29:44.000Z",
+                          "updatedAt": "2026-07-28T02:29:44.000Z",
+                          "uid": "35240-a9704c97-f943-4ffa-b4dc-cf33b1d0069c"
+                        },
+                        {
+                          "id": "987a2041-8d13-46fb-8c96-9ed8121309f1",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "workOrders"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:44.000Z",
+                          "updatedAt": "2026-07-28T02:29:44.000Z",
+                          "uid": "35240-987a2041-8d13-46fb-8c96-9ed8121309f1"
+                        },
+                        {
+                          "id": "7610c49c-a4da-4ebb-b1f2-f1a78d5b0eb2",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/workOrders",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "workOrders"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:44.000Z",
+                          "updatedAt": "2026-07-28T02:29:44.000Z",
+                          "uid": "35240-7610c49c-a4da-4ebb-b1f2-f1a78d5b0eb2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:44.000Z",
+                      "updatedAt": "2026-07-28T02:29:44.000Z",
+                      "uid": "35240-0fd7c329-c367-4c67-aee7-bef0c2ace2b8"
+                    }
+                  ],
+                  "id": "6ee5f316-acac-4fb4-bf26-7bcaa3ff19dd",
+                  "createdAt": "2026-07-28T02:29:44.000Z",
+                  "updatedAt": "2026-07-28T02:29:44.000Z",
+                  "uid": "35240-6ee5f316-acac-4fb4-bf26-7bcaa3ff19dd"
+                }
+              ],
+              "id": "341a321c-9b88-4aec-9101-ca1b5de80f6d",
+              "createdAt": "2026-07-28T02:29:44.000Z",
+              "updatedAt": "2026-07-28T02:29:44.000Z",
+              "uid": "35240-341a321c-9b88-4aec-9101-ca1b5de80f6d"
+            }
+          ],
+          "id": "cdef5713-daf0-4b9b-99ee-6bcd7776cd8d",
+          "createdAt": "2026-07-28T02:29:44.000Z",
+          "updatedAt": "2026-07-28T02:29:44.000Z",
+          "uid": "35240-cdef5713-daf0-4b9b-99ee-6bcd7776cd8d"
+        }
+      ],
+      "id": "e653c8f0-5371-41bf-95f8-bc214d50e11c",
+      "createdAt": "2026-07-28T02:29:44.000Z",
+      "updatedAt": "2026-07-28T02:29:44.000Z",
+      "uid": "35240-e653c8f0-5371-41bf-95f8-bc214d50e11c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

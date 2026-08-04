@@ -1,0 +1,482 @@
+{
+  "info": {
+    "_postman_id": "1a7f8ae1-28c6-477a-ac0f-fd00d7895cf1",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Activities API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:13.000Z",
+    "updatedAt": "2026-07-28T02:28:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1a7f8ae1-28c6-477a-ac0f-fd00d7895cf1"
+  },
+  "item": [
+    {
+      "name": "crmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "activities",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List activities",
+                      "id": "db51353c-e689-4bb2-8404-c9aa4b05c7fb",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "activities"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve activity records including tasks, appointments, and call logs associated with sales and service processes."
+                      },
+                      "response": [
+                        {
+                          "id": "b6fdc845-3b9b-4bfe-b154-ce9b5f8f725a",
+                          "name": "Activities retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "activities"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ActivityId\": \"<integer>\",\n      \"ActivityNumber\": \"<string>\",\n      \"Subject\": \"<string>\",\n      \"ActivityType\": \"Task\",\n      \"Status\": \"Not Started\",\n      \"Priority\": \"Low\",\n      \"DueDate\": \"<date>\",\n      \"StartDate\": \"<dateTime>\",\n      \"EndDate\": \"<dateTime>\",\n      \"OwnerName\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"Description\": \"<string>\"\n    },\n    {\n      \"ActivityId\": \"<integer>\",\n      \"ActivityNumber\": \"<string>\",\n      \"Subject\": \"<string>\",\n      \"ActivityType\": \"Appointment\",\n      \"Status\": \"Cancelled\",\n      \"Priority\": \"High\",\n      \"DueDate\": \"<date>\",\n      \"StartDate\": \"<dateTime>\",\n      \"EndDate\": \"<dateTime>\",\n      \"OwnerName\": \"<string>\",\n      \"AccountName\": \"<string>\",\n      \"ContactName\": \"<string>\",\n      \"Description\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-b6fdc845-3b9b-4bfe-b154-ce9b5f8f725a"
+                        },
+                        {
+                          "id": "3f7f10dc-77bb-493f-b05f-eb419714283b",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "activities"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-3f7f10dc-77bb-493f-b05f-eb419714283b"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:14.000Z",
+                      "updatedAt": "2026-07-28T02:28:14.000Z",
+                      "uid": "35240-db51353c-e689-4bb2-8404-c9aa4b05c7fb"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an activity",
+                      "id": "e9143d87-dfd0-4b31-8e1e-01eb90a6dc4c",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Subject\": \"<string>\",\n  \"ActivityType\": \"Task\",\n  \"Priority\": \"High\",\n  \"DueDate\": \"<date>\",\n  \"StartDate\": \"<dateTime>\",\n  \"EndDate\": \"<dateTime>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "crmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "activities"
+                          ]
+                        },
+                        "description": "Create a new activity (task, appointment, or call log)."
+                      },
+                      "response": [
+                        {
+                          "id": "b0edf804-ae33-4381-a599-caa210de2fb6",
+                          "name": "Activity created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"ActivityType\": \"Task\",\n  \"Priority\": \"High\",\n  \"DueDate\": \"<date>\",\n  \"StartDate\": \"<dateTime>\",\n  \"EndDate\": \"<dateTime>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "activities"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"ActivityId\": \"<integer>\",\n  \"ActivityNumber\": \"<string>\",\n  \"Subject\": \"<string>\",\n  \"ActivityType\": \"Call Log\",\n  \"Status\": \"Not Started\",\n  \"Priority\": \"Low\",\n  \"DueDate\": \"<date>\",\n  \"StartDate\": \"<dateTime>\",\n  \"EndDate\": \"<dateTime>\",\n  \"OwnerName\": \"<string>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-b0edf804-ae33-4381-a599-caa210de2fb6"
+                        },
+                        {
+                          "id": "1708c1a3-1aa2-47f9-8153-1f25f6a1ddcb",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"ActivityType\": \"Task\",\n  \"Priority\": \"High\",\n  \"DueDate\": \"<date>\",\n  \"StartDate\": \"<dateTime>\",\n  \"EndDate\": \"<dateTime>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "activities"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-1708c1a3-1aa2-47f9-8153-1f25f6a1ddcb"
+                        },
+                        {
+                          "id": "6430954e-4384-4313-8e7c-898fde90ea19",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"ActivityType\": \"Task\",\n  \"Priority\": \"High\",\n  \"DueDate\": \"<date>\",\n  \"StartDate\": \"<dateTime>\",\n  \"EndDate\": \"<dateTime>\",\n  \"AccountName\": \"<string>\",\n  \"ContactName\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/crmRestApi/resources/11.13.18.05/activities",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "crmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "activities"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-6430954e-4384-4313-8e7c-898fde90ea19"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:14.000Z",
+                      "updatedAt": "2026-07-28T02:28:14.000Z",
+                      "uid": "35240-e9143d87-dfd0-4b31-8e1e-01eb90a6dc4c"
+                    }
+                  ],
+                  "id": "e6fcc56c-26ec-4ccf-8648-c2e99ce6813c",
+                  "createdAt": "2026-07-28T02:28:13.000Z",
+                  "updatedAt": "2026-07-28T02:28:13.000Z",
+                  "uid": "35240-e6fcc56c-26ec-4ccf-8648-c2e99ce6813c"
+                }
+              ],
+              "id": "c141e746-fa5c-483e-a228-3fb96886a427",
+              "createdAt": "2026-07-28T02:28:13.000Z",
+              "updatedAt": "2026-07-28T02:28:13.000Z",
+              "uid": "35240-c141e746-fa5c-483e-a228-3fb96886a427"
+            }
+          ],
+          "id": "d0525d93-3640-4e66-b23e-171a358f862a",
+          "createdAt": "2026-07-28T02:28:13.000Z",
+          "updatedAt": "2026-07-28T02:28:13.000Z",
+          "uid": "35240-d0525d93-3640-4e66-b23e-171a358f862a"
+        }
+      ],
+      "id": "e2282363-aba0-4441-92b2-02a8db8a57f2",
+      "createdAt": "2026-07-28T02:28:13.000Z",
+      "updatedAt": "2026-07-28T02:28:13.000Z",
+      "uid": "35240-e2282363-aba0-4441-92b2-02a8db8a57f2"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

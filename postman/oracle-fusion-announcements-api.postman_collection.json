@@ -1,0 +1,1085 @@
+{
+  "info": {
+    "_postman_id": "e4412577-d69f-4399-89e1-26559428f2f8",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Announcements API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:14.000Z",
+    "updatedAt": "2026-07-28T02:28:14.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e4412577-d69f-4399-89e1-26559428f2f8"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "announcements",
+                  "item": [
+                    {
+                      "name": "{AnnouncementId}",
+                      "item": [
+                        {
+                          "name": "Oracle Fusion Cloud Applications Get an announcement",
+                          "id": "c8af083c-420a-4fd3-a3f9-afcd908c2296",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId?fields=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements",
+                                ":AnnouncementId"
+                              ],
+                              "query": [
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                }
+                              ],
+                              "variable": [
+                                {
+                                  "id": "5a01d8f3-1994-468f-9d87-c07ef043c63b",
+                                  "key": "AnnouncementId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Retrieve a specific announcement."
+                          },
+                          "response": [
+                            {
+                              "id": "9c4a0b7c-b1ae-4056-bf03-f6961e40f27f",
+                              "name": "Announcement details",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"AnnouncementId\": \"<integer>\",\n  \"Subject\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Critical\",\n  \"CreatedBy\": \"<string>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-9c4a0b7c-b1ae-4056-bf03-f6961e40f27f"
+                            },
+                            {
+                              "id": "5ae32120-79ae-4601-b304-c0f7d26d991f",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-5ae32120-79ae-4601-b304-c0f7d26d991f"
+                            },
+                            {
+                              "id": "73fd2c42-696d-4e0a-914e-58a367b4a110",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId?fields=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "fields",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-73fd2c42-696d-4e0a-914e-58a367b4a110"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-c8af083c-420a-4fd3-a3f9-afcd908c2296"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Update an announcement",
+                          "id": "fe55b822-65b5-4913-b63d-612787bb4bf0",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements",
+                                ":AnnouncementId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "d974b19c-9b98-469a-9b00-74062eba91e3",
+                                  "key": "AnnouncementId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Update an existing application announcement."
+                          },
+                          "response": [
+                            {
+                              "id": "a984200e-b6e1-471d-9cb9-1b9591425ff4",
+                              "name": "Announcement updated",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-a984200e-b6e1-471d-9cb9-1b9591425ff4"
+                            },
+                            {
+                              "id": "b0cbdf07-01fa-471b-a73d-039497374a90",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-b0cbdf07-01fa-471b-a73d-039497374a90"
+                            },
+                            {
+                              "id": "8bb68bbc-ea35-4c81-804e-1d5fc6e27a03",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-8bb68bbc-ea35-4c81-804e-1d5fc6e27a03"
+                            },
+                            {
+                              "id": "11a3979b-c7ed-41c5-bbc7-4b43b07a7a72",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "PATCH",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-11a3979b-c7ed-41c5-bbc7-4b43b07a7a72"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-fe55b822-65b5-4913-b63d-612787bb4bf0"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Delete an announcement",
+                          "id": "44da039e-0a00-45ca-a075-e316c6303939",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "DELETE",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements",
+                                ":AnnouncementId"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "93314c4d-cfd3-4e43-b0e1-365b56c45578",
+                                  "key": "AnnouncementId",
+                                  "value": "<integer>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Delete an existing application announcement."
+                          },
+                          "response": [
+                            {
+                              "id": "1b51b1b5-9d5f-4d87-8695-146d4fb34384",
+                              "name": "Announcement deleted",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "No Content",
+                              "code": 204,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-1b51b1b5-9d5f-4d87-8695-146d4fb34384"
+                            },
+                            {
+                              "id": "4d49f20f-0396-407e-9cee-db1a5acad12d",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-4d49f20f-0396-407e-9cee-db1a5acad12d"
+                            },
+                            {
+                              "id": "d642c4ad-5280-4067-9b4a-fd1d69cec132",
+                              "name": "The requested resource was not found",
+                              "originalRequest": {
+                                "method": "DELETE",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "fscmRestApi",
+                                    "resources",
+                                    "11.13.18.05",
+                                    "announcements",
+                                    ":AnnouncementId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "AnnouncementId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Not Found",
+                              "code": 404,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:28:15.000Z",
+                              "updatedAt": "2026-07-28T02:28:15.000Z",
+                              "uid": "35240-d642c4ad-5280-4067-9b4a-fd1d69cec132"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:28:14.000Z",
+                          "updatedAt": "2026-07-28T02:28:14.000Z",
+                          "uid": "35240-44da039e-0a00-45ca-a075-e316c6303939"
+                        }
+                      ],
+                      "id": "0fee4e56-26e3-43fd-a898-5288775ba493",
+                      "createdAt": "2026-07-28T02:28:14.000Z",
+                      "updatedAt": "2026-07-28T02:28:14.000Z",
+                      "uid": "35240-0fee4e56-26e3-43fd-a898-5288775ba493"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications List announcements",
+                      "id": "d0f7de4a-a950-4f27-9c52-dd7ddb3238b9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements?limit=25&offset=0&fields=<string>&q=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "announcements"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "key": "q",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve application announcements visible to users across Fusion Cloud applications."
+                      },
+                      "response": [
+                        {
+                          "id": "e83c912e-6b0b-4eb6-b7ca-dab8c4404462",
+                          "name": "Announcements retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"AnnouncementId\": \"<integer>\",\n      \"Subject\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"Severity\": \"Warning\",\n      \"CreatedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"AnnouncementId\": \"<integer>\",\n      \"Subject\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"StartDate\": \"<date>\",\n      \"EndDate\": \"<date>\",\n      \"Severity\": \"Warning\",\n      \"CreatedBy\": \"<string>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:15.000Z",
+                          "updatedAt": "2026-07-28T02:28:15.000Z",
+                          "uid": "35240-e83c912e-6b0b-4eb6-b7ca-dab8c4404462"
+                        },
+                        {
+                          "id": "7b6f76a7-0e80-49e6-9b9e-7504131f10c2",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements?limit=25&offset=0&fields=<string>&q=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "key": "q",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:15.000Z",
+                          "updatedAt": "2026-07-28T02:28:15.000Z",
+                          "uid": "35240-7b6f76a7-0e80-49e6-9b9e-7504131f10c2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:14.000Z",
+                      "updatedAt": "2026-07-28T02:28:14.000Z",
+                      "uid": "35240-d0f7de4a-a950-4f27-9c52-dd7ddb3238b9"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create an announcement",
+                      "id": "2828f244-6d67-410a-9476-e7359274c675",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "announcements"
+                          ]
+                        },
+                        "description": "Create a new application announcement."
+                      },
+                      "response": [
+                        {
+                          "id": "f2ab212d-6955-419a-956d-81410df2a277",
+                          "name": "Announcement created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:15.000Z",
+                          "updatedAt": "2026-07-28T02:28:15.000Z",
+                          "uid": "35240-f2ab212d-6955-419a-956d-81410df2a277"
+                        },
+                        {
+                          "id": "1e85b9a6-d85f-4c53-b7fe-334c65a2bec0",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:15.000Z",
+                          "updatedAt": "2026-07-28T02:28:15.000Z",
+                          "uid": "35240-1e85b9a6-d85f-4c53-b7fe-334c65a2bec0"
+                        },
+                        {
+                          "id": "53d0f36c-010a-4d55-b243-d50db3cd2a94",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"Subject\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"Description\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"Severity\": \"Warning\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/announcements",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "announcements"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:15.000Z",
+                          "updatedAt": "2026-07-28T02:28:15.000Z",
+                          "uid": "35240-53d0f36c-010a-4d55-b243-d50db3cd2a94"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:14.000Z",
+                      "updatedAt": "2026-07-28T02:28:14.000Z",
+                      "uid": "35240-2828f244-6d67-410a-9476-e7359274c675"
+                    }
+                  ],
+                  "id": "f5b40a71-5a1a-4983-9def-225126d6a1b5",
+                  "createdAt": "2026-07-28T02:28:14.000Z",
+                  "updatedAt": "2026-07-28T02:28:14.000Z",
+                  "uid": "35240-f5b40a71-5a1a-4983-9def-225126d6a1b5"
+                }
+              ],
+              "id": "9af556c8-4fe1-49c4-9dea-69d71476ea77",
+              "createdAt": "2026-07-28T02:28:14.000Z",
+              "updatedAt": "2026-07-28T02:28:14.000Z",
+              "uid": "35240-9af556c8-4fe1-49c4-9dea-69d71476ea77"
+            }
+          ],
+          "id": "4d07cd34-b469-4cb0-a336-9d0793856fad",
+          "createdAt": "2026-07-28T02:28:14.000Z",
+          "updatedAt": "2026-07-28T02:28:14.000Z",
+          "uid": "35240-4d07cd34-b469-4cb0-a336-9d0793856fad"
+        }
+      ],
+      "id": "5ef5c383-e221-4a3e-9def-fce2fb305ab1",
+      "createdAt": "2026-07-28T02:28:14.000Z",
+      "updatedAt": "2026-07-28T02:28:14.000Z",
+      "uid": "35240-5ef5c383-e221-4a3e-9def-fce2fb305ab1"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

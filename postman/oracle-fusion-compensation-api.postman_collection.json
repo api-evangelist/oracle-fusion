@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "0b957bd3-8c16-4431-a867-3d0b9f8a6375",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Compensation API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:28:43.000Z",
+    "updatedAt": "2026-07-28T02:28:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-0b957bd3-8c16-4431-a867-3d0b9f8a6375"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "compensationSalaries",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List compensation salaries",
+                      "id": "88b6ba56-018e-4f46-9307-21f1f3118911",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/compensationSalaries?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "compensationSalaries"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve salary records for workers including base salary, components, and salary history."
+                      },
+                      "response": [
+                        {
+                          "id": "71d4d8ec-9973-4ecb-8c1b-38685aaec7d3",
+                          "name": "Salaries retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/compensationSalaries?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "compensationSalaries"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"SalaryId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"AssignmentNumber\": \"<string>\",\n      \"SalaryAmount\": \"<double>\",\n      \"SalaryBasis\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"EffectiveDate\": \"<date>\",\n      \"SalaryRangeMinimum\": \"<double>\",\n      \"SalaryRangeMidpoint\": \"<double>\",\n      \"SalaryRangeMaximum\": \"<double>\",\n      \"CompaRatio\": \"<double>\"\n    },\n    {\n      \"SalaryId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"AssignmentNumber\": \"<string>\",\n      \"SalaryAmount\": \"<double>\",\n      \"SalaryBasis\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"EffectiveDate\": \"<date>\",\n      \"SalaryRangeMinimum\": \"<double>\",\n      \"SalaryRangeMidpoint\": \"<double>\",\n      \"SalaryRangeMaximum\": \"<double>\",\n      \"CompaRatio\": \"<double>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:28:43.000Z",
+                          "updatedAt": "2026-07-28T02:28:43.000Z",
+                          "uid": "35240-71d4d8ec-9973-4ecb-8c1b-38685aaec7d3"
+                        },
+                        {
+                          "id": "59acc833-08bb-4461-92ee-bced0f2e8852",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/compensationSalaries?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "compensationSalaries"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:28:43.000Z",
+                          "updatedAt": "2026-07-28T02:28:43.000Z",
+                          "uid": "35240-59acc833-08bb-4461-92ee-bced0f2e8852"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:28:43.000Z",
+                      "updatedAt": "2026-07-28T02:28:43.000Z",
+                      "uid": "35240-88b6ba56-018e-4f46-9307-21f1f3118911"
+                    }
+                  ],
+                  "id": "c226e121-8e6a-4b22-adf2-49bc25cc2720",
+                  "createdAt": "2026-07-28T02:28:43.000Z",
+                  "updatedAt": "2026-07-28T02:28:43.000Z",
+                  "uid": "35240-c226e121-8e6a-4b22-adf2-49bc25cc2720"
+                }
+              ],
+              "id": "08e58e35-a467-4413-8a3e-bab935aa5a06",
+              "createdAt": "2026-07-28T02:28:43.000Z",
+              "updatedAt": "2026-07-28T02:28:43.000Z",
+              "uid": "35240-08e58e35-a467-4413-8a3e-bab935aa5a06"
+            }
+          ],
+          "id": "48a822ee-a0a8-4f86-8ab5-768a1ae1c0c5",
+          "createdAt": "2026-07-28T02:28:43.000Z",
+          "updatedAt": "2026-07-28T02:28:43.000Z",
+          "uid": "35240-48a822ee-a0a8-4f86-8ab5-768a1ae1c0c5"
+        }
+      ],
+      "id": "9149fef5-071e-4c4c-84c3-920914d89e1f",
+      "createdAt": "2026-07-28T02:28:43.000Z",
+      "updatedAt": "2026-07-28T02:28:43.000Z",
+      "uid": "35240-9149fef5-071e-4c4c-84c3-920914d89e1f"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

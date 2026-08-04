@@ -1,0 +1,616 @@
+{
+  "info": {
+    "_postman_id": "7fdde1fc-6ed8-4440-8659-22e91660b907",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Scheduled Processes API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:37.000Z",
+    "updatedAt": "2026-07-28T02:29:37.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7fdde1fc-6ed8-4440-8659-22e91660b907"
+  },
+  "item": [
+    {
+      "name": "ess",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "scheduler",
+              "item": [
+                {
+                  "name": "v1",
+                  "item": [
+                    {
+                      "name": "requests",
+                      "item": [
+                        {
+                          "name": "{requestId}",
+                          "item": [
+                            {
+                              "name": "Oracle Fusion Cloud Applications Get a scheduled process request",
+                              "id": "2ea3150c-1262-4d65-a4dd-0a37b41eaf97",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests/:requestId",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests",
+                                    ":requestId"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "399f3043-7d4d-46ce-9984-80a912a094d4",
+                                      "key": "requestId",
+                                      "value": "<integer>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Retrieve status and details of a scheduled process request."
+                              },
+                              "response": [
+                                {
+                                  "id": "4e083b09-f5c9-4ce2-a116-7b8496d7bb23",
+                                  "name": "Request details",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests/:requestId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "ess",
+                                        "rest",
+                                        "scheduler",
+                                        "v1",
+                                        "requests",
+                                        ":requestId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "requestId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"requestId\": \"<integer>\",\n  \"jobDefinitionName\": \"<string>\",\n  \"submittedBy\": \"<string>\",\n  \"submittedDate\": \"<dateTime>\",\n  \"status\": \"Running\",\n  \"startDate\": \"<dateTime>\",\n  \"endDate\": \"<dateTime>\"\n}",
+                                  "createdAt": "2026-07-28T02:29:38.000Z",
+                                  "updatedAt": "2026-07-28T02:29:38.000Z",
+                                  "uid": "35240-4e083b09-f5c9-4ce2-a116-7b8496d7bb23"
+                                },
+                                {
+                                  "id": "b0f6bd45-7932-4652-91f6-4639ece76388",
+                                  "name": "Authentication credentials are missing or invalid",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests/:requestId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "ess",
+                                        "rest",
+                                        "scheduler",
+                                        "v1",
+                                        "requests",
+                                        ":requestId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "requestId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unauthorized",
+                                  "code": 401,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:29:38.000Z",
+                                  "updatedAt": "2026-07-28T02:29:38.000Z",
+                                  "uid": "35240-b0f6bd45-7932-4652-91f6-4639ece76388"
+                                },
+                                {
+                                  "id": "5befdf1e-3703-43ff-8f40-fd1d08b12229",
+                                  "name": "The requested resource was not found",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests/:requestId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "ess",
+                                        "rest",
+                                        "scheduler",
+                                        "v1",
+                                        "requests",
+                                        ":requestId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "requestId"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Not Found",
+                                  "code": 404,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:29:38.000Z",
+                                  "updatedAt": "2026-07-28T02:29:38.000Z",
+                                  "uid": "35240-5befdf1e-3703-43ff-8f40-fd1d08b12229"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-2ea3150c-1262-4d65-a4dd-0a37b41eaf97"
+                            }
+                          ],
+                          "id": "9535e8e6-206c-47ab-961a-a0fb00b30dd8",
+                          "createdAt": "2026-07-28T02:29:38.000Z",
+                          "updatedAt": "2026-07-28T02:29:38.000Z",
+                          "uid": "35240-9535e8e6-206c-47ab-961a-a0fb00b30dd8"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications List scheduled process requests",
+                          "id": "2db54d5f-c0c0-48af-9a17-8996e1666a4c",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests?limit=25&offset=0",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ess",
+                                "rest",
+                                "scheduler",
+                                "v1",
+                                "requests"
+                              ],
+                              "query": [
+                                {
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "key": "offset",
+                                  "value": "0"
+                                }
+                              ]
+                            },
+                            "description": "Query scheduled process (ESS) job requests and their execution status."
+                          },
+                          "response": [
+                            {
+                              "id": "7b929765-f6e2-4add-b766-61482c2a3ab8",
+                              "name": "Scheduled requests retrieved",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests?limit=25&offset=0",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "limit",
+                                      "value": "25"
+                                    },
+                                    {
+                                      "key": "offset",
+                                      "value": "0"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"items\": [\n    {\n      \"requestId\": \"<integer>\",\n      \"jobDefinitionName\": \"<string>\",\n      \"submittedBy\": \"<string>\",\n      \"submittedDate\": \"<dateTime>\",\n      \"status\": \"Running\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\"\n    },\n    {\n      \"requestId\": \"<integer>\",\n      \"jobDefinitionName\": \"<string>\",\n      \"submittedBy\": \"<string>\",\n      \"submittedDate\": \"<dateTime>\",\n      \"status\": \"Wait\",\n      \"startDate\": \"<dateTime>\",\n      \"endDate\": \"<dateTime>\"\n    }\n  ]\n}",
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-7b929765-f6e2-4add-b766-61482c2a3ab8"
+                            },
+                            {
+                              "id": "6cebc588-707f-408b-bfd9-5d1188c9aa47",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests?limit=25&offset=0",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests"
+                                  ],
+                                  "query": [
+                                    {
+                                      "key": "limit",
+                                      "value": "25"
+                                    },
+                                    {
+                                      "key": "offset",
+                                      "value": "0"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-6cebc588-707f-408b-bfd9-5d1188c9aa47"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:38.000Z",
+                          "updatedAt": "2026-07-28T02:29:38.000Z",
+                          "uid": "35240-2db54d5f-c0c0-48af-9a17-8996e1666a4c"
+                        },
+                        {
+                          "name": "Oracle Fusion Cloud Applications Submit a scheduled process request",
+                          "id": "d5d2f2c1-5e83-468c-88cb-458cbde3b24f",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"jobDefinitionName\": \"<string>\",\n  \"jobPackageName\": \"<string>\",\n  \"submissionNotes\": \"<string>\",\n  \"parameterList\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ess",
+                                "rest",
+                                "scheduler",
+                                "v1",
+                                "requests"
+                              ]
+                            },
+                            "description": "Submit a new scheduled process job for execution."
+                          },
+                          "response": [
+                            {
+                              "id": "b4ec1f96-19bd-4ce7-9b60-08674f57693a",
+                              "name": "Request submitted",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"jobDefinitionName\": \"<string>\",\n  \"jobPackageName\": \"<string>\",\n  \"submissionNotes\": \"<string>\",\n  \"parameterList\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests"
+                                  ]
+                                }
+                              },
+                              "status": "Created",
+                              "code": 201,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-b4ec1f96-19bd-4ce7-9b60-08674f57693a"
+                            },
+                            {
+                              "id": "f0f2d86c-cb4f-40c5-bab1-b7fd68828ca5",
+                              "name": "Invalid request parameters or payload",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"jobDefinitionName\": \"<string>\",\n  \"jobPackageName\": \"<string>\",\n  \"submissionNotes\": \"<string>\",\n  \"parameterList\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests"
+                                  ]
+                                }
+                              },
+                              "status": "Bad Request",
+                              "code": 400,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-f0f2d86c-cb4f-40c5-bab1-b7fd68828ca5"
+                            },
+                            {
+                              "id": "0a2f0f39-e714-407d-a566-aa58458c57dc",
+                              "name": "Authentication credentials are missing or invalid",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: bearer",
+                                    "key": "Authorization",
+                                    "value": "Bearer <token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"jobDefinitionName\": \"<string>\",\n  \"jobPackageName\": \"<string>\",\n  \"submissionNotes\": \"<string>\",\n  \"parameterList\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/ess/rest/scheduler/v1/requests",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "ess",
+                                    "rest",
+                                    "scheduler",
+                                    "v1",
+                                    "requests"
+                                  ]
+                                }
+                              },
+                              "status": "Unauthorized",
+                              "code": 401,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T02:29:38.000Z",
+                              "updatedAt": "2026-07-28T02:29:38.000Z",
+                              "uid": "35240-0a2f0f39-e714-407d-a566-aa58458c57dc"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T02:29:38.000Z",
+                          "updatedAt": "2026-07-28T02:29:38.000Z",
+                          "uid": "35240-d5d2f2c1-5e83-468c-88cb-458cbde3b24f"
+                        }
+                      ],
+                      "id": "751eb3fb-4ade-40fa-845b-3a8534aa810e",
+                      "createdAt": "2026-07-28T02:29:38.000Z",
+                      "updatedAt": "2026-07-28T02:29:38.000Z",
+                      "uid": "35240-751eb3fb-4ade-40fa-845b-3a8534aa810e"
+                    }
+                  ],
+                  "id": "71e6a748-f3f8-43e8-a4bd-2a4a589b3fe4",
+                  "createdAt": "2026-07-28T02:29:38.000Z",
+                  "updatedAt": "2026-07-28T02:29:38.000Z",
+                  "uid": "35240-71e6a748-f3f8-43e8-a4bd-2a4a589b3fe4"
+                }
+              ],
+              "id": "8bc49b01-4c6a-48ab-a6be-47f0e10df4b9",
+              "createdAt": "2026-07-28T02:29:38.000Z",
+              "updatedAt": "2026-07-28T02:29:38.000Z",
+              "uid": "35240-8bc49b01-4c6a-48ab-a6be-47f0e10df4b9"
+            }
+          ],
+          "id": "35f5e1bc-b131-48d6-a1dd-7656999f8b54",
+          "createdAt": "2026-07-28T02:29:38.000Z",
+          "updatedAt": "2026-07-28T02:29:38.000Z",
+          "uid": "35240-35f5e1bc-b131-48d6-a1dd-7656999f8b54"
+        }
+      ],
+      "id": "0b1450df-3b1b-4977-a7a7-e79b361e1530",
+      "createdAt": "2026-07-28T02:29:38.000Z",
+      "updatedAt": "2026-07-28T02:29:38.000Z",
+      "uid": "35240-0b1450df-3b1b-4977-a7a7-e79b361e1530"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

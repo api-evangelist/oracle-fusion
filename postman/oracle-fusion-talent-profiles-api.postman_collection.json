@@ -1,0 +1,266 @@
+{
+  "info": {
+    "_postman_id": "9483d304-8895-48a2-b6fa-68404ca27139",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Talent Profiles API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:41.000Z",
+    "updatedAt": "2026-07-28T02:29:41.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-9483d304-8895-48a2-b6fa-68404ca27139"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "talentProfiles",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List talent profiles",
+                      "id": "a49ba043-9bbb-46b9-a112-c81cb3a57f9e",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/talentProfiles?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "talentProfiles"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to return",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder in format FinderName;param1=value1",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve talent profiles for workers including skills, competencies, qualifications, and career interests."
+                      },
+                      "response": [
+                        {
+                          "id": "ce7b4a0b-01a9-41a7-8159-6ec13a803dc4",
+                          "name": "Talent profiles retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/talentProfiles?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "talentProfiles"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"ProfileId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"ProfileType\": \"<string>\",\n      \"ProfileStatus\": \"<string>\",\n      \"Summary\": \"<string>\"\n    },\n    {\n      \"ProfileId\": \"<integer>\",\n      \"PersonNumber\": \"<string>\",\n      \"PersonName\": \"<string>\",\n      \"ProfileType\": \"<string>\",\n      \"ProfileStatus\": \"<string>\",\n      \"Summary\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:41.000Z",
+                          "updatedAt": "2026-07-28T02:29:41.000Z",
+                          "uid": "35240-ce7b4a0b-01a9-41a7-8159-6ec13a803dc4"
+                        },
+                        {
+                          "id": "7745d84e-520b-4e6e-92f9-3cf8250aada0",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/resources/11.13.18.05/talentProfiles?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "talentProfiles"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to return",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder in format FinderName;param1=value1",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:41.000Z",
+                          "updatedAt": "2026-07-28T02:29:41.000Z",
+                          "uid": "35240-7745d84e-520b-4e6e-92f9-3cf8250aada0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:41.000Z",
+                      "updatedAt": "2026-07-28T02:29:41.000Z",
+                      "uid": "35240-a49ba043-9bbb-46b9-a112-c81cb3a57f9e"
+                    }
+                  ],
+                  "id": "85431b39-e92c-40d0-a4b2-43d8fcd2502c",
+                  "createdAt": "2026-07-28T02:29:41.000Z",
+                  "updatedAt": "2026-07-28T02:29:41.000Z",
+                  "uid": "35240-85431b39-e92c-40d0-a4b2-43d8fcd2502c"
+                }
+              ],
+              "id": "563beb96-a1c2-4845-8b2c-0347ec5876a3",
+              "createdAt": "2026-07-28T02:29:41.000Z",
+              "updatedAt": "2026-07-28T02:29:41.000Z",
+              "uid": "35240-563beb96-a1c2-4845-8b2c-0347ec5876a3"
+            }
+          ],
+          "id": "229c2047-3ee7-49d1-8a6f-0cc8ae7ce4c8",
+          "createdAt": "2026-07-28T02:29:41.000Z",
+          "updatedAt": "2026-07-28T02:29:41.000Z",
+          "uid": "35240-229c2047-3ee7-49d1-8a6f-0cc8ae7ce4c8"
+        }
+      ],
+      "id": "1f6553f3-148a-47c9-9c40-2c490bc23d72",
+      "createdAt": "2026-07-28T02:29:41.000Z",
+      "updatedAt": "2026-07-28T02:29:41.000Z",
+      "uid": "35240-1f6553f3-148a-47c9-9c40-2c490bc23d72"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

@@ -1,0 +1,696 @@
+{
+  "info": {
+    "_postman_id": "f415cab5-bb63-45b6-a0a3-bcdbdef00c03",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Jobs API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:13.000Z",
+    "updatedAt": "2026-07-28T02:29:13.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f415cab5-bb63-45b6-a0a3-bcdbdef00c03"
+  },
+  "item": [
+    {
+      "name": "HyperionPlanning",
+      "item": [
+        {
+          "name": "rest",
+          "item": [
+            {
+              "name": "v3",
+              "item": [
+                {
+                  "name": "applications",
+                  "item": [
+                    {
+                      "name": "{applicationName}",
+                      "item": [
+                        {
+                          "name": "jobs",
+                          "item": [
+                            {
+                              "name": "{jobId}",
+                              "item": [
+                                {
+                                  "name": "Oracle Fusion Cloud Applications Get job status",
+                                  "id": "0f7c30a0-5a45-41d3-900f-b65756073c46",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs",
+                                        ":jobId"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "04afdc87-4c18-4bfb-b973-0f337bf85158",
+                                          "key": "applicationName",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "85c8c113-6d8b-4226-a947-b3a2c021fb90",
+                                          "key": "jobId",
+                                          "value": "<integer>",
+                                          "description": "(Required) Job identifier"
+                                        }
+                                      ]
+                                    },
+                                    "description": "Retrieve execution status and details for a specific EPM job."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "d4cc6fc7-f31f-41fe-a67c-cbff20874bde",
+                                      "name": "Job status",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "key": "Accept",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "jobs",
+                                            ":jobId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "applicationName"
+                                            },
+                                            {
+                                              "key": "jobId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "json",
+                                      "header": [
+                                        {
+                                          "key": "Content-Type",
+                                          "value": "application/json"
+                                        }
+                                      ],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": "{\n  \"jobId\": \"<integer>\",\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"descriptiveStatus\": \"Completed With Errors\",\n  \"details\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\"\n}",
+                                      "createdAt": "2026-07-28T02:29:13.000Z",
+                                      "updatedAt": "2026-07-28T02:29:13.000Z",
+                                      "uid": "35240-d4cc6fc7-f31f-41fe-a67c-cbff20874bde"
+                                    },
+                                    {
+                                      "id": "f098082e-ae95-4225-af82-b4d59ec7d11d",
+                                      "name": "Authentication credentials are missing or invalid",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "jobs",
+                                            ":jobId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "applicationName"
+                                            },
+                                            {
+                                              "key": "jobId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Unauthorized",
+                                      "code": 401,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:29:13.000Z",
+                                      "updatedAt": "2026-07-28T02:29:13.000Z",
+                                      "uid": "35240-f098082e-ae95-4225-af82-b4d59ec7d11d"
+                                    },
+                                    {
+                                      "id": "81ec01ff-e3b2-4872-9894-57a35ced1360",
+                                      "name": "The requested resource was not found",
+                                      "originalRequest": {
+                                        "method": "GET",
+                                        "header": [
+                                          {
+                                            "description": "Added as a part of security scheme: bearer",
+                                            "key": "Authorization",
+                                            "value": "Bearer <token>"
+                                          }
+                                        ],
+                                        "url": {
+                                          "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "HyperionPlanning",
+                                            "rest",
+                                            "v3",
+                                            "applications",
+                                            ":applicationName",
+                                            "jobs",
+                                            ":jobId"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "applicationName"
+                                            },
+                                            {
+                                              "key": "jobId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "Not Found",
+                                      "code": 404,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T02:29:13.000Z",
+                                      "updatedAt": "2026-07-28T02:29:13.000Z",
+                                      "uid": "35240-81ec01ff-e3b2-4872-9894-57a35ced1360"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-0f7c30a0-5a45-41d3-900f-b65756073c46"
+                                }
+                              ],
+                              "id": "f81f159b-6451-4933-9e27-e7a81513454c",
+                              "createdAt": "2026-07-28T02:29:13.000Z",
+                              "updatedAt": "2026-07-28T02:29:13.000Z",
+                              "uid": "35240-f81f159b-6451-4933-9e27-e7a81513454c"
+                            },
+                            {
+                              "name": "Oracle Fusion Cloud Applications List jobs",
+                              "id": "42b6afcc-fe60-4427-8286-0e8aefbadde9",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs?q=<string>",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName",
+                                    "jobs"
+                                  ],
+                                  "query": [
+                                    {
+                                      "description": "Filter expression",
+                                      "key": "q",
+                                      "value": "<string>"
+                                    }
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "c1ba35e3-8f58-4e92-acc1-56001696c9f7",
+                                      "key": "applicationName",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Retrieve a list of EPM jobs including business rules, data maps, and scheduled maintenance tasks."
+                              },
+                              "response": [
+                                {
+                                  "id": "29d6f63f-dbea-4a27-852c-906be90fde6d",
+                                  "name": "Jobs retrieved",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs?q=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "Filter expression",
+                                          "key": "q",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"items\": [\n    {\n      \"jobId\": \"<integer>\",\n      \"jobName\": \"<string>\",\n      \"jobType\": \"Rules\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"jobId\": \"<integer>\",\n      \"jobName\": \"<string>\",\n      \"jobType\": \"Export Data\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"status\": \"<integer>\"\n}",
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-29d6f63f-dbea-4a27-852c-906be90fde6d"
+                                },
+                                {
+                                  "id": "4b04ff13-d8f0-4947-93c7-6505b7c499cd",
+                                  "name": "Authentication credentials are missing or invalid",
+                                  "originalRequest": {
+                                    "method": "GET",
+                                    "header": [
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs?q=<string>",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs"
+                                      ],
+                                      "query": [
+                                        {
+                                          "description": "Filter expression",
+                                          "key": "q",
+                                          "value": "<string>"
+                                        }
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unauthorized",
+                                  "code": 401,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-4b04ff13-d8f0-4947-93c7-6505b7c499cd"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:29:13.000Z",
+                              "updatedAt": "2026-07-28T02:29:13.000Z",
+                              "uid": "35240-42b6afcc-fe60-4427-8286-0e8aefbadde9"
+                            },
+                            {
+                              "name": "Oracle Fusion Cloud Applications Execute a job",
+                              "id": "a416c9ca-b051-485e-8bd6-3b06a7e87ac2",
+                              "protocolProfileBehavior": {
+                                "disableBodyPruning": true
+                              },
+                              "request": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"Export Data\",\n  \"parameters\": {\n    \"exd55\": \"<string>\",\n    \"Excepteur1a\": \"<string>\",\n    \"elit9fd\": \"<string>\",\n    \"irureb15\": \"<string>\",\n    \"consequat_e4_\": \"<string>\"\n  }\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "HyperionPlanning",
+                                    "rest",
+                                    "v3",
+                                    "applications",
+                                    ":applicationName",
+                                    "jobs"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "id": "34ad8662-5c58-4b66-a006-8e906dc6cbac",
+                                      "key": "applicationName",
+                                      "value": "<string>",
+                                      "description": "(Required) "
+                                    }
+                                  ]
+                                },
+                                "description": "Execute an EPM job such as a business rule, data map, refresh database, or cube refresh."
+                              },
+                              "response": [
+                                {
+                                  "id": "b9ef1639-f257-47ae-9790-a4a0f7751919",
+                                  "name": "Job submitted",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "key": "Accept",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"Export Data\",\n  \"parameters\": {\n    \"exd55\": \"<string>\",\n    \"Excepteur1a\": \"<string>\",\n    \"elit9fd\": \"<string>\",\n    \"irureb15\": \"<string>\",\n    \"consequat_e4_\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "OK",
+                                  "code": 200,
+                                  "_postman_previewlanguage": "json",
+                                  "header": [
+                                    {
+                                      "key": "Content-Type",
+                                      "value": "application/json"
+                                    }
+                                  ],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": "{\n  \"jobId\": \"<integer>\",\n  \"jobName\": \"<string>\",\n  \"jobType\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"descriptiveStatus\": \"Completed With Errors\",\n  \"details\": \"<string>\",\n  \"startTime\": \"<dateTime>\",\n  \"endTime\": \"<dateTime>\"\n}",
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-b9ef1639-f257-47ae-9790-a4a0f7751919"
+                                },
+                                {
+                                  "id": "ef781d2a-3fb0-4b23-a07f-f7fc5589fa71",
+                                  "name": "Invalid request parameters or payload",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"Export Data\",\n  \"parameters\": {\n    \"exd55\": \"<string>\",\n    \"Excepteur1a\": \"<string>\",\n    \"elit9fd\": \"<string>\",\n    \"irureb15\": \"<string>\",\n    \"consequat_e4_\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Bad Request",
+                                  "code": 400,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-ef781d2a-3fb0-4b23-a07f-f7fc5589fa71"
+                                },
+                                {
+                                  "id": "375122f0-4ff0-457a-9f69-0710371ad512",
+                                  "name": "Authentication credentials are missing or invalid",
+                                  "originalRequest": {
+                                    "method": "POST",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      },
+                                      {
+                                        "description": "Added as a part of security scheme: bearer",
+                                        "key": "Authorization",
+                                        "value": "Bearer <token>"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"jobName\": \"<string>\",\n  \"jobType\": \"Export Data\",\n  \"parameters\": {\n    \"exd55\": \"<string>\",\n    \"Excepteur1a\": \"<string>\",\n    \"elit9fd\": \"<string>\",\n    \"irureb15\": \"<string>\",\n    \"consequat_e4_\": \"<string>\"\n  }\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "HyperionPlanning",
+                                        "rest",
+                                        "v3",
+                                        "applications",
+                                        ":applicationName",
+                                        "jobs"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "key": "applicationName"
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  "status": "Unauthorized",
+                                  "code": 401,
+                                  "_postman_previewlanguage": "text",
+                                  "header": [],
+                                  "cookie": [],
+                                  "responseTime": null,
+                                  "body": null,
+                                  "createdAt": "2026-07-28T02:29:13.000Z",
+                                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                                  "uid": "35240-375122f0-4ff0-457a-9f69-0710371ad512"
+                                }
+                              ],
+                              "createdAt": "2026-07-28T02:29:13.000Z",
+                              "updatedAt": "2026-07-28T02:29:13.000Z",
+                              "uid": "35240-a416c9ca-b051-485e-8bd6-3b06a7e87ac2"
+                            }
+                          ],
+                          "id": "3ec602e6-b485-4f8b-ab39-dd15cc8e41c3",
+                          "createdAt": "2026-07-28T02:29:13.000Z",
+                          "updatedAt": "2026-07-28T02:29:13.000Z",
+                          "uid": "35240-3ec602e6-b485-4f8b-ab39-dd15cc8e41c3"
+                        }
+                      ],
+                      "id": "ae5a6d00-70e3-4ee8-adea-a3c09d1054e3",
+                      "createdAt": "2026-07-28T02:29:13.000Z",
+                      "updatedAt": "2026-07-28T02:29:13.000Z",
+                      "uid": "35240-ae5a6d00-70e3-4ee8-adea-a3c09d1054e3"
+                    }
+                  ],
+                  "id": "f73cbd2b-e75e-4c87-9447-3ec622b4e124",
+                  "createdAt": "2026-07-28T02:29:13.000Z",
+                  "updatedAt": "2026-07-28T02:29:13.000Z",
+                  "uid": "35240-f73cbd2b-e75e-4c87-9447-3ec622b4e124"
+                }
+              ],
+              "id": "206abbaf-e410-4265-88bd-176077b2496e",
+              "createdAt": "2026-07-28T02:29:13.000Z",
+              "updatedAt": "2026-07-28T02:29:13.000Z",
+              "uid": "35240-206abbaf-e410-4265-88bd-176077b2496e"
+            }
+          ],
+          "id": "061311f2-726d-431a-ad55-b3f6d1100959",
+          "createdAt": "2026-07-28T02:29:13.000Z",
+          "updatedAt": "2026-07-28T02:29:13.000Z",
+          "uid": "35240-061311f2-726d-431a-ad55-b3f6d1100959"
+        }
+      ],
+      "id": "1ba03cfc-35b4-45a1-96c7-2e732389bc83",
+      "createdAt": "2026-07-28T02:29:13.000Z",
+      "updatedAt": "2026-07-28T02:29:13.000Z",
+      "uid": "35240-1ba03cfc-35b4-45a1-96c7-2e732389bc83"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

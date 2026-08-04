@@ -1,0 +1,603 @@
+{
+  "info": {
+    "_postman_id": "4a216e65-c0a1-4833-9773-6d95b84d12b9",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Roles API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:34.000Z",
+    "updatedAt": "2026-07-28T02:29:34.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4a216e65-c0a1-4833-9773-6d95b84d12b9"
+  },
+  "item": [
+    {
+      "name": "hcmRestApi",
+      "item": [
+        {
+          "name": "scim",
+          "item": [
+            {
+              "name": "Roles",
+              "item": [
+                {
+                  "name": "{id}",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications Get a role",
+                      "id": "98339021-c7c8-4f29-aa57-bd3ddbe12da4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "scim",
+                            "Roles",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "c845d04a-3f34-4df2-9216-abaae744352d",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Retrieve a specific security role."
+                      },
+                      "response": [
+                        {
+                          "id": "63905877-2859-4175-9d3f-8b62e793ed8f",
+                          "name": "Role details",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"id\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"roleCategory\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-63905877-2859-4175-9d3f-8b62e793ed8f"
+                        },
+                        {
+                          "id": "cae1dd82-1fd1-47d6-95a7-dcdbf420ec74",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-cae1dd82-1fd1-47d6-95a7-dcdbf420ec74"
+                        },
+                        {
+                          "id": "7db2f043-ed6e-4720-9ef0-c19ee1c911f7",
+                          "name": "The requested resource was not found",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-7db2f043-ed6e-4720-9ef0-c19ee1c911f7"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:34.000Z",
+                      "updatedAt": "2026-07-28T02:29:34.000Z",
+                      "uid": "35240-98339021-c7c8-4f29-aa57-bd3ddbe12da4"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Update a role",
+                      "id": "f16e1925-6869-450d-8d47-388febdb3b13",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "scim",
+                            "Roles",
+                            ":id"
+                          ],
+                          "variable": [
+                            {
+                              "id": "f73f4526-f0a3-437b-87e7-0fd696fb977e",
+                              "key": "id",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Update an existing security role definition."
+                      },
+                      "response": [
+                        {
+                          "id": "169b975f-c918-4025-b9c4-4742c2a5e8c5",
+                          "name": "Role updated",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-169b975f-c918-4025-b9c4-4742c2a5e8c5"
+                        },
+                        {
+                          "id": "0917ddc2-22b0-4c89-89fe-bf0e5032a61c",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-0917ddc2-22b0-4c89-89fe-bf0e5032a61c"
+                        },
+                        {
+                          "id": "36102a03-6dc1-47c3-8e9f-54d5318e172c",
+                          "name": "The requested resource was not found",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/hcmRestApi/scim/Roles/:id",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "hcmRestApi",
+                                "scim",
+                                "Roles",
+                                ":id"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:29:34.000Z",
+                          "updatedAt": "2026-07-28T02:29:34.000Z",
+                          "uid": "35240-36102a03-6dc1-47c3-8e9f-54d5318e172c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:34.000Z",
+                      "updatedAt": "2026-07-28T02:29:34.000Z",
+                      "uid": "35240-f16e1925-6869-450d-8d47-388febdb3b13"
+                    }
+                  ],
+                  "id": "8e267987-b904-498e-a085-121b65b3608f",
+                  "createdAt": "2026-07-28T02:29:34.000Z",
+                  "updatedAt": "2026-07-28T02:29:34.000Z",
+                  "uid": "35240-8e267987-b904-498e-a085-121b65b3608f"
+                },
+                {
+                  "name": "Oracle Fusion Cloud Applications List roles",
+                  "id": "2da11a12-eb96-4196-9b14-76c6fe9f696e",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/hcmRestApi/scim/Roles?limit=25&offset=0",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "hcmRestApi",
+                        "scim",
+                        "Roles"
+                      ],
+                      "query": [
+                        {
+                          "key": "limit",
+                          "value": "25"
+                        },
+                        {
+                          "key": "offset",
+                          "value": "0"
+                        }
+                      ]
+                    },
+                    "description": "Retrieve security roles defined in the application."
+                  },
+                  "response": [
+                    {
+                      "id": "588ca610-8037-4879-ac58-6eb757550cc0",
+                      "name": "Roles retrieved",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/scim/Roles?limit=25&offset=0",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "scim",
+                            "Roles"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"items\": [\n    {\n      \"id\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"roleCategory\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"description\": \"<string>\",\n      \"roleCategory\": \"<string>\"\n    }\n  ],\n  \"count\": \"<integer>\"\n}",
+                      "createdAt": "2026-07-28T02:29:34.000Z",
+                      "updatedAt": "2026-07-28T02:29:34.000Z",
+                      "uid": "35240-588ca610-8037-4879-ac58-6eb757550cc0"
+                    },
+                    {
+                      "id": "9aaf186e-b055-473d-81f8-69321fd702e2",
+                      "name": "Authentication credentials are missing or invalid",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: bearer",
+                            "key": "Authorization",
+                            "value": "Bearer <token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/hcmRestApi/scim/Roles?limit=25&offset=0",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "hcmRestApi",
+                            "scim",
+                            "Roles"
+                          ],
+                          "query": [
+                            {
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "key": "offset",
+                              "value": "0"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Unauthorized",
+                      "code": 401,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T02:29:34.000Z",
+                      "updatedAt": "2026-07-28T02:29:34.000Z",
+                      "uid": "35240-9aaf186e-b055-473d-81f8-69321fd702e2"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T02:29:34.000Z",
+                  "updatedAt": "2026-07-28T02:29:34.000Z",
+                  "uid": "35240-2da11a12-eb96-4196-9b14-76c6fe9f696e"
+                }
+              ],
+              "id": "faece5d7-ea8e-4254-8c42-a5453b02791c",
+              "createdAt": "2026-07-28T02:29:34.000Z",
+              "updatedAt": "2026-07-28T02:29:34.000Z",
+              "uid": "35240-faece5d7-ea8e-4254-8c42-a5453b02791c"
+            }
+          ],
+          "id": "ae969860-1240-4b25-ac05-e344b4876ede",
+          "createdAt": "2026-07-28T02:29:34.000Z",
+          "updatedAt": "2026-07-28T02:29:34.000Z",
+          "uid": "35240-ae969860-1240-4b25-ac05-e344b4876ede"
+        }
+      ],
+      "id": "dec83c10-accf-444e-816a-64c1b5bbe303",
+      "createdAt": "2026-07-28T02:29:34.000Z",
+      "updatedAt": "2026-07-28T02:29:34.000Z",
+      "uid": "35240-dec83c10-accf-444e-816a-64c1b5bbe303"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}

@@ -1,0 +1,928 @@
+{
+  "info": {
+    "_postman_id": "3f810fda-b406-430f-bbe6-6146e4d03c38",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences General Ledger API",
+    "description": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:29:09.000Z",
+    "updatedAt": "2026-07-28T02:29:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-3f810fda-b406-430f-bbe6-6146e4d03c38"
+  },
+  "item": [
+    {
+      "name": "fscmRestApi",
+      "item": [
+        {
+          "name": "resources",
+          "item": [
+            {
+              "name": "11.13.18.05",
+              "item": [
+                {
+                  "name": "ledgerBalances",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List ledger balances",
+                      "id": "98c39447-26fa-43fb-a05f-03e13b4505a4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/ledgerBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "ledgerBalances"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve general ledger account balances. Use query parameters to filter by ledger, period, account segment values, and currency."
+                      },
+                      "response": [
+                        {
+                          "id": "9c0caed9-7258-4433-a97c-cca98706771c",
+                          "name": "Ledger balances retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/ledgerBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "ledgerBalances"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"LedgerId\": \"<integer>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Segment1\": \"<string>\",\n      \"Segment2\": \"<string>\",\n      \"Segment3\": \"<string>\",\n      \"Segment4\": \"<string>\",\n      \"BeginningBalance\": \"<double>\",\n      \"PeriodActivity\": \"<double>\",\n      \"EndingBalance\": \"<double>\"\n    },\n    {\n      \"LedgerId\": \"<integer>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Segment1\": \"<string>\",\n      \"Segment2\": \"<string>\",\n      \"Segment3\": \"<string>\",\n      \"Segment4\": \"<string>\",\n      \"BeginningBalance\": \"<double>\",\n      \"PeriodActivity\": \"<double>\",\n      \"EndingBalance\": \"<double>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-9c0caed9-7258-4433-a97c-cca98706771c"
+                        },
+                        {
+                          "id": "721fc478-57d2-42cc-be2d-6232c82e87a2",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/ledgerBalances?limit=25&offset=0&fields=<string>&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "ledgerBalances"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-721fc478-57d2-42cc-be2d-6232c82e87a2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:09.000Z",
+                      "updatedAt": "2026-07-28T02:29:09.000Z",
+                      "uid": "35240-98c39447-26fa-43fb-a05f-03e13b4505a4"
+                    }
+                  ],
+                  "id": "05288833-2799-4b2e-8e85-4d07474697fb",
+                  "createdAt": "2026-07-28T02:29:09.000Z",
+                  "updatedAt": "2026-07-28T02:29:09.000Z",
+                  "uid": "35240-05288833-2799-4b2e-8e85-4d07474697fb"
+                },
+                {
+                  "name": "generalLedgerJournals",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List general ledger journals",
+                      "id": "b13ac603-b26c-4cb9-9ed6-4bf270561ed8",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "generalLedgerJournals"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                              "key": "fields",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                              "key": "orderBy",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve general ledger journal entries. The journals resource provides access to journal headers and lines for financial reporting."
+                      },
+                      "response": [
+                        {
+                          "id": "09dfaa85-b9ed-495c-88ba-5058c2522153",
+                          "name": "Journals retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerJournals"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"JournalHeaderId\": \"<integer>\",\n      \"JournalBatchName\": \"<string>\",\n      \"JournalName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"LedgerName\": \"<string>\",\n      \"AccountingPeriod\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Unposted\",\n      \"JournalCategory\": \"<string>\",\n      \"JournalSource\": \"<string>\",\n      \"TotalDebit\": \"<double>\",\n      \"TotalCredit\": \"<double>\",\n      \"CreationDate\": \"<dateTime>\"\n    },\n    {\n      \"JournalHeaderId\": \"<integer>\",\n      \"JournalBatchName\": \"<string>\",\n      \"JournalName\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"LedgerName\": \"<string>\",\n      \"AccountingPeriod\": \"<string>\",\n      \"CurrencyCode\": \"<string>\",\n      \"Status\": \"Posted\",\n      \"JournalCategory\": \"<string>\",\n      \"JournalSource\": \"<string>\",\n      \"TotalDebit\": \"<double>\",\n      \"TotalCredit\": \"<double>\",\n      \"CreationDate\": \"<dateTime>\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-09dfaa85-b9ed-495c-88ba-5058c2522153"
+                        },
+                        {
+                          "id": "fb501872-44ea-4b9d-8064-bb42fff7b210",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals?limit=25&offset=0&fields=<string>&q=<string>&orderBy=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerJournals"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.",
+                                  "key": "fields",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.",
+                                  "key": "orderBy",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-fb501872-44ea-4b9d-8064-bb42fff7b210"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:09.000Z",
+                      "updatedAt": "2026-07-28T02:29:09.000Z",
+                      "uid": "35240-b13ac603-b26c-4cb9-9ed6-4bf270561ed8"
+                    },
+                    {
+                      "name": "Oracle Fusion Cloud Applications Create a general ledger journal",
+                      "id": "3b23a199-7e99-4f99-99b1-0574ec238a9a",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"JournalBatchName\": \"<string>\",\n  \"JournalName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"AccountingPeriod\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"JournalCategory\": \"<string>\",\n  \"JournalSource\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "generalLedgerJournals"
+                          ]
+                        },
+                        "description": "Create a new general ledger journal entry with header and lines."
+                      },
+                      "response": [
+                        {
+                          "id": "73f6c752-f9a3-4ffb-b51c-048e76f38a74",
+                          "name": "Journal created",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"JournalBatchName\": \"<string>\",\n  \"JournalName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"AccountingPeriod\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"JournalCategory\": \"<string>\",\n  \"JournalSource\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerJournals"
+                              ]
+                            }
+                          },
+                          "status": "Created",
+                          "code": 201,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"JournalHeaderId\": \"<integer>\",\n  \"JournalBatchName\": \"<string>\",\n  \"JournalName\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"AccountingPeriod\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"Status\": \"Unposted\",\n  \"JournalCategory\": \"<string>\",\n  \"JournalSource\": \"<string>\",\n  \"TotalDebit\": \"<double>\",\n  \"TotalCredit\": \"<double>\",\n  \"CreationDate\": \"<dateTime>\"\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-73f6c752-f9a3-4ffb-b51c-048e76f38a74"
+                        },
+                        {
+                          "id": "dc94fbf1-fe67-4b49-b1a0-3bfe9424548b",
+                          "name": "Invalid request parameters or payload",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"JournalBatchName\": \"<string>\",\n  \"JournalName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"AccountingPeriod\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"JournalCategory\": \"<string>\",\n  \"JournalSource\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerJournals"
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-dc94fbf1-fe67-4b49-b1a0-3bfe9424548b"
+                        },
+                        {
+                          "id": "e96453a7-975a-48b3-b61b-d6c46e74df36",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"JournalBatchName\": \"<string>\",\n  \"JournalName\": \"<string>\",\n  \"LedgerName\": \"<string>\",\n  \"AccountingPeriod\": \"<string>\",\n  \"CurrencyCode\": \"<string>\",\n  \"JournalCategory\": \"<string>\",\n  \"JournalSource\": \"<string>\",\n  \"Description\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerJournals",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerJournals"
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-e96453a7-975a-48b3-b61b-d6c46e74df36"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:09.000Z",
+                      "updatedAt": "2026-07-28T02:29:09.000Z",
+                      "uid": "35240-3b23a199-7e99-4f99-99b1-0574ec238a9a"
+                    }
+                  ],
+                  "id": "1f517f41-ca0c-44af-86ca-91707388b0f8",
+                  "createdAt": "2026-07-28T02:29:09.000Z",
+                  "updatedAt": "2026-07-28T02:29:09.000Z",
+                  "uid": "35240-1f517f41-ca0c-44af-86ca-91707388b0f8"
+                },
+                {
+                  "name": "generalLedgerPeriodStatuses",
+                  "item": [
+                    {
+                      "name": "Oracle Fusion Cloud Applications List general ledger period statuses",
+                      "id": "35a1532f-8f47-4bd6-8237-da58c18368b4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses?limit=25&offset=0&q=<string>&finder=<string>",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "fscmRestApi",
+                            "resources",
+                            "11.13.18.05",
+                            "generalLedgerPeriodStatuses"
+                          ],
+                          "query": [
+                            {
+                              "description": "Maximum number of items to return (default 25, max 500)",
+                              "key": "limit",
+                              "value": "25"
+                            },
+                            {
+                              "description": "Number of items to skip before returning results",
+                              "key": "offset",
+                              "value": "0"
+                            },
+                            {
+                              "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                              "key": "q",
+                              "value": "<string>"
+                            },
+                            {
+                              "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                              "key": "finder",
+                              "value": "<string>"
+                            }
+                          ]
+                        },
+                        "description": "Retrieve the open, closed, or future status of general ledger accounting periods for a specified ledger."
+                      },
+                      "response": [
+                        {
+                          "id": "bc629ee5-0dc6-4f2c-a7f8-a829853b25fd",
+                          "name": "Period statuses retrieved",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses?limit=25&offset=0&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerPeriodStatuses"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"items\": [\n    {\n      \"LedgerId\": \"<integer>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"PeriodYear\": \"<integer>\",\n      \"PeriodNumber\": \"<integer>\",\n      \"Status\": \"Never Opened\"\n    },\n    {\n      \"LedgerId\": \"<integer>\",\n      \"LedgerName\": \"<string>\",\n      \"PeriodName\": \"<string>\",\n      \"PeriodYear\": \"<integer>\",\n      \"PeriodNumber\": \"<integer>\",\n      \"Status\": \"Permanently Closed\"\n    }\n  ],\n  \"count\": \"<integer>\",\n  \"hasMore\": \"<boolean>\"\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-bc629ee5-0dc6-4f2c-a7f8-a829853b25fd"
+                        },
+                        {
+                          "id": "1d71a2b6-696f-480a-a572-1380a10b9363",
+                          "name": "Authentication credentials are missing or invalid",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/fscmRestApi/resources/11.13.18.05/generalLedgerPeriodStatuses?limit=25&offset=0&q=<string>&finder=<string>",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "fscmRestApi",
+                                "resources",
+                                "11.13.18.05",
+                                "generalLedgerPeriodStatuses"
+                              ],
+                              "query": [
+                                {
+                                  "description": "Maximum number of items to return (default 25, max 500)",
+                                  "key": "limit",
+                                  "value": "25"
+                                },
+                                {
+                                  "description": "Number of items to skip before returning results",
+                                  "key": "offset",
+                                  "value": "0"
+                                },
+                                {
+                                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000",
+                                  "key": "q",
+                                  "value": "<string>"
+                                },
+                                {
+                                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2",
+                                  "key": "finder",
+                                  "value": "<string>"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"detail\": \"<string>\",\n  \"o:errorCode\": \"<string>\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    },\n    {\n      \"detail\": \"<string>\",\n      \"o:errorCode\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T02:29:09.000Z",
+                          "updatedAt": "2026-07-28T02:29:09.000Z",
+                          "uid": "35240-1d71a2b6-696f-480a-a572-1380a10b9363"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:29:09.000Z",
+                      "updatedAt": "2026-07-28T02:29:09.000Z",
+                      "uid": "35240-35a1532f-8f47-4bd6-8237-da58c18368b4"
+                    }
+                  ],
+                  "id": "466a2bb9-1084-4af0-bbab-c18620bddc99",
+                  "createdAt": "2026-07-28T02:29:09.000Z",
+                  "updatedAt": "2026-07-28T02:29:09.000Z",
+                  "uid": "35240-466a2bb9-1084-4af0-bbab-c18620bddc99"
+                }
+              ],
+              "id": "a9af76f0-0ec5-4994-ba7c-393fc7707e7d",
+              "createdAt": "2026-07-28T02:29:09.000Z",
+              "updatedAt": "2026-07-28T02:29:09.000Z",
+              "uid": "35240-a9af76f0-0ec5-4994-ba7c-393fc7707e7d"
+            }
+          ],
+          "id": "5a903f5c-72b3-4a3d-8070-253af1dd9ed7",
+          "createdAt": "2026-07-28T02:29:09.000Z",
+          "updatedAt": "2026-07-28T02:29:09.000Z",
+          "uid": "35240-5a903f5c-72b3-4a3d-8070-253af1dd9ed7"
+        }
+      ],
+      "id": "b0b18aa9-06ce-4c09-87ee-35af29cc6b9c",
+      "createdAt": "2026-07-28T02:29:09.000Z",
+      "updatedAt": "2026-07-28T02:29:09.000Z",
+      "uid": "35240-b0b18aa9-06ce-4c09-87ee-35af29cc6b9c"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "instance",
+      "value": "servername"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{instance}}.oraclecloud.com"
+    }
+  ]
+}
