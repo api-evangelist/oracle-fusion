@@ -24,7 +24,7 @@ access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oracle-fusion.png
 created: '2024-01-15'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 url: https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
 apis:
 - aid: oracle-fusion:oracle-fusion-absences-api
