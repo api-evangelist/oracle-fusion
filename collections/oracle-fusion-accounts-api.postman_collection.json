@@ -1,0 +1,1355 @@
+{
+  "item": [
+    {
+      "id": "4f2552be-7c1e-4c24-a55c-f900e48783b2",
+      "name": "Accounts",
+      "description": {
+        "content": "Manage customer and prospect accounts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e2aa8ce6-92c9-4019-9257-3a9960f807de",
+          "name": "Oracle Fusion Cloud Applications List accounts",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List accounts",
+            "description": {
+              "content": "Retrieve a collection of customer and prospect account records including organization details, addresses, contacts, and sales team members.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crmRestApi",
+                "resources",
+                "11.13.18.05",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return (default 25, max 500)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of items to skip"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression using Oracle REST query syntax"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>",
+                  "description": "Fields to sort by with optional :asc or :desc direction"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Named finder in format FinderName;param1=value1"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of child resources to expand"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b1ba2106-276d-42b2-b07a-017c8b31d572",
+              "name": "Accounts retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"PartyId\": 7397,\n      \"PartyNumber\": \"string\",\n      \"OrganizationName\": \"string\",\n      \"Type\": \"Partner\",\n      \"Industry\": \"string\",\n      \"AnnualRevenue\": 344.3816669564248,\n      \"NumberOfEmployees\": 4571,\n      \"PhoneNumber\": \"string\",\n      \"EmailAddress\": \"sj-wWS3be@vKWYtQrZ.yfz\",\n      \"URL\": \"https://oqlFkCdIXWcWnBuMsvSQ.zlzxd7nCtmIJsLRcj,xQ0wqL,61M.cH7LQYhTugn-PJ3.Aw51aVWB0LSYV7Yivg9IqU\",\n      \"OwnerName\": \"string\",\n      \"SalesProfileStatus\": \"string\",\n      \"CreationDate\": \"1984-05-23T13:16:36.642Z\",\n      \"LastUpdateDate\": \"1997-07-16T03:52:26.326Z\"\n    },\n    {\n      \"PartyId\": 7720,\n      \"PartyNumber\": \"string\",\n      \"OrganizationName\": \"string\",\n      \"Type\": \"Partner\",\n      \"Industry\": \"string\",\n      \"AnnualRevenue\": 1518.0282021430269,\n      \"NumberOfEmployees\": 2189,\n      \"PhoneNumber\": \"string\",\n      \"EmailAddress\": \"iiATJc@hyKKmsJFzu.gt\",\n      \"URL\": \"http://HGVnaFsNRYphIlXJZtzX.kqpsaSg7RKn0zMK7bJeuSADDKAC,a6mCqSc9JOieIyCAcr.JCPNIL+i09dNGru0N\",\n      \"OwnerName\": \"string\",\n      \"SalesProfileStatus\": \"string\",\n      \"CreationDate\": \"1988-05-15T21:50:28.580Z\",\n      \"LastUpdateDate\": \"1986-08-11T07:29:16.689Z\"\n    }\n  ],\n  \"count\": 4243,\n  \"hasMore\": true,\n  \"totalResults\": 4005\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d426ab18-9d9e-4fba-a416-4627195a8bd4",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "80729320-2443-4721-a67a-b3233c1e6ef6",
+          "name": "Oracle Fusion Cloud Applications Create an account",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create an account",
+            "description": {
+              "content": "Create a new customer or prospect account record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crmRestApi",
+                "resources",
+                "11.13.18.05",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97725e75-d3b9-4bab-bc29-0b69cb45e864",
+              "name": "Account created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PartyId\": 8238,\n  \"PartyNumber\": \"string\",\n  \"OrganizationName\": \"string\",\n  \"Type\": \"Prospect\",\n  \"Industry\": \"string\",\n  \"AnnualRevenue\": 3496.8008336942125,\n  \"NumberOfEmployees\": 5545,\n  \"PhoneNumber\": \"string\",\n  \"EmailAddress\": \"7xoSGp1O@IGgKHUbsbvYDUSFxgqmBVmfnK.kt\",\n  \"URL\": \"https://Byp.iun2tL0FTBvvJfqGTYO3JMs,FdiS4BVB\",\n  \"OwnerName\": \"string\",\n  \"SalesProfileStatus\": \"string\",\n  \"CreationDate\": \"1966-11-01T21:50:06.805Z\",\n  \"LastUpdateDate\": \"1983-02-02T00:43:25.647Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b666cf55-19b8-4817-9e81-5db744666f50",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa51862c-564b-4652-afc7-eb4b75fde5f6",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Type\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\",\n  \"URL\": \"<uri>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cbc7cd3c-d4ab-4674-a2e9-7b76e1e4cbe4",
+          "name": "Oracle Fusion Cloud Applications Get an account",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get an account",
+            "description": {
+              "content": "Retrieve a specific account by party number.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crmRestApi",
+                "resources",
+                "11.13.18.05",
+                "accounts",
+                ":PartyNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of child resources to expand"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "PartyNumber",
+                  "description": "(Required) Party number identifying the account"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4db1e12f-df65-49c9-b65f-10600c4ed0e0",
+              "name": "Account details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) Party number identifying the account"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PartyId\": 8238,\n  \"PartyNumber\": \"string\",\n  \"OrganizationName\": \"string\",\n  \"Type\": \"Prospect\",\n  \"Industry\": \"string\",\n  \"AnnualRevenue\": 3496.8008336942125,\n  \"NumberOfEmployees\": 5545,\n  \"PhoneNumber\": \"string\",\n  \"EmailAddress\": \"7xoSGp1O@IGgKHUbsbvYDUSFxgqmBVmfnK.kt\",\n  \"URL\": \"https://Byp.iun2tL0FTBvvJfqGTYO3JMs,FdiS4BVB\",\n  \"OwnerName\": \"string\",\n  \"SalesProfileStatus\": \"string\",\n  \"CreationDate\": \"1966-11-01T21:50:06.805Z\",\n  \"LastUpdateDate\": \"1983-02-02T00:43:25.647Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f079e30a-7038-486d-886e-5622106ba45d",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) Party number identifying the account"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "05f92c96-c738-4ee6-89c3-9a3e3bb64f3c",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) Party number identifying the account"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a822f82b-01f8-4dc9-86b2-f2574779370e",
+          "name": "Oracle Fusion Cloud Applications Update an account",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Update an account",
+            "description": {
+              "content": "Update an existing account record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crmRestApi",
+                "resources",
+                "11.13.18.05",
+                "accounts",
+                ":PartyNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "PartyNumber",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a4f92cb-d7a8-4ffd-b047-b9389e1ee9ad",
+              "name": "Account updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PartyId\": 8238,\n  \"PartyNumber\": \"string\",\n  \"OrganizationName\": \"string\",\n  \"Type\": \"Prospect\",\n  \"Industry\": \"string\",\n  \"AnnualRevenue\": 3496.8008336942125,\n  \"NumberOfEmployees\": 5545,\n  \"PhoneNumber\": \"string\",\n  \"EmailAddress\": \"7xoSGp1O@IGgKHUbsbvYDUSFxgqmBVmfnK.kt\",\n  \"URL\": \"https://Byp.iun2tL0FTBvvJfqGTYO3JMs,FdiS4BVB\",\n  \"OwnerName\": \"string\",\n  \"SalesProfileStatus\": \"string\",\n  \"CreationDate\": \"1966-11-01T21:50:06.805Z\",\n  \"LastUpdateDate\": \"1983-02-02T00:43:25.647Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d031dc6-10e5-48ff-b33f-3de72b4e8be4",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "31c83bb0-7da0-43b8-9dc5-99335ac11dce",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8e8d285-2a51-441f-b765-d44b58e704b5",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationName\": \"<string>\",\n  \"Industry\": \"<string>\",\n  \"AnnualRevenue\": \"<double>\",\n  \"PhoneNumber\": \"<string>\",\n  \"EmailAddress\": \"<email>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef5db0e2-0804-4541-81dd-371b589eb6d1",
+          "name": "Oracle Fusion Cloud Applications Delete an account",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Delete an account",
+            "description": {
+              "content": "Delete an account record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "crmRestApi",
+                "resources",
+                "11.13.18.05",
+                "accounts",
+                ":PartyNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "PartyNumber",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e3896e75-121b-4063-8120-bc5b11c74dc8",
+              "name": "Account deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21994d93-207c-4c83-b091-dd1398deb954",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "337fdb96-acee-4f6a-9aa0-67551729cffe",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "crmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "accounts",
+                    ":PartyNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "PartyNumber",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "b2cefb26-e924-4934-838a-442becea066f",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

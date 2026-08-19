@@ -1,0 +1,1086 @@
+{
+  "item": [
+    {
+      "id": "afe7758a-813e-4141-8626-054851e97514",
+      "name": "Awards",
+      "description": {
+        "content": "Manage grants and awards",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5486285-0a5a-489e-9cf1-83a37e080a81",
+          "name": "Oracle Fusion Cloud Applications List awards",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List awards",
+            "description": {
+              "content": "Retrieve grant and award records including funding sources, budget periods, and personnel assignments.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "awards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68ee4c90-ac08-4506-919e-4c16a70bd0c0",
+              "name": "Awards retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"AwardId\": 7800,\n      \"AwardNumber\": \"string\",\n      \"AwardName\": \"string\",\n      \"AwardType\": \"string\",\n      \"SponsorName\": \"string\",\n      \"AwardStatus\": \"Closed\",\n      \"StartDate\": \"1979-09-03\",\n      \"EndDate\": \"1960-04-29\",\n      \"TotalFunding\": 9680.787449219666,\n      \"CurrencyCode\": \"string\",\n      \"PrincipalInvestigator\": \"string\",\n      \"CreationDate\": \"1997-09-01T16:00:41.351Z\"\n    },\n    {\n      \"AwardId\": 9366,\n      \"AwardNumber\": \"string\",\n      \"AwardName\": \"string\",\n      \"AwardType\": \"string\",\n      \"SponsorName\": \"string\",\n      \"AwardStatus\": \"Active\",\n      \"StartDate\": \"1952-10-29\",\n      \"EndDate\": \"1989-03-23\",\n      \"TotalFunding\": 6173.9122016724805,\n      \"CurrencyCode\": \"string\",\n      \"PrincipalInvestigator\": \"string\",\n      \"CreationDate\": \"1990-01-03T09:19:38.885Z\"\n    }\n  ],\n  \"count\": 6987,\n  \"hasMore\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "287a4c36-c568-4873-82f8-5a6b84afc0e8",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4e677173-e502-4742-9e06-1a2d17923600",
+          "name": "Oracle Fusion Cloud Applications Create an award",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create an award",
+            "description": {
+              "content": "Create a new grant or award record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "awards"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b83bf3dc-d694-4d3e-b443-a60b04d4d9c0",
+              "name": "Award created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AwardId\": 2529,\n  \"AwardNumber\": \"string\",\n  \"AwardName\": \"string\",\n  \"AwardType\": \"string\",\n  \"SponsorName\": \"string\",\n  \"AwardStatus\": \"At Risk\",\n  \"StartDate\": \"1995-06-06\",\n  \"EndDate\": \"2007-11-07\",\n  \"TotalFunding\": 7277.562973425587,\n  \"CurrencyCode\": \"string\",\n  \"PrincipalInvestigator\": \"string\",\n  \"CreationDate\": \"2020-01-01T10:06:57.761Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8ee58b68-4317-42d1-8644-ae977c290a47",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "58325bee-fea9-485c-a110-441a1e169e0a",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efd66d0c-4783-4530-9330-87fe7ef9e699",
+          "name": "Oracle Fusion Cloud Applications Get an award",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get an award",
+            "description": {
+              "content": "Retrieve a specific award record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "awards",
+                ":AwardId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "AwardId",
+                  "description": "(Required) Award unique identifier"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f0dd7644-06b3-48aa-9d0d-b06ed5da9d4f",
+              "name": "Award details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) Award unique identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AwardId\": 2529,\n  \"AwardNumber\": \"string\",\n  \"AwardName\": \"string\",\n  \"AwardType\": \"string\",\n  \"SponsorName\": \"string\",\n  \"AwardStatus\": \"At Risk\",\n  \"StartDate\": \"1995-06-06\",\n  \"EndDate\": \"2007-11-07\",\n  \"TotalFunding\": 7277.562973425587,\n  \"CurrencyCode\": \"string\",\n  \"PrincipalInvestigator\": \"string\",\n  \"CreationDate\": \"2020-01-01T10:06:57.761Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f826e949-c3b2-4624-be81-cb418a63a509",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) Award unique identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8632668a-4b8c-4d75-be78-86aeb45f5393",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) Award unique identifier"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a0357da-11d7-44d3-82bc-266a655d3884",
+          "name": "Oracle Fusion Cloud Applications Update an award",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Update an award",
+            "description": {
+              "content": "Update an existing award record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "awards",
+                ":AwardId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "AwardId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2f8f48cb-71d3-47c2-b4ae-b9a1af7e82c4",
+              "name": "Award updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8a9a6f43-7d45-40e8-9e34-3ef738acef68",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "11712904-ae29-4f56-a335-d10e253d5e60",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c57aa9c1-2575-4559-a942-873be665aa0d",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "awards",
+                    ":AwardId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AwardId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"AwardName\": \"<string>\",\n  \"SponsorName\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"AwardType\": \"<string>\",\n  \"EndDate\": \"<date>\",\n  \"TotalFunding\": \"<double>\",\n  \"CurrencyCode\": \"<string>\",\n  \"PrincipalInvestigator\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "e03491e4-9b84-4ddf-88d9-331b56f858a0",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Awards API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

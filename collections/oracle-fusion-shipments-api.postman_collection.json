@@ -1,0 +1,265 @@
+{
+  "item": [
+    {
+      "id": "994e905a-2396-47d2-b311-ad0c8619e26e",
+      "name": "Shipments",
+      "description": {
+        "content": "Shipping and receiving operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b3d6c299-d137-43ec-88cc-0dbc7ca82a7c",
+          "name": "Oracle Fusion Cloud Applications List shipments",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List shipments",
+            "description": {
+              "content": "Retrieve shipment records including delivery details, tracking, and shipping status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "shipments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cdbc8763-caf5-49b0-8aa2-6f06ba2310c7",
+              "name": "Shipments retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"ShipmentId\": 5354,\n      \"ShipmentNumber\": \"string\",\n      \"DeliveryName\": \"string\",\n      \"ShipFromOrganization\": \"string\",\n      \"ShipToCustomer\": \"string\",\n      \"ShipToAddress\": \"string\",\n      \"Carrier\": \"string\",\n      \"TrackingNumber\": \"string\",\n      \"ShipDate\": \"1970-03-24\",\n      \"DeliveryDate\": \"1950-06-12\",\n      \"Status\": \"Open\",\n      \"Weight\": 3801.3650430760194,\n      \"WeightUom\": \"string\"\n    },\n    {\n      \"ShipmentId\": 2862,\n      \"ShipmentNumber\": \"string\",\n      \"DeliveryName\": \"string\",\n      \"ShipFromOrganization\": \"string\",\n      \"ShipToCustomer\": \"string\",\n      \"ShipToAddress\": \"string\",\n      \"Carrier\": \"string\",\n      \"TrackingNumber\": \"string\",\n      \"ShipDate\": \"1988-09-30\",\n      \"DeliveryDate\": \"1985-05-11\",\n      \"Status\": \"Open\",\n      \"Weight\": 8399.577148873605,\n      \"WeightUom\": \"string\"\n    }\n  ],\n  \"count\": 7535,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e579e68-8238-4445-81b2-1631b818f994",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "0d972d0a-c797-40f1-8fde-c11e2e0d5016",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Shipments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

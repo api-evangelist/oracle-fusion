@@ -1,0 +1,660 @@
+{
+  "item": [
+    {
+      "id": "8f848e93-9faa-4773-928d-e92ab834d3b1",
+      "name": "Planning",
+      "description": {
+        "content": "Planning application data and metadata operations",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dd14b4b0-c15d-402b-ad87-237cf3a351a3",
+          "name": "Oracle Fusion Cloud Applications Export a data slice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Export a data slice",
+            "description": {
+              "content": "Export planning data for a specified slice defined by dimension member selections, point-of-view, and filters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "plantypes",
+                ":planType",
+                "exportdataslice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "planType",
+                  "description": "(Required) Plan type name"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e772eeaf-a59a-41a0-9e5b-e6428f589d54",
+              "name": "Data slice exported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"rows\": [\n    {\n      \"headers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"data\": [\n        6110.397363620721,\n        8745.565648858152\n      ]\n    },\n    {\n      \"headers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"data\": [\n        2160.5907530485024,\n        4693.901393255103\n      ]\n    }\n  ],\n  \"status\": 5878\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aa2780d6-144a-47c9-ba6b-93dc20262b65",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "01379d57-09c8-458d-a224-5263513adc61",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "exportdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) Plan type name"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"exportPlanningData\": true,\n  \"gridDefinition\": {\n    \"suppressMissingBlocks\": \"<boolean>\",\n    \"suppressMissingRows\": \"<boolean>\",\n    \"pov\": \"<object>\",\n    \"columns\": [\n      \"<object>\",\n      \"<object>\"\n    ],\n    \"rows\": [\n      \"<object>\",\n      \"<object>\"\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "632acb2d-9203-4c68-82ea-5f72515d610b",
+          "name": "Oracle Fusion Cloud Applications Import a data slice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Import a data slice",
+            "description": {
+              "content": "Import planning data into a specified plan type using dimension member intersections and values.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "HyperionPlanning",
+                "rest",
+                "v3",
+                "applications",
+                ":applicationName",
+                "plantypes",
+                ":planType",
+                "importdataslice"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "applicationName",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "planType",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9343e543-29ca-4d96-985e-d631c1cace90",
+              "name": "Data slice imported",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": 7309,\n  \"details\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "98ac7580-63c1-4f98-aecf-92bf9227d200",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c9f3c2ba-c70a-4f6e-b684-b90f1abfa4d9",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "HyperionPlanning",
+                    "rest",
+                    "v3",
+                    "applications",
+                    ":applicationName",
+                    "plantypes",
+                    ":planType",
+                    "importdataslice"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "applicationName",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "planType",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"aggregateEssbaseData\": \"<boolean>\",\n  \"cellNotesOption\": \"<string>\",\n  \"dateFormat\": \"<string>\",\n  \"dataGrid\": {\n    \"pov\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"columns\": [\n      [\n        \"<string>\",\n        \"<string>\"\n      ],\n      [\n        \"<string>\",\n        \"<string>\"\n      ]\n    ],\n    \"rows\": [\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      },\n      {\n        \"headers\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"data\": [\n          \"<number>\",\n          \"<number>\"\n        ]\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "6f8765e3-f473-4e65-9f7e-b354dfbc7c7f",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Planning API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

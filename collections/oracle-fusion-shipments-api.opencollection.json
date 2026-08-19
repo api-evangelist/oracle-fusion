@@ -1,0 +1,62 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Shipments API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List shipments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/shipments",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve shipment records including delivery details, tracking, and shipping status."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Activities API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List activities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/activities",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder in format FinderName;param1=value1"
+              }
+            ]
+          },
+          "docs": "Retrieve activity records including tasks, appointments, and call logs associated with sales and service processes."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/activities",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new activity (task, appointment, or call log)."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

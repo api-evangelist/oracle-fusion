@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Absences",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List absences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/hcmRestApi/resources/11.13.18.05/absences",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder in format FinderName;param1=value1"
+              }
+            ]
+          },
+          "docs": "Retrieve absence records for workers including vacation, sick leave, and other absence types."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an absence",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/hcmRestApi/resources/11.13.18.05/absences",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new absence record for a worker."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an absence",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+            "params": [
+              {
+                "name": "AbsenceId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the absence"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific absence record."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update an absence",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+            "params": [
+              {
+                "name": "AbsenceId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing absence record."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete an absence",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/hcmRestApi/resources/11.13.18.05/absences/:AbsenceId",
+            "params": [
+              {
+                "name": "AbsenceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an absence record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

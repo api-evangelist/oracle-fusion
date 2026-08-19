@@ -1,0 +1,90 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Data Management API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Management",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List files",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files"
+          },
+          "docs": "Retrieve a list of files in the EPM inbox and outbox used for data import, export, and snapshot operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Download a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path",
+                "description": "File name including path"
+              }
+            ]
+          },
+          "docs": "Download a file from the EPM inbox or outbox."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Upload a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Upload a file to the EPM inbox for data import operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a file",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/files/:fileName",
+            "params": [
+              {
+                "name": "fileName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a file from the EPM inbox or outbox."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Planning API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Planning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Export a data slice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/exportdataslice",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "planType",
+                "value": "",
+                "type": "path",
+                "description": "Plan type name"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Export planning data for a specified slice defined by dimension member selections, point-of-view, and filters."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Import a data slice",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/plantypes/:planType/importdataslice",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "planType",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Import planning data into a specified plan type using dimension member intersections and values."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Service Requests API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Service Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List service requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/serviceRequests",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Fields to sort by with optional :asc or :desc direction"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder in format FinderName;param1=value1"
+              }
+            ]
+          },
+          "docs": "Retrieve customer service request records including severity, status, assignment, and resolution details."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a service request",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/serviceRequests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new customer service request."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get a service request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+            "params": [
+              {
+                "name": "SrNumber",
+                "value": "",
+                "type": "path",
+                "description": "Service request number"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to return"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of child resources to expand"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific service request."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update a service request",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/crmRestApi/resources/11.13.18.05/serviceRequests/:SrNumber",
+            "params": [
+              {
+                "name": "SrNumber",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing service request."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

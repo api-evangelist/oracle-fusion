@@ -1,0 +1,1309 @@
+{
+  "item": [
+    {
+      "id": "1ddf4897-a3ba-4f3b-b997-c59be9a952f7",
+      "name": "Absences",
+      "description": {
+        "content": "Absence management and leave tracking",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dcaa1ed6-b52a-4315-beef-83aeb9265357",
+          "name": "Oracle Fusion Cloud Applications List absences",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List absences",
+            "description": {
+              "content": "Retrieve absence records for workers including vacation, sick leave, and other absence types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "absences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return (default 25, max 500)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of items to skip"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression using Oracle REST query syntax"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Named finder in format FinderName;param1=value1"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4899541d-d8b5-4d45-9aef-28c50763c705",
+              "name": "Absences retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"AbsenceId\": 7011,\n      \"PersonNumber\": \"string\",\n      \"PersonName\": \"string\",\n      \"AbsenceType\": \"string\",\n      \"AbsenceReason\": \"string\",\n      \"StartDate\": \"1954-08-31\",\n      \"EndDate\": \"1955-12-13\",\n      \"Duration\": 207.27651803114978,\n      \"UnitOfMeasure\": \"Days\",\n      \"ApprovalStatus\": \"Submitted\",\n      \"Comments\": \"string\"\n    },\n    {\n      \"AbsenceId\": 9760,\n      \"PersonNumber\": \"string\",\n      \"PersonName\": \"string\",\n      \"AbsenceType\": \"string\",\n      \"AbsenceReason\": \"string\",\n      \"StartDate\": \"1953-12-04\",\n      \"EndDate\": \"1976-04-10\",\n      \"Duration\": 1067.6947036190365,\n      \"UnitOfMeasure\": \"Hours\",\n      \"ApprovalStatus\": \"Rejected\",\n      \"Comments\": \"string\"\n    }\n  ],\n  \"count\": 6079,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c7e30c5-7025-40c5-8a2f-f5de47570305",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5386aa47-6779-4d2a-8d55-bd2e7785dc40",
+          "name": "Oracle Fusion Cloud Applications Create an absence",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create an absence",
+            "description": {
+              "content": "Create a new absence record for a worker.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "absences"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "578a93c7-e566-484c-a5bf-83620000a336",
+              "name": "Absence created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AbsenceId\": 8237,\n  \"PersonNumber\": \"string\",\n  \"PersonName\": \"string\",\n  \"AbsenceType\": \"string\",\n  \"AbsenceReason\": \"string\",\n  \"StartDate\": \"1972-06-07\",\n  \"EndDate\": \"1947-09-26\",\n  \"Duration\": 1837.4163074624628,\n  \"UnitOfMeasure\": \"Days\",\n  \"ApprovalStatus\": \"Withdrawn\",\n  \"Comments\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f2e52ff5-299c-4796-a664-d12b5bcaefac",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6776b5eb-cefb-4c9b-a053-e6e66ceaf5ea",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "837afa12-40b4-4380-a9d9-523cfb847e5d",
+          "name": "Oracle Fusion Cloud Applications Get an absence",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get an absence",
+            "description": {
+              "content": "Retrieve a specific absence record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "absences",
+                ":AbsenceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "AbsenceId",
+                  "description": "(Required) Unique identifier for the absence"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "95816127-f169-4bf9-b905-1f64082380c7",
+              "name": "Absence details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) Unique identifier for the absence"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AbsenceId\": 8237,\n  \"PersonNumber\": \"string\",\n  \"PersonName\": \"string\",\n  \"AbsenceType\": \"string\",\n  \"AbsenceReason\": \"string\",\n  \"StartDate\": \"1972-06-07\",\n  \"EndDate\": \"1947-09-26\",\n  \"Duration\": 1837.4163074624628,\n  \"UnitOfMeasure\": \"Days\",\n  \"ApprovalStatus\": \"Withdrawn\",\n  \"Comments\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "02af987c-9188-4525-ac92-193fb3a80699",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) Unique identifier for the absence"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e234d817-1946-4c00-b21a-a38ec8b0082f",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) Unique identifier for the absence"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "65d42dee-b519-4a86-8410-218b29e4e4ff",
+          "name": "Oracle Fusion Cloud Applications Update an absence",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Update an absence",
+            "description": {
+              "content": "Update an existing absence record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "absences",
+                ":AbsenceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "AbsenceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ed6d3203-ad5b-4f29-a524-198e9b263362",
+              "name": "Absence updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"AbsenceId\": 8237,\n  \"PersonNumber\": \"string\",\n  \"PersonName\": \"string\",\n  \"AbsenceType\": \"string\",\n  \"AbsenceReason\": \"string\",\n  \"StartDate\": \"1972-06-07\",\n  \"EndDate\": \"1947-09-26\",\n  \"Duration\": 1837.4163074624628,\n  \"UnitOfMeasure\": \"Days\",\n  \"ApprovalStatus\": \"Withdrawn\",\n  \"Comments\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6bee87e3-ee8b-438b-8fb6-f400a6717733",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4181bee9-2e86-416f-88e5-92c7c886557c",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "947bd4f0-eb5a-4e69-8a7d-42f2ddc55ada",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"PersonNumber\": \"<string>\",\n  \"AbsenceType\": \"<string>\",\n  \"StartDate\": \"<date>\",\n  \"EndDate\": \"<date>\",\n  \"AbsenceReason\": \"<string>\",\n  \"Duration\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"Comments\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ab3a81c-3ad5-44aa-93e7-b595a36e4862",
+          "name": "Oracle Fusion Cloud Applications Delete an absence",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Delete an absence",
+            "description": {
+              "content": "Delete an absence record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "absences",
+                ":AbsenceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "AbsenceId",
+                  "description": "(Required) "
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4af48b88-1b8c-49f8-a082-49aa348b1d91",
+              "name": "Absence deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "917f005c-0fda-4ca6-819b-38bea23d1f2c",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "64dac5ae-d95a-406a-9b44-b61d40ddf003",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "absences",
+                    ":AbsenceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "AbsenceId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "03aa52f1-cbc0-45ec-a1cb-9a4622cb1df2",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,498 @@
+{
+  "item": [
+    {
+      "id": "10740f3f-3346-40c9-98d4-daae76f963c9",
+      "name": "Financial Project Plans",
+      "description": {
+        "content": "Manage financial plans, budgets, and forecasts",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "021d4fa2-d697-4fad-b6f3-b735549336af",
+          "name": "Oracle Fusion Cloud Applications List financial project plans",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List financial project plans",
+            "description": {
+              "content": "Retrieve financial project plan versions including budgets, forecasts, resource assignments, and planning options.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "financialProjectPlans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "63ebac39-0401-489e-b39b-397acdde7010",
+              "name": "Financial project plans retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "financialProjectPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"PlanVersionId\": 5362,\n      \"ProjectId\": 9814,\n      \"PlanName\": \"string\",\n      \"PlanType\": \"Forecast\",\n      \"VersionNumber\": 758,\n      \"Status\": \"Rejected\",\n      \"TotalPlannedCost\": 453.04054051383713,\n      \"TotalPlannedRevenue\": 8677.598273612033,\n      \"CurrencyCode\": \"string\",\n      \"CreationDate\": \"1951-10-22T12:34:34.855Z\"\n    },\n    {\n      \"PlanVersionId\": 5367,\n      \"ProjectId\": 8620,\n      \"PlanName\": \"string\",\n      \"PlanType\": \"Forecast\",\n      \"VersionNumber\": 1819,\n      \"Status\": \"Rejected\",\n      \"TotalPlannedCost\": 6789.065711759055,\n      \"TotalPlannedRevenue\": 1209.8896250240598,\n      \"CurrencyCode\": \"string\",\n      \"CreationDate\": \"1952-09-16T17:32:07.427Z\"\n    }\n  ],\n  \"count\": 8695,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d0081829-6bf1-4ed5-89be-f1e9f074456a",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "financialProjectPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "db8ee038-da6c-4806-ac2d-77810e901c77",
+          "name": "Oracle Fusion Cloud Applications Create a financial project plan",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create a financial project plan",
+            "description": {
+              "content": "Create a new financial project plan version.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "financialProjectPlans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c1655b57-ca3e-4a1f-b002-43f7f50d5ac4",
+              "name": "Financial project plan created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "financialProjectPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"PlanVersionId\": 1904,\n  \"ProjectId\": 6799,\n  \"PlanName\": \"string\",\n  \"PlanType\": \"Forecast\",\n  \"VersionNumber\": 9722,\n  \"Status\": \"Submitted\",\n  \"TotalPlannedCost\": 6644.389486450982,\n  \"TotalPlannedRevenue\": 5073.939054959878,\n  \"CurrencyCode\": \"string\",\n  \"CreationDate\": \"1973-10-28T16:38:10.733Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9fa6c01b-0bc2-49ca-a1cf-3570adb860ae",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "financialProjectPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b6760848-b2be-4e67-a8f1-85e12c383119",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "financialProjectPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ProjectId\": \"<integer>\",\n  \"PlanName\": \"<string>\",\n  \"PlanType\": \"<string>\",\n  \"CurrencyCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c7582b84-7b5f-48c3-be83-e09c8ad68bf8",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Financial Project Plans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

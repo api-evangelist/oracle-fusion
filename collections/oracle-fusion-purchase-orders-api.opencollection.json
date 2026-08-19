@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Purchase Orders API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Purchase Orders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List purchase orders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve purchase order headers and lines for procurement operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a purchase order",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/purchaseOrders",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new purchase order with header and lines."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get a purchase order",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+            "params": [
+              {
+                "name": "POHeaderId",
+                "value": "",
+                "type": "path",
+                "description": "Purchase order header identifier"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific purchase order."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update a purchase order",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/purchaseOrders/:POHeaderId",
+            "params": [
+              {
+                "name": "POHeaderId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing purchase order."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

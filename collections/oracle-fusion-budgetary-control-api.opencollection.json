@@ -1,0 +1,76 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Budgetary Control API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Budgetary Control",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List budget transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve budgetary control budget transactions and validation results."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a budget transaction",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/budgetaryControlBudgetTransactions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create budget entries and perform budgetary control validation."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

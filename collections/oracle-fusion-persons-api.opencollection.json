@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Persons API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Persons",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/persons",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve person records used across Fusion Cloud applications."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a person",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/persons",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new person record."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get a person",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+            "params": [
+              {
+                "name": "Personid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific person record by identifier."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update a person",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+            "params": [
+              {
+                "name": "Personid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing person record."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a person",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/persons/:Personid",
+            "params": [
+              {
+                "name": "Personid",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an existing person record."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

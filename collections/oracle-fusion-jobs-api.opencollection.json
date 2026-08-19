@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Jobs API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Jobs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List jobs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression"
+              }
+            ]
+          },
+          "docs": "Retrieve a list of EPM jobs including business rules, data maps, and scheduled maintenance tasks."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Execute a job",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Execute an EPM job such as a business rule, data map, refresh database, or cube refresh."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get job status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/jobs/:jobId",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "jobId",
+                "value": "",
+                "type": "path",
+                "description": "Job identifier"
+              }
+            ]
+          },
+          "docs": "Retrieve execution status and details for a specific EPM job."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

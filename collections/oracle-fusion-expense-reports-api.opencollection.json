@@ -1,0 +1,161 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Expense Reports API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Expense Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List expense reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Maximum number of items to return (default 25, max 500)"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "Number of items to skip before returning results"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+              },
+              {
+                "name": "orderBy",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query",
+                "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+              }
+            ]
+          },
+          "docs": "Retrieve a collection of employee expense reports."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new employee expense report with expense items."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of child resources to include in the response."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific expense report by its identifier."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing expense report."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete an expense report",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/expenseReports/:ExpenseReportId",
+            "params": [
+              {
+                "name": "ExpenseReportId",
+                "value": "",
+                "type": "path",
+                "description": "Unique identifier for the expense report"
+              }
+            ]
+          },
+          "docs": "Delete an expense report."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

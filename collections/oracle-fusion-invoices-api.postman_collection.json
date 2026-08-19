@@ -1,0 +1,1393 @@
+{
+  "item": [
+    {
+      "id": "652087c4-430b-478c-815b-084c9935350f",
+      "name": "Invoices",
+      "description": {
+        "content": "Manage accounts payable invoices",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0e8c3017-8278-4d25-8760-b456e99a31cc",
+          "name": "Oracle Fusion Cloud Applications List invoices",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List invoices",
+            "description": {
+              "content": "Retrieve a collection of accounts payable invoices. Supports filtering, sorting, and pagination using standard Oracle REST query parameters.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return (default 25, max 500)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of items to skip before returning results"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression using Oracle REST query syntax. Example: InvoiceNumber='INV-001' or InvoiceAmount>1000"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to sort by. Append :asc or :desc for sort direction."
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Named finder to execute. Format is FinderName;param1=value1,param2=value2"
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of child resources to include in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "16a3f651-b656-4d4e-b1c5-f3e357e196c1",
+              "name": "Successful retrieval of invoices",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"InvoiceId\": 6645,\n      \"InvoiceNumber\": \"string\",\n      \"InvoiceAmount\": 5922.422900173493,\n      \"InvoiceCurrencyCode\": \"string\",\n      \"InvoiceDate\": \"2017-05-08\",\n      \"InvoiceType\": \"Prepayment\",\n      \"VendorName\": \"string\",\n      \"VendorNumber\": \"string\",\n      \"VendorSiteCode\": \"string\",\n      \"BusinessUnit\": \"string\",\n      \"Description\": \"string\",\n      \"PaymentTerms\": \"string\",\n      \"DueDate\": \"1958-11-04\",\n      \"ApprovalStatus\": \"Rejected\",\n      \"ValidationStatus\": \"string\",\n      \"AccountingDate\": \"1963-04-11\",\n      \"PaidAmount\": 9547.56943611717,\n      \"AmountDue\": 3183.8521196854776,\n      \"CreatedBy\": \"string\",\n      \"CreationDate\": \"1983-12-24T14:06:57.858Z\",\n      \"LastUpdateDate\": \"1971-03-10T11:13:51.127Z\"\n    },\n    {\n      \"InvoiceId\": 1717,\n      \"InvoiceNumber\": \"string\",\n      \"InvoiceAmount\": 5660.422493425443,\n      \"InvoiceCurrencyCode\": \"string\",\n      \"InvoiceDate\": \"1965-05-22\",\n      \"InvoiceType\": \"Prepayment\",\n      \"VendorName\": \"string\",\n      \"VendorNumber\": \"string\",\n      \"VendorSiteCode\": \"string\",\n      \"BusinessUnit\": \"string\",\n      \"Description\": \"string\",\n      \"PaymentTerms\": \"string\",\n      \"DueDate\": \"1978-06-09\",\n      \"ApprovalStatus\": \"Manually Approved\",\n      \"ValidationStatus\": \"string\",\n      \"AccountingDate\": \"2024-07-15\",\n      \"PaidAmount\": 1167.9398768936699,\n      \"AmountDue\": 1264.9697410537797,\n      \"CreatedBy\": \"string\",\n      \"CreationDate\": \"1960-03-16T19:53:06.901Z\",\n      \"LastUpdateDate\": \"1947-02-15T16:24:19.078Z\"\n    }\n  ],\n  \"count\": 4710,\n  \"hasMore\": false,\n  \"limit\": 1216,\n  \"offset\": 6447,\n  \"totalResults\": 8556\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73fb8dea-49d0-4fe5-979e-686d6b0d36e2",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fec7a882-10ff-4850-8636-a52f3c67e39f",
+          "name": "Oracle Fusion Cloud Applications Create an invoice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create an invoice",
+            "description": {
+              "content": "Create a new accounts payable invoice with header and optionally include invoice lines and distributions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "invoices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2ed83d03-8cc3-45df-990f-23352daf3c30",
+              "name": "Invoice created successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"InvoiceId\": 7445,\n  \"InvoiceNumber\": \"string\",\n  \"InvoiceAmount\": 3949.2710446052793,\n  \"InvoiceCurrencyCode\": \"string\",\n  \"InvoiceDate\": \"1965-09-26\",\n  \"InvoiceType\": \"Mixed\",\n  \"VendorName\": \"string\",\n  \"VendorNumber\": \"string\",\n  \"VendorSiteCode\": \"string\",\n  \"BusinessUnit\": \"string\",\n  \"Description\": \"string\",\n  \"PaymentTerms\": \"string\",\n  \"DueDate\": \"2008-04-28\",\n  \"ApprovalStatus\": \"Manually Approved\",\n  \"ValidationStatus\": \"string\",\n  \"AccountingDate\": \"1948-01-12\",\n  \"PaidAmount\": 5085.2794624211365,\n  \"AmountDue\": 1135.1176938075037,\n  \"CreatedBy\": \"string\",\n  \"CreationDate\": \"1991-08-29T23:58:45.121Z\",\n  \"LastUpdateDate\": \"1970-08-17T15:11:09.000Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92801718-28d3-4f3b-8ab6-eb22fdb271e5",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b92faf7a-7911-4ea9-b440-283aef3e90a7",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceNumber\": \"<string>\",\n  \"InvoiceAmount\": \"<double>\",\n  \"InvoiceCurrencyCode\": \"<string>\",\n  \"VendorName\": \"<string>\",\n  \"BusinessUnit\": \"<string>\",\n  \"InvoiceDate\": \"<date>\",\n  \"InvoiceType\": \"<string>\",\n  \"VendorNumber\": \"<string>\",\n  \"VendorSiteCode\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6db0652-1e7e-41dd-930b-de5ceb3374d4",
+          "name": "Oracle Fusion Cloud Applications Get an invoice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Get an invoice",
+            "description": {
+              "content": "Retrieve a specific accounts payable invoice by its unique identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "invoices",
+                ":InvoiceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to include in the response. Use to limit returned attributes for performance."
+                },
+                {
+                  "disabled": false,
+                  "key": "expand",
+                  "value": "<string>",
+                  "description": "Comma-separated list of child resources to include in the response."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "InvoiceId",
+                  "description": "(Required) Unique identifier for the invoice"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05dab984-e610-4819-b9e0-7cb86f41fbaa",
+              "name": "Invoice details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"InvoiceId\": 7445,\n  \"InvoiceNumber\": \"string\",\n  \"InvoiceAmount\": 3949.2710446052793,\n  \"InvoiceCurrencyCode\": \"string\",\n  \"InvoiceDate\": \"1965-09-26\",\n  \"InvoiceType\": \"Mixed\",\n  \"VendorName\": \"string\",\n  \"VendorNumber\": \"string\",\n  \"VendorSiteCode\": \"string\",\n  \"BusinessUnit\": \"string\",\n  \"Description\": \"string\",\n  \"PaymentTerms\": \"string\",\n  \"DueDate\": \"2008-04-28\",\n  \"ApprovalStatus\": \"Manually Approved\",\n  \"ValidationStatus\": \"string\",\n  \"AccountingDate\": \"1948-01-12\",\n  \"PaidAmount\": 5085.2794624211365,\n  \"AmountDue\": 1135.1176938075037,\n  \"CreatedBy\": \"string\",\n  \"CreationDate\": \"1991-08-29T23:58:45.121Z\",\n  \"LastUpdateDate\": \"1970-08-17T15:11:09.000Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "65395f55-b60b-4894-92c4-47925daee613",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a531c972-6d81-43e7-8c12-8511df3591f2",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a7c17201-0b2f-481c-989b-2e73188ce9da",
+          "name": "Oracle Fusion Cloud Applications Update an invoice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Update an invoice",
+            "description": {
+              "content": "Update an existing accounts payable invoice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "invoices",
+                ":InvoiceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "InvoiceId",
+                  "description": "(Required) Unique identifier for the invoice"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b4d272f0-1027-4f77-ba7e-545ef98c4029",
+              "name": "Invoice updated successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"InvoiceId\": 7445,\n  \"InvoiceNumber\": \"string\",\n  \"InvoiceAmount\": 3949.2710446052793,\n  \"InvoiceCurrencyCode\": \"string\",\n  \"InvoiceDate\": \"1965-09-26\",\n  \"InvoiceType\": \"Mixed\",\n  \"VendorName\": \"string\",\n  \"VendorNumber\": \"string\",\n  \"VendorSiteCode\": \"string\",\n  \"BusinessUnit\": \"string\",\n  \"Description\": \"string\",\n  \"PaymentTerms\": \"string\",\n  \"DueDate\": \"2008-04-28\",\n  \"ApprovalStatus\": \"Manually Approved\",\n  \"ValidationStatus\": \"string\",\n  \"AccountingDate\": \"1948-01-12\",\n  \"PaidAmount\": 5085.2794624211365,\n  \"AmountDue\": 1135.1176938075037,\n  \"CreatedBy\": \"string\",\n  \"CreationDate\": \"1991-08-29T23:58:45.121Z\",\n  \"LastUpdateDate\": \"1970-08-17T15:11:09.000Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "da359576-eb46-4a27-948a-dd26e64486e2",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86e94e75-d0d6-429c-bb75-fb69f7cf4525",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "71c90674-9a6a-4a3e-8637-771022c01d48",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"InvoiceAmount\": \"<double>\",\n  \"Description\": \"<string>\",\n  \"PaymentTerms\": \"<string>\",\n  \"AccountingDate\": \"<date>\",\n  \"ApprovalStatus\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "322b79de-eda8-4c4e-bcf7-9eb671baee1d",
+          "name": "Oracle Fusion Cloud Applications Delete an invoice",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Delete an invoice",
+            "description": {
+              "content": "Delete an accounts payable invoice.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "invoices",
+                ":InvoiceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "InvoiceId",
+                  "description": "(Required) Unique identifier for the invoice"
+                },
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc21ebde-8d2f-431e-b25a-c2498912595c",
+              "name": "Invoice deleted successfully",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "bc45de1b-8be2-444e-8912-a5632b7aba62",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "912983de-3cb0-43d6-b5ef-68f9b376794a",
+              "name": "The requested resource was not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "invoices",
+                    ":InvoiceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "InvoiceId",
+                      "description": "(Required) Unique identifier for the invoice"
+                    },
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"title\": \"string\",\n  \"detail\": \"string\",\n  \"o:errorCode\": \"string\",\n  \"o:errorDetails\": [\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    },\n    {\n      \"detail\": \"string\",\n      \"o:errorCode\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "91389e1b-a0d4-44f6-800c-291fafc5cc52",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Invoices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

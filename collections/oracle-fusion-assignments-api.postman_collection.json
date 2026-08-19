@@ -1,0 +1,270 @@
+{
+  "item": [
+    {
+      "id": "51ad0faf-e7fd-4ff2-ae05-0b923c5464da",
+      "name": "Assignments",
+      "description": {
+        "content": "Manage work assignments and employment details",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ed294fb-cb53-4102-b639-74aa54481e9c",
+          "name": "Oracle Fusion Cloud Applications List assignments",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List assignments",
+            "description": {
+              "content": "Retrieve work assignment records including position, job, department, location, and manager information for workers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "assignmentsInfo"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return (default 25, max 500)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of items to skip"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression using Oracle REST query syntax"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Named finder in format FinderName;param1=value1"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "275dc3d0-b39d-458f-b0f5-fd92e590f969",
+              "name": "Assignments retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "assignmentsInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"AssignmentId\": 1592,\n      \"AssignmentNumber\": \"string\",\n      \"AssignmentName\": \"string\",\n      \"PersonNumber\": \"string\",\n      \"BusinessUnitName\": \"string\",\n      \"DepartmentName\": \"string\",\n      \"JobName\": \"string\",\n      \"PositionName\": \"string\",\n      \"GradeName\": \"string\",\n      \"LocationName\": \"string\",\n      \"ManagerPersonNumber\": \"string\",\n      \"ManagerDisplayName\": \"string\",\n      \"AssignmentStatus\": \"Inactive\",\n      \"EffectiveStartDate\": \"1996-07-29\",\n      \"EffectiveEndDate\": \"1984-05-24\",\n      \"WorkerType\": \"string\"\n    },\n    {\n      \"AssignmentId\": 6589,\n      \"AssignmentNumber\": \"string\",\n      \"AssignmentName\": \"string\",\n      \"PersonNumber\": \"string\",\n      \"BusinessUnitName\": \"string\",\n      \"DepartmentName\": \"string\",\n      \"JobName\": \"string\",\n      \"PositionName\": \"string\",\n      \"GradeName\": \"string\",\n      \"LocationName\": \"string\",\n      \"ManagerPersonNumber\": \"string\",\n      \"ManagerDisplayName\": \"string\",\n      \"AssignmentStatus\": \"Active\",\n      \"EffectiveStartDate\": \"2013-05-07\",\n      \"EffectiveEndDate\": \"2013-07-18\",\n      \"WorkerType\": \"string\"\n    }\n  ],\n  \"count\": 7925,\n  \"hasMore\": false\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "5ccdc58f-5b28-4c9d-9d31-4958657de3e9",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "assignmentsInfo"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "de0cbd43-5d6d-41ee-8696-43b313ea4138",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Assignments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "item": [
+    {
+      "id": "ced93f89-ad00-4298-8205-38e4a29a4d3d",
+      "name": "Payroll",
+      "description": {
+        "content": "Payroll processing and results",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c25c9dd3-8a7c-4ebf-a842-9c4b9b00b1b9",
+          "name": "Oracle Fusion Cloud Applications List payroll results",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List payroll results",
+            "description": {
+              "content": "Retrieve payroll run results including earnings, deductions, and net pay for workers.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "hcmRestApi",
+                "resources",
+                "11.13.18.05",
+                "payrollResults"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25",
+                  "description": "Maximum number of items to return (default 25, max 500)"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0",
+                  "description": "Number of items to skip"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>",
+                  "description": "Comma-separated list of fields to return"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>",
+                  "description": "Filter expression using Oracle REST query syntax"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>",
+                  "description": "Named finder in format FinderName;param1=value1"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b6068cfb-b1a3-431c-9274-c70e2027bf3b",
+              "name": "Payroll results retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "payrollResults"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"PayrollResultId\": 177,\n      \"PersonNumber\": \"string\",\n      \"PersonName\": \"string\",\n      \"PayrollName\": \"string\",\n      \"PeriodName\": \"string\",\n      \"PeriodStartDate\": \"1966-05-13\",\n      \"PeriodEndDate\": \"1951-09-01\",\n      \"GrossEarnings\": 1642.062233726226,\n      \"TotalDeductions\": 5532.810537839303,\n      \"NetPay\": 1865.8426135826135,\n      \"CurrencyCode\": \"string\",\n      \"PaymentDate\": \"2004-11-23\",\n      \"PaymentMethod\": \"Check\"\n    },\n    {\n      \"PayrollResultId\": 9837,\n      \"PersonNumber\": \"string\",\n      \"PersonName\": \"string\",\n      \"PayrollName\": \"string\",\n      \"PeriodName\": \"string\",\n      \"PeriodStartDate\": \"1964-01-26\",\n      \"PeriodEndDate\": \"2010-05-24\",\n      \"GrossEarnings\": 9851.936833988375,\n      \"TotalDeductions\": 1108.2493532243898,\n      \"NetPay\": 7509.918318681559,\n      \"CurrencyCode\": \"string\",\n      \"PaymentDate\": \"1968-02-18\",\n      \"PaymentMethod\": \"Cash\"\n    }\n  ],\n  \"count\": 5083,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c71119fb-890b-4d62-b5ec-024536bd0b67",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "hcmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "payrollResults"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "9e06ba57-ff89-4112-949a-5d36d3b16c0a",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Payroll API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

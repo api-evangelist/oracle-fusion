@@ -1,0 +1,498 @@
+{
+  "item": [
+    {
+      "id": "c362dd52-a866-4a46-a8a9-cbb06177a5f0",
+      "name": "Work Orders",
+      "description": {
+        "content": "Manufacturing work order management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "48dc524f-7d38-48d2-9932-25c3e4eb820b",
+          "name": "Oracle Fusion Cloud Applications List work orders",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List work orders",
+            "description": {
+              "content": "Retrieve manufacturing work orders including operations, materials, and production status.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "workOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8862d382-c08b-4c16-8a02-20c267e048c0",
+              "name": "Work orders retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "workOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"WorkOrderId\": 5153,\n      \"WorkOrderNumber\": \"string\",\n      \"WorkOrderType\": \"string\",\n      \"OrganizationCode\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"ItemDescription\": \"string\",\n      \"PlannedQuantity\": 7641.685175421087,\n      \"CompletedQuantity\": 4600.307794294609,\n      \"UnitOfMeasure\": \"string\",\n      \"PlannedStartDate\": \"2019-11-20\",\n      \"PlannedCompletionDate\": \"1960-12-28\",\n      \"ActualStartDate\": \"1984-02-04\",\n      \"ActualCompletionDate\": \"2005-09-28\",\n      \"Status\": \"Closed\"\n    },\n    {\n      \"WorkOrderId\": 2542,\n      \"WorkOrderNumber\": \"string\",\n      \"WorkOrderType\": \"string\",\n      \"OrganizationCode\": \"string\",\n      \"ItemNumber\": \"string\",\n      \"ItemDescription\": \"string\",\n      \"PlannedQuantity\": 8834.313100923415,\n      \"CompletedQuantity\": 4167.184553367189,\n      \"UnitOfMeasure\": \"string\",\n      \"PlannedStartDate\": \"1992-05-09\",\n      \"PlannedCompletionDate\": \"1946-08-21\",\n      \"ActualStartDate\": \"1951-11-11\",\n      \"ActualCompletionDate\": \"1960-04-05\",\n      \"Status\": \"On Hold\"\n    }\n  ],\n  \"count\": 3450,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9b50fa3c-f325-4669-9d18-5e3308454ac8",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "workOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "faed5e5b-ceb2-4407-8e25-045b32af5834",
+          "name": "Oracle Fusion Cloud Applications Create a work order",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create a work order",
+            "description": {
+              "content": "Create a new manufacturing work order.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "workOrders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b3d28950-8c54-403b-9042-02d6116839b3",
+              "name": "Work order created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "workOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"WorkOrderId\": 7511,\n  \"WorkOrderNumber\": \"string\",\n  \"WorkOrderType\": \"string\",\n  \"OrganizationCode\": \"string\",\n  \"ItemNumber\": \"string\",\n  \"ItemDescription\": \"string\",\n  \"PlannedQuantity\": 1692.2565579617888,\n  \"CompletedQuantity\": 7705.1366087858805,\n  \"UnitOfMeasure\": \"string\",\n  \"PlannedStartDate\": \"1990-11-22\",\n  \"PlannedCompletionDate\": \"2002-02-25\",\n  \"ActualStartDate\": \"2004-08-20\",\n  \"ActualCompletionDate\": \"2021-08-05\",\n  \"Status\": \"Cancelled\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7674aa2e-cd42-4222-ada8-5450c4fe7b80",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "workOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "a6c611ee-caf2-41d5-9b62-8fc46e2d5f32",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "workOrders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"OrganizationCode\": \"<string>\",\n  \"ItemNumber\": \"<string>\",\n  \"PlannedQuantity\": \"<double>\",\n  \"UnitOfMeasure\": \"<string>\",\n  \"WorkOrderType\": \"<string>\",\n  \"PlannedStartDate\": \"<date>\",\n  \"PlannedCompletionDate\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "106d6dbe-0b7f-41bf-b2cb-60fb710ce5a0",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Work Orders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Announcements API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Announcements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List announcements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/announcements",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve application announcements visible to users across Fusion Cloud applications."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/announcements",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new application announcement."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+            "params": [
+              {
+                "name": "AnnouncementId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific announcement."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+            "params": [
+              {
+                "name": "AnnouncementId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing application announcement."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete an announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/announcements/:AnnouncementId",
+            "params": [
+              {
+                "name": "AnnouncementId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an existing application announcement."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

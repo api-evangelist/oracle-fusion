@@ -1,0 +1,511 @@
+{
+  "item": [
+    {
+      "id": "0fed900a-f38f-4bf7-ae76-e8b0fb436ba2",
+      "name": "Suppliers",
+      "description": {
+        "content": "Supplier and vendor management",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9a98a81f-dc2d-4ae9-9fc0-8cef729496a2",
+          "name": "Oracle Fusion Cloud Applications List suppliers",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications List suppliers",
+            "description": {
+              "content": "Retrieve supplier records including supplier sites, contacts, and procurement details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "suppliers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "25"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "orderBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "finder",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "13f27b6f-e9fe-41e1-b35a-5f7858dd0f31",
+              "name": "Suppliers retrieved",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "suppliers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"items\": [\n    {\n      \"SupplierId\": 8571,\n      \"SupplierNumber\": \"string\",\n      \"SupplierName\": \"string\",\n      \"SupplierType\": \"string\",\n      \"TaxpayerIdentificationNumber\": \"string\",\n      \"TaxOrganizationType\": \"string\",\n      \"Status\": \"Active\",\n      \"BusinessRelationship\": \"Prospective\",\n      \"Country\": \"string\",\n      \"AddressLine1\": \"string\",\n      \"City\": \"string\",\n      \"State\": \"string\",\n      \"PostalCode\": \"string\",\n      \"CreationDate\": \"2014-04-27T11:23:27.987Z\"\n    },\n    {\n      \"SupplierId\": 8617,\n      \"SupplierNumber\": \"string\",\n      \"SupplierName\": \"string\",\n      \"SupplierType\": \"string\",\n      \"TaxpayerIdentificationNumber\": \"string\",\n      \"TaxOrganizationType\": \"string\",\n      \"Status\": \"Inactive\",\n      \"BusinessRelationship\": \"Prospective\",\n      \"Country\": \"string\",\n      \"AddressLine1\": \"string\",\n      \"City\": \"string\",\n      \"State\": \"string\",\n      \"PostalCode\": \"string\",\n      \"CreationDate\": \"1973-02-15T00:39:19.034Z\"\n    }\n  ],\n  \"count\": 9086,\n  \"hasMore\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "86f8109e-ca2e-4e89-928b-fd9aa133b317",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "suppliers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "25"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "orderBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "finder",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b34c33e4-8353-42c2-817b-e2a604403fbd",
+          "name": "Oracle Fusion Cloud Applications Create a supplier",
+          "request": {
+            "name": "Oracle Fusion Cloud Applications Create a supplier",
+            "description": {
+              "content": "Create a new supplier record.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "fscmRestApi",
+                "resources",
+                "11.13.18.05",
+                "suppliers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "Your Oracle Cloud instance identifier",
+                  "type": "any",
+                  "value": "{{instance}}",
+                  "key": "instance"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23ed9cf6-a934-4006-a1ab-96c0555d65f0",
+              "name": "Supplier created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "suppliers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"SupplierId\": 6804,\n  \"SupplierNumber\": \"string\",\n  \"SupplierName\": \"string\",\n  \"SupplierType\": \"string\",\n  \"TaxpayerIdentificationNumber\": \"string\",\n  \"TaxOrganizationType\": \"string\",\n  \"Status\": \"Active\",\n  \"BusinessRelationship\": \"Prospective\",\n  \"Country\": \"string\",\n  \"AddressLine1\": \"string\",\n  \"City\": \"string\",\n  \"State\": \"string\",\n  \"PostalCode\": \"string\",\n  \"CreationDate\": \"1975-09-30T21:34:11.772Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "595fa192-61ca-4174-bcde-a1f9f795da61",
+              "name": "Invalid request parameters or payload",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "suppliers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "feb2c9ad-5596-481a-8d54-7bfd834305cd",
+              "name": "Authentication credentials are missing or invalid",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fscmRestApi",
+                    "resources",
+                    "11.13.18.05",
+                    "suppliers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "Your Oracle Cloud instance identifier",
+                      "type": "any",
+                      "value": "{{instance}}",
+                      "key": "instance"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"SupplierName\": \"<string>\",\n  \"SupplierType\": \"<string>\",\n  \"TaxpayerIdentificationNumber\": \"<string>\",\n  \"Country\": \"<string>\",\n  \"AddressLine1\": \"<string>\",\n  \"City\": \"<string>\",\n  \"State\": \"<string>\",\n  \"PostalCode\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "Your Oracle Cloud instance identifier",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "servername",
+      "key": "instance"
+    },
+    {
+      "type": "string",
+      "value": "https://{{instance}}.oraclecloud.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "80860ec1-634b-44c9-af4e-5429b01ba227",
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Suppliers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.\n\nContact Support:\n Name: Oracle Support\n Email: support@oracle.com",
+      "type": "text/plain"
+    }
+  }
+}

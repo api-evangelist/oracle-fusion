@@ -1,0 +1,102 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Oracle Fusion Common Features REST Absences Applications API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List EPM applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications"
+          },
+          "docs": "Retrieve a list of EPM Planning applications available in the service instance."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get an EPM application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path",
+                "description": "Application name"
+              }
+            ]
+          },
+          "docs": "Retrieve metadata and configuration details for a specific EPM Planning application."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List dimensions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/dimensions",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the list of dimensions defined in an EPM Planning application."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List dimension members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/HyperionPlanning/rest/v3/applications/:applicationName/dimensions/:dimensionName/members",
+            "params": [
+              {
+                "name": "applicationName",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "dimensionName",
+                "value": "",
+                "type": "path",
+                "description": "Dimension name"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query",
+                "description": "Filter expression"
+              }
+            ]
+          },
+          "docs": "Retrieve members belonging to a specific dimension in an EPM Planning application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

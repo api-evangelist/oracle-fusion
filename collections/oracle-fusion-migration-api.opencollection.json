@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Migration API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Migration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List snapshots",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/snapshots"
+          },
+          "docs": "Retrieve a list of application snapshots available for migration and backup operations."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a snapshot",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/interop/rest/v3/snapshots/:snapshotName",
+            "params": [
+              {
+                "name": "snapshotName",
+                "value": "",
+                "type": "path",
+                "description": "Snapshot name"
+              }
+            ]
+          },
+          "docs": "Delete an application snapshot."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

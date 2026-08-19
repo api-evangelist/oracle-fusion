@@ -1,0 +1,201 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Common Lookups API",
+    "version": "11.13.18.05"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Common Lookups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List common lookups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups",
+            "params": [
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "finder",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve common lookup type definitions and their associated lookup codes used across Fusion Cloud applications."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a common lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new common lookup type."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Get a common lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+            "params": [
+              {
+                "name": "LookupType",
+                "value": "",
+                "type": "path",
+                "description": "Lookup type identifier"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "expand",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve a specific common lookup type and its codes."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Update a common lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+            "params": [
+              {
+                "name": "LookupType",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an existing common lookup type."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Delete a common lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType",
+            "params": [
+              {
+                "name": "LookupType",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a common lookup type."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications List lookup codes for a lookup type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+            "params": [
+              {
+                "name": "LookupType",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "fields",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Retrieve lookup codes belonging to a specific lookup type."
+        },
+        {
+          "info": {
+            "name": "Oracle Fusion Cloud Applications Create a lookup code",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{instance}.oraclecloud.com/fscmRestApi/resources/11.13.18.05/commonLookups/:LookupType/child/lookupCodes",
+            "params": [
+              {
+                "name": "LookupType",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new lookup code within a lookup type."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
