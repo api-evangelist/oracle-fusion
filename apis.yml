@@ -145,6 +145,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -369,6 +371,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -1601,6 +1605,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - Item
+  tags_raw:
   - Items
   properties:
   - type: OpenAPI
@@ -1657,6 +1663,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - Job
+  tags_raw:
   - Jobs
   properties:
   - type: OpenAPI
@@ -2273,6 +2281,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - Project
+  tags_raw:
   - Projects
   properties:
   - type: OpenAPI
@@ -2986,6 +2996,17 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 tags:
+  - Cloud
+  - CX
+  - Enterprise
+  - EPM
+  - ERP
+  - HCM
+  - Project Management
+  - REST API
+  - Software-as-a-Service
+  - SCM
+tags_raw:
   - Cloud
   - CX
   - Enterprise
