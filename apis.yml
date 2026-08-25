@@ -1,10 +1,10 @@
 aid: oracle-fusion
 name: Oracle Fusion Cloud Applications
-description: >-
-  Oracle Fusion Cloud Applications represent a comprehensive suite of cloud-based enterprise resource planning (ERP),
-  human capital management (HCM), customer experience (CX), supply chain management (SCM), and enterprise performance
-  management (EPM) solutions. Oracle Fusion Cloud provides REST APIs across all application pillars, enabling
-  programmatic access to business data and processes for integration, automation, and extension of cloud applications.
+description: Oracle Fusion Cloud Applications represent a comprehensive suite of cloud-based enterprise resource
+  planning (ERP), human capital management (HCM), customer experience (CX), supply chain management (SCM), and enterprise
+  performance management (EPM) solutions. Oracle Fusion Cloud provides REST APIs across all application pillars,
+  enabling programmatic access to business data and processes for integration, automation, and extension of cloud
+  applications.
 type: Index
 accessModel:
   pricing: paid
@@ -23,7 +23,7 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oracle-fusion.png
 created: '2024-01-15'
-modified: '2026-05-19'
+modified: '2026-08-21'
 specificationVersion: '0.23'
 url: https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
 apis:
@@ -56,8 +56,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -79,8 +78,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-access-groups-api
@@ -112,8 +110,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -135,8 +132,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-accounts-api
@@ -170,8 +166,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -193,8 +188,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-accounts-receivable-api
@@ -226,8 +220,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -249,8 +242,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-activities-api
@@ -282,8 +274,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -305,8 +296,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-announcements-api
@@ -338,8 +328,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -361,8 +350,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-applications-api
@@ -396,8 +384,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -419,8 +406,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-assignments-api
@@ -452,8 +438,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -475,8 +460,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-audit-api
@@ -508,8 +492,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -531,8 +514,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-award-budgets-api
@@ -564,8 +546,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -587,8 +568,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-awards-api
@@ -620,8 +600,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -643,8 +622,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-budgetary-control-api
@@ -676,8 +654,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -699,8 +676,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-cash-management-api
@@ -732,8 +708,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -755,8 +730,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-change-orders-api
@@ -788,8 +762,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -811,8 +784,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-common-lookups-api
@@ -844,8 +816,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -867,8 +838,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-compensation-api
@@ -900,8 +870,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -923,8 +892,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-contacts-api
@@ -956,8 +924,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -979,8 +946,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-currency-rates-api
@@ -1012,8 +978,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1035,8 +1000,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-data-management-api
@@ -1068,8 +1032,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1091,8 +1054,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-deliverables-api
@@ -1124,8 +1086,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1147,8 +1108,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-erp-integrations-api
@@ -1180,8 +1140,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1203,8 +1162,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-expenditure-types-api
@@ -1236,8 +1194,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1259,8 +1216,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-expense-reports-api
@@ -1292,8 +1248,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1315,8 +1270,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-features-api
@@ -1348,8 +1302,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1371,8 +1324,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-financial-project-plans-api
@@ -1404,8 +1356,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1427,8 +1378,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-general-ledger-api
@@ -1460,8 +1410,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1483,8 +1432,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-inventory-api
@@ -1516,8 +1464,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1539,8 +1486,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-invoices-api
@@ -1572,8 +1518,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1595,8 +1540,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-items-api
@@ -1630,8 +1574,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1653,8 +1596,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-jobs-api
@@ -1688,8 +1630,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1711,8 +1652,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-leads-api
@@ -1744,8 +1684,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1767,8 +1706,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-learning-api
@@ -1800,8 +1738,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1823,8 +1760,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-manage-tasks-api
@@ -1856,8 +1792,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1879,8 +1814,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-migration-api
@@ -1912,8 +1846,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1935,8 +1868,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-opportunities-api
@@ -1968,8 +1900,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -1991,8 +1922,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-payments-api
@@ -2024,8 +1954,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2047,8 +1976,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-payroll-api
@@ -2080,8 +2008,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2103,8 +2030,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-persons-api
@@ -2136,8 +2062,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2159,8 +2084,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-planning-api
@@ -2192,8 +2116,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2215,8 +2138,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-project-tasks-api
@@ -2248,8 +2170,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2271,8 +2192,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-projects-api
@@ -2306,8 +2226,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2329,8 +2248,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-purchase-orders-api
@@ -2362,8 +2280,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2385,8 +2302,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-recruiting-api
@@ -2418,8 +2334,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2441,8 +2356,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-roles-api
@@ -2474,8 +2388,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2497,8 +2410,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-sales-orders-api
@@ -2530,8 +2442,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2553,8 +2464,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-scheduled-processes-api
@@ -2586,8 +2496,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2609,8 +2518,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-service-requests-api
@@ -2642,8 +2550,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2665,8 +2572,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-shipments-api
@@ -2698,8 +2604,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2721,8 +2626,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-suppliers-api
@@ -2754,8 +2658,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2777,8 +2680,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-talent-profiles-api
@@ -2810,8 +2712,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2833,8 +2734,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-work-orders-api
@@ -2866,8 +2766,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2889,8 +2788,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-workers-api
@@ -2922,8 +2820,7 @@ apis:
   - type: Documentation
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/
   - type: Authentication
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
+    url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html
   - type: ChangeLog
@@ -2945,75 +2842,81 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html
   - type: Documentation
-    url: >-
-      https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
+    url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 common:
-  - type: PostmanWorkspace
-    url: https://www.postman.com/kinlaneapi/oracle-fusion-cloud-applications/overview
-  - type: AgenticAccess
-    url: agentic-access/oracle-fusion-agentic-access.yml
-  - type: DomainSecurity
-    url: security/oracle-fusion-domain-security.yml
-  - type: Authentication
-    url: authentication/oracle-fusion-authentication.yml
-  - type: Portal
-    url: https://docs.oracle.com/en/cloud/saas/
-  - type: Authentication
-    url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
-  - type: Support
-    url: https://support.oracle.com
-  - type: GettingStarted
-    url: https://docs.oracle.com/en/cloud/saas/applications-common/
-  - type: StatusPage
-    url: https://ocistatus.oraclecloud.com/
-  - type: TermsOfService
-    url: https://www.oracle.com/corporate/contracts/cloud-services/
-  - type: PrivacyPolicy
-    url: https://www.oracle.com/legal/privacy/
-  - type: ChangeLog
-    url: https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/
-  - type: Website
-    url: https://www.oracle.com/applications/
-  - type: Signup
-    url: https://www.oracle.com/cloud/free/
-  - type: Login
-    url: https://cloud.oracle.com/
-  - type: GitHubOrganization
-    url: https://github.com/oracle
-  - type: JSONLD
-    url: json-ld/oracle-fusion-context.jsonld
-  - type: JSONSchema
-    url: json-schema/oracle-fusion-invoice-schema.json
-  - type: JSONSchema
-    url: json-schema/oracle-fusion-worker-schema.json
-  - type: JSONSchema
-    url: json-schema/oracle-fusion-sales-order-schema.json
-  - type: JSONSchema
-    url: json-schema/oracle-fusion-account-schema.json
+- type: ParentCompany
+  url: https://apis.io/providers/oracle/
+  name: Oracle
+  x-relationship: product
+  x-generated-by: oracle-family:2026-08-21
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/oracle-fusion-cloud-applications/overview
+- type: AgenticAccess
+  url: agentic-access/oracle-fusion-agentic-access.yml
+- type: DomainSecurity
+  url: security/oracle-fusion-domain-security.yml
+- type: Authentication
+  url: authentication/oracle-fusion-authentication.yml
+- type: Portal
+  url: https://docs.oracle.com/en/cloud/saas/
+- type: Authentication
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+- type: Support
+  url: https://support.oracle.com
+- type: GettingStarted
+  url: https://docs.oracle.com/en/cloud/saas/applications-common/
+- type: StatusPage
+  url: https://ocistatus.oraclecloud.com/
+- type: TermsOfService
+  url: https://www.oracle.com/corporate/contracts/cloud-services/
+- type: PrivacyPolicy
+  url: https://www.oracle.com/legal/privacy/
+- type: ChangeLog
+  url: https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/
+- type: Website
+  url: https://www.oracle.com/applications/
+- type: Signup
+  url: https://www.oracle.com/cloud/free/
+- type: Login
+  url: https://cloud.oracle.com/
+- type: GitHubOrganization
+  url: https://github.com/oracle
+- type: JSONLD
+  url: json-ld/oracle-fusion-context.jsonld
+- type: JSONSchema
+  url: json-schema/oracle-fusion-invoice-schema.json
+- type: JSONSchema
+  url: json-schema/oracle-fusion-worker-schema.json
+- type: JSONSchema
+  url: json-schema/oracle-fusion-sales-order-schema.json
+- type: JSONSchema
+  url: json-schema/oracle-fusion-account-schema.json
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 tags:
-  - Cloud
-  - CX
-  - Enterprise
-  - EPM
-  - ERP
-  - HCM
-  - Project Management
-  - REST API
-  - Software-as-a-Service
-  - SCM
+- Cloud
+- CX
+- Enterprise
+- EPM
+- ERP
+- HCM
+- Project Management
+- REST API
+- Software-as-a-Service
+- SCM
 tags_raw:
-  - Cloud
-  - CX
-  - Enterprise
-  - EPM
-  - ERP
-  - HCM
-  - Project Management
-  - REST API
-  - SaaS
-  - SCM
+- Cloud
+- CX
+- Enterprise
+- EPM
+- ERP
+- HCM
+- Project Management
+- REST API
+- SaaS
+- SCM
+x-parent: oracle
+x-relationship: product
