@@ -6,6 +6,18 @@ description: Oracle Fusion Cloud Applications represent a comprehensive suite of
   enabling programmatic access to business data and processes for integration, automation, and extension of cloud
   applications.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
@@ -2846,6 +2858,9 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 common:
+- type: CapabilityMap
+  url: capabilities/oracle-fusion-capability-edges.yml
+  name: Oracle Fusion Cloud Applications Business Capability Map
 - type: ParentCompany
   url: https://apis.io/providers/oracle/
   name: Oracle

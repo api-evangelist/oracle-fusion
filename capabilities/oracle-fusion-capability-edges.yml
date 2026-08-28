@@ -1,0 +1,232 @@
+slug: oracle-fusion
+provider: Oracle Fusion Cloud Applications
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 23
+edges:
+- tag: General Ledger
+  spec_file: oracle-fusion-general-ledger-api-openapi.yml
+  capability_id: BC-200.10
+  capability_id_l1: BC-200
+  capability_name: General Ledger Management
+  confidence: 0.95
+  evidence: 'POST /fscmRestApi/resources/11.13.18.05/generalLedgerJournals createJournal ... List general
+    ledger period statuses; schemas: Journal, LedgerBalance, PeriodStatus'
+  reason: Journals, ledger balances and period statuses are core General Ledger Management (chart of accounts,
+    journals, period close).
+- tag: Purchase Orders
+  spec_file: oracle-fusion-purchase-orders-api-openapi.yml
+  capability_id: BC-500.30
+  capability_id_l1: BC-500
+  capability_name: Purchase Order Management
+  confidence: 0.95
+  evidence: '"List purchase orders", "Create a purchase order", "Update a purchase order"; schema PurchaseOrderCreate'
+  reason: Direct purchase order creation, retrieval and update — Purchase Order Management within procurement.
+    No plausible alternative reading.
+- tag: Recruiting
+  spec_file: oracle-fusion-recruiting-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.95
+  evidence: GET /hcmRestApi/.../recruitingJobRequisitions "List job requisitions"; GET recruitingCandidates
+    "List recruiting candidates"; schemas JobRequisition, Candidate
+  reason: HCM endpoints for job requisitions and candidates are unambiguously talent acquisition/recruiting.
+- tag: Accounts Receivable
+  spec_file: oracle-fusion-accounts-receivable-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.92
+  evidence: POST /receivablesInvoices createReceivablesInvoice "Create a receivables invoice"; "List standard
+    receipts"
+  reason: Operations create/list receivables invoices and cash receipts — customer invoicing and cash
+    application, i.e. Accounts Receivable Management.
+- tag: Opportunities
+  spec_file: oracle-fusion-opportunities-api-openapi.yml
+  capability_id: BC-410.30
+  capability_id_l1: BC-410
+  capability_name: Opportunity & Pipeline Management
+  confidence: 0.92
+  evidence: GET /crmRestApi/resources/11.13.18.05/opportunities  listOpportunities; POST createOpportunity
+    'Create an opportunity'
+  reason: CRM REST resource for creating, reading and updating sales opportunities — squarely opportunity/deal
+    pipeline management, not a homograph (the crmRestApi path and Opportunity schemas confirm sales pipeline).
+- tag: Leads
+  spec_file: oracle-fusion-leads-api-openapi.yml
+  capability_id: BC-410.30
+  capability_id_l1: BC-410
+  capability_name: Opportunity & Pipeline Management
+  confidence: 0.88
+  evidence: GET /crmRestApi/resources/11.13.18.05/leads listLeads; POST createLead "Create a lead"; schemas
+    Lead, LeadCreate
+  reason: CRM lead creation and listing is squarely lead/opportunity pipeline management under Sales Management.
+- tag: Cash Management
+  spec_file: oracle-fusion-cash-management-api-openapi.yml
+  capability_id: BC-210.10
+  capability_id_l1: BC-210
+  capability_name: Cash Management
+  confidence: 0.85
+  evidence: GET /cashBankAccounts listBankAccounts; POST /cashBankAccountTransfers createBankAccountTransfer
+  reason: 'Corporate treasury cash management: bank account master and internal cash transfers between
+    bank accounts.'
+- tag: Compensation
+  spec_file: oracle-fusion-compensation-api-openapi.yml
+  capability_id: BC-300.30
+  capability_id_l1: BC-300
+  capability_name: Compensation & Benefits Management
+  confidence: 0.85
+  evidence: 'GET /hcmRestApi/resources/11.13.18.05/compensationSalaries listSalaries ... List compensation
+    salaries; schemas: Salary'
+  reason: HCM REST resource exposing employee compensation salary records — Compensation & Benefits Management.
+- tag: Learning
+  spec_file: oracle-fusion-learning-api-openapi.yml
+  capability_id: BC-300.40
+  capability_id_l1: BC-300
+  capability_name: Learning & Development Management
+  confidence: 0.85
+  evidence: GET /hcmRestApi/resources/11.13.18.05/learningRecords listLearningRecords; schema LearningRecord
+  reason: HCM learning records enumerate employee training completions — Learning & Development Management
+    within Human Capital Management.
+- tag: Payments
+  spec_file: oracle-fusion-payments-api-openapi.yml
+  capability_id: BC-200.20
+  capability_id_l1: BC-200
+  capability_name: Accounts Payable Management
+  confidence: 0.85
+  evidence: GET /fscmRestApi/resources/11.13.18.05/payablesPayments  listPayments
+  reason: The resource path is payablesPayments in the financials (fscm) API, i.e. supplier/AP payment
+    records, so this realises Accounts Payable Management rather than any banking payment rail capability.
+- tag: Payroll
+  spec_file: oracle-fusion-payroll-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.85
+  evidence: GET /hcmRestApi/resources/11.13.18.05/payrollResults  listPayrollResults, schema PayrollResult
+  reason: HCM payroll results retrieval is payroll administration within HR Operations; the hcmRestApi
+    path grounds the HR reading.
+- tag: Absences
+  spec_file: oracle-fusion-absences-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.82
+  evidence: POST /hcmRestApi/resources/11.13.18.05/absences createAbsence Create an absence
+  reason: HCM absence records CRUD is employee record/leave administration within HR Operations; title
+    mentions Common Features but operations are HCM absences.
+- tag: Inventory
+  spec_file: oracle-fusion-inventory-api-openapi.yml
+  capability_id: BC-530
+  capability_id_l1: BC-530
+  capability_name: Inventory Management
+  confidence: 0.8
+  evidence: GET /fscmRestApi/resources/11.13.18.05/inventoryOnhandBalances listOnhandBalances ... createInventoryTransaction
+  reason: On-hand balance queries and inventory transactions are inventory stock management; specific
+    sub-capability (stock level vs accuracy) not determinable.
+- tag: Project Tasks
+  spec_file: oracle-fusion-project-tasks-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.8
+  evidence: listProjectTasks "List project tasks"; POST createProjectTask "Create a project task"; schemas
+    ProjectTaskCreate, ProjectTask
+  reason: Operations create and list tasks within projects — project execution planning and tracking,
+    i.e. Project Management. Not enough evidence for portfolio or PMO sub-capabilities.
+- tag: Projects
+  spec_file: oracle-fusion-projects-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.8
+  evidence: '"List projects", "Create a project", "Update a project"; schemas Project, ProjectCreate'
+  reason: CRUD over project entities in the ERP project pillar maps to project execution/tracking. Portfolio-level
+    intent is not evidenced.
+- tag: Service Requests
+  spec_file: oracle-fusion-service-requests-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.8
+  evidence: GET /crmRestApi/.../serviceRequests "List service requests", "Create a service request"; path
+    parameter {SrNumber}
+  reason: CRM service request (case) lifecycle is customer service inquiry capture, routing and resolution.
+    Could arguably touch complaints, so L2 confidence is moderate.
+- tag: Workers
+  spec_file: oracle-fusion-workers-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.8
+  evidence: 'POST /hcmRestApi/resources/11.13.18.05/workers createWorker "Create a worker"; GET /hcmRestApi/.../emps
+    listEmployees; schemas: Employee, Worker, WorkerCreate'
+  reason: HCM REST resource for creating, retrieving and updating worker/employee master records — core
+    employee record keeping within Human Capital Management, most specifically HR Operations (employee
+    records). Sub-capability chosen because operations are pure record CRUD rather than recruiting, performance
+    or pay processes.
+- tag: Roles
+  spec_file: oracle-fusion-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.78
+  evidence: GET /hcmRestApi/scim/Roles "List roles", PATCH /hcmRestApi/scim/Roles/{id} "Update a role"
+  reason: SCIM Roles endpoints manage security roles assigned to users — identity and access management
+    plumbing rather than an HR job-role catalogue; SCIM path strongly indicates provisioning/access control.
+- tag: Contacts
+  spec_file: oracle-fusion-contacts-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.75
+  evidence: GET /crmRestApi/resources/11.13.18.05/contacts listContacts ... POST createContact ... {PartyNumber}
+  reason: CRM party/contact master records CRUD — customer data management. Could also be sales account
+    contacts, hence moderate confidence.
+- tag: Accounts
+  spec_file: oracle-fusion-accounts-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.72
+  evidence: POST /crmRestApi/resources/11.13.18.05/accounts createAccount; GET /accounts/{PartyNumber}
+  reason: CRM party/account master records (PartyNumber key) — customer data management; could also be
+    Sales Account Management but master-data CRUD fits customer data best.
+- tag: Talent Profiles
+  spec_file: oracle-fusion-talent-profiles-api-openapi.yml
+  capability_id: BC-300.20
+  capability_id_l1: BC-300
+  capability_name: Talent Management
+  confidence: 0.72
+  evidence: GET /hcmRestApi/resources/11.13.18.05/talentProfiles "List talent profiles"; schema TalentProfile
+  reason: HCM talent profiles (skills, qualifications) support performance, succession and development
+    — Talent Management. Single read operation limits certainty on sub-capability.
+- tag: Assignments
+  spec_file: oracle-fusion-assignments-api-openapi.yml
+  capability_id: BC-300.70
+  capability_id_l1: BC-300
+  capability_name: HR Operations Management
+  confidence: 0.7
+  evidence: GET /hcmRestApi/resources/11.13.18.05/assignmentsInfo listAssignments; schema Assignment
+  reason: HCM worker assignment records are core employee record data (HR Operations), though the single
+    read operation is thin.
+- tag: Financial Project Plans
+  spec_file: oracle-fusion-financial-project-plans-api-openapi.yml
+  capability_id: BC-900.30
+  capability_id_l1: BC-900
+  capability_name: Project Management
+  confidence: 0.7
+  evidence: GET /fscmRestApi/resources/11.13.18.05/financialProjectPlans listFinancialProjectPlans ...
+    createFinancialProjectPlan
+  reason: Project financial plan creation/listing in Oracle Project Management — project planning and
+    tracking; overlaps with project cost budgeting hence moderate confidence.
