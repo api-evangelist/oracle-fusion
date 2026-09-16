@@ -1,10 +1,10 @@
 aid: oracle-fusion
 name: Oracle Fusion Cloud Applications
-description: Oracle Fusion Cloud Applications represent a comprehensive suite of cloud-based enterprise resource
-  planning (ERP), human capital management (HCM), customer experience (CX), supply chain management (SCM), and enterprise
-  performance management (EPM) solutions. Oracle Fusion Cloud provides REST APIs across all application pillars,
-  enabling programmatic access to business data and processes for integration, automation, and extension of cloud
-  applications.
+description: Oracle Fusion Cloud Applications represent a comprehensive suite of cloud-based enterprise
+  resource planning (ERP), human capital management (HCM), customer experience (CX), supply chain management
+  (SCM), and enterprise performance management (EPM) solutions. Oracle Fusion Cloud provides REST APIs
+  across all application pillars, enabling programmatic access to business data and processes for integration,
+  automation, and extension of cloud applications.
 type: Index
 deliveryModel:
   model: saas
@@ -36,7 +36,7 @@ position: Consuming
 access: 3rd-Party
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oracle-fusion.png
 created: '2024-01-15'
-modified: '2026-08-21'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 url: https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml
 apis:
@@ -367,7 +367,7 @@ apis:
   - type: GettingStarted
     url: https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html
 - aid: oracle-fusion:oracle-fusion-applications-api
-  name: Oracle Fusion Cloud Applications Applications API
+  name: Oracle Fusion Cloud Applications API
   description: Manage EPM application metadata and dimensions
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
