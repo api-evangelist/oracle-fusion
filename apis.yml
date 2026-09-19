@@ -1130,6 +1130,8 @@ apis:
   humanURL: https://docs.oracle.com/en/cloud/saas/financials/
   baseURL: https://{instance}.oraclecloud.com/fscmRestApi/
   tags:
+  - ERP Integration
+  tags_raw:
   - ERP Integrations
   properties:
   - type: OpenAPI
