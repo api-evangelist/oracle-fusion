@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Common Lookups API
+  title: Oracle Fusion Cloud Applications Oracle Fusion Common…
   description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
   version: 11.13.18.05
   contact:
@@ -221,8 +221,14 @@ components:
     Unauthorized:
       description: Authentication credentials are missing or invalid
   parameters:
-    q:
-      name: q
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
       in: query
       required: false
       schema:
@@ -234,12 +240,6 @@ components:
       schema:
         type: integer
         default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -248,19 +248,45 @@ components:
         type: integer
         default: 25
         maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
     finder:
       name: finder
       in: query
       required: false
       schema:
         type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
   schemas:
+    LookupCode:
+      type: object
+      properties:
+        LookupCode:
+          type: string
+          description: Lookup code value
+        Meaning:
+          type: string
+          description: Display meaning
+        Description:
+          type: string
+          description: Code description
+        EnabledFlag:
+          type: boolean
+          description: Whether the code is enabled
+        StartDateActive:
+          type: string
+          format: date
+          description: Start date for active period
+        EndDateActive:
+          type: string
+          format: date
+          description: End date for active period
+        DisplaySequence:
+          type: integer
+          description: Display order sequence
     LookupCodeCreate:
       type: object
       required:
@@ -307,32 +333,6 @@ components:
         CreationDate:
           type: string
           format: date-time
-    LookupCode:
-      type: object
-      properties:
-        LookupCode:
-          type: string
-          description: Lookup code value
-        Meaning:
-          type: string
-          description: Display meaning
-        Description:
-          type: string
-          description: Code description
-        EnabledFlag:
-          type: boolean
-          description: Whether the code is enabled
-        StartDateActive:
-          type: string
-          format: date
-          description: Start date for active period
-        EndDateActive:
-          type: string
-          format: date
-          description: End date for active period
-        DisplaySequence:
-          type: integer
-          description: Display order sequence
   securitySchemes:
     bearerAuth:
       type: http

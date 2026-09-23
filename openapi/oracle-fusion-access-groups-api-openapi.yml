@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Access Groups API
-  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  title: Oracle Fusion Cloud Applications Oracle Fusion CX Sales and…
+  description: REST APIs for Oracle Fusion Cloud Customer Experience, enabling integration with sales force automation, fusion service, customer data management, and commerce applications. The API provides access to accounts, contacts, opportunities, leads, service requests, activities, and other CRM resources.
   version: 11.13.18.05
   contact:
     name: Oracle Support
@@ -56,22 +56,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -85,6 +69,22 @@ components:
       in: query
       required: false
       description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
   responses:
@@ -111,9 +111,11 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      description: OAuth 2.0 bearer token or basic authentication
     basicAuth:
       type: http
       scheme: basic
+      description: HTTP Basic authentication with Oracle Fusion Cloud credentials
 externalDocs:
-  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
-  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  description: Oracle Fusion Cloud CX Sales REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html

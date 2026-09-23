@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Sales Orders API
-  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  title: Oracle Fusion Cloud Applications Oracle Fusion Cloud SCM…
+  description: REST APIs for Oracle Fusion Cloud Supply Chain Management, providing access to inventory, order management, procurement, logistics, and manufacturing capabilities. The API enables integration with supply chain planning, product lifecycle management, service logistics, and supply chain execution processes.
   version: 11.13.18.05
   contact:
     name: Oracle Support
@@ -141,22 +141,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   schemas:
-    SalesOrderUpdate:
-      type: object
-      properties:
-        RequestedShipDate:
-          type: string
-          format: date
-        Status:
-          type: string
     SalesOrder:
       type: object
       properties:
@@ -213,6 +198,14 @@ components:
           type: string
           format: date-time
           description: Creation timestamp
+    SalesOrderUpdate:
+      type: object
+      properties:
+        RequestedShipDate:
+          type: string
+          format: date
+        Status:
+          type: string
     SalesOrderCreate:
       type: object
       required:
@@ -236,9 +229,16 @@ components:
           format: date
         CurrencyCode:
           type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   parameters:
-    q:
-      name: q
+    expand:
+      name: expand
       in: query
       required: false
       schema:
@@ -270,14 +270,14 @@ components:
         type: integer
         default: 25
         maximum: 500
-    finder:
-      name: finder
+    q:
+      name: q
       in: query
       required: false
       schema:
         type: string
-    expand:
-      name: expand
+    finder:
+      name: finder
       in: query
       required: false
       schema:
@@ -291,5 +291,5 @@ components:
       type: http
       scheme: basic
 externalDocs:
-  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
-  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  description: Oracle Fusion Cloud SCM REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/fasrs/

@@ -1,7 +1,7 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Awards API
-  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
+  title: Oracle Fusion Cloud Applications Oracle Fusion Project…
+  description: REST APIs for Oracle Fusion Cloud Project Management, enabling integration with project planning, project costing, project billing, grants management, and project execution capabilities. The API supports managing project resources, tasks, budgets, deliverables, change orders, awards, and financial project plans.
   version: 11.13.18.05
   contact:
     name: Oracle Support
@@ -133,33 +133,54 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
-    AwardCreate:
-      type: object
-      required:
-      - AwardName
-      - SponsorName
-      - StartDate
-      properties:
-        AwardName:
-          type: string
-        AwardType:
-          type: string
-        SponsorName:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        TotalFunding:
-          type: number
-          format: double
-        CurrencyCode:
-          type: string
-        PrincipalInvestigator:
-          type: string
     Award:
       type: object
       properties:
@@ -207,53 +228,32 @@ components:
         CreationDate:
           type: string
           format: date-time
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
+    AwardCreate:
+      type: object
+      required:
+      - AwardName
+      - SponsorName
+      - StartDate
+      properties:
+        AwardName:
+          type: string
+        AwardType:
+          type: string
+        SponsorName:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        TotalFunding:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        PrincipalInvestigator:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http
@@ -263,5 +263,5 @@ components:
       type: http
       scheme: basic
 externalDocs:
-  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
-  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  description: Oracle Fusion Cloud Project Management REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html

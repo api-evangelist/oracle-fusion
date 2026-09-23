@@ -1,8 +1,8 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Migration API
-  description: REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, scheduled processes, announcements, and approval workflows used across all Fusion Cloud application pillars.
-  version: 11.13.18.05
+  title: Oracle Fusion Cloud Applications Oracle Fusion EPM REST…
+  description: REST APIs for Oracle Fusion Cloud Enterprise Performance Management, enabling integration with planning, budgeting, forecasting, financial consolidation, account reconciliation, tax reporting, and narrative reporting capabilities. The EPM REST APIs allow infrastructure consultants to integrate environments with Oracle EPM Cloud services.
+  version: v1
   contact:
     name: Oracle Support
     url: https://support.oracle.com
@@ -13,13 +13,13 @@ info:
   termsOfService: https://www.oracle.com/corporate/contracts/cloud-services/
 servers:
 - url: https://{instance}.oraclecloud.com
-  description: Oracle Fusion Cloud Instance
+  description: Oracle Fusion Cloud EPM Instance
   variables:
     instance:
-      default: servername
-      description: Your Oracle Cloud instance identifier
+      default: your-instance
+      description: Your Oracle Cloud EPM instance identifier
 security:
-- bearerAuth: []
+- basicAuth: []
 tags:
 - name: Migration
   description: Application migration and lifecycle management
@@ -69,11 +69,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   schemas:
     Snapshot:
       type: object
@@ -94,14 +89,20 @@ components:
           type: string
           format: date-time
           description: Last modified timestamp
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication with Oracle EPM Cloud credentials
     bearerAuth:
       type: http
       scheme: bearer
       bearerFormat: JWT
-    basicAuth:
-      type: http
-      scheme: basic
 externalDocs:
-  description: Oracle Fusion Cloud Applications Common Features REST API Documentation
-  url: https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html
+  description: Oracle Fusion Cloud EPM REST API Documentation
+  url: https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html
