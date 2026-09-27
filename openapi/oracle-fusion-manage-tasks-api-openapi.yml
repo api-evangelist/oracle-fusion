@@ -101,52 +101,13 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
     Unauthorized:
       description: Authentication credentials are missing or invalid
-  parameters:
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
+    NotFound:
+      description: The requested resource was not found
   schemas:
-    TaskAction:
-      type: object
-      required:
-      - action
-      properties:
-        action:
-          type: string
-          description: Action to perform
-          enum:
-          - APPROVE
-          - REJECT
-          - REASSIGN
-          - ESCALATE
-          - SUSPEND
-          - WITHDRAW
-          - PUSHBACK
-          - REQUEST_INFORMATION
-        comment:
-          type: string
-          description: Comment for the action
-        assignee:
-          type: string
-          description: Assignee for reassign action
     WorkflowTask:
       type: object
       properties:
@@ -188,6 +149,45 @@ components:
         expirationDate:
           type: string
           format: date-time
+    TaskAction:
+      type: object
+      required:
+      - action
+      properties:
+        action:
+          type: string
+          description: Action to perform
+          enum:
+          - APPROVE
+          - REJECT
+          - REASSIGN
+          - ESCALATE
+          - SUSPEND
+          - WITHDRAW
+          - PUSHBACK
+          - REQUEST_INFORMATION
+        comment:
+          type: string
+          description: Comment for the action
+        assignee:
+          type: string
+          description: Assignee for reassign action
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   securitySchemes:
     bearerAuth:
       type: http

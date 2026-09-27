@@ -93,49 +93,13 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
     Unauthorized:
       description: Authentication credentials are missing or invalid
-  parameters:
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
+    NotFound:
+      description: The requested resource was not found
   schemas:
-    ScheduledRequestSubmit:
-      type: object
-      required:
-      - jobDefinitionName
-      properties:
-        jobDefinitionName:
-          type: string
-        jobPackageName:
-          type: string
-        submissionNotes:
-          type: string
-        parameterList:
-          type: array
-          items:
-            type: object
-            properties:
-              name:
-                type: string
-              value:
-                type: string
     ScheduledRequest:
       type: object
       properties:
@@ -174,6 +138,42 @@ components:
           type: string
           format: date-time
           description: Execution end time
+    ScheduledRequestSubmit:
+      type: object
+      required:
+      - jobDefinitionName
+      properties:
+        jobDefinitionName:
+          type: string
+        jobPackageName:
+          type: string
+        submissionNotes:
+          type: string
+        parameterList:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   securitySchemes:
     bearerAuth:
       type: http

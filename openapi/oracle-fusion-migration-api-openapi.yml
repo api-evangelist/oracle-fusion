@@ -69,6 +69,11 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   schemas:
     Snapshot:
       type: object
@@ -89,11 +94,6 @@ components:
           type: string
           format: date-time
           description: Last modified timestamp
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   securitySchemes:
     basicAuth:
       type: http

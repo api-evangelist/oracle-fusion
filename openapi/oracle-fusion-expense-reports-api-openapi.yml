@@ -160,12 +160,6 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -178,46 +172,66 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Error type URI
-        title:
-          type: string
-          description: Short error description
-        detail:
-          type: string
-          description: Detailed error message
-        o:errorCode:
-          type: string
-          description: Oracle-specific error code
-        o:errorDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              detail:
-                type: string
-              o:errorCode:
-                type: string
-    ExpenseReportCreate:
-      type: object
-      required:
-      - Purpose
-      - BusinessUnit
-      properties:
-        Purpose:
-          type: string
-        ExpenseReportDate:
-          type: string
-          format: date
-        BusinessUnit:
-          type: string
-        CurrencyCode:
-          type: string
     ExpenseReport:
       type: object
       properties:
@@ -272,59 +286,45 @@ components:
           type: string
           format: date-time
           description: Creation timestamp
-  parameters:
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to include in the response.
-      schema:
-        type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip before returning results
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
-      schema:
-        type: string
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
+    ExpenseReportCreate:
+      type: object
+      required:
+      - Purpose
+      - BusinessUnit
+      properties:
+        Purpose:
+          type: string
+        ExpenseReportDate:
+          type: string
+          format: date
+        BusinessUnit:
+          type: string
+        CurrencyCode:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

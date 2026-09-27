@@ -141,7 +141,120 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   schemas:
+    PeriodStatus:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period name
+        PeriodYear:
+          type: integer
+          description: Period year
+        PeriodNumber:
+          type: integer
+          description: Period number within the year
+        Status:
+          type: string
+          description: Period status
+          enum:
+          - Open
+          - Closed
+          - Future Entry
+          - Never Opened
+          - Permanently Closed
+    Journal:
+      type: object
+      properties:
+        JournalHeaderId:
+          type: integer
+          description: Unique journal header identifier
+        JournalBatchName:
+          type: string
+          description: Journal batch name
+        JournalName:
+          type: string
+          description: Journal name
+        Description:
+          type: string
+          description: Journal description
+        LedgerName:
+          type: string
+          description: Ledger name
+        AccountingPeriod:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Journal currency
+        Status:
+          type: string
+          description: Journal status
+          enum:
+          - Unposted
+          - Posted
+          - Error
+        JournalCategory:
+          type: string
+          description: Journal category
+        JournalSource:
+          type: string
+          description: Journal source
+        TotalDebit:
+          type: number
+          format: double
+          description: Total debit amount
+        TotalCredit:
+          type: number
+          format: double
+          description: Total credit amount
+        CreationDate:
+          type: string
+          format: date-time
+          description: Journal creation date
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
     JournalCreate:
       type: object
       required:
@@ -208,135 +321,14 @@ components:
           type: number
           format: double
           description: Ending balance for the period
-    ErrorResponse:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Error type URI
-        title:
-          type: string
-          description: Short error description
-        detail:
-          type: string
-          description: Detailed error message
-        o:errorCode:
-          type: string
-          description: Oracle-specific error code
-        o:errorDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              detail:
-                type: string
-              o:errorCode:
-                type: string
-    Journal:
-      type: object
-      properties:
-        JournalHeaderId:
-          type: integer
-          description: Unique journal header identifier
-        JournalBatchName:
-          type: string
-          description: Journal batch name
-        JournalName:
-          type: string
-          description: Journal name
-        Description:
-          type: string
-          description: Journal description
-        LedgerName:
-          type: string
-          description: Ledger name
-        AccountingPeriod:
-          type: string
-          description: Accounting period name
-        CurrencyCode:
-          type: string
-          description: Journal currency
-        Status:
-          type: string
-          description: Journal status
-          enum:
-          - Unposted
-          - Posted
-          - Error
-        JournalCategory:
-          type: string
-          description: Journal category
-        JournalSource:
-          type: string
-          description: Journal source
-        TotalDebit:
-          type: number
-          format: double
-          description: Total debit amount
-        TotalCredit:
-          type: number
-          format: double
-          description: Total credit amount
-        CreationDate:
-          type: string
-          format: date-time
-          description: Journal creation date
-    PeriodStatus:
-      type: object
-      properties:
-        LedgerId:
-          type: integer
-          description: Ledger identifier
-        LedgerName:
-          type: string
-          description: Ledger name
-        PeriodName:
-          type: string
-          description: Accounting period name
-        PeriodYear:
-          type: integer
-          description: Period year
-        PeriodNumber:
-          type: integer
-          description: Period number within the year
-        Status:
-          type: string
-          description: Period status
-          enum:
-          - Open
-          - Closed
-          - Future Entry
-          - Never Opened
-          - Permanently Closed
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    orderBy:
-      name: orderBy
+    q:
+      name: q
       in: query
       required: false
-      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
       schema:
         type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip before returning results
-      schema:
-        type: integer
-        default: 0
     fields:
       name: fields
       in: query
@@ -353,11 +345,11 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
+    orderBy:
+      name: orderBy
       in: query
       required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
       schema:
         type: string
     finder:
@@ -367,6 +359,14 @@ components:
       description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
       schema:
         type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
   securitySchemes:
     bearerAuth:
       type: http

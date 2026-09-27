@@ -133,8 +133,6 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -143,17 +141,29 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   schemas:
-    ErrorResponse:
+    ContactCreate:
       type: object
+      required:
+      - FirstName
+      - LastName
       properties:
-        type:
+        FirstName:
           type: string
-        title:
+        LastName:
           type: string
-        detail:
+        JobTitle:
           type: string
-        o:errorCode:
+        EmailAddress:
+          type: string
+          format: email
+        WorkPhoneNumber:
+          type: string
+        MobilePhoneNumber:
+          type: string
+        AccountPartyNumber:
           type: string
     Contact:
       type: object
@@ -198,48 +208,30 @@ components:
         CreationDate:
           type: string
           format: date-time
-    ContactCreate:
+    ErrorResponse:
       type: object
-      required:
-      - FirstName
-      - LastName
       properties:
-        FirstName:
+        type:
           type: string
-        LastName:
+        title:
           type: string
-        JobTitle:
+        detail:
           type: string
-        EmailAddress:
-          type: string
-          format: email
-        WorkPhoneNumber:
-          type: string
-        MobilePhoneNumber:
-          type: string
-        AccountPartyNumber:
+        o:errorCode:
           type: string
   parameters:
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      description: Fields to sort by with optional :asc or :desc direction
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
     fields:
       name: fields
       in: query
       required: false
       description: Comma-separated list of fields to return
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
     limit:
@@ -251,11 +243,11 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
+    orderBy:
+      name: orderBy
       in: query
       required: false
-      description: Filter expression using Oracle REST query syntax
+      description: Fields to sort by with optional :asc or :desc direction
       schema:
         type: string
     finder:
@@ -265,6 +257,14 @@ components:
       description: Named finder in format FinderName;param1=value1
       schema:
         type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
   securitySchemes:
     bearerAuth:
       type: http

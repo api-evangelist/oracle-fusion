@@ -135,8 +135,6 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
-    NotFound:
-      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -145,29 +143,16 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   parameters:
-    expand:
-      name: expand
+    q:
+      name: q
       in: query
       required: false
-      description: Comma-separated list of child resources to expand
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      description: Fields to sort by with optional :asc or :desc direction
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
     fields:
       name: fields
       in: query
@@ -184,11 +169,18 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
+    orderBy:
+      name: orderBy
       in: query
       required: false
-      description: Filter expression using Oracle REST query syntax
+      description: Fields to sort by with optional :asc or :desc direction
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
       schema:
         type: string
     finder:
@@ -198,18 +190,15 @@ components:
       description: Named finder in format FinderName;param1=value1
       schema:
         type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
   schemas:
-    ErrorResponse:
-      type: object
-      properties:
-        type:
-          type: string
-        title:
-          type: string
-        detail:
-          type: string
-        o:errorCode:
-          type: string
     Opportunity:
       type: object
       properties:
@@ -260,6 +249,38 @@ components:
         CreationDate:
           type: string
           format: date-time
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        detail:
+          type: string
+        o:errorCode:
+          type: string
+    OpportunityUpdate:
+      type: object
+      properties:
+        Name:
+          type: string
+        SalesStage:
+          type: string
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CloseDate:
+          type: string
+          format: date
+        Status:
+          type: string
+          enum:
+          - Open
+          - Won
+          - Lost
     OpportunityCreate:
       type: object
       required:
@@ -282,27 +303,6 @@ components:
         CloseDate:
           type: string
           format: date
-    OpportunityUpdate:
-      type: object
-      properties:
-        Name:
-          type: string
-        SalesStage:
-          type: string
-        WinProbability:
-          type: integer
-        Revenue:
-          type: number
-          format: double
-        CloseDate:
-          type: string
-          format: date
-        Status:
-          type: string
-          enum:
-          - Open
-          - Won
-          - Lost
   securitySchemes:
     bearerAuth:
       type: http

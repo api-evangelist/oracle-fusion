@@ -110,30 +110,39 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    ErrorResponse:
+    BankAccount:
       type: object
       properties:
-        type:
+        BankAccountId:
+          type: integer
+          description: Bank account identifier
+        BankAccountName:
           type: string
-          description: Error type URI
-        title:
+          description: Bank account name
+        BankAccountNumber:
           type: string
-          description: Short error description
-        detail:
+          description: Bank account number
+        BankName:
           type: string
-          description: Detailed error message
-        o:errorCode:
+          description: Bank name
+        BranchName:
           type: string
-          description: Oracle-specific error code
-        o:errorDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              detail:
-                type: string
-              o:errorCode:
-                type: string
+          description: Branch name
+        CurrencyCode:
+          type: string
+          description: Account currency
+        AccountType:
+          type: string
+          description: Bank account type
+        Country:
+          type: string
+          description: Country of the bank account
+        Status:
+          type: string
+          description: Account status
+          enum:
+          - Active
+          - Inactive
     BankAccountTransferCreate:
       type: object
       required:
@@ -180,39 +189,30 @@ components:
         Status:
           type: string
           description: Transfer status
-    BankAccount:
+    ErrorResponse:
       type: object
       properties:
-        BankAccountId:
-          type: integer
-          description: Bank account identifier
-        BankAccountName:
+        type:
           type: string
-          description: Bank account name
-        BankAccountNumber:
+          description: Error type URI
+        title:
           type: string
-          description: Bank account number
-        BankName:
+          description: Short error description
+        detail:
           type: string
-          description: Bank name
-        BranchName:
+          description: Detailed error message
+        o:errorCode:
           type: string
-          description: Branch name
-        CurrencyCode:
-          type: string
-          description: Account currency
-        AccountType:
-          type: string
-          description: Bank account type
-        Country:
-          type: string
-          description: Country of the bank account
-        Status:
-          type: string
-          description: Account status
-          enum:
-          - Active
-          - Inactive
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
   responses:
     BadRequest:
       description: Invalid request parameters or payload
@@ -227,11 +227,34 @@ components:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
   parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
     fields:
       name: fields
       in: query
       required: false
       description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
       schema:
         type: string
     offset:
@@ -242,29 +265,6 @@ components:
       schema:
         type: integer
         default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -56,14 +56,16 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   parameters:
-    offset:
-      name: offset
+    q:
+      name: q
       in: query
       required: false
       schema:
-        type: integer
-        default: 0
+        type: string
     fields:
       name: fields
       in: query
@@ -78,21 +80,19 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
     finder:
       name: finder
       in: query
       required: false
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   schemas:
     Item:
       type: object

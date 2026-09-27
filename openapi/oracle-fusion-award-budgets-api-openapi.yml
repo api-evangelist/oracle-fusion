@@ -150,6 +150,47 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   schemas:
     AwardBudget:
       type: object
@@ -199,47 +240,6 @@ components:
           format: double
         CurrencyCode:
           type: string
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http

@@ -61,13 +61,6 @@ components:
       required: false
       schema:
         type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
     limit:
       name: limit
       in: query
@@ -76,9 +69,13 @@ components:
         type: integer
         default: 25
         maximum: 500
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   schemas:
     Feature:
       type: object
@@ -95,6 +92,9 @@ components:
         EnabledFlag:
           type: boolean
           description: Whether the feature is enabled
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

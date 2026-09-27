@@ -141,6 +141,59 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
   schemas:
     ProjectUpdate:
       type: object
@@ -156,35 +209,6 @@ components:
         EndDate:
           type: string
           format: date
-    ProjectCreate:
-      type: object
-      required:
-      - ProjectName
-      - ProjectOrganization
-      - StartDate
-      properties:
-        ProjectName:
-          type: string
-        ProjectDescription:
-          type: string
-        ProjectType:
-          type: string
-        ProjectOrganization:
-          type: string
-        ProjectManager:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        LegalEntity:
-          type: string
-        BusinessUnit:
-          type: string
-        CurrencyCode:
-          type: string
     Project:
       type: object
       properties:
@@ -238,59 +262,35 @@ components:
         CreationDate:
           type: string
           format: date-time
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
+    ProjectCreate:
+      type: object
+      required:
+      - ProjectName
+      - ProjectOrganization
+      - StartDate
+      properties:
+        ProjectName:
+          type: string
+        ProjectDescription:
+          type: string
+        ProjectType:
+          type: string
+        ProjectOrganization:
+          type: string
+        ProjectManager:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        LegalEntity:
+          type: string
+        BusinessUnit:
+          type: string
+        CurrencyCode:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

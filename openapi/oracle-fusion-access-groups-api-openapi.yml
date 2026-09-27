@@ -55,15 +55,17 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   parameters:
-    offset:
-      name: offset
+    q:
+      name: q
       in: query
       required: false
-      description: Number of items to skip
+      description: Filter expression using Oracle REST query syntax
       schema:
-        type: integer
-        default: 0
+        type: string
     fields:
       name: fields
       in: query
@@ -80,16 +82,14 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
+    offset:
+      name: offset
       in: query
       required: false
-      description: Filter expression using Oracle REST query syntax
+      description: Number of items to skip
       schema:
-        type: string
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
+        type: integer
+        default: 0
   schemas:
     AccessGroup:
       type: object
