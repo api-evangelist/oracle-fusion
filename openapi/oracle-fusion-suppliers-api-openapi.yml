@@ -80,11 +80,46 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
+  parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
     SupplierCreate:
       type: object
@@ -158,46 +193,11 @@ components:
         CreationDate:
           type: string
           format: date-time
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

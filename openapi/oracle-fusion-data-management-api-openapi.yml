@@ -126,6 +126,11 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
     File:
       type: object
@@ -146,11 +151,6 @@ components:
         isDirectory:
           type: boolean
           description: Whether the entry is a directory
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     basicAuth:
       type: http

@@ -56,26 +56,21 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
     q:
       name: q
       in: query
       required: false
       description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
       schema:
         type: string
     offset:
@@ -86,20 +81,18 @@ components:
       schema:
         type: integer
         default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     finder:
       name: finder
       in: query
       required: false
       description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
       schema:
         type: string
   schemas:
@@ -151,6 +144,13 @@ components:
           type: number
           format: double
           description: Inverse of the exchange rate
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     bearerAuth:
       type: http

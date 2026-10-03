@@ -156,6 +156,8 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -164,23 +166,7 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to return
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -190,11 +176,11 @@ components:
         type: integer
         default: 25
         maximum: 500
-    finder:
-      name: finder
+    q:
+      name: q
       in: query
       required: false
-      description: Named finder in format FinderName;param1=value1
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
     offset:
@@ -205,37 +191,21 @@ components:
       schema:
         type: integer
         default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
   schemas:
-    AbsenceCreate:
-      type: object
-      required:
-      - PersonNumber
-      - AbsenceType
-      - StartDate
-      - EndDate
-      properties:
-        PersonNumber:
-          type: string
-        AbsenceType:
-          type: string
-        AbsenceReason:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        Duration:
-          type: number
-          format: double
-        UnitOfMeasure:
-          type: string
-          enum:
-          - Days
-          - Hours
-        Comments:
-          type: string
     ErrorResponse:
       type: object
       properties:
@@ -295,6 +265,36 @@ components:
         Comments:
           type: string
           description: Comments
+    AbsenceCreate:
+      type: object
+      required:
+      - PersonNumber
+      - AbsenceType
+      - StartDate
+      - EndDate
+      properties:
+        PersonNumber:
+          type: string
+        AbsenceType:
+          type: string
+        AbsenceReason:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Duration:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+          enum:
+          - Days
+          - Hours
+        Comments:
+          type: string
   securitySchemes:
     bearerAuth:
       type: http

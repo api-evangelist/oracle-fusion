@@ -141,47 +141,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   schemas:
-    PeriodStatus:
-      type: object
-      properties:
-        LedgerId:
-          type: integer
-          description: Ledger identifier
-        LedgerName:
-          type: string
-          description: Ledger name
-        PeriodName:
-          type: string
-          description: Accounting period name
-        PeriodYear:
-          type: integer
-          description: Period year
-        PeriodNumber:
-          type: integer
-          description: Period number within the year
-        Status:
-          type: string
-          description: Period status
-          enum:
-          - Open
-          - Closed
-          - Future Entry
-          - Never Opened
-          - Permanently Closed
     Journal:
       type: object
       properties:
@@ -231,6 +191,72 @@ components:
           type: string
           format: date-time
           description: Journal creation date
+    PeriodStatus:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Ledger name
+        PeriodName:
+          type: string
+          description: Accounting period name
+        PeriodYear:
+          type: integer
+          description: Period year
+        PeriodNumber:
+          type: integer
+          description: Period number within the year
+        Status:
+          type: string
+          description: Period status
+          enum:
+          - Open
+          - Closed
+          - Future Entry
+          - Never Opened
+          - Permanently Closed
+    LedgerBalance:
+      type: object
+      properties:
+        LedgerId:
+          type: integer
+          description: Ledger identifier
+        LedgerName:
+          type: string
+          description: Name of the ledger
+        PeriodName:
+          type: string
+          description: Accounting period name
+        CurrencyCode:
+          type: string
+          description: Currency code
+        Segment1:
+          type: string
+          description: Chart of accounts segment 1 (Company)
+        Segment2:
+          type: string
+          description: Chart of accounts segment 2 (Department)
+        Segment3:
+          type: string
+          description: Chart of accounts segment 3 (Account)
+        Segment4:
+          type: string
+          description: Chart of accounts segment 4 (Sub-Account)
+        BeginningBalance:
+          type: number
+          format: double
+          description: Beginning balance for the period
+        PeriodActivity:
+          type: number
+          format: double
+          description: Net activity for the period
+        EndingBalance:
+          type: number
+          format: double
+          description: Ending balance for the period
     ErrorResponse:
       type: object
       properties:
@@ -282,60 +308,20 @@ components:
           type: string
         JournalSource:
           type: string
-    LedgerBalance:
-      type: object
-      properties:
-        LedgerId:
-          type: integer
-          description: Ledger identifier
-        LedgerName:
-          type: string
-          description: Name of the ledger
-        PeriodName:
-          type: string
-          description: Accounting period name
-        CurrencyCode:
-          type: string
-          description: Currency code
-        Segment1:
-          type: string
-          description: Chart of accounts segment 1 (Company)
-        Segment2:
-          type: string
-          description: Chart of accounts segment 2 (Department)
-        Segment3:
-          type: string
-          description: Chart of accounts segment 3 (Account)
-        Segment4:
-          type: string
-          description: Chart of accounts segment 4 (Sub-Account)
-        BeginningBalance:
-          type: number
-          format: double
-          description: Beginning balance for the period
-        PeriodActivity:
-          type: number
-          format: double
-          description: Net activity for the period
-        EndingBalance:
-          type: number
-          format: double
-          description: Ending balance for the period
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -345,18 +331,11 @@ components:
         type: integer
         default: 25
         maximum: 500
-    orderBy:
-      name: orderBy
+    q:
+      name: q
       in: query
       required: false
-      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
       schema:
         type: string
     offset:
@@ -367,6 +346,27 @@ components:
       schema:
         type: integer
         default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

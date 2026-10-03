@@ -85,18 +85,6 @@ components:
     Unauthorized:
       description: Authentication credentials are missing or invalid
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -105,8 +93,8 @@ components:
         type: integer
         default: 25
         maximum: 500
-    finder:
-      name: finder
+    q:
+      name: q
       in: query
       required: false
       schema:
@@ -118,6 +106,18 @@ components:
       schema:
         type: integer
         default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
     DeliverableCreate:
       type: object

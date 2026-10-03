@@ -142,29 +142,12 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
-    Dimension:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Dimension name
-        type:
-          type: string
-          description: Dimension type
-          enum:
-          - Account
-          - Entity
-          - Period
-          - Year
-          - Scenario
-          - Version
-          - Currency
-          - Attribute
-          - User Defined
-        numberOfMembers:
-          type: integer
-          description: Number of members in the dimension
     Application:
       type: object
       properties:
@@ -216,6 +199,28 @@ components:
         alias:
           type: string
           description: Member alias
+    Dimension:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Dimension name
+        type:
+          type: string
+          description: Dimension type
+          enum:
+          - Account
+          - Entity
+          - Period
+          - Year
+          - Scenario
+          - Version
+          - Currency
+          - Attribute
+          - User Defined
+        numberOfMembers:
+          type: integer
+          description: Number of members in the dimension
   parameters:
     q:
       name: q
@@ -224,11 +229,6 @@ components:
       description: Filter expression
       schema:
         type: string
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     basicAuth:
       type: http

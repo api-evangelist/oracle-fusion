@@ -79,71 +79,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
   schemas:
-    WorkOrderCreate:
-      type: object
-      required:
-      - OrganizationCode
-      - ItemNumber
-      - PlannedQuantity
-      - UnitOfMeasure
-      properties:
-        WorkOrderType:
-          type: string
-        OrganizationCode:
-          type: string
-        ItemNumber:
-          type: string
-        PlannedQuantity:
-          type: number
-          format: double
-        UnitOfMeasure:
-          type: string
-        PlannedStartDate:
-          type: string
-          format: date
-        PlannedCompletionDate:
-          type: string
-          format: date
     WorkOrder:
       type: object
       properties:
@@ -202,6 +138,70 @@ components:
           - Complete
           - Closed
           - Cancelled
+    WorkOrderCreate:
+      type: object
+      required:
+      - OrganizationCode
+      - ItemNumber
+      - PlannedQuantity
+      - UnitOfMeasure
+      properties:
+        WorkOrderType:
+          type: string
+        OrganizationCode:
+          type: string
+        ItemNumber:
+          type: string
+        PlannedQuantity:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+        PlannedStartDate:
+          type: string
+          format: date
+        PlannedCompletionDate:
+          type: string
+          format: date
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

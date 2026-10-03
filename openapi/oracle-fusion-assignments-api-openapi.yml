@@ -56,24 +56,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to return
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -83,11 +66,11 @@ components:
         type: integer
         default: 25
         maximum: 500
-    finder:
-      name: finder
+    q:
+      name: q
       in: query
       required: false
-      description: Named finder in format FinderName;param1=value1
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
     offset:
@@ -98,6 +81,20 @@ components:
       schema:
         type: integer
         default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
   schemas:
     Assignment:
       type: object
@@ -156,6 +153,9 @@ components:
         WorkerType:
           type: string
           description: Worker type (Employee or Contingent Worker)
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

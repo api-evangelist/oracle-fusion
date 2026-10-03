@@ -80,75 +80,7 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
   schemas:
-    InventoryTransaction:
-      type: object
-      properties:
-        TransactionId:
-          type: integer
-          description: Transaction identifier
-        TransactionType:
-          type: string
-          description: Transaction type
-        OrganizationCode:
-          type: string
-          description: Organization code
-        ItemNumber:
-          type: string
-          description: Item number
-        Subinventory:
-          type: string
-          description: Subinventory code
-        Quantity:
-          type: number
-          format: double
-          description: Transaction quantity
-        UnitOfMeasure:
-          type: string
-          description: Unit of measure
-        TransactionDate:
-          type: string
-          format: date-time
-          description: Transaction date
     InventoryTransactionCreate:
       type: object
       required:
@@ -223,6 +155,74 @@ components:
           type: number
           format: double
           description: Available to transact quantity
+    InventoryTransaction:
+      type: object
+      properties:
+        TransactionId:
+          type: integer
+          description: Transaction identifier
+        TransactionType:
+          type: string
+          description: Transaction type
+        OrganizationCode:
+          type: string
+          description: Organization code
+        ItemNumber:
+          type: string
+          description: Item number
+        Subinventory:
+          type: string
+          description: Subinventory code
+        Quantity:
+          type: number
+          format: double
+          description: Transaction quantity
+        UnitOfMeasure:
+          type: string
+          description: Unit of measure
+        TransactionDate:
+          type: string
+          format: date-time
+          description: Transaction date
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

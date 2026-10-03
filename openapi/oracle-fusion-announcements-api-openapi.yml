@@ -146,25 +146,13 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
     Unauthorized:
       description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -180,7 +168,41 @@ components:
       schema:
         type: integer
         default: 0
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
+    AnnouncementCreate:
+      type: object
+      required:
+      - Subject
+      - StartDate
+      properties:
+        Subject:
+          type: string
+        Description:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Severity:
+          type: string
+          enum:
+          - Information
+          - Warning
+          - Critical
     Announcement:
       type: object
       properties:
@@ -214,28 +236,6 @@ components:
         CreationDate:
           type: string
           format: date-time
-    AnnouncementCreate:
-      type: object
-      required:
-      - Subject
-      - StartDate
-      properties:
-        Subject:
-          type: string
-        Description:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        Severity:
-          type: string
-          enum:
-          - Information
-          - Warning
-          - Critical
   securitySchemes:
     bearerAuth:
       type: http

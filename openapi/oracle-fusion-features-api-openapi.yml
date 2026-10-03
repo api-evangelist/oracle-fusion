@@ -55,12 +55,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -76,6 +70,15 @@ components:
       schema:
         type: integer
         default: 0
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
     Feature:
       type: object
@@ -92,9 +95,6 @@ components:
         EnabledFlag:
           type: boolean
           description: Whether the feature is enabled
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

@@ -139,63 +139,37 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
     Unauthorized:
       description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
   schemas:
     PurchaseOrderUpdate:
       type: object
       properties:
         Status:
+          type: string
+        PaymentTerms:
+          type: string
+    PurchaseOrderCreate:
+      type: object
+      required:
+      - ProcurementBusinessUnit
+      - SupplierName
+      properties:
+        ProcurementBusinessUnit:
+          type: string
+        SupplierName:
+          type: string
+        SupplierNumber:
+          type: string
+        SupplierSite:
+          type: string
+        BuyerName:
+          type: string
+        CurrencyCode:
           type: string
         PaymentTerms:
           type: string
@@ -258,26 +232,52 @@ components:
         CreationDate:
           type: string
           format: date-time
-    PurchaseOrderCreate:
-      type: object
-      required:
-      - ProcurementBusinessUnit
-      - SupplierName
-      properties:
-        ProcurementBusinessUnit:
-          type: string
-        SupplierName:
-          type: string
-        SupplierNumber:
-          type: string
-        SupplierSite:
-          type: string
-        BuyerName:
-          type: string
-        CurrencyCode:
-          type: string
-        PaymentTerms:
-          type: string
+  parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

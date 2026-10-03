@@ -164,6 +164,8 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -172,9 +174,38 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
     q:
       name: q
       in: query
@@ -189,22 +220,6 @@ components:
       description: Comma-separated list of fields to return
       schema:
         type: string
-    workersUniqID:
-      name: workersUniqID
-      in: path
-      required: true
-      description: Unique identifier for the worker record
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     orderBy:
       name: orderBy
       in: query
@@ -212,72 +227,39 @@ components:
       description: Fields to sort by with optional :asc or :desc direction
       schema:
         type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to expand
+    workersUniqID:
+      name: workersUniqID
+      in: path
+      required: true
+      description: Unique identifier for the worker record
       schema:
         type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
   schemas:
-    Employee:
+    WorkerUpdate:
       type: object
       properties:
-        PersonId:
-          type: integer
-          description: Person identifier
-        PersonNumber:
-          type: string
-          description: Person number
         FirstName:
           type: string
-          description: First name
         LastName:
           type: string
-          description: Last name
-        DisplayName:
+        MiddleName:
           type: string
-          description: Display name
-        HireDate:
+        WorkEmail:
           type: string
-          format: date
-          description: Hire date
-        BusinessUnit:
+          format: email
+        WorkPhoneNumber:
           type: string
-          description: Business unit name
-        Department:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
           type: string
-          description: Department name
-        JobName:
+        title:
           type: string
-          description: Job name
-        GradeName:
+        detail:
           type: string
-          description: Grade name
-        LocationName:
+        o:errorCode:
           type: string
-          description: Work location
-        ManagerName:
-          type: string
-          description: Manager display name
-        AssignmentStatus:
-          type: string
-          description: Assignment status
     Worker:
       type: object
       properties:
@@ -338,20 +320,49 @@ components:
           type: string
           format: date-time
           description: Last update timestamp
-    WorkerUpdate:
+    Employee:
       type: object
       properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
         FirstName:
           type: string
+          description: First name
         LastName:
           type: string
-        MiddleName:
+          description: Last name
+        DisplayName:
           type: string
-        WorkEmail:
+          description: Display name
+        HireDate:
           type: string
-          format: email
-        WorkPhoneNumber:
+          format: date
+          description: Hire date
+        BusinessUnit:
           type: string
+          description: Business unit name
+        Department:
+          type: string
+          description: Department name
+        JobName:
+          type: string
+          description: Job name
+        GradeName:
+          type: string
+          description: Grade name
+        LocationName:
+          type: string
+          description: Work location
+        ManagerName:
+          type: string
+          description: Manager display name
+        AssignmentStatus:
+          type: string
+          description: Assignment status
     WorkerCreate:
       type: object
       required:
@@ -379,17 +390,6 @@ components:
         WorkEmail:
           type: string
           format: email
-    ErrorResponse:
-      type: object
-      properties:
-        type:
-          type: string
-        title:
-          type: string
-        detail:
-          type: string
-        o:errorCode:
-          type: string
   securitySchemes:
     bearerAuth:
       type: http

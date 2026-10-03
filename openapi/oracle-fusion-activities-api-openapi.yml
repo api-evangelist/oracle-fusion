@@ -88,6 +88,45 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Authentication credentials are missing or invalid
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
   schemas:
     ActivityCreate:
       type: object
@@ -193,45 +232,6 @@ components:
           type: string
         o:errorCode:
           type: string
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to return
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
   securitySchemes:
     bearerAuth:
       type: http

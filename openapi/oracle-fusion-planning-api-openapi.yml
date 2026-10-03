@@ -102,30 +102,11 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
     BadRequest:
       description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
-    DataSliceResponse:
-      type: object
-      properties:
-        rows:
-          type: array
-          items:
-            type: object
-            properties:
-              headers:
-                type: array
-                items:
-                  type: string
-              data:
-                type: array
-                items:
-                  type: number
-          description: Data rows with headers and values
-        status:
-          type: integer
     DataSliceRequest:
       type: object
       properties:
@@ -191,6 +172,25 @@ components:
                     type: array
                     items:
                       type: number
+    DataSliceResponse:
+      type: object
+      properties:
+        rows:
+          type: array
+          items:
+            type: object
+            properties:
+              headers:
+                type: array
+                items:
+                  type: string
+              data:
+                type: array
+                items:
+                  type: number
+          description: Data rows with headers and values
+        status:
+          type: integer
   securitySchemes:
     basicAuth:
       type: http

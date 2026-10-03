@@ -56,9 +56,6 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   schemas:
     Shipment:
       type: object
@@ -113,18 +110,6 @@ components:
           type: string
           description: Weight unit of measure
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
     limit:
       name: limit
       in: query
@@ -133,8 +118,8 @@ components:
         type: integer
         default: 25
         maximum: 500
-    finder:
-      name: finder
+    q:
+      name: q
       in: query
       required: false
       schema:
@@ -146,6 +131,21 @@ components:
       schema:
         type: integer
         default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

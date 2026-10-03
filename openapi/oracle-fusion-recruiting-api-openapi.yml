@@ -87,49 +87,49 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to return
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
   schemas:
+    Candidate:
+      type: object
+      properties:
+        CandidateId:
+          type: integer
+          description: Candidate identifier
+        CandidateNumber:
+          type: string
+          description: Candidate number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        Email:
+          type: string
+          format: email
+          description: Email address
+        PhoneNumber:
+          type: string
+          description: Phone number
+        CurrentEmployer:
+          type: string
+          description: Current employer
+        CurrentJobTitle:
+          type: string
+          description: Current job title
+        Source:
+          type: string
+          description: Candidate source
+        Status:
+          type: string
+          description: Candidate status
+          enum:
+          - New
+          - Under Review
+          - Interview
+          - Offer
+          - Hired
+          - Rejected
+          - Withdrawn
     JobRequisition:
       type: object
       properties:
@@ -178,48 +178,48 @@ components:
         Recruiter:
           type: string
           description: Assigned recruiter
-    Candidate:
-      type: object
-      properties:
-        CandidateId:
-          type: integer
-          description: Candidate identifier
-        CandidateNumber:
-          type: string
-          description: Candidate number
-        FirstName:
-          type: string
-          description: First name
-        LastName:
-          type: string
-          description: Last name
-        Email:
-          type: string
-          format: email
-          description: Email address
-        PhoneNumber:
-          type: string
-          description: Phone number
-        CurrentEmployer:
-          type: string
-          description: Current employer
-        CurrentJobTitle:
-          type: string
-          description: Current job title
-        Source:
-          type: string
-          description: Candidate source
-        Status:
-          type: string
-          description: Candidate status
-          enum:
-          - New
-          - Under Review
-          - Interview
-          - Offer
-          - Hired
-          - Rejected
-          - Withdrawn
+  parameters:
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to return
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

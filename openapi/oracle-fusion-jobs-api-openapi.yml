@@ -114,21 +114,6 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
-  parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression
-      schema:
-        type: string
   schemas:
     Job:
       type: object
@@ -155,6 +140,33 @@ components:
         description:
           type: string
           description: Job description
+    JobExecute:
+      type: object
+      required:
+      - jobName
+      - jobType
+      properties:
+        jobName:
+          type: string
+          description: Name of the job to execute
+        jobType:
+          type: string
+          description: Type of job
+          enum:
+          - Rules
+          - Data Map
+          - Cube Refresh
+          - Clear Cube
+          - Refresh Database
+          - Smart Push
+          - Import Data
+          - Export Data
+          - Copy Data
+        parameters:
+          type: object
+          description: Job-specific parameters
+          additionalProperties:
+            type: string
     JobStatus:
       type: object
       properties:
@@ -189,33 +201,21 @@ components:
           type: string
           format: date-time
           description: Job end time
-    JobExecute:
-      type: object
-      required:
-      - jobName
-      - jobType
-      properties:
-        jobName:
-          type: string
-          description: Name of the job to execute
-        jobType:
-          type: string
-          description: Type of job
-          enum:
-          - Rules
-          - Data Map
-          - Cube Refresh
-          - Clear Cube
-          - Refresh Database
-          - Smart Push
-          - Import Data
-          - Export Data
-          - Copy Data
-        parameters:
-          type: object
-          description: Job-specific parameters
-          additionalProperties:
-            type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+  parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression
+      schema:
+        type: string
   securitySchemes:
     basicAuth:
       type: http

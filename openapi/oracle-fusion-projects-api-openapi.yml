@@ -142,21 +142,15 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
     BadRequest:
       description: Invalid request parameters or payload
     Unauthorized:
       description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    fields:
-      name: fields
+    finder:
+      name: finder
       in: query
       required: false
       schema:
@@ -169,24 +163,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
     offset:
       name: offset
       in: query
@@ -194,21 +170,31 @@ components:
       schema:
         type: integer
         default: 0
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
-    ProjectUpdate:
-      type: object
-      properties:
-        ProjectName:
-          type: string
-        ProjectDescription:
-          type: string
-        ProjectStatus:
-          type: string
-        ProjectManager:
-          type: string
-        EndDate:
-          type: string
-          format: date
     Project:
       type: object
       properties:
@@ -291,6 +277,20 @@ components:
           type: string
         CurrencyCode:
           type: string
+    ProjectUpdate:
+      type: object
+      properties:
+        ProjectName:
+          type: string
+        ProjectDescription:
+          type: string
+        ProjectStatus:
+          type: string
+        ProjectManager:
+          type: string
+        EndDate:
+          type: string
+          format: date
   securitySchemes:
     bearerAuth:
       type: http

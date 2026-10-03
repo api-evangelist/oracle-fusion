@@ -160,6 +160,12 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   responses:
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
     BadRequest:
       description: Invalid request parameters or payload
       content:
@@ -172,13 +178,38 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-    NotFound:
-      description: The requested resource was not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
     q:
       name: q
       in: query
@@ -193,15 +224,6 @@ components:
       description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
       schema:
         type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     orderBy:
       name: orderBy
       in: query
@@ -209,28 +231,6 @@ components:
       description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
       schema:
         type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to include in the response.
-      schema:
-        type: string
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
-      schema:
-        type: string
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip before returning results
-      schema:
-        type: integer
-        default: 0
   schemas:
     ExpenseReport:
       type: object
