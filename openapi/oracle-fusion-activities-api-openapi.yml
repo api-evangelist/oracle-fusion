@@ -79,16 +79,21 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -98,13 +103,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
     offset:
       name: offset
       in: query
@@ -113,13 +111,6 @@ components:
       schema:
         type: integer
         default: 0
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
     fields:
       name: fields
       in: query
@@ -128,40 +119,16 @@ components:
       schema:
         type: string
   schemas:
-    ActivityCreate:
+    ErrorResponse:
       type: object
-      required:
-      - Subject
-      - ActivityType
       properties:
-        Subject:
+        type:
           type: string
-        ActivityType:
+        title:
           type: string
-          enum:
-          - Task
-          - Appointment
-          - Call Log
-        Priority:
+        detail:
           type: string
-          enum:
-          - High
-          - Normal
-          - Low
-        DueDate:
-          type: string
-          format: date
-        StartDate:
-          type: string
-          format: date-time
-        EndDate:
-          type: string
-          format: date-time
-        AccountName:
-          type: string
-        ContactName:
-          type: string
-        Description:
+        o:errorCode:
           type: string
     Activity:
       type: object
@@ -221,17 +188,50 @@ components:
         Description:
           type: string
           description: Activity description
-    ErrorResponse:
+    ActivityCreate:
       type: object
+      required:
+      - Subject
+      - ActivityType
       properties:
-        type:
+        Subject:
           type: string
-        title:
+        ActivityType:
           type: string
-        detail:
+          enum:
+          - Task
+          - Appointment
+          - Call Log
+        Priority:
           type: string
-        o:errorCode:
+          enum:
+          - High
+          - Normal
+          - Low
+        DueDate:
           type: string
+          format: date
+        StartDate:
+          type: string
+          format: date-time
+        EndDate:
+          type: string
+          format: date-time
+        AccountName:
+          type: string
+        ContactName:
+          type: string
+        Description:
+          type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

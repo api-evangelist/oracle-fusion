@@ -78,20 +78,21 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -101,13 +102,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
     offset:
       name: offset
       in: query
@@ -116,14 +110,31 @@ components:
       schema:
         type: integer
         default: 0
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
-      schema:
-        type: string
   schemas:
+    ErrorResponse:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Error type URI
+        title:
+          type: string
+          description: Short error description
+        detail:
+          type: string
+          description: Detailed error message
+        o:errorCode:
+          type: string
+          description: Oracle-specific error code
+        o:errorDetails:
+          type: array
+          items:
+            type: object
+            properties:
+              detail:
+                type: string
+              o:errorCode:
+                type: string
     BudgetTransaction:
       type: object
       properties:
@@ -152,30 +163,6 @@ components:
         Status:
           type: string
           description: Transaction status
-    ErrorResponse:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Error type URI
-        title:
-          type: string
-          description: Short error description
-        detail:
-          type: string
-          description: Detailed error message
-        o:errorCode:
-          type: string
-          description: Oracle-specific error code
-        o:errorDetails:
-          type: array
-          items:
-            type: object
-            properties:
-              detail:
-                type: string
-              o:errorCode:
-                type: string
     BudgetTransactionCreate:
       type: object
       required:
@@ -198,6 +185,19 @@ components:
           format: double
         CurrencyCode:
           type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     bearerAuth:
       type: http

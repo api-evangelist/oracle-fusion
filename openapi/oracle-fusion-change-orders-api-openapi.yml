@@ -149,14 +149,19 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -165,12 +170,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
     offset:
       name: offset
       in: query
@@ -178,12 +177,6 @@ components:
       schema:
         type: integer
         default: 0
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
     fields:
       name: fields
       in: query
@@ -191,20 +184,6 @@ components:
       schema:
         type: string
   schemas:
-    ChangeOrderCreate:
-      type: object
-      required:
-      - ChangeDocumentName
-      - ProjectId
-      properties:
-        ChangeDocumentName:
-          type: string
-        ProjectId:
-          type: integer
-        Description:
-          type: string
-        ImpactType:
-          type: string
     ChangeOrder:
       type: object
       properties:
@@ -244,6 +223,27 @@ components:
         CreationDate:
           type: string
           format: date-time
+    ChangeOrderCreate:
+      type: object
+      required:
+      - ChangeDocumentName
+      - ProjectId
+      properties:
+        ChangeDocumentName:
+          type: string
+        ProjectId:
+          type: integer
+        Description:
+          type: string
+        ImpactType:
+          type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http

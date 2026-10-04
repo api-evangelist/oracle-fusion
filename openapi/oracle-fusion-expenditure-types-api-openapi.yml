@@ -79,12 +79,13 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   parameters:
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -93,12 +94,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
     offset:
       name: offset
       in: query
@@ -139,6 +134,11 @@ components:
           type: string
           format: date
           description: End date
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http

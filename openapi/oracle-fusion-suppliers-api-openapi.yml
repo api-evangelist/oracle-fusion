@@ -87,6 +87,18 @@ components:
       required: false
       schema:
         type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
     limit:
       name: limit
       in: query
@@ -102,24 +114,17 @@ components:
       schema:
         type: integer
         default: 0
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
     fields:
       name: fields
       in: query
       required: false
       schema:
         type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
+  responses:
+    BadRequest:
+      description: Invalid request parameters or payload
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
     SupplierCreate:
       type: object
@@ -193,11 +198,6 @@ components:
         CreationDate:
           type: string
           format: date-time
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

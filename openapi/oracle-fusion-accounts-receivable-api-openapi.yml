@@ -134,70 +134,53 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  parameters:
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    offset:
+      name: offset
+      in: query
+      required: false
+      description: Number of items to skip before returning results
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
+      schema:
+        type: string
   schemas:
-    StandardReceipt:
-      type: object
-      properties:
-        ReceiptId:
-          type: integer
-          description: Receipt identifier
-        ReceiptNumber:
-          type: string
-          description: Receipt number
-        ReceiptAmount:
-          type: number
-          format: double
-          description: Receipt amount
-        CurrencyCode:
-          type: string
-          description: Receipt currency
-        ReceiptDate:
-          type: string
-          format: date
-          description: Receipt date
-        CustomerName:
-          type: string
-          description: Customer name
-        CustomerNumber:
-          type: string
-          description: Customer number
-        BusinessUnit:
-          type: string
-          description: Business unit name
-        PaymentMethod:
-          type: string
-          description: Receipt payment method
-        Status:
-          type: string
-          description: Receipt status
-    ReceivablesInvoiceCreate:
-      type: object
-      required:
-      - TransactionNumber
-      - TransactionType
-      - BillToCustomerName
-      - BusinessUnit
-      properties:
-        TransactionNumber:
-          type: string
-        TransactionType:
-          type: string
-        TransactionDate:
-          type: string
-          format: date
-        BillToCustomerName:
-          type: string
-        BillToCustomerNumber:
-          type: string
-        BusinessUnit:
-          type: string
-        TransactionAmount:
-          type: number
-          format: double
-        CurrencyCode:
-          type: string
-        PaymentTerms:
-          type: string
     ErrorResponse:
       type: object
       properties:
@@ -222,32 +205,6 @@ components:
                 type: string
               o:errorCode:
                 type: string
-    StandardReceiptCreate:
-      type: object
-      required:
-      - ReceiptAmount
-      - CurrencyCode
-      - CustomerName
-      - BusinessUnit
-      properties:
-        ReceiptNumber:
-          type: string
-        ReceiptAmount:
-          type: number
-          format: double
-        CurrencyCode:
-          type: string
-        ReceiptDate:
-          type: string
-          format: date
-        CustomerName:
-          type: string
-        CustomerNumber:
-          type: string
-        BusinessUnit:
-          type: string
-        PaymentMethod:
-          type: string
     ReceivablesInvoice:
       type: object
       properties:
@@ -298,52 +255,95 @@ components:
         Status:
           type: string
           description: Transaction status
-  parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip before returning results
-      schema:
-        type: integer
-        default: 0
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
-    fields:
-      name: fields
-      in: query
-      required: false
-      description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
-      schema:
-        type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
-      schema:
-        type: string
+    ReceivablesInvoiceCreate:
+      type: object
+      required:
+      - TransactionNumber
+      - TransactionType
+      - BillToCustomerName
+      - BusinessUnit
+      properties:
+        TransactionNumber:
+          type: string
+        TransactionType:
+          type: string
+        TransactionDate:
+          type: string
+          format: date
+        BillToCustomerName:
+          type: string
+        BillToCustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        TransactionAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        PaymentTerms:
+          type: string
+    StandardReceiptCreate:
+      type: object
+      required:
+      - ReceiptAmount
+      - CurrencyCode
+      - CustomerName
+      - BusinessUnit
+      properties:
+        ReceiptNumber:
+          type: string
+        ReceiptAmount:
+          type: number
+          format: double
+        CurrencyCode:
+          type: string
+        ReceiptDate:
+          type: string
+          format: date
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        PaymentMethod:
+          type: string
+    StandardReceipt:
+      type: object
+      properties:
+        ReceiptId:
+          type: integer
+          description: Receipt identifier
+        ReceiptNumber:
+          type: string
+          description: Receipt number
+        ReceiptAmount:
+          type: number
+          format: double
+          description: Receipt amount
+        CurrencyCode:
+          type: string
+          description: Receipt currency
+        ReceiptDate:
+          type: string
+          format: date
+          description: Receipt date
+        CustomerName:
+          type: string
+          description: Customer name
+        CustomerNumber:
+          type: string
+          description: Customer number
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        PaymentMethod:
+          type: string
+          description: Receipt payment method
+        Status:
+          type: string
+          description: Receipt status
   responses:
     BadRequest:
       description: Invalid request parameters or payload

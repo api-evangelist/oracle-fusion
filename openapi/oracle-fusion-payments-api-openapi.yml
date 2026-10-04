@@ -84,25 +84,26 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   parameters:
     finder:
       name: finder
       in: query
       required: false
       description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
       schema:
         type: string
     limit:
@@ -122,25 +123,11 @@ components:
       schema:
         type: integer
         default: 0
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
     fields:
       name: fields
       in: query
       required: false
       description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
-      schema:
-        type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
       schema:
         type: string
   schemas:
@@ -210,6 +197,19 @@ components:
           - Transmitted
           - Confirmed
           - Voided
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     bearerAuth:
       type: http

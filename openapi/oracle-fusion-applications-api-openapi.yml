@@ -142,36 +142,7 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  responses:
-    NotFound:
-      description: The requested resource was not found
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   schemas:
-    Application:
-      type: object
-      properties:
-        name:
-          type: string
-          description: Application name
-        type:
-          type: string
-          description: Application type
-        description:
-          type: string
-          description: Application description
-        planTypes:
-          type: array
-          items:
-            type: string
-          description: Available plan types
-        createdBy:
-          type: string
-          description: Created by user
-        createdDate:
-          type: string
-          format: date-time
-          description: Creation timestamp
     DimensionMember:
       type: object
       properties:
@@ -199,6 +170,30 @@ components:
         alias:
           type: string
           description: Member alias
+    Application:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Application name
+        type:
+          type: string
+          description: Application type
+        description:
+          type: string
+          description: Application description
+        planTypes:
+          type: array
+          items:
+            type: string
+          description: Available plan types
+        createdBy:
+          type: string
+          description: Created by user
+        createdDate:
+          type: string
+          format: date-time
+          description: Creation timestamp
     Dimension:
       type: object
       properties:
@@ -229,6 +224,11 @@ components:
       description: Filter expression
       schema:
         type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    NotFound:
+      description: The requested resource was not found
   securitySchemes:
     basicAuth:
       type: http
