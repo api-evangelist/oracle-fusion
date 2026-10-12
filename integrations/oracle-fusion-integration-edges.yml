@@ -1,0 +1,18 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/oracle-fusion/integrations
+- https://zapier.com/apps/oracle-fusion-cloud-applications/integrations
+- https://n8n.io/integrations/oracle-fusion/
+- https://composio.dev/toolkits/oracle-fusion
+- https://monid.ai/tools/oracle-fusion
+checked:
+- https://composio.dev/toolkits/oracle-fusion
+- https://monid.ai/tools/oracle-fusion
+- https://n8n.io/integrations/oracle-fusion/
+- https://zapier.com/apps/oracle-fusion-cloud-applications/integrations
+- https://zapier.com/apps/oracle-fusion/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
