@@ -156,21 +156,33 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+    InvoiceId:
+      name: InvoiceId
+      in: path
+      required: true
+      description: Unique identifier for the invoice
       schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
-      schema:
-        type: string
+        type: integer
     orderBy:
       name: orderBy
       in: query
@@ -178,22 +190,6 @@ components:
       description: Comma-separated list of fields to sort by. Append :asc or :desc for sort direction.
       schema:
         type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to include in the response.
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -209,14 +205,89 @@ components:
       description: Comma-separated list of fields to include in the response. Use to limit returned attributes for performance.
       schema:
         type: string
-    InvoiceId:
-      name: InvoiceId
-      in: path
-      required: true
-      description: Unique identifier for the invoice
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
       schema:
         type: integer
+        default: 25
+        maximum: 500
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to include in the response.
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: 'Filter expression using Oracle REST query syntax. Example: InvoiceNumber=''INV-001'' or InvoiceAmount>1000'
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder to execute. Format is FinderName;param1=value1,param2=value2
+      schema:
+        type: string
   schemas:
+    InvoiceCreate:
+      type: object
+      required:
+      - InvoiceNumber
+      - InvoiceAmount
+      - InvoiceCurrencyCode
+      - VendorName
+      - BusinessUnit
+      properties:
+        InvoiceNumber:
+          type: string
+          description: Invoice number
+        InvoiceAmount:
+          type: number
+          format: double
+          description: Total invoice amount
+        InvoiceCurrencyCode:
+          type: string
+          description: Currency code
+        InvoiceDate:
+          type: string
+          format: date
+          description: Invoice date
+        InvoiceType:
+          type: string
+          enum:
+          - Standard
+          - Credit Memo
+          - Prepayment
+          - Mixed
+        VendorName:
+          type: string
+          description: Supplier name
+        VendorNumber:
+          type: string
+          description: Supplier number
+        VendorSiteCode:
+          type: string
+          description: Supplier site code
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Description:
+          type: string
+          description: Invoice description
+        PaymentTerms:
+          type: string
+          description: Payment terms
+        AccountingDate:
+          type: string
+          format: date
+          description: Accounting date
     Invoice:
       type: object
       properties:
@@ -328,58 +399,6 @@ components:
                 type: string
               o:errorCode:
                 type: string
-    InvoiceCreate:
-      type: object
-      required:
-      - InvoiceNumber
-      - InvoiceAmount
-      - InvoiceCurrencyCode
-      - VendorName
-      - BusinessUnit
-      properties:
-        InvoiceNumber:
-          type: string
-          description: Invoice number
-        InvoiceAmount:
-          type: number
-          format: double
-          description: Total invoice amount
-        InvoiceCurrencyCode:
-          type: string
-          description: Currency code
-        InvoiceDate:
-          type: string
-          format: date
-          description: Invoice date
-        InvoiceType:
-          type: string
-          enum:
-          - Standard
-          - Credit Memo
-          - Prepayment
-          - Mixed
-        VendorName:
-          type: string
-          description: Supplier name
-        VendorNumber:
-          type: string
-          description: Supplier number
-        VendorSiteCode:
-          type: string
-          description: Supplier site code
-        BusinessUnit:
-          type: string
-          description: Business unit name
-        Description:
-          type: string
-          description: Invoice description
-        PaymentTerms:
-          type: string
-          description: Payment terms
-        AccountingDate:
-          type: string
-          format: date
-          description: Accounting date
     InvoiceUpdate:
       type: object
       properties:
@@ -395,25 +414,6 @@ components:
           format: date
         ApprovalStatus:
           type: string
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    NotFound:
-      description: The requested resource was not found
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     bearerAuth:
       type: http

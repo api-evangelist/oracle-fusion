@@ -134,33 +134,31 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    finder:
-      name: finder
+    offset:
+      name: offset
       in: query
       required: false
-      description: Named finder in format FinderName;param1=value1
+      description: Number of items to skip
       schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
+        type: integer
+        default: 0
     orderBy:
       name: orderBy
       in: query
       required: false
       description: Fields to sort by with optional :asc or :desc direction
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to expand
       schema:
         type: string
     limit:
@@ -172,14 +170,6 @@ components:
         type: integer
         default: 25
         maximum: 500
-    offset:
-      name: offset
-      in: query
-      required: false
-      description: Number of items to skip
-      schema:
-        type: integer
-        default: 0
     fields:
       name: fields
       in: query
@@ -187,18 +177,49 @@ components:
       description: Comma-separated list of fields to return
       schema:
         type: string
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      description: Comma-separated list of child resources to expand
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
   schemas:
-    ErrorResponse:
+    OpportunityUpdate:
       type: object
       properties:
-        type:
+        Name:
           type: string
-        title:
+        SalesStage:
           type: string
-        detail:
+        WinProbability:
+          type: integer
+        Revenue:
+          type: number
+          format: double
+        CloseDate:
           type: string
-        o:errorCode:
+          format: date
+        Status:
           type: string
+          enum:
+          - Open
+          - Won
+          - Lost
     Opportunity:
       type: object
       properties:
@@ -249,27 +270,17 @@ components:
         CreationDate:
           type: string
           format: date-time
-    OpportunityUpdate:
+    ErrorResponse:
       type: object
       properties:
-        Name:
+        type:
           type: string
-        SalesStage:
+        title:
           type: string
-        WinProbability:
-          type: integer
-        Revenue:
-          type: number
-          format: double
-        CloseDate:
+        detail:
           type: string
-          format: date
-        Status:
+        o:errorCode:
           type: string
-          enum:
-          - Open
-          - Won
-          - Lost
     OpportunityCreate:
       type: object
       required:
@@ -292,17 +303,6 @@ components:
         CloseDate:
           type: string
           format: date
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http

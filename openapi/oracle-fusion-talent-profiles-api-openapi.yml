@@ -57,29 +57,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -93,6 +70,29 @@ components:
       in: query
       required: false
       description: Comma-separated list of fields to return
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
       schema:
         type: string
   responses:

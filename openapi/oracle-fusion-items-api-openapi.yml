@@ -57,26 +57,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -90,6 +70,29 @@ components:
       required: false
       schema:
         type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+  responses:
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
     Item:
       type: object
@@ -138,9 +141,6 @@ components:
         CustomerOrderableFlag:
           type: boolean
           description: Whether the item can be ordered by customers
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
   securitySchemes:
     bearerAuth:
       type: http

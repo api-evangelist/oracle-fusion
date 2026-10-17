@@ -163,26 +163,38 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    finder:
-      name: finder
+    offset:
+      name: offset
       in: query
       required: false
-      description: Named finder in format FinderName;param1=value1
+      description: Number of items to skip
+      schema:
+        type: integer
+        default: 0
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      description: Fields to sort by with optional :asc or :desc direction
       schema:
         type: string
-    q:
-      name: q
+    fields:
+      name: fields
       in: query
       required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      description: Comma-separated list of child resources to expand
+      description: Comma-separated list of fields to return
       schema:
         type: string
     limit:
@@ -194,26 +206,25 @@ components:
         type: integer
         default: 25
         maximum: 500
-    orderBy:
-      name: orderBy
+    finder:
+      name: finder
       in: query
       required: false
-      description: Fields to sort by with optional :asc or :desc direction
+      description: Named finder in format FinderName;param1=value1
       schema:
         type: string
-    offset:
-      name: offset
+    expand:
+      name: expand
       in: query
       required: false
-      description: Number of items to skip
+      description: Comma-separated list of child resources to expand
       schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
+        type: string
+    q:
+      name: q
       in: query
       required: false
-      description: Comma-separated list of fields to return
+      description: Filter expression using Oracle REST query syntax
       schema:
         type: string
     workersUniqID:
@@ -235,76 +246,6 @@ components:
           type: string
         o:errorCode:
           type: string
-    Employee:
-      type: object
-      properties:
-        PersonId:
-          type: integer
-          description: Person identifier
-        PersonNumber:
-          type: string
-          description: Person number
-        FirstName:
-          type: string
-          description: First name
-        LastName:
-          type: string
-          description: Last name
-        DisplayName:
-          type: string
-          description: Display name
-        HireDate:
-          type: string
-          format: date
-          description: Hire date
-        BusinessUnit:
-          type: string
-          description: Business unit name
-        Department:
-          type: string
-          description: Department name
-        JobName:
-          type: string
-          description: Job name
-        GradeName:
-          type: string
-          description: Grade name
-        LocationName:
-          type: string
-          description: Work location
-        ManagerName:
-          type: string
-          description: Manager display name
-        AssignmentStatus:
-          type: string
-          description: Assignment status
-    WorkerCreate:
-      type: object
-      required:
-      - FirstName
-      - LastName
-      - HireDate
-      properties:
-        FirstName:
-          type: string
-        LastName:
-          type: string
-        MiddleName:
-          type: string
-        DateOfBirth:
-          type: string
-          format: date
-        HireDate:
-          type: string
-          format: date
-        WorkerType:
-          type: string
-          enum:
-          - Employee
-          - Contingent Worker
-        WorkEmail:
-          type: string
-          format: email
     Worker:
       type: object
       properties:
@@ -379,17 +320,76 @@ components:
           format: email
         WorkPhoneNumber:
           type: string
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
+    WorkerCreate:
+      type: object
+      required:
+      - FirstName
+      - LastName
+      - HireDate
+      properties:
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        MiddleName:
+          type: string
+        DateOfBirth:
+          type: string
+          format: date
+        HireDate:
+          type: string
+          format: date
+        WorkerType:
+          type: string
+          enum:
+          - Employee
+          - Contingent Worker
+        WorkEmail:
+          type: string
+          format: email
+    Employee:
+      type: object
+      properties:
+        PersonId:
+          type: integer
+          description: Person identifier
+        PersonNumber:
+          type: string
+          description: Person number
+        FirstName:
+          type: string
+          description: First name
+        LastName:
+          type: string
+          description: Last name
+        DisplayName:
+          type: string
+          description: Display name
+        HireDate:
+          type: string
+          format: date
+          description: Hire date
+        BusinessUnit:
+          type: string
+          description: Business unit name
+        Department:
+          type: string
+          description: Department name
+        JobName:
+          type: string
+          description: Job name
+        GradeName:
+          type: string
+          description: Grade name
+        LocationName:
+          type: string
+          description: Work location
+        ManagerName:
+          type: string
+          description: Manager display name
+        AssignmentStatus:
+          type: string
+          description: Assignment status
   securitySchemes:
     bearerAuth:
       type: http

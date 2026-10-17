@@ -141,60 +141,36 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
-  parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    orderBy:
-      name: orderBy
-      in: query
-      required: false
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
   schemas:
-    SalesOrderUpdate:
+    SalesOrderCreate:
       type: object
+      required:
+      - OrderType
+      - CustomerName
+      - BusinessUnit
       properties:
+        OrderType:
+          type: string
+        CustomerName:
+          type: string
+        CustomerNumber:
+          type: string
+        BusinessUnit:
+          type: string
+        OrderDate:
+          type: string
+          format: date
         RequestedShipDate:
           type: string
           format: date
-        Status:
+        CurrencyCode:
           type: string
     SalesOrder:
       type: object
@@ -252,36 +228,60 @@ components:
           type: string
           format: date-time
           description: Creation timestamp
-    SalesOrderCreate:
+    SalesOrderUpdate:
       type: object
-      required:
-      - OrderType
-      - CustomerName
-      - BusinessUnit
       properties:
-        OrderType:
-          type: string
-        CustomerName:
-          type: string
-        CustomerNumber:
-          type: string
-        BusinessUnit:
-          type: string
-        OrderDate:
-          type: string
-          format: date
         RequestedShipDate:
           type: string
           format: date
-        CurrencyCode:
+        Status:
           type: string
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
+  parameters:
+    orderBy:
+      name: orderBy
+      in: query
+      required: false
+      schema:
+        type: string
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

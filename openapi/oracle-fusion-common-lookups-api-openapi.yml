@@ -213,47 +213,60 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    expand:
-      name: expand
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
-    fields:
-      name: fields
-      in: query
-      required: false
-      schema:
-        type: string
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
   schemas:
+    CommonLookupCreate:
+      type: object
+      required:
+      - LookupType
+      - Meaning
+      properties:
+        LookupType:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+    CommonLookup:
+      type: object
+      properties:
+        LookupType:
+          type: string
+          description: Lookup type identifier
+        Meaning:
+          type: string
+          description: Display name for the lookup type
+        Description:
+          type: string
+          description: Lookup type description
+        ModuleType:
+          type: string
+          description: Module that owns the lookup
+        CreationDate:
+          type: string
+          format: date-time
+    LookupCodeCreate:
+      type: object
+      required:
+      - LookupCode
+      - Meaning
+      properties:
+        LookupCode:
+          type: string
+        Meaning:
+          type: string
+        Description:
+          type: string
+        EnabledFlag:
+          type: boolean
+        DisplaySequence:
+          type: integer
     LookupCode:
       type: object
       properties:
@@ -280,59 +293,46 @@ components:
         DisplaySequence:
           type: integer
           description: Display order sequence
-    LookupCodeCreate:
-      type: object
-      required:
-      - LookupCode
-      - Meaning
-      properties:
-        LookupCode:
-          type: string
-        Meaning:
-          type: string
-        Description:
-          type: string
-        EnabledFlag:
-          type: boolean
-        DisplaySequence:
-          type: integer
-    CommonLookup:
-      type: object
-      properties:
-        LookupType:
-          type: string
-          description: Lookup type identifier
-        Meaning:
-          type: string
-          description: Display name for the lookup type
-        Description:
-          type: string
-          description: Lookup type description
-        ModuleType:
-          type: string
-          description: Module that owns the lookup
-        CreationDate:
-          type: string
-          format: date-time
-    CommonLookupCreate:
-      type: object
-      required:
-      - LookupType
-      - Meaning
-      properties:
-        LookupType:
-          type: string
-        Meaning:
-          type: string
-        Description:
-          type: string
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
+  parameters:
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
+    fields:
+      name: fields
+      in: query
+      required: false
+      schema:
+        type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    expand:
+      name: expand
+      in: query
+      required: false
+      schema:
+        type: string
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

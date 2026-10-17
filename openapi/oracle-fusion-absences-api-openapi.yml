@@ -155,30 +155,18 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
   parameters:
-    finder:
-      name: finder
-      in: query
-      required: false
-      description: Named finder in format FinderName;param1=value1
-      schema:
-        type: string
-    q:
-      name: q
-      in: query
-      required: false
-      description: Filter expression using Oracle REST query syntax
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      description: Maximum number of items to return (default 25, max 500)
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -194,6 +182,29 @@ components:
       description: Comma-separated list of fields to return
       schema:
         type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      description: Maximum number of items to return (default 25, max 500)
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      description: Filter expression using Oracle REST query syntax
+      schema:
+        type: string
+    finder:
+      name: finder
+      in: query
+      required: false
+      description: Named finder in format FinderName;param1=value1
+      schema:
+        type: string
   schemas:
     ErrorResponse:
       type: object
@@ -205,6 +216,36 @@ components:
         detail:
           type: string
         o:errorCode:
+          type: string
+    AbsenceCreate:
+      type: object
+      required:
+      - PersonNumber
+      - AbsenceType
+      - StartDate
+      - EndDate
+      properties:
+        PersonNumber:
+          type: string
+        AbsenceType:
+          type: string
+        AbsenceReason:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Duration:
+          type: number
+          format: double
+        UnitOfMeasure:
+          type: string
+          enum:
+          - Days
+          - Hours
+        Comments:
           type: string
     Absence:
       type: object
@@ -254,47 +295,6 @@ components:
         Comments:
           type: string
           description: Comments
-    AbsenceCreate:
-      type: object
-      required:
-      - PersonNumber
-      - AbsenceType
-      - StartDate
-      - EndDate
-      properties:
-        PersonNumber:
-          type: string
-        AbsenceType:
-          type: string
-        AbsenceReason:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        Duration:
-          type: number
-          format: double
-        UnitOfMeasure:
-          type: string
-          enum:
-          - Days
-          - Hours
-        Comments:
-          type: string
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http

@@ -145,21 +145,14 @@ paths:
         '404':
           $ref: '#/components/responses/NotFound'
 components:
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
+    BadRequest:
+      description: Invalid request parameters or payload
   parameters:
-    q:
-      name: q
-      in: query
-      required: false
-      schema:
-        type: string
-    limit:
-      name: limit
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 25
-        maximum: 500
     offset:
       name: offset
       in: query
@@ -173,7 +166,43 @@ components:
       required: false
       schema:
         type: string
+    limit:
+      name: limit
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 25
+        maximum: 500
+    q:
+      name: q
+      in: query
+      required: false
+      schema:
+        type: string
   schemas:
+    AnnouncementCreate:
+      type: object
+      required:
+      - Subject
+      - StartDate
+      properties:
+        Subject:
+          type: string
+        Description:
+          type: string
+        StartDate:
+          type: string
+          format: date
+        EndDate:
+          type: string
+          format: date
+        Severity:
+          type: string
+          enum:
+          - Information
+          - Warning
+          - Critical
     Announcement:
       type: object
       properties:
@@ -207,35 +236,6 @@ components:
         CreationDate:
           type: string
           format: date-time
-    AnnouncementCreate:
-      type: object
-      required:
-      - Subject
-      - StartDate
-      properties:
-        Subject:
-          type: string
-        Description:
-          type: string
-        StartDate:
-          type: string
-          format: date
-        EndDate:
-          type: string
-          format: date
-        Severity:
-          type: string
-          enum:
-          - Information
-          - Warning
-          - Critical
-  responses:
-    BadRequest:
-      description: Invalid request parameters or payload
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http

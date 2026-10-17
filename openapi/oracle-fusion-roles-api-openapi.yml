@@ -101,6 +101,13 @@ paths:
           $ref: '#/components/responses/NotFound'
 components:
   parameters:
+    offset:
+      name: offset
+      in: query
+      required: false
+      schema:
+        type: integer
+        default: 0
     limit:
       name: limit
       in: query
@@ -109,14 +116,19 @@ components:
         type: integer
         default: 25
         maximum: 500
-    offset:
-      name: offset
-      in: query
-      required: false
-      schema:
-        type: integer
-        default: 0
+  responses:
+    NotFound:
+      description: The requested resource was not found
+    Unauthorized:
+      description: Authentication credentials are missing or invalid
   schemas:
+    RoleUpdate:
+      type: object
+      properties:
+        displayName:
+          type: string
+        description:
+          type: string
     Role:
       type: object
       properties:
@@ -132,18 +144,6 @@ components:
         roleCategory:
           type: string
           description: Role category
-    RoleUpdate:
-      type: object
-      properties:
-        displayName:
-          type: string
-        description:
-          type: string
-  responses:
-    Unauthorized:
-      description: Authentication credentials are missing or invalid
-    NotFound:
-      description: The requested resource was not found
   securitySchemes:
     bearerAuth:
       type: http
