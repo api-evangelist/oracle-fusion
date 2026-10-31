@@ -1,4 +1,4 @@
-# Oracle Fusion Cloud Applications (oracle-fusion)
+# Oracle Fusion Cloud Applications
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,230 +66,252 @@
 
 Oracle Fusion Cloud Applications represent a comprehensive suite of cloud-based enterprise resource planning (ERP), human capital management (HCM), customer experience (CX), supply chain management (SCM), and enterprise performance management (EPM) solutions. Oracle Fusion Cloud provides REST APIs across all application pillars, enabling programmatic access to business data and processes for integration, automation, and extension of cloud applications.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/oracle-fusion/refs/heads/main/apis.yml)
+**Areas:** Cloud · Customer Experience · Enterprise · EPM · ERP · HCM · Project Management · REST API · Software-as-a-Service · SCM
 
-## Scope
+## Oracle Fusion Cloud Applications on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Oracle Fusion Cloud Applications is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/oracle-fusion/](https://apis.io/providers/oracle-fusion/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (52)
 
-- Cloud
-- CX
-- Enterprise
-- EPM
-- ERP
-- HCM
-- Project Management
-- REST API
-- SaaS
-- SCM
+- [Oracle Fusion Cloud Applications Absences API](https://apis.io/apis/oracle-fusion/oracle-fusion-absences-api/) — Absence management and leave tracking
+- [Oracle Fusion Cloud Applications Access Groups API](https://apis.io/apis/oracle-fusion/oracle-fusion-access-groups-api/) — Manage data access groups and rules
+- [Oracle Fusion Cloud Applications Accounts API](https://apis.io/apis/oracle-fusion/oracle-fusion-accounts-api/) — Manage customer and prospect accounts
+- [Oracle Fusion Cloud Applications Accounts Receivable API](https://apis.io/apis/oracle-fusion/oracle-fusion-accounts-receivable-api/) — Manage receivables transactions and receipts
+- [Oracle Fusion Cloud Applications Activities API](https://apis.io/apis/oracle-fusion/oracle-fusion-activities-api/) — Manage tasks, appointments, and call logs
+- [Oracle Fusion Cloud Applications Announcements API](https://apis.io/apis/oracle-fusion/oracle-fusion-announcements-api/) — Manage application announcements
+- [Oracle Fusion Cloud Applications API](https://apis.io/apis/oracle-fusion/oracle-fusion-applications-api/) — Manage EPM application metadata and dimensions
+- [Oracle Fusion Cloud Applications Assignments API](https://apis.io/apis/oracle-fusion/oracle-fusion-assignments-api/) — Manage work assignments and employment details
+- [Oracle Fusion Cloud Applications Audit API](https://apis.io/apis/oracle-fusion/oracle-fusion-audit-api/) — Audit trail and setup operations
+- [Oracle Fusion Cloud Applications Award Budgets API](https://apis.io/apis/oracle-fusion/oracle-fusion-award-budgets-api/) — Manage award budget versions and lines
+- [Oracle Fusion Cloud Applications Awards API](https://apis.io/apis/oracle-fusion/oracle-fusion-awards-api/) — Manage grants and awards
+- [Oracle Fusion Cloud Applications Budgetary Control API](https://apis.io/apis/oracle-fusion/oracle-fusion-budgetary-control-api/) — Budget transactions and validation
+- [Oracle Fusion Cloud Applications Cash Management API](https://apis.io/apis/oracle-fusion/oracle-fusion-cash-management-api/) — Bank accounts, transfers, and cash pools
+- [Oracle Fusion Cloud Applications Change Orders API](https://apis.io/apis/oracle-fusion/oracle-fusion-change-orders-api/) — Manage project change orders
+- [Oracle Fusion Cloud Applications Common Lookups API](https://apis.io/apis/oracle-fusion/oracle-fusion-common-lookups-api/) — Manage lookup types and lookup codes
+- [Oracle Fusion Cloud Applications Compensation API](https://apis.io/apis/oracle-fusion/oracle-fusion-compensation-api/) — Salary and compensation management
+- [Oracle Fusion Cloud Applications Contacts API](https://apis.io/apis/oracle-fusion/oracle-fusion-contacts-api/) — Manage contact records associated with accounts
+- [Oracle Fusion Cloud Applications Currency Rates API](https://apis.io/apis/oracle-fusion/oracle-fusion-currency-rates-api/) — Currency rate management
+- [Oracle Fusion Cloud Applications Data Management API](https://apis.io/apis/oracle-fusion/oracle-fusion-data-management-api/) — Data import, export, and integration operations
+- [Oracle Fusion Cloud Applications Deliverables API](https://apis.io/apis/oracle-fusion/oracle-fusion-deliverables-api/) — Manage project deliverables
+- [Oracle Fusion Cloud Applications ERP Integrations API](https://apis.io/apis/oracle-fusion/oracle-fusion-erp-integrations-api/) — Bulk data import and export operations
+- [Oracle Fusion Cloud Applications Expenditure Types API](https://apis.io/apis/oracle-fusion/oracle-fusion-expenditure-types-api/) — Manage expenditure type definitions
+- [Oracle Fusion Cloud Applications Expense Reports API](https://apis.io/apis/oracle-fusion/oracle-fusion-expense-reports-api/) — Create and manage employee expense reports
+- [Oracle Fusion Cloud Applications Features API](https://apis.io/apis/oracle-fusion/oracle-fusion-features-api/) — Manage application features
+- [Oracle Fusion Cloud Applications Financial Project Plans API](https://apis.io/apis/oracle-fusion/oracle-fusion-financial-project-plans-api/) — Manage financial plans, budgets, and forecasts
+- [Oracle Fusion Cloud Applications General Ledger API](https://apis.io/apis/oracle-fusion/oracle-fusion-general-ledger-api/) — General ledger journal and period operations
+- [Oracle Fusion Cloud Applications Inventory API](https://apis.io/apis/oracle-fusion/oracle-fusion-inventory-api/) — Inventory management and on-hand quantities
+- [Oracle Fusion Cloud Applications Invoices API](https://apis.io/apis/oracle-fusion/oracle-fusion-invoices-api/) — Manage accounts payable invoices
+- [Oracle Fusion Cloud Applications Items API](https://apis.io/apis/oracle-fusion/oracle-fusion-items-api/) — Product and item master management
+- [Oracle Fusion Cloud Applications Jobs API](https://apis.io/apis/oracle-fusion/oracle-fusion-jobs-api/) — Manage EPM job execution and monitoring
+- [Oracle Fusion Cloud Applications Leads API](https://apis.io/apis/oracle-fusion/oracle-fusion-leads-api/) — Manage sales leads and qualification
+- [Oracle Fusion Cloud Applications Learning API](https://apis.io/apis/oracle-fusion/oracle-fusion-learning-api/) — Learning records and course management
+- [Oracle Fusion Cloud Applications Manage Tasks API](https://apis.io/apis/oracle-fusion/oracle-fusion-manage-tasks-api/) — Manage BPM workflow tasks and approvals
+- [Oracle Fusion Cloud Applications Migration API](https://apis.io/apis/oracle-fusion/oracle-fusion-migration-api/) — Application migration and lifecycle management
+- [Oracle Fusion Cloud Applications Opportunities API](https://apis.io/apis/oracle-fusion/oracle-fusion-opportunities-api/) — Manage sales opportunities and pipeline
+- [Oracle Fusion Cloud Applications Payments API](https://apis.io/apis/oracle-fusion/oracle-fusion-payments-api/) — Manage payment processing
+- [Oracle Fusion Cloud Applications Payroll API](https://apis.io/apis/oracle-fusion/oracle-fusion-payroll-api/) — Payroll processing and results
+- [Oracle Fusion Cloud Applications Persons API](https://apis.io/apis/oracle-fusion/oracle-fusion-persons-api/) — Manage person records
+- [Oracle Fusion Cloud Applications Planning API](https://apis.io/apis/oracle-fusion/oracle-fusion-planning-api/) — Planning application data and metadata operations
+- [Oracle Fusion Cloud Applications Project Tasks API](https://apis.io/apis/oracle-fusion/oracle-fusion-project-tasks-api/) — Manage project task hierarchies and assignments
+- [Oracle Fusion Cloud Applications Projects API](https://apis.io/apis/oracle-fusion/oracle-fusion-projects-api/) — Manage project definitions and attributes
+- [Oracle Fusion Cloud Applications Purchase Orders API](https://apis.io/apis/oracle-fusion/oracle-fusion-purchase-orders-api/) — Manage purchase orders and procurement
+- [Oracle Fusion Cloud Applications Recruiting API](https://apis.io/apis/oracle-fusion/oracle-fusion-recruiting-api/) — Job requisitions and candidate management
+- [Oracle Fusion Cloud Applications Roles API](https://apis.io/apis/oracle-fusion/oracle-fusion-roles-api/) — Manage security roles
+- [Oracle Fusion Cloud Applications Sales Orders API](https://apis.io/apis/oracle-fusion/oracle-fusion-sales-orders-api/) — Manage sales orders and order lines
+- [Oracle Fusion Cloud Applications Scheduled Processes API](https://apis.io/apis/oracle-fusion/oracle-fusion-scheduled-processes-api/) — Manage and monitor scheduled processes
+- [Oracle Fusion Cloud Applications Service Requests API](https://apis.io/apis/oracle-fusion/oracle-fusion-service-requests-api/) — Manage customer service requests and cases
+- [Oracle Fusion Cloud Applications Shipments API](https://apis.io/apis/oracle-fusion/oracle-fusion-shipments-api/) — Shipping and receiving operations
+- [Oracle Fusion Cloud Applications Suppliers API](https://apis.io/apis/oracle-fusion/oracle-fusion-suppliers-api/) — Supplier and vendor management
+- [Oracle Fusion Cloud Applications Talent Profiles API](https://apis.io/apis/oracle-fusion/oracle-fusion-talent-profiles-api/) — Talent profiles, skills, and competencies
+- [Oracle Fusion Cloud Applications Work Orders API](https://apis.io/apis/oracle-fusion/oracle-fusion-work-orders-api/) — Manufacturing work order management
+- [Oracle Fusion Cloud Applications Workers API](https://apis.io/apis/oracle-fusion/oracle-fusion-workers-api/) — Manage worker (employee and contingent worker) records
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-01-15
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Oracle Fusion ERP REST API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-REST APIs for Oracle Fusion Cloud ERP, providing programmatic access to financials, procurement, project management, and risk management capabilities. The API supports viewing and managing financial data including general ledger, accounts payable, accounts receivable, fixed assets, and cash management.
+- [Oracle Fusion Agentic Access](https://apis.io/agentic-access/oracle-fusion/oracle-fusion-agentic-access/)
 
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/financials/](https://docs.oracle.com/en/cloud/saas/financials/)
-- **Base URL:** `https://{instance}.oraclecloud.com/fscmRestApi/`
+#### JSON Schema (110)
 
-#### Tags
+The data models the API reads and writes.
 
-- ERP
-- Financials
-- Procurement
-- Projects
-- Risk Management
+- [Absence](https://apis.io/schemas/oracle-fusion/oracle-fusion-absence/)
+- [AbsenceCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-absencecreate/)
+- [AccessGroup](https://apis.io/schemas/oracle-fusion/oracle-fusion-accessgroup/)
+- [Oracle Fusion Cloud CX Account](https://apis.io/schemas/oracle-fusion/oracle-fusion-account/)
+- [AccountCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-accountcreate/)
+- [AccountUpdate](https://apis.io/schemas/oracle-fusion/oracle-fusion-accountupdate/)
+- [Activity](https://apis.io/schemas/oracle-fusion/oracle-fusion-activity/)
+- [ActivityCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-activitycreate/)
+- [Announcement](https://apis.io/schemas/oracle-fusion/oracle-fusion-announcement/)
+- [AnnouncementCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-announcementcreate/)
+- [Application](https://apis.io/schemas/oracle-fusion/oracle-fusion-application/)
+- [Assignment](https://apis.io/schemas/oracle-fusion/oracle-fusion-assignment/)
+- [Award](https://apis.io/schemas/oracle-fusion/oracle-fusion-award/)
+- [AwardBudget](https://apis.io/schemas/oracle-fusion/oracle-fusion-awardbudget/)
+- [AwardBudgetCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-awardbudgetcreate/)
+- [AwardCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-awardcreate/)
+- [BankAccount](https://apis.io/schemas/oracle-fusion/oracle-fusion-bankaccount/)
+- [BankAccountTransfer](https://apis.io/schemas/oracle-fusion/oracle-fusion-bankaccounttransfer/)
+- [BankAccountTransferCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-bankaccounttransfercreate/)
+- [BudgetTransaction](https://apis.io/schemas/oracle-fusion/oracle-fusion-budgettransaction/)
+- [BudgetTransactionCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-budgettransactioncreate/)
+- [Candidate](https://apis.io/schemas/oracle-fusion/oracle-fusion-candidate/)
+- [ChangeOrder](https://apis.io/schemas/oracle-fusion/oracle-fusion-changeorder/)
+- [ChangeOrderCreate](https://apis.io/schemas/oracle-fusion/oracle-fusion-changeordercreate/)
+- [CommonLookup](https://apis.io/schemas/oracle-fusion/oracle-fusion-commonlookup/)
+- …and 85 more published on APIs.io
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://docs.oracle.com/en/cloud/saas/financials/26a/farfa/index.html)
-- [OpenAPI](https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/api-rest-api.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.oracle.com/en/cloud/saas/financials/22r3/farfa/Authentication.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/financials/26a/index.html)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html)
-- [OpenAPI](openapi/oracle-fusion-erp-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-erp.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-erp.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-### Oracle Fusion HCM REST API
+- [Oracle Fusion Structure](https://apis.io/json-structure/oracle-fusion/oracle-fusion-structure/)
 
-REST APIs for Oracle Fusion Cloud Human Capital Management, enabling integration with core HR, talent management, workforce management, and payroll systems. The API provides access to employee records, absence management, benefits, compensation, recruiting, and learning resources.
+#### JSON-LD (1)
 
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/human-resources/](https://docs.oracle.com/en/cloud/saas/human-resources/)
-- **Base URL:** `https://{instance}.oraclecloud.com/hcmRestApi/`
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Oracle Fusion Context](https://apis.io/jsonld/oracle-fusion/oracle-fusion-context/)
 
-- HCM
-- Human Resources
-- Payroll
-- Talent Management
-- Workforce
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/)
-- [OpenAPI](https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/api-rest-api.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.oracle.com/en/cloud/saas/human-resources/22r3/farws/Authentication.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/human-resources/26a/index.html)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/hcm/index.html)
-- [OpenAPI](openapi/oracle-fusion-hcm-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-hcm.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-hcm.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Oracle Fusion Cloud Applications Domain Vocabulary](https://apis.io/vocabularies/oracle-fusion/oracle-fusion-vocabulary/)
 
-### Oracle Fusion SCM REST API
+#### Collections (111)
 
-REST APIs for Oracle Fusion Cloud Supply Chain Management, providing access to inventory, order management, procurement, logistics, and manufacturing capabilities. The API enables integration with supply chain planning, product lifecycle management, service logistics, and supply chain execution processes.
+Postman and Open Collection request collections.
 
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/supply-chain-management/](https://docs.oracle.com/en/cloud/saas/supply-chain-management/)
-- **Base URL:** `https://{instance}.oraclecloud.com/fscmRestApi/`
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-absences-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Access Groups API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-access-groups-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-accounts-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Accounts Receivable API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-accounts-receivable-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Activities API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-activities-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Announcements API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-announcements-api/)
+- [Oracle Fusion Cloud Oracle Fusion Common Features REST Absences Applications API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-applications-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Assignments API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-assignments-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Audit API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-audit-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Award Budgets API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-award-budgets-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Awards API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-awards-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Budgetary Control API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-budgetary-control-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Cash Management API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-cash-management-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Change Orders API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-change-orders-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-common/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Common Lookups API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-common-lookups-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Compensation API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-compensation-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Contacts API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-contacts-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Currency Rates API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-currency-rates-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion CX Sales and Fusion Service REST API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-cx-sales/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Data Management API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-data-management-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences Deliverables API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-deliverables-api/)
+- [Oracle Fusion Cloud Applications Oracle Fusion EPM REST API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-epm/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Cloud ERP REST API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-erp/)
+- [Oracle Fusion Cloud Applications Oracle Fusion Common Features REST Absences ERP Integrations API](https://apis.io/collections/oracle-fusion/open-oracle-fusion-erp-integrations-api/)
+- …and 86 more published on APIs.io
 
-#### Tags
+#### Governance rules (1)
 
-- Inventory
-- Logistics
-- Manufacturing
-- Order Management
-- SCM
-- Supply Chain
+Spectral rulesets for the provider's contracts.
 
-#### Properties
+- [Oracle Fusion Cloud Applications — jsonschema rules](https://apis.io/rules/oracle-fusion/oracle-fusion-jsonschema-spectral-rules/)
 
-- [Documentation](https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/)
-- [OpenAPI](https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/api-rest-api.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.oracle.com/en/cloud/saas/supply-chain-management/22r3/fasrs/Authentication.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/supply-chain-management/26a/index.html)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/scm/index.html)
-- [OpenAPI](openapi/oracle-fusion-scm-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-scm.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-scm.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Security (2)
 
-### Oracle Fusion CX Sales and Fusion Service REST API
+Authentication, trust centre, and vulnerability disclosure.
 
-REST APIs for Oracle Fusion Cloud Customer Experience, enabling integration with sales force automation, fusion service, customer data management, and commerce applications. The API provides access to accounts, contacts, opportunities, leads, service requests, activities, and other CRM resources.
+- [Oracle Fusion Authentication](https://apis.io/security/oracle-fusion/oracle-fusion-authentication/)
+- [Oracle Fusion Domain Security](https://apis.io/security/oracle-fusion/oracle-fusion-domain-security/)
 
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/sales/](https://docs.oracle.com/en/cloud/saas/sales/)
-- **Base URL:** `https://{instance}.oraclecloud.com/crmRestApi/`
+#### Plans and pricing (1)
 
-#### Tags
+Published plans, tiers and prices.
 
-- Commerce
-- Customer Experience
-- CX
-- Marketing
-- Sales
+- [Oracle Fusion Plans Pricing](https://apis.io/plans/oracle-fusion/oracle-fusion-plans-pricing/)
 
-#### Properties
+#### Rate limits (1)
 
-- [Documentation](https://docs.oracle.com/en/cloud/saas/sales/faaps/index.html)
-- [OpenAPI](https://docs.oracle.com/en/cloud/saas/cx-sales/rest-api.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.oracle.com/en/cloud/saas/cx-sales/rest-authentication.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/sales/index.html)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/sales.html)
-- [OpenAPI](openapi/oracle-fusion-cx-sales-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-cx-sales.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-cx-sales.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Published request limits.
 
-### Oracle Fusion Common Features REST API
+- [Oracle Fusion Rate Limits](https://apis.io/rate-limits/oracle-fusion/oracle-fusion-rate-limits/)
 
-REST APIs for Oracle Fusion Cloud Applications Common features, providing access to shared services such as attachments, flexfields, lookup types, roles, users, security, and approval workflows used across all Fusion Cloud application pillars. This is the foundational API that supports cross-pillar integration capabilities.
+#### FinOps (1)
 
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/applications-common/](https://docs.oracle.com/en/cloud/saas/applications-common/)
-- **Base URL:** `https://{instance}.oraclecloud.com/fscmRestApi/`
+What the API costs to run, by operation.
 
-#### Tags
+- [Oracle Fusion Finops](https://apis.io/finops/oracle-fusion/oracle-fusion-finops/)
 
-- Attachments
-- Common
-- Flexfields
-- Roles
-- Security
-- Users
+## Where to find this API
 
-#### Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Documentation](https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/applications-common/26a/index.html)
-- [OpenAPI](openapi/oracle-fusion-common-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-common.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-common.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Oracle Fusion Project Management REST API
-
-REST APIs for Oracle Fusion Cloud Project Management, enabling integration with project planning, project costing, project billing, grants management, and project execution capabilities. The API supports managing project resources, tasks, budgets, and deliverables.
-
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/project-management/](https://docs.oracle.com/en/cloud/saas/project-management/)
-- **Base URL:** `https://{instance}.oraclecloud.com/fscmRestApi/`
-
-#### Tags
-
-- Grants
-- Project Billing
-- Project Costing
-- Project Management
-
-#### Properties
-
-- [Documentation](https://docs.oracle.com/en/cloud/saas/project-management/26a/fapap/index.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/project-management/26a/index.html)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/erp/index.html)
-- [OpenAPI](openapi/oracle-fusion-project-management-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-project-management.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-project-management.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-### Oracle Fusion EPM REST API
-
-REST APIs for Oracle Fusion Cloud Enterprise Performance Management, enabling integration with planning, budgeting, forecasting, financial consolidation, account reconciliation, tax reporting, and narrative reporting capabilities. The EPM REST APIs allow infrastructure consultants to integrate environments with Oracle EPM Cloud services.
-
-- **Human URL:** [https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/)
-- **Base URL:** `https://{instance}.oraclecloud.com/HyperionPlanning/rest/`
-
-#### Tags
-
-- Budgeting
-- Consolidation
-- EPM
-- Financial Close
-- Planning
-
-#### Properties
-
-- [Documentation](https://docs.oracle.com/en/cloud/saas/enterprise-performance-management-common/prest/index.html)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/epm-cloud/index.html)
-- [OpenAPI](openapi/oracle-fusion-epm-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/oracle-fusion-epm.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oracle-fusion-epm.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Portal](https://docs.oracle.com/en/cloud/saas/)
-- [Authentication](https://docs.oracle.com/en/cloud/saas/applications-common/26a/farca/index.html)
-- [Support](https://support.oracle.com)
-- [Getting Started](https://docs.oracle.com/en/cloud/saas/applications-common/)
-- [Status Page](https://ocistatus.oraclecloud.com/)
-- [Terms of Service](https://www.oracle.com/corporate/contracts/cloud-services/)
-- [Privacy Policy](https://www.oracle.com/legal/privacy/)
-- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/)
 - [Website](https://www.oracle.com/applications/)
-- [Sign Up](https://www.oracle.com/cloud/free/)
-- [Login](https://cloud.oracle.com/)
-- [GitHub Organization](https://github.com/oracle)
-- [JSON-LD](json-ld/oracle-fusion-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [JSON Schema](json-schema/oracle-fusion-invoice-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/oracle-fusion-worker-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/oracle-fusion-sales-order-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/oracle-fusion-account-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [Getting started](https://docs.oracle.com/en/cloud/saas/applications-common/)
+- [Support](https://support.oracle.com)
+- [Changelog](https://docs.oracle.com/en/cloud/saas/readiness/fusion-readiness/)
+- [Terms of service](https://www.oracle.com/corporate/contracts/cloud-services/)
+- [Privacy policy](https://www.oracle.com/legal/privacy/)
+- [GitHub](https://github.com/oracle)
+- [Status](https://ocistatus.oraclecloud.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 43.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 59.9 |
+| Contract governance | 9.8 |
+| Operational transparency | 42.1 |
+| Developer ergonomics | 48.8 |
+| Access clarity | 26.3 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 24.5** — Employment & Payroll
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/oracle-fusion/](https://apis.io/providers/oracle-fusion/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Oracle Fusion Cloud Applications: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/oracle-fusion/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
